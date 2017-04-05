@@ -1,0 +1,31 @@
+<?php
+// Generated on 4/4/2017 5:50:25 AM
+
+namespace Microsoft\BingAds\V10\AdInsight;
+
+{
+    /**
+     * Defines an object that contains estimates of clicks, average cost per click (CPC), impressions, click-through rate (CTR), and total cost for the corresponding keyword or ad group given the suggested bid.
+     * @link http://msdn.microsoft.com/en-us/library/mt219348(v=msads.100).aspx EstimatedBidAndTraffic Data Object
+     * 
+     * @uses Currency
+     * @uses MatchType
+     * @used-by KeywordEstimatedBid
+     * @used-by GetEstimatedBidByKeywordsResponse
+     */
+    final class EstimatedBidAndTraffic
+    {
+        public $MinClicksPerWeek;
+        public $MaxClicksPerWeek;
+        public $AverageCPC;
+        public $MinImpressionsPerWeek;
+        public $MaxImpressionsPerWeek;
+        public $CTR;
+        public $MinTotalCostPerWeek;
+        public $MaxTotalCostPerWeek;
+        public $Currency;
+        public $MatchType;
+        public $EstimatedMinBid;
+    }
+
+}
