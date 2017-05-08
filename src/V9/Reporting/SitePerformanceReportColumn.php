@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -63,7 +63,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** The number of times that the ads in the account were clicked. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
         /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
@@ -102,22 +102,22 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The ad group language. */
         const Language = 'Language';
 
-        /** The current TrackingUrlTemplate element of the Ad, Keyword, or BiddableAdGroupCriterion. */
+        /** The current tracking template of the ad, keyword, or criterion. */
         const TrackingTemplate = 'TrackingTemplate';
 
-        /** The current UrlCustomParameters element of the Ad, Keyword, or BiddableAdGroupCriterion. */
+        /** The current custom parameter set of the ad, keyword, or criterion. */
         const CustomParameters = 'CustomParameters';
 
-        /** The FinalUrls element of the Ad, Keyword, or BiddableAdGroupCriterion. */
+        /** The Final URL of the ad, keyword, or criterion. */
         const FinalURL = 'FinalURL';
 
-        /** The FinalMobileUrls element of the Ad, Keyword, or BiddableAdGroupCriterion. */
+        /** The Final Mobile URL of the ad, keyword, or criterion. */
         const FinalMobileURL = 'FinalMobileURL';
 
         /** Reserved for future use. */
         const FinalAppURL = 'FinalAppURL';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** The campaign status. */

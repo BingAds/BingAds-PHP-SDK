@@ -373,8 +373,11 @@ try
     // Update shared budgets in Budget objects.
     if (!empty($getBudgetIds))
     {
+        // The UpdateBudgets operation only accepts 100 Budget objects per call. 
+        // To simply the example we will update the first 100.
         $getUniqueBudgetIds = array_unique($getBudgetIds, SORT_REGULAR);
-        $getBudgets = GetBudgetsByIds($getUniqueBudgetIds)->Budgets;
+        $top100BudgetIds = array_slice($getUniqueBudgetIds, 0, 100);
+        $getBudgets = GetBudgetsByIds($top100BudgetIds)->Budgets;
 
         print("List of shared budgets BEFORE update:\n\n");
         foreach ($getBudgets->Budget as $budget)
@@ -384,10 +387,10 @@ try
         }
 
         print("List of campaigns that share each budget:\n\n");
-        $getCampaignIdCollection = GetCampaignIdsByBudgetIds($getUniqueBudgetIds)->CampaignIdCollection;
+        $getCampaignIdCollection = GetCampaignIdsByBudgetIds($top100BudgetIds)->CampaignIdCollection;
         for($index = 0; $index < count($getCampaignIdCollection); $index++)
         {
-            printf("BudgetId: %s\n", $getUniqueBudgetIds[$index]);
+            printf("BudgetId: %s\n", $top100BudgetIds[$index]);
             print("Campaign Ids:\n");
             if(!empty($getCampaignIdCollection->IdCollection[$index]))
             {
@@ -410,7 +413,7 @@ try
         }
         UpdateBudgets($updateBudgets);
 
-        $getBudgets = GetBudgetsByIds($getUniqueBudgetIds)->Budgets;
+        $getBudgets = GetBudgetsByIds($top100BudgetIds)->Budgets;
 
         print("List of shared budgets AFTER update:\n\n");
         foreach ($getBudgets->Budget as $budget)
@@ -441,18 +444,7 @@ try
             if (isset($campaign->BudgetId) && $campaign->BudgetId > 0)
             {
                 $updateCampaign->Name = $campaign->Name . $_SERVER['REQUEST_TIME'];
-            }        
-            // Monthly budgets are deprecated and there will be a forced migration to daily budgets in calendar year 2017. 
-            // Shared budgets do not support the monthly budget type, so this is only applicable to unshared budgets. 
-            // During the migration all campaign level unshared budgets will be rationalized as daily. 
-            // The formula that will be used to convert monthly to daily budgets is: Monthly budget amount / 30.4.
-            // Moving campaign monthly budget to daily budget is encouraged before monthly budgets are migrated. 
-            else if ($campaign->BudgetType == BudgetLimitType::MonthlyBudgetSpendUntilDepleted)
-            {
-                // Increase budget by 20 %
-                $updateCampaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
-                $updateCampaign->DailyBudget = ($campaign->MonthlyBudget / 30.4) * 1.2;
-            }
+            }     
             else
             {
                 // Increase budget by 20 %

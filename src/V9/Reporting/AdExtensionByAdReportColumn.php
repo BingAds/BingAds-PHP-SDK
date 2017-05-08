@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -45,13 +45,13 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The operating system of the device reported in the DeviceType column. */
         const DeviceOS = 'DeviceOS';
 
-        /** The ad extension item that the user clicked. */
+        /** Click type refers to each component of an ad that a customer can click. */
         const ClickType = 'ClickType';
 
         /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** The number of times that the ads in the account were clicked. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
         /** The number of billable and non-billable times that the ad extension was clicked. */
@@ -120,7 +120,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The revenue per assist. */
         const RevenuePerAssist = 'RevenuePerAssist';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** The campaign status. */

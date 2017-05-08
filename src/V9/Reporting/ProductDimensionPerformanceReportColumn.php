@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The campaign status. */
         const CampaignStatus = 'CampaignStatus';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** The ad group status. */
@@ -120,7 +120,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** The number of times that the ads in the account were clicked. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
         /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
@@ -155,6 +155,30 @@ namespace Microsoft\BingAds\V9\Reporting;
 
         /** The ad status. */
         const AdStatus = 'AdStatus';
+
+        /** The estimated percentage of impressions, out of the total available impressions in the market you were targeting. */
+        const ImpressionSharePercent = 'ImpressionSharePercent';
+
+        /** The estimated percentage of impressions your ad did not receive due to issues with your daily or monthly budget. */
+        const ImpressionLostToBudgetPercent = 'ImpressionLostToBudgetPercent';
+
+        /** The estimated percentage of impressions your ad did not receive due to issues with your ad ranking. */
+        const ImpressionLostToRankPercent = 'ImpressionLostToRankPercent';
+
+        /** Shows you how much other advertisers are bidding on average on similar products as your current target. */
+        const BenchmarkBid = 'BenchmarkBid';
+
+        /** Shows you how other product ads for similar products are performing on average based on how often people who see the ad end up clicking on it. */
+        const BenchmarkCtr = 'BenchmarkCtr';
+
+        /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
+        const TopVsOther = 'TopVsOther';
+
+        /** The ad distribution attribute of an ad group. */
+        const AdDistribution = 'AdDistribution';
+        const ClickTypeId = 'ClickTypeId';
+        const TotalClicksOnAdElements = 'TotalClicksOnAdElements';
+        const ClickType = 'ClickType';
     }
 
 }

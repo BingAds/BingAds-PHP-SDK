@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:55 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -14,22 +14,8 @@ namespace Microsoft\BingAds\V9\Reporting;
      */
     final class BudgetSummaryReportTime
     {
-        /**
-         * The end date of a date range.
-         * @var Date
-         */
         public $CustomDateRangeEnd;
-
-        /**
-         * The start date of a date range.
-         * @var Date
-         */
         public $CustomDateRangeStart;
-
-        /**
-         * A predefined date range.
-         * @var BudgetSummaryReportTimePeriod
-         */
         public $PredefinedTime;
     }
 

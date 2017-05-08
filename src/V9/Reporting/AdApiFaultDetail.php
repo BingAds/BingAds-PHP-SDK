@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:55 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V9\Reporting;
     final class AdApiFaultDetail extends ApplicationFault
     {
         /**
-         * An array of AdApiError data objects that contains the details that explain why the service operation failed.
+         * An array of AdApiError objects that contains the details that explain why the service operation failed.
          * @var AdApiError[]
          */
         public $Errors;

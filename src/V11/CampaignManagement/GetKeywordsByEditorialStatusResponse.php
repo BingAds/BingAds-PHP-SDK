@@ -1,0 +1,22 @@
+<?php
+// Generated on 5/7/2017 5:48:21 AM
+
+namespace Microsoft\BingAds\V11\CampaignManagement;
+
+{
+    /**
+     * Retrieves the keywords with the specified editorial review status.
+     * @link http://msdn.microsoft.com/en-us/library/dn277501(v=msads.110).aspx GetKeywordsByEditorialStatus Response Object
+     * 
+     * @uses Keyword
+     * @used-by BingAdsCampaignManagementService::GetKeywordsByEditorialStatus
+     */
+    final class GetKeywordsByEditorialStatusResponse
+    {
+        /**
+         * An array of Keyword objects that contains information about the keywords that were retrieved.
+         * @var Keyword[]
+         */
+        public $Keywords;
+    }
+}

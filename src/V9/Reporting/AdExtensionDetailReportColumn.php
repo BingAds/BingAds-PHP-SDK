@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -63,7 +63,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The operating system of the device reported in the DeviceType column. */
         const DeviceOS = 'DeviceOS';
 
-        /** The number of times that the ads in the account were clicked. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
         /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
@@ -117,7 +117,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The revenue per assist. */
         const RevenuePerAssist = 'RevenuePerAssist';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** The campaign status. */

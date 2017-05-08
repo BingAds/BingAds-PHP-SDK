@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:55 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V9\Reporting;
     final class ApiFaultDetail extends ApplicationFault
     {
         /**
-         * An array of BatchError objects that identifies the items in the batch of items in the request message that caused the operation to fail.
+         * An array of batch errors that identifies the items in the batch of items in the request message that caused the operation to fail.
          * @var BatchError[]
          */
         public $BatchErrors;
 
         /**
-         * An array of OperationError objects that contains the reasons that explain why the service operation failed when the error is not related to a specific item in the batch of items.
+         * An array of operation errors that contains the reasons that explain why the service operation failed when the error is not related to a specific item in the batch of items.
          * @var OperationError[]
          */
         public $OperationErrors;
