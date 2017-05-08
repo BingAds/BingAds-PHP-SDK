@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -54,7 +54,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** The number of times that the ads in the account were clicked. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
         /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
@@ -69,13 +69,13 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The average position of the ad on a webpage. */
         const AveragePosition = 'AveragePosition';
 
-        /** The percentage of time your ads were displayed to users who searched by keywords that matched your keywords and targeting selections. */
+        /** The estimated percentage of impressions, out of the total available impressions in the market you were targeting. */
         const ImpressionSharePercent = 'ImpressionSharePercent';
 
-        /** The percentage of time your ads would have been displayed to users, but were not because of a budget shortfall. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your daily or monthly budget. */
         const ImpressionLostToBudgetPercent = 'ImpressionLostToBudgetPercent';
 
-        /** The percentage of time your ads would have been displayed to users, but were not because your ads ranked too low in the auction. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your ad ranking. */
         const ImpressionLostToRankPercent = 'ImpressionLostToRankPercent';
 
         /** The percentage of time your ads would have been displayed to users, but were not due to one or more of the following reasons:Your ad was not relevant to the user's search query. */
@@ -122,7 +122,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The current network setting of an ad group. */
         const Network = 'Network';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** The campaign status. */

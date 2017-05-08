@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -84,13 +84,13 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The operating system of the device reported in the DeviceType column. */
         const DeviceOS = 'DeviceOS';
 
-        /** The percentage of time your ads were displayed to users who searched by keywords that matched your keywords and targeting selections. */
+        /** The estimated percentage of impressions, out of the total available impressions in the market you were targeting. */
         const ImpressionSharePercent = 'ImpressionSharePercent';
 
-        /** The percentage of time your ads would have been displayed to users, but were not because of a budget shortfall. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your daily or monthly budget. */
         const ImpressionLostToBudgetPercent = 'ImpressionLostToBudgetPercent';
 
-        /** The percentage of time your ads would have been displayed to users, but were not because your ads ranked too low in the auction. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your ad ranking. */
         const ImpressionLostToRankPercent = 'ImpressionLostToRankPercent';
 
         /** The percentage of time your ads would have been displayed to users, but were not because your bid was too low or your bid and quality score was below minimum thresholds, which prevented you from entering the auction. */
@@ -171,7 +171,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The sum total of the time customers spent browsing your site divided by the number of customers that visited your site. */
         const AverageDurationPerVisit = 'AverageDurationPerVisit';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** Clicks that are filtered by general methods, such as blacklists and activity-based detection, and that exhibit a low likelihood of commercial intent. */

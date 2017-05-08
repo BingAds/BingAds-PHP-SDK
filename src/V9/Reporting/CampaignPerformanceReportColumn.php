@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:09 AM
+// Generated on 5/7/2017 5:45:54 AM
 
 namespace Microsoft\BingAds\V9\Reporting;
 
@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** The current delivery status. */
+        /** The current entity status. */
         const Status = 'Status';
 
         /** The campaign name. */
@@ -93,13 +93,13 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The operating system of the device reported in the DeviceType column. */
         const DeviceOS = 'DeviceOS';
 
-        /** The percentage of time your ads were displayed to users who searched by keywords that matched your keywords and targeting selections. */
+        /** The estimated percentage of impressions, out of the total available impressions in the market you were targeting. */
         const ImpressionSharePercent = 'ImpressionSharePercent';
 
-        /** The percentage of time your ads would have been displayed to users, but were not because of a budget shortfall. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your daily or monthly budget. */
         const ImpressionLostToBudgetPercent = 'ImpressionLostToBudgetPercent';
 
-        /** The percentage of time your ads would have been displayed to users, but were not because your ads ranked too low in the auction. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your ad ranking. */
         const ImpressionLostToRankPercent = 'ImpressionLostToRankPercent';
 
         /** The numeric score shows you how competitive your ads are in the marketplace by measuring how relevant your keywords and landing pages are to customers' search terms. */
@@ -210,7 +210,7 @@ namespace Microsoft\BingAds\V9\Reporting;
         /** The current UrlCustomParameters element of the Campaign. */
         const CustomParameters = 'CustomParameters';
 
-        /** The account lifecycle status. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
         /** The name of the budget. */

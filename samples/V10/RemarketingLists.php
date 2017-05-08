@@ -96,7 +96,6 @@ try
     $remarketingLists = GetRemarketingLists(null)->RemarketingLists;
 
     // You must already have at least one remarketing list for the remainder of this example. 
-    // The Bing Ads API does not support remarketing list add, update, or delete operations.
 
     if (count($remarketingLists) < 1)
     {
