@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:20 AM
+// Generated on 6/7/2017 5:55:37 AM
 
 namespace Microsoft\BingAds\V11\CampaignManagement;
 
@@ -30,6 +30,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** The price of the PriceAdExtension will not be appended with price unit text. */
         const None = 'None';
+
+        /** The Per Night price unit text will be appended to the price of the PriceAdExtension, for example $9. */
+        const PerNight = 'PerNight';
     }
 
 }

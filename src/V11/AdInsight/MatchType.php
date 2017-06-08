@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:15 AM
+// Generated on 6/7/2017 5:55:31 AM
 
 namespace Microsoft\BingAds\V11\AdInsight;
 
@@ -10,8 +10,10 @@ namespace Microsoft\BingAds\V11\AdInsight;
      * 
      * @used-by EstimatedBidAndTraffic
      * @used-by EstimatedPositionAndTraffic
+     * @used-by Keyword
      * @used-by KeywordAndMatchType
      * @used-by KeywordKPI
+     * @used-by NegativeKeyword
      * @used-by GetEstimatedPositionByKeywordsRequest
      * @used-by GetHistoricalKeywordPerformanceRequest
      */

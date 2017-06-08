@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:08 AM
+// Generated on 6/7/2017 5:53:07 AM
 
 namespace Microsoft\BingAds\V9\CustomerBilling;
 
@@ -12,22 +12,22 @@ namespace Microsoft\BingAds\V9\CustomerBilling;
      */
     final class InsertionOrderStatus
     {
-        /** A super admin of the bill-to customer added the insertion order, and the insertion order is pending account manager approval. */
+        /** This value is deprecated. */
         const PendingSystemReview = 'PendingSystemReview';
 
-        /** An account manager added the insertion order, and the insertion order is pending approval from the super admin of the bill-to customer. */
+        /** You need to approve or decline an order that Bing Ads created for your account. */
         const PendingUserReview = 'PendingUserReview';
 
-        /** The insertion order is active, which means that the account and its campaigns will begin showing ads once the start date is reached. */
+        /** You have an approved insertion order, and your ads are eligible to run. */
         const Active = 'Active';
 
-        /** Either the super admin of the bill-to customer or the account manager declined the insertion order. */
+        /** You have declined an order created by Bing Ads, or the order you created has been declined. */
         const Declined = 'Declined';
 
-        /** The end date or spend limit of the insertion order is reached, which means that the insertion order is expired or inactive. */
+        /** Your order has reached its end date and is no longer valid. */
         const Expired = 'Expired';
 
-        /** Either the super admin of the bill-to customer or the account manager canceled the insertion order. */
+        /** You have canceled an order that you created or that was created by Bing Ads. */
         const Canceled = 'Canceled';
     }
 

@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:15 AM
+// Generated on 6/7/2017 5:55:31 AM
 
 namespace Microsoft\BingAds\V11\AdInsight;
 
