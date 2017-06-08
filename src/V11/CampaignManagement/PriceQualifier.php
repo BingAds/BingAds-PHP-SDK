@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:20 AM
+// Generated on 6/7/2017 5:55:37 AM
 
 namespace Microsoft\BingAds\V11\CampaignManagement;
 
@@ -23,6 +23,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** The price of the PriceAdExtension is not prefixed with price qualifier text. */
         const None = 'None';
+
+        /** The price of the PriceAdExtension is prefixed with price qualifier text Average, for example Average $9. */
+        const Average = 'Average';
     }
 
 }

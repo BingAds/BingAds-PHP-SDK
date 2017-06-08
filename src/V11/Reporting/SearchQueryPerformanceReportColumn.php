@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:05 AM
+// Generated on 6/7/2017 5:55:20 AM
 
 namespace Microsoft\BingAds\V11\Reporting;
 
@@ -80,7 +80,6 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The keyword text. */
         const Keyword = 'Keyword';
-        const ProductTarget = 'ProductTarget';
 
         /** The Bing Ads assigned identifier of an ad group criterion. */
         const AdGroupCriterionId = 'AdGroupCriterionId';

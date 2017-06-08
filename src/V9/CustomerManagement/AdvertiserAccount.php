@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:05 AM
+// Generated on 6/7/2017 5:53:03 AM
 
 namespace Microsoft\BingAds\V9\CustomerManagement;
 
@@ -11,6 +11,7 @@ namespace Microsoft\BingAds\V9\CustomerManagement;
      * @uses TaxType
      * @uses TaxIdStatus
      * @uses Address
+     * @uses KeyValuePairOfstringstring
      */
     final class AdvertiserAccount extends Account
     {
@@ -67,6 +68,12 @@ namespace Microsoft\BingAds\V9\CustomerManagement;
          * @var Address
          */
         public $BusinessAddress;
+
+        /**
+         * For a list of valid key and value strings for this element, see AdvertiserAccount TaxInformation in the section below.
+         * @var KeyValuePairOfstringstring[]
+         */
+        public $TaxInformation;
     }
 
 }

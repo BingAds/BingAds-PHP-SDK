@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:05 AM
+// Generated on 6/7/2017 5:55:20 AM
 
 namespace Microsoft\BingAds\V11\Reporting;
 
@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * Defines the aggregation values that you can use in a search query performance report.
      * @link http://msdn.microsoft.com/en-us/library/ee703960(v=msads.110).aspx SearchQueryReportAggregation Value Set
      * 
+     * @used-by DSASearchQueryPerformanceReportRequest
      * @used-by SearchQueryPerformanceReportRequest
      */
     final class SearchQueryReportAggregation

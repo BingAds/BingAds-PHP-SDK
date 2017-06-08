@@ -1,5 +1,5 @@
 <?php
-// Generated on 12/5/2016 5:47:05 AM
+// Generated on 6/7/2017 5:53:03 AM
 
 namespace Microsoft\BingAds\V9\CustomerManagement;
 
@@ -96,7 +96,7 @@ namespace Microsoft\BingAds\V9\CustomerManagement;
         public $CustomerLifeCycleStatus;
 
         /**
-         * A time-stamp value that the system uses internally to reconcile updates when you call the UpdateCustomer or the DeleteCustomer.
+         * A time-stamp value that the system uses internally to reconcile updates when you call the UpdateCustomer and DeleteCustomer operations.
          * @var base64Binary
          */
         public $TimeStamp;

@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:19 AM
+// Generated on 6/7/2017 5:55:35 AM
 
 namespace Microsoft\BingAds\V11\Bulk;
 
@@ -106,7 +106,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Campaign Product Scope records in the download data. */
         const CampaignProductScopes = 'CampaignProductScopes';
 
-        /** Include Campaign Review Ad Extension records in the download that represents the association relationship between a campaign and a review ad extension. */
+        /** Include Campaign Review Ad Extension records in the download that each represent the association relationship between a campaign and a review ad extension. */
         const CampaignReviewAdExtensions = 'CampaignReviewAdExtensions';
 
         /** Include Ad Group Review Ad Extension records in the download that each represent the association relationship between an ad group and a review ad extension. */
@@ -129,6 +129,9 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Ad Group Sitelink2 Ad Extension records in the download that each represent the association relationship between an ad group and a sitelink2 ad extension. */
         const AdGroupSitelink2AdExtensions = 'AdGroupSitelink2AdExtensions';
+        const ActionLinkAdExtensions = 'ActionLinkAdExtensions';
+        const CampaignActionLinkAdExtensions = 'CampaignActionLinkAdExtensions';
+        const AdGroupActionLinkAdExtensions = 'AdGroupActionLinkAdExtensions';
 
         /** Include Structured Snippet Ad Extension records in the download data. */
         const StructuredSnippetAdExtensions = 'StructuredSnippetAdExtensions';
@@ -172,8 +175,13 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Campaign Price Ad Extension records in the download that represents the association relationship between a campaign and a price ad extension. */
         const CampaignPriceAdExtensions = 'CampaignPriceAdExtensions';
 
-        /** Include Ad Group Price Ad Extension records in the download that represents the association relationship between an ad group and a price ad extension. */
+        /** Include Ad Group Price Ad Extension records in the download that each represent the association relationship between an ad group and a price ad extension. */
         const AdGroupPriceAdExtensions = 'AdGroupPriceAdExtensions';
+        const Labels = 'Labels';
+        const CampaignLabels = 'CampaignLabels';
+        const AdGroupLabels = 'AdGroupLabels';
+        const TextAdLabels = 'TextAdLabels';
+        const KeywordLabels = 'KeywordLabels';
 
         /** Include Ad Group Negative Remarketing List Association records in the download that each represent the association relationship between an ad group and a remarketing list exclusion. */
         const AdGroupNegativeRemarketingListAssociations = 'AdGroupNegativeRemarketingListAssociations';
@@ -204,6 +212,10 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Ad Group Negative Custom Audience Association, Ad Group Negative In Market Audience Association, and Ad Group Negative Remarketing List Association records in the download data. */
         const AdGroupNegativeAudienceAssociations = 'AdGroupNegativeAudienceAssociations';
+        const ProductAdLabels = 'ProductAdLabels';
+        const AppInstallAdLabels = 'AppInstallAdLabels';
+        const ExpandedTextAdLabels = 'ExpandedTextAdLabels';
+        const DynamicSearchAdLabels = 'DynamicSearchAdLabels';
 
         /** Include Account Location Ad Extension records in the download that represents the association relationship between an account and a location ad extension. */
         const AccountLocationAdExtensions = 'AccountLocationAdExtensions';
@@ -217,7 +229,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Account Price Ad Extension records in the download that represents the association relationship between an account and a price ad extension. */
         const AccountPriceAdExtensions = 'AccountPriceAdExtensions';
 
-        /** Include Account Review Ad Extension records in the download that represents the association relationship between an account and a review ad extension. */
+        /** Include Account Review Ad Extension records in the download that each represent the association relationship between an account and a review ad extension. */
         const AccountReviewAdExtensions = 'AccountReviewAdExtensions';
 
         /** Include Account Callout Ad Extension records in the download that represents the association relationship between an account and a callout ad extension. */
@@ -225,6 +237,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Account Sitelink2 Ad Extension records in the download that represents the association relationship between an account and a sitelink2 ad extension. */
         const AccountSitelink2AdExtensions = 'AccountSitelink2AdExtensions';
+        const AccountActionLinkAdExtensions = 'AccountActionLinkAdExtensions';
 
         /** Include Account Structured Snippet Ad Extension records in the download that represents the association relationship between an account and a structured snippet ad extension. */
         const AccountStructuredSnippetAdExtensions = 'AccountStructuredSnippetAdExtensions';

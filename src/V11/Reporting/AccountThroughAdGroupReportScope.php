@@ -1,5 +1,5 @@
 <?php
-// Generated on 5/7/2017 5:48:05 AM
+// Generated on 6/7/2017 5:55:20 AM
 
 namespace Microsoft\BingAds\V11\Reporting;
 
@@ -21,6 +21,9 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by CallDetailReportRequest
      * @used-by ConversionPerformanceReportRequest
      * @used-by DestinationUrlPerformanceReportRequest
+     * @used-by DSAAutoTargetPerformanceReportRequest
+     * @used-by DSACategoryPerformanceReportRequest
+     * @used-by DSASearchQueryPerformanceReportRequest
      * @used-by GeographicPerformanceReportRequest
      * @used-by GoalsAndFunnelsReportRequest
      * @used-by KeywordPerformanceReportRequest
