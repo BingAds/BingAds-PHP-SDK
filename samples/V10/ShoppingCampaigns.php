@@ -20,7 +20,6 @@ use Microsoft\BingAds\v10\CampaignManagement\BudgetLimitType;
 use Microsoft\BingAds\v10\CampaignManagement\GetBMCStoresByCustomerIdRequest;
 use Microsoft\BingAds\v10\CampaignManagement\BMCStore;
 use Microsoft\BingAds\v10\CampaignManagement\ShoppingSetting;
-use Microsoft\BingAds\v10\CampaignManagement\BingAds\CampaignManagement;
 use Microsoft\BingAds\v10\CampaignManagement\CampaignType;
 use Microsoft\BingAds\v10\CampaignManagement\DeleteCampaignsRequest;
 use Microsoft\BingAds\v10\CampaignManagement\AddAdGroupsRequest;
