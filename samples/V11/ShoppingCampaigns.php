@@ -20,7 +20,6 @@ use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
 use Microsoft\BingAds\v11\CampaignManagement\GetBMCStoresByCustomerIdRequest;
 use Microsoft\BingAds\v11\CampaignManagement\BMCStore;
 use Microsoft\BingAds\v11\CampaignManagement\ShoppingSetting;
-use Microsoft\BingAds\v11\CampaignManagement\BingAds\CampaignManagement;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
 use Microsoft\BingAds\v11\CampaignManagement\DeleteCampaignsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\AddAdGroupsRequest;
@@ -473,7 +472,9 @@ function AddCampaignCriterion($campaignId)
 	
 	$criterion = new BiddableCampaignCriterion();
     $criterion->CampaignId = $campaignId;
-	$criterion->BidAdjustment = null;  // Reserved for future use
+
+	// CriterionBid is not applicable for ProductScope
+	$criterion->CriterionBid = null;  
 	
 	$productConditions = array();
 	
