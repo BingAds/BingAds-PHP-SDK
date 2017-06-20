@@ -8,18 +8,14 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\AddConversionGoalsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetConversionGoalsByIdsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateConversionGoalsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\AddUetTagsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetUetTagsByIdsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateUetTagsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\ConversionGoal;
 use Microsoft\BingAds\v11\CampaignManagement\AppInstallGoal;
 use Microsoft\BingAds\v11\CampaignManagement\DurationGoal;
@@ -36,21 +32,14 @@ use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalCountType;
 use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalStatus;
 use Microsoft\BingAds\v11\CampaignManagement\EntityScope;
 
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
-
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -79,11 +68,11 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
@@ -97,7 +86,7 @@ try
     // First you should call the GetUetTagsByIds operation to check whether a tag has already been created. 
     // You can leave the TagIds element null or empty to request all UET tags available for the customer.
 
-    $uetTags = GetUetTagsByIds(null)->UetTags;
+    $uetTags = CampaignManagementHelper::GetUetTagsByIds(null)->UetTags;
     
     // If you do not already have a UET tag that can be used, or if you need another UET tag, 
     // call the AddUetTags service operation to create a new UET tag. If the call is successful, 
@@ -112,7 +101,7 @@ try
         $uetTag->Name = "New Uet Tag";
         $addUetTags[] = $uetTag;
                 
-        $uetTags = AddUetTags($addUetTags)->UetTags;
+        $uetTags = CampaignManagementHelper::AddUetTags($addUetTags)->UetTags;
     }
 
     if ($uetTags == null || count($uetTags) < 1)
@@ -126,7 +115,7 @@ try
     print("List of all UET Tags:\n\n");
     foreach ($uetTags->UetTag as $uetTag)
     {
-        OutputUetTag($uetTag);
+        CampaignManagementHelper::OutputUetTag($uetTag);
     }
 
     // After you retreive the tracking script from the AddUetTags or GetUetTagsByIds operation, 
@@ -144,7 +133,7 @@ try
     // Optionally you can update the name and description of a UetTag with the UpdateUetTags operation.
 
     print("UET Tag BEFORE update:\n\n");
-    OutputUetTag($uetTags->UetTag[0]);
+    CampaignManagementHelper::OutputUetTag($uetTags->UetTag[0]);
 
     $uetTags = array();
     $updateUetTag = new UetTag();
@@ -153,14 +142,14 @@ try
     $updateUetTag->Name = "Updated Uet Tag Name " . $_SERVER['REQUEST_TIME'];
     $uetTags[] = $updateUetTag;
     
-    UpdateUetTags($uetTags);
+    CampaignManagementHelper::UpdateUetTags($uetTags);
 
     $tagIds = array();
     $tagIds[] = $tagId;
-    $uetTags = GetUetTagsByIds($tagIds)->UetTags;
+    $uetTags = CampaignManagementHelper::GetUetTagsByIds($tagIds)->UetTags;
 
     print("UET Tag AFTER update:\n\n");
-    OutputUetTag($uetTags->UetTag[0]);
+    CampaignManagementHelper::OutputUetTag($uetTags->UetTag[0]);
     
     // Add conversion goals that depend on the UET Tag Id retreived above.
     // Please note that you cannot delete conversion goals. If you want to stop 
@@ -269,7 +258,7 @@ try
     $encodedAppInstallGoal = new SoapVar($addAppInstallGoal, SOAP_ENC_OBJECT, 'AppInstallGoal', $GLOBALS['CampaignProxy']->GetNamespace());
     $addConversionGoals[] = $encodedAppInstallGoal;
     
-    $addConversionGoalsResponse = AddConversionGoals($addConversionGoals);
+    $addConversionGoalsResponse = CampaignManagementHelper::AddConversionGoals($addConversionGoals);
 
     // Find the conversion goals that were added successfully. 
 
@@ -283,7 +272,7 @@ try
     }
 
     print("List of errors returned from AddConversionGoals (if any):\n\n");
-    OutputPartialErrors($addConversionGoalsResponse->PartialErrors);
+    CampaignManagementHelper::OutputPartialErrors($addConversionGoalsResponse->PartialErrors);
 
     $conversionGoalTypes = array(
         ConversionGoalType::AppInstall,
@@ -293,12 +282,12 @@ try
         ConversionGoalType::Url
     );
     
-    $getConversionGoals = GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
+    $getConversionGoals = CampaignManagementHelper::GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
 
     print("List of conversion goals BEFORE update:\n\n");
     foreach ($getConversionGoals->ConversionGoal as $conversionGoal)
     {
-        OutputConversionGoal($conversionGoal);
+        CampaignManagementHelper::OutputConversionGoal($conversionGoal);
     }
 
     $updateConversionGoals = array();
@@ -384,17 +373,17 @@ try
     $updateConversionGoals[] = $encodedUrlGoal;
     
 
-    $updateConversionGoalsResponse = UpdateConversionGoals($updateConversionGoals);
+    $updateConversionGoalsResponse = CampaignManagementHelper::UpdateConversionGoals($updateConversionGoals);
     
     print("List of errors returned from AddConversionGoals (if any):\n\n");
-    OutputPartialErrors($updateConversionGoalsResponse->PartialErrors);
+    CampaignManagementHelper::OutputPartialErrors($updateConversionGoalsResponse->PartialErrors);
 
-    $getConversionGoals = GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
+    $getConversionGoals = CampaignManagementHelper::GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
 
     print("List of conversion goals AFTER update:\n\n");
     foreach ($getConversionGoals->ConversionGoal as $conversionGoal)
     {
-        OutputConversionGoal($conversionGoal);
+        CampaignManagementHelper::OutputConversionGoal($conversionGoal);
     }
 
     print("Program execution completed\n"); 
@@ -527,217 +516,6 @@ catch (Exception $e)
         print $e->getCode()." ".$e->getMessage()."\n\n";
         print $e->getTraceAsString()."\n\n";
     }
-}
-
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}     
-
-function OutputUetTag($uetTag)
-{
-    if (!empty($uetTag))
-    {
-        printf("Description: %s\n", $uetTag->Description);
-        printf("Id: %s\n", $uetTag->Id);
-        printf("Name: %s\n", $uetTag->Name);
-        printf("TrackingNoScript: %s\n", $uetTag->TrackingNoScript);
-        printf("TrackingScript: %s\n", $uetTag->TrackingScript);
-        printf("TrackingStatus: %s\n\n", $uetTag->TrackingStatus);
-    }
-}
-
-function OutputConversionGoal($conversionGoal)
-{
-    if (!empty($conversionGoal))
-    {
-        printf("ConversionWindowInMinutes: %s\n", $conversionGoal->ConversionWindowInMinutes);
-        printf("CountType: %s\n", $conversionGoal->CountType);
-        printf("Id: %s\n", $conversionGoal->Id);
-        printf("Name: %s\n", $conversionGoal->Name);
-        OutputConversionGoalRevenue($conversionGoal->Revenue);
-        printf("Scope: %s\n", $conversionGoal->Scope);
-        printf("Status: %s\n", $conversionGoal->Status);
-        printf("TagId: %s\n", $conversionGoal->TagId);
-        printf("TrackingStatus: %s\n", $conversionGoal->TrackingStatus);
-        if(!empty($conversionGoal->Type)) {
-            printf("Type: %s\n", $conversionGoal->Type);
-        }
-
-        if ($conversionGoal->Type == "AppInstall")
-        {
-            printf("AppPlatform: %s\n", $conversionGoal->AppPlatform);
-            printf("AppStoreId: %s\n\n", $conversionGoal->AppStoreId);
-        }
-        else if ($conversionGoal->Type == "Duration")
-        {
-            printf("MinimumDurationInSeconds: %s\n\n", $conversionGoal->MinimumDurationInSeconds);
-        }
-        else if ($conversionGoal->Type == "Event")
-        {
-            printf("ActionExpression: %s\n", $conversionGoal->ActionExpression);
-            printf("ActionOperator: %s\n", $conversionGoal->ActionOperator);
-            printf("CategoryExpression: %s\n", $conversionGoal->CategoryExpression);
-            printf("CategoryOperator: %s\n", $conversionGoal->CategoryOperator);
-            printf("LabelExpression: %s\n", $conversionGoal->LabelExpression);
-            printf("LabelOperator: %s\n", $conversionGoal->LabelOperator);
-            printf("Value: %s\n", $conversionGoal->Value);
-            printf("ValueOperator: %s\n\n", $conversionGoal->ValueOperator);
-        }
-        else if ($conversionGoal->Type == "PagesViewedPerVisit")
-        {
-            printf("MinimumPagesViewed: %s\n\n", $conversionGoal->MinimumPagesViewed);
-        }
-        else if ($conversionGoal->Type == "Url")
-        {
-            printf("UrlExpression: %s\n", $conversionGoal->UrlExpression);
-            printf("UrlOperator: %s\n\n", $conversionGoal->UrlOperator);
-        }
-    }
-}
-
-function OutputConversionGoalRevenue($conversionGoalRevenue)
-{
-    if (!empty($conversionGoalRevenue))
-    {
-        printf("CurrencyCode: %s\n", $conversionGoalRevenue->CurrencyCode);
-        printf("Type: %s\n", $conversionGoalRevenue->Type);
-        printf("Value: %s\n", $conversionGoalRevenue->Value);
-    }
-}
-
-function OutputPartialErrors($partialErrors)
-{
-    if(!isset($partialErrors->BatchError))
-    {
-        print("No partial errors\n\n");
-        return;
-    }
-    
-    foreach ($partialErrors->BatchError as $error)
-    {
-        printf("Index: %d\n", $error->Index);
-        printf("Code: %d\n", $error->Code);
-        printf("ErrorCode: %s\n", $error->ErrorCode);
-        printf("Message: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("DisapprovedText: %s\n", $error->DisapprovedText);
-            printf("Location: %s\n", $error->Location);
-            printf("PublisherCountry: %s\n", $error->PublisherCountry);
-            printf("ReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-// Adds one or more conversion goals to the specified account.
-
-function AddConversionGoals($conversionGoals)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-
-    $request = new AddConversionGoalsRequest();
-    $request->ConversionGoals = $conversionGoals;
-    
-    return $GLOBALS['CampaignProxy']->GetService()->AddConversionGoals($request);
-}
-
-// Gets one or more conversion goals for the specified conversion goal identifiers.
-
-function GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-
-    $request = new UpdateConversionGoalsRequest();
-    $request->ConversionGoalIds = $conversionGoalIds;
-    $request->ConversionGoalTypes = $conversionGoalTypes;
-    
-    return $GLOBALS['CampaignProxy']->GetService()->GetConversionGoalsByIds($request);
-}
-
-// Updates one or more conversion goals.
-
-function UpdateConversionGoals($conversionGoals)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-
-    $request = new UpdateConversionGoalsRequest();
-    $request->ConversionGoals = $conversionGoals;
-    
-    return $GLOBALS['CampaignProxy']->GetService()->UpdateConversionGoals($request);
-}
-
-// Adds one or more UET tags.
-
-function AddUetTags($uetTags)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-
-    $request = new AddUetTagsRequest();
-    $request->UetTags = $uetTags;
-    
-    return $GLOBALS['CampaignProxy']->GetService()->AddUetTags($request);
-}
-
-// Gets one or more UET Tags.
-
-function GetUetTagsByIds($tagIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-
-    $request = new GetUetTagsByIdsRequest();
-    $request->TagIds = $tagIds;
-    
-    return $GLOBALS['CampaignProxy']->GetService()->GetUetTagsByIds($request);
-}
-
-// Updates one or more UET tags.
-
-function UpdateUetTags($uetTags)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-
-    $request = new UpdateUetTagsRequest();
-    $request->UetTags = $uetTags;
-    
-    return $GLOBALS['CampaignProxy']->GetService()->UpdateUetTags($request);
 }
 
 ?>

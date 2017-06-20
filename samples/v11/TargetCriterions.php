@@ -24,7 +24,6 @@ use Microsoft\BingAds\v10\CampaignManagement\DeviceOSTargetBid;
 
 // Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
 use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
 use Microsoft\BingAds\v11\CampaignManagement\AdGroup;
 use Microsoft\BingAds\v11\CampaignManagement\BiddableAdGroupCriterion;
 use Microsoft\BingAds\v11\CampaignManagement\DeviceCriterion;
@@ -34,16 +33,15 @@ use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionType;
 use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionStatus;
 use Microsoft\BingAds\v11\CampaignManagement\BiddableCampaignCriterion;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterion;
+use Microsoft\BingAds\v11\CampaignManagement\LocationCriterion;
+use Microsoft\BingAds\v11\CampaignManagement\LocationIntentCriterion;
+use Microsoft\BingAds\v11\CampaignManagement\IntentOption;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterionType;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterionStatus;
 use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
 use Microsoft\BingAds\v11\CampaignManagement\AdDistribution;
 use Microsoft\BingAds\v11\CampaignManagement\Bid;
 use Microsoft\BingAds\v11\CampaignManagement\Date;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -81,11 +79,11 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = CustomerManagementHelper::GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
@@ -123,6 +121,8 @@ try
 
         if(empty($campaignCriterions) || count($campaignCriterions) <= 0)
         {
+            $campaignCriterions = array();
+
             $locationBiddableCampaignCriterion = new BiddableCampaignCriterion();
             $locationBiddableCampaignCriterion->CampaignId = $campaignId;
             $locationCriterion = new LocationCriterion();
@@ -145,9 +145,9 @@ try
             $locationIntentBiddableCampaignCriterion->Criterion = $encodedLocationIntentCriterion;
 
             $encodedCriterion = new SoapVar($locationIntentBiddableCampaignCriterion, SOAP_ENC_OBJECT, 'BiddableCampaignCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
-            $campaignCriterions[] = $locationIntentBiddableCampaignCriterion;
+            $campaignCriterions[] = $encodedCriterion;
 
-            $addCampaignCriterionsResponse = AddCampaignCriterions(
+            $addCampaignCriterionsResponse = CampaignManagementHelper::AddCampaignCriterions(
                 $campaignCriterions,
                 CampaignCriterionType::Targets
             );
@@ -179,7 +179,9 @@ try
         // migrated from a shared target library.
 
         print("Campaign Criterions: \n\n");
-        CampaignManagementHelper::OutputCampaignCriterions($campaignCriterions);
+        if(isset($campaignCriterions->CampaignCriterion)){
+            CampaignManagementHelper::OutputCampaignCriterions($campaignCriterions->CampaignCriterion);
+        }        
 
         $getAdGroups = CampaignManagementHelper::GetAdGroupsByCampaignId($campaignId)->AdGroups;
 
@@ -243,7 +245,10 @@ try
             // migrated from a shared target library.
 
             print("Ad Group Criterions: \n\n");
-            CampaignManagementHelper::OutputAdGroupCriterions($adGroupCriterions);
+            if(isset($adGroupCriterions->AdGroupCriterion))
+            {
+                CampaignManagementHelper::OutputAdGroupCriterions($adGroupCriterions->AdGroupCriterion);
+            }
         }
     }
 
