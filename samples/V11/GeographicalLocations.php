@@ -8,23 +8,13 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 use DateTime;
-
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\GetGeoLocationsFileUrlRequest;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -32,6 +22,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -78,11 +70,11 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
@@ -92,9 +84,9 @@ try
 
     // Going forward you should track the date and time of the previous download,  
     // and compare it with the last modified time provided by the service.
-    $previousSyncTimeUtc = new DateTime('2016-11-29T00:00:00-00:00');
+    $previousSyncTimeUtc = new DateTime('2017-06-18T00:00:00-00:00');
     
-    $getGeoLocationsFileUrlResponse = GetGeoLocationsFileUrl(
+    $getGeoLocationsFileUrlResponse = CampaignManagementHelper::GetGeoLocationsFileUrl(
         $Version, 
         $LanguageLocale);
 
@@ -168,58 +160,6 @@ catch (Exception $e)
         print $e->getCode()." ".$e->getMessage()."\n\n";
         print $e->getTraceAsString()."\n\n";
     }
-}
-
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}
-
-// Gets the file URL that you can use to download geographical location targeting codes.
-
-function GetGeoLocationsFileUrl(
-    $version, 
-    $languageLocale)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetGeoLocationsFileUrlRequest();
-    $request->Version = $version;
-    $request->LanguageLocale = $languageLocale;
-    
-    return $GLOBALS['Proxy']->GetService()->GetGeoLocationsFileUrl($request);
 }
 
 function DownloadFile($fileUrl){

@@ -8,26 +8,13 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/AdInsightHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
-
-// Specify the Microsoft\BingAds\v11\AdInsight classes that will be used.
-use Microsoft\BingAds\v11\AdInsight\GetBudgetOpportunitiesRequest;
-
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\GetCampaignsByAccountIdRequest;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -35,6 +22,9 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\AdInsightHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -63,30 +53,27 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
     $GLOBALS['AdInsightProxy'] = new ServiceClient(ServiceClientType::AdInsightVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
     $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
-    $campaigns = GetCampaignsByAccountId(
+    $campaigns = CampaignManagementHelper::GetCampaignsByAccountId(
     	$GLOBALS['AuthorizationData']->AccountId,
-        CampaignType::SearchAndContent . ' ' . CampaignType::Shopping
-    );
+        CampaignManagementHelper::AllCampaignTypes);
 
-        foreach ($campaigns->Campaign as $campaign)
-        {
-    	    $opportunities = GetBudgetOpportunities(
-    		$campaign->Id
-            );
+	foreach ($campaigns->Campaign as $campaign)
+	{
+		$opportunities = AdInsightHelper::GetBudgetOpportunities($campaign->Id)->Opportunities;
 
-    	    OutputBudgetOpportunities($opportunities, $campaign->Id);
-        }
+		AdInsightHelper::OutputBudgetOpportunities($opportunities, $campaign->Id);
+	}
 }
 catch (SoapFault $e)
 {
@@ -198,112 +185,5 @@ catch (Exception $e)
         print $e->getTraceAsString()."\n\n";
     }
 }
-
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}  
-
-// Gets the budget opportunities for the specified campaign.
-
-function GetBudgetOpportunities($campaignId)
-{
-	$GLOBALS['proxy'] = $GLOBALS['AdInsightProxy'];
-
-	$request = new GetBudgetOpportunitiesRequest();
-	$request->CampaignId = $campaignId;
-
-	return $GLOBALS['AdInsightProxy']->GetService()->GetBudgetOpportunities($request)->Opportunities;
-}
-
-// Gets campaigns of the specified type for the account.
-
-function GetCampaignsByAccountId($accountId, $campaignType)
-{
-	$GLOBALS['proxy'] = $GLOBALS['CampaignProxy'];
-	
-	$request = new GetCampaignsByAccountIdRequest();
-	$request->AccountId = $accountId;
-	$request->CampaignType = $campaignType;
-
-	return $GLOBALS['CampaignProxy']->GetService()->GetCampaignsByAccountId($request)->Campaigns;
-}
-
-// Outputs the list of BudgetOpportunity objects.
-
-function OutputBudgetOpportunities($opportunities, $campaignId)
-{
-    if (!empty($opportunities->Opportunity))
-    {
-	foreach ($opportunities->BudgetOpportunity as $opportunity) 
-        {
-            print "BudgetPoints: \n";
-            foreach ($opportunity->BudgetPoints as $budgetPoint) 
-            {
-                OutputBudgetPoint($budgetPoint);
-            }
-            printf("BudgetType: %s\n", $opportunity->BudgetType);
-            printf("CampaignId: %s\n", $opportunity->CampaignId);
-            printf("CurrentBudget: %s\n", $opportunity->CurrentBudget);
-            printf("IncreaseInClicks: %s\n", $opportunity->IncreaseInClicks);
-            printf("IncreaseInImpressions: %s\n", $opportunity->IncreaseInImpressions);
-            printf("OpportunityKey: %s\n", $opportunity->OpportunityKey);
-            printf("PercentageIncreaseInClicks: %s\n", $opportunity->PercentageIncreaseInClicks);
-            printf("PercentageIncreaseInImpressions: %s\n", $opportunity->PercentageIncreaseInImpressions);
-            printf("RecommendedBudget: %s\n", $opportunity->RecommendedBudget);
-        }
-    }
-    else
-    {
-        printf("There are no budget opportunities for CampaignId: %s\n", $campaignId);
-    }
-}
-
-// Outputs the BudgetPoint object.
-
-function OutputBudgetPoint($budgetPoint)
-{
-    if ($budgetPoint != null)
-    {
-	printf("BudgetAmount: %s\n", $budgetPoint->BudgetAmount);
-        printf("BudgetPointType: %s\n", $budgetPoint->BudgetPointType);
-        printf("EstimatedWeeklyClicks: %s\n", $budgetPoint->EstimatedWeeklyClicks);
-        printf("EstimatedWeeklyCost: %s\n", $budgetPoint->EstimatedWeeklyCost);
-        printf("EstimatedWeeklyImpressions: %s\n", $budgetPoint->EstimatedWeeklyImpressions);
-    }
-}
-
 
 ?>

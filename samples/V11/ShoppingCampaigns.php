@@ -8,31 +8,25 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\AddCampaignsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\Campaign;
 use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use Microsoft\BingAds\v11\CampaignManagement\GetBMCStoresByCustomerIdRequest;
 use Microsoft\BingAds\v11\CampaignManagement\BMCStore;
 use Microsoft\BingAds\v11\CampaignManagement\ShoppingSetting;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
-use Microsoft\BingAds\v11\CampaignManagement\DeleteCampaignsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\AddAdGroupsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\AdGroup;
 use Microsoft\BingAds\v11\CampaignManagement\Date;
 use Microsoft\BingAds\v11\CampaignManagement\AdDistribution;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateAdGroupsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetAdGroupsByIdsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\ProductAd;
-use Microsoft\BingAds\v11\CampaignManagement\AddAdsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterionType;
 use Microsoft\BingAds\v11\CampaignManagement\ProductScope;
-use Microsoft\BingAds\v11\CampaignManagement\AddCampaignCriterionsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\BiddableCampaignCriterion;
 use Microsoft\BingAds\v11\CampaignManagement\ProductCondition;
 use Microsoft\BingAds\v11\CampaignManagement\ProductPartitionType;
@@ -40,21 +34,11 @@ use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionType;
 use Microsoft\BingAds\v11\CampaignManagement\BiddableAdGroupCriterion;
 use Microsoft\BingAds\v11\CampaignManagement\ItemAction;
 use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionAction;
-use Microsoft\BingAds\v11\CampaignManagement\ApplyProductPartitionActionsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetAdGroupCriterionsByIdsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\NegativeAdGroupCriterion;
 use Microsoft\BingAds\v11\CampaignManagement\ProductPartition;
 use Microsoft\BingAds\v11\CampaignManagement\FixedBid;
 use Microsoft\BingAds\v11\CampaignManagement\Bid;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
+use Microsoft\BingAds\v11\CampaignManagement\BatchErrorCollection;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -62,6 +46,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -95,17 +81,17 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
     $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
-    $stores= GetStores($GLOBALS['CampaignProxy']);
+    $stores= CampaignManagementHelper::GetBMCStoresByCustomerId($GLOBALS['CampaignProxy'])->BMCStores->BMCStore;
 	
     if (!isset($stores))
     {
@@ -130,7 +116,6 @@ try
     $campaign->Description = "Bing Shopping Campaign Example.";
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
     $campaign->DailyBudget = 50.00;
-    $campaign->DaylightSaving = true;
     $campaign->Settings = $settings;
     $campaign->CampaignType = CampaignType::Shopping;
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
@@ -170,55 +155,49 @@ try
     $ad->PromotionalText = "Free shipping on $99 purchases.";
     $encodedAd = new SoapVar($ad, SOAP_ENC_OBJECT, 'ProductAd', $GLOBALS['CampaignProxy']->GetNamespace());
     $ads[] = $encodedAd;
-
-    // Add the campaign, ad group, keywords, and ads
     
-    $addCampaignsResponse = AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $campaignIds = $addCampaignsResponse->CampaignIds->long;
-    $campaignErrors = $addCampaignsResponse->PartialErrors;
+	print "AddCampaigns\n";
+    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
+    CampaignManagementHelper::OutputIds($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        $campaignErrors = $addCampaignsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
     }
 
-    $addAdGroupsResponse = AddAdGroups($campaignIds[0], $adGroups);
-    $adGroupIds = $addAdGroupsResponse->AdGroupIds->long;
-    $adGroupErrors = $addAdGroupsResponse->PartialErrors;
+    print "AddAdGroups\n";
+    $addAdGroupsResponse = CampaignManagementHelper::AddAdGroups($nillableCampaignIds[0], $adGroups);
+    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds->long;
+    CampaignManagementHelper::OutputIds($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        $adGroupErrors = $addAdGroupsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addAdGroupsResponse->PartialErrors->BatchError);
     }
 
-    $addAdsResponse = AddAds($adGroupIds[0], $ads);
-    $adIds = $addAdsResponse->AdIds->long;
-    $adErrors = $addAdsResponse->PartialErrors;
+	print "AddAds\n";
+    $addAdsResponse = CampaignManagementHelper::AddAds($nillableAdGroupIds[0], $ads);
+    $nillableAdIds = $addAdsResponse->AdIds->long;
+    CampaignManagementHelper::OutputIds($nillableAdIds);
     if(isset($addAdsResponse->PartialErrors->BatchError)){
-        $adErrors = $addAdsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addAdsResponse->PartialErrors->BatchError);
     }
-
-    // Output the new assigned entity identifiers, as well as any partial errors
-  
-    OutputCampaignsWithPartialErrors($campaigns, $campaignIds, $campaignErrors);
-    OutputCampaignsWithPartialErrors($adGroups, $adGroupIds, $adGroupErrors);
-    OutputAdIdentifiers($adIds, $adErrors);
 
     // Add criterion to the campaign. The criterion is used to limit the campaign to a subset of
     // your product catalog.
 	
-    $addCriterionResponse = AddCampaignCriterion($campaignIds[0]);
-    OutputCampaignCriterionIdentifiers($addCriterionResponse->CampaignCriterionIds->long, $addCriterionResponse->NestedPartialErrors);
-
-    AddAndUpdateAdGroupCriterion($GLOBALS['AuthorizationData']->AccountId, $PartitionActions, $adGroupIds[0]);
-    $applyPartitionActionsResponse = AddBranchAndLeafCriterion($GLOBALS['AuthorizationData']->AccountId, $PartitionActions, $adGroupIds[0]);
+    AddCampaignCriterion($nillableCampaignIds[0]);
+    
+    AddAndUpdateAdGroupCriterion($GLOBALS['AuthorizationData']->AccountId, $PartitionActions, $nillableAdGroupIds[0]);
+    $applyPartitionActionsResponse = AddBranchAndLeafCriterion($GLOBALS['AuthorizationData']->AccountId, $PartitionActions, $nillableAdGroupIds[0]);
 	
     $rootId = $applyPartitionActionsResponse->AdGroupCriterionIds->long[1];
     $electronicsCriterionId = $applyPartitionActionsResponse->AdGroupCriterionIds->long[8];
-    UpdateBranchAndLeafCriterion($PartitionActions, $GLOBALS['AuthorizationData']->AccountId, $adGroupIds[0], $rootId, $electronicsCriterionId);
+    UpdateBranchAndLeafCriterion($PartitionActions, $GLOBALS['AuthorizationData']->AccountId, $nillableAdGroupIds[0], $rootId, $electronicsCriterionId);
 	 
     // Delete the campaign, ad group, product partitions, and ad that were previously added. 
     // You should remove this line if you want to view the added entities in the 
     // Bing Ads web application or another tool.
 
-    DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($campaignIds[0]));
-    printf("Deleted CampaignId %d\n\n", $campaignIds[0]);
+    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
+    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds[0]);
 	
 }
 catch (SoapFault $e)
@@ -358,51 +337,6 @@ catch (Exception $e)
     }
 }
 
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}
-
-function GetStores($proxy)
-{
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-  
-    $request = new GetBMCStoresByCustomerIdRequest();
-	$response = $GLOBALS['CampaignProxy']->GetService()->GetBMCStoresByCustomerId($request);
-	return $response->BMCStores->BMCStore;
-}
 
 
 // Adds one or more campaigns to the specified account.
@@ -420,13 +354,13 @@ function AddCampaigns($accountId, $campaigns)
 
 // Deletes one or more campaigns from the specified account.
 
-function DeleteCampaigns($accountId, $campaignIds)
+function DeleteCampaigns($accountId, $nillableCampaignIds)
 {
     $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
   
     $request = new DeleteCampaignsRequest();
     $request->AccountId = $accountId;
-    $request->CampaignIds = $campaignIds;
+    $request->CampaignIds = $nillableCampaignIds;
     
     $GLOBALS['CampaignProxy']->GetService()->DeleteCampaigns($request);
 }
@@ -465,11 +399,8 @@ function AddAds($adGroupId, $ads)
  
 function AddCampaignCriterion($campaignId)
 {
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-  
-    $request = new AddCampaignCriterionsRequest();
-	$request->CriterionType = CampaignCriterionType::ProductScope;
-	
+	$campaignCriterions = array();
+  	
 	$criterion = new BiddableCampaignCriterion();
     $criterion->CampaignId = $campaignId;
 
@@ -495,11 +426,16 @@ function AddCampaignCriterion($campaignId)
 	$criterion->Criterion = $encodedScope;
 
 	$encodedCriterion = new SoapVar($criterion, SOAP_ENC_OBJECT, 'BiddableCampaignCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
-	
-	$request->CampaignCriterions = array();
-	$request->CampaignCriterions[] = $encodedCriterion;
+	$campaignCriterions[] = $encodedCriterion;
 
-	return $GLOBALS['CampaignProxy']->GetService()->AddCampaignCriterions($request);
+	$addCampaignCriterionsResponse = CampaignManagementHelper::AddCampaignCriterions(
+		$campaignCriterions,
+		CampaignCriterionType::ProductScope);
+
+	CampaignManagementHelper::OutputIds($addCampaignCriterionsResponse->CampaignCriterionIds->long);
+    if(isset($addCampaignCriterionsResponse->NestedPartialErrors) && isset($addCampaignCriterionsResponse->NestedPartialErrors->BatchErrorCollection)){
+        CampaignManagementHelper::OutputNestedPartialErrors($addCampaignCriterionsResponse->NestedPartialErrors->BatchErrorCollection);
+    }
 }
 
 
@@ -523,14 +459,16 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 			$actions);
 
 	printf("Applying a biddable criterion as the root...\n\n");
-	$applyPartitionActionsResponse = ApplyPartitionActions($actions);
-	OutputCriterionIds($applyPartitionActionsResponse->AdGroupCriterionIds->long, $applyPartitionActionsResponse->PartialErrors);
+	$applyPartitionActionsResponse = CampaignManagementHelper::ApplyProductPartitionActions($actions);
+	CampaignManagementHelper::OutputIds($applyPartitionActionsResponse->AdGroupCriterionIds->long);
+    if(isset($applyPartitionActionsResponse->PartialErrors->BatchError)){
+        CampaignManagementHelper::OutputPartialErrors($applyPartitionActionsResponse->PartialErrors->BatchError);
+    }
 
-	$adGroupCriterions = GetAdGroupCriterions(
-			$accountId,
+	$adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
 			$adGroupId,
             null,
-			AdGroupCriterionType::ProductPartition);
+			AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
 	 
 	printf("Outputing the ad group's product partition; contains only the tree root node\n\n");
 	OutputProductPartitions($adGroupCriterions);
@@ -550,13 +488,12 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 	 
 	printf("Updating the bid for the tree root node...\n\n");
 	
-	$applyPartitionActionsResponse = ApplyPartitionActions($actions);
+	$applyPartitionActionsResponse = CampaignManagementHelper::ApplyProductPartitionActions($actions);
 	 
-	$adGroupCriterions = GetAdGroupCriterions(
-			$accountId,
+	$adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
 			$adGroupId,
             null,
-			AdGroupCriterionType::ProductPartition);
+			AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
 	 
 	printf("Updated the bid for the tree root node\n\n");
 	OutputProductPartitions($adGroupCriterions);
@@ -569,11 +506,10 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 {
 	$actions = array();  // clear
 	 
-	$adGroupCriterions = GetAdGroupCriterions(
-			$accountId,
+	$adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
 			$adGroupId,
             null,
-			AdGroupCriterionType::ProductPartition);
+			AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
 	 
 	$existingRoot = GetRootNode($adGroupCriterions);
 
@@ -706,13 +642,12 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 			$actions);
 	
 	printf("Applying product partitions to the ad group...\n\n");
-	$applyPartitionActionsResponse = ApplyPartitionActions($actions);
+	$applyPartitionActionsResponse = CampaignManagementHelper::ApplyProductPartitionActions($actions);
 
-	$adGroupCriterions = GetAdGroupCriterions(
-			$accountId,
+	$adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
 			$adGroupId,
             null,
-			AdGroupCriterionType::ProductPartition);
+			AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
 
 	printf("The product partition group tree now has 9 nodes\n\n");
 	OutputProductPartitions($adGroupCriterions);
@@ -790,13 +725,12 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 			$actions);
 
 	printf("\nUpdating the electronics partition...\n");
-	$applyPartitionActionsResponse = applyPartitionActions($actions);
+	$applyPartitionActionsResponse = CampaignManagementHelper::ApplyProductPartitionActions($actions);
 	 
-	$adGroupCriterions = GetAdGroupCriterions(
-			$accountId,
+	$adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
 			$adGroupId,
             null,
-			AdGroupCriterionType::ProductPartition);
+			AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
 	 
 	printf("\nThe product partition group tree now has 12 nodes\n");
 	OutputProductPartitions($adGroupCriterions);
@@ -821,7 +755,6 @@ function GetRootNode($adGroupCriterions)
 	return $rootNode;
 }
 
-
 // Gets a fixed bid object with the specified bid amount.
  
 function GetFixedBid($bidAmount)
@@ -834,40 +767,6 @@ function GetFixedBid($bidAmount)
 	return $encodedFixedBid;
 }
 
-
-// Get the ad group's criterion.
- 
-function GetAdGroupCriterions(
-		$accountId,
-		$adGroupId,
-        $adGroupCriterionIds,
-		$criterionType)
-{
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-  
-    $request = new GetAdGroupCriterionsByIdsRequest();
-	$request->AccountId = $accountId; 
-	$request->AdGroupId = $adGroupId;
-        $request->AdGroupCriterionIds = $adGroupCriterionIds;
-	$request->CriterionType = $criterionType;
-
-	return $GLOBALS['CampaignProxy']->GetService()->GetAdGroupCriterionsByIds($request)->AdGroupCriterions;
-}
-
-
-// Adds, updates, or deletes criterion for the ad group.
-// All actions must be for the same ad group.
- 
-function ApplyPartitionActions($actions) // AdGroupCriterionAction
-{
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy']; 
-  
-    $request = new ApplyProductPartitionActionsRequest();
-	$request->CriterionActions = $actions;
-	return $GLOBALS['CampaignProxy']->GetService()->ApplyProductPartitionActions($request);  // ApplyProductPartitionActionsResponse 
-}
-
-
 // Adds a criterion action to the list of actions.
  
 function AddPartitionAction($criterion, $itemAction, &$actions)
@@ -878,7 +777,6 @@ function AddPartitionAction($criterion, $itemAction, &$actions)
 
 	$actions[] = $partitionAction;
 }
-
 
 // Adds either a negative or biddable partition criterion.
  
@@ -1030,190 +928,6 @@ function OutputProductPartitionTree(
 		OutputProductPartitionTree($childNode, $childBranches, $treeLevel + 1);
 	}
 }
-
-
-// Outputs the campaign identifiers, as well as any partial errors.
-
-function OutputCampaignsWithPartialErrors($campaigns, $campaignIds, $partialErrors)
-{
-    if(empty($campaignIds) || empty($campaignIds) || count($campaigns) != count($campaignIds))
-    {
-        return;
-    }
-
-    // Output the identifier of each successfully added campaign.
-
-    for ($index = 0; $index < count($campaigns); $index++ )
-    {
-        // The array of campaign identifiers equals the size of the attempted campaign. If the element 
-        // is not empty, the campaign at that index was added successfully and has a campaign identifer. 
-
-        if (!empty($campaignIds[$index]))
-        {
-            printf("Campaign[%d] (Name:%s) successfully added and assigned CampaignId %s\n", 
-                $index, 
-                $campaigns[$index]->Name, 
-                $campaignIds[$index] );
-        }
-    }
-
-    // Output the error details for any campaign not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted campaign. 
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddCampaigns.
-
-        printf("\nCampaign[%d] (Name:%s) not added due to the following error:\n", $error->Index, $campaigns[$error->Index]->Name);
-
-        printf("\tIndex: %d\n", $error->Index);
-        printf("\tCode: %d\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-// Outputs the ad group identifiers, as well as any partial errors.
-
-function OutputAdGroupsWithPartialErrors($adGroups, $adGroupIds, $partialErrors)
-{
-    if(empty($adGroupIds) || empty($adGroupIds) || count($adGroups) != count($adGroupIds))
-    {
-        return;
-    }
-
-    // Output the identifier of each successfully added ad group.
-
-    for ($index = 0; $index < count($adGroups); $index++ )
-    {
-        // The array of ad group identifiers equals the size of the attempted ad group. If the element 
-        // is not empty, the ad group at that index was added successfully and has an ad group identifer. 
-
-        if (!empty($adGroupIds[$index]))
-        {
-            printf("AdGroup[%d] (Name:%s) successfully added and assigned AdGroupId %s\n", 
-                $index, 
-                $adGroups[$index]->Name, 
-                $adGroupIds[$index] );
-        }
-    }
-
-    // Output the error details for any ad group not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted ad group.
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddAdGroups.
-
-        printf("\nAdGroup[%d] (Name:%s) not added due to the following error:\n", $error->Index, $adGroups[$error->Index]->Name);
-
-        printf("\tIndex: %d\n", $error->Index);
-        printf("\tCode: %d\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-// Outputs the ad identifiers of each ad that we added.
-
-function OutputAdIdentifiers($adIds, $partialErrors)
-{
-	if (empty($adIds)) {
-		return;
-	}
-
-	$count = count($adIds);
-
-	for ($i = 0; $i < $count; $i++)
-	{
-		if (!empty($adIds[$i]))
-		{
-			// A shopping campaign should contain only product ads.
-			 
-			printf("Successfully added a product ad with ID, %s\n\n",
-				$adIds[$i]);
-        }
-		else
-		{
-			printf("Failed to add product ad at index, %d\n\n", $i);
-			 
-			$error = $partialErrors->BatchError[$i];
-	      
-			printf("\tIndex: %d\n", $error->Index);
-			printf("\tCode: %d\n", $error->Code);
-			printf("\tErrorCode: %s\n", $error->ErrorCode);
-			printf("\tMessage: %s\n", $error->Message);
-		 
-			// If the error is an editorial error, get more details.
-			 
-			if ($error->Type === "EditorialError" && $error->ErrorCode === "CampaignServiceEditorialValidationError")
-			{
-				printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-				printf("\tLocation: %s\n", $error->Location);
-				printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-				printf("\tReasonCode: %s\n", $error->ReasonCode);
-			}
-		}
-	}
-}
-
-// Output the IDs of the criterion that we added to the ad group.
- 
-function OutputCriterionIds($criterionIds, $partialErrors)
-{
-	if (empty($criterionIds)) {
-		return;
-	}
-
-	$count = count($criterionIds);
-
-	for ($i = 0; $i < $count; $i++)
-	{
-		if (!empty($criterionIds[$i]))
-		{
-			printf("Successfully added criterion with ID, %s\n\n",
-	        	$criterionIds[$i]);
-		}
-		else
-		{
-			printf("Failed to add criterion at index, %d\n\n", $i);
-			 
-			$error = $partialErrors->BatchError[$i];
-			 
-			printf("\tIndex: %d\n", $error->Index);
-			printf("\tCode: %d\n", $error->Code);
-			printf("\tErrorCode: %s\n", $error->ErrorCode);
-			printf("\tMessage: %s\n", $error->Message);
-		}
-	}
-}
-
 
 
 // Outputs the campaign criterion IDs of each criterion that we added.

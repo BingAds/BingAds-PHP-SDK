@@ -8,30 +8,14 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
 //Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\AddBudgetsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetBudgetsByIdsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetCampaignIdsByBudgetIdsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateBudgetsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\DeleteBudgetsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\AddCampaignsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\DeleteCampaignsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetCampaignsByAccountIdRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetCampaignsByIdsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateCampaignsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\AddAdGroupsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\AddKeywordsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\DeleteKeywordsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetKeywordsByAdGroupIdRequest;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateKeywordsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\AddAdsRequest;
-use Microsoft\BingAds\v11\CampaignManagement\GetAdsByAdGroupIdRequest;
-use Microsoft\BingAds\v11\CampaignManagement\UpdateAdsRequest;
 use Microsoft\BingAds\v11\CampaignManagement\Budget;
 use Microsoft\BingAds\v11\CampaignManagement\Campaign;
 use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
@@ -55,21 +39,14 @@ use Microsoft\BingAds\v11\CampaignManagement\EnhancedCpcBiddingScheme;
 use Microsoft\BingAds\v11\CampaignManagement\InheritFromParentBiddingScheme;
 use Microsoft\BingAds\v11\CampaignManagement\ManualCpcBiddingScheme;
 
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
-
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -98,11 +75,11 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
@@ -118,7 +95,7 @@ try
     $budget->Name = "My Shared Budget " . $_SERVER['REQUEST_TIME'];
     
     $budgets[] = $budget;
-    $budgetIds = AddBudgets($budgets)->BudgetIds;
+    $budgetIds = CampaignManagementHelper::AddBudgets($budgets)->BudgetIds;
                 
     // Specify one or more campaigns.
     
@@ -133,7 +110,6 @@ try
     $campaign->DailyBudget = count($budgetIds) > 0 ? 0 : 50;
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
-    $campaign->DaylightSaving = true;
     
     // You can set your campaign bid strategy to Enhanced CPC (EnhancedCpcBiddingScheme) 
     // and then, at any time, set an individual ad group or keyword bid strategy to 
@@ -305,37 +281,38 @@ try
 
     // Add the campaign, ad group, keywords, and ads
     
-    $addCampaignsResponse = AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $campaignIds = $addCampaignsResponse->CampaignIds->long;
-    $campaignErrors = $addCampaignsResponse->PartialErrors;
+    print "AddCampaigns\n";
+    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
+    CampaignManagementHelper::OutputIds($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        $campaignErrors = $addCampaignsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
     }
-    OutputCampaignsWithPartialErrors($campaigns, $campaignIds, $campaignErrors);
-    
-    $addAdGroupsResponse = AddAdGroups($campaignIds[0], $adGroups);
-    $adGroupIds = $addAdGroupsResponse->AdGroupIds->long;
-    $adGroupErrors = $addAdGroupsResponse->PartialErrors;
+
+    print "AddAdGroups\n";
+    $addAdGroupsResponse = CampaignManagementHelper::AddAdGroups($nillableCampaignIds[0], $adGroups);
+    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds->long;
+    CampaignManagementHelper::OutputIds($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        $adGroupErrors = $addAdGroupsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addAdGroupsResponse->PartialErrors->BatchError);
     }
-    OutputAdGroupsWithPartialErrors($adGroups, $adGroupIds, $adGroupErrors);    
 
-    $addKeywordsResponse = AddKeywords($adGroupIds[0], $keywords);
-    $keywordIds = $addKeywordsResponse->KeywordIds->long;
-    $keywordErrors = $addKeywordsResponse->PartialErrors;
+    print "AddKeywords\n";
+    $addKeywordsResponse = CampaignManagementHelper::AddKeywords($nillableAdGroupIds[0], $keywords);
+    $nillableKeywordIds = $addKeywordsResponse->KeywordIds->long;
+    CampaignManagementHelper::OutputIds($nillableKeywordIds);
     if(isset($addKeywordsResponse->PartialErrors->BatchError)){
-        $keywordErrors = $addKeywordsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addKeywordsResponse->PartialErrors->BatchError);
     }
-    OutputKeywordsWithPartialErrors($keywords, $keywordIds, $keywordErrors);
 
-    $addAdsResponse = AddAds($adGroupIds[0], $ads);
-    $adIds = $addAdsResponse->AdIds->long;
-    $adErrors = $addAdsResponse->PartialErrors;
+	print "AddAds\n";
+    $addAdsResponse = CampaignManagementHelper::AddAds($nillableAdGroupIds[0], $ads);
+    $nillableAdIds = $addAdsResponse->AdIds->long;
+    CampaignManagementHelper::OutputIds($nillableAdIds);
     if(isset($addAdsResponse->PartialErrors->BatchError)){
-        $adErrors = $addAdsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addAdsResponse->PartialErrors->BatchError);
     }
-    OutputAdsWithPartialErrors($ads, $adIds, $adErrors);
+
             
     
     // Here is a simple example that updates the campaign budget.
@@ -344,11 +321,9 @@ try
     // the budget amount of a campaign that has a shared budget, the service will return 
     // the CampaignServiceCannotUpdateSharedBudget error code.
 
-    $campaignType = array(CampaignType::DynamicSearchAds, CampaignType::SearchAndContent, CampaignType::Shopping);
-    
-    $getCampaigns = GetCampaignsByAccountId(
+    $getCampaigns = CampaignManagementHelper::GetCampaignsByAccountId(
             $GLOBALS['AuthorizationData']->AccountId, 
-            $campaignType)->Campaigns;
+            CampaignManagementHelper::AllCampaignTypes)->Campaigns;
 
     $updateCampaigns = array();
     $updateBudgets = array();
@@ -372,17 +347,17 @@ try
         // To simply the example we will update the first 100.
         $getUniqueBudgetIds = array_unique($getBudgetIds, SORT_REGULAR);
         $top100BudgetIds = array_slice($getUniqueBudgetIds, 0, 100);
-        $getBudgets = GetBudgetsByIds($top100BudgetIds)->Budgets;
+        $getBudgets = CampaignManagementHelper::GetBudgetsByIds($top100BudgetIds)->Budgets;
 
         print("List of shared budgets BEFORE update:\n\n");
         foreach ($getBudgets->Budget as $budget)
         {
             print("Budget:\n");
-            OutputBudget($budget);
+            CampaignManagementHelper::OutputBudget($budget);
         }
 
         print("List of campaigns that share each budget:\n\n");
-        $getCampaignIdCollection = GetCampaignIdsByBudgetIds($top100BudgetIds)->CampaignIdCollection;
+        $getCampaignIdCollection = CampaignManagementHelper::GetCampaignIdsByBudgetIds($top100BudgetIds)->CampaignIdCollection;
         for($index = 0; $index < count($getCampaignIdCollection); $index++)
         {
             printf("BudgetId: %s\n", $top100BudgetIds[$index]);
@@ -406,15 +381,15 @@ try
                 $updateBudgets[] = $budget;
             }
         }
-        UpdateBudgets($updateBudgets);
+        CampaignManagementHelper::UpdateBudgets($updateBudgets);
 
-        $getBudgets = GetBudgetsByIds($top100BudgetIds)->Budgets;
+        $getBudgets = CampaignManagementHelper::GetBudgetsByIds($top100BudgetIds)->Budgets;
 
         print("List of shared budgets AFTER update:\n\n");
         foreach ($getBudgets->Budget as $budget)
         {
             print("Budget:\n");
-            OutputBudget($budget);
+            CampaignManagementHelper::OutputBudget($budget);
         }
     }
 
@@ -429,7 +404,7 @@ try
         {
             $campaign = $getCampaigns->Campaign[$index];
             print("Campaign:\n");
-            OutputCampaign($campaign);
+            CampaignManagementHelper::OutputCampaign($campaign);
 
             $updateCampaign = new Campaign();
             $updateCampaign->Id = $campaign->Id;
@@ -452,18 +427,18 @@ try
             $index++;
         }
         
-        UpdateCampaigns($GLOBALS['AuthorizationData']->AccountId, $updateCampaigns);
+        CampaignManagementHelper::UpdateCampaigns($GLOBALS['AuthorizationData']->AccountId, $updateCampaigns);
 
-        $getCampaigns = GetCampaignsByIds(
+        $getCampaigns = CampaignManagementHelper::GetCampaignsByIds(
             $GLOBALS['AuthorizationData']->AccountId, 
             $getCampaignIds, 
-            $campaignType)->Campaigns;
+            CampaignManagementHelper::AllCampaignTypes)->Campaigns;
 
         print("List of campaigns AFTER update:\n");
         foreach ($getCampaigns->Campaign as $campaign)
         {
             print("Campaign:\n");
-            OutputCampaign($campaign);
+            CampaignManagementHelper::OutputCampaign($campaign);
         }
     }
     
@@ -473,7 +448,7 @@ try
     $updateAds = array();
 
     $updateExpandedTextAd = new ExpandedTextAd();
-    $updateExpandedTextAd->Id = $adIds[0];
+    $updateExpandedTextAd->Id = $nillableAdIds[0];
     $updateExpandedTextAd->Text = "Huge Savings on All Red Shoes.";
     // Set the UrlCustomParameters element to null or empty to retain any 
     // existing custom parameters.
@@ -481,7 +456,7 @@ try
     $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignProxy']->GetNamespace());
 
     $updateExpandedTextAd = new ExpandedTextAd();
-    $updateExpandedTextAd->Id = $adIds[1];
+    $updateExpandedTextAd->Id = $nillableAdIds[1];
     $updateExpandedTextAd->Text = "Huge Savings on All Red Shoes.";
     // To remove all custom parameters, set the Parameters element of the  
     // CustomParameters object to null or empty.
@@ -490,7 +465,7 @@ try
     $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignProxy']->GetNamespace());
  
     $updateExpandedTextAd = new ExpandedTextAd();
-    $updateExpandedTextAd->Id = $adIds[2];
+    $updateExpandedTextAd->Id = $nillableAdIds[2];
     $updateExpandedTextAd->Text = "Huge Savings on All Red Shoes.";
     // To remove a subset of custom parameters, specify the custom parameters that 
     // you want to keep in the Parameters element of the CustomParameters object.
@@ -505,17 +480,17 @@ try
     // As an exercise you can view the results before and after update.
 
     $adTypes = array(AdType::AppInstall, AdType::DynamicSearch, AdType::ExpandedText, AdType::Product, AdType::Text);
-    $ads = GetAdsByAdGroupId($adGroupIds[0], $adTypes);
+    $ads = CampaignManagementHelper::GetAdsByAdGroupId($nillableAdGroupIds[0], $adTypes);
     var_dump($ads);
-    $updateAdsResponse = UpdateAds($adGroupIds[0], $updateAds);
-    $ads = GetAdsByAdGroupId($adGroupIds[0], $adTypes);
+    $updateAdsResponse = CampaignManagementHelper::UpdateAds($nillableAdGroupIds[0], $updateAds);
+    $ads = CampaignManagementHelper::GetAdsByAdGroupId($nillableAdGroupIds[0], $adTypes);
     var_dump($ads);
 
     // Here is a simple example that updates the keyword bid to use the ad group bid
 
     $updateKeywords = array();
     $updateKeyword = new Keyword();
-    $updateKeyword->Id = $keywordIds[1];
+    $updateKeyword->Id = $nillableKeywordIds[1];
     // Set Bid.Amount null (new empty Bid) to use the ad group bid.
     // If the Bid property is null, your keyword bid will not be updated.
     $updateKeyword->Bid = new Bid();
@@ -523,24 +498,24 @@ try
 
     // As an exercise you can view the results before and after update.
 
-    $keywords = GetKeywordsByAdGroupId($adGroupIds[0]);
+    $keywords = CampaignManagementHelper::GetKeywordsByAdGroupId($nillableAdGroupIds[0]);
     var_dump($keywords);
-    $updateKeywordsResponse = UpdateKeywords($adGroupIds[0], $updateKeywords);
-    $keywords = GetKeywordsByAdGroupId($adGroupIds[0]);
+    $updateKeywordsResponse = CampaignManagementHelper::UpdateKeywords($nillableAdGroupIds[0], $updateKeywords);
+    $keywords = CampaignManagementHelper::GetKeywordsByAdGroupId($nillableAdGroupIds[0]);
     var_dump($keywords);
     
     // As an exercise you can delete the keyword
-    DeleteKeywords($adGroupIds[0], array($keywordIds[1]));
+    CampaignManagementHelper::DeleteKeywords($nillableAdGroupIds[0], array($nillableKeywordIds[1]));
 
     // Delete the campaign, budget, ad group, keyword, and ad that were previously added. 
     // You should remove these lines if you want to view the added entities in the 
     // Bing Ads web application or another tool.
     
-    DeleteBudgets(array($budgetIds->long[0]));
+    CampaignManagementHelper::DeleteBudgets(array($budgetIds->long[0]));
     printf("Deleted BudgetId %d\n\n", $budgetIds->long[0]);
 
-    DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($campaignIds[0]));
-    printf("Deleted CampaignId %d\n\n", $campaignIds[0]);
+    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
+    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds[0]);
 }
 catch (SoapFault $e)
 {
@@ -669,585 +644,6 @@ catch (Exception $e)
         print $e->getCode()." ".$e->getMessage()."\n\n";
         print $e->getTraceAsString()."\n\n";
     }
-}
-
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}    
-
-// Adds one or more budgets that can be shared by campaigns in the account.
-
-function AddBudgets($budgets)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new AddBudgetsRequest();
-    $request->Budgets = $budgets;
-
-    return $GLOBALS['Proxy']->GetService()->AddBudgets($request);
-}
-
-// Gets the specified budgets from the account's shared budget library.
-
-function GetBudgetsByIds($budgetIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetBudgetsByIdsRequest();
-    $request->BudgetIds = $budgetIds;
-    
-    return $GLOBALS['Proxy']->GetService()->GetBudgetsByIds($request);
-}
-
-// Gets the identifiers of campaigns that share each specified budget.
-
-function GetCampaignIdsByBudgetIds($budgetIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetCampaignIdsByBudgetIdsRequest();
-    $request->BudgetIds = $budgetIds;
-    
-    return $GLOBALS['Proxy']->GetService()->GetCampaignIdsByBudgetIds($request);
-}
-
-// Updates one or more budgets that can be shared by campaigns in the account.
-
-function UpdateBudgets($budgets)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new UpdateBudgetsRequest();
-    $request->Budgets = $budgets;
-    
-    return $GLOBALS['Proxy']->GetService()->UpdateBudgets($request);
-}
-
-// Deletes one or more budgets.
-
-function DeleteBudgets($budgetIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new DeleteBudgetsRequest();
-    $request->BudgetIds = $budgetIds;
-    
-    return $GLOBALS['Proxy']->GetService()->DeleteBudgets($request);
-}
-
-// Adds one or more campaigns to the specified account.
-
-function AddCampaigns($accountId, $campaigns)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new AddCampaignsRequest();
-    $request->AccountId = $accountId;
-    $request->Campaigns = $campaigns;
-    
-    return $GLOBALS['Proxy']->GetService()->AddCampaigns($request);
-}
-
-// Deletes one or more campaigns from the specified account.
-
-function DeleteCampaigns($accountId, $campaignIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new DeleteCampaignsRequest();
-    $request->AccountId = $accountId;
-    $request->CampaignIds = $campaignIds;
-    
-    $GLOBALS['Proxy']->GetService()->DeleteCampaigns($request);
-}
-
-// Retrieves all the requested campaign types in the account.
-
-function GetCampaignsByAccountId($accountId, $campaignType)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetCampaignsByAccountIdRequest();
-    $request->AccountId = $accountId;
-    $request->CampaignType = $campaignType;
-    
-    return $GLOBALS['Proxy']->GetService()->GetCampaignsByAccountId($request);
-}
-
-// Gets one or more campaigns for the specified campaign identifiers.
-
-function GetCampaignsByIds($accountId, $campaignIds, $campaignType)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetCampaignsByIdsRequest();
-    $request->AccountId = $accountId;
-    $request->CampaignIds = $campaignIds;
-    $request->CampaignType = $campaignType;
-    
-    return $GLOBALS['Proxy']->GetService()->GetCampaignsByIds($request);
-}
-
-// Updates one or more campaigns.
-
-function UpdateCampaigns($accountId, $campaigns)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new UpdateCampaignsRequest();
-    $request->AccountId = $accountId;
-    $request->Campaigns = $campaigns;
-    
-    return $GLOBALS['Proxy']->GetService()->UpdateCampaigns($request);
-}
-
-// Adds one or more ad groups to the specified campaign.
-
-function AddAdGroups($campaignId, $adGroups)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new AddAdGroupsRequest();
-    $request->CampaignId = $campaignId;
-    $request->AdGroups = $adGroups;
-    
-    return $GLOBALS['Proxy']->GetService()->AddAdGroups($request);
-}
-
-// Adds one or more keywords to the specified ad group.
-
-function AddKeywords($adGroupId, $keywords)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new AddKeywordsRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->Keywords = $keywords;
-    
-    return $GLOBALS['Proxy']->GetService()->AddKeywords($request);
-}
-
-// Deletes one or more keywords in the specified ad group.
-
-function DeleteKeywords($adGroupId, $keywordIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new DeleteKeywordsRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->KeywordIds = $keywordIds;
-    
-    return $GLOBALS['Proxy']->GetService()->DeleteKeywords($request);
-}
-
-// Gets the keywords in the specified ad group.
-
-function GetKeywordsByAdGroupId($adGroupId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetKeywordsByAdGroupIdRequest();
-    $request->AdGroupId = $adGroupId;
-    
-    return $GLOBALS['Proxy']->GetService()->GetKeywordsByAdGroupId($request);
-}
-
-// Updates one or more keywords in the specified ad group.
-
-function UpdateKeywords($adGroupId, $keywords)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new UpdateKeywordsRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->Keywords = $keywords;
-    
-    return $GLOBALS['Proxy']->GetService()->UpdateKeywords($request);
-}
-
-// Adds one or more ads to the specified ad group.
-
-function AddAds($adGroupId, $ads)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new AddAdsRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->Ads = $ads;
-    
-    return $GLOBALS['Proxy']->GetService()->AddAds($request);
-}
-
-// Gets the ads in the specified ad group.
-
-function GetAdsByAdGroupId($adGroupId, $adTypes)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetAdsByAdGroupIdRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->AdTypes = $adTypes;
-    
-    return $GLOBALS['Proxy']->GetService()->GetAdsByAdGroupId($request);
-}
-
-// Updates one or more ads in the specified ad group.
-
-function UpdateAds($adGroupId, $ads)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new UpdateAdsRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->Ads = $ads;
-    
-    return $GLOBALS['Proxy']->GetService()->UpdateAds($request);
-}
-
-function OutputBudget($budget)
-{
-    if (!empty($budget))
-    {
-        printf("Amount: %s\n", $budget->Amount);
-        printf("AssociationCount: %s\n", $budget->AssociationCount);
-        printf("BudgetType: %s\n", $budget->BudgetType);
-        printf("Id: %s\n", $budget->Id);
-        printf("Name: %s\n\n", $budget->Name);
-    }
-}
-
-function OutputCampaign($campaign)
-{
-    if (!empty($campaign))
-    {
-        OutputBiddingScheme($campaign->BiddingScheme);
-        printf("BudgetId: %s\n", isset($campaign->BudgetId) ? $campaign->BudgetId : "");
-        printf("BudgetType: %s\n", $campaign->BudgetType);
-        printf("CampaignType: %s\n", $campaign->CampaignType);
-        printf("DailyBudget: %s\n", $campaign->DailyBudget);
-        printf("Description: %s\n", $campaign->Description);
-        print("ForwardCompatibilityMap: ");
-        if (isset($campaign->ForwardCompatibilityMap) && isset($campaign->ForwardCompatibilityMap->KeyValuePairOfstringstring))
-        {
-            foreach ($campaign->ForwardCompatibilityMap->KeyValuePairOfstringstring as $pair)
-            {
-                printf("Key: %s\n", $pair->Key);
-                printf("Value: %s\n", $pair->Value);
-            }
-        }
-        printf("Id: %s\n", $campaign->Id);
-        printf("Name: %s\n", $campaign->Name);
-        print("Settings:\n");
-        if (isset($campaign->Settings))
-        {
-            foreach ($campaign->Settings->Setting as $setting)
-            {
-                if ($setting->Type == "Shopping")
-                {
-                    print("ShoppingSetting:\n");
-                    printf("Priority: %s\n", $setting->Priority);
-                    printf("SalesCountryCode: %s\n", $setting->SalesCountryCode);
-                    printf("StoreId: %s\n", $setting->StoreId);
-                }
-            }
-        }
-        printf("Status: %s\n", $campaign->Status);
-        printf("TrackingUrlTemplate: %s\n", $campaign->TrackingUrlTemplate);
-        print("UrlCustomParameters:\n");
-        if (isset($campaign->UrlCustomParameters) && isset($campaign->UrlCustomParameters->Parameters))
-        {
-            foreach ($campaign->UrlCustomParameters->Parameters->CustomParameter as $customParameter)
-            {
-                printf("\tKey: %s\n", $customParameter->Key);
-                printf("\tValue: %s\n", $customParameter->Value);
-            }
-        }
-        printf("TimeZone: %s\n\n", $campaign->TimeZone);
-    }
-}
-
-function OutputBiddingScheme($biddingScheme)
-{
-    if (!empty($biddingScheme) && isset($biddingScheme->Type))
-    {
-        printf("BiddingScheme Type: %s\n", $biddingScheme->Type);
-    }
-}
-
-// Outputs the campaign identifiers, as well as any partial errors.
-
-function OutputCampaignsWithPartialErrors($campaigns, $campaignIds, $partialErrors)
-{
-    // Output the identifier of each successfully added campaign.
-
-    for ($index = 0; $index < count($campaigns); $index++ )
-    {
-        // The array of campaign identifiers equals the size of the attempted campaign. If the element 
-        // is not empty, the campaign at that index was added successfully and has a campaign identifer. 
-
-        if (!empty($campaignIds[$index]))
-        {
-            printf("Campaign[%d] (Name:%s) successfully added and assigned CampaignId %s\n", 
-                $index, 
-                $campaigns[$index]->Name, 
-                $campaignIds[$index] );
-        }
-    }
-
-    // Output the error details for any campaign not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted campaign. 
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddCampaigns.
-
-        printf("\nCampaign[%d] (Name:%s) not added due to the following error:\n", $error->Index, $campaigns[$error->Index]->Name);
-
-        printf("\tIndex: %d\n", $error->Index);
-        printf("\tCode: %d\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-// Outputs the ad group identifiers, as well as any partial errors.
-
-function OutputAdGroupsWithPartialErrors($adGroups, $adGroupIds, $partialErrors)
-{
-    // Output the identifier of each successfully added ad group.
-
-    for ($index = 0; $index < count($adGroups); $index++ )
-    {
-        // The array of ad group identifiers equals the size of the attempted ad group. If the element 
-        // is not empty, the ad group at that index was added successfully and has an ad group identifer. 
-
-        if (!empty($adGroupIds[$index]))
-        {
-            printf("AdGroup[%d] (Name:%s) successfully added and assigned AdGroupId %s\n", 
-                $index, 
-                $adGroups[$index]->Name, 
-                $adGroupIds[$index] );
-        }
-    }
-
-    // Output the error details for any ad group not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted ad group.
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddAdGroups.
-
-        printf("\nAdGroup[%d] (Name:%s) not added due to the following error:\n", $error->Index, $adGroups[$error->Index]->Name);
-
-        printf("\tIndex: %d\n", $error->Index);
-        printf("\tCode: %d\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-
-// Outputs the keyword identifiers, as well as any partial errors.
-
-function OutputKeywordsWithPartialErrors($keywords, $keywordIds, $partialErrors)
-{
-    // Output the identifier of each successfully added keyword.
-
-    for ($index = 0; $index < count($keywords); $index++ )
-    {
-        // The array of keyword identifiers equals the size of the attempted keywords. If the element 
-        // is not empty, the keyword at that index was added successfully and has a keyword identifer. 
-
-        if (!empty($keywordIds[$index]))
-        {
-            printf("Keyword[%d] (Text:%s) successfully added and assigned KeywordId %s\n", 
-                $index, 
-                $keywords[$index]->Text, 
-                $keywordIds[$index] );
-        }
-    }
-
-    // Output the error details for any keyword not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted keyword. 
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddKeywords.
-
-        printf("\nKeyword[%d] (Text:%s) not added due to the following error:\n", $error->Index, $keywords[$error->Index]->Text);
-
-        printf("\tIndex: %d\n", $error->Index);
-        printf("\tCode: %d\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-
-// Outputs the ad identifiers, as well as any partial errors.
-
-function OutputAdsWithPartialErrors($ads, $adIds, $partialErrors)
-{
-    $attributeValues = array();
-
-    // Output the identifier of each successfully added ad.
-
-    for ($index = 0; $index < count($ads); $index++ )
-    {
-        // Determine the type of ad. Prepare the corresponding attribute value to be printed,
-        // both for successful new ads and partial errors. 
-
-        if($ads[$index]->enc_stype === "ExpandedTextAd")
-        {
-            $attributeValues[] = "TitlePart1 - TitlePart2:" . $ads[$index]->enc_value->TitlePart1 . ' - ' . $ads[$index]->enc_value->TitlePart2;
-        }
-        else if($ads[$index]->enc_stype === "ProductAd")
-        {
-            $attributeValues[] = "PromotionalText:" . $ads[$index]->enc_value->PromotionalText;
-        }
-        else if($ads[$index]->enc_stype === "TextAd")
-        {
-            $attributeValues[] = "Title:" . $ads[$index]->enc_value->Title;
-        }
-        else
-        {
-            $attributeValues[] = "Unknown Ad Type";
-        }
-
-        // The array of ad identifiers equals the size of the attempted ads. If the element 
-        // is not empty, the ad at that index was added successfully and has an ad identifer. 
-
-        if (!empty($adIds[$index]))
-        {
-            printf("Ad[%d] (%s) successfully added and assigned AdId %s\n", 
-                $index, 
-                $attributeValues[$index], 
-                $adIds[$index] );
-
-            print("FinalMobileUrls: \n");
-            foreach ($ads[$index]->enc_value->FinalMobileUrls as $finalMobileUrl)
-            {
-                print("\t" . $finalMobileUrl . "\n");
-            }
-            print("FinalUrls: \n");
-            foreach ($ads[$index]->enc_value->FinalUrls as $finalUrl)
-            {
-                print("\t" . $finalUrl . "\n");
-            }
-            print("TrackingUrlTemplate: " . $ads[$index]->enc_value->TrackingUrlTemplate . "\n");
-            print("UrlCustomParameters: \n");
-            if ($ads[$index]->enc_value->UrlCustomParameters != null && $ads[$index]->enc_value->UrlCustomParameters->Parameters != null)
-            {
-                foreach ($ads[$index]->enc_value->UrlCustomParameters->Parameters as $customParameter)
-                {
-                    print("\tKey: " . $customParameter->Key . "\n");
-                    print("\tValue: " . $customParameter->Value . "\n");
-                }
-            }
-            print "\n";
-        }
-    }
-
-
-    // Output the error details for any ad not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted ad. 
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddAds.
-
-        printf("\nAd[%d] (%s) not added due to the following error:\n", $error->Index, $attributeValues[$error->Index]);
-
-        printf("\tIndex: %d\n", $error->Index);
-        printf("\tCode: %d\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %d\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
 }
 
 ?>

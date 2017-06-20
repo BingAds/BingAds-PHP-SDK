@@ -8,24 +8,16 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\CampaignManagement classes that will be used.
+// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
 use Microsoft\BingAds\v11\CampaignManagement\GetCampaignsByAccountIdRequest;
 use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
-use Microsoft\BingAds\v11\CustomerManagement\GetCustomerPilotFeaturesRequest;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -33,6 +25,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -61,20 +55,19 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
-    OutputUser($user);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // Search for the Bing Ads accounts that the user can access.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
 
     foreach ($accounts->Account as $account)
     {
-        OutputAccount($account);
+        CustomerManagementHelper::OutputAccount($account);
 
         // Optionally you can find out which pilot features the customer is able to use. 
         // Each account could belong to a different customer, so use the customer ID in each account.
-        $featurePilotFlags = GetCustomerPilotFeatures($account->ParentCustomerId);
+        $featurePilotFlags = CustomerManagementHelper::GetCustomerPilotFeatures($account->ParentCustomerId)->FeaturePilotFlags;
         if (!empty($featurePilotFlags))
         {
             print "Customer Pilot Flags:\n";
@@ -90,13 +83,13 @@ try
 
         print "\n";
 
-        $getCampaignsByAccountIdResponse = GetCampaignsByAccountId($account->Id);
+        $getCampaignsByAccountIdResponse = CampaignManagementHelper::GetCampaignsByAccountId($account->Id, CampaignManagementHelper::AllCampaignTypes);
         if(isset($getCampaignsByAccountIdResponse->Campaigns) && isset($getCampaignsByAccountIdResponse->Campaigns->Campaign))
         {
             print "Campaigns in the account:\n\n";
             foreach ($getCampaignsByAccountIdResponse->Campaigns->Campaign as $campaign)
             {
-                OutputCampaign($campaign);
+                CampaignManagementHelper::OutputCampaign($campaign);
             }
         }
         else
@@ -185,127 +178,6 @@ catch (Exception $e)
         print $e->getCode()." ".$e->getMessage()."\n\n";
         print $e->getTraceAsString()."\n\n";
     }
-}
-
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}
-
-// Gets the list of pilot features that the customer is able to use.
-
-function GetCustomerPilotFeatures($customerId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetCustomerPilotFeaturesRequest();
-    $request->CustomerId = $customerId;
-
-    return $GLOBALS['Proxy']->GetService()->GetCustomerPilotFeatures($request)->FeaturePilotFlags;
-}
-
-// Returns a list of campaigns for the specified account.
-
-function GetCampaignsByAccountId($accountId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-
-    $request = new GetCampaignsByAccountIdRequest();
-    $request->AccountId = $accountId;
-
-    return $GLOBALS['Proxy']->GetService()->GetCampaignsByAccountId($request);
-}
-
-// Outputs the details of the specified user.
-
-function OutputUser($user)
-{
-    if(empty($user))
-    {
-        return;
-    }
-
-    if ($user->IsMigratedToMicrosoftAccount)
-    {
-        print "The user is migrated to a Microsoft account, " .
-              "and the UserName field is the corresponding email address.\n\n";
-    }
-    else
-    {
-        print "The user is not yet migrated to a Microsoft account, " .
-              "and the value of UserName is a legacy Bing Ads managed user.\n\n";
-    }
-
-    printf("UserName is %s\n", $user->UserName);
-    printf("Bing Ads Email is %s\n", $user->ContactInfo->Email);
-    printf("User Id is %d\n", $user->Id);
-    printf("FirstName is %s\n", $user->Name->FirstName);
-    if (!empty($user->Name->MiddleInitial))
-    {
-        printf("MiddleInitial is %s\n", $user->Name->MiddleInitial);
-    }
-    printf("LastName is %s\n\n", $user->Name->LastName);
-}
-
-
-// Outputs an account.
-
-function OutputAccount($account)
-{
-    if(empty($account))
-    {
-        return;
-    }
-
-    printf("Account Id: %d\n", $account->Id);
-    printf("Account Number: %s\n", $account->Number);
-    printf("Account Name: %s\n", $account->Name);
-    printf("Account Parent Customer Id: %d\n", $account->ParentCustomerId);
-}
-
-// Outputs a campaign.
-
-function OutputCampaign($campaign)
-{
-    if(empty($campaign))
-    {
-        return;
-    }
-
-    printf("Campaign Id: %d\n", $campaign->Id);
-    printf("Campaign Name: %s\n", $campaign->Name);
 }
 
 ?>

@@ -8,18 +8,13 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\GetCampaignsByAccountIdRequest;
-use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-
 // Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SignupCustomerRequest;
 use Microsoft\BingAds\v11\CustomerManagement\Customer;
 use Microsoft\BingAds\v11\CustomerManagement\Account;
 use Microsoft\BingAds\v11\CustomerManagement\AdvertiserAccount;
@@ -36,6 +31,7 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -64,7 +60,7 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $getUserResponse = GetUser(null);
+    $getUserResponse = CustomerManagementHelper::GetUser(null);
     $user = $getUserResponse->User;
     
     // Only a user with the aggregator role (33) can sign up new customers. 
@@ -112,8 +108,6 @@ try
 
     // The location where your business is legally registered. 
     // The business address is used to determine your tax requirements.
-    // BusinessAddress will be required in a future version of the Bing Ads API.
-    // Please start using it.
     $account->BusinessAddress = $userAddress;
 
     // The type of currency that is used to settle the account. The service uses the currency information for billing purposes.
@@ -138,10 +132,10 @@ try
     // that require a customer identifier, this is the identifier that you set the CustomerId SOAP header to.
     $account->ParentCustomerId = $user->CustomerId;
 
-    // The TaxId (VAT identifier) is optional. If specified, The VAT identifier must be valid 
-    // in the country that you specified in the BusinessAddress element. Without a VAT registration 
-    // number or exemption certificate, taxes might apply based on your business location.
-    $account->TaxId = null;
+    // The TaxInformation is optional. If specified, The tax information must be valid 
+    // in the country that you specified in the BusinessAddress element. Without tax information 
+    // or exemption certificate, taxes might apply based on your business location.
+    $account->TaxInformation = null;
 
     // The default time-zone value to use for campaigns in this account.
     // If not specified, the time zone will be set to PacificTimeUSCanadaTijuana by default.
@@ -158,7 +152,7 @@ try
                 );
     
     // Signup a new customer and account for the reseller. 
-    $signupCustomerResponse = SignupCustomer(
+    $signupCustomerResponse = CustomerManagementHelper::SignupCustomer(
         $customer,
         $encodedAccount,
         $user->CustomerId);
@@ -263,32 +257,6 @@ catch (Exception $e)
         print $e->getCode()." ".$e->getMessage()."\n\n";
         print $e->getTraceAsString()."\n\n";
     }
-}
-    
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request);
-}
-
-// Creates a new child customer and account that rolls up to the reseller's billing invoice.
-
-function SignupCustomer($customer, $account, $parentCustomerId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    $request = new SignupCustomerRequest();
-    $request->Customer = $customer;
-    $request->Account = $account;
-    $request->ParentCustomerId = $parentCustomerId;
-
-    return $GLOBALS['Proxy']->GetService()->SignupCustomer($request);
 }
 
 ?>

@@ -8,68 +8,50 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CampaignManagementHelper.php";
+include "/CustomerManagementHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use \Microsoft\BingAds\v11\CampaignManagement\AddCampaignsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\DeleteCampaignsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use \Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use \Microsoft\BingAds\v11\CampaignManagement\AddAdExtensionsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\UpdateAdExtensionsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\AppAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\CallAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\CalloutAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\ImageAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\LocationAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\ReviewAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\SiteLinksAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\Sitelink2AdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\StructuredSnippetAdExtension;
-use \Microsoft\BingAds\v11\CampaignManagement\KeyValuePairOfstringstring;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionAdditionalField;
-use \Microsoft\BingAds\v11\CampaignManagement\Schedule;
-use \Microsoft\BingAds\v11\CampaignManagement\DayTime;
-use \Microsoft\BingAds\v11\CampaignManagement\Day;
-use \Microsoft\BingAds\v11\CampaignManagement\Minute;
-use \Microsoft\BingAds\v11\CampaignManagement\Date;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionAssociation;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionAssociationCollection;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialReason;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialReasonCollection;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialStatus;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionIdentity;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionIdToEntityIdAssociation;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionStatus;
-use \Microsoft\BingAds\v11\CampaignManagement\AdExtensionsTypeFilter;
-use \Microsoft\BingAds\v11\CampaignManagement\DeleteAdExtensionsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\DeleteAdExtensionsAssociationsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\GetAdExtensionsByIdsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\GetAdExtensionsEditorialReasonsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\SetAdExtensionsAssociationsRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\GetAccountMigrationStatusesRequest;
-use \Microsoft\BingAds\v11\CampaignManagement\AccountMigrationStatusesInfo;
-use \Microsoft\BingAds\v11\CampaignManagement\MigrationStatusInfo;
-use \Microsoft\BingAds\v11\CampaignManagement\MigrationStatus;
-use \Microsoft\BingAds\v11\CampaignManagement\Address;
-use \Microsoft\BingAds\v11\CampaignManagement\SiteLink;
-use \Microsoft\BingAds\v11\CampaignManagement\AssociationType;
-use \Microsoft\BingAds\v11\CampaignManagement\CustomParameters;
-use \Microsoft\BingAds\v11\CampaignManagement\CustomParameter;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
-use Microsoft\BingAds\v11\CustomerManagement\GetCustomerPilotFeaturesRequest;
+use Microsoft\BingAds\v11\CampaignManagement\Campaign;
+use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\AppAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\CallAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\CalloutAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\ImageAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\LocationAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\ReviewAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\SiteLinksAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\Sitelink2AdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\StructuredSnippetAdExtension;
+use Microsoft\BingAds\v11\CampaignManagement\KeyValuePairOfstringstring;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionAdditionalField;
+use Microsoft\BingAds\v11\CampaignManagement\Schedule;
+use Microsoft\BingAds\v11\CampaignManagement\DayTime;
+use Microsoft\BingAds\v11\CampaignManagement\Day;
+use Microsoft\BingAds\v11\CampaignManagement\Minute;
+use Microsoft\BingAds\v11\CampaignManagement\Date;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionAssociation;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionAssociationCollection;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialReason;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialReasonCollection;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialStatus;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionIdentity;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionIdToEntityIdAssociation;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionStatus;
+use Microsoft\BingAds\v11\CampaignManagement\AdExtensionsTypeFilter;
+use Microsoft\BingAds\v11\CampaignManagement\AccountMigrationStatusesInfo;
+use Microsoft\BingAds\v11\CampaignManagement\MigrationStatusInfo;
+use Microsoft\BingAds\v11\CampaignManagement\MigrationStatus;
+use Microsoft\BingAds\v11\CampaignManagement\Address;
+use Microsoft\BingAds\v11\CampaignManagement\SiteLink;
+use Microsoft\BingAds\v11\CampaignManagement\AssociationType;
+use Microsoft\BingAds\v11\CampaignManagement\CustomParameters;
+use Microsoft\BingAds\v11\CampaignManagement\CustomParameter;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -77,6 +59,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
 
 $GLOBALS['SitelinkMigration'] = "SiteLinkAdExtension";
 $GLOBALS['AuthorizationData'] = null;
@@ -106,11 +90,11 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
@@ -127,7 +111,7 @@ try
 
     // Optionally you can find out which pilot features the customer is able to use. Even if the customer 
     // is in pilot for sitelink migrations, the accounts that it contains might not be migrated.
-    $featurePilotFlags = GetCustomerPilotFeatures($GLOBALS['AuthorizationData']->CustomerId)->int;
+    $featurePilotFlags = CustomerManagementHelper::GetCustomerPilotFeatures($GLOBALS['AuthorizationData']->CustomerId)->FeaturePilotFlags->int;
 
     // The pilot flag value for Sitelink ad extension migration is 253.
     // Pilot flags apply to all accounts within a given customer; however,
@@ -145,11 +129,13 @@ try
 
     // Even if you have multiple accounts per customer, each account will have its own
     // migration status. This example checks the account provided above.
-    $accountMigrationStatusesInfos = GetAccountMigrationStatuses(array($GLOBALS['AuthorizationData']->AccountId), $GLOBALS['SitelinkMigration']);
+    $accountMigrationStatusesInfos = CampaignManagementHelper::GetAccountMigrationStatuses(
+        array($GLOBALS['AuthorizationData']->AccountId), 
+        $GLOBALS['SitelinkMigration'])->MigrationStatuses;
     
     foreach ($accountMigrationStatusesInfos->AccountMigrationStatusesInfo as $accountMigrationStatusesInfo)
     {
-        OutputAccountMigrationStatusesInfo($accountMigrationStatusesInfo);
+        CampaignManagementHelper::OutputAccountMigrationStatusesInfo($accountMigrationStatusesInfo);
         
         foreach ($accountMigrationStatusesInfo->MigrationStatusInfo->MigrationStatusInfo as $migrationStatusInfo) 
         {
@@ -170,27 +156,20 @@ try
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
     $campaign->DailyBudget = 50.00;
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
-    $campaign->DaylightSaving = true;
 
     // Used with FinalUrls shown in the sitelinks that we will add below.
     $campaign->TrackingUrlTemplate =
         "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}";
 
     $campaigns[] = $campaign;
-
-    // Add the campaign, ad group, keywords, and ads
     
-    $addCampaignsResponse = AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $campaignIds = $addCampaignsResponse->CampaignIds->long;
-    $campaignErrors = $addCampaignsResponse->PartialErrors;
+    print "AddCampaigns\n";
+    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
+    CampaignManagementHelper::OutputIds($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        $campaignErrors = $addCampaignsResponse->PartialErrors->BatchError;
+        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
     }
-
-    // Output the new assigned campaign identifiers, as well as any partial errors
-  
-    OutputCampaignsWithPartialErrors($campaigns, $campaignIds, $campaignErrors);
-
 	
     // Specify the extensions.
     
@@ -322,7 +301,7 @@ try
         
     // Add all extensions to the account's ad extension library
     
-    $adExtensionIdentities = AddAdExtensions(
+    $adExtensionIdentities = CampaignManagementHelper::AddAdExtensions(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensions
     	)->AdExtensionIdentities;
@@ -347,14 +326,14 @@ try
     {
     	$adExtensionIdToEntityIdAssociations[$index] = new AdExtensionIdToEntityIdAssociation();
     	$adExtensionIdToEntityIdAssociations[$index]->AdExtensionId = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;;
-    	$adExtensionIdToEntityIdAssociations[$index]->EntityId = $campaignIds[0];
+    	$adExtensionIdToEntityIdAssociations[$index]->EntityId = $nillableCampaignIds[0];
     	    	
     	$adExtensionIds[$index] = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;
     };
     
     // Associate the specified ad extensions with the respective campaigns or ad groups. 
     
-    SetAdExtensionsAssociations(
+    CampaignManagementHelper::SetAdExtensionsAssociations(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIdToEntityIdAssociations,
     	AssociationType::Campaign
@@ -362,7 +341,7 @@ try
     
     // Get editorial rejection reasons for the respective ad extension and entity associations.
     
-    $adExtensionEditorialReasonCollection = GetAdExtensionsEditorialReasons(
+    $adExtensionEditorialReasonCollection = CampaignManagementHelper::GetAdExtensionsEditorialReasons(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIdToEntityIdAssociations,
     	AssociationType::Campaign
@@ -384,20 +363,20 @@ try
     
     // Get the specified ad extensions from the account'ss ad extension library.
             
-    $adExtensions = GetAdExtensionsByIds(
+    $adExtensions = CampaignManagementHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIds,
     	$adExtensionsTypeFilter
     	)->AdExtensions;
     
     print("List of ad extensions that were added above:\n\n");
-    OutputAdExtensionsWithEditorialReasons($adExtensions, $adExtensionEditorialReasonCollection);
+    CampaignManagementHelper::OutputAdExtensionsWithEditorialReasons($adExtensions, $adExtensionEditorialReasonCollection);
     
     // Get only the location extensions and remove scheduling.
 
     $adExtensionsTypeFilter = array(AdExtensionsTypeFilter::LocationAdExtension);
 
-    $adExtensions = GetAdExtensionsByIds(
+    $adExtensions = CampaignManagementHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIds,
     	$adExtensionsTypeFilter
@@ -412,7 +391,7 @@ try
         if(!empty($extension) && isset($extension->Id))
         {
             // Remove read-only elements that would otherwise cause the update operation to fail.
-            $updateExtension = SetReadOnlyAdExtensionElementsToNull($extension);
+            $updateExtension = CampaignManagementHelper::SetReadOnlyAdExtensionElementsToNull($extension);
 
             // If you set the Scheduling element null, any existing scheduling set for the ad extension will remain unchanged. 
             // If you set this to any non-null Schedule object, you are effectively replacing existing scheduling 
@@ -426,30 +405,30 @@ try
     }
 
     print("Removing scheduling from the location ad extensions..\n\n");
-    UpdateAdExtensions($GLOBALS['AuthorizationData']->AccountId, $updateExtensions);
+    CampaignManagementHelper::UpdateAdExtensions($GLOBALS['AuthorizationData']->AccountId, $updateExtensions);
 
-    $adExtensions = GetAdExtensionsByIds(
+    $adExtensions = CampaignManagementHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$updateExtensionIds,
     	$adExtensionsTypeFilter
     	)->AdExtensions;
 
     print("List of ad extensions that were updated above:\n\n");
-    OutputAdExtensionsWithEditorialReasons($adExtensions, null);
+    CampaignManagementHelper::OutputAdExtensionsWithEditorialReasons($adExtensions, null);
     
     // You should omit these delete operations if you want to view the added entities in the 
     // Bing Ads web application or another tool.
 
     // Remove the specified associations from the respective campaigns or ad groups.
     // The extensions are still available in the account's extensions library.
-    DeleteAdExtensionsAssociations(
+    CampaignManagementHelper::DeleteAdExtensionsAssociations(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensionIdToEntityIdAssociations, 
     	AssociationType::Campaign
     );
     
     // Deletes the ad extensions from the account�s ad extension library.
-    DeleteAdExtensions(
+    CampaignManagementHelper::DeleteAdExtensions(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensionIds
     );
@@ -460,8 +439,8 @@ try
     }
 
     // Delete the campaign. 
-    DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($campaignIds[0]));
-    printf("Deleted CampaignId %d\n\n", $campaignIds[0]);
+    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
+    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds[0]);
     
 }
 catch (SoapFault $e)
@@ -600,328 +579,7 @@ catch (Exception $e)
         print $e->getTraceAsString()."\n\n";
     }
 }
-    
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}   
-
-// Outputs the campaign identifiers, as well as any partial errors.
-
-function OutputCampaignsWithPartialErrors($campaigns, $campaignIds, $partialErrors)
-{
-    if(empty($campaignIds) || empty($campaignIds) || count($campaigns) != count($campaignIds))
-    {
-        return;
-    }
-
-    // Output the identifier of each successfully added campaign.
-
-    for ($index = 0; $index < count($campaigns); $index++ )
-    {
-        // The array of campaign identifiers equals the size of the attempted campaign. If the element 
-        // is not empty, the campaign at that index was added successfully and has a campaign identifer. 
-
-        if (!empty($campaignIds[$index]))
-        {
-            printf("Campaign[%s] (Name:%s) successfully added and assigned CampaignId %s\n", 
-                $index, 
-                $campaigns[$index]->Name, 
-                $campaignIds[$index] );
-        }
-    }
-
-    // Print the error details for any campaign not successfully added.
-    // Note also that multiple error reasons may exist for the same attempted campaign. 
-
-    foreach ($partialErrors as $error)
-    {
-        // The index of the partial errors is equal to the index of the list
-        // specified in the call to AddCampaigns.
-
-        printf("\nCampaign[%s] (Name:%s) not added due to the following error:\n", $error->Index, $campaigns[$error->Index]->Name);
-
-        printf("\tIndex: %s\n", $error->Index);
-        printf("\tCode: %s\n", $error->Code);
-        printf("\tErrorCode: %s\n", $error->ErrorCode);
-        printf("\tMessage: %s\n", $error->Message);
-
-        // In the case of an EditorialError, more details are available
-
-        if ($error->Type == "EditorialError" && $error->ErrorCode == "CampaignServiceEditorialValidationError")
-        {
-            printf("\tDisapprovedText: %s\n", $error->DisapprovedText);
-            printf("\tLocation: %s\n", $error->Location);
-            printf("\tPublisherCountry: %s\n", $error->PublisherCountry);
-            printf("\tReasonCode: %s\n", $error->ReasonCode);
-        }
-    }
-
-    print "\n";
-}
-
-// Outputs the ad extensions and editorial rejection reasons if any exist.
-
-function OutputAdExtensionsWithEditorialReasons($adExtensions, $adExtensionEditorialReasonCollection)
-{
-    $index = 0;
-    
-    foreach ($adExtensions->AdExtension as $extension)
-    {
-    	if (null == $extension)
-    	{
-    		print "Extension is null or invalid.";
-    	}
-    	else
-    	{
-    		if ($extension->Type === "AppAdExtension")
-    		{
-    			OutputAppAdExtension($extension);
-    		}    		
-            else if ($extension->Type === "CallAdExtension")
-    		{
-    			OutputCallAdExtension($extension);
-    		}
-            else if ($extension->Type === "CalloutAdExtension")
-    		{
-    			OutputCalloutAdExtension($extension);
-    		}
-    		else if ($extension->Type === "LocationAdExtension")
-    		{
-    			OutputLocationAdExtension($extension);
-    		}
-            else if ($extension->Type === "ReviewAdExtension")
-    		{
-    			OutputReviewAdExtension($extension);
-    		}
-    		else if ($extension->Type === "SiteLinksAdExtension")
-    		{
-    			OutputSiteLinksAdExtension($extension);
-    		}
-            else if ($extension->Type === "Sitelink2AdExtension")
-    		{
-    			OutputSitelink2AdExtension($extension);
-    		}
-            else if ($extension->Type === "StructuredSnippetAdExtension")
-    		{
-    			OutputStructuredSnippetAdExtension($extension);
-    		}
-    		else
-    		{
-    			print("Unknown extension type\n");
-    		}
-    		
-    		if(!empty($adExtensionEditorialReasonCollection)
-    			&& (count($adExtensionEditorialReasonCollection) > 0)
-    			&& !empty($adExtensionEditorialReasonCollection->AdExtensionEditorialReason[$index]))
-    		{
-    			print "";
-    			
-    			// Print any editorial rejection reasons for the corresponding extension. This sample
-    			// assumes the same list index for adExtensions and adExtensionEditorialReasonCollection
-    			// as defined above.
-    			
-    			foreach ($adExtensionEditorialReasonCollection->AdExtensionEditorialReason[$index]->Reasons as $adExtensionEditorialReason)
-    			{
-    				printf("Editorial Rejection Location: %s\n", $adExtensionEditorialReason->Location);
-    				print("Editorial Rejection PublisherCountries: \n");
-    				foreach($adExtensionEditorialReason->PublisherCountries->string as $publisherCountry)
-    				{
-    					print("  " . $publisherCountry);
-    				}
-    				printf("Editorial Rejection ReasonCode: %s\n", $adExtensionEditorialReason->ReasonCode);
-    				printf("Editorial Rejection Term: %s\n", $adExtensionEditorialReason->Term);
-    				print("\n");
-    			}
-    		}
-    	}
-    
-    	print("\n");
-    	
-    	$index++;
-    }
-
-}
-
-// Gets the list of pilot features that the customer is able to use.
-
-function GetCustomerPilotFeatures($customerId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy'];
-    
-    $request = new GetCustomerPilotFeaturesRequest();
-    $request->CustomerId = $customerId;
-    
-    return $GLOBALS['Proxy']->GetService()->GetCustomerPilotFeatures($request)->FeaturePilotFlags;
-}
-
-// Gets the account's migration statuses.
-
-function GetAccountMigrationStatuses($accountIds, $migrationType)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new GetAccountMigrationStatusesRequest();
-    $request->AccountIds = $accountIds;
-    $request->MigrationType = $migrationType;
-    
-    return $GLOBALS['Proxy']->GetService()->GetAccountMigrationStatuses($request)->MigrationStatuses;
-}
-
-// Adds one or more campaigns to the specified account.
-
-function AddCampaigns($accountId, $campaigns)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new AddCampaignsRequest();
-    $request->AccountId = $accountId;
-    $request->Campaigns = $campaigns;
-    
-    return $GLOBALS['Proxy']->GetService()->AddCampaigns($request);
-}
-
-// Deletes one or more campaigns from the specified account.
-
-function DeleteCampaigns($accountId, $campaignIds)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new DeleteCampaignsRequest();
-    $request->AccountId = $accountId;
-    $request->CampaignIds = $campaignIds;
-    
-    $GLOBALS['Proxy']->GetService()->DeleteCampaigns($request);
-}
-
-// Adds one or more ad extensions to the account's ad extension library.
-
-function AddAdExtensions($accountId, $adExtensions)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new AddAdExtensionsRequest();
-    $request->AccountId = $accountId;
-    $request->AdExtensions = $adExtensions;
-    
-    return $GLOBALS['Proxy']->GetService()->AddAdExtensions($request);
-}
-
-// Updates one or more ad extensions within the account's ad extension library.
-
-function UpdateAdExtensions($accountId, $adExtensions)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new UpdateAdExtensionsRequest();
-    $request->AccountId = $accountId;
-    $request->AdExtensions = $adExtensions;
-    
-    return $GLOBALS['Proxy']->GetService()->UpdateAdExtensions($request);
-}
-
-// Deletes one or more ad extensions from the account's ad extension library.
-
-function DeleteAdExtensions($accountId, $adExtensionIds)
-{
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new DeleteAdExtensionsRequest();
-	$request->AccountId = $accountId;
-	$request->AdExtensionIds = $adExtensionIds;
-
-	$GLOBALS['Proxy']->GetService()->DeleteAdExtensions($request);
-}
-
-// Associates one or more extensions with the corresponding campaign or ad group entities.
-
-function SetAdExtensionsAssociations($accountId, $associations, $associationType)
-{
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new SetAdExtensionsAssociationsRequest();
-	$request->AccountId = $accountId;
-	$request->AdExtensionIdToEntityIdAssociations = $associations;
-	$request->AssociationType = $associationType;
-
-	$GLOBALS['Proxy']->GetService()->SetAdExtensionsAssociations($request);
-}
-
-// Removes the specified association from the respective campaigns or ad groups.
-
-function DeleteAdExtensionsAssociations($accountId, $associations, $associationType)
-{
-	$GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new DeleteAdExtensionsAssociationsRequest();
-	$request->AccountId = $accountId;
-	$request->AdExtensionIdToEntityIdAssociations = $associations;
-	$request->AssociationType = $associationType;
-
-	$GLOBALS['Proxy']->GetService()->DeleteAdExtensionsAssociations($request);
-}
-
-// Gets the specified ad extensions from the account's extension library.
-
-function GetAdExtensionsByIds($accountId, $adExtensionIds, $adExtensionsTypeFilter)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new GetAdExtensionsByIdsRequest();
-    $request->AccountId = $accountId;
-    $request->AdExtensionIds = $adExtensionIds;
-    $request->AdExtensionType = $adExtensionsTypeFilter;
-
-    return $GLOBALS['Proxy']->GetService()->GetAdExtensionsByIds($request);  
-}
-
-// Gets the reasons why the specified extension failed editorial when 
-// in the context of an associated campaign or ad group.
-
-function GetAdExtensionsEditorialReasons($accountId, $associations, $associationType)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
-    
-    $request = new GetAdExtensionsEditorialReasonsRequest();
-    $request->AccountId = $accountId;
-    $request->AdExtensionIdToEntityIdAssociations = $associations;
-    $request->AssociationType = $associationType;
-
-    return $GLOBALS['Proxy']->GetService()->GetAdExtensionsEditorialReasons($request);
-}
-
+ 
 function GetSampleSiteLinksAdExtensions()
 {
     $adExtensions = array();
@@ -1044,365 +702,6 @@ function GetSampleSitelink2AdExtensions()
 }
 
 
-function OutputAccountMigrationStatusesInfo($accountMigrationStatusesInfo)
-{
-    if (!empty($accountMigrationStatusesInfo))
-    {
-        printf("AccountId: %s\n", $accountMigrationStatusesInfo->AccountId);
-        foreach ($accountMigrationStatusesInfo->MigrationStatusInfo as $migrationStatusInfo)
-        {
-            OutputMigrationStatusInfo($migrationStatusInfo[0]);
-        }
-    }
-}
-
-function OutputMigrationStatusInfo($migrationStatusInfo)
-{
-    if (!empty($migrationStatusInfo))
-    {
-        printf("MigrationType: %s\n", $migrationStatusInfo->MigrationType);
-        printf("StartTimeInUtc: %s\n", $migrationStatusInfo->StartTimeInUtc);
-        printf("Status: %s\n\n", $migrationStatusInfo->Status);
-    }
-}
-
-function OutputAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        printf("Id: %s\n", $extension->Id);
-        printf("Type: %s\n", $extension->Type);
-        print("ForwardCompatibilityMap:\n");
-        if (isset($extension->ForwardCompatibilityMap) && isset($extension->ForwardCompatibilityMap->KeyValuePairOfstringstring))
-        {
-            foreach ($extension->ForwardCompatibilityMap->KeyValuePairOfstringstring as $pair)
-            {
-                printf("Key: %s\n", $pair->Key);
-                printf("Value: %s\n", $pair->Value);
-            }
-        }
-        print("Scheduling:\n");
-        if (isset($extension->Scheduling))
-        {
-            OutputSchedule($extension->Scheduling);
-        }
-        printf("Status: %s\n", $extension->Status);
-        printf("Version: %s\n", $extension->Version);
-    }
-}
-
-function OutputSchedule($schedule)
-{
-    if (!empty($schedule))
-    {
-        if(isset($schedule->DayTimeRanges))
-        {
-            foreach ($schedule->DayTimeRanges->DayTime as $dayTime)
-            {
-                printf("Day: %s\n", $dayTime->Day);
-                printf("EndHour: %s\n", $dayTime->EndHour);
-                printf("EndMinute: %s\n", $dayTime->EndMinute);
-                printf("StartHour: %s\n", $dayTime->StartHour);
-                printf("StartMinute: %s\n", $dayTime->StartMinute);
-            }
-        }
-        if (isset($schedule->EndDate))
-        {
-            printf("EndDate: %s/%s/%s\n",
-            $schedule->EndDate->Month,
-            $schedule->EndDate->Day,
-            $schedule->EndDate->Year);
-        }
-        if (isset($schedule->StartDate))
-        {
-            printf("StartDate: %s/%s/%s\n",
-            $schedule->StartDate->Month,
-            $schedule->StartDate->Day,
-            $schedule->StartDate->Year);
-        }
-        printf("UseSearcherTimeZone: %s\n", $schedule->UseSearcherTimeZone == true ? "True" : "False");
-    }
-}
-
-function OutputAppAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the AppAdExtension
-        printf("AppPlatform: %s\n", $extension->AppPlatform);
-        printf("AppStoreId: %s\n", $extension->AppStoreId);
-        printf("DisplayText: %s\n", $extension->DisplayText);
-        printf("DestinationUrl: %s\n", $extension->DestinationUrl);
-        print("\n");
-    }
-}
-
-function OutputCallAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the CallAdExtension
-        printf("CountryCode: %s\n", $extension->CountryCode);
-        printf("DevicePreference: %s\n", $extension->DevicePreference);
-        printf("IsCallOnly: %s\n", $extension->IsCallOnly);
-        printf("IsCallTrackingEnabled: %s\n", $extension->IsCallTrackingEnabled);
-        printf("PhoneNumber: %s\n", $extension->PhoneNumber);
-        printf("RequireTollFreeTrackingNumber: %s\n", $extension->RequireTollFreeTrackingNumber);
-        print("\n");
-    }
-}
-
-function OutputCalloutAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the CalloutAdExtension
-        printf("Text: %s\n", $extension->Text);
-        print("\n");
-    }
-}
-
-function OutputImageAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the ImageAdExtension
-        printf("AlternativeText: %s\n", $extension->AlternativeText);
-        printf("Description: %s\n", $extension->Description);
-        printf("DestinationUrl: %s\n", $extension->DestinationUrl);
-        print("FinalMobileUrls: \n");
-        if (isset($extension->FinalMobileUrls))
-        {
-            foreach ($extension->FinalMobileUrls->string as $finalMobileUrl)
-            {
-                print("\t" . $finalMobileUrl);
-            }
-        }
-        print("FinalUrls: \n");
-        if (isset($extension->FinalMobileUrls))
-        {
-            foreach ($extension->FinalUrls->string as $finalUrl)
-            {
-                print("\t" . $finalUrl);
-            }
-        }
-        print("ImageMediaIds:\n");
-        if (isset($extension->ImageMediaIds))
-        {
-            foreach ($extension->ImageMediaIds->long as $id)
-            {
-                printf("\tId: %s\n", $id);
-            }
-        }
-        printf("TrackingUrlTemplate: %s\n", $extension->TrackingUrlTemplate);
-        print("UrlCustomParameters:\n");
-        if (isset($extension->UrlCustomParameters) && isset($extension->UrlCustomParameters->Parameters))
-        {
-            foreach ($extension->UrlCustomParameters->Parameters->CustomParameter as $customParameter)
-            {
-                printf("\tKey: %s\n", $customParameter->Key);
-                printf("\tValue: %s\n", $customParameter->Value);
-            }
-        }
-        print("\n");
-    }
-}
-
-function OutputLocationAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the LocationAdExtension
-        if (isset($extension->Address))
-        {
-            printf("CityName: %s\n", $extension->Address->CityName);
-            printf("CountryCode: %s\n", $extension->Address->CountryCode);
-            printf("PostalCode: %s\n", $extension->Address->PostalCode);
-            printf("ProvinceCode: %s\n", $extension->Address->ProvinceCode);
-            printf("ProvinceName: %s\n", $extension->Address->ProvinceName);
-            printf("StreetAddress: %s\n", $extension->Address->StreetAddress);
-            printf("StreetAddress2: %s\n", $extension->Address->StreetAddress2);
-        }
-
-        printf("CompanyName: %s\n", $extension->CompanyName);
-        printf("GeoCodeStatus: %s\n", $extension->GeoCodeStatus);
-        if (isset($extension->GeoPoint))
-        {
-            print("GeoPoint:\n");
-            printf("LatitudeInMicroDegrees: %s\n", $extension->GeoPoint->LatitudeInMicroDegrees);
-            printf("LongitudeInMicroDegrees: %s\n", $extension->GeoPoint->LongitudeInMicroDegrees);
-        }
-        printf("IconMediaId: %s\n", $extension->IconMediaId);
-        printf("ImageMediaId: %s\n", $extension->ImageMediaId);
-        printf("PhoneNumber: %s\n", $extension->PhoneNumber);
-        print("\n");
-    }
-}
-
-function OutputReviewAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the ReviewAdExtension
-        printf("IsExact: %s\n", $extension->IsExact);
-        printf("Source: %s\n", $extension->Source);
-        printf("Text: %s\n", $extension->Text);
-        printf("Url: %s\n", $extension->Url);
-        print("\n");
-    }
-}
-
-function OutputSiteLinksAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the SiteLinksAdExtension
-        OutputSiteLinks($extension->SiteLinks);
-    }
-}
-
-function OutputSiteLinks($siteLinks)
-{
-    if (!empty($siteLinks))
-    {
-        foreach ($siteLinks->SiteLink as $siteLink)
-        {
-            printf("Description1: %s\n", $siteLink->Description1);
-            printf("Description2: %s\n", $siteLink->Description2);
-            printf("DestinationUrl: %s\n", $siteLink->DestinationUrl);
-            printf("DevicePreference: %s\n", $siteLink->DevicePreference);            
-            printf("DisplayText: %s\n", $siteLink->DisplayText);
-            print("FinalMobileUrls: \n");
-            if (isset($siteLink->FinalMobileUrls))
-            {
-                foreach ($siteLink->FinalMobileUrls->string as $finalMobileUrl)
-                {
-                    print("\t" . $finalMobileUrl);
-                }
-            }
-            print("FinalUrls: \n");
-            if (isset($siteLink->FinalMobileUrls))
-            {
-                foreach ($siteLink->FinalUrls->string as $finalUrl)
-                {
-                    print("\t" . $finalUrl);
-                }
-            }
-            printf("TrackingUrlTemplate: %s\n", $siteLink->TrackingUrlTemplate);
-            print("UrlCustomParameters:\n");
-            if (isset($siteLink->UrlCustomParameters) && isset($siteLink->UrlCustomParameters->Parameters))
-            {
-                foreach ($siteLink->UrlCustomParameters->Parameters->CustomParameter as $customParameter)
-                {
-                    printf("\tKey: %s\n", $customParameter->Key);
-                    printf("\tValue: %s\n", $customParameter->Value);
-                }
-            }
-            print("\n");
-        }
-    }
-}
-
-function OutputSitelink2AdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the Sitelink2AdExtension
-        printf("Description1: %s\n", $extension->Description1);
-        printf("Description2: %s\n", $extension->Description2);
-        printf("DestinationUrl: %s\n", $extension->DestinationUrl);
-        printf("DevicePreference: %s\n", $extension->DevicePreference);            
-        printf("DisplayText: %s\n", $extension->DisplayText);
-        print("FinalMobileUrls: \n");
-        if (isset($extension->FinalMobileUrls))
-        {
-            foreach ($extension->FinalMobileUrls->string as $finalMobileUrl)
-            {
-                print("\t" . $finalMobileUrl);
-            }
-        }
-        print("FinalUrls: \n");
-        if (isset($extension->FinalMobileUrls))
-        {
-            foreach ($extension->FinalUrls->string as $finalUrl)
-            {
-                print("\t" . $finalUrl);
-            }
-        }
-        printf("TrackingUrlTemplate: %s\n", $extension->TrackingUrlTemplate);
-        print("UrlCustomParameters:\n");
-        if (isset($extension->UrlCustomParameters) && isset($extension->UrlCustomParameters->Parameters))
-        {
-            foreach ($extension->UrlCustomParameters->Parameters->CustomParameter as $customParameter)
-            {
-                printf("\tKey: %s\n", $customParameter->Key);
-                printf("\tValue: %s\n", $customParameter->Value);
-            }
-        }
-        print("\n");
-    }
-}
-
-function OutputStructuredSnippetAdExtension($extension)
-{
-    if (!empty($extension))
-    {
-        // Output inherited properties of the AdExtension base class.
-        OutputAdExtension($extension);
-
-        // Output properties that are specific to the StructuredSnippetAdExtension
-        printf("Header: %s\n", $extension->Header);
-        printf("Values: %s\n", join("; ", $extension->Values->string));
-        print("\n");
-    }
-}
-
-
-/// Set the read-only properties of an ad extension to null. This operation can be useful between calls to
-/// GetAdExtensionsByIds and UpdateAdExtensions. The update operation would fail if you send certain read-only
-/// fields.
-function SetReadOnlyAdExtensionElementsToNull($extension)
-{
-    if (empty($extension) || !isset($extension->Id))
-    {
-        return null;
-    }
-    else
-    {
-        // Set to null for all extension types.
-        $extension->Version = null;
-
-        if ($extension->Type == "LocationAdExtension")
-        {
-            $extension->GeoCodeStatus = null;
-        }
-        return $extension;
-    }
-}
 
 
 ?>

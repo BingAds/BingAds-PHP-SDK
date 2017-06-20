@@ -8,43 +8,15 @@ namespace Microsoft\BingAds\Samples\v11;
 require_once "/../vendor/autoload.php";
 
 include "/../AuthHelper.php";
+include "/CustomerManagementHelper.php";
+include "/ReportingHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the BingAds\Reporting classes that will be used.
-use Microsoft\BingAds\v11\Reporting\SubmitGenerateReportRequest;
-use Microsoft\BingAds\v11\Reporting\AccountPerformanceReportRequest;
-use Microsoft\BingAds\v11\Reporting\AudiencePerformanceReportRequest;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportRequest;
-use Microsoft\BingAds\v11\Reporting\ReportFormat;
-use Microsoft\BingAds\v11\Reporting\ReportAggregation;
-use Microsoft\BingAds\v11\Reporting\AccountThroughAdGroupReportScope;
-use Microsoft\BingAds\v11\Reporting\CampaignReportScope;
-use Microsoft\BingAds\v11\Reporting\AccountReportScope;
-use Microsoft\BingAds\v11\Reporting\ReportTime;
-use Microsoft\BingAds\v11\Reporting\ReportTimePeriod;
-use Microsoft\BingAds\v11\Reporting\Date;
-use Microsoft\BingAds\v11\Reporting\AccountPerformanceReportFilter;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportFilter;
-use Microsoft\BingAds\v11\Reporting\DeviceTypeReportFilter;
-use Microsoft\BingAds\v11\Reporting\AccountPerformanceReportColumn;
-use Microsoft\BingAds\v11\Reporting\AudiencePerformanceReportColumn;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportColumn;
-use Microsoft\BingAds\v11\Reporting\PollGenerateReportRequest;
+// Specify the Microsoft\BingAds\v11\Reporting classes that will be used.
 use Microsoft\BingAds\v11\Reporting\ReportRequestStatusType;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportSort;
-use Microsoft\BingAds\v11\Reporting\SortOrder;
-
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\User;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -52,6 +24,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
+use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\v11\ReportingHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -97,26 +71,26 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = GetUser(null);
+    $user = CustomerManagementHelper::GetUser(null)->User;
 
     // For this example we'll use the first account.
 
-    $accounts = SearchAccountsByUserId($user->Id);
+    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
     $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
     $GLOBALS['ReportingProxy'] = new ServiceClient(ServiceClientType::ReportingVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     // You can submit one of the example reports, or build your own.
-    $report = GetAccountPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
-    //$report = GetAudiencePerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
-    //$report = GetKeywordPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
+    $report = ReportingHelper::GetAccountPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
+    //$report = ReportingHelper::GetAudiencePerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
+    //$report = ReportingHelper::GetKeywordPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
     
     // SubmitGenerateReport helper method calls the corresponding Bing Ads service operation
     // to request the report identifier. The identifier is used to check report generation status
     // before downloading the report.
     
-    $reportRequestId = SubmitGenerateReport($report);
+    $reportRequestId = ReportingHelper::SubmitGenerateReport($report)->ReportRequestId;
     
     printf("Report Request ID: %s\n\n", $reportRequestId);
     
@@ -135,7 +109,7 @@ try
     	// PollGenerateReport helper method calls the corresponding Bing Ads service operation
     	// to get the report request status.
     	
-    	$reportRequestStatus = PollGenerateReport($reportRequestId);
+    	$reportRequestStatus = ReportingHelper::PollGenerateReport($reportRequestId)->ReportRequestStatus;
     
     	if ($reportRequestStatus->Status == ReportRequestStatusType::Success ||
     		$reportRequestStatus->Status == ReportRequestStatusType::Error)
@@ -287,72 +261,6 @@ catch (Exception $e)
     }
 }
 
-// Gets a User object by the specified UserId.
-
-function GetUser($userId)
-{   
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-
-    $request = new GetUserRequest();
-    $request->UserId = $userId;
-
-    return $GLOBALS['Proxy']->GetService()->GetUser($request)->User;
-}
-
-// Searches by UserId for accounts that the user can manage.
-
-function SearchAccountsByUserId($userId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
-  
-    // Specify the page index and number of customer results per page.
-
-    $pageInfo = new Paging();
-    $pageInfo->Index = 0;    // The first page
-    $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
-
-    $predicate = new Predicate();
-    $predicate->Field = "UserId";
-    $predicate->Operator = PredicateOperator::Equals;
-    $predicate->Value = $userId; 
-
-    $request = new SearchAccountsRequest();
-    $request->Ordering = null;
-    $request->PageInfo = $pageInfo;
-    $request->Predicates = array($predicate);
-
-    return $GLOBALS['Proxy']->GetService()->SearchAccounts($request)->Accounts;
-}
-
-// Request the report. Use the ID that the request returns to
-// check for the completion of the report.
-
-function SubmitGenerateReport($report)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['ReportingProxy']; 
-
-    $request = new SubmitGenerateReportRequest();
-    $request->ReportRequest = $report;
-
-    return $GLOBALS['ReportingProxy']->GetService()->SubmitGenerateReport($request)->ReportRequestId;
-}
-
-// Check the status of the report request. The guidance of how often to poll
-// for status is from every five to 15 minutes depending on the amount
-// of data being requested. For smaller reports, you can poll every couple
-// of minutes. You should stop polling and try again later if the request
-// is taking longer than an hour.
-
-function PollGenerateReport($reportRequestId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['ReportingProxy']; 
-
-    $request = new PollGenerateReportRequest();
-    $request->ReportRequestId = $reportRequestId;
-
-    return $GLOBALS['ReportingProxy']->GetService()->PollGenerateReport($request)->ReportRequestStatus;
-}
-
 // Using the URL that the PollGenerateReport operation returned,
 // send an HTTP request to get the report and write it to the specified
 // ZIP file.
@@ -394,171 +302,4 @@ function DownloadFile($reportDownloadUrl, $downloadPath)
     fclose($writer);
 }
 
-function GetKeywordPerformanceReportRequest($accountId) 
-{
-    $report = new KeywordPerformanceReportRequest();
-    
-    $report->Format = ReportFormat::Tsv;
-    $report->ReportName = 'My Keyword Performance Report';
-    $report->ReturnOnlyCompleteData = false;
-    $report->Aggregation = ReportAggregation::Weekly;
-    
-    $report->Scope = new AccountThroughAdGroupReportScope();
-    $report->Scope->AccountIds = array();
-    $report->Scope->AccountIds[] = $accountId;
-    $report->Scope->AdGroups = null;
-    $report->Scope->Campaigns = null;
-    
-    $report->Time = new ReportTime();
-    $report->Time->PredefinedTime = ReportTimePeriod::Yesterday;
-    
-    //  You may either use a custom date range or predefined time.
-    //  date_default_timezone_set('UTC');
-    //  $LastYear = date("Y") - 1;
-    //   $report->Time->CustomDateRangeStart = new Date();
-    //  $report->Time->CustomDateRangeStart->Month = 1;
-    //  $report->Time->CustomDateRangeStart->Day = 1;
-    //  $report->Time->CustomDateRangeStart->Year = $LastYear;
-    //  $report->Time->CustomDateRangeEnd = new Date();
-    //  $report->Time->CustomDateRangeEnd->Month = 12;
-    //  $report->Time->CustomDateRangeEnd->Day = 31;
-    //  $report->Time->CustomDateRangeEnd->Year = $LastYear;
-    
-    //  If you specify a filter, results may differ from data you see in the Bing Ads web application
-    //  $report->Filter = new KeywordPerformanceReportFilter();
-    //  $report->Filter->DeviceType = array (
-    //      DeviceTypeReportFilter::Computer,
-    //      DeviceTypeReportFilter::SmartPhone
-    //  );
-    
-    $report->Columns = array (
-    		KeywordPerformanceReportColumn::TimePeriod,
-    		KeywordPerformanceReportColumn::AccountId,
-    		KeywordPerformanceReportColumn::CampaignId,
-    		KeywordPerformanceReportColumn::Keyword,
-    		KeywordPerformanceReportColumn::KeywordId,
-    		KeywordPerformanceReportColumn::DeviceType,
-    		KeywordPerformanceReportColumn::BidMatchType,
-    		KeywordPerformanceReportColumn::Clicks,
-    		KeywordPerformanceReportColumn::Impressions,
-    		KeywordPerformanceReportColumn::Ctr,
-    		KeywordPerformanceReportColumn::AverageCpc,
-    		KeywordPerformanceReportColumn::Spend,
-    		KeywordPerformanceReportColumn::QualityScore
-    );
-    
-    // You may optionally sort by any KeywordPerformanceReportColumn, and optionally
-    // specify the maximum number of rows to return in the sorted report.
-    
-    $report->Sort = array ();
-    $keywordPerformanceReportSort = new KeywordPerformanceReportSort();
-    $keywordPerformanceReportSort->SortColumn = KeywordPerformanceReportColumn::Clicks;
-    $keywordPerformanceReportSort->SortOrder = SortOrder::Ascending;
-    $report->Sort[] = $keywordPerformanceReportSort;
-    
-    $report->MaxRows = 10;
-    
-    $encodedReport = new SoapVar($report, SOAP_ENC_OBJECT, 'KeywordPerformanceReportRequest', $GLOBALS['ReportingProxy']->GetNamespace());
-
-    return $encodedReport;
-}
-
-function GetAccountPerformanceReportRequest($accountId) 
-{
-    $report = new AccountPerformanceReportRequest();
-    
-    $report->Format = ReportFormat::Tsv;
-    $report->ReportName = 'My Account Performance Report';
-    $report->ReturnOnlyCompleteData = false;
-    $report->Aggregation = ReportAggregation::Weekly;
-    
-    $report->Scope = new AccountReportScope();
-    $report->Scope->AccountIds = array();
-    $report->Scope->AccountIds[] = $accountId;
-        
-    $report->Time = new ReportTime();
-    $report->Time->PredefinedTime = ReportTimePeriod::Yesterday;
-    
-    //  You may either use a custom date range or predefined time.
-    //  date_default_timezone_set('UTC');
-    //  $LastYear = date("Y") - 1;
-    //   $report->Time->CustomDateRangeStart = new Date();
-    //  $report->Time->CustomDateRangeStart->Month = 1;
-    //  $report->Time->CustomDateRangeStart->Day = 1;
-    //  $report->Time->CustomDateRangeStart->Year = $LastYear;
-    //  $report->Time->CustomDateRangeEnd = new Date();
-    //  $report->Time->CustomDateRangeEnd->Month = 12;
-    //  $report->Time->CustomDateRangeEnd->Day = 31;
-    //  $report->Time->CustomDateRangeEnd->Year = $LastYear;
-    
-    //  If you specify a filter, results may differ from data you see in the Bing Ads web application
-    //  $report->Filter = new AccountPerformanceReportFilter();
-    //  $report->Filter->DeviceType = array (
-    //      DeviceTypeReportFilter::Computer,
-    //      DeviceTypeReportFilter::SmartPhone
-    //  );
-
-    $report->Columns = array (
-    		AccountPerformanceReportColumn::TimePeriod,
-    		AccountPerformanceReportColumn::AccountId,
-    		AccountPerformanceReportColumn::AccountName,
-    		AccountPerformanceReportColumn::Clicks,
-    		AccountPerformanceReportColumn::Impressions,
-    		AccountPerformanceReportColumn::Ctr,
-    		AccountPerformanceReportColumn::AverageCpc,
-    		AccountPerformanceReportColumn::Spend,
-    );
-    
-    $encodedReport = new SoapVar($report, SOAP_ENC_OBJECT, 'AccountPerformanceReportRequest', $GLOBALS['ReportingProxy']->GetNamespace());
-    
-    return $encodedReport;
-}
-
-function GetAudiencePerformanceReportRequest($accountId) 
-{
-    $report = new AudiencePerformanceReportRequest();
-    
-    $report->Format = ReportFormat::Tsv;
-    $report->ReportName = 'My Audience Performance Report';
-    $report->ReturnOnlyCompleteData = false;
-    $report->Aggregation = ReportAggregation::Daily;
-    
-    $report->Scope = new AccountThroughAdGroupReportScope();
-    $report->Scope->AccountIds = array();
-    $report->Scope->AccountIds[] = $accountId;
-    $report->Scope->AdGroups = null;
-    $report->Scope->Campaigns = null;
-    
-    $report->Time = new ReportTime();
-    $report->Time->PredefinedTime = ReportTimePeriod::Yesterday;
-    
-    //  You may either use a custom date range or predefined time.
-    //  date_default_timezone_set('UTC');
-    //  $LastYear = date("Y") - 1;
-    //   $report->Time->CustomDateRangeStart = new Date();
-    //  $report->Time->CustomDateRangeStart->Month = 1;
-    //  $report->Time->CustomDateRangeStart->Day = 1;
-    //  $report->Time->CustomDateRangeStart->Year = $LastYear;
-    //  $report->Time->CustomDateRangeEnd = new Date();
-    //  $report->Time->CustomDateRangeEnd->Month = 12;
-    //  $report->Time->CustomDateRangeEnd->Day = 31;
-    //  $report->Time->CustomDateRangeEnd->Year = $LastYear;
-    
-    $report->Columns = array (
-    		AudiencePerformanceReportColumn::TimePeriod,
-    		AudiencePerformanceReportColumn::AccountId,
-    		AudiencePerformanceReportColumn::CampaignId,
-    		AudiencePerformanceReportColumn::AudienceId,
-    		AudiencePerformanceReportColumn::Clicks,
-    		AudiencePerformanceReportColumn::Impressions,
-    		AudiencePerformanceReportColumn::Ctr,
-    		AudiencePerformanceReportColumn::AverageCpc,
-    		AudiencePerformanceReportColumn::Spend,
-    );
-    
-    $encodedReport = new SoapVar($report, SOAP_ENC_OBJECT, 'AudiencePerformanceReportRequest', $GLOBALS['ReportingProxy']->GetNamespace());
-    
-    return $encodedReport;
-}
- 
 ?>
