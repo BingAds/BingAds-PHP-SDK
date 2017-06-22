@@ -115,8 +115,8 @@ try
             CampaignManagementHelper::AllTargetCampaignCriterionTypes)->CampaignCriterions;
 
         // When you first create a campaign or ad group using the Bing Ads API, it will not have any 
-        // criterions. Effectively the brand new campaign and ad group target all ages, days, hours, 
-        // devices, genders, and locations. As a best practice you should consider at minimum 
+        // criterions. Effectively, the brand new campaign and ad group target all ages, days, hours, 
+        // devices, genders, and locations. As a best practice, you should consider at a minimum 
         // adding a campaign location criterion corresponding to the customer market country.
 
         if(empty($campaignCriterions) || count($campaignCriterions) <= 0)
@@ -152,8 +152,8 @@ try
                 CampaignCriterionType::Targets
             );
 
-            // If the campaign used to shared target criterions with another campaign or ad group,
-            // and the add operation resulted in new targer criterion identifiers for this campaign,
+            // If the campaign used to share target criterions with another campaign or ad group,
+            // and the add operation resulted in new target criterion identifiers for this campaign,
             // then we need to get the new criterion IDs.
 
             // Otherwise we only need to capture the new criterion IDs.
@@ -228,7 +228,7 @@ try
                     AdGroupCriterionType::Targets
                 );
 
-                // If the ad group used to shared target criterions with another campaign or ad group,
+                // If the ad group used to share target criterions with another campaign or ad group,
                 // and the update operation resulted in new target criterion identifiers for this ad group,
                 // then we need to get the new criterion IDs.
 
