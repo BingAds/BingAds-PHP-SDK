@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:37 AM
+// Generated on 7/10/2017 3:08:23 PM
 
 namespace Microsoft\BingAds\V11\CampaignManagement;
 
@@ -9,7 +9,11 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @link http://msdn.microsoft.com/en-us/library/jj622172(v=msads.110).aspx EntityType Value Set
      * 
      * @used-by AppealEditorialRejectionsRequest
+     * @used-by DeleteLabelAssociationsRequest
      * @used-by GetEditorialReasonsByIdsRequest
+     * @used-by GetLabelAssociationsByEntityIdsRequest
+     * @used-by GetLabelAssociationsByLabelIdsRequest
+     * @used-by SetLabelAssociationsRequest
      */
     final class EntityType
     {

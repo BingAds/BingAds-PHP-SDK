@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:31 AM
+// Generated on 7/10/2017 3:08:16 PM
 
 namespace Microsoft\BingAds\V11\AdInsight;
 
@@ -15,13 +15,13 @@ namespace Microsoft\BingAds\V11\AdInsight;
     final class KeywordIdea
     {
         /**
-         * The Bing Ads identifier of the ad group that contains the keyword.
+         * The negative ad group identifier that groups keyword ideas into suggested new ad groups.
          * @var integer
          */
         public $AdGroupId;
 
         /**
-         * The name of the ad group that contains the keyword.
+         * The suggested name of the ad group for the keyword idea.
          * @var string
          */
         public $AdGroupName;
@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
         public $AdImpressionShare;
 
         /**
-         * The number of advertisers bidding on this keyword, relative to all other keywords across Bing Ads.
+         * Determined by the number of advertisers bidding on this keyword, relative to all other keywords across Bing Ads.
          * @var CompetitionLevel
          */
         public $Competition;

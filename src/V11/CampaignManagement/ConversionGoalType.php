@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:37 AM
+// Generated on 7/10/2017 3:08:23 PM
 
 namespace Microsoft\BingAds\V11\CampaignManagement;
 
@@ -28,6 +28,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** Refers to an AppInstallGoal */
         const AppInstall = 'AppInstall';
+
+        /** Refers to an OfflineConversion */
+        const OfflineConversion = 'OfflineConversion';
     }
 
 }

@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:20 AM
+// Generated on 7/10/2017 3:08:05 PM
 
 namespace Microsoft\BingAds\V11\Reporting;
 
@@ -162,6 +162,9 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** Click type refers to each component of an ad that a customer can click. */
         const ClickType = 'ClickType';
+        const ReturnOnAdSpend = 'ReturnOnAdSpend';
+        const BidStrategyType = 'BidStrategyType';
+        const LocalStoreCode = 'LocalStoreCode';
     }
 
 }

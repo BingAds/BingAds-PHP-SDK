@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:37 AM
+// Generated on 7/10/2017 3:08:23 PM
 
 namespace Microsoft\BingAds\V11\CampaignManagement;
 
@@ -19,10 +19,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
      * @used-by AddKeywordsResponse
+     * @used-by AddLabelsResponse
      * @used-by AddListItemsToSharedListResponse
      * @used-by AddSharedEntityResponse
      * @used-by AddUetTagsResponse
      * @used-by AppealEditorialRejectionsResponse
+     * @used-by ApplyOfflineConversionsResponse
      * @used-by ApplyProductPartitionActionsResponse
      * @used-by DeleteAdExtensionsResponse
      * @used-by DeleteAdExtensionsAssociationsResponse
@@ -34,10 +36,13 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @used-by DeleteCampaignCriterionsResponse
      * @used-by DeleteCampaignsResponse
      * @used-by DeleteKeywordsResponse
+     * @used-by DeleteLabelAssociationsResponse
+     * @used-by DeleteLabelsResponse
      * @used-by DeleteListItemsFromSharedListResponse
      * @used-by DeleteMediaResponse
      * @used-by DeleteSharedEntitiesResponse
      * @used-by DeleteSharedEntityAssociationsResponse
+     * @used-by GetAccountPropertiesResponse
      * @used-by GetAdExtensionsAssociationsResponse
      * @used-by GetAdExtensionsByIdsResponse
      * @used-by GetAdExtensionsEditorialReasonsResponse
@@ -52,6 +57,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @used-by GetConversionGoalsByTagIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
      * @used-by GetKeywordsByIdsResponse
+     * @used-by GetLabelAssociationsByEntityIdsResponse
+     * @used-by GetLabelAssociationsByLabelIdsResponse
+     * @used-by GetLabelsByIdsResponse
      * @used-by GetMediaAssociationsResponse
      * @used-by GetMediaMetaDataByIdsResponse
      * @used-by GetNegativeKeywordsByEntityIdsResponse
@@ -61,6 +69,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @used-by GetSharedEntityAssociationsBySharedEntityIdsResponse
      * @used-by GetUetTagsByIdsResponse
      * @used-by SetAdExtensionsAssociationsResponse
+     * @used-by SetLabelAssociationsResponse
      * @used-by SetNegativeSitesToAdGroupsResponse
      * @used-by SetNegativeSitesToCampaignsResponse
      * @used-by SetSharedEntityAssociationsResponse
@@ -71,6 +80,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @used-by UpdateCampaignsResponse
      * @used-by UpdateConversionGoalsResponse
      * @used-by UpdateKeywordsResponse
+     * @used-by UpdateLabelsResponse
      * @used-by UpdateSharedEntitiesResponse
      * @used-by UpdateUetTagsResponse
      */

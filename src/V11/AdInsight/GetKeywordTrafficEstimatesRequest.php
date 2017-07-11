@@ -1,11 +1,11 @@
 <?php
-// Generated on 6/7/2017 5:55:31 AM
+// Generated on 7/10/2017 3:08:16 PM
 
 namespace Microsoft\BingAds\V11\AdInsight;
 
 {
     /**
-     * Gets a list of keyword traffic estimates based on your criteria and filters.
+     * Provides traffic estimates for keywords e.
      * @link http://msdn.microsoft.com/en-us/library/mt784428(v=msads.110).aspx GetKeywordTrafficEstimates Request Object
      * 
      * @uses CampaignEstimator

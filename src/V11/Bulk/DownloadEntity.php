@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:35 AM
+// Generated on 7/10/2017 3:08:21 PM
 
 namespace Microsoft\BingAds\V11\Bulk;
 
@@ -177,10 +177,20 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Ad Group Price Ad Extension records in the download that each represent the association relationship between an ad group and a price ad extension. */
         const AdGroupPriceAdExtensions = 'AdGroupPriceAdExtensions';
+
+        /** Include Label records in the download data. */
         const Labels = 'Labels';
+
+        /** Include Campaign Label records in the download that each represent a label applied to a campaign. */
         const CampaignLabels = 'CampaignLabels';
+
+        /** Include Ad Group Label records in the download that each represent a label applied to an ad group. */
         const AdGroupLabels = 'AdGroupLabels';
+
+        /** Include Text Ad Label records in the download that each represent a label applied to a text ad. */
         const TextAdLabels = 'TextAdLabels';
+
+        /** Include Keyword Label records in the download that each represent a label applied to a keyword. */
         const KeywordLabels = 'KeywordLabels';
 
         /** Include Ad Group Negative Remarketing List Association records in the download that each represent the association relationship between an ad group and a remarketing list exclusion. */
@@ -212,9 +222,17 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Ad Group Negative Custom Audience Association, Ad Group Negative In Market Audience Association, and Ad Group Negative Remarketing List Association records in the download data. */
         const AdGroupNegativeAudienceAssociations = 'AdGroupNegativeAudienceAssociations';
+
+        /** Include Product Ad Label records in the download that each represent a label applied to a product ad. */
         const ProductAdLabels = 'ProductAdLabels';
+
+        /** Include App Install Ad Label records in the download that each represent a label applied to an app install ad. */
         const AppInstallAdLabels = 'AppInstallAdLabels';
+
+        /** Include Expanded Text Ad Label records in the download that each represent a label applied to an expanded text ad. */
         const ExpandedTextAdLabels = 'ExpandedTextAdLabels';
+
+        /** Include Dynamic Search Ad Label records in the download that each represent a label applied to a dynamic search ad. */
         const DynamicSearchAdLabels = 'DynamicSearchAdLabels';
 
         /** Include Account Location Ad Extension records in the download that represents the association relationship between an account and a location ad extension. */
