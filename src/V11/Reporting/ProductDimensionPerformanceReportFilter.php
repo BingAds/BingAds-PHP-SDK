@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:20 AM
+// Generated on 7/10/2017 3:08:06 PM
 
 namespace Microsoft\BingAds\V11\Reporting;
 

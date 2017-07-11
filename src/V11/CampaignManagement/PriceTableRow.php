@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:37 AM
+// Generated on 7/10/2017 3:08:23 PM
 
 namespace Microsoft\BingAds\V11\CampaignManagement;
 
@@ -61,7 +61,17 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var PriceUnit
          */
         public $PriceUnit;
+
+        /**
+         * Reserved for future use.
+         * @var string
+         */
         public $TermsAndConditions;
+
+        /**
+         * Reserved for future use.
+         * @var string
+         */
         public $TermsAndConditionsUrl;
     }
 

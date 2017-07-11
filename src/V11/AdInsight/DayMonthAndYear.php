@@ -1,5 +1,5 @@
 <?php
-// Generated on 6/7/2017 5:55:31 AM
+// Generated on 7/10/2017 3:08:16 PM
 
 namespace Microsoft\BingAds\V11\AdInsight;
 
@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
      * @link http://msdn.microsoft.com/en-us/library/mt219345(v=msads.110).aspx DayMonthAndYear Data Object
      * 
      * @used-by AdGroupBidLandscape
+     * @used-by DateRangeSearchParameter
      * @used-by HistoricalSearchCountPeriodic
      * @used-by KeywordBidLandscape
      * @used-by GetHistoricalSearchCountRequest
