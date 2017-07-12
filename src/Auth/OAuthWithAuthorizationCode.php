@@ -66,7 +66,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     {
         if ($responseUri == null)
         {
-            throw new ArgumentNullException("responseUri");
+            throw new Exception("The ResponseUri is not set. ");
         }
 
         $parsed_url = parse_url($responseUri);
@@ -97,13 +97,6 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantParamName("code")
             ->withGrantValue($code);
 
-        /*$oauthRequestParameters->ClientId = $this->ClientId;
-        $oauthRequestParameters->ClientSecret = $this->ClientSecret;
-        $oauthRequestParameters->RedirectUri = $this->RedirectUri;
-        $oauthRequestParameters->GrantType = "authorization_code";
-        $oauthRequestParameters->GrantParamName = "code";
-        $oauthRequestParameters->GrantValue = $code;*/
-
         $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters); 
         
         return $this->OAuthTokens; 
@@ -117,7 +110,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     {
         if ($refreshToken == null)
         {
-            throw new ArgumentNullException("refreshToken");
+            throw new Exception("The RefreshToken is not set. ");
         }
 
         $oauthRequestParameters = (new OAuthRequestParameters())
@@ -127,14 +120,6 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantType("refresh_token")
             ->withGrantParamName("refresh_token")
             ->withGrantValue($refreshToken);
-
-        /*$oauthRequestParameters = new OAuthRequestParameters();
-        $oauthRequestParameters->ClientId = $this->ClientId;
-        $oauthRequestParameters->ClientSecret = $this->ClientSecret;
-        $oauthRequestParameters->RedirectUri = $this->RedirectUri;
-        $oauthRequestParameters->GrantType = "refresh_token";
-        $oauthRequestParameters->GrantParamName = "refresh_token";
-        $oauthRequestParameters->GrantValue = $refreshToken;*/
 
         $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters); 
         
