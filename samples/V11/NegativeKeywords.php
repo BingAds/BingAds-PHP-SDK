@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,17 +15,17 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use Microsoft\BingAds\v11\CampaignManagement\EntityNegativeKeyword;
-use Microsoft\BingAds\v11\CampaignManagement\SharedEntityAssociation;
-use Microsoft\BingAds\v11\CampaignManagement\SharedEntity;
-use Microsoft\BingAds\v11\CampaignManagement\SharedList;
-use Microsoft\BingAds\v11\CampaignManagement\SharedListItem;
-use Microsoft\BingAds\v11\CampaignManagement\NegativeKeyword;
-use Microsoft\BingAds\v11\CampaignManagement\NegativeKeywordList;
-use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use Microsoft\BingAds\v11\CampaignManagement\MatchType;
+// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V11\CampaignManagement\Campaign;
+use Microsoft\BingAds\V11\CampaignManagement\EntityNegativeKeyword;
+use Microsoft\BingAds\V11\CampaignManagement\SharedEntityAssociation;
+use Microsoft\BingAds\V11\CampaignManagement\SharedEntity;
+use Microsoft\BingAds\V11\CampaignManagement\SharedList;
+use Microsoft\BingAds\V11\CampaignManagement\SharedListItem;
+use Microsoft\BingAds\V11\CampaignManagement\NegativeKeyword;
+use Microsoft\BingAds\V11\CampaignManagement\NegativeKeywordList;
+use Microsoft\BingAds\V11\CampaignManagement\BudgetLimitType;
+use Microsoft\BingAds\V11\CampaignManagement\MatchType;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -33,8 +33,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

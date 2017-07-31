@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,33 +15,33 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
+// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
 use Microsoft\BingAds\v10\CampaignManagement\AddTargetsToLibraryRequest;
 use Microsoft\BingAds\v10\CampaignManagement\SetTargetToAdGroupRequest;
 use Microsoft\BingAds\v10\CampaignManagement\Target;
 use Microsoft\BingAds\v10\CampaignManagement\DeviceOSTarget;
 use Microsoft\BingAds\v10\CampaignManagement\DeviceOSTargetBid;
 
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroup;
-use Microsoft\BingAds\v11\CampaignManagement\BiddableAdGroupCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\DeviceCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\BidMultiplier;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionType;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionStatus;
-use Microsoft\BingAds\v11\CampaignManagement\BiddableCampaignCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\LocationCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\LocationIntentCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\IntentOption;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterionType;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterionStatus;
-use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use Microsoft\BingAds\v11\CampaignManagement\AdDistribution;
-use Microsoft\BingAds\v11\CampaignManagement\Bid;
-use Microsoft\BingAds\v11\CampaignManagement\Date;
+// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V11\CampaignManagement\Campaign;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroup;
+use Microsoft\BingAds\V11\CampaignManagement\BiddableAdGroupCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\DeviceCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\BidMultiplier;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterionType;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterionStatus;
+use Microsoft\BingAds\V11\CampaignManagement\BiddableCampaignCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\LocationCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\LocationIntentCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\IntentOption;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignCriterionType;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignCriterionStatus;
+use Microsoft\BingAds\V11\CampaignManagement\BudgetLimitType;
+use Microsoft\BingAds\V11\CampaignManagement\AdDistribution;
+use Microsoft\BingAds\V11\CampaignManagement\Bid;
+use Microsoft\BingAds\V11\CampaignManagement\Date;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -49,8 +49,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

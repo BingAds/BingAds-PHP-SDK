@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -13,17 +13,17 @@ use SoapFault;
 use Exception;
 
 
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\GetCustomerPilotFeaturesRequest;
-use Microsoft\BingAds\v11\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\v11\CustomerManagement\AddClientLinksRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchClientLinksRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SignupCustomerRequest;
-use Microsoft\BingAds\v11\CustomerManagement\UpdateClientLinksRequest;
-use Microsoft\BingAds\v11\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\v11\CustomerManagement\Paging;
-use Microsoft\BingAds\v11\CustomerManagement\Predicate;
-use Microsoft\BingAds\v11\CustomerManagement\PredicateOperator;
+// Specify the Microsoft\BingAds\V11\CustomerManagement classes that will be used.
+use Microsoft\BingAds\V11\CustomerManagement\GetCustomerPilotFeaturesRequest;
+use Microsoft\BingAds\V11\CustomerManagement\GetUserRequest;
+use Microsoft\BingAds\V11\CustomerManagement\AddClientLinksRequest;
+use Microsoft\BingAds\V11\CustomerManagement\SearchClientLinksRequest;
+use Microsoft\BingAds\V11\CustomerManagement\SignupCustomerRequest;
+use Microsoft\BingAds\V11\CustomerManagement\UpdateClientLinksRequest;
+use Microsoft\BingAds\V11\CustomerManagement\SearchAccountsRequest;
+use Microsoft\BingAds\V11\CustomerManagement\Paging;
+use Microsoft\BingAds\V11\CustomerManagement\Predicate;
+use Microsoft\BingAds\V11\CustomerManagement\PredicateOperator;
 
 final class CustomerManagementHelper {
 

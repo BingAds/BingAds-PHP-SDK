@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,22 +15,22 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\ConversionGoal;
-use Microsoft\BingAds\v11\CampaignManagement\AppInstallGoal;
-use Microsoft\BingAds\v11\CampaignManagement\DurationGoal;
-use Microsoft\BingAds\v11\CampaignManagement\EventGoal;
-use Microsoft\BingAds\v11\CampaignManagement\PagesViewedPerVisitGoal;
-use Microsoft\BingAds\v11\CampaignManagement\UrlGoal;
-use Microsoft\BingAds\v11\CampaignManagement\ExpressionOperator;
-use Microsoft\BingAds\v11\CampaignManagement\ValueOperator;
-use Microsoft\BingAds\v11\CampaignManagement\UetTag;
-use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalRevenue;
-use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalType;
-use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalRevenueType;
-use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalCountType;
-use Microsoft\BingAds\v11\CampaignManagement\ConversionGoalStatus;
-use Microsoft\BingAds\v11\CampaignManagement\EntityScope;
+// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V11\CampaignManagement\ConversionGoal;
+use Microsoft\BingAds\V11\CampaignManagement\AppInstallGoal;
+use Microsoft\BingAds\V11\CampaignManagement\DurationGoal;
+use Microsoft\BingAds\V11\CampaignManagement\EventGoal;
+use Microsoft\BingAds\V11\CampaignManagement\PagesViewedPerVisitGoal;
+use Microsoft\BingAds\V11\CampaignManagement\UrlGoal;
+use Microsoft\BingAds\V11\CampaignManagement\ExpressionOperator;
+use Microsoft\BingAds\V11\CampaignManagement\ValueOperator;
+use Microsoft\BingAds\V11\CampaignManagement\UetTag;
+use Microsoft\BingAds\V11\CampaignManagement\ConversionGoalRevenue;
+use Microsoft\BingAds\V11\CampaignManagement\ConversionGoalType;
+use Microsoft\BingAds\V11\CampaignManagement\ConversionGoalRevenueType;
+use Microsoft\BingAds\V11\CampaignManagement\ConversionGoalCountType;
+use Microsoft\BingAds\V11\CampaignManagement\ConversionGoalStatus;
+use Microsoft\BingAds\V11\CampaignManagement\EntityScope;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -38,8 +38,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

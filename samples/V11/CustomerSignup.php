@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -14,16 +14,16 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\v11\CustomerManagement\Customer;
-use Microsoft\BingAds\v11\CustomerManagement\Account;
-use Microsoft\BingAds\v11\CustomerManagement\AdvertiserAccount;
-use Microsoft\BingAds\v11\CustomerManagement\User;
-use Microsoft\BingAds\v11\CustomerManagement\AccountType;
-use Microsoft\BingAds\v11\CustomerManagement\CurrencyType;
-use Microsoft\BingAds\v11\CustomerManagement\Industry;
-use Microsoft\BingAds\v11\CustomerManagement\LanguageType;
-use Microsoft\BingAds\v11\CustomerManagement\TimeZoneType;
+// Specify the Microsoft\BingAds\V11\CustomerManagement classes that will be used.
+use Microsoft\BingAds\V11\CustomerManagement\Customer;
+use Microsoft\BingAds\V11\CustomerManagement\Account;
+use Microsoft\BingAds\V11\CustomerManagement\AdvertiserAccount;
+use Microsoft\BingAds\V11\CustomerManagement\User;
+use Microsoft\BingAds\V11\CustomerManagement\AccountType;
+use Microsoft\BingAds\V11\CustomerManagement\CurrencyType;
+use Microsoft\BingAds\V11\CustomerManagement\Industry;
+use Microsoft\BingAds\V11\CustomerManagement\LanguageType;
+use Microsoft\BingAds\V11\CustomerManagement\TimeZoneType;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -31,7 +31,7 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -148,7 +148,7 @@ try
                     $account, 
                     SOAP_ENC_OBJECT, 
                     'AdvertiserAccount', 
-                    "https://bingads.microsoft.com/Customer/v11/Entities"
+                    "https://bingads.microsoft.com/Customer/V11/Entities"
                 );
     
     // Signup a new customer and account for the reseller. 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,8 +15,8 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\Reporting classes that will be used.
-use Microsoft\BingAds\v11\Reporting\ReportRequestStatusType;
+// Specify the Microsoft\BingAds\V11\Reporting classes that will be used.
+use Microsoft\BingAds\V11\Reporting\ReportRequestStatusType;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -24,8 +24,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
-use Microsoft\BingAds\Samples\v11\ReportingHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\ReportingHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

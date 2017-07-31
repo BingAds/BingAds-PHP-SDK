@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,30 +15,30 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use Microsoft\BingAds\v11\CampaignManagement\BMCStore;
-use Microsoft\BingAds\v11\CampaignManagement\ShoppingSetting;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroup;
-use Microsoft\BingAds\v11\CampaignManagement\Date;
-use Microsoft\BingAds\v11\CampaignManagement\AdDistribution;
-use Microsoft\BingAds\v11\CampaignManagement\ProductAd;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignCriterionType;
-use Microsoft\BingAds\v11\CampaignManagement\ProductScope;
-use Microsoft\BingAds\v11\CampaignManagement\BiddableCampaignCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\ProductCondition;
-use Microsoft\BingAds\v11\CampaignManagement\ProductPartitionType;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionType;
-use Microsoft\BingAds\v11\CampaignManagement\BiddableAdGroupCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\ItemAction;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroupCriterionAction;
-use Microsoft\BingAds\v11\CampaignManagement\NegativeAdGroupCriterion;
-use Microsoft\BingAds\v11\CampaignManagement\ProductPartition;
-use Microsoft\BingAds\v11\CampaignManagement\FixedBid;
-use Microsoft\BingAds\v11\CampaignManagement\Bid;
-use Microsoft\BingAds\v11\CampaignManagement\BatchErrorCollection;
+// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V11\CampaignManagement\Campaign;
+use Microsoft\BingAds\V11\CampaignManagement\BudgetLimitType;
+use Microsoft\BingAds\V11\CampaignManagement\BMCStore;
+use Microsoft\BingAds\V11\CampaignManagement\ShoppingSetting;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignType;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroup;
+use Microsoft\BingAds\V11\CampaignManagement\Date;
+use Microsoft\BingAds\V11\CampaignManagement\AdDistribution;
+use Microsoft\BingAds\V11\CampaignManagement\ProductAd;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignCriterionType;
+use Microsoft\BingAds\V11\CampaignManagement\ProductScope;
+use Microsoft\BingAds\V11\CampaignManagement\BiddableCampaignCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\ProductCondition;
+use Microsoft\BingAds\V11\CampaignManagement\ProductPartitionType;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterionType;
+use Microsoft\BingAds\V11\CampaignManagement\BiddableAdGroupCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\ItemAction;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterionAction;
+use Microsoft\BingAds\V11\CampaignManagement\NegativeAdGroupCriterion;
+use Microsoft\BingAds\V11\CampaignManagement\ProductPartition;
+use Microsoft\BingAds\V11\CampaignManagement\FixedBid;
+use Microsoft\BingAds\V11\CampaignManagement\Bid;
+use Microsoft\BingAds\V11\CampaignManagement\BatchErrorCollection;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -46,8 +46,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

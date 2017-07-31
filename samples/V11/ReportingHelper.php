@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -12,29 +12,29 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\Reporting classes that will be used.
-use Microsoft\BingAds\v11\Reporting\SubmitGenerateReportRequest;
-use Microsoft\BingAds\v11\Reporting\PollGenerateReportRequest;
-use Microsoft\BingAds\v11\Reporting\AccountPerformanceReportRequest;
-use Microsoft\BingAds\v11\Reporting\AudiencePerformanceReportRequest;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportRequest;
-use Microsoft\BingAds\v11\Reporting\ReportFormat;
-use Microsoft\BingAds\v11\Reporting\ReportAggregation;
-use Microsoft\BingAds\v11\Reporting\AccountThroughAdGroupReportScope;
-use Microsoft\BingAds\v11\Reporting\CampaignReportScope;
-use Microsoft\BingAds\v11\Reporting\AccountReportScope;
-use Microsoft\BingAds\v11\Reporting\ReportTime;
-use Microsoft\BingAds\v11\Reporting\ReportTimePeriod;
-use Microsoft\BingAds\v11\Reporting\Date;
-use Microsoft\BingAds\v11\Reporting\AccountPerformanceReportFilter;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportFilter;
-use Microsoft\BingAds\v11\Reporting\DeviceTypeReportFilter;
-use Microsoft\BingAds\v11\Reporting\AccountPerformanceReportColumn;
-use Microsoft\BingAds\v11\Reporting\AudiencePerformanceReportColumn;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportColumn;
-use Microsoft\BingAds\v11\Reporting\ReportRequestStatusType;
-use Microsoft\BingAds\v11\Reporting\KeywordPerformanceReportSort;
-use Microsoft\BingAds\v11\Reporting\SortOrder;
+// Specify the Microsoft\BingAds\V11\Reporting classes that will be used.
+use Microsoft\BingAds\V11\Reporting\SubmitGenerateReportRequest;
+use Microsoft\BingAds\V11\Reporting\PollGenerateReportRequest;
+use Microsoft\BingAds\V11\Reporting\AccountPerformanceReportRequest;
+use Microsoft\BingAds\V11\Reporting\AudiencePerformanceReportRequest;
+use Microsoft\BingAds\V11\Reporting\KeywordPerformanceReportRequest;
+use Microsoft\BingAds\V11\Reporting\ReportFormat;
+use Microsoft\BingAds\V11\Reporting\ReportAggregation;
+use Microsoft\BingAds\V11\Reporting\AccountThroughAdGroupReportScope;
+use Microsoft\BingAds\V11\Reporting\CampaignReportScope;
+use Microsoft\BingAds\V11\Reporting\AccountReportScope;
+use Microsoft\BingAds\V11\Reporting\ReportTime;
+use Microsoft\BingAds\V11\Reporting\ReportTimePeriod;
+use Microsoft\BingAds\V11\Reporting\Date;
+use Microsoft\BingAds\V11\Reporting\AccountPerformanceReportFilter;
+use Microsoft\BingAds\V11\Reporting\KeywordPerformanceReportFilter;
+use Microsoft\BingAds\V11\Reporting\DeviceTypeReportFilter;
+use Microsoft\BingAds\V11\Reporting\AccountPerformanceReportColumn;
+use Microsoft\BingAds\V11\Reporting\AudiencePerformanceReportColumn;
+use Microsoft\BingAds\V11\Reporting\KeywordPerformanceReportColumn;
+use Microsoft\BingAds\V11\Reporting\ReportRequestStatusType;
+use Microsoft\BingAds\V11\Reporting\KeywordPerformanceReportSort;
+use Microsoft\BingAds\V11\Reporting\SortOrder;
 
 final class ReportingHelper {
 
