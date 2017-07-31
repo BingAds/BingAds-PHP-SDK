@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -13,9 +13,9 @@ use SoapFault;
 use Exception;
 
 
-// Specify the Microsoft\BingAds\v11\AdInsight classes that will be used.
-use Microsoft\BingAds\v11\AdInsight\GetBudgetOpportunitiesRequest;
-use Microsoft\BingAds\v11\AdInsight\GetDomainCategoriesRequest;
+// Specify the Microsoft\BingAds\V11\AdInsight classes that will be used.
+use Microsoft\BingAds\V11\AdInsight\GetBudgetOpportunitiesRequest;
+use Microsoft\BingAds\V11\AdInsight\GetDomainCategoriesRequest;
 
 final class AdInsightHelper {
 

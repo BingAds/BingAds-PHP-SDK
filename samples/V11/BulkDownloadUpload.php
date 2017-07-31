@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -16,20 +16,20 @@ use Exception;
 use DateTime;
 use ZipArchive;
 
-// Specify the Microsoft\BingAds\v11\Bulk classes that will be used.
-use Microsoft\BingAds\v11\Bulk\DownloadCampaignsByAccountIdsRequest;
-use Microsoft\BingAds\v11\Bulk\DownloadEntity;
-use Microsoft\BingAds\v11\Bulk\DataScope;
-use Microsoft\BingAds\v11\Bulk\CampaignScope;
-use Microsoft\BingAds\v11\Bulk\GetBulkDownloadStatusRequest;
-use Microsoft\BingAds\v11\Bulk\DownloadFileType;
-use Microsoft\BingAds\v11\Bulk\PerformanceStatsDateRange;
-use Microsoft\BingAds\v11\Bulk\CustomDateRangeEnd;
-use Microsoft\BingAds\v11\Bulk\CustomDateRangeStart;
-use Microsoft\BingAds\v11\Bulk\Date;
-use Microsoft\BingAds\v11\Bulk\GetBulkUploadUrlRequest;
-use Microsoft\BingAds\v11\Bulk\ResponseMode;
-use Microsoft\BingAds\v11\Bulk\GetBulkUploadStatusRequest;
+// Specify the Microsoft\BingAds\V11\Bulk classes that will be used.
+use Microsoft\BingAds\V11\Bulk\DownloadCampaignsByAccountIdsRequest;
+use Microsoft\BingAds\V11\Bulk\DownloadEntity;
+use Microsoft\BingAds\V11\Bulk\DataScope;
+use Microsoft\BingAds\V11\Bulk\CampaignScope;
+use Microsoft\BingAds\V11\Bulk\GetBulkDownloadStatusRequest;
+use Microsoft\BingAds\V11\Bulk\DownloadFileType;
+use Microsoft\BingAds\V11\Bulk\PerformanceStatsDateRange;
+use Microsoft\BingAds\V11\Bulk\CustomDateRangeEnd;
+use Microsoft\BingAds\V11\Bulk\CustomDateRangeStart;
+use Microsoft\BingAds\V11\Bulk\Date;
+use Microsoft\BingAds\V11\Bulk\GetBulkUploadUrlRequest;
+use Microsoft\BingAds\V11\Bulk\ResponseMode;
+use Microsoft\BingAds\V11\Bulk\GetBulkUploadStatusRequest;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -37,8 +37,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\BulkHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\BulkHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

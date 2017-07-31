@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,29 +15,29 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-//Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\Budget;
-use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignType;
-use Microsoft\BingAds\v11\CampaignManagement\CampaignAdditionalField;
-use Microsoft\BingAds\v11\CampaignManagement\KeywordAdditionalField;
-use Microsoft\BingAds\v11\CampaignManagement\IdCollection;
-use Microsoft\BingAds\v11\CampaignManagement\AdGroup;
-use Microsoft\BingAds\v11\CampaignManagement\Keyword;
-use Microsoft\BingAds\v11\CampaignManagement\Ad;
-use Microsoft\BingAds\v11\CampaignManagement\AdType;
-use Microsoft\BingAds\v11\CampaignManagement\ExpandedTextAd;
-use Microsoft\BingAds\v11\CampaignManagement\Bid;
-use Microsoft\BingAds\v11\CampaignManagement\BiddingScheme;
-use Microsoft\BingAds\v11\CampaignManagement\MatchType;
-use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use Microsoft\BingAds\v11\CampaignManagement\AdDistribution;
-use Microsoft\BingAds\v11\CampaignManagement\Date;
-use Microsoft\BingAds\v11\CampaignManagement\CustomParameters;
-use Microsoft\BingAds\v11\CampaignManagement\CustomParameter;
-use Microsoft\BingAds\v11\CampaignManagement\EnhancedCpcBiddingScheme;
-use Microsoft\BingAds\v11\CampaignManagement\InheritFromParentBiddingScheme;
-use Microsoft\BingAds\v11\CampaignManagement\ManualCpcBiddingScheme;
+//Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V11\CampaignManagement\Budget;
+use Microsoft\BingAds\V11\CampaignManagement\Campaign;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignType;
+use Microsoft\BingAds\V11\CampaignManagement\CampaignAdditionalField;
+use Microsoft\BingAds\V11\CampaignManagement\KeywordAdditionalField;
+use Microsoft\BingAds\V11\CampaignManagement\IdCollection;
+use Microsoft\BingAds\V11\CampaignManagement\AdGroup;
+use Microsoft\BingAds\V11\CampaignManagement\Keyword;
+use Microsoft\BingAds\V11\CampaignManagement\Ad;
+use Microsoft\BingAds\V11\CampaignManagement\AdType;
+use Microsoft\BingAds\V11\CampaignManagement\ExpandedTextAd;
+use Microsoft\BingAds\V11\CampaignManagement\Bid;
+use Microsoft\BingAds\V11\CampaignManagement\BiddingScheme;
+use Microsoft\BingAds\V11\CampaignManagement\MatchType;
+use Microsoft\BingAds\V11\CampaignManagement\BudgetLimitType;
+use Microsoft\BingAds\V11\CampaignManagement\AdDistribution;
+use Microsoft\BingAds\V11\CampaignManagement\Date;
+use Microsoft\BingAds\V11\CampaignManagement\CustomParameters;
+use Microsoft\BingAds\V11\CampaignManagement\CustomParameter;
+use Microsoft\BingAds\V11\CampaignManagement\EnhancedCpcBiddingScheme;
+use Microsoft\BingAds\V11\CampaignManagement\InheritFromParentBiddingScheme;
+use Microsoft\BingAds\V11\CampaignManagement\ManualCpcBiddingScheme;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -45,8 +45,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;

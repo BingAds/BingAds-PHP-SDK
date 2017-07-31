@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\v11;
+namespace Microsoft\BingAds\Samples\V11;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -15,43 +15,43 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\v11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v11\CampaignManagement\Campaign;
-use Microsoft\BingAds\v11\CampaignManagement\BudgetLimitType;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\AppAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\CallAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\CalloutAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\ImageAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\LocationAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\ReviewAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\SiteLinksAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\Sitelink2AdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\StructuredSnippetAdExtension;
-use Microsoft\BingAds\v11\CampaignManagement\KeyValuePairOfstringstring;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionAdditionalField;
-use Microsoft\BingAds\v11\CampaignManagement\Schedule;
-use Microsoft\BingAds\v11\CampaignManagement\DayTime;
-use Microsoft\BingAds\v11\CampaignManagement\Day;
-use Microsoft\BingAds\v11\CampaignManagement\Minute;
-use Microsoft\BingAds\v11\CampaignManagement\Date;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionAssociation;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionAssociationCollection;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialReason;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialReasonCollection;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionEditorialStatus;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionIdentity;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionIdToEntityIdAssociation;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionStatus;
-use Microsoft\BingAds\v11\CampaignManagement\AdExtensionsTypeFilter;
-use Microsoft\BingAds\v11\CampaignManagement\AccountMigrationStatusesInfo;
-use Microsoft\BingAds\v11\CampaignManagement\MigrationStatusInfo;
-use Microsoft\BingAds\v11\CampaignManagement\MigrationStatus;
-use Microsoft\BingAds\v11\CampaignManagement\Address;
-use Microsoft\BingAds\v11\CampaignManagement\SiteLink;
-use Microsoft\BingAds\v11\CampaignManagement\AssociationType;
-use Microsoft\BingAds\v11\CampaignManagement\CustomParameters;
-use Microsoft\BingAds\v11\CampaignManagement\CustomParameter;
+// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V11\CampaignManagement\Campaign;
+use Microsoft\BingAds\V11\CampaignManagement\BudgetLimitType;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\AppAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\CallAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\CalloutAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\ImageAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\LocationAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\ReviewAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\SiteLinksAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\Sitelink2AdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\StructuredSnippetAdExtension;
+use Microsoft\BingAds\V11\CampaignManagement\KeyValuePairOfstringstring;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionAdditionalField;
+use Microsoft\BingAds\V11\CampaignManagement\Schedule;
+use Microsoft\BingAds\V11\CampaignManagement\DayTime;
+use Microsoft\BingAds\V11\CampaignManagement\Day;
+use Microsoft\BingAds\V11\CampaignManagement\Minute;
+use Microsoft\BingAds\V11\CampaignManagement\Date;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionAssociation;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionAssociationCollection;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionEditorialReason;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionEditorialReasonCollection;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionEditorialStatus;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionIdentity;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionIdToEntityIdAssociation;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionStatus;
+use Microsoft\BingAds\V11\CampaignManagement\AdExtensionsTypeFilter;
+use Microsoft\BingAds\V11\CampaignManagement\AccountMigrationStatusesInfo;
+use Microsoft\BingAds\V11\CampaignManagement\MigrationStatusInfo;
+use Microsoft\BingAds\V11\CampaignManagement\MigrationStatus;
+use Microsoft\BingAds\V11\CampaignManagement\Address;
+use Microsoft\BingAds\V11\CampaignManagement\SiteLink;
+use Microsoft\BingAds\V11\CampaignManagement\AssociationType;
+use Microsoft\BingAds\V11\CampaignManagement\CustomParameters;
+use Microsoft\BingAds\V11\CampaignManagement\CustomParameter;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -59,8 +59,8 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
+use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
 $GLOBALS['SitelinkMigration'] = "SiteLinkAdExtension";
 $GLOBALS['AuthorizationData'] = null;
