@@ -113,6 +113,8 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The ad distribution attribute of an ad group. */
         const AdDistribution = 'AdDistribution';
+
+        /** The percentage of clicks that went to your ads. */
         const ClickSharePercent = 'ClickSharePercent';
 
         /** The device name attribute of a device OS target bid. */

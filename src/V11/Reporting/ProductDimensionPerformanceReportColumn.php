@@ -178,13 +178,21 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The click type ID. */
         const ClickTypeId = 'ClickTypeId';
+
+        /** The number of clicks when this ad element was present in the ad copy, whether this or another ad element was clicked on. */
         const TotalClicksOnAdElements = 'TotalClicksOnAdElements';
 
         /** Click type refers to each component of an ad that a customer can click. */
         const ClickType = 'ClickType';
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
+
+        /** The bid strategy type. */
         const BidStrategyType = 'BidStrategyType';
+
+        /** An alphanumeric identifier defined by the merchant to uniquely identify each local store. */
         const LocalStoreCode = 'LocalStoreCode';
+
+        /** The unique identifier for the Bing Merchant Center store. */
         const StoreId = 'StoreId';
     }
 

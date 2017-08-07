@@ -127,8 +127,14 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The current custom parameter set of the criterion. */
         const CustomParameters = 'CustomParameters';
+
+        /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
+
+        /** The bid strategy type. */
         const BidStrategyType = 'BidStrategyType';
+
+        /** An alphanumeric identifier defined by the merchant to uniquely identify each local store. */
         const LocalStoreCode = 'LocalStoreCode';
     }
 
