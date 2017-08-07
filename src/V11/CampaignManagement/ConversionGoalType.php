@@ -28,8 +28,11 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         /** Refers to an AppInstallGoal */
         const AppInstall = 'AppInstall';
 
-        /** Refers to an OfflineConversion */
+        /** Refers to an OfflineConversionGoal */
         const OfflineConversion = 'OfflineConversion';
+
+        /** Refers to an InStoreTransactionGoal */
+        const InStoreTransaction = 'InStoreTransaction';
     }
 
 }

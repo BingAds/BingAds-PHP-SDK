@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @link http://msdn.microsoft.com/en-us/library/dn277501(v=msads.110).aspx GetKeywordsByEditorialStatus Request Object
      * 
      * @uses KeywordEditorialStatus
+     * @uses KeywordAdditionalField
      * @used-by BingAdsCampaignManagementService::GetKeywordsByEditorialStatus
      */
     final class GetKeywordsByEditorialStatusRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var KeywordEditorialStatus
          */
         public $EditorialStatus;
+
+        /**
+         * The list of additional properties that you want included within each returned Keyword object.
+         * @var KeywordAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

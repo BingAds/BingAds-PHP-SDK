@@ -73,6 +73,9 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The keyword status. */
         const KeywordStatus = 'KeywordStatus';
+
+        /** The goal type. */
+        const GoalType = 'GoalType';
     }
 
 }
