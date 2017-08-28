@@ -38,9 +38,9 @@ $GLOBALS['LocalFile'] = "c:\\geolocations\\geolocations.csv";
 
 $GLOBALS['TempFile'] = "c:\\geolocations\\temp.csv";
 
-// The only supported file format version is 1.0. 
+// The latest supported file format version is 2.0. 
 
-$Version = "1.0";
+$Version = "2.0";
 
 // The language and locale of the geographical locations file available for download.
 // This example uses 'en' (English). Supported locales are 'zh-Hant' (Traditional Chinese), 'en' (English), 'fr' (French), 
@@ -84,7 +84,7 @@ try
 
     // Going forward you should track the date and time of the previous download,  
     // and compare it with the last modified time provided by the service.
-    $previousSyncTimeUtc = new DateTime('2017-06-18T00:00:00-00:00');
+    $previousSyncTimeUtc = new DateTime('2017-08-10T00:00:00-00:00');
     
     $getGeoLocationsFileUrlResponse = CampaignManagementHelper::GetGeoLocationsFileUrl(
         $Version, 
@@ -99,7 +99,7 @@ try
     printf("LastModifiedTimeUtc: %s\n", $lastModifiedTimeUtc);
     
     // Download the file if it was modified since the previous download.
-    if($previousSyncTimeUtc < $lastModifiedTimeUtc)
+    if($previousSyncTimeUtc < new DateTime($lastModifiedTimeUtc))
     {
         printf("Downloading the file locally: %s\n", $GLOBALS['LocalFile']);
         DownloadFile($fileUrl);
