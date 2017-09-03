@@ -427,7 +427,7 @@ try
     	AssociationType::Campaign
     );
     
-    // Deletes the ad extensions from the account�s ad extension library.
+    // Deletes the ad extensions from the account's ad extension library.
     CampaignManagementHelper::DeleteAdExtensions(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensionIds
