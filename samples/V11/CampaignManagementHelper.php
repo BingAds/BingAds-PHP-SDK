@@ -270,7 +270,7 @@ final class CampaignManagementHelper {
 
     static function GetCampaignsByAccountId($accountId, $campaignType)
     {
-        $GLOBALS['proxy'] = $GLOBALS['CampaignProxy'];
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignProxy'];
         
         $request = new GetCampaignsByAccountIdRequest();
         $request->AccountId = $accountId;
