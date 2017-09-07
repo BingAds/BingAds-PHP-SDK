@@ -68,19 +68,21 @@ try
     	$GLOBALS['AuthorizationData']->AccountId,
         CampaignManagementHelper::AllCampaignTypes);
 
-	foreach ($campaigns->Campaign as $campaign)
+    if(isset($campaigns->Campaigns))
+    {
+        foreach ($campaigns->Campaigns->Campaign as $campaign)
 	{
-		$opportunities = AdInsightHelper::GetBudgetOpportunities($campaign->Id)->Opportunities;
-
-		AdInsightHelper::OutputBudgetOpportunities($opportunities, $campaign->Id);
+	    $opportunities = AdInsightHelper::GetBudgetOpportunities($campaign->Id)->Opportunities;
+	    AdInsightHelper::OutputBudgetOpportunities($opportunities, $campaign->Id);
 	}
+    }
 }
 catch (SoapFault $e)
 {
 	// Output the last request/response.
 	
 	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
+        printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
