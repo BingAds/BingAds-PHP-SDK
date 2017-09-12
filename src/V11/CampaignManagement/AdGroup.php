@@ -99,7 +99,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $PricingModel;
 
         /**
-         * The targeting setting that is applicable for all audiences e.
+         * The targeting setting that is applicable for all audiences e.g., custom audiences and remarketing lists that are associated with this ad group.
          * @var RemarketingTargetingSetting
          */
         public $RemarketingTargetingSetting;
