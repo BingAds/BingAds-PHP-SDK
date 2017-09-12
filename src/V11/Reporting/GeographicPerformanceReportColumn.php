@@ -35,16 +35,16 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The Bing Ads assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The country used to deliver the ad. */
+        /** The country where the user was physically located when they clicked the ad. */
         const Country = 'Country';
 
-        /** The state used to deliver the ad. */
+        /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area used to deliver the ad. */
+        /** The metro area where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
-        /** The city used to deliver the ad. */
+        /** The city where the user was physically located when they clicked the ad. */
         const City = 'City';
 
         /** The account currency type. */
@@ -139,6 +139,15 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
+
+        /** The county where the user was physically located when they clicked the ad. */
+        const County = 'County';
+
+        /** The postal code where the user was physically located when they clicked the ad. */
+        const PostalCode = 'PostalCode';
+
+        /** The Bing Ads identifier of the location where the user was physically located when they clicked the ad. */
+        const LocationId = 'LocationId';
     }
 
 }

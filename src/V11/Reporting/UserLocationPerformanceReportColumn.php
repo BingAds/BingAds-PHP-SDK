@@ -35,13 +35,13 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The Bing Ads assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The country used to deliver the ad. */
+        /** The country where the user was physically located when they clicked the ad. */
         const Country = 'Country';
 
-        /** The state used to deliver the ad. */
+        /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area used to deliver the ad. */
+        /** The metro area where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
         /** The account currency type. */
@@ -77,7 +77,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The ad group language. */
         const Language = 'Language';
 
-        /** The city used to deliver the ad. */
+        /** The city where the user was physically located when they clicked the ad. */
         const City = 'City';
 
         /** The name of a country if the user's geographical intent can be determined. */
@@ -136,6 +136,24 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The revenue per assist. */
         const RevenuePerAssist = 'RevenuePerAssist';
+
+        /** The county where the user was physically located when they clicked the ad. */
+        const County = 'County';
+
+        /** The postal code where the user was physically located when they clicked the ad. */
+        const PostalCode = 'PostalCode';
+
+        /** The name of a county if the user's geographical intent can be determined. */
+        const QueryIntentCounty = 'QueryIntentCounty';
+
+        /** The name of a postal code if the user's geographical intent can be determined. */
+        const QueryIntentPostalCode = 'QueryIntentPostalCode';
+
+        /** The Bing Ads identifier of the location where the user was physically located when they clicked the ad. */
+        const LocationId = 'LocationId';
+
+        /** The location identifier if the user's geographical intent can be determined. */
+        const QueryIntentLocationId = 'QueryIntentLocationId';
     }
 
 }

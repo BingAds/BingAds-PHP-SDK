@@ -51,7 +51,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The destination URL attribute of the ad, keyword, or ad group criterion. */
         const DestinationUrl = 'DestinationUrl';
 
-        /** The maximum cost per click. */
+        /** The maximum cost per click bid that was in effect at the time the report was generated. */
         const CurrentMaxCpc = 'CurrentMaxCpc';
 
         /** The account currency type. */
