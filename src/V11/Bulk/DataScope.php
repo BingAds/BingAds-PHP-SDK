@@ -12,16 +12,16 @@ namespace Microsoft\BingAds\V11\Bulk;
      */
     final class DataScope
     {
-        /** Download the entity attributes records. */
+        /** Download the entity attributes records.*/
         const EntityData = 'EntityData';
 
-        /** Download the performance data fields for the corresponding entity records. */
+        /** Download the performance data fields.*/
         const EntityPerformanceData = 'EntityPerformanceData';
 
         /** Download the quality score fields for the corresponding entity records. */
         const QualityScoreData = 'QualityScoreData';
 
-        /** Download the bid suggestions records. */
+        /** Download the bid suggestions records.*/
         const BidSuggestionsData = 'BidSuggestionsData';
     }
 

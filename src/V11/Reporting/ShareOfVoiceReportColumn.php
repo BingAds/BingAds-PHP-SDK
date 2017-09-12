@@ -87,7 +87,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The percentage of time your ads would have been displayed to users, but were not because your bid was too low or your bid and quality score was below minimum thresholds, which prevented you from entering the auction. */
         const ImpressionLostToBidPercent = 'ImpressionLostToBidPercent';
 
-        /** The maximum cost per click. */
+        /** The maximum cost per click bid that was in effect at the time the report was generated. */
         const CurrentMaxCpc = 'CurrentMaxCpc';
 
         /** The numeric score shows you how competitive your ads are in the marketplace by measuring how relevant your keywords and landing pages are to customers' search terms. */

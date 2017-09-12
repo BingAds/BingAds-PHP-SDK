@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Defines a list of optional AdGroup properties that you can request when calling GetAdGroupsByCampaignId and GetAdGroupsByIds.
+     * Defines additional properties of an AdGroup object, or properties of objects nested within an ad group, that you can request when calling GetAdGroupsByCampaignId and GetAdGroupsByIds.
      * @link http://msdn.microsoft.com/en-us/library/mt709095(v=msads.110).aspx AdGroupAdditionalField Value Set
      * 
      * @used-by GetAdGroupsByCampaignIdRequest

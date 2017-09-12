@@ -47,7 +47,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The Bing Ads assigned identifier of an ad. */
         const AdId = 'AdId';
 
-        /** The maximum cost per click. */
+        /** The maximum cost per click bid that was in effect at the time the report was generated. */
         const CurrentMaxCpc = 'CurrentMaxCpc';
 
         /** The account currency type. */
