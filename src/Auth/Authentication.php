@@ -7,7 +7,8 @@ namespace Microsoft\BingAds\Auth;
  */
 abstract class Authentication
 {
-    /** 
+    /**
+     * @var string
      * The Authentication type for example PasswordAuthentication or OAuthDesktopMobileImplicitGrant.
      */
     public $Type;

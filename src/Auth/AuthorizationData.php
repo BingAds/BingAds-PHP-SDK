@@ -7,22 +7,26 @@ namespace Microsoft\BingAds\Auth;
  */
 class AuthorizationData
 {
-    /** 
+    /**
+     * @var OAuthAuthorization
      * An object representing the authentication headers that should be used in calls to the Bing Ads web services.
      */
     public $Authentication;
 
-    /** 
+    /**
+     * @var string
      * The identifier of the account that owns the entities in the request. Used as the CustomerAccountId header element in calls to the Bing Ads web services.
      */
     public $AccountId;
 
-    /** 
+    /**
+     * @var string
      * The identifier of the customer that owns the account. Used as the CustomerId header element in calls to the Bing Ads web services.
      */
     public $CustomerId;
 
-    /** 
+    /**
+     * @var string
      * The Bing Ads developer access token. Used as the DeveloperToken header element in calls to the Bing Ads web services.
      */
     public $DeveloperToken;
@@ -34,7 +38,7 @@ class AuthorizationData
      * Includes the authentication. 
      *
      * @param Authentication $authentication
-     * @return AuthorizationData this builder
+     * @return static this builder
      */
     public function withAuthentication($authentication) {
         $this->Authentication = $authentication;
@@ -45,7 +49,7 @@ class AuthorizationData
      * Includes the account ID. 
      *
      * @param string $accountId
-     * @return AuthorizationData this builder
+     * @return static this builder
      */
     public function withAccountId($accountId) {
         $this->AccountId = $accountId;
@@ -56,7 +60,7 @@ class AuthorizationData
      * Includes the customer ID. 
      *
      * @param string $customerId
-     * @return AuthorizationData this builder
+     * @return static this builder
      */
     public function withCustomerId($customerId) {
         $this->CustomerId = $customerId;
@@ -67,7 +71,7 @@ class AuthorizationData
      * Includes the developer token. 
      *
      * @param string $developerToken
-     * @return AuthorizationData this builder
+     * @return static this builder
      */
     public function withDeveloperToken($developerToken) {
         $this->DeveloperToken = $developerToken;

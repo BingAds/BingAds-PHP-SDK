@@ -24,7 +24,7 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
      * Includes the state. 
      *
      * @param string $state
-     * @return OAuthDesktopMobileImplicitGrant this builder
+     * @return static this builder
      */
     public function withState($state) {
         $this->State = $state;

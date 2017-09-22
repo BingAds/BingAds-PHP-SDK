@@ -2,8 +2,6 @@
 
 namespace Microsoft\BingAds\Auth;
 
-use Exception;
-
 /** 
  * Represents an OAuth authorization object implementing the authorization code grant flow for use in a desktop or mobile application. 
  */

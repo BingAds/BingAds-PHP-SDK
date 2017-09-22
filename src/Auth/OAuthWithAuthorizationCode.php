@@ -3,16 +3,19 @@
 namespace Microsoft\BingAds\Auth;
 
 use Exception;
+use LogicException;
 
 abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     private $oauthService;
 
-    /** 
+    /**
+     * @var string
      * An opaque value used by the client to maintain state between the request and callback.
      */
     public $State;
 
-    /** 
+    /**
+     * @var string
      * Your application's registered client secret. 
      */
     public $ClientSecret;
@@ -27,7 +30,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
      * Includes the client secret. 
      *
      * @param string $clientSecret
-     * @return OAuthWithAuthorizationCode this builder
+     * @return static this builder
      */
     public function withClientSecret($clientSecret) {
         $this->ClientSecret = $clientSecret;
@@ -38,7 +41,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
      * Includes the state. 
      *
      * @param string $state
-     * @return OAuthWithAuthorizationCode this builder
+     * @return static this builder
      */
     public function withState($state) {
         $this->State = $state;
@@ -57,10 +60,14 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
 
         return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters);
     }
- 
-    /** 
-     * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service 
+
+    /**
+     * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service
      * using the specified authorization response redirect Uri.
+     * @param $responseUri
+     * @return OAuthTokens
+     * @throws Exception
+     * @throws OAuthTokenRequestException
      */
     public function RequestOAuthTokensByResponseUri($responseUri)
     {
@@ -70,10 +77,18 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         }
 
         $parsed_url = parse_url($responseUri);
+
+        if (!isset($parsed_url['query']))
+        {
+            throw new LogicException(
+                'Argument $responseUri in ' . __METHOD__ . ' should contains query string with `error`, or `code` params.' .
+                'See examples: https://msdn.microsoft.com/library/bing-ads-overview-getting-started-php-with-web-services.aspx#oauth'
+            );
+        }
         
         parse_str($parsed_url["query"], $queryParts);
 
-        if (array_key_exists("error", $queryParts)) 
+        if (array_key_exists("error", $queryParts))
         {
             $errorName = $queryParts['error'];
             $errorDesc = $queryParts['error_description'];
