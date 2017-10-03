@@ -16,13 +16,6 @@ use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
-use Microsoft\BingAds\v10\CampaignManagement\AddTargetsToLibraryRequest;
-use Microsoft\BingAds\v10\CampaignManagement\SetTargetToAdGroupRequest;
-use Microsoft\BingAds\v10\CampaignManagement\Target;
-use Microsoft\BingAds\v10\CampaignManagement\DeviceOSTarget;
-use Microsoft\BingAds\v10\CampaignManagement\DeviceOSTargetBid;
-
-// Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
 use Microsoft\BingAds\V11\CampaignManagement\Campaign;
 use Microsoft\BingAds\V11\CampaignManagement\AdGroup;
 use Microsoft\BingAds\V11\CampaignManagement\BiddableAdGroupCriterion;
@@ -88,7 +81,6 @@ try
     $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
 
     $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-    $GLOBALS['CampaignProxyV10'] = new ServiceClient(ServiceClientType::CampaignManagementVersion10, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     $campaignIds = GetExampleCampaignIds();
     
@@ -119,7 +111,7 @@ try
         // devices, genders, and locations. As a best practice, you should consider at a minimum 
         // adding a campaign location criterion corresponding to the customer market country.
 
-        if(empty($campaignCriterions) || count($campaignCriterions) <= 0)
+        if(empty($campaignCriterions) || !(isset($campaignCriterions->CampaignCriterion)))
         {
             $campaignCriterions = array();
 
@@ -152,31 +144,15 @@ try
                 CampaignCriterionType::Targets
             );
 
-            // If the campaign used to share target criterions with another campaign or ad group,
-            // and the add operation resulted in new target criterion identifiers for this campaign,
-            // then we need to get the new criterion IDs.
+            // Capture the new criterion IDs either via AddCampaignCriterionsResponse or you can call GetCampaignCriterionsByIds.
 
-            // Otherwise we only need to capture the new criterion IDs.
-
-            if ($addCampaignCriterionsResponse->IsMigrated == true)
-            {
-                $campaignCriterions = CampaignManagementHelper::GetCampaignCriterionsByIds(
-                    $campaignId,
-                    null,
-                    CampaignManagementHelper::AllTargetCampaignCriterionTypes)->CampaignCriterions;
-            }
-            else if (!empty($addCampaignCriterionsResponse->CampaignCriterionIds) && count($addCampaignCriterionsResponse->CampaignCriterionIds) > 0)
-            {
-                $criterionIds = $addCampaignCriterionsResponse->CampaignCriterionIds;
-                for($index = 0; $index < count($criterionIds); $index++)
-                {
-                    $campaignCriterions->CampaignCriterion[$index]->Id = $criterionIds->long[$index] ?? null;
-                }
-            }
+            $campaignCriterions = CampaignManagementHelper::GetCampaignCriterionsByIds(
+                $campaignId,
+                null,
+                CampaignManagementHelper::AllTargetCampaignCriterionTypes)->CampaignCriterions;
         }
         
-        // You can now store or output the campaign criterions, whether or not they were 
-        // migrated from a shared target library.
+        // You can now store or output the campaign criterions.
 
         print("Campaign Criterions: \n\n");
         if(isset($campaignCriterions->CampaignCriterion)){
@@ -197,57 +173,48 @@ try
                     null,
                     CampaignManagementHelper::AllTargetAdGroupCriterionTypes)->AdGroupCriterions;
 
-
-            // If the Smartphones device criterion already exists, we'll increase the bid multiplier by 5 percent.
-
-            $updateAdGroupCriterions = array();
-            foreach($adGroupCriterions->AdGroupCriterion as $adGroupCriterion)
+            if (!empty($adGroupCriterions) && isset($adGroupCriterions->AdGroupCriterion))
             {
-                if ($adGroupCriterion->Type === "BiddableAdGroupCriterion" && 
-                    $adGroupCriterion->Criterion->Type === "DeviceCriterion" && 
-                    $adGroupCriterion->Criterion->DeviceName === "Smartphones")
+                // If the Smartphones device criterion already exists, we'll increase the bid multiplier by 5 percent.
+
+                $updateAdGroupCriterions = array();
+                foreach($adGroupCriterions->AdGroupCriterion as $adGroupCriterion)
                 {
-                    $updateAdGroupCriterion = new BiddableAdGroupCriterion();
-                    $updateAdGroupCriterion->Id = $adGroupCriterion->Id;
-                    $updateAdGroupCriterion->AdGroupId = $adGroupCriterion->AdGroupId;
-                    $deviceCriterion = new DeviceCriterion();
-                    $deviceCriterion->DeviceName = $adGroupCriterion->Criterion->DeviceName;
-                    $updateAdGroupCriterion->Criterion = new SoapVar($deviceCriterion, SOAP_ENC_OBJECT, 'DeviceCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
-                    $criterionBid = new BidMultiplier();
-                    $criterionBid->Multiplier = $adGroupCriterion->CriterionBid->Multiplier * 1.05;
-                    $updateAdGroupCriterion->CriterionBid = new SoapVar($criterionBid, SOAP_ENC_OBJECT, 'BidMultiplier', $GLOBALS['CampaignProxy']->GetNamespace());
+                    if ($adGroupCriterion->Type === "BiddableAdGroupCriterion" && 
+                        $adGroupCriterion->Criterion->Type === "DeviceCriterion" && 
+                        $adGroupCriterion->Criterion->DeviceName === "Smartphones")
+                    {
+                        $updateAdGroupCriterion = new BiddableAdGroupCriterion();
+                        $updateAdGroupCriterion->Id = $adGroupCriterion->Id;
+                        $updateAdGroupCriterion->AdGroupId = $adGroupCriterion->AdGroupId;
+                        $deviceCriterion = new DeviceCriterion();
+                        $deviceCriterion->DeviceName = $adGroupCriterion->Criterion->DeviceName;
+                        $updateAdGroupCriterion->Criterion = new SoapVar($deviceCriterion, SOAP_ENC_OBJECT, 'DeviceCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
+                        $criterionBid = new BidMultiplier();
+                        $criterionBid->Multiplier = $adGroupCriterion->CriterionBid->Multiplier * 1.05;
+                        $updateAdGroupCriterion->CriterionBid = new SoapVar($criterionBid, SOAP_ENC_OBJECT, 'BidMultiplier', $GLOBALS['CampaignProxy']->GetNamespace());
 
-                    $updateAdGroupCriterions[] = new SoapVar($updateAdGroupCriterion, SOAP_ENC_OBJECT, 'BiddableAdGroupCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
+                        $updateAdGroupCriterions[] = new SoapVar($updateAdGroupCriterion, SOAP_ENC_OBJECT, 'BiddableAdGroupCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
+                    }
                 }
-            }
-            
-            if (!empty($updateAdGroupCriterions) && count($updateAdGroupCriterions) > 0)
-            {
+                
                 $updateAdGroupCriterionsResponse = CampaignManagementHelper::UpdateAdGroupCriterions(
                     $updateAdGroupCriterions,
                     AdGroupCriterionType::Targets
                 );
 
-                // If the ad group used to share target criterions with another campaign or ad group,
-                // and the update operation resulted in new target criterion identifiers for this ad group,
-                // then we need to get the new criterion IDs.
+                $adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
+                    $adGroupId,
+                    null,
+                    CampaignManagementHelper::AllTargetAdGroupCriterionTypes)->AdGroupCriterions;
+                
+                // You can now store or output the ad group criterions.
 
-                if ($updateAdGroupCriterionsResponse->IsMigrated == true)
+                print("Ad Group Criterions: \n\n");
+                if(isset($adGroupCriterions->AdGroupCriterion))
                 {
-                    $adGroupCriterions = CampaignManagementHelper::GetAdGroupCriterionsByIds(
-                        $adGroupId,
-                        null,
-                        CampaignManagementHelper::AllTargetAdGroupCriterionTypes)->AdGroupCriterions;
+                    CampaignManagementHelper::OutputAdGroupCriterions($adGroupCriterions->AdGroupCriterion);
                 }
-            }
-            
-            // You can now store or output the ad group criterions, whether or not they were 
-            // migrated from a shared target library.
-
-            print("Ad Group Criterions: \n\n");
-            if(isset($adGroupCriterions->AdGroupCriterion))
-            {
-                CampaignManagementHelper::OutputAdGroupCriterions($adGroupCriterions->AdGroupCriterion);
             }
         }
     }
@@ -437,20 +404,6 @@ function GetExampleCampaignIds()
         CampaignManagementHelper::OutputPartialErrors($addAdGroupsResponse->PartialErrors->BatchError);
     }
 
-    // This example uses the deprecated version 10 shared target library in order to later demonstrate
-    // the inline migration from shared target criterions to unshared target criterions.
-
-    $adGroupIds = array();
-    foreach($nillableAdGroupIds as $adGroupId)
-    {
-        $adGroupIds[] = $adGroupId;
-    }
-
-    // The shared target ID is output within the ShareDeprecatedTargetsAsync method.
-    // We won't do anything further with it in this example.
-
-    $sharedTargetId = ShareDeprecatedTargets($adGroupIds);
-
     $campaignIds = array();
     foreach($nillableCampaignIds as $campaignId)
     {
@@ -458,65 +411,6 @@ function GetExampleCampaignIds()
     }
 
     return $campaignIds;
-}
-
-// Shares a target with multiple new ad groups. This helper function is used to setup
-// criterion migration scenarios.
-// This is an example of a deprecated scenario. In Bing Ads API version 11 you can no longer use 
-// the AddTargetsToLibrary, SetTargetToCampaign, or SetTargetToAdGroup operations. Instead you will 
-// be required to use criterions. Support for targets will end no later than the sunset 
-// of Bing Ads API version 10. 
-
-function ShareDeprecatedTargets($adGroupIds)
-{            
-    $sharedTarget = new Target();
-    $sharedTarget->Name = "My Target";
-
-    $deviceOSTarget = new DeviceOSTarget();
-    $deviceOSTargetBid = new DeviceOSTargetBid();
-    $deviceOSTargetBid->BidAdjustment = 20;
-    $deviceOSTargetBid->DeviceName = "Computers";
-    $deviceOSTarget->Bids = array($deviceOSTargetBid);
-    $sharedTarget->DeviceOS = $deviceOSTarget;
-
-    $addTargetsToLibraryResponse = AddTargetsToLibrary(array($sharedTarget));
-    $sharedTargetId = $addTargetsToLibraryResponse->TargetIds->long[0];
-    printf("Added Target Id: %s\n", $sharedTargetId);
-
-    SetTargetToAdGroup($adGroupIds[0], $sharedTargetId);
-    printf("Associated AdGroupId %s with TargetId %s.\n", $adGroupIds[0], $sharedTargetId);
-    SetTargetToAdGroup($adGroupIds[1], $sharedTargetId);
-    printf("Associated AdGroupId %s with TargetId %s.\n", $adGroupIds[1], $sharedTargetId);
-    SetTargetToAdGroup($adGroupIds[2], $sharedTargetId);
-    printf("Associated AdGroupId %s with TargetId %s.\n\n", $adGroupIds[2], $sharedTargetId);
-    
-    return $sharedTargetId;
-}
-
-
-// Adds the specified Target object to the customer library. 
-
-function AddTargetsToLibrary($targets)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxyV10']; 
-
-    $request = new AddTargetsToLibraryRequest();
-    $request->Targets = $targets;
-    
-    return $GLOBALS['CampaignProxyV10']->GetService()->AddTargetsToLibrary($request);
-}
-
-// Associates the specified ad group and target. 
-
-function SetTargetToAdGroup($adGroupId, $targetId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['CampaignProxyV10']; 
-
-    $request = new SetTargetToAdGroupRequest();
-    $request->AdGroupId = $adGroupId;
-    $request->TargetId = $targetId;
-    
-    $GLOBALS['CampaignProxyV10']->GetService()->SetTargetToAdGroup($request);
 }
 
 ?>
