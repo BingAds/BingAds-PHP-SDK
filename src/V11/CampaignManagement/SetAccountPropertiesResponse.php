@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Sets account level properties by name.
-     * @link http://msdn.microsoft.com/en-us/library/mt803290(v=msads.110).aspx SetAccountProperties Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setaccountproperties?version=11 SetAccountProperties Response Object
      * 
      * @used-by BingAdsCampaignManagementService::SetAccountProperties
      */

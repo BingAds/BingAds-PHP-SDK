@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Defines the possible status values of an InsertionOrder.
-     * @link http://msdn.microsoft.com/en-us/library/dn743761(v=msads.110).aspx InsertionOrderStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/insertionorderstatus?version=11 InsertionOrderStatus Value Set
      * 
      * @used-by InsertionOrder
      */

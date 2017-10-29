@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a biddable criterion that you want applied to the specified ad group.
-     * @link http://msdn.microsoft.com/en-us/library/jj689538(v=msads.110).aspx BiddableAdGroupCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/biddableadgroupcriterion?version=11 BiddableAdGroupCriterion Data Object
      * 
      * @uses CriterionBid
      * @uses AdGroupCriterionEditorialStatus

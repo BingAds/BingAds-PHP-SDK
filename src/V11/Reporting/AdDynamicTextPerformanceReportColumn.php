@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AdDynamicTextPerformanceReportRequest Data Object.
-     * @link http://msdn.microsoft.com/en-us/library/bb671878(v=msads.110).aspx AdDynamicTextPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/addynamictextperformancereportcolumn?version=11 AdDynamicTextPerformanceReportColumn Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportRequest
      */
@@ -31,6 +31,8 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The keyword text. */
         const Keyword = 'Keyword';
+
+        /** The Bing Ads assigned identifier of an ad. */
         const AdId = 'AdId';
 
         /** The ad title. */
@@ -125,6 +127,9 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The text attribute of an ad. */
         const AdDescription = 'AdDescription';
+
+        /** The labels applied to the ad. */
+        const AdLabels = 'AdLabels';
     }
 
 }

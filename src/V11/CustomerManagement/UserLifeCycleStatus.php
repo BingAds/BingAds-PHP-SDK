@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the possible status values of a user.
-     * @link http://msdn.microsoft.com/en-us/library/ee704179(v=msads.110).aspx UserLifeCycleStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/userlifecyclestatus?version=11 UserLifeCycleStatus Value Set
      * 
      * @used-by User
      * @used-by GetUsersInfoRequest

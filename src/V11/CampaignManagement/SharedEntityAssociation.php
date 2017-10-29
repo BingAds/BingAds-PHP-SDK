@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains association information for a campaign and shared entity such as a negative keyword list.
-     * @link http://msdn.microsoft.com/en-us/library/dn743769(v=msads.110).aspx SharedEntityAssociation Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/sharedentityassociation?version=11 SharedEntityAssociation Data Object
      * 
      * @used-by DeleteSharedEntityAssociationsRequest
      * @used-by GetSharedEntityAssociationsByEntityIdsResponse

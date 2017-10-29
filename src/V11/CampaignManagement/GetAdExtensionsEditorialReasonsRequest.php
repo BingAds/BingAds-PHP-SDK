@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets editorial rejection reasons for the respective ad extension and entity associations.
-     * @link http://msdn.microsoft.com/en-us/library/dn236313(v=msads.110).aspx GetAdExtensionsEditorialReasons Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadextensionseditorialreasons?version=11 GetAdExtensionsEditorialReasons Request Object
      * 
      * @uses AdExtensionIdToEntityIdAssociation
      * @uses AssociationType

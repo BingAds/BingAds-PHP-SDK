@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the entity types that can be associated with an ad extension.
-     * @link http://msdn.microsoft.com/en-us/library/dn249973(v=msads.110).aspx AssociationType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/associationtype?version=11 AssociationType Value Set
      * 
      * @used-by AdExtensionAssociation
      * @used-by DeleteAdExtensionsAssociationsRequest

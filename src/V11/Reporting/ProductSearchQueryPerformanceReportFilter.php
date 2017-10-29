@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the Bing Shopping product search query performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt783265(v=msads.110).aspx ProductSearchQueryPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productsearchqueryperformancereportfilter?version=11 ProductSearchQueryPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

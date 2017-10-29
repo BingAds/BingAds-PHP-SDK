@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an ad group.
-     * @link http://msdn.microsoft.com/en-us/library/bb671956(v=msads.110).aspx AdGroup Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroup?version=11 AdGroup Data Object
      * 
      * @uses AdDistribution
      * @uses AdRotation
@@ -57,7 +57,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $EndDate;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;
@@ -81,7 +81,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Name;
 
         /**
-         * The percent amount by which to adjust your bid for native ads above or below the base ad group or keyword bid.
+         * The percent amount by which to adjust your bid for intent ads above or below the base ad group or keyword bid.
          * @var integer
          */
         public $NativeBidAdjustment;
@@ -99,7 +99,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $PricingModel;
 
         /**
-         * The targeting setting that is applicable for all audiences e.g., custom audiences and remarketing lists that are associated with this ad group.
+         * The targeting setting that is applicable for all audiences e.
          * @var RemarketingTargetingSetting
          */
         public $RemarketingTargetingSetting;

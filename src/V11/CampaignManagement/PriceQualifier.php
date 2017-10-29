@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines price qualifiers for price ad extensions.
-     * @link http://msdn.microsoft.com/en-us/library/mt807733(v=msads.110).aspx PriceQualifier Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pricequalifier?version=11 PriceQualifier Value Set
      * 
      * @used-by PriceTableRow
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines a calendar date by month, day, and year.
-     * @link http://msdn.microsoft.com/en-us/library/jj134989(v=msads.110).aspx Date Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/date?version=11 Date Data Object
      * 
      * @used-by PerformanceStatsDateRange
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains a domain category with website coverage.
-     * @link http://msdn.microsoft.com/en-us/library/mt772350(v=msads.110).aspx DomainCategory Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/domaincategory?version=11 DomainCategory Data Object
      * 
      * @used-by GetDomainCategoriesResponse
      */

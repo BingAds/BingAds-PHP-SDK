@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Gets the amount spent by the account in the specified month.
-     * @link http://msdn.microsoft.com/en-us/library/dn451264(v=msads.110).aspx GetAccountMonthlySpend Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/getaccountmonthlyspend?version=11 GetAccountMonthlySpend Request Object
      * 
      * @used-by BingAdsCustomerBillingService::GetAccountMonthlySpend
      */

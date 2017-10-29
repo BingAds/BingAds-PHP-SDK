@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Defines a paging object for the list of insertion orders returned using the SearchInsertionOrders operation.
-     * @link http://msdn.microsoft.com/en-us/library/dn743749(v=msads.110).aspx Paging Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/paging?version=11 Paging Data Object
      * 
      * @used-by SearchInsertionOrdersRequest
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a user.
-     * @link http://msdn.microsoft.com/en-us/library/bb671824(v=msads.110).aspx User Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/user?version=11 User Data Object
      * 
      * @uses ContactInfo
      * @uses ApplicationType
@@ -110,7 +110,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $UserName;
 
         /**
-         * If true, the user can be authenticated using a Microsoft Account.
+         * If true, the user can be authenticated using  a Microsoft Account.
          * @var boolean
          */
         public $IsMigratedToMicrosoftAccount;

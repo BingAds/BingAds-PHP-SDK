@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more audiences.
-     * @link http://msdn.microsoft.com/en-us/library/mt807651(v=msads.110).aspx AddAudiences Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addaudiences?version=11 AddAudiences Request Object
      * 
      * @uses Audience
      * @used-by BingAdsCampaignManagementService::AddAudiences

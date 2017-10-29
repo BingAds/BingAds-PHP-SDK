@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of a bidding scheme for how you want to manage your bids.
-     * @link http://msdn.microsoft.com/en-us/library/mt709087(v=msads.110).aspx BiddingScheme Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/biddingscheme?version=11 BiddingScheme Data Object
      * 
      * @used-by AdGroup
      * @used-by Campaign
@@ -13,6 +13,10 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     class BiddingScheme
     {
+        /**
+         * The type of bidding scheme that is set for this campaign, ad group, or keyword.
+         * @var string
+         */
         public $Type;
     }
 

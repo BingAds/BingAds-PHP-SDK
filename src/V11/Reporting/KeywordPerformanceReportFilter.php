@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the keyword performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/bb672082(v=msads.110).aspx KeywordPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/keywordperformancereportfilter?version=11 KeywordPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter
@@ -38,6 +38,11 @@ namespace Microsoft\BingAds\V11\Reporting;
          * @var AdGroupStatusReportFilter
          */
         public $AdGroupStatus;
+
+        /**
+         * How closely related your ads is to the customer's search query or other input.
+         * @var integer[]
+         */
         public $AdRelevance;
 
         /**
@@ -75,6 +80,11 @@ namespace Microsoft\BingAds\V11\Reporting;
          * @var DeviceTypeReportFilter
          */
         public $DeviceType;
+
+        /**
+         * How well your keyword competes against other keywords targeting the same traffic.
+         * @var integer[]
+         */
         public $ExpectedCtr;
 
         /**
@@ -88,6 +98,11 @@ namespace Microsoft\BingAds\V11\Reporting;
          * @var string[]
          */
         public $Keywords;
+
+        /**
+         * An aggregate quality assessment of all landing pages on your site.
+         * @var integer[]
+         */
         public $LandingPageExperience;
 
         /**

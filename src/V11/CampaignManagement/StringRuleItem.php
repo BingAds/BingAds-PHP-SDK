@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a rule expression that depends on the string values of the Url or Referrer Url.
-     * @link http://msdn.microsoft.com/en-us/library/mt772363(v=msads.110).aspx StringRuleItem Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/stringruleitem?version=11 StringRuleItem Data Object
      * 
      * @uses StringOperator
      */

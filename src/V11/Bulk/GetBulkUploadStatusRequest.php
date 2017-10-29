@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Gets the status and completion progress of a bulk upload request.
-     * @link http://msdn.microsoft.com/en-us/library/dn249979(v=msads.110).aspx GetBulkUploadStatus Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/getbulkuploadstatus?version=11 GetBulkUploadStatus Request Object
      * 
      * @used-by BingAdsBulkService::GetBulkUploadStatus
      */

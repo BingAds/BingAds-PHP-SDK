@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Appeals the editorial rejections of one or more ads or keywords that failed editorial review.
-     * @link http://msdn.microsoft.com/en-us/library/dn277533(v=msads.110).aspx AppealEditorialRejections Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appealeditorialrejections?version=11 AppealEditorialRejections Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AppealEditorialRejections

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes one or more ads from the specified ad group.
-     * @link http://msdn.microsoft.com/en-us/library/dn236310(v=msads.110).aspx DeleteAds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteads?version=11 DeleteAds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteAds
      */

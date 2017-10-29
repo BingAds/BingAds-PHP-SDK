@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the media associations of the specified entity type from an account's media library.
-     * @link http://msdn.microsoft.com/en-us/library/dn798359(v=msads.110).aspx GetMediaAssociations Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getmediaassociations?version=11 GetMediaAssociations Response Object
      * 
      * @uses MediaAssociation
      * @uses BatchError
@@ -13,6 +13,10 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class GetMediaAssociationsResponse
     {
+        /**
+         * An array of MediaAssociation objects that corresponds directly to the media identifiers that you specified in the request.
+         * @var MediaAssociation[][]
+         */
         public $MediaAssociations;
 
         /**

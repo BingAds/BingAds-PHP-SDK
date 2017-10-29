@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible audience types.
-     * @link http://msdn.microsoft.com/en-us/library/mt807670(v=msads.110).aspx AudienceType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/audiencetype?version=11 AudienceType Value Set
      * 
      * @used-by Audience
      * @used-by AudienceCriterion

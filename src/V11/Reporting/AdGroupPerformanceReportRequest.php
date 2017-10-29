@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines an ad group performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/bb671686(v=msads.110).aspx AdGroupPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adgroupperformancereportrequest?version=11 AdGroupPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AdGroupPerformanceReportColumn

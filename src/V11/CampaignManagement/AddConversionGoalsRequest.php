@@ -5,13 +5,17 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds new conversion goals to the account's shared conversion goal library.
-     * @link http://msdn.microsoft.com/en-us/library/mt759539(v=msads.110).aspx AddConversionGoals Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addconversiongoals?version=11 AddConversionGoals Request Object
      * 
      * @uses ConversionGoal
      * @used-by BingAdsCampaignManagementService::AddConversionGoals
      */
     final class AddConversionGoalsRequest
     {
+        /**
+         * The list of conversion goals to add to the account's shared conversion goal library.
+         * @var ConversionGoal[]
+         */
         public $ConversionGoals;
     }
 }

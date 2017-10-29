@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the base object for all report requests.
-     * @link http://msdn.microsoft.com/en-us/library/bb671813(v=msads.110).aspx ReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportrequest?version=11 ReportRequest Data Object
      * 
      * @uses ReportFormat
      * @uses ReportLanguage
@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         public $ExcludeColumnHeaders;
 
         /**
-         * Determines whether or not the downloaded report should contain footer metadata such as Microsoft copyright ( ?2017 Microsoft Corporation.
+         * Determines whether or not the downloaded report should contain footer metadata such as Microsoft copyright (@2017 Microsoft Corporation.
          * @var boolean
          */
         public $ExcludeReportFooter;

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Searches for accounts that match a specified criteria.
-     * @link http://msdn.microsoft.com/en-us/library/dn743757(v=msads.110).aspx SearchAccounts Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchaccounts?version=11 SearchAccounts Response Object
      * 
      * @uses Account
      * @used-by BingAdsCustomerManagementService::SearchAccounts
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
     final class SearchAccountsResponse
     {
         /**
-         * A list of accounts that meet the specified criteria.
+         * A  list of accounts that meet the specified criteria.
          * @var Account[]
          */
         public $Accounts;

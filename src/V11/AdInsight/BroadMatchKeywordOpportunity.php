@@ -5,14 +5,14 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the marketplace impact statistics of including broad match type keyword bids.
-     * @link http://msdn.microsoft.com/en-us/library/mt219315(v=msads.110).aspx BroadMatchKeywordOpportunity Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/broadmatchkeywordopportunity?version=11 BroadMatchKeywordOpportunity Data Object
      * 
      * @uses BroadMatchSearchQueryKPI
      */
     final class BroadMatchKeywordOpportunity extends KeywordOpportunity
     {
         /**
-         * Broad match average CPC in the marketplace.
+         * Broad match average CPC  in the marketplace.
          * @var double
          */
         public $AverageCPC;

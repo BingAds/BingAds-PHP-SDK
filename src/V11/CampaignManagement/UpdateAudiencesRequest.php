@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates the specified audiences.
-     * @link http://msdn.microsoft.com/en-us/library/mt807652(v=msads.110).aspx UpdateAudiences Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateaudiences?version=11 UpdateAudiences Request Object
      * 
      * @uses Audience
      * @used-by BingAdsCampaignManagementService::UpdateAudiences

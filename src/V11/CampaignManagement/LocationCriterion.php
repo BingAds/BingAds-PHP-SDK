@@ -5,13 +5,32 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users in a specific location.
-     * @link http://msdn.microsoft.com/en-us/library/mt807664(v=msads.110).aspx LocationCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/locationcriterion?version=11 LocationCriterion Data Object
      */
     final class LocationCriterion extends Criterion
     {
+        /**
+         * The location display name.
+         * @var string
+         */
         public $DisplayName;
+
+        /**
+         * Reserved for internal use.
+         * @var integer[]
+         */
         public $EnclosedLocationIds;
+
+        /**
+         * The unique Bing Ads identifier for the location where you want to show your ads.
+         * @var integer
+         */
         public $LocationId;
+
+        /**
+         * The location type.
+         * @var string
+         */
         public $LocationType;
     }
 

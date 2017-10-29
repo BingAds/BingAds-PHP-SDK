@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a Bing Merchant Center store.
-     * @link http://msdn.microsoft.com/en-us/library/dn411606(v=msads.110).aspx BMCStore Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/bmcstore?version=11 BMCStore Data Object
      * 
      * @used-by GetBMCStoresByCustomerIdResponse
      */
@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $HasCatalog;
 
         /**
-         * The unique identifier for the Bing Merchant Center store.
+         * The unique identifier for the  Bing Merchant Center store.
          * @var integer
          */
         public $Id;

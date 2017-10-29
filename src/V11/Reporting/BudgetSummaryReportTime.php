@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the date range values of a budget summary report request.
-     * @link http://msdn.microsoft.com/en-us/library/bb671928(v=msads.110).aspx BudgetSummaryReportTime Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/budgetsummaryreporttime?version=11 BudgetSummaryReportTime Data Object
      * 
      * @uses Date
      * @uses BudgetSummaryReportTimePeriod
@@ -13,8 +13,22 @@ namespace Microsoft\BingAds\V11\Reporting;
      */
     final class BudgetSummaryReportTime
     {
+        /**
+         * The end date of a date range.
+         * @var Date
+         */
         public $CustomDateRangeEnd;
+
+        /**
+         * The start date of a date range.
+         * @var Date
+         */
         public $CustomDateRangeStart;
+
+        /**
+         * A predefined date range.
+         * @var BudgetSummaryReportTimePeriod
+         */
         public $PredefinedTime;
     }
 

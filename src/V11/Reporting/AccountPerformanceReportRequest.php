@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines an account performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/bb671927(v=msads.110).aspx AccountPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/accountperformancereportrequest?version=11 AccountPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AccountPerformanceReportColumn

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the key performance index data for the specified keyword.
-     * @link http://msdn.microsoft.com/en-us/library/mt219292(v=msads.110).aspx KeywordHistoricalPerformance Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordhistoricalperformance?version=11 KeywordHistoricalPerformance Data Object
      * 
      * @uses KeywordKPI
      * @used-by GetHistoricalKeywordPerformanceResponse

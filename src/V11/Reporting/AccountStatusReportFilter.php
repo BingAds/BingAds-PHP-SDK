@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the account status values that you can use to filter the report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt489832(v=msads.110).aspx AccountStatusReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/accountstatusreportfilter?version=11 AccountStatusReportFilter Value Set
      * 
      * @used-by AccountPerformanceReportFilter
      * @used-by AdDynamicTextPerformanceReportFilter

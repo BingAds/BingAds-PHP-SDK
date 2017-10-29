@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ShareOfVoiceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/jj592910(v=msads.110).aspx ShareOfVoiceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/shareofvoicereportcolumn?version=11 ShareOfVoiceReportColumn Value Set
      * 
      * @used-by ShareOfVoiceReportRequest
      */
@@ -82,6 +82,8 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The percentage of impression share lost due to low expected click-through rate. */
         const ImpressionLostToExpectedCtrPercent = 'ImpressionLostToExpectedCtrPercent';
+
+        /** Reserved for internal use. */
         const ImpressionLostToRelevancePercent = 'ImpressionLostToRelevancePercent';
 
         /** The percentage of time your ads would have been displayed to users, but were not because your bid was too low or your bid and quality score was below minimum thresholds, which prevented you from entering the auction. */
@@ -137,6 +139,12 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The bid strategy type. */
         const BidStrategyType = 'BidStrategyType';
+
+        /** The labels applied to the keyword. */
+        const KeywordLabels = 'KeywordLabels';
+
+        /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
     }
 
 }

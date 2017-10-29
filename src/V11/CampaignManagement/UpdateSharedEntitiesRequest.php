@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates negative keyword lists within the account's library.
-     * @link http://msdn.microsoft.com/en-us/library/dn743732(v=msads.110).aspx UpdateSharedEntities Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatesharedentities?version=11 UpdateSharedEntities Request Object
      * 
      * @uses SharedEntity
      * @used-by BingAdsCampaignManagementService::UpdateSharedEntities

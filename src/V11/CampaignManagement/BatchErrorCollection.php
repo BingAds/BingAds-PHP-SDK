@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Defines an error object that contains batch error details for the top level list index and a list of batch errors corresponding to the nested list index.
-     * @link http://msdn.microsoft.com/en-us/library/dn743731(v=msads.110).aspx BatchErrorCollection Data Object
+     * Defines an error object that contains batch error details for the top level list index and a list of batch errors corresponding to the  nested list index.
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/batcherrorcollection?version=11 BatchErrorCollection Data Object
      * 
      * @uses BatchError
      * @uses KeyValuePairOfstringstring
@@ -51,7 +51,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $FieldPath;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

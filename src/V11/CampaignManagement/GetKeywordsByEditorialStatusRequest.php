@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Retrieves the keywords with the specified editorial review status.
-     * @link http://msdn.microsoft.com/en-us/library/dn277501(v=msads.110).aspx GetKeywordsByEditorialStatus Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getkeywordsbyeditorialstatus?version=11 GetKeywordsByEditorialStatus Request Object
      * 
      * @uses KeywordEditorialStatus
      * @uses KeywordAdditionalField

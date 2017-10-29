@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Determines which properties of the KeywordIdea object you want returned when calling the GetKeywordIdeas operation.
-     * @link http://msdn.microsoft.com/en-us/library/mt784414(v=msads.110).aspx KeywordIdeaAttribute Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordideaattribute?version=11 KeywordIdeaAttribute Value Set
      * 
      * @used-by GetKeywordIdeasRequest
      */

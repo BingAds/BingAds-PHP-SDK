@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base class of a shared entity.
-     * @link http://msdn.microsoft.com/en-us/library/dn743735(v=msads.110).aspx SharedEntity Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/sharedentity?version=11 SharedEntity Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by AddSharedEntityRequest
@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $AssociationCount;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

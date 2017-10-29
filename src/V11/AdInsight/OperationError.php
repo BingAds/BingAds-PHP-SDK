@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an error object that contains the details that explain why the service operation failed.
-     * @link http://msdn.microsoft.com/en-us/library/mt219310(v=msads.110).aspx OperationError Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/operationerror?version=11 OperationError Data Object
      * 
      * @used-by ApiFaultDetail
      */

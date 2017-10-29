@@ -5,14 +5,23 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the specified conversion goals.
-     * @link http://msdn.microsoft.com/en-us/library/mt759540(v=msads.110).aspx GetConversionGoalsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getconversiongoalsbyids?version=11 GetConversionGoalsByIds Request Object
      * 
      * @uses ConversionGoalType
      * @used-by BingAdsCampaignManagementService::GetConversionGoalsByIds
      */
     final class GetConversionGoalsByIdsRequest
     {
+        /**
+         * A maximum of 100 identifiers of the conversion goals that you want to get.
+         * @var integer[]
+         */
         public $ConversionGoalIds;
+
+        /**
+         * One or more types of conversion goals to return.
+         * @var ConversionGoalType
+         */
         public $ConversionGoalTypes;
     }
 }

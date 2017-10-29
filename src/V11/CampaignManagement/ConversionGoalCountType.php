@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines how your conversions are recorded within your chosen conversion window.
-     * @link http://msdn.microsoft.com/en-us/library/mt759553(v=msads.110).aspx ConversionGoalCountType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoalcounttype?version=11 ConversionGoalCountType Value Set
      * 
      * @used-by ConversionGoal
      */

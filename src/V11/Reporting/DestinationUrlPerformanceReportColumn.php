@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the DestinationUrlPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/bb671820(v=msads.110).aspx DestinationUrlPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/destinationurlperformancereportcolumn?version=11 DestinationUrlPerformanceReportColumn Value Set
      * 
      * @used-by DestinationUrlPerformanceReportRequest
      */

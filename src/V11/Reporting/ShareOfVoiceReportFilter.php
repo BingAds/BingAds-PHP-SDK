@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the share of voice report data.
-     * @link http://msdn.microsoft.com/en-us/library/jj592908(v=msads.110).aspx ShareOfVoiceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/shareofvoicereportfilter?version=11 ShareOfVoiceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

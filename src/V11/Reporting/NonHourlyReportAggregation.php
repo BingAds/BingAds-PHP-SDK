@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the aggregation values for reports that cannot specify hourly aggregation.
-     * @link http://msdn.microsoft.com/en-us/library/bb672057(v=msads.110).aspx NonHourlyReportAggregation Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/nonhourlyreportaggregation?version=11 NonHourlyReportAggregation Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportRequest
      * @used-by AdPerformanceReportRequest

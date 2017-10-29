@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible types of entities.
-     * @link http://msdn.microsoft.com/en-us/library/jj622172(v=msads.110).aspx EntityType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/entitytype?version=11 EntityType Value Set
      * 
      * @used-by AppealEditorialRejectionsRequest
      * @used-by DeleteLabelAssociationsRequest
@@ -33,6 +33,8 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** Reserved for future use. */
         const AdExtension = 'AdExtension';
+
+        /** Reserved for future use. */
         const AdGroupCriterion = 'AdGroupCriterion';
     }
 

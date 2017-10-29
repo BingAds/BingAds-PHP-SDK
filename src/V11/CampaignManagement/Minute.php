@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible minute values for ad extension scheduling or day and time criterion.
-     * @link http://msdn.microsoft.com/en-us/library/dn743745(v=msads.110).aspx Minute Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/minute?version=11 Minute Value Set
      * 
      * @used-by DayTime
      * @used-by DayTimeCriterion

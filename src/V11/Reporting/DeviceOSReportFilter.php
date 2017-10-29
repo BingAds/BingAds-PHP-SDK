@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the device operating system values that you can use to filter the report data.
-     * @link http://msdn.microsoft.com/en-us/library/dn411633(v=msads.110).aspx DeviceOSReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/deviceosreportfilter?version=11 DeviceOSReportFilter Value Set
      * 
      * @used-by AccountPerformanceReportFilter
      * @used-by AdExtensionByAdReportFilter

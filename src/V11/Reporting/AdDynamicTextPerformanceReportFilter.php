@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the ad dynamic text performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/bb672086(v=msads.110).aspx AdDynamicTextPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/addynamictextperformancereportfilter?version=11 AdDynamicTextPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

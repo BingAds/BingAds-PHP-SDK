@@ -5,15 +5,22 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible system-determined status values of a conversion goal.
-     * @link http://msdn.microsoft.com/en-us/library/mt759558(v=msads.110).aspx ConversionGoalTrackingStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoaltrackingstatus?version=11 ConversionGoalTrackingStatus Value Set
      * 
      * @used-by ConversionGoal
      */
     final class ConversionGoalTrackingStatus
     {
+        /** The UetTagTrackingStatus is Unverified, and Bing Ads hasn't received any user activity data from the UET tag on your website. */
         const TagUnverified = 'TagUnverified';
+
+        /** The UetTagTrackingStatus is Active, but we haven't recorded any conversions in the last 7 days. */
         const NoRecentConversions = 'NoRecentConversions';
+
+        /** The UetTagTrackingStatus is Active, and we have recorded conversions within the last 7 days. */
         const RecordingConversions = 'RecordingConversions';
+
+        /** The UetTagTrackingStatus is Inactive, and Bing Ads has not received any user activity data from the UET tag in the last 24 hours. */
         const TagInactive = 'TagInactive';
     }
 

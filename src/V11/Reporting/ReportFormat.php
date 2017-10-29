@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the file formats that you can use for a report.
-     * @link http://msdn.microsoft.com/en-us/library/bb671932(v=msads.110).aspx ReportFormat Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportformat?version=11 ReportFormat Value Set
      * 
      * @used-by ReportRequest
      */

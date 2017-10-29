@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets the estimated bid value of one or more keywords that could result in an ad appearing in the targeted position in the search results.
-     * @link http://msdn.microsoft.com/en-us/library/mt219297(v=msads.110).aspx GetEstimatedBidByKeywords Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getestimatedbidbykeywords?version=11 GetEstimatedBidByKeywords Request Object
      * 
      * @uses KeywordAndMatchType
      * @uses TargetAdPosition
@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
         public $TargetPositionForAds;
 
         /**
-         * The language used to help determine the country to use as the source of data for estimating the bids, if the PublisherCountries element is not specified.
+         * The language used to help determine  the country to use as the source of data for estimating the bids, if the PublisherCountries element is not specified.
          * @var string
          */
         public $Language;

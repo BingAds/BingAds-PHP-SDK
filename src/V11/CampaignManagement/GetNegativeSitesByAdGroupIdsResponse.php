@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the negative site URLs of the specified ad groups.
-     * @link http://msdn.microsoft.com/en-us/library/dn277521(v=msads.110).aspx GetNegativeSitesByAdGroupIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getnegativesitesbyadgroupids?version=11 GetNegativeSitesByAdGroupIds Response Object
      * 
      * @uses AdGroupNegativeSites
      * @uses BatchError

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the fixed bid to use in the auction.
-     * @link http://msdn.microsoft.com/en-us/library/jj689541(v=msads.110).aspx FixedBid Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/fixedbid?version=11 FixedBid Data Object
      */
     final class FixedBid extends CriterionBid
     {

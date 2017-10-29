@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the DSA category performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt779096(v=msads.110).aspx DSACategoryPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsacategoryperformancereportfilter?version=11 DSACategoryPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

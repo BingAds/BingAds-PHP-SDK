@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets the keyword bid opportunities of the specified ad group.
-     * @link http://msdn.microsoft.com/en-us/library/mt219287(v=msads.110).aspx GetBidOpportunities Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getbidopportunities?version=11 GetBidOpportunities Request Object
      * 
      * @uses BidOpportunityType
      * @used-by BingAdsAdInsightService::GetBidOpportunities

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an error object that contains the details that explain why the service operation failed.
-     * @link http://msdn.microsoft.com/en-us/library/bb671973(v=msads.110).aspx OperationError Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/operationerror?version=11 OperationError Data Object
      * 
      * @used-by ApiFaultDetail
      * @used-by EditorialApiFaultDetail

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible campaign criterion status values.
-     * @link http://msdn.microsoft.com/en-us/library/mt807669(v=msads.110).aspx CampaignCriterionStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaigncriterionstatus?version=11 CampaignCriterionStatus Value Set
      * 
      * @used-by CampaignCriterion
      */

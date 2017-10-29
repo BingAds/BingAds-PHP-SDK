@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a day of the week and time range for ad extension scheduling.
-     * @link http://msdn.microsoft.com/en-us/library/mt763245(v=msads.110).aspx DayTime Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/daytime?version=11 DayTime Data Object
      * 
      * @uses Day
      * @uses Minute

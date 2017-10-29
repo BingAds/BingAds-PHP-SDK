@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a postal address.
-     * @link http://msdn.microsoft.com/en-us/library/bb671505(v=msads.110).aspx Address Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/address?version=11 Address Data Object
      * 
      * @used-by AdvertiserAccount
      * @used-by ContactInfo
@@ -66,6 +66,11 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
          * @var string
          */
         public $StateOrProvince;
+
+        /**
+         * The date and time that the address was last updated.
+         * @var base64Binary
+         */
         public $TimeStamp;
     }
 

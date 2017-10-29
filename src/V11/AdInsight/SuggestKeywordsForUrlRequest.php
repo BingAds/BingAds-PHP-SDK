@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Suggests the possible keywords for the content located at the specified URL.
-     * @link http://msdn.microsoft.com/en-us/library/mt219319(v=msads.110).aspx SuggestKeywordsForUrl Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/suggestkeywordsforurl?version=11 SuggestKeywordsForUrl Request Object
      * 
      * @used-by BingAdsAdInsightService::SuggestKeywordsForUrl
      */

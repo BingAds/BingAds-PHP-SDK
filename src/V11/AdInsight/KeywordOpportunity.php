@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains a suggested keyword and bid value.
-     * @link http://msdn.microsoft.com/en-us/library/mt219316(v=msads.110).aspx KeywordOpportunity Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordopportunity?version=11 KeywordOpportunity Data Object
      * 
      * @used-by GetKeywordOpportunitiesResponse
      */

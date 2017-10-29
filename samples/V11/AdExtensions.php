@@ -44,9 +44,6 @@ use Microsoft\BingAds\V11\CampaignManagement\AdExtensionIdentity;
 use Microsoft\BingAds\V11\CampaignManagement\AdExtensionIdToEntityIdAssociation;
 use Microsoft\BingAds\V11\CampaignManagement\AdExtensionStatus;
 use Microsoft\BingAds\V11\CampaignManagement\AdExtensionsTypeFilter;
-use Microsoft\BingAds\V11\CampaignManagement\AccountMigrationStatusesInfo;
-use Microsoft\BingAds\V11\CampaignManagement\MigrationStatusInfo;
-use Microsoft\BingAds\V11\CampaignManagement\MigrationStatus;
 use Microsoft\BingAds\V11\CampaignManagement\Address;
 use Microsoft\BingAds\V11\CampaignManagement\SiteLink;
 use Microsoft\BingAds\V11\CampaignManagement\AssociationType;
@@ -62,7 +59,6 @@ use Microsoft\BingAds\Samples\AuthHelper;
 use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
 use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
 
-$GLOBALS['SitelinkMigration'] = "SiteLinkAdExtension";
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
 $GLOBALS['CustomerProxy'] = null; 
@@ -101,51 +97,7 @@ try
     $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     date_default_timezone_set('UTC');
-        
-    // To prepare for the sitelink ad extensions migration in 2017, you will need to determine
-    // whether the account has been migrated from SiteLinksAdExtension to Sitelink2AdExtension. 
-    // All ad extension service operations available for both types of sitelinks; however you will 
-    // need to determine which type to add, update, and retrieve.
-
-    $sitelinkMigrationIsCompleted = false;
-
-    // Optionally you can find out which pilot features the customer is able to use. Even if the customer 
-    // is in pilot for sitelink migrations, the accounts that it contains might not be migrated.
-    $featurePilotFlags = CustomerManagementHelper::GetCustomerPilotFeatures($GLOBALS['AuthorizationData']->CustomerId)->FeaturePilotFlags->int;
-
-    // The pilot flag value for Sitelink ad extension migration is 253.
-    // Pilot flags apply to all accounts within a given customer; however,
-    // each account goes through migration individually and has its own migration status.
-    if (in_array(253, $featurePilotFlags))
-    {
-        // Account migration status below will be either NotStarted, InProgress, or Completed.
-        print("Customer is in pilot for Sitelink migration.\n\n");
-    }
-    else
-    {
-        // Account migration status below will be NotInPilot.
-        print("Customer is not in pilot for Sitelink migration.\n\n");
-    }
-
-    // Even if you have multiple accounts per customer, each account will have its own
-    // migration status. This example checks the account provided above.
-    $accountMigrationStatusesInfos = CampaignManagementHelper::GetAccountMigrationStatuses(
-        array($GLOBALS['AuthorizationData']->AccountId), 
-        $GLOBALS['SitelinkMigration'])->MigrationStatuses;
-    
-    foreach ($accountMigrationStatusesInfos->AccountMigrationStatusesInfo as $accountMigrationStatusesInfo)
-    {
-        CampaignManagementHelper::OutputAccountMigrationStatusesInfo($accountMigrationStatusesInfo);
-        
-        foreach ($accountMigrationStatusesInfo->MigrationStatusInfo->MigrationStatusInfo as $migrationStatusInfo) 
-        {
-            if (($migrationStatusInfo->Status == MigrationStatus::Completed) && ($GLOBALS['SitelinkMigration'] == $migrationStatusInfo->MigrationType))
-            {
-                $sitelinkMigrationIsCompleted = true;
-            }
-        }
-    }
-    
+       
     // Specify one or more campaigns.
     
     $campaigns = array();
@@ -282,21 +234,9 @@ try
     $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'StructuredSnippetAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
     $adExtensions[] = $encodedExtension;
     
-    // Before migration only the deprecated SiteLinksAdExtension type can be added, 
-    // and after migration only the new Sitelink2AdExtension type can be added.
-    if($sitelinkMigrationIsCompleted)
+    foreach(GetSampleSitelink2AdExtensions() as $encodedExtension)
     {
-        foreach(GetSampleSitelink2AdExtensions() as $encodedExtension)
-        {
-            $adExtensions[] = $encodedExtension;
-        }
-    }
-    else
-    {
-        foreach(GetSampleSiteLinksAdExtensions() as $encodedExtension)
-        {
-            $adExtensions[] = $encodedExtension;
-        }
+        $adExtensions[] = $encodedExtension;
     }
         
     // Add all extensions to the account's ad extension library
@@ -324,11 +264,14 @@ try
     
     for ($index = 0; $index < count($adExtensionIdentities->AdExtensionIdentity); $index++)
     {
-    	$adExtensionIdToEntityIdAssociations[$index] = new AdExtensionIdToEntityIdAssociation();
-    	$adExtensionIdToEntityIdAssociations[$index]->AdExtensionId = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;;
-    	$adExtensionIdToEntityIdAssociations[$index]->EntityId = $nillableCampaignIds[0];
-    	    	
-    	$adExtensionIds[$index] = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;
+        if(!empty($adExtensionIdentities->AdExtensionIdentity[$index]) && isset($adExtensionIdentities->AdExtensionIdentity[$index]->Id))
+        {
+            $adExtensionIdToEntityIdAssociations[$index] = new AdExtensionIdToEntityIdAssociation();
+            $adExtensionIdToEntityIdAssociations[$index]->AdExtensionId = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;;
+            $adExtensionIdToEntityIdAssociations[$index]->EntityId = $nillableCampaignIds[0];
+                    
+            $adExtensionIds[$index] = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;
+        }
     };
     
     // Associate the specified ad extensions with the respective campaigns or ad groups. 
@@ -346,19 +289,16 @@ try
     	$adExtensionIdToEntityIdAssociations,
     	AssociationType::Campaign
     	)->EditorialReasons;
-    
-    // If migration has been completed, then you should request the Sitelink2AdExtension objects.
-    // You can always request both types; however, before migration only the deprecated SiteLinksAdExtension
-    // type will be returned, and after migration only the new Sitelink2AdExtension type will be returned.       
+          
     $adExtensionsTypeFilter = array(
-        $sitelinkMigrationIsCompleted ? AdExtensionsTypeFilter::Sitelink2AdExtension : AdExtensionsTypeFilter::SiteLinksAdExtension,
         AdExtensionsTypeFilter::AppAdExtension,
     	AdExtensionsTypeFilter::CallAdExtension,
         AdExtensionsTypeFilter::CalloutAdExtension,
         AdExtensionsTypeFilter::ImageAdExtension,
     	AdExtensionsTypeFilter::LocationAdExtension,
         AdExtensionsTypeFilter::ReviewAdExtension,
-    	AdExtensionsTypeFilter::StructuredSnippetAdExtension,
+    	AdExtensionsTypeFilter::Sitelink2AdExtension,
+        AdExtensionsTypeFilter::StructuredSnippetAdExtension,
     );
     
     // Get the specified ad extensions from the account'ss ad extension library.
@@ -579,68 +519,6 @@ catch (Exception $e)
         print $e->getTraceAsString()."\n\n";
     }
 }
- 
-function GetSampleSiteLinksAdExtensions()
-{
-    $adExtensions = array();
-    
-    $extension = new SiteLinksAdExtension();
-    $extension->SiteLinks = array();
-    
-    for ($index = 0; $index < 2; $index++)
-    {
-        $extension->SiteLinks[$index] = new SiteLink();
-        $extension->SiteLinks[$index]->Description1 = "Simple & Transparent.";
-        $extension->SiteLinks[$index]->Description2 = "No Upfront Cost.";
-        $extension->SiteLinks[$index]->DisplayText = "Women's Shoe Sale " . ($index+1);
-
-        // Destination URLs are deprecated. 
-        // If you are currently using the Destination URL, you must upgrade to Final URLs. 
-        // Here is an example of a DestinationUrl you might have used previously. 
-        // $extension->SiteLinks[$index]->DestinationUrl = "http://www.contoso.com/womenshoesale/?season=spring&promocode=PROMO123";
-
-        // To migrate from DestinationUrl to FinalUrls, you can set DestinationUrl
-        // to an empty string when updating the sitelink. If you are removing DestinationUrl,
-        // then FinalUrls is required.
-        // $extension->SiteLinks[$index]->DestinationUrl = "";
-
-        // With FinalUrls you can separate the tracking template, custom parameters, and 
-        // landing page URLs. 
-
-        $extension->SiteLinks[$index]->FinalUrls = array();
-        $extension->SiteLinks[$index]->FinalUrls[] = "http://www.contoso.com/womenshoesale";
-
-        // Final Mobile URLs can also be used if you want to direct the user to a different page 
-        // for mobile devices.
-        $extension->SiteLinks[$index]->FinalMobileUrls = array();
-        $extension->SiteLinks[$index]->FinalMobileUrls[] = "http://mobile.contoso.com/womenshoesale";
- 
-        // You could use a tracking template which would override the campaign level
-        // tracking template. Tracking templates defined for lower level entities 
-        // override those set for higher level entities.
-        // In this example we are using the campaign level tracking template.
-        $extension->SiteLinks[$index]->TrackingUrlTemplate = null;
-
-        // Set custom parameters that are specific to this sitelink, 
-        // and can be used by the sitelink, ad group, campaign, or account level tracking template. 
-        // In this example we are using the campaign level tracking template.
-        $extension->SiteLinks[$index]->UrlCustomParameters = new CustomParameters();
-        $extension->SiteLinks[$index]->UrlCustomParameters->Parameters = array();
-        $customParameter1 = new CustomParameter();
-        $customParameter1->Key = "promoCode";
-        $customParameter1->Value = "PROMO" . ($index+1);
-        $extension->SiteLinks[$index]->UrlCustomParameters->Parameters[] = $customParameter1;
-        $customParameter2 = new CustomParameter();
-        $customParameter2->Key = "season";
-        $customParameter2->Value = "summer";
-        $extension->SiteLinks[$index]->UrlCustomParameters->Parameters[] = $customParameter2;   
-    }
-    
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'SiteLinksAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
-    $adExtensions[] = $encodedExtension;
-    
-    return $adExtensions;
-}
 
 function GetSampleSitelink2AdExtensions()
 {
@@ -700,8 +578,5 @@ function GetSampleSitelink2AdExtensions()
     
     return $adExtensions;
 }
-
-
-
 
 ?>

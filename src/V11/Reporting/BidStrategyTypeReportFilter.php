@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the possible values that you can use to use to filter the report data by bid strategy type.
-     * @link http://msdn.microsoft.com/en-us/library/mt711485(v=msads.110).aspx BidStrategyTypeReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/bidstrategytypereportfilter?version=11 BidStrategyTypeReportFilter Value Set
      * 
      * @used-by DSAAutoTargetPerformanceReportFilter
      * @used-by KeywordPerformanceReportFilter

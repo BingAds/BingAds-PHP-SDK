@@ -5,14 +5,19 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible system-determined status values of a UET tag.
-     * @link http://msdn.microsoft.com/en-us/library/mt759560(v=msads.110).aspx UetTagTrackingStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/uettagtrackingstatus?version=11 UetTagTrackingStatus Value Set
      * 
      * @used-by UetTag
      */
     final class UetTagTrackingStatus
     {
+        /** Bing Ads hasn't received any user activity data from the UET tag on your website. */
         const Unverified = 'Unverified';
+
+        /** Your UET tag is working and sending user activity data to Bing Ads. */
         const Active = 'Active';
+
+        /** Bing Ads has not received any user activity data from the UET tag in the last 24 hours. */
         const Inactive = 'Inactive';
     }
 

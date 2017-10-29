@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that specifies additional text about your business, products, or services to include in a text ad.
-     * @link http://msdn.microsoft.com/en-us/library/mt691508(v=msads.110).aspx CalloutAdExtension Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/calloutadextension?version=11 CalloutAdExtension Data Object
      */
     final class CalloutAdExtension extends AdExtension
     {

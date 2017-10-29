@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains a list of keyword historical search counts for the corresponding device attribute.
-     * @link http://msdn.microsoft.com/en-us/library/mt179362(v=msads.110).aspx SearchCountsByAttributes Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/searchcountsbyattributes?version=11 SearchCountsByAttributes Data Object
      * 
      * @uses HistoricalSearchCountPeriodic
      * @used-by KeywordSearchCount

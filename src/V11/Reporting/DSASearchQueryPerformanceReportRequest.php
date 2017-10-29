@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a DSA search query performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/mt779097(v=msads.110).aspx DSASearchQueryPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsasearchqueryperformancereportrequest?version=11 DSASearchQueryPerformanceReportRequest Data Object
      * 
      * @uses SearchQueryReportAggregation
      * @uses DSASearchQueryPerformanceReportColumn

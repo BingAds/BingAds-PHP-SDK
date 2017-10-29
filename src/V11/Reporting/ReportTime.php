@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the date range values of a report request.
-     * @link http://msdn.microsoft.com/en-us/library/bb671895(v=msads.110).aspx ReportTime Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reporttime?version=11 ReportTime Data Object
      * 
      * @uses Date
      * @uses ReportTimePeriod

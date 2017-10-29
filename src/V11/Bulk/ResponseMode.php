@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines elements to specify whether the bulk service should return upload errors with their corresponding data.
-     * @link http://msdn.microsoft.com/en-us/library/dn249983(v=msads.110).aspx ResponseMode Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/responsemode?version=11 ResponseMode Value Set
      * 
      * @used-by GetBulkUploadUrlRequest
      */

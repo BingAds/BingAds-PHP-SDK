@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a conversion performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/gg262843(v=msads.110).aspx ConversionPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/conversionperformancereportrequest?version=11 ConversionPerformanceReportRequest Data Object
      * 
      * @uses NonHourlyReportAggregation
      * @uses ConversionPerformanceReportColumn
@@ -15,10 +15,34 @@ namespace Microsoft\BingAds\V11\Reporting;
      */
     final class ConversionPerformanceReportRequest extends ReportRequest
     {
+        /**
+         * The type of aggregation to use to aggregate the report data.
+         * @var NonHourlyReportAggregation
+         */
         public $Aggregation;
+
+        /**
+         * The list of attributes and performance statistics to include in the report.
+         * @var ConversionPerformanceReportColumn[]
+         */
         public $Columns;
+
+        /**
+         * The filter information to use to filter the report data.
+         * @var ConversionPerformanceReportFilter
+         */
         public $Filter;
+
+        /**
+         * The scope of the report.
+         * @var AccountThroughAdGroupReportScope
+         */
         public $Scope;
+
+        /**
+         * The time period to use for the report.
+         * @var ReportTime
+         */
         public $Time;
     }
 

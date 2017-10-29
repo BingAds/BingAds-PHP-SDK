@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a fault object that operations return when generic errors occur, such as an authentication error.
-     * @link http://msdn.microsoft.com/en-us/library/dn169140(v=msads.110).aspx AdApiFaultDetail Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adapifaultdetail?version=11 AdApiFaultDetail Data Object
      * 
      * @uses AdApiError
      */

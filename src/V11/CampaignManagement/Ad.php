@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of an ad.
-     * @link http://msdn.microsoft.com/en-us/library/bb671952(v=msads.110).aspx Ad Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/ad?version=11 Ad Data Object
      * 
      * @uses AdEditorialStatus
      * @uses AppUrl
@@ -58,7 +58,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $FinalUrls;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

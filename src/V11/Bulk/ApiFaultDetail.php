@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines a fault object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
-     * @link http://msdn.microsoft.com/en-us/library/dn169094(v=msads.110).aspx ApiFaultDetail Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/apifaultdetail?version=11 ApiFaultDetail Data Object
      * 
      * @uses BatchError
      * @uses OperationError

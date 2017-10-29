@@ -5,12 +5,16 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Updates the details of the specified customer.
-     * @link http://msdn.microsoft.com/en-us/library/dn451294(v=msads.110).aspx UpdateCustomer Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/updatecustomer?version=11 UpdateCustomer Response Object
      * 
      * @used-by BingAdsCustomerManagementService::UpdateCustomer
      */
     final class UpdateCustomerResponse
     {
+        /**
+         * The date and time that the customer was last updated.
+         * @var \DateTime
+         */
         public $LastModifiedTime;
     }
 }

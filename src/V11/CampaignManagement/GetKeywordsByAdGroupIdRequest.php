@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the keywords within an ad group.
-     * @link http://msdn.microsoft.com/en-us/library/dn236311(v=msads.110).aspx GetKeywordsByAdGroupId Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getkeywordsbyadgroupid?version=11 GetKeywordsByAdGroupId Request Object
      * 
      * @uses KeywordAdditionalField
      * @used-by BingAdsCampaignManagementService::GetKeywordsByAdGroupId

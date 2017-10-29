@@ -5,12 +5,16 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Gets the status of a bulk download request.
-     * @link http://msdn.microsoft.com/en-us/library/jj885754(v=msads.110).aspx GetBulkDownloadStatus Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/getbulkdownloadstatus?version=11 GetBulkDownloadStatus Request Object
      * 
      * @used-by BingAdsBulkService::GetBulkDownloadStatus
      */
     final class GetBulkDownloadStatusRequest
     {
+        /**
+         * The identifier of the download request.
+         * @var string
+         */
         public $RequestId;
     }
 }

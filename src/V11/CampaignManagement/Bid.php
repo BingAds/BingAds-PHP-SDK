@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a bid.
-     * @link http://msdn.microsoft.com/en-us/library/dd797130(v=msads.110).aspx Bid Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/bid?version=11 Bid Data Object
      * 
      * @used-by AdGroup
      * @used-by Keyword

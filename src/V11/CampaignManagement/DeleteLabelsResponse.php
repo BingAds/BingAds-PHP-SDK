@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes one or more labels from the account.
-     * @link http://msdn.microsoft.com/en-us/library/mt803282(v=msads.110).aspx DeleteLabels Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletelabels?version=11 DeleteLabels Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteLabels

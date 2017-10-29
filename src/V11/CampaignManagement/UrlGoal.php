@@ -5,13 +5,22 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a URL conversion goal.
-     * @link http://msdn.microsoft.com/en-us/library/mt759549(v=msads.110).aspx UrlGoal Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/urlgoal?version=11 UrlGoal Data Object
      * 
      * @uses ExpressionOperator
      */
     final class UrlGoal extends ConversionGoal
     {
+        /**
+         * The expression used to determine the page or pages the user has to visit in order to count as a conversion.
+         * @var string
+         */
         public $UrlExpression;
+
+        /**
+         * The operator that can be applied to the value of the Url element.
+         * @var ExpressionOperator
+         */
         public $UrlOperator;
     }
 

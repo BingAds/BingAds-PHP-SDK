@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the specified campaign criterions.
-     * @link http://msdn.microsoft.com/en-us/library/dn913135(v=msads.110).aspx GetCampaignCriterionsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getcampaigncriterionsbyids?version=11 GetCampaignCriterionsByIds Response Object
      * 
      * @uses CampaignCriterion
      * @uses BatchError

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the media associations of the specified entity type from an account's media library.
-     * @link http://msdn.microsoft.com/en-us/library/dn798359(v=msads.110).aspx GetMediaAssociations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getmediaassociations?version=11 GetMediaAssociations Request Object
      * 
      * @uses MediaEnabledEntityFilter
      * @used-by BingAdsCampaignManagementService::GetMediaAssociations

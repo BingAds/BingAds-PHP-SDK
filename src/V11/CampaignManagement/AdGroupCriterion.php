@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a criterion that you want applied to the specified ad group.
-     * @link http://msdn.microsoft.com/en-us/library/jj738614(v=msads.110).aspx AdGroupCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupcriterion?version=11 AdGroupCriterion Data Object
      * 
      * @uses Criterion
      * @uses AdGroupCriterionStatus

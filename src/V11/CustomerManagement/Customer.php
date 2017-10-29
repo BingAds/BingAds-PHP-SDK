@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a customer.
-     * @link http://msdn.microsoft.com/en-us/library/bb671875(v=msads.110).aspx Customer Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/customer?version=11 Customer Data Object
      * 
      * @uses Address
      * @uses CustomerFinancialStatus
@@ -65,7 +65,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $MarketCountry;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

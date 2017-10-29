@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Retrieves the ads within an ad group.
-     * @link http://msdn.microsoft.com/en-us/library/dn277534(v=msads.110).aspx GetAdsByAdGroupId Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadsbyadgroupid?version=11 GetAdsByAdGroupId Response Object
      * 
      * @uses Ad
      * @used-by BingAdsCampaignManagementService::GetAdsByAdGroupId

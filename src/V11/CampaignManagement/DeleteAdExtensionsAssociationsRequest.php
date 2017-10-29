@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Removes the specified association from the respective campaigns or ad groups.
-     * @link http://msdn.microsoft.com/en-us/library/dn236305(v=msads.110).aspx DeleteAdExtensionsAssociations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadextensionsassociations?version=11 DeleteAdExtensionsAssociations Request Object
      * 
      * @uses AdExtensionIdToEntityIdAssociation
      * @uses AssociationType
@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $AccountId;
 
         /**
-         * The list of ad extensions that are associated with campaigns or ad groups before calling this operation.
+         * The list of ad extensions that are associated with campaigns or ad groups before calling this  operation.
          * @var AdExtensionIdToEntityIdAssociation[]
          */
         public $AdExtensionIdToEntityIdAssociations;

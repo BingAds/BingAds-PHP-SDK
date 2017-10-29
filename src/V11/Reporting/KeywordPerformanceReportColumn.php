@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the KeywordPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/bb672087(v=msads.110).aspx KeywordPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/keywordperformancereportcolumn?version=11 KeywordPerformanceReportColumn Value Set
      * 
      * @used-by KeywordPerformanceReportRequest
      * @used-by KeywordPerformanceReportSort
@@ -123,7 +123,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** Historic average of landing page experience scores back as far as 18 months from the current date. */
         const HistoricLandingPageExperience = 'HistoricLandingPageExperience';
 
-        /** The numeric score that indicates the possible increase in the number of impressions that the keyword could receive if the corresponding QualityScore column would rise above underperforming: 0 - Not available. */
+        /** The numeric score that indicates the possible increase in the number of impressions that the keyword could receive if the corresponding QualityScore column would rise above underperforming:0 - Not available. */
         const QualityImpact = 'QualityImpact';
 
         /** Reserved for internal use. */
@@ -194,6 +194,9 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The bid strategy type. */
         const BidStrategyType = 'BidStrategyType';
+
+        /** The labels applied to the keyword. */
+        const KeywordLabels = 'KeywordLabels';
     }
 
 }

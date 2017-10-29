@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes budgets from the account's shared budget library.
-     * @link http://msdn.microsoft.com/en-us/library/mt750547(v=msads.110).aspx DeleteBudgets Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletebudgets?version=11 DeleteBudgets Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteBudgets
      */

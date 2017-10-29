@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an image media representation with height and width.
-     * @link http://msdn.microsoft.com/en-us/library/dn766197(v=msads.110).aspx ImageMediaRepresentation Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/imagemediarepresentation?version=11 ImageMediaRepresentation Data Object
      */
     final class ImageMediaRepresentation extends MediaRepresentation
     {

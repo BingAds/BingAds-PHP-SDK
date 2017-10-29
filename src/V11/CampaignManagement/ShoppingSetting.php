@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the campaign level settings for a Bing Shopping Campaign.
-     * @link http://msdn.microsoft.com/en-us/library/dn913132(v=msads.110).aspx ShoppingSetting Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/shoppingsetting?version=11 ShoppingSetting Data Object
      */
     final class ShoppingSetting extends Setting
     {
@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $LocalInventoryAdsEnabled;
 
         /**
-         * Helps determine which Bing Shopping campaign serves ads, in the event that two or more campaigns use the product catalog feed from the same Bing Merchant Center store.
+         * Helps determine which Bing Shopping campaign  serves ads, in the event that two or more campaigns use the product catalog feed from the same Bing Merchant Center store.
          * @var integer
          */
         public $Priority;

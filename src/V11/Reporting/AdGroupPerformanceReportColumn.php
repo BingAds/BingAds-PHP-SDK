@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AdGroupPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/bb671495(v=msads.110).aspx AdGroupPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adgroupperformancereportcolumn?version=11 AdGroupPerformanceReportColumn Value Set
      * 
      * @used-by AdGroupPerformanceReportRequest
      */
@@ -23,7 +23,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** The current entity status. */
+        /** The current entity  status. */
         const Status = 'Status';
 
         /** The campaign name. */
@@ -193,6 +193,12 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The campaign status. */
         const CampaignStatus = 'CampaignStatus';
+
+        /** The labels applied to the ad group. */
+        const AdGroupLabels = 'AdGroupLabels';
+
+        /** The estimated percentage of impressions that your ad group received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
     }
 
 }

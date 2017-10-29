@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the set of accounts to include in the report.
-     * @link http://msdn.microsoft.com/en-us/library/bb671563(v=msads.110).aspx AccountReportScope Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/accountreportscope?version=11 AccountReportScope Data Object
      * 
      * @used-by AccountPerformanceReportRequest
      */

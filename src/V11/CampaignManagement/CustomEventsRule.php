@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a custom events remarketing rule.
-     * @link http://msdn.microsoft.com/en-us/library/mt772354(v=msads.110).aspx CustomEventsRule Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/customeventsrule?version=11 CustomEventsRule Data Object
      * 
      * @uses StringOperator
      * @uses NumberOperator

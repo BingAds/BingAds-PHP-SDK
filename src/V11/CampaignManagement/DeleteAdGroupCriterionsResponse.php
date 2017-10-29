@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes the specified ad group criterions.
-     * @link http://msdn.microsoft.com/en-us/library/dn236302(v=msads.110).aspx DeleteAdGroupCriterions Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadgroupcriterions?version=11 DeleteAdGroupCriterions Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteAdGroupCriterions

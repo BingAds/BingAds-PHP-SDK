@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Represents a budget that can be shared by any campaigns in an account.
-     * @link http://msdn.microsoft.com/en-us/library/mt750548(v=msads.110).aspx Budget Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/budget?version=11 Budget Data Object
      * 
      * @uses BudgetLimitType
      * @used-by AddBudgetsRequest

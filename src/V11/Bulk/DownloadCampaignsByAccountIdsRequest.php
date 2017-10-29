@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Downloads settings and performance data for all of the account's campaigns.
-     * @link http://msdn.microsoft.com/en-us/library/jj885755(v=msads.110).aspx DownloadCampaignsByAccountIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadcampaignsbyaccountids?version=11 DownloadCampaignsByAccountIds Request Object
      * 
      * @uses CompressionType
      * @uses DataScope

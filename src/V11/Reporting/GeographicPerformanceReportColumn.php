@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the GeographicPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/mt781258(v=msads.110).aspx GeographicPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/geographicperformancereportcolumn?version=11 GeographicPerformanceReportColumn Value Set
      * 
      * @used-by GeographicPerformanceReportRequest
      */

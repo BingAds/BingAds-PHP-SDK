@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the field order of entities returned using one of the search operations, for example SearchAccounts, SearchClientLinks, or SearchCustomers.
-     * @link http://msdn.microsoft.com/en-us/library/dn452058(v=msads.110).aspx OrderByField Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/orderbyfield?version=11 OrderByField Value Set
      * 
      * @used-by OrderBy
      */

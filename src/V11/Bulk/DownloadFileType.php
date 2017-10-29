@@ -5,14 +5,17 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines the file formats for a download request.
-     * @link http://msdn.microsoft.com/en-us/library/jj919219(v=msads.110).aspx DownloadFileType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadfiletype?version=11 DownloadFileType Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest
      */
     final class DownloadFileType
     {
+        /** The file format is comma separated values (CSV). */
         const Csv = 'Csv';
+
+        /** The file format is tab separated values (TSV). */
         const Tsv = 'Tsv';
     }
 

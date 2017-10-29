@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines an age and gender demographic report request.
-     * @link http://msdn.microsoft.com/en-us/library/bb671917(v=msads.110).aspx AgeGenderDemographicReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/agegenderdemographicreportrequest?version=11 AgeGenderDemographicReportRequest Data Object
      * 
      * @uses NonHourlyReportAggregation
      * @uses AgeGenderDemographicReportColumn
