@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the start and end date ranges for ad extension scheduling.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/schedule?version=11 Schedule Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/schedule?view=bingads-11 Schedule Data Object
      * 
      * @uses DayTime
      * @uses Date

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a product partition unit performance report request that aggregates the performance data by product partition unit for a specified time period.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productpartitionunitperformancereportrequest?version=11 ProductPartitionUnitPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productpartitionunitperformancereportrequest?view=bingads-11 ProductPartitionUnitPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses ProductPartitionUnitPerformanceReportColumn

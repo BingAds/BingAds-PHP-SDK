@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines an account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/account?version=11 Account Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/account?view=bingads-11 Account Data Object
      * 
      * @uses AccountType
      * @uses CurrencyType

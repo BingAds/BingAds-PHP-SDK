@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a user.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/user?version=11 User Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/user?view=bingads-11 User Data Object
      * 
      * @uses ContactInfo
      * @uses ApplicationType

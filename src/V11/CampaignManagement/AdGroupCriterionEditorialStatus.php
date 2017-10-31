@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the editorial review status values of an ad group criterion.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupcriterioneditorialstatus?version=11 AdGroupCriterionEditorialStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupcriterioneditorialstatus?view=bingads-11 AdGroupCriterionEditorialStatus Value Set
      * 
      * @used-by BiddableAdGroupCriterion
      */

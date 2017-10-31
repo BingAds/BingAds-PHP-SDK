@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a search query performance report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchqueryperformancereportrequest?version=11 SearchQueryPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchqueryperformancereportrequest?view=bingads-11 SearchQueryPerformanceReportRequest Data Object
      * 
      * @uses SearchQueryReportAggregation
      * @uses SearchQueryPerformanceReportColumn

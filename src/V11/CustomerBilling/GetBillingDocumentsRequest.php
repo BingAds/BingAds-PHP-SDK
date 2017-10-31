@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Gets the specified billing documents.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/getbillingdocuments?version=11 GetBillingDocuments Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/getbillingdocuments?view=bingads-11 GetBillingDocuments Request Object
      * 
      * @uses DataType
      * @used-by BingAdsCustomerBillingService::GetBillingDocuments

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a predicate for the list of entities requested using one of the search operations, for example SearchAccounts, SearchClientLinks, or SearchCustomers.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/predicate?version=11 Predicate Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/predicate?view=bingads-11 Predicate Data Object
      * 
      * @uses PredicateOperator
      * @used-by SearchAccountsRequest

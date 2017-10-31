@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible types of entities.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/entitytype?version=11 EntityType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/entitytype?view=bingads-11 EntityType Value Set
      * 
      * @used-by AppealEditorialRejectionsRequest
      * @used-by DeleteLabelAssociationsRequest

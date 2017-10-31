@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the keyword and percentage of users by age and gender (if known) who searched for the specified keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keyworddemographicresult?version=11 KeywordDemographicResult Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keyworddemographicresult?view=bingads-11 KeywordDemographicResult Data Object
      * 
      * @uses KeywordDemographic
      * @used-by GetKeywordDemographicsResponse

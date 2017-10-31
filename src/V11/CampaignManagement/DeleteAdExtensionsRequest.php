@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes one or more ad extensions from the account's ad extension library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadextensions?version=11 DeleteAdExtensions Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadextensions?view=bingads-11 DeleteAdExtensions Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteAdExtensions
      */

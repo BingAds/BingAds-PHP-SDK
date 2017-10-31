@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that represents the maximum conversions bid strategy type.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/maxconversionsbiddingscheme?version=11 MaxConversionsBiddingScheme Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/maxconversionsbiddingscheme?view=bingads-11 MaxConversionsBiddingScheme Data Object
      * 
      * @uses Bid
      */

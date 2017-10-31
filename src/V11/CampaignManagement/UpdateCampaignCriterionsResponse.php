@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates one or more campaign criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatecampaigncriterions?version=11 UpdateCampaignCriterions Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatecampaigncriterions?view=bingads-11 UpdateCampaignCriterions Response Object
      * 
      * @uses BatchErrorCollection
      * @used-by BingAdsCampaignManagementService::UpdateCampaignCriterions

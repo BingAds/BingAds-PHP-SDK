@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Gets the details of an account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getaccount?version=11 GetAccount Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getaccount?view=bingads-11 GetAccount Response Object
      * 
      * @uses Account
      * @used-by BingAdsCustomerManagementService::GetAccount

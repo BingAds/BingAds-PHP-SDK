@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the locations where users were located when they searched for the specified keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordlocationresult?version=11 KeywordLocationResult Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordlocationresult?view=bingads-11 KeywordLocationResult Data Object
      * 
      * @uses KeywordLocation
      * @used-by GetKeywordLocationsResponse

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets the age and gender of users who have searched for the specified keywords.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeyworddemographics?version=11 GetKeywordDemographics Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeyworddemographics?view=bingads-11 GetKeywordDemographics Request Object
      * 
      * @used-by BingAdsAdInsightService::GetKeywordDemographics
      */

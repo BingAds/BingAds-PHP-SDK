@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a page visitors who visited another page remarketing rule.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagevisitorswhovisitedanotherpagerule?version=11 PageVisitorsWhoVisitedAnotherPageRule Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagevisitorswhovisitedanotherpagerule?view=bingads-11 PageVisitorsWhoVisitedAnotherPageRule Data Object
      * 
      * @uses RuleItemGroup
      */

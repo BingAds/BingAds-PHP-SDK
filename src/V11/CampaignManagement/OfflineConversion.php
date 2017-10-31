@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an offline conversion that you send to Bing Ads.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/offlineconversion?version=11 OfflineConversion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/offlineconversion?view=bingads-11 OfflineConversion Data Object
      * 
      * @used-by ApplyOfflineConversionsRequest
      */

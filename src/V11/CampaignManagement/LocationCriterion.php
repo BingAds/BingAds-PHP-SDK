@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users in a specific location.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/locationcriterion?version=11 LocationCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/locationcriterion?view=bingads-11 LocationCriterion Data Object
      */
     final class LocationCriterion extends Criterion
     {

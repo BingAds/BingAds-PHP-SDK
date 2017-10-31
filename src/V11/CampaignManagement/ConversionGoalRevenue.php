@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines properties for revenue that can be tracked by a conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoalrevenue?version=11 ConversionGoalRevenue Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoalrevenue?view=bingads-11 ConversionGoalRevenue Data Object
      * 
      * @uses ConversionGoalRevenueType
      * @used-by ConversionGoal

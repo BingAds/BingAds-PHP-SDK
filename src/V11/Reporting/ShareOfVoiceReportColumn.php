@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ShareOfVoiceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/shareofvoicereportcolumn?version=11 ShareOfVoiceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/shareofvoicereportcolumn?view=bingads-11 ShareOfVoiceReportColumn Value Set
      * 
      * @used-by ShareOfVoiceReportRequest
      */

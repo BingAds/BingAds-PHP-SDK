@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines the scope or types of data to download.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/datascope?version=11 DataScope Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/datascope?view=bingads-11 DataScope Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest

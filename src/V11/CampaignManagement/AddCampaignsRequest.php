@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more campaigns to the specified account.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addcampaigns?version=11 AddCampaigns Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addcampaigns?view=bingads-11 AddCampaigns Request Object
      * 
      * @uses Campaign
      * @used-by BingAdsCampaignManagementService::AddCampaigns

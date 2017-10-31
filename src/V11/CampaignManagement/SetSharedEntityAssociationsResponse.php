@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Sets the association between a campaign and a negative keyword list.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setsharedentityassociations?version=11 SetSharedEntityAssociations Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setsharedentityassociations?view=bingads-11 SetSharedEntityAssociations Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::SetSharedEntityAssociations

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains a list of remarketing list rule items that apply to the same visited page.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/ruleitemgroup?version=11 RuleItemGroup Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/ruleitemgroup?view=bingads-11 RuleItemGroup Data Object
      * 
      * @uses RuleItem
      * @used-by PageVisitorsRule

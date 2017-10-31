@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains a set of negative keywords that are only associated with the corresponding entity such as a campaign or ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/entitynegativekeyword?version=11 EntityNegativeKeyword Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/entitynegativekeyword?view=bingads-11 EntityNegativeKeyword Data Object
      * 
      * @uses NegativeKeyword
      * @used-by AddNegativeKeywordsToEntitiesRequest

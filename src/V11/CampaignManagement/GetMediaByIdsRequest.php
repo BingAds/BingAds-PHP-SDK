@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the specified media from an account's media library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getmediabyids?version=11 GetMediaByIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getmediabyids?view=bingads-11 GetMediaByIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetMediaByIds
      */

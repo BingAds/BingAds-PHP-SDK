@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains a list of estimated clicks, cost, and impressions from 1 to 7 days for the keyword identifier given the suggested bid.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordbidlandscape?version=11 KeywordBidLandscape Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordbidlandscape?view=bingads-11 KeywordBidLandscape Data Object
      * 
      * @uses DayMonthAndYear
      * @uses BidLandscapePoint

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible status values of a keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/keywordstatus?version=11 KeywordStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/keywordstatus?view=bingads-11 KeywordStatus Value Set
      * 
      * @used-by Keyword
      */

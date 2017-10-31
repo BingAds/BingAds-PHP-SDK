@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the keyword and the estimated bid value for each match type.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordestimatedbid?version=11 KeywordEstimatedBid Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordestimatedbid?view=bingads-11 KeywordEstimatedBid Data Object
      * 
      * @uses EstimatedBidAndTraffic
      * @used-by KeywordIdEstimatedBid

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines an advertiser account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/advertiseraccount?version=11 AdvertiserAccount Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/advertiseraccount?view=bingads-11 AdvertiserAccount Data Object
      * 
      * @uses CustomerInfo
      * @uses KeyValuePairOfstringstring

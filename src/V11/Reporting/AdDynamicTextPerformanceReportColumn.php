@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AdDynamicTextPerformanceReportRequest Data Object.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/addynamictextperformancereportcolumn?version=11 AdDynamicTextPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/addynamictextperformancereportcolumn?view=bingads-11 AdDynamicTextPerformanceReportColumn Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportRequest
      */

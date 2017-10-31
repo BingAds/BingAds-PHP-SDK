@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the UserLocationPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/userlocationperformancereportcolumn?version=11 UserLocationPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/userlocationperformancereportcolumn?view=bingads-11 UserLocationPerformanceReportColumn Value Set
      * 
      * @used-by UserLocationPerformanceReportRequest
      */

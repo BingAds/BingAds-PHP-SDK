@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Searches for insertion orders that match a specified criteria.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/searchinsertionorders?version=11 SearchInsertionOrders Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/searchinsertionorders?view=bingads-11 SearchInsertionOrders Response Object
      * 
      * @uses InsertionOrder
      * @used-by BingAdsCustomerBillingService::SearchInsertionOrders

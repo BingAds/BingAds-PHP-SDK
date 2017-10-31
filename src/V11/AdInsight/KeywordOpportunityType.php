@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines the possible keyword opportunity types you can request when calling GetKeywordOpportunities.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordopportunitytype?version=11 KeywordOpportunityType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordopportunitytype?view=bingads-11 KeywordOpportunityType Value Set
      * 
      * @used-by GetKeywordOpportunitiesRequest
      */

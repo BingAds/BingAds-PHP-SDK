@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Retrieves the specified keywords.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getkeywordsbyids?version=11 GetKeywordsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getkeywordsbyids?view=bingads-11 GetKeywordsByIds Request Object
      * 
      * @uses KeywordAdditionalField
      * @used-by BingAdsCampaignManagementService::GetKeywordsByIds

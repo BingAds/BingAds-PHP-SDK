@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates negative keyword lists within the account's library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatesharedentities?version=11 UpdateSharedEntities Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatesharedentities?view=bingads-11 UpdateSharedEntities Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateSharedEntities

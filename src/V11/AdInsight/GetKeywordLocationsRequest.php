@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets the geographical locations of users who have searched for the specified keywords.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordlocations?version=11 GetKeywordLocations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordlocations?view=bingads-11 GetKeywordLocations Request Object
      * 
      * @used-by BingAdsAdInsightService::GetKeywordLocations
      */

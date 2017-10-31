@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a site link to include in an ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/sitelink?version=11 SiteLink Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/sitelink?view=bingads-11 SiteLink Data Object
      * 
      * @uses AppUrl
      * @uses Schedule

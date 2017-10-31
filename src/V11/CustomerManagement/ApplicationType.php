@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the possible application types.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/applicationtype?version=11 ApplicationType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/applicationtype?view=bingads-11 ApplicationType Value Set
      * 
      * @used-by User
      * @used-by FindAccountsRequest

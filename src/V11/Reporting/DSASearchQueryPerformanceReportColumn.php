@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the DSASearchQueryPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsasearchqueryperformancereportcolumn?version=11 DSASearchQueryPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsasearchqueryperformancereportcolumn?view=bingads-11 DSASearchQueryPerformanceReportColumn Value Set
      * 
      * @used-by DSASearchQueryPerformanceReportRequest
      */

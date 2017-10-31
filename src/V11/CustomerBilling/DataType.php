@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Defines the possible formats in which to generate the billing document.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/datatype?version=11 DataType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/datatype?view=bingads-11 DataType Value Set
      * 
      * @used-by BillingDocument
      * @used-by GetBillingDocumentsRequest

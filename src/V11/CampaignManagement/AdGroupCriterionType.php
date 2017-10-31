@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible types of ad group criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupcriteriontype?version=11 AdGroupCriterionType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupcriteriontype?view=bingads-11 AdGroupCriterionType Value Set
      * 
      * @used-by AddAdGroupCriterionsRequest
      * @used-by DeleteAdGroupCriterionsRequest

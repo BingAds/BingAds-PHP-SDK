@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Defines a predicate for the list of insertion orders returned using the SearchInsertionOrders operation.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/predicate?version=11 Predicate Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/predicate?view=bingads-11 Predicate Data Object
      * 
      * @uses PredicateOperator
      * @used-by SearchInsertionOrdersRequest

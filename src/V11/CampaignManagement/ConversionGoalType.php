@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the current possible types of conversion goals.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoaltype?version=11 ConversionGoalType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoaltype?view=bingads-11 ConversionGoalType Value Set
      * 
      * @used-by ConversionGoal
      * @used-by GetConversionGoalsByIdsRequest

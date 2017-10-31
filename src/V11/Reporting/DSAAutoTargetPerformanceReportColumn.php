@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the DSAAutoTargetPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsaautotargetperformancereportcolumn?version=11 DSAAutoTargetPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsaautotargetperformancereportcolumn?view=bingads-11 DSAAutoTargetPerformanceReportColumn Value Set
      * 
      * @used-by DSAAutoTargetPerformanceReportRequest
      */

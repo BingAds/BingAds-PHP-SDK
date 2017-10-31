@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the language values that you may specify for columns of a downloaded report.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportlanguage?version=11 ReportLanguage Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportlanguage?view=bingads-11 ReportLanguage Value Set
      * 
      * @used-by ReportRequest
      */

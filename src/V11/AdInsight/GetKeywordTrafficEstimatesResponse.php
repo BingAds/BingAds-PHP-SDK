@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Provides traffic estimates for keywords e.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordtrafficestimates?version=11 GetKeywordTrafficEstimates Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordtrafficestimates?view=bingads-11 GetKeywordTrafficEstimates Response Object
      * 
      * @uses CampaignEstimate
      * @used-by BingAdsAdInsightService::GetKeywordTrafficEstimates

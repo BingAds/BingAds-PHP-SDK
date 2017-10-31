@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines an order for the list of entities returned using one of the search operations, for example SearchAccounts, SearchClientLinks, or SearchCustomers.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/orderby?version=11 OrderBy Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/orderby?view=bingads-11 OrderBy Data Object
      * 
      * @uses OrderByField
      * @uses SortOrder

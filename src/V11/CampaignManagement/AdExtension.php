@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of an ad extension.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextension?version=11 AdExtension Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextension?view=bingads-11 AdExtension Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @uses Schedule

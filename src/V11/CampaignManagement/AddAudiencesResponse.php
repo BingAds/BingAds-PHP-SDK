@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more audiences.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addaudiences?version=11 AddAudiences Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addaudiences?view=bingads-11 AddAudiences Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddAudiences

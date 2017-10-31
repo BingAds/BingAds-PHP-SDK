@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the CallDetailReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/calldetailreportcolumn?version=11 CallDetailReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/calldetailreportcolumn?view=bingads-11 CallDetailReportColumn Value Set
      * 
      * @used-by CallDetailReportRequest
      */

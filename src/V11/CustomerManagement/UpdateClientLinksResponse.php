@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Updates the status of the specified client links.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/updateclientlinks?version=11 UpdateClientLinks Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/updateclientlinks?view=bingads-11 UpdateClientLinks Response Object
      * 
      * @uses OperationError
      * @used-by BingAdsCustomerManagementService::UpdateClientLinks

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines the possible types of campaign budgets.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/budgetlimittype?version=11 BudgetLimitType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/budgetlimittype?view=bingads-11 BudgetLimitType Value Set
      * 
      * @used-by BudgetOpportunity
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Retrieves the ads that belong to the specified ad group and have the specified editorial review status.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadsbyeditorialstatus?version=11 GetAdsByEditorialStatus Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadsbyeditorialstatus?view=bingads-11 GetAdsByEditorialStatus Request Object
      * 
      * @uses AdEditorialStatus
      * @uses AdType

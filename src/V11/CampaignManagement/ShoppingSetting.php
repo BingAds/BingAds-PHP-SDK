@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the campaign level settings for a Bing Shopping Campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/shoppingsetting?version=11 ShoppingSetting Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/shoppingsetting?view=bingads-11 ShoppingSetting Data Object
      */
     final class ShoppingSetting extends Setting
     {

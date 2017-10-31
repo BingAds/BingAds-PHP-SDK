@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaign?version=11 Campaign Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaign?view=bingads-11 Campaign Data Object
      * 
      * @uses BiddingScheme
      * @uses BudgetLimitType

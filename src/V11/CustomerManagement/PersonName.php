@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the name of a user.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/personname?version=11 PersonName Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/personname?view=bingads-11 PersonName Data Object
      * 
      * @used-by User
      */

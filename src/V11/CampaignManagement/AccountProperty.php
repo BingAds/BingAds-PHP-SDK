@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Maps an account level property name to a string value.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/accountproperty?version=11 AccountProperty Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/accountproperty?view=bingads-11 AccountProperty Data Object
      * 
      * @uses AccountPropertyName
      * @used-by GetAccountPropertiesResponse

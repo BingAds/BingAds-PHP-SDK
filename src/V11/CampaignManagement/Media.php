@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of media.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/media?version=11 Media Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/media?view=bingads-11 Media Data Object
      * 
      * @used-by AddMediaRequest
      * @used-by GetMediaByIdsResponse

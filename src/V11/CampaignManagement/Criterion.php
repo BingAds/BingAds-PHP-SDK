@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of a criterion.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/criterion?version=11 Criterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/criterion?view=bingads-11 Criterion Data Object
      * 
      * @used-by AdGroupCriterion
      * @used-by CampaignCriterion

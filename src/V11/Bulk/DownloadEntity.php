@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines the entities that may be downloaded in bulk.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadentity?version=11 DownloadEntity Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadentity?view=bingads-11 DownloadEntity Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest

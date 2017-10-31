@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a product ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/productad?version=11 ProductAd Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/productad?view=bingads-11 ProductAd Data Object
      */
     final class ProductAd extends Ad
     {

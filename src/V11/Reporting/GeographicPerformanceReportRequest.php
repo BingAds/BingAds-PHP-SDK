@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a geographic performance report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/geographicperformancereportrequest?version=11 GeographicPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/geographicperformancereportrequest?view=bingads-11 GeographicPerformanceReportRequest Data Object
      * 
      * @uses NonHourlyReportAggregation
      * @uses GeographicPerformanceReportColumn

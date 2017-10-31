@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the set of accounts, campaigns, and ad groups to include in the report.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/accountthroughadgroupreportscope?version=11 AccountThroughAdGroupReportScope Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/accountthroughadgroupreportscope?view=bingads-11 AccountThroughAdGroupReportScope Data Object
      * 
      * @uses AdGroupReportScope
      * @uses CampaignReportScope

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Appeals the editorial rejections of one or more ads or keywords that failed editorial review.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appealeditorialrejections?version=11 AppealEditorialRejections Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appealeditorialrejections?view=bingads-11 AppealEditorialRejections Request Object
      * 
      * @uses EntityIdToParentIdAssociation
      * @uses EntityType

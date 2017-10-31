@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the campaign level settings for a Dynamic Search Ads campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/dynamicsearchadssetting?version=11 DynamicSearchAdsSetting Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/dynamicsearchadssetting?view=bingads-11 DynamicSearchAdsSetting Data Object
      */
     final class DynamicSearchAdsSetting extends Setting
     {

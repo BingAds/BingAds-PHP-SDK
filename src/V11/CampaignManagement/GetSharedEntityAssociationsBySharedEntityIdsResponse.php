@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets shared entity associations for the specified negative keyword lists.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getsharedentityassociationsbysharedentityids?version=11 GetSharedEntityAssociationsBySharedEntityIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getsharedentityassociationsbysharedentityids?view=bingads-11 GetSharedEntityAssociationsBySharedEntityIds Response Object
      * 
      * @uses SharedEntityAssociation
      * @uses BatchError

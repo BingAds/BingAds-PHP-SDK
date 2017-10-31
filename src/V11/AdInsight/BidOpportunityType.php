@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines the possible bid opportunity types you can request when calling GetBidOpportunities.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/bidopportunitytype?version=11 BidOpportunityType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/bidopportunitytype?view=bingads-11 BidOpportunityType Value Set
      * 
      * @used-by GetBidOpportunitiesRequest
      */

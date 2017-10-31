@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates the specified audiences.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateaudiences?version=11 UpdateAudiences Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateaudiences?view=bingads-11 UpdateAudiences Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateAudiences

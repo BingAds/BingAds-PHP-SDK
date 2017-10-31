@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible ad extension types.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensionstypefilter?version=11 AdExtensionsTypeFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensionstypefilter?view=bingads-11 AdExtensionsTypeFilter Value Set
      * 
      * @used-by GetAdExtensionIdsByAccountIdRequest
      * @used-by GetAdExtensionsAssociationsRequest

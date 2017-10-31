@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AdGroupPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adgroupperformancereportcolumn?version=11 AdGroupPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adgroupperformancereportcolumn?view=bingads-11 AdGroupPerformanceReportColumn Value Set
      * 
      * @used-by AdGroupPerformanceReportRequest
      */

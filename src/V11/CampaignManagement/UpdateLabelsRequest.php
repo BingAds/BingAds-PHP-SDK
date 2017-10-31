@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates the labels within the account.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatelabels?version=11 UpdateLabels Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatelabels?view=bingads-11 UpdateLabels Request Object
      * 
      * @uses Label
      * @used-by BingAdsCampaignManagementService::UpdateLabels

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains the negative site URLs of a campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaignnegativesites?version=11 CampaignNegativeSites Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaignnegativesites?view=bingads-11 CampaignNegativeSites Data Object
      * 
      * @used-by GetNegativeSitesByCampaignIdsResponse
      * @used-by SetNegativeSitesToCampaignsRequest

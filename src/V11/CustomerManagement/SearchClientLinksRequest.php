@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * This feature is not supported in sandbox.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchclientlinks?version=11 SearchClientLinks Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchclientlinks?view=bingads-11 SearchClientLinks Request Object
      * 
      * @uses Predicate
      * @uses OrderBy

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the ad distribution for the ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addistribution?version=11 AdDistribution Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addistribution?view=bingads-11 AdDistribution Value Set
      * 
      * @used-by AdGroup
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains traffic estimates based on the campaign, ad group, and keyword criteria you specified when calling GetKeywordTrafficEstimates.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/trafficestimate?version=11 TrafficEstimate Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/trafficestimate?view=bingads-11 TrafficEstimate Data Object
      * 
      * @used-by KeywordEstimate
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a publisher usage performance report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/publisherusageperformancereportrequest?version=11 PublisherUsagePerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/publisherusageperformancereportrequest?view=bingads-11 PublisherUsagePerformanceReportRequest Data Object
      * 
      * @uses NonHourlyReportAggregation
      * @uses PublisherUsagePerformanceReportColumn

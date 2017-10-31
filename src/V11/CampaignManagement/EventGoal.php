@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a custom event conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/eventgoal?version=11 EventGoal Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/eventgoal?view=bingads-11 EventGoal Data Object
      * 
      * @uses ExpressionOperator
      * @uses ValueOperator

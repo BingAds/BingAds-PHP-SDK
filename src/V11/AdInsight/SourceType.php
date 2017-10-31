@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines the source or seed for the keyword idea.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/sourcetype?version=11 SourceType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/sourcetype?view=bingads-11 SourceType Value Set
      * 
      * @used-by KeywordIdea
      */

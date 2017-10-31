@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the respective ad extension associations by the specified campaign and ad group identifiers.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadextensionsassociations?version=11 GetAdExtensionsAssociations Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadextensionsassociations?view=bingads-11 GetAdExtensionsAssociations Response Object
      * 
      * @uses AdExtensionAssociationCollection
      * @uses BatchError

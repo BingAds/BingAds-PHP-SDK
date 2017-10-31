@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates the specified ads within an ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateads?version=11 UpdateAds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateads?view=bingads-11 UpdateAds Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateAds

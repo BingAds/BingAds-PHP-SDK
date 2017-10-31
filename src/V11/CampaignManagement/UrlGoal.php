@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a URL conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/urlgoal?version=11 UrlGoal Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/urlgoal?view=bingads-11 UrlGoal Data Object
      * 
      * @uses ExpressionOperator
      */

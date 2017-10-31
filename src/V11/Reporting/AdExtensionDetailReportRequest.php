@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines an ad extension detail report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adextensiondetailreportrequest?version=11 AdExtensionDetailReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adextensiondetailreportrequest?view=bingads-11 AdExtensionDetailReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AdExtensionDetailReportColumn

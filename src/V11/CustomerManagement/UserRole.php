@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the possible roles of a user.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/userrole?version=11 UserRole Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/userrole?view=bingads-11 UserRole Value Set
      * 
      * @used-by UserInvitation
      */

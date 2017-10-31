@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the suggested bid with estimated clicks and impressions opportunities.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/bidopportunity?version=11 BidOpportunity Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/bidopportunity?view=bingads-11 BidOpportunity Data Object
      * 
      * @used-by GetBidOpportunitiesResponse
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a customer.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/customer?version=11 Customer Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/customer?view=bingads-11 Customer Data Object
      * 
      * @uses Address
      * @uses CustomerFinancialStatus

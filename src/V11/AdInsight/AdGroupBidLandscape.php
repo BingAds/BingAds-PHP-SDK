@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains a list of estimated clicks, cost, and impressions from 1 to 7 days for the ad group identifier given the suggested bid.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/adgroupbidlandscape?version=11 AdGroupBidLandscape Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/adgroupbidlandscape?view=bingads-11 AdGroupBidLandscape Data Object
      * 
      * @uses AdGroupBidLandscapeType
      * @uses DayMonthAndYear

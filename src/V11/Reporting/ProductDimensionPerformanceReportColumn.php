@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductDimensionPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productdimensionperformancereportcolumn?version=11 ProductDimensionPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productdimensionperformancereportcolumn?view=bingads-11 ProductDimensionPerformanceReportColumn Value Set
      * 
      * @used-by ProductDimensionPerformanceReportRequest
      */

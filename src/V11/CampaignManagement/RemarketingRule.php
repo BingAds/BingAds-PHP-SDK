@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of a remarketing rule.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/remarketingrule?version=11 RemarketingRule Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/remarketingrule?view=bingads-11 RemarketingRule Data Object
      * 
      * @used-by RemarketingList
      */

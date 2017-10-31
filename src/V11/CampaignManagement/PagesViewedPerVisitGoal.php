@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a pages viewed per visit conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagesviewedpervisitgoal?version=11 PagesViewedPerVisitGoal Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagesviewedpervisitgoal?view=bingads-11 PagesViewedPerVisitGoal Data Object
      */
     final class PagesViewedPerVisitGoal extends ConversionGoal
     {

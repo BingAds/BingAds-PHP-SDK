@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible system-determined status values of a conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoaltrackingstatus?version=11 ConversionGoalTrackingStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoaltrackingstatus?view=bingads-11 ConversionGoalTrackingStatus Value Set
      * 
      * @used-by ConversionGoal
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a collection of ad extensions that failed editorial review.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensioneditorialreasoncollection?version=11 AdExtensionEditorialReasonCollection Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensioneditorialreasoncollection?view=bingads-11 AdExtensionEditorialReasonCollection Data Object
      * 
      * @uses AdExtensionEditorialReason
      * @used-by GetAdExtensionsEditorialReasonsResponse

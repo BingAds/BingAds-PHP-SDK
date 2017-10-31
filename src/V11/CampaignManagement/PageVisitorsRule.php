@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a page visitors remarketing rule.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagevisitorsrule?version=11 PageVisitorsRule Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagevisitorsrule?view=bingads-11 PageVisitorsRule Data Object
      * 
      * @uses RuleItemGroup
      */

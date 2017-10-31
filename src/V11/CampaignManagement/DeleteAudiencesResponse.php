@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes the specified audiences.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteaudiences?version=11 DeleteAudiences Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteaudiences?view=bingads-11 DeleteAudiences Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteAudiences

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds new budgets to the account's shared budget library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addbudgets?version=11 AddBudgets Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addbudgets?view=bingads-11 AddBudgets Request Object
      * 
      * @uses Budget
      * @used-by BingAdsCampaignManagementService::AddBudgets

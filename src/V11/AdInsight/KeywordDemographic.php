@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the device, age and gender of the user who entered the search query, if known.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keyworddemographic?version=11 KeywordDemographic Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keyworddemographic?view=bingads-11 KeywordDemographic Data Object
      * 
      * @used-by KeywordDemographicResult
      */

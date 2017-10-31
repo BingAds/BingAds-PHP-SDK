@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * The targeting setting that is applicable for all audiences e.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/remarketingtargetingsetting?version=11 RemarketingTargetingSetting Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/remarketingtargetingsetting?view=bingads-11 RemarketingTargetingSetting Value Set
      * 
      * @used-by AdGroup
      */

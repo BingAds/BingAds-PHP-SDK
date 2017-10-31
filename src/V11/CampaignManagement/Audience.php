@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of an audience.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/audience?version=11 Audience Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/audience?view=bingads-11 Audience Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @uses EntityScope

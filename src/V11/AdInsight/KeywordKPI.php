@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines a key performance index object for a keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordkpi?version=11 KeywordKPI Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordkpi?view=bingads-11 KeywordKPI Data Object
      * 
      * @uses MatchType
      * @uses AdPosition

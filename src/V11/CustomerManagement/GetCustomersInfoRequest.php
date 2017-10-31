@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Gets a list of objects that contain customer identification information, for example the name and identifier of the customer.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getcustomersinfo?version=11 GetCustomersInfo Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getcustomersinfo?view=bingads-11 GetCustomersInfo Request Object
      * 
      * @uses ApplicationType
      * @used-by BingAdsCustomerManagementService::GetCustomersInfo

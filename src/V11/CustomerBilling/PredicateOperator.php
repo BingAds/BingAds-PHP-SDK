@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Defines the condition of results for insertion orders returned using SearchInsertionOrders.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/predicateoperator?version=11 PredicateOperator Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/predicateoperator?view=bingads-11 PredicateOperator Value Set
      * 
      * @used-by Predicate
      */

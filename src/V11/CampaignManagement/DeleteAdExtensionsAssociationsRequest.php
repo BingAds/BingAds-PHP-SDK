@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Removes the specified association from the respective campaigns or ad groups.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadextensionsassociations?version=11 DeleteAdExtensionsAssociations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadextensionsassociations?view=bingads-11 DeleteAdExtensionsAssociations Request Object
      * 
      * @uses AdExtensionIdToEntityIdAssociation
      * @uses AssociationType

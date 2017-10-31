@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the possible financial status values of an account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/accountfinancialstatus?version=11 AccountFinancialStatus Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/accountfinancialstatus?view=bingads-11 AccountFinancialStatus Value Set
      * 
      * @used-by Account
      */

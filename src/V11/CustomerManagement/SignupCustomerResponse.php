@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Signs up a customer with Bing Ads.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/signupcustomer?version=11 SignupCustomer Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/signupcustomer?view=bingads-11 SignupCustomer Response Object
      * 
      * @used-by BingAdsCustomerManagementService::SignupCustomer
      */

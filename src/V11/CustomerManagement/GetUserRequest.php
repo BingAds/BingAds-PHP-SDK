@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Gets the details of a user.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getuser?version=11 GetUser Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getuser?view=bingads-11 GetUser Request Object
      * 
      * @used-by BingAdsCustomerManagementService::GetUser
      */

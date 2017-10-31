@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Searches for accounts that match a specified criteria.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchaccounts?version=11 SearchAccounts Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchaccounts?view=bingads-11 SearchAccounts Request Object
      * 
      * @uses Predicate
      * @uses OrderBy

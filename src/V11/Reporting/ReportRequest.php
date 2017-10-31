@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the base object for all report requests.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportrequest?version=11 ReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportrequest?view=bingads-11 ReportRequest Data Object
      * 
      * @uses ReportFormat
      * @uses ReportLanguage

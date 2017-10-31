@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a change history report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchcampaignchangehistoryreportrequest?version=11 SearchCampaignChangeHistoryReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchcampaignchangehistoryreportrequest?view=bingads-11 SearchCampaignChangeHistoryReportRequest Data Object
      * 
      * @uses SearchCampaignChangeHistoryReportColumn
      * @uses SearchCampaignChangeHistoryReportFilter

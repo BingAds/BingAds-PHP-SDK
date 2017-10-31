@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Given a list of existing keywords, this operation returns for each a list of suggested bids and estimated performance statistics from 1 to  7 days.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getbidlandscapebykeywordids?version=11 GetBidLandscapeByKeywordIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getbidlandscapebykeywordids?view=bingads-11 GetBidLandscapeByKeywordIds Request Object
      * 
      * @used-by BingAdsAdInsightService::GetBidLandscapeByKeywordIds
      */

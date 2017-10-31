@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes negative keywords from the specified campaign or ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletenegativekeywordsfromentities?version=11 DeleteNegativeKeywordsFromEntities Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletenegativekeywordsfromentities?view=bingads-11 DeleteNegativeKeywordsFromEntities Response Object
      * 
      * @uses BatchErrorCollection
      * @used-by BingAdsCampaignManagementService::DeleteNegativeKeywordsFromEntities

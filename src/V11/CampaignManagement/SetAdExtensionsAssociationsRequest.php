@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Associates the specified ad extensions with the respective campaigns or ad groups.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setadextensionsassociations?version=11 SetAdExtensionsAssociations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setadextensionsassociations?view=bingads-11 SetAdExtensionsAssociations Request Object
      * 
      * @uses AdExtensionIdToEntityIdAssociation
      * @uses AssociationType

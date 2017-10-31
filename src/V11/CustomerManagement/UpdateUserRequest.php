@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Updates the details of the specified user.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/updateuser?version=11 UpdateUser Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/updateuser?view=bingads-11 UpdateUser Request Object
      * 
      * @uses User
      * @used-by BingAdsCustomerManagementService::UpdateUser

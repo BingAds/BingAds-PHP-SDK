@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a negative keyword conflict report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/negativekeywordconflictreportrequest?version=11 NegativeKeywordConflictReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/negativekeywordconflictreportrequest?view=bingads-11 NegativeKeywordConflictReportRequest Data Object
      * 
      * @uses NegativeKeywordConflictReportColumn
      * @uses NegativeKeywordConflictReportFilter

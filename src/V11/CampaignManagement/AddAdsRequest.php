@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more ads to an ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addads?version=11 AddAds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addads?view=bingads-11 AddAds Request Object
      * 
      * @uses Ad
      * @used-by BingAdsCampaignManagementService::AddAds

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets account level properties by name.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getaccountproperties?version=11 GetAccountProperties Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getaccountproperties?view=bingads-11 GetAccountProperties Request Object
      * 
      * @uses AccountPropertyName
      * @used-by BingAdsCampaignManagementService::GetAccountProperties

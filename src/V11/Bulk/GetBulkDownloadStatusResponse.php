@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Gets the status of a bulk download request.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/getbulkdownloadstatus?version=11 GetBulkDownloadStatus Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/getbulkdownloadstatus?view=bingads-11 GetBulkDownloadStatus Response Object
      * 
      * @uses OperationError
      * @uses KeyValuePairOfstringstring

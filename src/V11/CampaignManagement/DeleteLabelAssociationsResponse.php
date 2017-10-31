@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes label associations.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletelabelassociations?version=11 DeleteLabelAssociations Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletelabelassociations?view=bingads-11 DeleteLabelAssociations Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteLabelAssociations

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains the longitude and latitude coordinates of a geographical location.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/geopoint?version=11 GeoPoint Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/geopoint?view=bingads-11 GeoPoint Data Object
      * 
      * @used-by LocationAdExtension
      */

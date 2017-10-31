@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines the file formats for a download request.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadfiletype?version=11 DownloadFileType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadfiletype?view=bingads-11 DownloadFileType Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest

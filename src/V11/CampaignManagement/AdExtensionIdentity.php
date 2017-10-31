@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that identifies an ad extension revision.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensionidentity?version=11 AdExtensionIdentity Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensionidentity?view=bingads-11 AdExtensionIdentity Data Object
      * 
      * @used-by AddAdExtensionsResponse
      */

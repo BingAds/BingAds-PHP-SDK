@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the dynamic ad target status values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dynamicadtargetstatusreportfilter?version=11 DynamicAdTargetStatusReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dynamicadtargetstatusreportfilter?view=bingads-11 DynamicAdTargetStatusReportFilter Value Set
      * 
      * @used-by DSAAutoTargetPerformanceReportFilter
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a Bing Shopping campaign product search query performance report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productsearchqueryperformancereportrequest?version=11 ProductSearchQueryPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productsearchqueryperformancereportrequest?view=bingads-11 ProductSearchQueryPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses ProductSearchQueryPerformanceReportColumn

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Retrieves the specified audiences from the specified account.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getaudiencesbyids?version=11 GetAudiencesByIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getaudiencesbyids?view=bingads-11 GetAudiencesByIds Request Object
      * 
      * @uses AudienceType
      * @used-by BingAdsCampaignManagementService::GetAudiencesByIds

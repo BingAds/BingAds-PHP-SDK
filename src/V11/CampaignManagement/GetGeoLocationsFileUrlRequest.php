@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets a temporary URL that you can use to download a file that contains the supported geographical location targeting codes.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getgeolocationsfileurl?version=11 GetGeoLocationsFileUrl Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getgeolocationsfileurl?view=bingads-11 GetGeoLocationsFileUrl Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetGeoLocationsFileUrl
      */

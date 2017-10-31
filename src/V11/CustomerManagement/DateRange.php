@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines a date range object.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/daterange?version=11 DateRange Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/daterange?view=bingads-11 DateRange Data Object
      * 
      * @used-by SearchCustomersRequest
      */

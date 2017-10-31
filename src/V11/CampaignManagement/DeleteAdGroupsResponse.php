@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes one or more ad groups from the specified campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadgroups?version=11 DeleteAdGroups Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deleteadgroups?view=bingads-11 DeleteAdGroups Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteAdGroups
