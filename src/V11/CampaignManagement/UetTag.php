@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a Universal Event Tracking (UET) tag that you can add to your website to allow Bing Ads to collect actions people take on your website.
-     * @link http://msdn.microsoft.com/en-us/library/mt759552(v=msads.110).aspx UetTag Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/uettag?view=bingads-11 UetTag Data Object
      * 
      * @uses UetTagTrackingStatus
      * @used-by AddUetTagsRequest
@@ -15,11 +15,40 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class UetTag
     {
+        /**
+         * Text to help you identify the UET tag.
+         * @var string
+         */
         public $Description;
+
+        /**
+         * The unique Bing Ads identifier of the UET tag.
+         * @var integer
+         */
         public $Id;
+
+        /**
+         * The UET tag name.
+         * @var string
+         */
         public $Name;
+
+        /**
+         * If your website doesn't support JavaScript, you can use this Non-JavaScript representation of the UET tag.
+         * @var string
+         */
         public $TrackingNoScript;
+
+        /**
+         * The tracking script that you can add to your website to allow Bing Ads to collect actions people take on your website.
+         * @var string
+         */
         public $TrackingScript;
+
+        /**
+         * The system-determined status values of a UET tag, for example the system sets the status to Unverified if the UET tag has not yet been verified.
+         * @var UetTagTrackingStatus
+         */
         public $TrackingStatus;
     }
 

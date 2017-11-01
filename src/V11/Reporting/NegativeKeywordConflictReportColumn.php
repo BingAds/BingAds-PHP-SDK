@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes columns that you can include in the NegativeKeywordConflictReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/hh560535(v=msads.110).aspx NegativeKeywordConflictReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/negativekeywordconflictreportcolumn?view=bingads-11 NegativeKeywordConflictReportColumn Value Set
      * 
      * @used-by NegativeKeywordConflictReportRequest
      */
@@ -58,9 +58,17 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The type of match to compare the negative keyword and the user's search term. */
         const NegativeKeywordMatchType = 'NegativeKeywordMatchType';
+
+        /** The current account status. */
         const AccountStatus = 'AccountStatus';
+
+        /** The current campaign status. */
         const CampaignStatus = 'CampaignStatus';
+
+        /** The current ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
+
+        /** The current keyword status. */
         const KeywordStatus = 'KeywordStatus';
     }
 

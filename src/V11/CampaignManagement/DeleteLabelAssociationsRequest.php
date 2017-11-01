@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes label associations.
-     * @link http://msdn.microsoft.com/en-us/library/mt803288(v=msads.110).aspx DeleteLabelAssociations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletelabelassociations?view=bingads-11 DeleteLabelAssociations Request Object
      * 
      * @uses EntityType
      * @uses LabelAssociation
@@ -13,7 +13,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class DeleteLabelAssociationsRequest
     {
+        /**
+         * Indicates the entity type associated with the label.
+         * @var EntityType
+         */
         public $EntityType;
+
+        /**
+         * The list of label associations to delete.
+         * @var LabelAssociation[]
+         */
         public $LabelAssociations;
     }
 }

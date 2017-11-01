@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the operators that can be applied to expressions within a conversion goal.
-     * @link http://msdn.microsoft.com/en-us/library/mt759561(v=msads.110).aspx ExpressionOperator Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/expressionoperator?view=bingads-11 ExpressionOperator Value Set
      * 
      * @used-by EventGoal
      * @used-by UrlGoal

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates one or more ad extensions within an account's ad extension library.
-     * @link http://msdn.microsoft.com/en-us/library/dn277522(v=msads.110).aspx UpdateAdExtensions Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateadextensions?view=bingads-11 UpdateAdExtensions Response Object
      * 
      * @uses BatchErrorCollection
      * @used-by BingAdsCampaignManagementService::UpdateAdExtensions

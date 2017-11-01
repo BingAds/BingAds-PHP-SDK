@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductDimensionPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/dn913140(v=msads.110).aspx ProductDimensionPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productdimensionperformancereportcolumn?view=bingads-11 ProductDimensionPerformanceReportColumn Value Set
      * 
      * @used-by ProductDimensionPerformanceReportRequest
      */
@@ -184,6 +184,8 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** Click type refers to each component of an ad that a customer can click. */
         const ClickType = 'ClickType';
+
+        /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
 
         /** The bid strategy type. */

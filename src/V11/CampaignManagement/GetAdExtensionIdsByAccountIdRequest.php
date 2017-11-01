@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the ad extensions from the account's ad extension library.
-     * @link http://msdn.microsoft.com/en-us/library/dn277509(v=msads.110).aspx GetAdExtensionIdsByAccountId Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadextensionidsbyaccountid?view=bingads-11 GetAdExtensionIdsByAccountId Request Object
      * 
      * @uses AdExtensionsTypeFilter
      * @uses AssociationType
@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $AdExtensionType;
 
         /**
-         * A value that filters the extensions based on whether they're associated with a specific entity type.
+         * A value that filters the extensions based on whether they?re associated with a specific entity type.
          * @var AssociationType
          */
         public $AssociationType;

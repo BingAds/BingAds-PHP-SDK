@@ -5,13 +5,32 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an app install ad.
-     * @link http://msdn.microsoft.com/en-us/library/mt712576(v=msads.110).aspx AppInstallAd Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appinstallad?view=bingads-11 AppInstallAd Data Object
      */
     final class AppInstallAd extends Ad
     {
+        /**
+         * The application platform.
+         * @var string
+         */
         public $AppPlatform;
+
+        /**
+         * The application identifier provided by the app store.
+         * @var string
+         */
         public $AppStoreId;
+
+        /**
+         * The ad copy.
+         * @var string
+         */
         public $Text;
+
+        /**
+         * The title of the ad.
+         * @var string
+         */
         public $Title;
     }
 

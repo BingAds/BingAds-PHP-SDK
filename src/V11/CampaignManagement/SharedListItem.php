@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base class of a shared list item.
-     * @link http://msdn.microsoft.com/en-us/library/dn743738(v=msads.110).aspx SharedListItem Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/sharedlistitem?view=bingads-11 SharedListItem Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by AddListItemsToSharedListRequest
@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     class SharedListItem
     {
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

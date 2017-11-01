@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Signs up a customer with Bing Ads.
-     * @link http://msdn.microsoft.com/en-us/library/dn451287(v=msads.110).aspx SignupCustomer Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/signupcustomer?view=bingads-11 SignupCustomer Request Object
      * 
      * @uses Customer
      * @uses Account
@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $ParentCustomerId;
 
         /**
-         * Determines the type of customer application.
+         * Determines  the type of customer application.
          * @var ApplicationType
          */
         public $ApplicationScope;

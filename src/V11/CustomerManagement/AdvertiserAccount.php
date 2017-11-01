@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines an advertiser account.
-     * @link http://msdn.microsoft.com/en-us/library/ee704163(v=msads.110).aspx AdvertiserAccount Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/advertiseraccount?view=bingads-11 AdvertiserAccount Data Object
      * 
      * @uses CustomerInfo
      * @uses KeyValuePairOfstringstring
@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $TaxInformation;
 
         /**
-         * The identifier of a backup payment instrument to use to settle the account.
+         * The identifier of a backup  payment instrument to use to settle the account.
          * @var integer
          */
         public $BackUpPaymentInstrumentId;

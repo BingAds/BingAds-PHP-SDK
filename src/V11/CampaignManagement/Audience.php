@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of an audience.
-     * @link http://msdn.microsoft.com/en-us/library/mt807660(v=msads.110).aspx Audience Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/audience?view=bingads-11 Audience Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @uses EntityScope
@@ -23,7 +23,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Description;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

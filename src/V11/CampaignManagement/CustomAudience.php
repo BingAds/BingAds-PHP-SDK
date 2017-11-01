@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a custom audience.
-     * @link http://msdn.microsoft.com/en-us/library/mt807659(v=msads.110).aspx CustomAudience Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/customaudience?view=bingads-11 CustomAudience Data Object
      */
     final class CustomAudience extends Audience
     {

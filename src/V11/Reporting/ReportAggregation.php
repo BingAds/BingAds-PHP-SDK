@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the aggregation values that you can use for a report.
-     * @link http://msdn.microsoft.com/en-us/library/bb672067(v=msads.110).aspx ReportAggregation Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportaggregation?view=bingads-11 ReportAggregation Value Set
      * 
      * @used-by AccountPerformanceReportRequest
      * @used-by AdExtensionByAdReportRequest

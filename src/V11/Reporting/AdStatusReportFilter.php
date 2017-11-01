@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the ad status values that you can use to filter the report data.
-     * @link http://msdn.microsoft.com/en-us/library/hh560533(v=msads.110).aspx AdStatusReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adstatusreportfilter?view=bingads-11 AdStatusReportFilter Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportFilter
      * @used-by AdExtensionByAdReportFilter

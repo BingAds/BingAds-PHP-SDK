@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a calendar date by month, day, and year.
-     * @link http://msdn.microsoft.com/en-us/library/dn376514(v=msads.110).aspx Date Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/date?view=bingads-11 Date Data Object
      * 
      * @used-by BudgetSummaryReportTime
      * @used-by ReportTime

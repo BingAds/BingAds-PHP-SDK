@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Suggests keywords that could perform better than the specified keywords.
-     * @link http://msdn.microsoft.com/en-us/library/mt219311(v=msads.110).aspx SuggestKeywordsFromExistingKeywords Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/suggestkeywordsfromexistingkeywords?view=bingads-11 SuggestKeywordsFromExistingKeywords Request Object
      * 
      * @used-by BingAdsAdInsightService::SuggestKeywordsFromExistingKeywords
      */

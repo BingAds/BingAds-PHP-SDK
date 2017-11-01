@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * This feature is not supported in sandbox.
-     * @link http://msdn.microsoft.com/en-us/library/dn632186(v=msads.110).aspx SearchClientLinks Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchclientlinks?view=bingads-11 SearchClientLinks Request Object
      * 
      * @uses Predicate
      * @uses OrderBy
@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $Ordering;
 
         /**
-         * Determines the index and size of results per page.
+         * Determines the index and size of  results per page.
          * @var Paging
          */
         public $PageInfo;

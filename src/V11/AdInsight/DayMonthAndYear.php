@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that you use to specify the start and end dates of a date range.
-     * @link http://msdn.microsoft.com/en-us/library/mt219345(v=msads.110).aspx DayMonthAndYear Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/daymonthandyear?view=bingads-11 DayMonthAndYear Data Object
      * 
      * @used-by AdGroupBidLandscape
      * @used-by DateRangeSearchParameter

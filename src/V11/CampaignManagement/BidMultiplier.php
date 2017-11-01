@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the multiplier by which to adjust your base bid for the corresponding criterion.
-     * @link http://msdn.microsoft.com/en-us/library/mt807662(v=msads.110).aspx BidMultiplier Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/bidmultiplier?view=bingads-11 BidMultiplier Data Object
      */
     final class BidMultiplier extends CriterionBid
     {

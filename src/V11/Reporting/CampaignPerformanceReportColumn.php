@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the CampaignPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/bb671614(v=msads.110).aspx CampaignPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/campaignperformancereportcolumn?view=bingads-11 CampaignPerformanceReportColumn Value Set
      * 
      * @used-by CampaignPerformanceReportRequest
      */
@@ -23,7 +23,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** The current entity status. */
+        /** The current entity  status. */
         const Status = 'Status';
 
         /** The campaign name. */
@@ -202,6 +202,12 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** Invalid clicks that use sophisticated means to appear valid. */
         const LowQualitySophisticatedClicks = 'LowQualitySophisticatedClicks';
+
+        /** The labels applied to the campaign. */
+        const CampaignLabels = 'CampaignLabels';
+
+        /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
     }
 
 }

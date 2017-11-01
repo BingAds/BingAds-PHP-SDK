@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Sets label associations.
-     * @link http://msdn.microsoft.com/en-us/library/mt803283(v=msads.110).aspx SetLabelAssociations Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setlabelassociations?view=bingads-11 SetLabelAssociations Request Object
      * 
      * @uses EntityType
      * @uses LabelAssociation
@@ -13,7 +13,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class SetLabelAssociationsRequest
     {
+        /**
+         * Indicates the entity type associated with the label.
+         * @var EntityType
+         */
         public $EntityType;
+
+        /**
+         * The list of label associations to set.
+         * @var LabelAssociation[]
+         */
         public $LabelAssociations;
     }
 }

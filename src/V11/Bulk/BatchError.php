@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
-     * @link http://msdn.microsoft.com/en-us/library/dn169096(v=msads.110).aspx BatchError Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/batcherror?view=bingads-11 BatchError Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by ApiFaultDetail
@@ -37,7 +37,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         public $FieldPath;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

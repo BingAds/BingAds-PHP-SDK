@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the DSA auto target performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt779094(v=msads.110).aspx DSAAutoTargetPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsaautotargetperformancereportfilter?view=bingads-11 DSAAutoTargetPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter
@@ -27,6 +27,11 @@ namespace Microsoft\BingAds\V11\Reporting;
          * @var AdGroupStatusReportFilter
          */
         public $AdGroupStatus;
+
+        /**
+         * The report will include data for only the specified bid strategy types.
+         * @var BidStrategyTypeReportFilter
+         */
         public $BidStrategyType;
 
         /**

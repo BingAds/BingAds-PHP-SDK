@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the account performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/bb671671(v=msads.110).aspx AccountPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/accountperformancereportfilter?view=bingads-11 AccountPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

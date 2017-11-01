@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a campaign.
-     * @link http://msdn.microsoft.com/en-us/library/bb672054(v=msads.110).aspx Campaign Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaign?view=bingads-11 Campaign Data Object
      * 
      * @uses BiddingScheme
      * @uses BudgetLimitType
@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Description;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;
@@ -64,7 +64,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Name;
 
         /**
-         * The percent amount by which to adjust your bid for native ads above or below the base ad group or keyword bid.
+         * The percent amount by which to adjust your bid for intent ads above or below the base ad group or keyword bid.
          * @var integer
          */
         public $NativeBidAdjustment;

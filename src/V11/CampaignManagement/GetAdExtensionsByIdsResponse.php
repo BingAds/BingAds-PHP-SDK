@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the specified ad extensions from the account's ad extension library.
-     * @link http://msdn.microsoft.com/en-us/library/dn277515(v=msads.110).aspx GetAdExtensionsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadextensionsbyids?view=bingads-11 GetAdExtensionsByIds Response Object
      * 
      * @uses AdExtension
      * @uses BatchError

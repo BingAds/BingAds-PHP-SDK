@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more campaign criterions that help determine whether ads in each campaign get served.
-     * @link http://msdn.microsoft.com/en-us/library/dn913127(v=msads.110).aspx AddCampaignCriterions Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addcampaigncriterions?view=bingads-11 AddCampaignCriterions Request Object
      * 
      * @uses CampaignCriterion
      * @uses CampaignCriterionType
@@ -13,7 +13,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AddCampaignCriterionsRequest
     {
+        /**
+         * A list of criterions that help determine whether ads in each campaign get served.
+         * @var CampaignCriterion[]
+         */
         public $CampaignCriterions;
+
+        /**
+         * The type of criterion to add, for example Webpage.
+         * @var CampaignCriterionType
+         */
         public $CriterionType;
     }
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a product partition unit performance report request that aggregates the performance data by product partition unit for a specified time period.
-     * @link http://msdn.microsoft.com/en-us/library/mt592960(v=msads.110).aspx ProductPartitionUnitPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productpartitionunitperformancereportrequest?view=bingads-11 ProductPartitionUnitPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses ProductPartitionUnitPerformanceReportColumn
@@ -15,10 +15,34 @@ namespace Microsoft\BingAds\V11\Reporting;
      */
     final class ProductPartitionUnitPerformanceReportRequest extends ReportRequest
     {
+        /**
+         * The type of aggregation to use to aggregate the report data.
+         * @var ReportAggregation
+         */
         public $Aggregation;
+
+        /**
+         * The list of attributes and performance statistics to include in the report.
+         * @var ProductPartitionUnitPerformanceReportColumn[]
+         */
         public $Columns;
+
+        /**
+         * The filter information to use to filter the report data.
+         * @var ProductPartitionUnitPerformanceReportFilter
+         */
         public $Filter;
+
+        /**
+         * The scope of the report.
+         * @var AccountThroughAdGroupReportScope
+         */
         public $Scope;
+
+        /**
+         * The time period to use for the report.
+         * @var ReportTime
+         */
         public $Time;
     }
 

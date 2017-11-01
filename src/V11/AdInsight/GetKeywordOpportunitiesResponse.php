@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets a list of keyword suggestions that are relevant to the specified ad group.
-     * @link http://msdn.microsoft.com/en-us/library/mt219321(v=msads.110).aspx GetKeywordOpportunities Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordopportunities?view=bingads-11 GetKeywordOpportunities Response Object
      * 
      * @uses KeywordOpportunity
      * @used-by BingAdsAdInsightService::GetKeywordOpportunities

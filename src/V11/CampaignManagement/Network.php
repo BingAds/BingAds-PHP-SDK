@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible search networks on which an ad can display.
-     * @link http://msdn.microsoft.com/en-us/library/ff986253(v=msads.110).aspx Network Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/network?view=bingads-11 Network Value Set
      * 
      * @used-by AdGroup
      */

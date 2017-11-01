@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a criterion that you want applied to the specified campaign.
-     * @link http://msdn.microsoft.com/en-us/library/dn913126(v=msads.110).aspx CampaignCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/campaigncriterion?view=bingads-11 CampaignCriterion Data Object
      * 
      * @uses Criterion
      * @uses KeyValuePairOfstringstring
@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Criterion;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

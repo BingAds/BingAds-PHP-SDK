@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines price units for price ad extensions.
-     * @link http://msdn.microsoft.com/en-us/library/mt807735(v=msads.110).aspx PriceUnit Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/priceunit?view=bingads-11 PriceUnit Value Set
      * 
      * @used-by PriceTableRow
      */
@@ -19,6 +19,8 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** The Per Day price unit text will be appended to the price of the PriceAdExtension, for example $9. */
         const PerDay = 'PerDay';
+
+        /** The Per Week price unit text will be appended to the price of the PriceAdExtension, for example $9. */
         const PerWeek = 'PerWeek';
 
         /** The Per Month price unit text will be appended to the price of the PriceAdExtension, for example $9. */

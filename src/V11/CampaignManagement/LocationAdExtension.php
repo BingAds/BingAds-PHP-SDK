@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Defines an ad extension that specifies a business' address and phone number to include in a text ad.
-     * @link http://msdn.microsoft.com/en-us/library/jj721600(v=msads.110).aspx LocationAdExtension Data Object
+     * Defines an ad extension that specifies a business address and phone number to include in a text ad.
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/locationadextension?view=bingads-11 LocationAdExtension Data Object
      * 
      * @uses Address
      * @uses BusinessGeoCodeStatus
@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     final class LocationAdExtension extends AdExtension
     {
         /**
-         * The business' address.
+         * The business address.
          * @var Address
          */
         public $Address;
@@ -26,19 +26,19 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $CompanyName;
 
         /**
-         * A status value that indicates whether the business' latitude and longitude coordinates have been determined.
+         * A status value that indicates whether the business latitude and longitude coordinates have been determined.
          * @var BusinessGeoCodeStatus
          */
         public $GeoCodeStatus;
 
         /**
-         * The latitude and longitude coordinates of the specified Address element.
+         * The latitude and longitude coordinates of the  specified Address element.
          * @var GeoPoint
          */
         public $GeoPoint;
 
         /**
-         * The identifier of an icon used to mark the business' location on Bing Maps.
+         * The identifier of an icon used to mark the business location on Bing Maps.
          * @var integer
          */
         public $IconMediaId;
@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $ImageMediaId;
 
         /**
-         * The business' phone number to include in the ad.
+         * The business phone number to include in the ad.
          * @var string
          */
         public $PhoneNumber;

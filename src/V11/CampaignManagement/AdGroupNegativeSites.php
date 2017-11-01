@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains the negative site URLs of an ad group.
-     * @link http://msdn.microsoft.com/en-us/library/hh300117(v=msads.110).aspx AdGroupNegativeSites Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupnegativesites?view=bingads-11 AdGroupNegativeSites Data Object
      * 
      * @used-by GetNegativeSitesByAdGroupIdsResponse
      * @used-by SetNegativeSitesToAdGroupsRequest

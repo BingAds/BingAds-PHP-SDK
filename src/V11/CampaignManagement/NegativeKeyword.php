@@ -5,15 +5,29 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a negative keyword with match type.
-     * @link http://msdn.microsoft.com/en-us/library/dn743739(v=msads.110).aspx NegativeKeyword Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/negativekeyword?view=bingads-11 NegativeKeyword Data Object
      * 
      * @uses MatchType
      * @used-by EntityNegativeKeyword
      */
     final class NegativeKeyword extends SharedListItem
     {
+        /**
+         * The unique Bing Ads identifier of the negative keyword.
+         * @var integer
+         */
         public $Id;
+
+        /**
+         * The type of match to compare the negative keyword and the user's search term.
+         * @var MatchType
+         */
         public $MatchType;
+
+        /**
+         * The negative keyword text.
+         * @var string
+         */
         public $Text;
     }
 

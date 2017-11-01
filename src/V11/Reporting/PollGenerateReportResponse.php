@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Gets the status of a report request.
-     * @link http://msdn.microsoft.com/en-us/library/jj879320(v=msads.110).aspx PollGenerateReport Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/pollgeneratereport?view=bingads-11 PollGenerateReport Response Object
      * 
      * @uses ReportRequestStatus
      * @used-by BingAdsReportingService::PollGenerateReport

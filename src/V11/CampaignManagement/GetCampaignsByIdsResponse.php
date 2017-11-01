@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the specified campaigns within an account.
-     * @link http://msdn.microsoft.com/en-us/library/dn236303(v=msads.110).aspx GetCampaignsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getcampaignsbyids?view=bingads-11 GetCampaignsByIds Response Object
      * 
      * @uses Campaign
      * @uses BatchError

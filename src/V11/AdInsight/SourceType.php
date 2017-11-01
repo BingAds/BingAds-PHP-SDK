@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines the source or seed for the keyword idea.
-     * @link http://msdn.microsoft.com/en-us/library/mt784415(v=msads.110).aspx SourceType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/sourcetype?view=bingads-11 SourceType Value Set
      * 
      * @used-by KeywordIdea
      */
@@ -19,6 +19,8 @@ namespace Microsoft\BingAds\V11\AdInsight;
 
         /** The keyword idea is sourced from a provided keyword. */
         const SuggestionFromKeyword = 'SuggestionFromKeyword';
+
+        /** The keyword idea is sourced from a provided URL. */
         const SuggestionFromUrl = 'SuggestionFromUrl';
 
         /** The keyword idea is sourced from a provided category. */

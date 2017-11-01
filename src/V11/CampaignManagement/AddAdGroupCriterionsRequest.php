@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more ad group criterions.
-     * @link http://msdn.microsoft.com/en-us/library/dn277499(v=msads.110).aspx AddAdGroupCriterions Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addadgroupcriterions?view=bingads-11 AddAdGroupCriterions Request Object
      * 
      * @uses AdGroupCriterion
      * @uses AdGroupCriterionType
@@ -13,7 +13,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AddAdGroupCriterionsRequest
     {
+        /**
+         * A list of ad group criterions.
+         * @var AdGroupCriterion[]
+         */
         public $AdGroupCriterions;
+
+        /**
+         * The type of criterion to add, for example Webpage.
+         * @var AdGroupCriterionType
+         */
         public $CriterionType;
     }
 }

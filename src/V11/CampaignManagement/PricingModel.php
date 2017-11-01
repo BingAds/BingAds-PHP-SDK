@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the pricing model for an ad group.
-     * @link http://msdn.microsoft.com/en-us/library/cc580680(v=msads.110).aspx PricingModel Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pricingmodel?view=bingads-11 PricingModel Value Set
      * 
      * @used-by AdGroup
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the status of a report.
-     * @link http://msdn.microsoft.com/en-us/library/bb671578(v=msads.110).aspx ReportRequestStatusType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/reportrequeststatustype?view=bingads-11 ReportRequestStatusType Value Set
      * 
      * @used-by ReportRequestStatus
      */

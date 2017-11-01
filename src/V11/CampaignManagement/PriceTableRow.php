@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines pricing information by currency and unit that you can use with price ad extensions.
-     * @link http://msdn.microsoft.com/en-us/library/mt807734(v=msads.110).aspx PriceTableRow Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pricetablerow?view=bingads-11 PriceTableRow Data Object
      * 
      * @uses PriceQualifier
      * @uses PriceUnit

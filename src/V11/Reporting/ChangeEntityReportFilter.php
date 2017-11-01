@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the types of entities by which you can filter the report data.
-     * @link http://msdn.microsoft.com/en-us/library/hh912355(v=msads.110).aspx ChangeEntityReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/changeentityreportfilter?view=bingads-11 ChangeEntityReportFilter Value Set
      * 
      * @used-by SearchCampaignChangeHistoryReportFilter
      */

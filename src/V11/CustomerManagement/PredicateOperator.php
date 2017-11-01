@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the condition of results for one of the search operations, for example SearchAccounts, SearchClientLinks, or SearchCustomers.
-     * @link http://msdn.microsoft.com/en-us/library/dn518214(v=msads.110).aspx PredicateOperator Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/predicateoperator?view=bingads-11 PredicateOperator Value Set
      * 
      * @used-by Predicate
      */

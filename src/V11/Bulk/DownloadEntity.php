@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines the entities that may be downloaded in bulk.
-     * @link http://msdn.microsoft.com/en-us/library/mt807599(v=msads.110).aspx DownloadEntity Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadentity?view=bingads-11 DownloadEntity Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest
@@ -42,7 +42,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Ad Group Negative Site records in the download data. */
         const AdGroupNegativeSites = 'AdGroupNegativeSites';
 
-        /** Include Campaign Sitelink Ad Extension records in the download that represents the association relationship between a campaign and a sitelink ad extension. */
+        /** This value is deprecated in favor of CampaignSitelink2AdExtensions. */
         const CampaignSiteLinksAdExtensions = 'CampaignSiteLinksAdExtensions';
 
         /** Include Campaign Location Ad Extension records in the download that represents the association relationship between a campaign and a location ad extension. */
@@ -51,7 +51,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Campaign Call Ad Extension records in the download that represents the association relationship between a campaign and a call ad extension. */
         const CampaignCallAdExtensions = 'CampaignCallAdExtensions';
 
-        /** Include AdGroup Sitelink Ad Extension records in the download that each represent the association relationship between an ad group and a sitelink ad extension. */
+        /** This value is deprecated in favor of AdGroupSitelink2AdExtensions. */
         const AdGroupSiteLinksAdExtensions = 'AdGroupSiteLinksAdExtensions';
 
         /** Include Location Ad Extension records in the download data. */
@@ -60,7 +60,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Call Ad Extension records in the download data. */
         const CallAdExtensions = 'CallAdExtensions';
 
-        /** Include Sitelink Ad Extension records in the download data. */
+        /** This value is deprecated in favor of Sitelink2AdExtensions. */
         const SiteLinksAdExtensions = 'SiteLinksAdExtensions';
 
         /** Include Negative Keyword List records in the download data. */
@@ -128,8 +128,14 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Ad Group Sitelink2 Ad Extension records in the download that each represent the association relationship between an ad group and a sitelink2 ad extension. */
         const AdGroupSitelink2AdExtensions = 'AdGroupSitelink2AdExtensions';
+
+        /** Reserved for future use. */
         const ActionLinkAdExtensions = 'ActionLinkAdExtensions';
+
+        /** Reserved for future use. */
         const CampaignActionLinkAdExtensions = 'CampaignActionLinkAdExtensions';
+
+        /** Reserved for future use. */
         const AdGroupActionLinkAdExtensions = 'AdGroupActionLinkAdExtensions';
 
         /** Include Structured Snippet Ad Extension records in the download data. */
@@ -254,6 +260,8 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Account Sitelink2 Ad Extension records in the download that represents the association relationship between an account and a sitelink2 ad extension. */
         const AccountSitelink2AdExtensions = 'AccountSitelink2AdExtensions';
+
+        /** Reserved for future use. */
         const AccountActionLinkAdExtensions = 'AccountActionLinkAdExtensions';
 
         /** Include Account Structured Snippet Ad Extension records in the download that represents the association relationship between an account and a structured snippet ad extension. */

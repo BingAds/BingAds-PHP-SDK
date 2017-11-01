@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Gets the details of a customer.
-     * @link http://msdn.microsoft.com/en-us/library/dn451279(v=msads.110).aspx GetCustomer Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getcustomer?view=bingads-11 GetCustomer Response Object
      * 
      * @uses Customer
      * @used-by BingAdsCustomerManagementService::GetCustomer

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to a specific audience.
-     * @link http://msdn.microsoft.com/en-us/library/mt807655(v=msads.110).aspx AudienceCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/audiencecriterion?view=bingads-11 AudienceCriterion Data Object
      * 
      * @uses AudienceType
      */

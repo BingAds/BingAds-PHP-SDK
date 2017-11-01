@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible distance units of a geographical location.
-     * @link http://msdn.microsoft.com/en-us/library/dn743740(v=msads.110).aspx DistanceUnit Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/distanceunit?view=bingads-11 DistanceUnit Value Set
      * 
      * @used-by RadiusCriterion
      */

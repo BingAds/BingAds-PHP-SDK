@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible age range values that you can use to target ads to People.
-     * @link http://msdn.microsoft.com/en-us/library/bb671742(v=msads.110).aspx AgeRange Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/agerange?view=bingads-11 AgeRange Value Set
      * 
      * @used-by AgeCriterion
      */
@@ -19,6 +19,8 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** People from the ages of 25 through 34 years. */
         const TwentyFiveToThirtyFour = 'TwentyFiveToThirtyFour';
+
+        /** People from the ages of 35 through 49 years. */
         const ThirtyFiveToFourtyNine = 'ThirtyFiveToFourtyNine';
 
         /** People from the ages of 50 through 64 years. */

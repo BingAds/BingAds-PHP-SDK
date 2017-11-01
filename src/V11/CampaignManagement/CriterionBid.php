@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a base class for criterion bids.
-     * @link http://msdn.microsoft.com/en-us/library/jj689540(v=msads.110).aspx CriterionBid Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/criterionbid?view=bingads-11 CriterionBid Data Object
      * 
      * @used-by BiddableAdGroupCriterion
      * @used-by BiddableCampaignCriterion

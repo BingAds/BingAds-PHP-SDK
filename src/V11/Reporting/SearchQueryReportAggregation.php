@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the aggregation values that you can use in a search query performance report.
-     * @link http://msdn.microsoft.com/en-us/library/ee703960(v=msads.110).aspx SearchQueryReportAggregation Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchqueryreportaggregation?view=bingads-11 SearchQueryReportAggregation Value Set
      * 
      * @used-by DSASearchQueryPerformanceReportRequest
      * @used-by SearchQueryPerformanceReportRequest

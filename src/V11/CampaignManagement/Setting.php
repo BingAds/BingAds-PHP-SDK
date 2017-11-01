@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base class of a setting.
-     * @link http://msdn.microsoft.com/en-us/library/dn913122(v=msads.110).aspx Setting Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setting?view=bingads-11 Setting Data Object
      * 
      * @used-by AdGroup
      * @used-by Campaign

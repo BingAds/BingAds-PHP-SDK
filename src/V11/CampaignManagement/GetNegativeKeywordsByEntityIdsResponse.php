@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the negative keywords that are only associated with the specified campaigns or ad groups.
-     * @link http://msdn.microsoft.com/en-us/library/dn743730(v=msads.110).aspx GetNegativeKeywordsByEntityIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getnegativekeywordsbyentityids?view=bingads-11 GetNegativeKeywordsByEntityIds Response Object
      * 
      * @uses EntityNegativeKeyword
      * @uses BatchError

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets account level properties by name.
-     * @link http://msdn.microsoft.com/en-us/library/mt803284(v=msads.110).aspx GetAccountProperties Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getaccountproperties?view=bingads-11 GetAccountProperties Response Object
      * 
      * @uses AccountProperty
      * @uses BatchError

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets the number of times the normalized term was used in a search during the specified time period.
-     * @link http://msdn.microsoft.com/en-us/library/mt219308(v=msads.110).aspx GetHistoricalSearchCount Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/gethistoricalsearchcount?view=bingads-11 GetHistoricalSearchCount Response Object
      * 
      * @uses KeywordSearchCount
      * @used-by BingAdsAdInsightService::GetHistoricalSearchCount

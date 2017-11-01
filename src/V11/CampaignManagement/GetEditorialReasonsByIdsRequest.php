@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the reasons why the specified entities failed editorial review and whether the rejection is appealable.
-     * @link http://msdn.microsoft.com/en-us/library/dn236306(v=msads.110).aspx GetEditorialReasonsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/geteditorialreasonsbyids?view=bingads-11 GetEditorialReasonsByIds Request Object
      * 
      * @uses EntityIdToParentIdAssociation
      * @uses EntityType
@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $AccountId;
 
         /**
-         * A list of EntityIdToParentIdAssociation objects that each contain the unique system identifier of an entity such as ad or keyword, and the identifier of its parent.
+         * A list of  EntityIdToParentIdAssociation objects that each contain the unique system identifier of an entity such as ad or keyword, and the identifier of its parent.
          * @var EntityIdToParentIdAssociation[]
          */
         public $EntityIdToParentIdAssociations;

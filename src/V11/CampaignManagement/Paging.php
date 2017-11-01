@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a paging object that you can use to request labels and label associations in batches.
-     * @link http://msdn.microsoft.com/en-us/library/mt803295(v=msads.110).aspx Paging Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/paging?view=bingads-11 Paging Data Object
      * 
      * @used-by GetLabelAssociationsByLabelIdsRequest
      * @used-by GetLabelsByIdsRequest

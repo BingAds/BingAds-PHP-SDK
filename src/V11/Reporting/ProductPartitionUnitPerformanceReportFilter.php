@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V11\Reporting;
 
 {
     /**
-     * Defines the criteria to use to filter the product partition performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt592961(v=msads.110).aspx ProductPartitionUnitPerformanceReportFilter Data Object
+     * Defines the criteria to use to filter the product partition  performance report data.
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productpartitionunitperformancereportfilter?view=bingads-11 ProductPartitionUnitPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

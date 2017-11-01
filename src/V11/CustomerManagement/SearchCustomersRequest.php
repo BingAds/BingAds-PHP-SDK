@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Searches for customers that match a specified criteria.
-     * @link http://msdn.microsoft.com/en-us/library/dn452055(v=msads.110).aspx SearchCustomers Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchcustomers?view=bingads-11 SearchCustomers Request Object
      * 
      * @uses ApplicationType
      * @uses Predicate
@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $Ordering;
 
         /**
-         * Determines the index and size of results per page.
+         * Determines the index and size of  results per page.
          * @var Paging
          */
         public $PageInfo;

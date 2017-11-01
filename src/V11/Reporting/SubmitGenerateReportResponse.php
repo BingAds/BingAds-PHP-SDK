@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Submits a report request.
-     * @link http://msdn.microsoft.com/en-us/library/jj879321(v=msads.110).aspx SubmitGenerateReport Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/submitgeneratereport?view=bingads-11 SubmitGenerateReport Response Object
      * 
      * @used-by BingAdsReportingService::SubmitGenerateReport
      */

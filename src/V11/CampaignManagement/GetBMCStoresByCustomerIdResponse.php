@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the Bing Merchant Center stores for the specified customer.
-     * @link http://msdn.microsoft.com/en-us/library/dn411607(v=msads.110).aspx GetBMCStoresByCustomerId Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getbmcstoresbycustomerid?view=bingads-11 GetBMCStoresByCustomerId Response Object
      * 
      * @uses BMCStore
      * @used-by BingAdsCampaignManagementService::GetBMCStoresByCustomerId

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines an audience performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/mt604702(v=msads.110).aspx AudiencePerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/audienceperformancereportrequest?view=bingads-11 AudiencePerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AudiencePerformanceReportColumn

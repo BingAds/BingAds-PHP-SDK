@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the user location performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt781257(v=msads.110).aspx UserLocationPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/userlocationperformancereportfilter?view=bingads-11 UserLocationPerformanceReportFilter Data Object
      * 
      * @uses AdDistributionReportFilter
      * @used-by UserLocationPerformanceReportRequest

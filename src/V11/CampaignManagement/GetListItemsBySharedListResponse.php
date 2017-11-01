@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the negative keywords of a negative keyword list.
-     * @link http://msdn.microsoft.com/en-us/library/dn743729(v=msads.110).aspx GetListItemsBySharedList Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getlistitemsbysharedlist?view=bingads-11 GetListItemsBySharedList Response Object
      * 
      * @uses SharedListItem
      * @used-by BingAdsCampaignManagementService::GetListItemsBySharedList

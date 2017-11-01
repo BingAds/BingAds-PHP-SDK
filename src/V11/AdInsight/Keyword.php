@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines a keyword with match type.
-     * @link http://msdn.microsoft.com/en-us/library/mt784405(v=msads.110).aspx Keyword Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keyword?view=bingads-11 Keyword Data Object
      * 
      * @uses MatchType
      * @used-by IdeaTextSearchParameter
@@ -19,6 +19,11 @@ namespace Microsoft\BingAds\V11\AdInsight;
          * @var integer
          */
         public $Id;
+
+        /**
+         * The match type of the keyword.
+         * @var MatchType
+         */
         public $MatchType;
 
         /**

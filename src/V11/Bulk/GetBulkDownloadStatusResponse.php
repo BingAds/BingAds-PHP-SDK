@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Gets the status of a bulk download request.
-     * @link http://msdn.microsoft.com/en-us/library/jj885754(v=msads.110).aspx GetBulkDownloadStatus Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/getbulkdownloadstatus?view=bingads-11 GetBulkDownloadStatus Response Object
      * 
      * @uses OperationError
      * @uses KeyValuePairOfstringstring
@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         public $Errors;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

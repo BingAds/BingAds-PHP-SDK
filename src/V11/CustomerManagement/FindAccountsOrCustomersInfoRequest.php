@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Gets a list of the accounts and customers that match the specified filter criteria.
-     * @link http://msdn.microsoft.com/en-us/library/dn451281(v=msads.110).aspx FindAccountsOrCustomersInfo Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/findaccountsorcustomersinfo?view=bingads-11 FindAccountsOrCustomersInfo Request Object
      * 
      * @uses ApplicationType
      * @used-by BingAdsCustomerManagementService::FindAccountsOrCustomersInfo

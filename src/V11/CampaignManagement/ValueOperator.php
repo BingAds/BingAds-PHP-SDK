@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the operators that can be applied to values within a conversion event goal.
-     * @link http://msdn.microsoft.com/en-us/library/mt759562(v=msads.110).aspx ValueOperator Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/valueoperator?view=bingads-11 ValueOperator Value Set
      * 
      * @used-by EventGoal
      */

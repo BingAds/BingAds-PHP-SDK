@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines the possible industry segments in which a customer operates.
-     * @link http://msdn.microsoft.com/en-us/library/bb671992(v=msads.110).aspx Industry Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/industry?view=bingads-11 Industry Value Set
      * 
      * @used-by Customer
      */
@@ -70,6 +70,8 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 
         /** An industry that is not listed. */
         const Other = 'Other';
+
+        /** The pharmaceuticals industry. */
         const Pharmaceuticals = 'Pharmaceuticals';
     }
 

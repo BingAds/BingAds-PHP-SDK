@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the geographic performance report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt781255(v=msads.110).aspx GeographicPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/geographicperformancereportfilter?view=bingads-11 GeographicPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes one or more campaign criterions.
-     * @link http://msdn.microsoft.com/en-us/library/dn913125(v=msads.110).aspx DeleteCampaignCriterions Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletecampaigncriterions?view=bingads-11 DeleteCampaignCriterions Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteCampaignCriterions

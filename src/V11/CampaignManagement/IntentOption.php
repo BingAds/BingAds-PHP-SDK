@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible intent options for location criterion, for example to target people in, searching for, or viewing pages about your targeted location.
-     * @link http://msdn.microsoft.com/en-us/library/dn743742(v=msads.110).aspx IntentOption Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/intentoption?view=bingads-11 IntentOption Value Set
      * 
      * @used-by LocationIntentCriterion
      */

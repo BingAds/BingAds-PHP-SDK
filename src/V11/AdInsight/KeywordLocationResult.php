@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains the locations where users were located when they searched for the specified keyword.
-     * @link http://msdn.microsoft.com/en-us/library/mt219299(v=msads.110).aspx KeywordLocationResult Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordlocationresult?view=bingads-11 KeywordLocationResult Data Object
      * 
      * @uses KeywordLocation
      * @used-by GetKeywordLocationsResponse
@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
         public $Keyword;
 
         /**
-         * An array of KeywordLocation objects that contains the users' geographical locations and the percentage of times that users searched for the keyword from that location.
+         * An array of KeywordLocation objects that contains the geographical locations and the percentage of times that users searched for the keyword from that location.
          * @var KeywordLocation[]
          */
         public $KeywordLocations;

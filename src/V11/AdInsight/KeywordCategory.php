@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Defines an object that contains a keyword category and a confidence score.
-     * @link http://msdn.microsoft.com/en-us/library/mt219331(v=msads.110).aspx KeywordCategory Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordcategory?view=bingads-11 KeywordCategory Data Object
      * 
      * @used-by KeywordCategoryResult
      */

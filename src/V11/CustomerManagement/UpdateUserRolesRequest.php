@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Updates the roles of the specified user.
-     * @link http://msdn.microsoft.com/en-us/library/dn451284(v=msads.110).aspx UpdateUserRoles Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/updateuserroles?view=bingads-11 UpdateUserRoles Request Object
      * 
      * @used-by BingAdsCustomerManagementService::UpdateUserRoles
      */
@@ -24,19 +24,39 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $UserId;
 
         /**
-         * The identifier of the role to which the values specified in the NewAccounts or NewCustomers element applies to, if set.
+         * The identifier of the role to which the values specified in the NewAccountIds or NewCustomerIds element applies to, if set.
          * @var integer
          */
         public $NewRoleId;
+
+        /**
+         * An array of identifiers of the accounts to restrict the user to.
+         * @var integer[]
+         */
         public $NewAccountIds;
+
+        /**
+         * An array of identifiers of the customers to restrict the user to.
+         * @var integer[]
+         */
         public $NewCustomerIds;
 
         /**
-         * The identifier of the role to which the values specified in the DeleteAccounts or DeleteCustomers element applies, if set.
+         * The identifier of the role to which the values specified in the DeleteAccountIds or DeleteCustomerIds element applies, if set.
          * @var integer
          */
         public $DeleteRoleId;
+
+        /**
+         * An array of identifiers of the accounts to remove from the list of accounts that the user can manage.
+         * @var integer[]
+         */
         public $DeleteAccountIds;
+
+        /**
+         * An array of identifiers of the customers to remove from the list of customers that the user can manage.
+         * @var integer[]
+         */
         public $DeleteCustomerIds;
     }
 }

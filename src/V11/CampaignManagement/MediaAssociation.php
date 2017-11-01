@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that represents the identified media and an associated entity, for example media associated with an ad group.
-     * @link http://msdn.microsoft.com/en-us/library/dn798358(v=msads.110).aspx MediaAssociation Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/mediaassociation?view=bingads-11 MediaAssociation Data Object
      * 
      * @uses MediaEnabledEntityFilter
      * @used-by GetMediaAssociationsResponse

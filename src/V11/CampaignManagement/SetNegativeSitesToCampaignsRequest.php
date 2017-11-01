@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Sets the negative site URLs of the specified campaigns.
-     * @link http://msdn.microsoft.com/en-us/library/dn277504(v=msads.110).aspx SetNegativeSitesToCampaigns Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setnegativesitestocampaigns?view=bingads-11 SetNegativeSitesToCampaigns Request Object
      * 
      * @uses CampaignNegativeSites
      * @used-by BingAdsCampaignManagementService::SetNegativeSitesToCampaigns

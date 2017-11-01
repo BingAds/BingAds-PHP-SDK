@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates one or more ad group criterions.
-     * @link http://msdn.microsoft.com/en-us/library/dn277527(v=msads.110).aspx UpdateAdGroupCriterions Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateadgroupcriterions?view=bingads-11 UpdateAdGroupCriterions Request Object
      * 
      * @uses AdGroupCriterion
      * @uses AdGroupCriterionType
@@ -13,7 +13,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class UpdateAdGroupCriterionsRequest
     {
+        /**
+         * The list of criterions to update.
+         * @var AdGroupCriterion[]
+         */
         public $AdGroupCriterions;
+
+        /**
+         * The type of criterion to update, for example Webpage.
+         * @var AdGroupCriterionType
+         */
         public $CriterionType;
     }
 }

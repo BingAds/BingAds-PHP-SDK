@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes one or more keywords in a specified ad group.
-     * @link http://msdn.microsoft.com/en-us/library/dn236318(v=msads.110).aspx DeleteKeywords Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletekeywords?view=bingads-11 DeleteKeywords Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteKeywords

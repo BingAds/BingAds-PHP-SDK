@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Deletes negative keywords from a negative keyword list.
-     * @link http://msdn.microsoft.com/en-us/library/dn743723(v=msads.110).aspx DeleteListItemsFromSharedList Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/deletelistitemsfromsharedlist?view=bingads-11 DeleteListItemsFromSharedList Request Object
      * 
      * @uses SharedList
      * @used-by BingAdsCampaignManagementService::DeleteListItemsFromSharedList

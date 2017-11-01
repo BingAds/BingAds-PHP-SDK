@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
-     * @link http://msdn.microsoft.com/en-us/library/dn169134(v=msads.110).aspx BatchError Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/batcherror?view=bingads-11 BatchError Data Object
      * 
      * @used-by ApiFaultDetail
      */

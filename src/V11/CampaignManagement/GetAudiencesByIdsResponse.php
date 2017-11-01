@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Retrieves the specified audiences from the specified account.
-     * @link http://msdn.microsoft.com/en-us/library/mt807654(v=msads.110).aspx GetAudiencesByIds Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getaudiencesbyids?view=bingads-11 GetAudiencesByIds Response Object
      * 
      * @uses Audience
      * @uses BatchError

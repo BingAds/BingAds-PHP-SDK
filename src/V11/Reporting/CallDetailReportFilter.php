@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the criteria to use to filter the call detail report data.
-     * @link http://msdn.microsoft.com/en-us/library/mt489831(v=msads.110).aspx CallDetailReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/calldetailreportfilter?view=bingads-11 CallDetailReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

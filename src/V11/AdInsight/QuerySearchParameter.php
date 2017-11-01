@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * The query search parameter that you can use as a seed for new keyword ideas.
-     * @link http://msdn.microsoft.com/en-us/library/mt784421(v=msads.110).aspx QuerySearchParameter Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/querysearchparameter?view=bingads-11 QuerySearchParameter Data Object
      */
     final class QuerySearchParameter extends SearchParameter
     {

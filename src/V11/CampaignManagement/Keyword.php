@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines a keyword.
-     * @link http://msdn.microsoft.com/en-us/library/bb671833(v=msads.110).aspx Keyword Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/keyword?view=bingads-11 Keyword Data Object
      * 
      * @uses Bid
      * @uses BiddingScheme
@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     final class Keyword
     {
         /**
-         * The bid to use when the user's search term and the keyword match.
+         * The bid to use when the user's search  term and the keyword match.
          * @var Bid
          */
         public $Bid;
@@ -66,7 +66,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $FinalUrls;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

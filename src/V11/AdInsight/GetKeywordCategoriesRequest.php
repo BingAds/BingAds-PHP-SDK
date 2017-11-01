@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * Gets the keyword categories to which the specified keywords belong.
-     * @link http://msdn.microsoft.com/en-us/library/mt219320(v=msads.110).aspx GetKeywordCategories Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordcategories?view=bingads-11 GetKeywordCategories Request Object
      * 
      * @used-by BingAdsAdInsightService::GetKeywordCategories
      */

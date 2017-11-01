@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the base object of an ad extension.
-     * @link http://msdn.microsoft.com/en-us/library/hh527708(v=msads.110).aspx AdExtension Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextension?view=bingads-11 AdExtension Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @uses Schedule
@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $DevicePreference;
 
         /**
-         * The list of key and value strings for forward compatibility.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

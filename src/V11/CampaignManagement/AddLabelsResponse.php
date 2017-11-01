@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Adds one or more labels to an account.
-     * @link http://msdn.microsoft.com/en-us/library/mt803285(v=msads.110).aspx AddLabels Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addlabels?view=bingads-11 AddLabels Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddLabels

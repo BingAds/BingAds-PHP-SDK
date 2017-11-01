@@ -312,8 +312,7 @@ try
     if(isset($addAdsResponse->PartialErrors->BatchError)){
         CampaignManagementHelper::OutputPartialErrors($addAdsResponse->PartialErrors->BatchError);
     }
-
-            
+          
     
     // Here is a simple example that updates the campaign budget.
     // If the campaign has a shared budget you cannot update the Campaign budget amount,

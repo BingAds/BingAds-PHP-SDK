@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 {
     /**
      * Defines an error object that identifies the entity with the batch of entities that failed editorial review.
-     * @link http://msdn.microsoft.com/en-us/library/dn249981(v=msads.110).aspx EditorialError Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/editorialerror?view=bingads-11 EditorialError Data Object
      */
     final class EditorialError extends BatchError
     {

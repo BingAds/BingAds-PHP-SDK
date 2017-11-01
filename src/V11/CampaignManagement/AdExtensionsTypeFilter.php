@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible ad extension types.
-     * @link http://msdn.microsoft.com/en-us/library/jj134394(v=msads.110).aspx AdExtensionsTypeFilter Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensionstypefilter?view=bingads-11 AdExtensionsTypeFilter Value Set
      * 
      * @used-by GetAdExtensionIdsByAccountIdRequest
      * @used-by GetAdExtensionsAssociationsRequest
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AdExtensionsTypeFilter
     {
-        /** An ad extension that contains multiple site links. */
+        /** This value is deprecated in favor of Sitelink2AdExtension. */
         const SiteLinksAdExtension = 'SiteLinksAdExtension';
 
         /** An ad extension that contains the address and phone number of the business. */
@@ -39,6 +39,8 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** An ad extension that contains a header and values that tell customers more about your business. */
         const StructuredSnippetAdExtension = 'StructuredSnippetAdExtension';
+
+        /** An ad extension that includes between 3 and 8 price table rows. */
         const PriceAdExtension = 'PriceAdExtension';
     }
 

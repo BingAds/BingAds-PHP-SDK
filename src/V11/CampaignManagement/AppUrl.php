@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the operating system platform and URL of the app store download webpage.
-     * @link http://msdn.microsoft.com/en-us/library/mt179359(v=msads.110).aspx AppUrl Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appurl?view=bingads-11 AppUrl Data Object
      * 
      * @used-by Ad
      * @used-by AppAdExtension
@@ -17,7 +17,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AppUrl
     {
+        /**
+         * Reserved for future use.
+         * @var string
+         */
         public $OsType;
+
+        /**
+         * Reserved for future use.
+         * @var string
+         */
         public $Url;
     }
 

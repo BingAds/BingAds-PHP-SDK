@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Defines an account.
-     * @link http://msdn.microsoft.com/en-us/library/bb671588(v=msads.110).aspx Account Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/account?view=bingads-11 Account Data Object
      * 
      * @uses AccountType
      * @uses CurrencyType
@@ -68,7 +68,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $Language;
 
         /**
-         * For a list of valid key and value strings for this element, see Account ForwardCompatibilityMap in the section below.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates conversion goals within the account's shared conversion goal library.
-     * @link http://msdn.microsoft.com/en-us/library/mt759544(v=msads.110).aspx UpdateConversionGoals Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateconversiongoals?view=bingads-11 UpdateConversionGoals Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateConversionGoals

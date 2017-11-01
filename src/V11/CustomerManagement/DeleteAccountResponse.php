@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
 {
     /**
      * Deletes an account.
-     * @link http://msdn.microsoft.com/en-us/library/dn451272(v=msads.110).aspx DeleteAccount Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/deleteaccount?view=bingads-11 DeleteAccount Response Object
      * 
      * @used-by BingAdsCustomerManagementService::DeleteAccount
      */

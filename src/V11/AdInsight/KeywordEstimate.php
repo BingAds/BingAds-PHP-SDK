@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 {
     /**
      * A suggested keyword with minimum and maximum traffic estimates.
-     * @link http://msdn.microsoft.com/en-us/library/mt784394(v=msads.110).aspx KeywordEstimate Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordestimate?view=bingads-11 KeywordEstimate Data Object
      * 
      * @uses Keyword
      * @uses TrafficEstimate
@@ -13,8 +13,22 @@ namespace Microsoft\BingAds\V11\AdInsight;
      */
     final class KeywordEstimate
     {
+        /**
+         * The suggested keyword.
+         * @var Keyword
+         */
         public $Keyword;
+
+        /**
+         * The maximum traffic estimate.
+         * @var TrafficEstimate
+         */
         public $Maximum;
+
+        /**
+         * The minimum traffic estimate.
+         * @var TrafficEstimate
+         */
         public $Minimum;
     }
 

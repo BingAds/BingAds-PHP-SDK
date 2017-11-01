@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
 {
     /**
      * Adds an insertion order to the specified account.
-     * @link http://msdn.microsoft.com/en-us/library/dn743758(v=msads.110).aspx AddInsertionOrder Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/addinsertionorder?view=bingads-11 AddInsertionOrder Request Object
      * 
      * @uses InsertionOrder
      * @used-by BingAdsCustomerBillingService::AddInsertionOrder
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V11\CustomerBilling;
     final class AddInsertionOrderRequest
     {
         /**
-         * An insertion order to add to the account specified in the InsertionOrder object.
+         * An insertion order to add to the account.
          * @var InsertionOrder
          */
         public $InsertionOrder;

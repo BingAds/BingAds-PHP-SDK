@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Updates the specified ad groups in a campaign.
-     * @link http://msdn.microsoft.com/en-us/library/dn277528(v=msads.110).aspx UpdateAdGroups Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateadgroups?view=bingads-11 UpdateAdGroups Request Object
      * 
      * @uses AdGroup
      * @used-by BingAdsCampaignManagementService::UpdateAdGroups

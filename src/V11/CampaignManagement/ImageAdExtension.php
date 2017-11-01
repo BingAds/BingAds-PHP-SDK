@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an ad extension that specifies an image with alternative text to include in a text ad.
-     * @link http://msdn.microsoft.com/en-us/library/dn766199(v=msads.110).aspx ImageAdExtension Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/imageadextension?view=bingads-11 ImageAdExtension Data Object
      * 
      * @uses AppUrl
      * @uses CustomParameters

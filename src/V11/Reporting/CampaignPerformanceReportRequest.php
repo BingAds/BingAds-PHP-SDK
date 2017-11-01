@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a campaign performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/bb671804(v=msads.110).aspx CampaignPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/campaignperformancereportrequest?view=bingads-11 CampaignPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses CampaignPerformanceReportColumn

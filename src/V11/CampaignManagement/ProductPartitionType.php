@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines the possible types of product partitions.
-     * @link http://msdn.microsoft.com/en-us/library/dn913120(v=msads.110).aspx ProductPartitionType Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/productpartitiontype?view=bingads-11 ProductPartitionType Value Set
      * 
      * @used-by ProductPartition
      */

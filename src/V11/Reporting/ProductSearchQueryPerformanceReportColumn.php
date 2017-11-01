@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductSearchQueryPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/mt783266(v=msads.110).aspx ProductSearchQueryPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productsearchqueryperformancereportcolumn?view=bingads-11 ProductSearchQueryPerformanceReportColumn Value Set
      * 
      * @used-by ProductSearchQueryPerformanceReportRequest
      */

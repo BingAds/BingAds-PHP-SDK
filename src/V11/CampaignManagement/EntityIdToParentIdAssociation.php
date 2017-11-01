@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Defines an object that contains the unique system identifier of an entity such as ad or keyword, and the identifier of its parent.
-     * @link http://msdn.microsoft.com/en-us/library/mt179358(v=msads.110).aspx EntityIdToParentIdAssociation Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/entityidtoparentidassociation?view=bingads-11 EntityIdToParentIdAssociation Data Object
      * 
      * @used-by AppealEditorialRejectionsRequest
      * @used-by GetEditorialReasonsByIdsRequest

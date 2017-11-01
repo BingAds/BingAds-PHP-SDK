@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AdPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/bb671923(v=msads.110).aspx AdPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adperformancereportcolumn?view=bingads-11 AdPerformanceReportColumn Value Set
      * 
      * @used-by AdPerformanceReportRequest
      */
@@ -175,6 +175,9 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The path 2 attribute of an ad. */
         const Path2 = 'Path2';
+
+        /** The labels applied to the ad. */
+        const AdLabels = 'AdLabels';
     }
 
 }

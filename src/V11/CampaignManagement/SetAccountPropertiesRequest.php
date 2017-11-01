@@ -5,13 +5,17 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Sets account level properties by name.
-     * @link http://msdn.microsoft.com/en-us/library/mt803290(v=msads.110).aspx SetAccountProperties Request Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/setaccountproperties?view=bingads-11 SetAccountProperties Request Object
      * 
      * @uses AccountProperty
      * @used-by BingAdsCampaignManagementService::SetAccountProperties
      */
     final class SetAccountPropertiesRequest
     {
+        /**
+         * The list of account properties that you want to set.
+         * @var AccountProperty[]
+         */
         public $AccountProperties;
     }
 }

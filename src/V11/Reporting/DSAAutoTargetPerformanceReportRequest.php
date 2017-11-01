@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines a DSA auto target performance report request.
-     * @link http://msdn.microsoft.com/en-us/library/mt779098(v=msads.110).aspx DSAAutoTargetPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsaautotargetperformancereportrequest?view=bingads-11 DSAAutoTargetPerformanceReportRequest Data Object
      * 
      * @uses NonHourlyReportAggregation
      * @uses DSAAutoTargetPerformanceReportColumn

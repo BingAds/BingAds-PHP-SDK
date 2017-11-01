@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 {
     /**
      * Gets the list of supported sales country codes for Bing Shopping campaigns.
-     * @link http://msdn.microsoft.com/en-us/library/mt750281(v=msads.110).aspx GetBSCCountries Response Object
+     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getbsccountries?view=bingads-11 GetBSCCountries Response Object
      * 
      * @used-by BingAdsCampaignManagementService::GetBSCCountries
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V11\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the DSACategoryPerformanceReportRequest.
-     * @link http://msdn.microsoft.com/en-us/library/mt779090(v=msads.110).aspx DSACategoryPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsacategoryperformancereportcolumn?view=bingads-11 DSACategoryPerformanceReportColumn Value Set
      * 
      * @used-by DSACategoryPerformanceReportRequest
      */
@@ -58,6 +58,8 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The low level category that Bing matched to your website. */
         const Category2 = 'Category2';
+
+        /** The ad distribution attribute of an ad group. */
         const AdDistribution = 'AdDistribution';
 
         /** The ad group language. */
