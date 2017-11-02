@@ -13,4 +13,4 @@ You can install the Bing Ads PHP SDK using the [Composer](https://getcomposer.or
 
 3.  To get updates going forward, type `composer update`. If any updates are available at packagist, composer will install the latest version.
 
-For more information see [Getting Started Using PHP with Bing Ads Services](https://msdn.microsoft.com/library/bing-ads-overview-getting-started-php-with-web-services.aspx).
+For more information see [Getting Started Using PHP with Bing Ads Services](https://docs.microsoft.com/en-us/bingads/guides/get-started-php).
