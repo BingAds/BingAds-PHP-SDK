@@ -57,5 +57,3 @@ class OAuthTokens
         return $this;
     }
 }
-
-?>

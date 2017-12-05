@@ -74,5 +74,3 @@ abstract class OAuthAuthorization extends Authentication
      */
     abstract public function GetAuthorizationEndpoint();
 }
-
-?>

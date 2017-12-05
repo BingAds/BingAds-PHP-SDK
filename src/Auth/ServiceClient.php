@@ -241,5 +241,3 @@ class ServiceClient
 		$this->service = $proxy;
 	}
 }
-
-?>

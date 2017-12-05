@@ -14,5 +14,3 @@ final class ServiceClientType {
     const CustomerManagementVersion11 = 'CustomerManagementVersion11';
     const ReportingVersion11 = 'ReportingVersion11';    
 }
-
-?>

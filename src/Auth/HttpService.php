@@ -52,5 +52,3 @@ class HttpService
         return $response;
     }
 }
-
-?>

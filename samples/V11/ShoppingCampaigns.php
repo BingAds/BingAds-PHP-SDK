@@ -971,5 +971,3 @@ function OutputCampaignCriterionIdentifiers($criterionIds, $partialErrors)
 		}
 	}
 }
-
-?>

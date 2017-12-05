@@ -101,5 +101,3 @@ class LiveComOAuthService extends IOAuthService
         ) . (($parameters->State == null) ? "" : ("&state=" . $parameters->State));
     }
 }
-
-?>

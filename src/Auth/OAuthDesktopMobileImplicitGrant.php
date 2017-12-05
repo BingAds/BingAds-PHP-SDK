@@ -72,5 +72,3 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
                 ->withRefreshToken(null); 
     }
 }
-
-?>

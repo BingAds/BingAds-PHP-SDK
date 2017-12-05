@@ -412,5 +412,3 @@ function GetExampleCampaignIds()
 
     return $campaignIds;
 }
-
-?>

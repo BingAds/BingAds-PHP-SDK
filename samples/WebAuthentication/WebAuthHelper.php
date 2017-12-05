@@ -16,5 +16,3 @@ final class WebAuthHelper {
     const ClientSecret = 'ClientSecretGoesHere'; 
     const RedirectUri = 'RedirectUriGoesHere'; 
 }
-
-?>

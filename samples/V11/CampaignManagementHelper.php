@@ -2060,5 +2060,3 @@ final class CampaignManagementHelper {
         }
     }
 }
-
-?>

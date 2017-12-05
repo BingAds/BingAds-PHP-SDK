@@ -12,5 +12,3 @@ class OAuthDesktopMobileAuthCodeGrant extends OAuthWithAuthorizationCode
         $this->Type = 'OAuthDesktopMobileAuthCodeGrant';
     }
 }
-
-?>

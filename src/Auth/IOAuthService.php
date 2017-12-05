@@ -13,5 +13,3 @@ abstract class IOAuthService
      */
     abstract function GetAccessTokens(OAuthRequestParameters $oauthParameters);
 }
-
-?>
