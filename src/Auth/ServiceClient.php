@@ -175,39 +175,39 @@ class ServiceClient
 		$headers = array();
 
 		$headers[] = new SoapHeader(
-				$this->namespace,
-				'CustomerAccountId',
-				$this->accountId
+			$this->namespace,
+			'CustomerAccountId',
+			$this->accountId
 		);
 
 		$headers[] = new SoapHeader(
-				$this->namespace,
-				'CustomerId',
-				$this->customerId
+			$this->namespace,
+			'CustomerId',
+			$this->customerId
 		);
 
 		$headers[] = new SoapHeader(
-				$this->namespace,
-				'DeveloperToken',
-				$this->developerToken
+			$this->namespace,
+			'DeveloperToken',
+			$this->developerToken
 		);
 
 		$headers[] = new SoapHeader(
-				$this->namespace,
-				'UserName',
-				$this->username
+			$this->namespace,
+			'UserName',
+			$this->username
 		);
 
 		$headers[] = new SoapHeader(
-				$this->namespace,
-				'Password',
-				$this->password
+			$this->namespace,
+			'Password',
+			$this->password
 		);
 
-                $headers[] = new SoapHeader(
-				$this->namespace,
-				'AuthenticationToken',
-				$this->authenticationToken
+		$headers[] = new SoapHeader(
+			$this->namespace,
+			'AuthenticationToken',
+			$this->authenticationToken
 		);
 
         /** 
@@ -216,22 +216,24 @@ class ServiceClient
 		 * response, specify the SOAP_SINGLE_ELEMENT_ARRAYS feature.
          */ 
 		$options = array(
-				'trace' => TRUE,
-				'exceptions' => TRUE,
-				'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+			'trace' => TRUE,
+			'exceptions' => TRUE,
+			'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+			// Disable keep-alive to avoid 'Process open FD table is full'
+			'keep-alive' => FALSE, 
 
-                /** 
-                 * Map long type to string type. For details, see
-				 * from_long_xml and to_long_xml callbacks.
-                 */ 
-				'typemap' => array(
-						array(
-								'type_ns' => 'http://www.w3.org/2001/XMLSchema',
-								'type_name' => 'xs:long',
-								'to_xml' => 'to_long_xml',
-								'from_xml' => 'from_long_xml'
-						),
-				)
+			/** 
+			 * Map long type to string type. For details, see
+			 * from_long_xml and to_long_xml callbacks.
+			 */ 
+			'typemap' => array(
+				array(
+						'type_ns' => 'http://www.w3.org/2001/XMLSchema',
+						'type_name' => 'xs:long',
+						'to_xml' => 'to_long_xml',
+						'from_xml' => 'from_long_xml'
+				),
+			)
 		);
 
 		$proxy = @new SOAPClient($this->wsdlUrl, $options);
