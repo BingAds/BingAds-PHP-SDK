@@ -1585,7 +1585,7 @@ final class CampaignManagementHelper {
             {
                 print("Condition:\n");
                 printf("Operand: %s\n", $criterion->Condition->Operand);
-                printf("Attribute: %s\n", isset($criterion->Condition->Attribute) ?? null);
+                printf("Attribute: %s\n", $criterion->Condition->Attribute);
             }
         }
     }
@@ -1618,7 +1618,7 @@ final class CampaignManagementHelper {
                 foreach ($criterion->Parameter->Conditions->WebpageCondition as $webpageCondition)
                 {
                     printf("Operand: %s\n", $webpageCondition->Operand);
-                    printf("Attribute: %s\n", isset($webpageCondition->Attribute) ?? null);
+                    printf("Argument: %s\n", $webpageCondition->Argument);
                 }
             }
         }
