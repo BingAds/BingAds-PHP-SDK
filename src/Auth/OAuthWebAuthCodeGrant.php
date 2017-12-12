@@ -14,5 +14,3 @@ class OAuthWebAuthCodeGrant extends OAuthWithAuthorizationCode
         $this->Type = 'OAuthWebAuthCodeGrant';
     }
 }
-
-?>

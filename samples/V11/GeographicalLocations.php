@@ -191,5 +191,3 @@ function DownloadFile($fileUrl){
         unlink($GLOBALS['TempFile']);
     }
 }
-
-?>

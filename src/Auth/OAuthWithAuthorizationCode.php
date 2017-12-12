@@ -126,5 +126,3 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         return $this->OAuthTokens; 
     }
 }
-
-?>

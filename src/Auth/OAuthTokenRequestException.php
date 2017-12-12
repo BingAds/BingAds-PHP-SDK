@@ -30,5 +30,3 @@ class OAuthTokenRequestException extends Exception
         return $this;
     }
 }
-
-?>

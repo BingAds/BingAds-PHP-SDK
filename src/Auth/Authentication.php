@@ -12,5 +12,3 @@ abstract class Authentication
      */
     public $Type;
 }
-
-?>

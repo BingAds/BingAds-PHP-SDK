@@ -301,5 +301,3 @@ function DownloadFile($reportDownloadUrl, $downloadPath)
     fflush($writer);
     fclose($writer);
 }
-
-?>

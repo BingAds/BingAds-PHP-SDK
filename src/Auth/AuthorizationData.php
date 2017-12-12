@@ -74,5 +74,3 @@ class AuthorizationData
         return $this;
     }
 }
-
-?>

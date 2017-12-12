@@ -586,5 +586,3 @@ catch (Exception $e)
         print $e->getTraceAsString()."\n\n";
     }
 }
-
-?>

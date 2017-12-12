@@ -228,5 +228,3 @@ final class ReportingHelper {
  
 
 }
-
-?>

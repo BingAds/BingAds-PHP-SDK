@@ -17,5 +17,3 @@ final class ApiEnvironment
      */
     const Sandbox = 'Sandbox';
 }
-
-?>

@@ -578,5 +578,3 @@ function GetSampleSitelink2AdExtensions()
     
     return $adExtensions;
 }
-
-?>
