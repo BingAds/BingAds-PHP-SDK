@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AdStatus
     {
-        /** The ad is undergoing editorial review or has failed editorial review. */
+        /** This status is read-only. */
         const Inactive = 'Inactive';
 
         /** The ad can be served. */

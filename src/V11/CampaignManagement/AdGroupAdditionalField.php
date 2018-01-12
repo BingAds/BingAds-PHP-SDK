@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AdGroupAdditionalField
     {
-        /** Includes the InheritedBidStrategyType element that can be nested within the BiddingScheme element of an AdGroup object. */
+        /** Request that the InheritedBidStrategyType element be included within each returned InheritFromParentBiddingScheme object (nested within the BiddingScheme element of an AdGroup). */
         const InheritedBidStrategyType = 'InheritedBidStrategyType';
     }
 

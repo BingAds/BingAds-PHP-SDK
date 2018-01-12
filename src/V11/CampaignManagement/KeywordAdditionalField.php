@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class KeywordAdditionalField
     {
-        /** Includes the InheritedBidStrategyType element that can be nested within the BiddingScheme element of an Keyword object. */
+        /** Request that the InheritedBidStrategyType element be included within each returned InheritFromParentBiddingScheme object (nested within the BiddingScheme element of a Keyword). */
         const InheritedBidStrategyType = 'InheritedBidStrategyType';
     }
 

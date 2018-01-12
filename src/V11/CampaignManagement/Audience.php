@@ -59,6 +59,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Scope;
 
         /**
+         * The total number of people who belong to this audience.
+         * @var integer
+         */
+        public $SearchSize;
+
+        /**
          * The type of the audience.
          * @var AudienceType
          */
