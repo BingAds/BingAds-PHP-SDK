@@ -142,13 +142,12 @@ try
     // TimeZone will be required in a future version of the Bing Ads API.
     // Please start using it.
     $account->TimeZone = TimeZoneType::PacificTimeUSCanadaTijuana;
-                   
-    //$encodedAccount = new SoapVar($account, SOAP_ENC_OBJECT, 'AdvertiserAccount', $GLOBALS['CustomerProxy']->GetNamespace());
+    
     $encodedAccount = new SoapVar(
                     $account, 
                     SOAP_ENC_OBJECT, 
                     'AdvertiserAccount', 
-                    "https://bingads.microsoft.com/Customer/V11/Entities"
+                    "https://bingads.microsoft.com/Customer/v11/Entities"
                 );
     
     // Signup a new customer and account for the reseller. 
