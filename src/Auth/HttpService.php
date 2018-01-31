@@ -22,7 +22,7 @@ class HttpService
                 $query = $query . '&';
             }
 
-            $query = $query . $key . '=' . $val;
+            $query = $query . $key . '=' . rawurlencode($val);
         }
 
         $options = array(
