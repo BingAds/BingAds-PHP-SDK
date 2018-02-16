@@ -7,17 +7,20 @@ namespace Microsoft\BingAds\Auth;
  */
 class OAuthTokens
 {   
-    /** 
+    /**
+     * @var string
      * Represents the access_token value returned by the authorization service.
      */
     public $AccessToken;
 
-    /** 
+    /**
+     * @var int
      * Represents the expires_in value returned by the authorization service.
      */
     public $AccessTokenExpiresInSeconds;
 
-    /** 
+    /**
+     * @var string
      * Represents the refresh_token value returned or sent via the authorization service.
      */
     public $RefreshToken;
@@ -35,6 +38,7 @@ class OAuthTokens
 
     /** 
      * Includes the access token.
+     * @return static
      */
     public function withAccessToken($accessToken) {
         $this->AccessToken = $accessToken;
@@ -43,14 +47,17 @@ class OAuthTokens
 
     /** 
      * Includes the access token expiration time in seconds.
+     * @return static
      */
     public function withAccessTokenExpiresInSeconds($accessTokenExpiresInSeconds) {
         $this->AccessTokenExpiresInSeconds = $accessTokenExpiresInSeconds;
         return $this;
     }
 
-    /** 
+    /**
      * Includes the refresh token.
+     * @param $refreshToken
+     * @return static
      */
     public function withRefreshToken($refreshToken) {
         $this->RefreshToken = $refreshToken;

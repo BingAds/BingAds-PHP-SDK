@@ -95,8 +95,6 @@ class ServiceClient
 		$this->namespace = $this->serviceClientNamespaces[$serviceClientType];
 
 		$this->SetAuthorizationData($authorizationData);
-		
-		return $this;
 	}
 
 	public function GetAccountId() { return $this->accountId; }

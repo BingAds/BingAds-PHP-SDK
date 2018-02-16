@@ -7,35 +7,41 @@ namespace Microsoft\BingAds\Auth;
  */
 class OAuthRequestParameters
 {
-    /** 
+    /**
+     * @var string
      * Your application's registered client identifier.
      */
     public $ClientId;
 
-    /** 
+    /**
+     * @var string
      * Your application's registered client secret. 
      * This parameter is required with OAuthWebAuthCodeGrant requests. 
      */
     public $ClientSecret;
 
-    /** 
+    /**
+     * @var string
      * The URI where you want the authorization response to be redirected.
      */
     public $RedirectUri;
 
     /**
+     * @var string
      * The authorization grant param name. 
      * For example the grant param name could be 'refresh_token' or 'authorization_code'.
      */
     public $GrantType;
 
     /**
+     * @var string
      * The authorization grant param name. 
      * For example the grant param name could be 'refresh_token' or 'code'.
      */
     public $GrantParamName;
 
     /**
+     * @var string
      * The value depends on the $GrantType and $GrantParamName. 
      * For example if $GrantType and $GrantParamName are both set to 'refresh_token',
      * the value is equal to the last known and valid refresh token.
@@ -48,7 +54,7 @@ class OAuthRequestParameters
      * Includes the client ID. 
      *
      * @param string $clientId
-     * @return OAuthRequestParameters this builder
+     * @return static this builder
      */
     public function withClientId($clientId) {
         $this->ClientId = $clientId;
@@ -59,7 +65,7 @@ class OAuthRequestParameters
      * Includes the client secret. 
      *
      * @param string $clientSecret
-     * @return OAuthRequestParameters this builder
+     * @return static this builder
      */
     public function withClientSecret($clientSecret) {
         $this->ClientSecret = $clientSecret;
@@ -70,7 +76,7 @@ class OAuthRequestParameters
      * Includes the redirect URI. 
      *
      * @param string $redirectUri
-     * @return OAuthRequestParameters this builder
+     * @return static this builder
      */
     public function withRedirectUri($redirectUri) {
         $this->RedirectUri = $redirectUri;
@@ -81,7 +87,7 @@ class OAuthRequestParameters
      * Includes the grant type. 
      *
      * @param string $grantType
-     * @return OAuthRequestParameters this builder
+     * @return static this builder
      */
     public function withGrantType($grantType) {
         $this->GrantType = $grantType;
@@ -92,7 +98,7 @@ class OAuthRequestParameters
      * Includes the grant param name. 
      *
      * @param string $grantParamName
-     * @return OAuthRequestParameters this builder
+     * @return static this builder
      */
     public function withGrantParamName($grantParamName) {
         $this->GrantParamName = $grantParamName;
@@ -103,7 +109,7 @@ class OAuthRequestParameters
      * Includes the grant value. 
      *
      * @param string $grantValue
-     * @return OAuthRequestParameters this builder
+     * @return static this builder
      */
     public function withGrantValue($grantValue) {
         $this->GrantValue = $grantValue;
