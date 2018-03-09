@@ -62,7 +62,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The ad distribution attribute of an ad group. */
         const AdDistribution = 'AdDistribution';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The current network setting of an ad group. */

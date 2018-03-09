@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The estimated click-through rate (Ctr) as a percentage. */
         const EstimatedCtr = 'EstimatedCtr';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The estimated number of times an ad could be served to a particular age group or gender. */

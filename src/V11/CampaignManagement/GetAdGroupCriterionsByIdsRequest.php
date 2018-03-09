@@ -19,6 +19,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $AdGroupCriterionIds;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $ReturnAgeGenderUnknownValue;
+
+        /**
          * The identifier of the ad group that owns the criterions to get.
          * @var integer
          */

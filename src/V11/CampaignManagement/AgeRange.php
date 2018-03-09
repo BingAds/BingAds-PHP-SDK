@@ -11,6 +11,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class AgeRange
     {
+        /** Reserved. */
+        const Unknown = 'Unknown';
+
         /** People 17 years of age and younger. */
         const ZeroToSeventeen = 'ZeroToSeventeen';
 

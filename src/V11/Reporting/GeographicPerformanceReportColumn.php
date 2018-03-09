@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area where the user was physically located when they clicked the ad. */
+        /** The metro area (Nielsen DMA? in the United States) where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
         /** The city where the user was physically located when they clicked the ad. */
@@ -77,7 +77,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The radius of a radius target bid. */
         const Radius = 'Radius';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The keyword bid match type. */

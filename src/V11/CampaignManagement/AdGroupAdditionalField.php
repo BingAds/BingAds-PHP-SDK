@@ -14,6 +14,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     {
         /** Request that the InheritedBidStrategyType element be included within each returned InheritFromParentBiddingScheme object (nested within the BiddingScheme element of an AdGroup). */
         const InheritedBidStrategyType = 'InheritedBidStrategyType';
+
+        /** Reserved. */
+        const PrivacyStatus = 'PrivacyStatus';
+
+        /** Reserved. */
+        const TargetSetting = 'TargetSetting';
     }
 
 }

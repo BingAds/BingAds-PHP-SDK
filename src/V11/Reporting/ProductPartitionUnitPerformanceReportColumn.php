@@ -83,7 +83,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The device name attribute of a device OS target bid. */
         const DeviceType = 'DeviceType';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The campaign status. */
