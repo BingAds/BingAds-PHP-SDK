@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area (Nielsen DMA? in the United States) where the user was physically located when they clicked the ad. */
+        /** The metro area (Nielsen DMA® in the United States) where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
         /** The city where the user was physically located when they clicked the ad. */
