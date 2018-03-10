@@ -16,8 +16,7 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
     
     public function __construct() {
         parent::__construct();
-        $this->Type = 'OAuthDesktopMobileImplicitGrant';  
-        $this->RedirectUri = LiveComOAuthService::DESKTOP_REDIRECTION_URI;      
+        $this->Type = 'OAuthDesktopMobileImplicitGrant';      
     }
 
     /** 
@@ -31,6 +30,18 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
         return $this;
     }
 
+
+    /** 
+     * Includes the environment. 
+     *
+     * @param string $environment
+     * @return OAuthDesktopMobileImplicitGrant this builder
+     */
+    public function withEnvironment($environment) {
+        $this->RedirectUri=LiveComOAuthService::getRedirectUrl($environment);
+        return $this;
+    }
+
     /** 
      * Gets the Microsoft Account authorization endpoint where the user should be navigated to give their consent.
      */
@@ -39,16 +50,10 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
         $oauthUrlParameters = (new OAuthUrlParameters())
             ->withClientId($this->ClientId)
             ->withResponseType("token")
-            ->withRedirectUri(LiveComOAuthService::DESKTOP_REDIRECTION_URI)
+            ->withRedirectUri($this->RedirectUri)
             ->withState($this->State);
-        
-        //$oauthUrlParameters = new OAuthUrlParameters();
-        //$oauthUrlParameters->ClientId = $this->ClientId;
-        //$oauthUrlParameters->ResponseType = "token";
-        //$oauthUrlParameters->RedirectUri = LiveComOAuthService::DESKTOP_REDIRECTION_URI;
-        //$oauthUrlParameters->State = $State;
 
-        return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters);
+        return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment);
     }
 
     /** 
@@ -67,8 +72,8 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
         }
 
         return $OAuthTokens = (new OAuthTokens())
-                ->withAccessToken($fragmentParts["access_token"])
-                ->withAccessTokenExpiresInSeconds($fragmentParts["expires_in"])
-                ->withRefreshToken(null); 
+            ->withAccessToken($fragmentParts["access_token"])
+            ->withAccessTokenExpiresInSeconds($fragmentParts["expires_in"])
+            ->withRefreshToken(null); 
     }
 }

@@ -22,6 +22,11 @@ abstract class OAuthAuthorization extends Authentication
      */
     public $RedirectUri;
 
+    /** 
+     * The ApiEnvironment used for the respective authorization URIs. The default is production.
+     */
+    public $Environment = ApiEnvironment::Production;
+
     public function __construct() {}
 
     /** 
@@ -67,7 +72,18 @@ abstract class OAuthAuthorization extends Authentication
         $this->OAuthTokens = $oauthTokens;
         return $this;
     }
-   
+
+    /** 
+     * Includes the environment. 
+     *
+     * @param string $environment
+     * @return OAuthAuthorization this builder
+     */
+    public function withEnvironment($environment) {
+        $this->Environment = $environment;
+        return $this;
+    }
+
     /** 
      * Implementations of this abstract method will get the Microsoft Account authorization endpoint 
      * where the user should be navigated to give their consent.

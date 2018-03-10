@@ -10,8 +10,26 @@ class LiveComOAuthService extends IOAuthService
     /** 
      * The redirect Uri for a desktop or mobile application.
      */
-    const DESKTOP_REDIRECTION_URI = "https://login.live.com/oauth20_desktop.srf";
-
+    const REDIRECTION_URI = array(
+        'Production' =>'https://login.live.com/oauth20_desktop.srf',
+        'Sandbox' => 'https://login.live-int.com/oauth20_desktop.srf'
+    );
+    /** 
+     * This is the URL used to exchange the authorization token for an
+     * access token and a refresh token.
+     */
+    const AUTH_TOKEN_URI = array(
+        'Production' =>'https://login.live.com/oauth20_token.srf',
+        'Sandbox' => 'https://login.live-int.com/oauth20_token.srf'
+    );
+    /**
+     * Where the user should be navigated to give their consent.
+     */
+    const AUTHORIZE_URI = array(
+        'Production' =>'https://login.live.com/oauth20_authorize.srf?scope=bingads.manage',
+        'Sandbox' => 'https://login.live-int.com/oauth20_authorize.srf?scope=bingads.manage&prompt=login'
+    );
+    
     private $httpService;
 
     public function __construct($httpService) {
@@ -27,14 +45,8 @@ class LiveComOAuthService extends IOAuthService
     /** 
      * Calls live.com authorization server with the oauthRequestParameters passed in, deserializes the response and returns back OAuth tokens.
      */
-    public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters)
+    public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment)
     {
-        /** 
-         * This is the URL used to exchange the authorization token for an
-         * access token and a refresh token.
-         */
-        $accessTokenExchangeUrl = "https://login.live.com/oauth20_token.srf";
-
         $accessTokenExchangeParams = array(
             'client_id' => $oauthRequestParameters->ClientId,
             'grant_type' => $oauthRequestParameters->GrantType,
@@ -55,7 +67,7 @@ class LiveComOAuthService extends IOAuthService
         $this->httpService = new HttpService();
     
         $responseJson = $this->httpService->post(
-            $accessTokenExchangeUrl,
+            LiveComOAuthService::AUTH_TOKEN_URI[$environment],
             $accessTokenExchangeParams);
 
         /** 
@@ -91,13 +103,26 @@ class LiveComOAuthService extends IOAuthService
     /** 
      * Gets the Microsoft Account authorization endpoint, for example where the user should be navigated to give their consent.
      */
-    public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters)
+    public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment)
     {
         return sprintf(
-            "https://login.live.com/oauth20_authorize.srf?client_id=%s&scope=bingads.manage&response_type=%s&redirect_uri=%s",
+            "%s&client_id=%s&response_type=%s&redirect_uri=%s",
+            LiveComOAuthService::AUTHORIZE_URI["$environment"],
             $parameters->ClientId,
             $parameters->ResponseType,
             $parameters->RedirectUri
         ) . (($parameters->State == null) ? "" : ("&state=" . $parameters->State));
+    }
+
+    public static function getRedirectUrl($environment) {
+        return LiveComOAuthService::REDIRECTION_URI[$environment];
+    }
+
+    public static function getAuthTokenUrl($environment) {
+        return LiveComOAuthService::AUTH_TOKEN_URI[$environment];
+    }
+
+    public static function getAuthorizeUrl($environment) {
+        return LiveComOAuthService::AUTHORIZE_URI[$environment];
     }
 }

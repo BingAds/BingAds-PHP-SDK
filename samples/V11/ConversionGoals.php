@@ -53,15 +53,14 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads production services with a Microsoft Account, 
+    // You should authenticate for Bing Ads services with a Microsoft Account, 
     // instead of providing the Bing Ads username and password set. 
     
-    //AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::AuthenticateWithOAuth();
 
-    // However, authentication with a Microsoft Account is currently not supported in Sandbox,
-    // so it is recommended that you set the UserName and Password in sandbox for testing.
-
-    AuthHelper::AuthenticateWithUserName();
+    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
+    // so this function is deprecated.
+    //AuthHelper::AuthenticateWithUserName();
 
     $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
