@@ -15,6 +15,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * @uses KeyValuePairOfstringstring
      * @uses Network
      * @uses PricingModel
+     * @uses AdGroupPrivacyStatus
      * @uses RemarketingTargetingSetting
      * @uses Setting
      * @uses AdGroupStatus
@@ -69,7 +70,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $Id;
 
         /**
-         * The language of the ads and keywords in the ad group.
+         * Your ad language setting determines the language you will use when you write your ads and should be the language of your customers.
          * @var string
          */
         public $Language;
@@ -97,6 +98,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var PricingModel
          */
         public $PricingModel;
+
+        /**
+         * Reserved.
+         * @var AdGroupPrivacyStatus
+         */
+        public $PrivacyStatus;
 
         /**
          * The targeting setting that is applicable for all audiences e.

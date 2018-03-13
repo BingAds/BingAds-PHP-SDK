@@ -22,15 +22,6 @@ class OAuthTokens
      */
     public $RefreshToken;
 
-    /** 
-     * Initializes a new instance of the OAuthTokens class.
-     */
-    /*public function __construct($accessToken, $accessTokenExpiresInSeconds, $refreshToken) {
-        $this->AccessToken = $accessToken;
-        $this->AccessTokenExpiresInSeconds = $accessTokenExpiresInSeconds;
-        $this->RefreshToken = $refreshToken;
-    }*/
-
     public function __construct() {}
 
     /** 

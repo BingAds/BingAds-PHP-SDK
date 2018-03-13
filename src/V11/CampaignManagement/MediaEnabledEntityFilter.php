@@ -15,6 +15,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     {
         /** The media enabled entity is an ImageAdExtension. */
         const ImageAdExtension = 'ImageAdExtension';
+
+        /** Reserved. */
+        const ResponsiveAd = 'ResponsiveAd';
     }
 
 }

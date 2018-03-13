@@ -21,6 +21,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** The campaign is a Dynamic Search Ads campaign. */
         const DynamicSearchAds = 'DynamicSearchAds';
+
+        /** Reserved. */
+        const Audience = 'Audience';
     }
 
 }

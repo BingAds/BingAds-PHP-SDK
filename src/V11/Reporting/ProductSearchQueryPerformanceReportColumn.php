@@ -47,7 +47,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The operating system of the device reported in the DeviceType column. */
         const DeviceOS = 'DeviceOS';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The search term used by your potential audience. */

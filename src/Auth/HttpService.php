@@ -10,7 +10,7 @@ use Exception;
  */
 class HttpService 
 {
-     public function post($url, $postData) {
+    public function post($url, $postData) {
         $ch = curl_init();
 
         $query = "";

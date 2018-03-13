@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\Bulk;
 
 {
     /**
-     * Defines the entities that may be downloaded in bulk.
+     * Defines the entities that may be downloaded and uploaded in bulk.
      * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadentity?view=bingads-11 DownloadEntity Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
@@ -266,6 +266,15 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Include Account Structured Snippet Ad Extension records in the download that represents the association relationship between an account and a structured snippet ad extension. */
         const AccountStructuredSnippetAdExtensions = 'AccountStructuredSnippetAdExtensions';
+
+        /** Reserved. */
+        const CoOpCampaigns = 'CoOpCampaigns';
+
+        /** Reserved. */
+        const ResponsiveAds = 'ResponsiveAds';
+
+        /** Reserved. */
+        const ResponsiveAdLabels = 'ResponsiveAdLabels';
     }
 
 }

@@ -35,6 +35,17 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     }
 
     /** 
+     * Includes the environment. 
+     *
+     * @param string $environment
+     * @return OAuthWithAuthorizationCode this builder
+     */
+    public function withEnvironment($environment) {
+        $this->RedirectUri=LiveComOAuthService::getRedirectUrl($environment);
+        return $this;
+    }
+
+    /** 
      * Includes the state. 
      *
      * @param string $state
@@ -55,7 +66,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         $oauthUrlParameters->RedirectUri = $this->RedirectUri;
         $oauthUrlParameters->State = $this->State;
 
-        return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters);
+        return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment);
     }
  
     /** 
@@ -97,7 +108,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantParamName("code")
             ->withGrantValue($code);
 
-        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters); 
+        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment); 
         
         return $this->OAuthTokens; 
     }
@@ -121,7 +132,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantParamName("refresh_token")
             ->withGrantValue($refreshToken);
 
-        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters); 
+        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment); 
         
         return $this->OAuthTokens; 
     }

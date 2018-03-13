@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The keyword bid match type. */
         const BidMatchType = 'BidMatchType';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The Bing Ads assigned number of an account. */

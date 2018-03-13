@@ -71,7 +71,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The cost per conversion. */
         const CostPerConversion = 'CostPerConversion';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The keyword bid match type. */

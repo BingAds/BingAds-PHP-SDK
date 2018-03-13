@@ -108,7 +108,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** An aggregate quality assessment of all landing pages on your site. */
         const LandingPageExperience = 'LandingPageExperience';
 
-        /** The ad group language. */
+        /** The language of the country the ad is served in. */
         const Language = 'Language';
 
         /** The historic quality score of the keyword. */

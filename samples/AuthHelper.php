@@ -29,7 +29,6 @@ final class AuthHelper {
     const OAuthRefreshTokenPath = 'refresh.txt';
     const ClientId = 'ClientIdGoesHere'; 
     const ClientSecret = 'ClientSecretGoesHere'; 
-    const RedirectUri = "https://login.live.com/oauth20_desktop.srf"; 
     
     // Sets the global authorization data instance with PasswordAuthentication.
 
@@ -49,8 +48,8 @@ final class AuthHelper {
     static function AuthenticateWithOAuth() 
     {
         $authentication = (new OAuthDesktopMobileAuthCodeGrant())
-            ->withClientId(AuthHelper::ClientId)
-            ->withRedirectUri(AuthHelper::RedirectUri);
+            ->withEnvironment(AuthHelper::ApiEnvironment)
+            ->withClientId(AuthHelper::ClientId);
 
         $GLOBALS['AuthorizationData'] = (new AuthorizationData())
             ->withAuthentication($authentication)

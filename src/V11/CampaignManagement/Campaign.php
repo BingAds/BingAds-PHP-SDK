@@ -112,7 +112,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $BudgetId;
 
         /**
-         * The languages of the ads and keywords in the campaign.
+         * Your ad language setting determines the language you will use when you write your ads and should be the language of your customers.
          * @var string[]
          */
         public $Languages;

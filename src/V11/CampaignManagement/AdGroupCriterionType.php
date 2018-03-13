@@ -55,6 +55,15 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** The ad group criterion is a remarketing list association. */
         const RemarketingList = 'RemarketingList';
+
+        /** Reserved. */
+        const CompanyName = 'CompanyName';
+
+        /** Reserved. */
+        const JobFunction = 'JobFunction';
+
+        /** Reserved. */
+        const Industry = 'Industry';
     }
 
 }
