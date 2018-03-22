@@ -66,7 +66,7 @@ $GLOBALS['CampaignProxy'] = null;
 ini_set("soap.wsdl_cache_enabled", "0");
 ini_set("soap.wsdl_cache_ttl", "0");
 
-const DomainName = "booking.com";
+const DomainName = "contoso.com";
 const Language = "EN";
 
 try
