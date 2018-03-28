@@ -38,6 +38,7 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
      * @return OAuthDesktopMobileImplicitGrant this builder
      */
     public function withEnvironment($environment) {
+        $this->Environment = $environment;
         $this->RedirectUri=LiveComOAuthService::getRedirectUrl($environment);
         return $this;
     }
