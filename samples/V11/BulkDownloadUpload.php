@@ -7,8 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/BulkExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -36,13 +36,11 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\BulkHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\BulkExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
 $GLOBALS['BulkProxy'] = null; 
 
 // Disable WSDL caching.
@@ -66,7 +64,7 @@ $UploadResultFilePath = "c:\\bulk\\uploadresults.zip";
 
 // Specifies the bulk file format.
 
-$FileFormat = DownloadFileType::Csv;
+$DownloadFileType = DownloadFileType::Csv;
 
 // Confirm that the download folder exist; otherwise, exit.
 
@@ -82,36 +80,18 @@ if (!is_dir($folder))
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
-
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
+    AuthHelper::Authenticate();
 
     $GLOBALS['BulkProxy'] = new ServiceClient(ServiceClientType::BulkVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
-    $accounts = array();
-    $accounts[] = $GLOBALS['AuthorizationData']->AccountId;
+    $accountIds = array();
+    $accountIds[] = $GLOBALS['AuthorizationData']->AccountId;
 
     $dataScope = DataScope::EntityData;
     
-    $entities = array (
+    $downloadEntities = array (
     	DownloadEntity::Ads,
     	DownloadEntity::AdGroups,
     	DownloadEntity::Campaigns,
@@ -124,36 +104,17 @@ try
     
     $lastSyncTimeInUTC = GetLastSyncTime($ExtractedFilePath);
     
-    // You may include PerformanceStatsDateRang if the lastSyncTime is null, and the data scope includes
-    // either EntityPerformanceData, BidSuggestionsData, or QualityScoreData.
+    // The request ID will be used to poll for status before downloading the bulk file.
     
-    /*
-    date_default_timezone_set('UTC');
-    $LastYear = date("Y") - 1;
-    $performanceStatsDateRange = new PerformanceStatsDateRange();
-    $performanceStatsDateRange->CustomDateRangeEnd = new Date();
-    $performanceStatsDateRange->CustomDateRangeEnd->Day = 31;
-    $performanceStatsDateRange->CustomDateRangeEnd->Month = 12;
-    $performanceStatsDateRange->CustomDateRangeEnd->Year = $LastYear;
-    $performanceStatsDateRange->CustomDateRangeStart = new Date();
-    $performanceStatsDateRange->CustomDateRangeStart->Day = 1;
-    $performanceStatsDateRange->CustomDateRangeStart->Month = 1;
-    $performanceStatsDateRange->CustomDateRangeStart->Year = $LastYear;
-    */
-    
-    // Use the bulk service to download a bulk file.
-    // GetDownloadRequestId helper method calls the corresponding Bing Ads service operation
-    // to request the download identifier.
-    
-    $downloadRequestId = GetDownloadRequestId(
-    		$accounts,
-    		$dataScope,
-    		$FileFormat,
-    		$entities,
-            $formatVersion,
-    		$lastSyncTimeInUTC,
-    		null
-    		);
+    $downloadRequestId = BulkExampleHelper::DownloadCampaignsByAccountIds(
+        $accountIds,
+        null, // By default the compression type is Zip
+        $dataScope,
+        $downloadEntities,
+        $DownloadFileType,
+        $formatVersion,
+        $lastSyncTimeInUTC,
+        null)->DownloadRequestId;
     
     $waitTime = 5 * 1; 
         
@@ -175,9 +136,7 @@ try
     		// GetDownloadRequestStatus helper method calls the corresponding Bing Ads service operation 
                 // to get the download status.
             
-    		$downloadRequestStatus = GetDownloadRequestStatus( 
-    			$downloadRequestId
-    			);
+    		$downloadRequestStatus = BulkExampleHelper::GetBulkDownloadStatus($downloadRequestId)->RequestStatus;
     
         	if (($downloadRequestStatus != null) && ($downloadRequestStatus == "Completed"))
         	{
@@ -188,13 +147,10 @@ try
 
         if ($downloadSuccess)
         {
-            $downloadUrl = GetDownloadUrl(
-            		$downloadRequestId
-            		);
+            $downloadUrl = BulkExampleHelper::GetBulkDownloadStatus($downloadRequestId)->ResultFileUrl;
             printf("Downloading from %s.\n\n", $downloadUrl);
             DownloadFile($downloadUrl, $BulkFilePath);
             printf("The download file was written to %s.\n", $BulkFilePath);
-            
         }
         else // Pending
         {
@@ -214,10 +170,9 @@ try
     
     $responseMode = ResponseMode::ErrorsAndResults;
     
-    $uploadResponse = GetBulkUploadUrl(
-    		$GLOBALS['AuthorizationData']->AccountId, 
-    		$responseMode
-    		);
+    $uploadResponse = BulkExampleHelper::GetBulkUploadUrl(
+        $responseMode,
+    	$GLOBALS['AuthorizationData']->AccountId);
     
     $uploadRequestId = $uploadResponse->RequestId;
     $uploadUrl = $uploadResponse->UploadUrl;
@@ -227,9 +182,8 @@ try
     printf("Upload Url: %s\n", $uploadUrl);
     
     $uploadSuccess = UploadFile(
-            $uploadUrl, 
-            $BulkFilePath
-    	);
+        $uploadUrl, 
+        $BulkFilePath);
     
     // If the file was not uploaded, do not continue to poll for results.
     if($uploadSuccess == false){
@@ -245,9 +199,8 @@ try
     {
     	sleep($waitTime);
         
-    	// GetUploadRequestStatus helper method calls the corresponding Bing Ads service operation
-    	// to get the upload status.
-    	$uploadRequestStatus = GetUploadRequestStatus($uploadRequestId);
+    	// Get the upload request status.
+    	$uploadRequestStatus = BulkExampleHelper::GetBulkUploadStatus($uploadRequestId)->RequestStatus;
         
     	if (($uploadRequestStatus != null) && (($uploadRequestStatus == "Completed")
     		|| ($uploadRequestStatus == "CompletedWithErrors")))
@@ -259,9 +212,8 @@ try
     
     if ($uploadSuccess)
     {
-    	// GetUploadResultFileUrl helper method calls the corresponding Bing Ads service operation
-    	// to get the upload result file Url.
-    	$uploadResultFileUrl = GetUploadResultFileUrl($uploadRequestId);
+    	// Get the upload result file Url.
+    	$uploadResultFileUrl = BulkExampleHelper::GetBulkUploadStatus($uploadRequestId)->ResultFileUrl;
     	DownloadFile($uploadResultFileUrl, $UploadResultFilePath);
     	printf("The upload result file was written to %s.\n", $UploadResultFilePath);
     }
@@ -274,198 +226,32 @@ try
 }
 catch (SoapFault $e)
 {
-	// Output the last request/response.
-	
 	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Bulk service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-                ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-                : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                case 0:    // InternalError
-                    break;
-                case 105:  // InvalidCredentials
-                    break;
-                default:
-                    print "Please see MSDN documentation for more details about the error code output above.\n";
-                    break;
-            }
-        }
+        BulkExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Bulk service operations can throw ApiFaultDetail.
     elseif (isset($e->detail->ApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        // If the BatchError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->ApiFaultDetail->BatchErrors))
-        {
-            $errors = is_array($e->detail->ApiFaultDetail->BatchErrors->BatchError)
-                    ? $e->detail->ApiFaultDetail->BatchErrors->BatchError
-                    : array('BatchError' => $e->detail->ApiFaultDetail->BatchErrors->BatchError);
-
-            foreach ($errors as $error)
-            {
-                printf("BatchError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 0:     // InternalError
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the OperationError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->ApiFaultDetail->OperationErrors))
-        {
-            $errors = is_array($e->detail->ApiFaultDetail->OperationErrors->OperationError)
-                    ? $e->detail->ApiFaultDetail->OperationErrors->OperationError
-                    : array('OperationError' => $e->detail->ApiFaultDetail->OperationErrors->OperationError);
-
-            foreach ($errors as $error)
-            {
-                print "OperationError\n";
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 0:     // InternalError
-                        break;
-                    case 106:   // UserIsNotAuthorized
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
+        BulkExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";
         print $e->getTraceAsString()."\n\n";
     }
-}
-
-// GetDownloadRequestId helper method calls the DownloadCampaignsByAccountIds service operation 
-// to request the download identifier.
-        
-function GetDownloadRequestId($accounts, $dataScope, $downloadFileType, 
-		$entities, $formatVersion, $lastSyncTimeInUTC, $performanceStatsDateRange)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy']; 
-  
-    $request = new DownloadCampaignsByAccountIdsRequest();
-    $request->AccountIds = $accounts;
-    $request->DataScope = $dataScope;
-    $request->DownloadFileType = $downloadFileType;
-    $request->DownloadEntities = $entities;
-    $request->FormatVersion = $formatVersion;
-    $request->LastSyncTimeInUTC = $lastSyncTimeInUTC;
-    $request->PerformanceStatsDateRange = $performanceStatsDateRange;
-        
-    return $GLOBALS['BulkProxy']->GetService()->DownloadCampaignsByAccountIds($request)->DownloadRequestId;
-}
-
-
-// GetDownloadRequestStatus helper method calls the GetBulkDownloadStatus service operation 
-// to get the download request status.
-
-function GetDownloadRequestStatus($requestId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy']; 
-
-    $request = new GetBulkDownloadStatusRequest();
-    $request->RequestId = $requestId;
-
-    return $GLOBALS['BulkProxy']->GetService()->GetBulkDownloadStatus($request)->RequestStatus;
-}
-
-// GetDownloadUrl helper method calls the GetBulkDownloadStatus service operation 
-// to get the download Url.
-
-function GetDownloadUrl($requestId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy']; 
-
-	$request = new GetBulkDownloadStatusRequest();
-	$request->RequestId = $requestId;
-
-	return $GLOBALS['BulkProxy']->GetService()->GetBulkDownloadStatus($request)->ResultFileUrl;
-}
-
-// GetBulkUploadUrl helper method calls the GetBulkUploadUrl service operation 
-// to request the upload identifier and upload Url via GetBulkUploadUrlResponse.
-
-function GetBulkUploadUrl($accountId, $responseMode)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy']; 
-
-	$request = new GetBulkUploadUrlRequest();
-	$request->AccountId = $accountId;
-	$request->ResponseMode = $responseMode;
-
-	return $GLOBALS['BulkProxy']->GetService()->GetBulkUploadUrl($request);
-}
-
-// GetUploadRequestStatus helper method calls the GetBulkUploadStatus service operation 
-// to get the upload request status.
-
-function GetUploadRequestStatus($requestId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy']; 
-
-	$request = new GetBulkUploadStatusRequest();
-	$request->RequestId = $requestId;
-
-	return $GLOBALS['BulkProxy']->GetService()->GetBulkUploadStatus($request)->RequestStatus;
-}
-
-// GetUploadResultFileUrl helper method calls the GetBulkUploadStatus service operation 
-// to get the upload result file Url.
-
-function GetUploadResultFileUrl($requestId)
-{
-    $GLOBALS['Proxy'] = $GLOBALS['BulkProxy']; 
-
-	$request = new GetBulkUploadStatusRequest();
-	$request->RequestId = $requestId;
-
-	return $GLOBALS['BulkProxy']->GetService()->GetBulkUploadStatus($request)->ResultFileUrl;
 }
 
 // Using the URL returned by the GetBulkUploadUrl operation,
@@ -511,14 +297,9 @@ function UploadFile($uploadUrl, $filePath)
     }
 
     curl_setopt($ch, CURLOPT_HTTPHEADER, $authorizationHeaders);
-
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
 
-    // PHP < 5.5
-    //curl_setopt($ch, CURLOPT_POSTFIELDS, array("file" => "@$filePath"));
-
-    // PHP 5.5+
     $file = curl_file_create($filePath, "application/zip", "payload.zip");
     curl_setopt($ch, CURLOPT_POSTFIELDS, array("payload" => $file));
 

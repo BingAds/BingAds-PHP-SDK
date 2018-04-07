@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * Reserved.
          * @var boolean
          */
-        public $TargetAll;
+        public $TargetAndBid;
     }
 
 }

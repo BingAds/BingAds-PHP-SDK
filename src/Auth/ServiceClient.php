@@ -2,6 +2,13 @@
 
 namespace Microsoft\BingAds\Auth;
 
+use Microsoft\BingAds\V12\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion12;
+use Microsoft\BingAds\V12\Bulk\BulkServiceSettings as BulkServiceSettingsVersion12;
+use Microsoft\BingAds\V12\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion12;
+use Microsoft\BingAds\V12\CustomerBilling\CustomerBillingServiceSettings as CustomerBillingServiceSettingsVersion12;
+use Microsoft\BingAds\V12\CustomerManagement\CustomerManagementServiceSettings as CustomerManagementServiceSettingsVersion12;
+use Microsoft\BingAds\V12\Reporting\ReportingServiceSettings as ReportingServiceSettingsVersion12;
+
 use Microsoft\BingAds\V11\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion11;
 use Microsoft\BingAds\V11\Bulk\BulkServiceSettings as BulkServiceSettingsVersion11;
 use Microsoft\BingAds\V11\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion11;
@@ -32,6 +39,13 @@ class ServiceClient
 	private $apiEnvironment;
 
 	private $sandboxServiceClientEndpoints = array(
+		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::SandboxEndpoint,
+		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::SandboxEndpoint,
+		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::SandboxEndpoint,
+		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::SandboxEndpoint,
+		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::SandboxEndpoint,
+		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::SandboxEndpoint,
+
 		ServiceClientType::AdInsightVersion11 => AdInsightServiceSettingsVersion11::SandboxEndpoint,
 		ServiceClientType::BulkVersion11 => BulkServiceSettingsVersion11::SandboxEndpoint,
 		ServiceClientType::CampaignManagementVersion11 => CampaignManagementServiceSettingsVersion11::SandboxEndpoint,
@@ -41,6 +55,13 @@ class ServiceClient
 	);
 
 	private $productionServiceClientEndpoints = array(
+		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::ProductionEndpoint,
+		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::ProductionEndpoint,
+		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::ProductionEndpoint,
+		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ProductionEndpoint,
+		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ProductionEndpoint,
+		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ProductionEndpoint,
+
 		ServiceClientType::AdInsightVersion11 => AdInsightServiceSettingsVersion11::ProductionEndpoint,
 		ServiceClientType::BulkVersion11 => BulkServiceSettingsVersion11::ProductionEndpoint,
 		ServiceClientType::CampaignManagementVersion11 => CampaignManagementServiceSettingsVersion11::ProductionEndpoint,
@@ -50,6 +71,13 @@ class ServiceClient
 	);
 
 	private $serviceClientNamespaces = array(
+		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::ServiceNamespace,
+		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::ServiceNamespace,
+		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::ServiceNamespace,
+		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ServiceNamespace,
+		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ServiceNamespace,
+		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ServiceNamespace,
+
 		ServiceClientType::AdInsightVersion11 => AdInsightServiceSettingsVersion11::ServiceNamespace,
 		ServiceClientType::BulkVersion11 => BulkServiceSettingsVersion11::ServiceNamespace,
 		ServiceClientType::CampaignManagementVersion11 => CampaignManagementServiceSettingsVersion11::ServiceNamespace,
@@ -151,7 +179,9 @@ class ServiceClient
 				   $authorizationData->Authentication->Type == "OAuthDesktopMobileAuthCodeGrant" ||
 				   $authorizationData->Authentication->Type == "OAuthDesktopMobileImplicitGrant") 
 			{
-				$this->authenticationToken = $authorizationData->Authentication->OAuthTokens->AccessToken;
+				if(isset($authorizationData->Authentication->OAuthTokens)){
+					$this->authenticationToken = $authorizationData->Authentication->OAuthTokens->AccessToken;
+				}
 			}
 		}
 		else

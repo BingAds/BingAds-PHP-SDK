@@ -30,7 +30,7 @@ final class CustomerManagementHelper {
     
     static function GetCustomerPilotFeatures($customerId)
     {
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy'];
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
         
         $request = new GetCustomerPilotFeaturesRequest();
         $request->CustomerId = $customerId;
@@ -40,7 +40,7 @@ final class CustomerManagementHelper {
 
     static function GetUser($userId)
     {   
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
 
         $request = new GetUserRequest();
         $request->UserId = $userId;
@@ -52,7 +52,7 @@ final class CustomerManagementHelper {
 
     static function SearchAccountsByUserId($userId)
     {
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
     
         // Specify the page index and number of customer results per page.
 
@@ -75,7 +75,7 @@ final class CustomerManagementHelper {
 
     static function SignupCustomer($customer, $account, $parentCustomerId)
     {
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
     
         $request = new SignupCustomerRequest();
         $request->Customer = $customer;
@@ -90,34 +90,34 @@ final class CustomerManagementHelper {
         $pageInfo,
         $predicates )
     {
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
     
         $request = new SearchClientLinksRequest();
         $request->Ordering = $ordering;
         $request->PageInfo = $pageInfo;
         $request->Predicates = $predicates;
 
-        return $GLOBALS['CustomerProxy']->GetService()->SearchClientLinks($request)->ClientLinks;
+        return $GLOBALS['CustomerManagementProxy']->GetService()->SearchClientLinks($request)->ClientLinks;
     }
 
     function AddClientLinks($clientLinks)
     {
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
     
         $request = new AddClientLinksRequest();
         $request->ClientLinks = $clientLinks;
 
-        return $GLOBALS['CustomerProxy']->GetService()->AddClientLinks($request);
+        return $GLOBALS['CustomerManagementProxy']->GetService()->AddClientLinks($request);
     }
 
     function UpdateClientLinks($clientLinks)
     {
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerProxy']; 
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
     
         $request = new UpdateClientLinksRequest();
         $request->ClientLinks = $clientLinks;
 
-        return $GLOBALS['CustomerProxy']->GetService()->UpdateClientLinks($request);
+        return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateClientLinks($request);
     }
 
     // Outputs the details of the specified user.

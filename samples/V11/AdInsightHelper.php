@@ -20,7 +20,7 @@ use Microsoft\BingAds\V11\AdInsight\GetKeywordIdeaCategoriesRequest;
 use Microsoft\BingAds\V11\AdInsight\GetKeywordIdeasRequest;
 use Microsoft\BingAds\V11\AdInsight\GetKeywordTrafficEstimatesRequest;
 
-final class AdInsightHelper {
+final class AdInsightExampleHelper {
 
     static function GetBudgetOpportunities($campaignId)
     {
@@ -129,7 +129,7 @@ final class AdInsightHelper {
             foreach ($campaignEstimates->CampaignEstimate as $campaignEstimate)
             {
                 printf("CampaignId: %s\n", $campaignEstimate->CampaignId);
-                AdInsightHelper::OutputAdGroupEstimates($campaignEstimate->AdGroupEstimates);
+                AdInsightExampleHelper::OutputAdGroupEstimates($campaignEstimate->AdGroupEstimates);
             }
         }
     }
@@ -141,7 +141,7 @@ final class AdInsightHelper {
             foreach ($adGroupEstimates->AdGroupEstimate as $adGroupEstimate)
             {
                 printf("AdGroupId: %s\n", $adGroupEstimate->AdGroupId);
-                AdInsightHelper::OutputKeywordEstimates($adGroupEstimate->KeywordEstimates);
+                AdInsightExampleHelper::OutputKeywordEstimates($adGroupEstimate->KeywordEstimates);
             }
         }
     }
@@ -153,11 +153,11 @@ final class AdInsightHelper {
             foreach ($keywordEstimates->KeywordEstimate as $keywordEstimate)
             {
                 printf("KeywordEstimate Keyword:\n");
-                AdInsightHelper::OutputKeyword($keywordEstimate->Keyword);
+                AdInsightExampleHelper::OutputKeyword($keywordEstimate->Keyword);
                 printf("KeywordEstimate Maximum TrafficEstimate:\n");
-                AdInsightHelper::OutputTrafficEstimate($keywordEstimate->Maximum);
+                AdInsightExampleHelper::OutputTrafficEstimate($keywordEstimate->Maximum);
                 printf("KeywordEstimate Minimum TrafficEstimate:\n");
-                AdInsightHelper::OutputTrafficEstimate($keywordEstimate->Minimum);
+                AdInsightExampleHelper::OutputTrafficEstimate($keywordEstimate->Minimum);
                 printf("\n");
             }
         }
@@ -195,7 +195,7 @@ final class AdInsightHelper {
                 print "BudgetPoints: \n";
                 foreach ($opportunity->BudgetPoints as $budgetPoint) 
                 {
-                    AdInsightHelper::OutputBudgetPoint($budgetPoint);
+                    AdInsightExampleHelper::OutputBudgetPoint($budgetPoint);
                 }
                 printf("BudgetType: %s\n", $opportunity->BudgetType);
                 printf("CampaignId: %s\n", $opportunity->CampaignId);

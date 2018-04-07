@@ -32,13 +32,13 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $CustomerAppScope;
 
         /**
-         * The identifier of the customer to whom this user belongs.
+         * The identifier of the customer for this user to access.
          * @var integer
          */
         public $CustomerId;
 
         /**
-         * The system generated identifier of the user.
+         * The Bing Ads identifier of the user.
          * @var integer
          */
         public $Id;
@@ -104,13 +104,13 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         public $TimeStamp;
 
         /**
-         * If the value of IsMigratedToMicrosoftAccount is false, this element contains the user's Bing Ads managed sign-in user name.
+         * The logon user name of the user.
          * @var string
          */
         public $UserName;
 
         /**
-         * If true, the user can be authenticated using  a Microsoft Account.
+         * Determines whether the user name was migrated from a Bing Ads managed sign-in user name to a Microsoft account email address.
          * @var boolean
          */
         public $IsMigratedToMicrosoftAccount;

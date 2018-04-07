@@ -64,6 +64,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** Reserved. */
         const Industry = 'Industry';
+
+        /** Reserved. */
+        const ProductAudience = 'ProductAudience';
     }
 
 }

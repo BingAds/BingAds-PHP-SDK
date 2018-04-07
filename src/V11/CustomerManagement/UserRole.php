@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V11\CustomerManagement;
         /** Reserved for internal use. */
         const ClientAdmin = 'ClientAdmin';
 
-        /** This role has permissions to manage campaigns and perform some billing activities on specific accounts. */
+        /** This role has permissions to manage campaigns and perform some billing activities on selected accounts. */
         const StandardUser = 'StandardUser';
     }
 

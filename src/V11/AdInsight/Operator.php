@@ -3,6 +3,12 @@
 namespace Microsoft\BingAds\V11\AdInsight;
 
 {
+    /**
+     * Reserved.
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/operator?view=bingads-11 Operator Value Set
+     * 
+     * @used-by Predicate
+     */
     final class Operator
     {
         /** Reserved. */

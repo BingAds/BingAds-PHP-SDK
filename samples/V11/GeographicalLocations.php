@@ -7,9 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -21,14 +20,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // The full path where you want to download the geographical locations file.
 
@@ -55,29 +52,14 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
-
-    $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
+        ServiceClientType::CampaignManagementVersion11, 
+        $GLOBALS['AuthorizationData'], 
+        AuthHelper::GetApiEnvironment());
 
     date_default_timezone_set('UTC');
 
@@ -85,7 +67,7 @@ try
     // and compare it with the last modified time provided by the service.
     $previousSyncTimeUtc = new DateTime('2017-08-10T00:00:00-00:00');
     
-    $getGeoLocationsFileUrlResponse = CampaignManagementHelper::GetGeoLocationsFileUrl(
+    $getGeoLocationsFileUrlResponse = CampaignManagementExampleHelper::GetGeoLocationsFileUrl(
         $Version, 
         $LanguageLocale);
 
@@ -110,50 +92,31 @@ try
 }
 catch (SoapFault $e)
 {
-    // Output the last request/response.
-	
-    print "\nLast SOAP request/response:\n";
+	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
+	print $GLOBALS['Proxy']->GetWsdl() . "\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Campaign Management service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-        ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-        : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                case 105:  // InvalidCredentials
-                    break;
-                case 117:  // CallRateExceeded
-                    break;
-                default:
-                    print "Please see MSDN documentation for more details about the error code output above.\n";
-                    break;
-            }
-        }
+        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
+    }
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
+    elseif (isset($e->detail->EditorialApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

@@ -3,6 +3,13 @@
 namespace Microsoft\BingAds\V11\AdInsight;
 
 {
+    /**
+     * Reserved.
+     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/auctioninsightresult?view=bingads-11 AuctionInsightResult Data Object
+     * 
+     * @uses AuctionInsightV2Entity
+     * @used-by GetAuctionInsightDataResponse
+     */
     final class AuctionInsightResult
     {
         /**

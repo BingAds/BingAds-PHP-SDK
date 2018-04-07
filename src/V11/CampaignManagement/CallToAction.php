@@ -66,7 +66,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         const SignUp = 'SignUp';
 
         /** Reserved. */
-        const Subscrib = 'Subscrib';
+        const Subscribe = 'Subscribe';
 
         /** Reserved. */
         const Unknown = 'Unknown';

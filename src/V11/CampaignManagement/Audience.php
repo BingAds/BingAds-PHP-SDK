@@ -17,6 +17,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     class Audience
     {
         /**
+         * Reserved.
+         * @var integer
+         */
+        public $AudienceNetworkSize;
+
+        /**
          * The description of the audience.
          * @var string
          */
@@ -63,6 +69,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var integer
          */
         public $SearchSize;
+
+        /**
+         * The list of campaign types that support this audience.
+         * @var string[]
+         */
+        public $SupportedCampaignTypes;
 
         /**
          * The type of the audience.

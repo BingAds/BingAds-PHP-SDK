@@ -7,14 +7,16 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CustomerManagementHelper.php";
+require_once "/CustomerManagementExampleHelper.php";
+
+include "/AuthHelper.php";
 
 use SoapVar;
 use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\V11\CustomerManagement classes that will be used.
+use Microsoft\BingAds\V11\CustomerManagement\Address;
 use Microsoft\BingAds\V11\CustomerManagement\Customer;
 use Microsoft\BingAds\V11\CustomerManagement\Account;
 use Microsoft\BingAds\V11\CustomerManagement\AdvertiserAccount;
@@ -30,13 +32,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CustomerManagementProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -45,21 +46,19 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
+      ServiceClientType::CustomerManagementVersion11, 
+      $GLOBALS['AuthorizationData'], 
+      AuthHelper::GetApiEnvironment());
 
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $getUserResponse = CustomerManagementHelper::GetUser(null);
+    $getUserResponse = CustomerManagementExampleHelper::GetUser(null);
     $user = $getUserResponse->User;
     
     // Only a user with the aggregator role (33) can sign up new customers. 
@@ -69,16 +68,18 @@ try
         return;
     }
     
-    // For Customer.CustomerAddress and Account.BusinessAddress, you can use the same address 
-    // as your aggregator user, although you must set Id and TimeStamp to null.
-    $userAddress = $user->ContactInfo->Address;
-    $userAddress->Id = null;
-    $userAddress->TimeStamp = null;
+    // For Customer.CustomerAddress and Account.BusinessAddress you can use the same address. 
+    $businessAddress = new Address();
+    $businessAddress->City = "Redmond";
+    $businessAddress->Line1 = "One Microsoft Way";
+    $businessAddress->CountryCode = "US";
+    $businessAddress->PostalCode = "98052";
+    $businessAddress->StateOrProvince = "WA";
     
     $customer = new Customer();
                 
     // The customer's business address.
-    $customer->CustomerAddress = $userAddress;
+    $customer->CustomerAddress = $businessAddress;
 
     // The list of key and value strings for forward compatibility. This element can be used
     // to avoid otherwise breaking changes when new elements are added in future releases.
@@ -99,15 +100,14 @@ try
     // The name of the customer. This element can contain a maximum of 100 characters.
     $customer->Name = "Child Customer " . $_SERVER['REQUEST_TIME'];
     
-    
     $account = new AdvertiserAccount();
                   
     // The type of account. Bing Ads API only supports the Advertiser account.
     $account->AccountType = AccountType::Advertiser;
 
     // The location where your business is legally registered. 
-    // The business address is used to determine your tax requirements.
-    $account->BusinessAddress = $userAddress;
+    // The business address is used to determine your tax requirements.    
+    $account->BusinessAddress = $businessAddress;
 
     // The type of currency that is used to settle the account. The service uses the currency information for billing purposes.
     $account->CurrencyType = CurrencyType::USDollar;
@@ -150,10 +150,11 @@ try
                 );
     
     // Signup a new customer and account for the reseller. 
-    $signupCustomerResponse = CustomerManagementHelper::SignupCustomer(
+    $signupCustomerResponse = CustomerManagementExampleHelper::SignupCustomer(
         $customer,
         $encodedAccount,
-        $user->CustomerId);
+        $user->CustomerId,
+        null);
 
     print "New Customer and Account:\n";
 
@@ -177,79 +178,27 @@ try
 }
 catch (SoapFault $e)
 {
-  // Output the last request/response.
-
-  print "\nLast SOAP request/response:\n";
-  printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-  print $GLOBALS['Proxy']->GetWsdl() . "\n";
-  print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-  print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-
-    // Customer Management service operations can throw AdApiFaultDetail.
+    print "\nLast SOAP request/response:\n";
+    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
+    print $GLOBALS['Proxy']->GetWsdl() . "\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
+	
     if (isset($e->detail->AdApiFaultDetail))
     {
-      // Log this fault.
-
-      print "The operation failed with the following faults:\n";
-
-      $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-      ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-      : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-      // If the AdApiError array is not null, the following are examples of error codes that may be found.
-      foreach ($errors as $error)
-      {
-        print "AdApiError\n";
-        printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-        switch ($error->Code)
-        {
-          case 105:  // InvalidCredentials
-            break;
-          default:
-            print "Please see MSDN documentation for more details about the error code output above.\n";
-            break;
-        }
-      }
+        CustomerManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Customer Management service operations can throw ApiFault.
     elseif (isset($e->detail->ApiFault))
     {
-      // Log this fault.
-
-      print "The operation failed with the following faults:\n";
-
-      // If the OperationError array is not null, the following are examples of error codes that may be found.
-      if (!empty($e->detail->ApiFault->OperationErrors))
-      {
-        $errors = is_array($e->detail->ApiFault->OperationErrors->OperationError)
-        ? $e->detail->ApiFault->OperationErrors->OperationError
-        : array('OperationError' => $e->detail->ApiFault->OperationErrors->OperationError);
-
-        foreach ($errors as $error)
-        {
-          print "OperationError\n";
-          printf("Code: %d\nMessage: %s\n", $error->Code, $error->Message);
-
-          switch ($error->Code)
-          {
-            case 106:   // UserIsNotAuthorized
-              break;
-            default:
-              print "Please see MSDN documentation for more details about the error code output above.\n";
-              break;
-          }
-        }
-      }
-    }  
+        CustomerManagementExampleHelper::OutputApiFault($e->detail->ApiFault);
+    }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

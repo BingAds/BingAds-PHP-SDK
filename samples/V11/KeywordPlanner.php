@@ -7,10 +7,9 @@ namespace Microsoft\BingAds\Samples\v11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/AdInsightHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/AdInsightExampleHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -22,9 +21,8 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\v11\AdInsightHelper;
-use Microsoft\BingAds\Samples\v11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\v11\AdInsightExampleHelper;
 
 // Specify the Microsoft\BingAds\V11\AdInsight classes that will be used.
 use Microsoft\BingAds\V11\AdInsight\KeywordIdeaAttribute;
@@ -63,8 +61,7 @@ use Microsoft\BingAds\V11\AdInsight\NegativeKeyword;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -73,34 +70,16 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
-
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
+    AuthHelper::Authenticate();
 
     $GLOBALS['AdInsightProxy'] = new ServiceClient(ServiceClientType::AdInsightVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     $searchParametersNamespace = "http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.V11.Entity.SearchParameters";
     $criterionsNamespace = "http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.V11.Entity.Criterions";
         
-    $getKeywordIdeaCategoriesResponse = AdInsightHelper::GetKeywordIdeaCategories();
+    $getKeywordIdeaCategoriesResponse = AdInsightExampleHelper::GetKeywordIdeaCategories();
     if(isset($getKeywordIdeaCategoriesResponse->KeywordIdeaCategories))
     {
         $categoryId = $getKeywordIdeaCategoriesResponse->KeywordIdeaCategories->KeywordIdeaCategory[0]->CategoryId;
@@ -269,7 +248,7 @@ try
 
     // If ExpandIdeas is false, the QuerySearchParameter is required.
     $expandIdeas = true;
-    $getKeywordIdeasResponse = AdInsightHelper::GetKeywordIdeas(
+    $getKeywordIdeasResponse = AdInsightExampleHelper::GetKeywordIdeas(
         $expandIdeas,
         $ideaAttributes,
         $searchParameters);
@@ -283,7 +262,7 @@ try
     }
     else
     {
-        AdInsightHelper::OutputKeywordIdeas($keywordIdeas);
+        AdInsightExampleHelper::OutputArrayOfKeywordIdea($keywordIdeas);
     }
 
 
@@ -292,10 +271,10 @@ try
     // The returned ad group ID within each keyword idea will either be null or negative.
     // Negative identifiers can be used to map the keyword ideas into suggested new ad groups. 
     // A null ad group identifier indicates that the keyword idea was sourced from your 
-    // keyword idea search parameter.
+    // keyword idea search parameter.  
 
     // In this example we will use the suggested ad groups to request traffic estimates.
-    // Each of the seed keyword ideas will be submitted in the same ad group.
+    // Each of the seed keyword ideas will be submitted in the same ad group estimator.
 
     $ideaAdGroupIds = array();
     foreach ($keywordIdeas->KeywordIdea as $keywordIdea)
@@ -304,6 +283,12 @@ try
     }
     $adGroupIds = array_unique($ideaAdGroupIds, SORT_REGULAR);
     $adGroupEstimatorCount = count($adGroupIds);
+
+    // If any ad group IDs are null, traffic estimates for all of those keyword ideas
+    // will be submitted via $adGroupEstimators[0]. If none of the ad group IDs are null,
+    // then $adGroupEstimators[0] will correspond to keyword ideas where AdGroupId is -1.
+    // Each KeywordIdea is assigned to an AdGroupEstimator below.
+
     $seedOffset = in_array(null, $adGroupIds) ? 0 : 1;
     
     $adGroupEstimators = array();
@@ -398,115 +383,34 @@ try
 
     $campaignEstimators[] = $campaignEstimator;
     
-    $getKeywordTrafficEstimatesResponse = AdInsightHelper::GetKeywordTrafficEstimates($campaignEstimators);
+    $getKeywordTrafficEstimatesResponse = AdInsightExampleHelper::GetKeywordTrafficEstimates($campaignEstimators);
     
-    AdInsightHelper::OutputCampaignEstimates($getKeywordTrafficEstimatesResponse->CampaignEstimates);
+    AdInsightExampleHelper::OutputArrayOfCampaignEstimate($getKeywordTrafficEstimatesResponse->CampaignEstimates);
 
 }
 catch (SoapFault $e)
 {
-	// Output the last request/response.
-	
 	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-	// Ad Insight and Campaign Management service operations can throw AdApiFaultDetail.
-	if (isset($e->detail->AdApiFaultDetail))
-	{
-		// Log this fault.
-
-		print "The operation failed with the following faults:\n";
-
-		$errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-		? $e->detail->AdApiFaultDetail->Errors->AdApiError
-		: array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-		// If the AdApiError array is not null, the following are examples of error codes that may be found.
-		foreach ($errors as $error)
-		{
-			print "AdApiError\n";
-			printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-			switch ($error->Code)
-			{
-				case 0:    // InternalError
-					break;
-				case 105:  // InvalidCredentials
-					break;
-				default:
-					print "Please see documentation for more details about the error code output above.\n";
-					break;
-			}
-		}
-	}
-
-	// Ad Insight service operations can throw ApiFaultDetail.
-	elseif (isset($e->detail->ApiFaultDetail))
-	{
-		// Log this fault.
-
-		print "The operation failed with the following faults:\n";
-
-		// If the BatchError array is not null, the following are examples of error codes that may be found.
-		if (!empty($e->detail->ApiFaultDetail->BatchErrors))
-		{
-			$errors = is_array($e->detail->ApiFaultDetail->BatchErrors->BatchError)
-			? $e->detail->ApiFaultDetail->BatchErrors->BatchError
-			: array('BatchError' => $e->detail->ApiFaultDetail->BatchErrors->BatchError);
-
-			foreach ($errors as $error)
-			{
-				printf("BatchError at Index: %d\n", $error->Index);
-				printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-				switch ($error->Code)
-				{
-					case 0:    // InternalError
-						break;
-					default:
-						print "Please see documentation for more details about the error code output above.\n";
-						break;
-				}
-			}
-		}
-
-		// If the OperationError array is not null, the following are examples of error codes that may be found.
-		if (!empty($e->detail->ApiFaultDetail->OperationErrors))
-		{
-			$errors = is_array($e->detail->ApiFaultDetail->OperationErrors->OperationError)
-			? $e->detail->ApiFaultDetail->OperationErrors->OperationError
-			: array('OperationError' => $e->detail->ApiFaultDetail->OperationErrors->OperationError);
-
-			foreach ($errors as $error)
-			{
-				print "OperationError\n";
-				printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-				switch ($error->Code)
-				{
-					case 0:    // InternalError
-						break;
-					case 105:  // InvalidCredentials
-						break;
-					case 1102:  // InvalidAccountId
-						break;
-					default:
-						print "Please see documentation for more details about the error code output above.\n";
-						break;
-				}
-			}
-		}
-	}
+    if (isset($e->detail->AdApiFaultDetail))
+    {
+        AdInsightExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
+    }
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        AdInsightExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";
