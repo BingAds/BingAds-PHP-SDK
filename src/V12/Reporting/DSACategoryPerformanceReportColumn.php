@@ -59,7 +59,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The low level category that Bing matched to your website. */
         const Category2 = 'Category2';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The language of the country the ad is served in. */

@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The account currency type. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The number of times an ad has been displayed on search results pages. */

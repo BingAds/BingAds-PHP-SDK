@@ -44,7 +44,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The name of the job function (according to LinkedIn) of the person who viewed the ad. */
         const JobFunctionName = 'JobFunctionName';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The number of times an ad has been displayed on search results pages or other sites on the Audience Network. */

@@ -152,7 +152,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** Shows you how other product ads for similar products are performing on average based on how often people who see the ad end up clicking on it. */
         const BenchmarkCtr = 'BenchmarkCtr';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The click type ID. */

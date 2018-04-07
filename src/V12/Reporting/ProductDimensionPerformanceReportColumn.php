@@ -173,7 +173,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
         const TopVsOther = 'TopVsOther';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The click type ID. */
