@@ -7,9 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -17,7 +16,6 @@ use Exception;
 
 // Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
 use Microsoft\BingAds\V11\CampaignManagement\Campaign;
-use Microsoft\BingAds\V11\CampaignManagement\CampaignType;
 use Microsoft\BingAds\V11\CampaignManagement\AdGroup;
 use Microsoft\BingAds\V11\CampaignManagement\BiddableAdGroupCriterion;
 use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterion;
@@ -44,14 +42,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -60,34 +56,23 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
-
-    $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
+        ServiceClientType::CampaignManagementVersion11, 
+        $GLOBALS['AuthorizationData'], 
+        AuthHelper::GetApiEnvironment());
 
     // To discover all remarketing lists that the user can associate with ad groups in the current account (per CustomerAccountId header), 
     // set RemarketingListIds to null when calling the GetAudiencesByIds operation.
 
-    $remarketingLists = CampaignManagementHelper::GetAudiencesByIds(null, array(AudienceType::RemarketingList))->Audiences;
+    $remarketingLists = CampaignManagementExampleHelper::GetAudiencesByIds(
+        null, 
+        array(AudienceType::RemarketingList),
+        null,
+        true)->Audiences;
 
     // You must already have at least one remarketing list for the remainder of this example. 
 
@@ -108,7 +93,6 @@ try
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
 
     $campaigns[] = $campaign;
-
     
     $adGroups = array();
 
@@ -135,19 +119,19 @@ try
     $adGroups[] = $adGroup;
 
     print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
-    CampaignManagementHelper::OutputIds($nillableCampaignIds);
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
     }
 
     print "AddAdGroups\n";
-    $addAdGroupsResponse = CampaignManagementHelper::AddAdGroups($nillableCampaignIds[0], $adGroups);
-    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds->long;
-    CampaignManagementHelper::OutputIds($nillableAdGroupIds);
+    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups($nillableCampaignIds->long[0], $adGroups);
+    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addAdGroupsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors->BatchError);
     }
 
     // If the campaign or ad group add operations failed then we cannot continue this example. 
@@ -170,38 +154,46 @@ try
             $criterion = new AudienceCriterion();
             $criterion->AudienceId = $remarketingList->Id;
             $criterion->AudienceType = AudienceType::RemarketingList;
-            $adGroupCriterion->Criterion = new SoapVar($criterion, SOAP_ENC_OBJECT, 'AudienceCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
+            $adGroupCriterion->Criterion = new SoapVar(
+                $criterion, 
+                SOAP_ENC_OBJECT, 
+                'AudienceCriterion', 
+                $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
             $criterionBid = new BidMultiplier();
             $criterionBid->Multiplier = 20.00;
-            $adGroupCriterion->CriterionBid = new SoapVar($criterionBid, SOAP_ENC_OBJECT, 'BidMultiplier', $GLOBALS['CampaignProxy']->GetNamespace());
+            $adGroupCriterion->CriterionBid = new SoapVar(
+                $criterionBid, 
+                SOAP_ENC_OBJECT, 
+                'BidMultiplier', 
+                $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
-            $adGroupCriterion->AdGroupId = $nillableAdGroupIds[0];
+            $adGroupCriterion->AdGroupId = $nillableAdGroupIds->long[0];
             $adGroupCriterion->Status = AdGroupCriterionStatus::Active;
             
-            $adGroupCriterions[] = new SoapVar($adGroupCriterion, SOAP_ENC_OBJECT, 'BiddableAdGroupCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
-
-            print("\nAssociating the following remarketing list with the ad group.\n\n");
-            CampaignManagementHelper::OutputRemarketingList($remarketingList);
+            $adGroupCriterions[] = new SoapVar(
+                $adGroupCriterion, 
+                SOAP_ENC_OBJECT, 
+                'BiddableAdGroupCriterion', 
+                $GLOBALS['CampaignManagementProxy']->GetNamespace());
         }
     }
 
-    $addAdGroupCriterionsResponse = CampaignManagementHelper::AddAdGroupCriterions($adGroupCriterions, AdGroupCriterionType::Audience);
+    print("\nAssociate remarketing lists with the ad group.\n\n");
+    $addAdGroupCriterionsResponse = CampaignManagementExampleHelper::AddAdGroupCriterions($adGroupCriterions, AdGroupCriterionType::Audience);
     
     // You can store the association IDs which can be used to update or delete associations later. 
 
     $adGroupCriterionIds = $addAdGroupCriterionsResponse->AdGroupCriterionIds->long;
 
-    $getAdGroupCriterionsByIdsResponse = CampaignManagementHelper::GetAdGroupCriterionsByIds($nillableAdGroupIds[0], $adGroupCriterionIds, AdGroupCriterionType::RemarketingList);
-
-    if(!empty($getAdGroupCriterionsByIdsResponse->AdGroupCriterions)){
-        foreach ($getAdGroupCriterionsByIdsResponse->AdGroupCriterions->AdGroupCriterion as $AdGroupCriterion)
-        {
-            print("\nThe following ad group remarketing list association was added.\n\n");
-            CampaignManagementHelper::OutputAdGroupCriterion($AdGroupCriterion);
-        }
-    }
+    $getAdGroupCriterionsByIdsResponse = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
+        $adGroupCriterionIds,
+        true,
+        $nillableAdGroupIds->long[0],          
+        AdGroupCriterionType::RemarketingList);
     
+    print("Remarketing list associations for the ad group:\n\n");
+    CampaignManagementExampleHelper::OutputArrayOfAdGroupCriterion($getAdGroupCriterionsByIdsResponse->AdGroupCriterions); 
     
     // If the associations were added and retrieved successfully let's practice updating and deleting one of them.
 
@@ -213,152 +205,74 @@ try
 
         $criterion = new AudienceCriterion();
         $criterion->AudienceType = AudienceType::RemarketingList;
-        $updateAdGroupCriterion->Criterion = new SoapVar($criterion, SOAP_ENC_OBJECT, 'AudienceCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
+        $updateAdGroupCriterion->Criterion = new SoapVar(
+            $criterion, 
+            SOAP_ENC_OBJECT, 
+            'AudienceCriterion', 
+            $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
         $criterionBid = new BidMultiplier();
         $criterionBid->Multiplier = 10.00;
-        $updateAdGroupCriterion->CriterionBid = new SoapVar($criterionBid, SOAP_ENC_OBJECT, 'BidMultiplier', $GLOBALS['CampaignProxy']->GetNamespace());
+        $updateAdGroupCriterion->CriterionBid = new SoapVar(
+            $criterionBid, 
+            SOAP_ENC_OBJECT, 
+            'BidMultiplier', 
+            $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
-        $updateAdGroupCriterion->AdGroupId = $nillableAdGroupIds[0];
+        $updateAdGroupCriterion->AdGroupId = $nillableAdGroupIds->long[0];
         $updateAdGroupCriterion->Id = $adGroupCriterionIds[0];
         $updateAdGroupCriterion->Status = AdGroupCriterionStatus::Active;
         
-        $adGroupCriterions[] = new SoapVar($updateAdGroupCriterion, SOAP_ENC_OBJECT, 'BiddableAdGroupCriterion', $GLOBALS['CampaignProxy']->GetNamespace());
+        $adGroupCriterions[] = new SoapVar(
+            $updateAdGroupCriterion, 
+            SOAP_ENC_OBJECT, 
+            'BiddableAdGroupCriterion', 
+            $GLOBALS['CampaignManagementProxy']->GetNamespace());
         
-        $updateAdGroupCriterionsResponse = CampaignManagementHelper::UpdateAdGroupCriterions($adGroupCriterions, AdGroupCriterionType::Audience);
+        $updateAdGroupCriterionsResponse = CampaignManagementExampleHelper::UpdateAdGroupCriterions(
+            $adGroupCriterions, 
+            AdGroupCriterionType::Audience);
         
-        $deleteAdGroupCriterionsResponse = CampaignManagementHelper::DeleteAdGroupCriterions($nillableAdGroupIds[0], $adGroupCriterionIds, AdGroupCriterionType::Audience);
+        $deleteAdGroupCriterionsResponse = CampaignManagementExampleHelper::DeleteAdGroupCriterions(
+            $adGroupCriterionIds, 
+            $nillableAdGroupIds->long[0], 
+            AdGroupCriterionType::Audience);
     }
 
     // Delete the campaign, ad group, and ad group remarketing list associations that were previously added. 
     // You should remove this line if you want to view the added entities in the 
     // Bing Ads web application or another tool.
 
-    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
-    printf("\nDeleted CampaignId %d\n\n", $nillableCampaignIds[0]);
+    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
+    printf("\nDeleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-    // Output the last request/response.
-	
-    print "\nLast SOAP request/response:\n";
+	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
+	print $GLOBALS['Proxy']->GetWsdl() . "\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Campaign Management service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-        ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-        : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                case 105:  // InvalidCredentials
-                    break;
-                case 117:  // CallRateExceeded
-                    break;
-                default:
-                    print "Please see MSDN documentation for more details about the error code output above.\n";
-                    break;
-            }
-        }
+        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Campaign Management service operations can throw ApiFaultDetail.
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
     elseif (isset($e->detail->EditorialApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        // If the BatchError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->BatchErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->BatchErrors->BatchError)
-            ? $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError);
-
-            foreach ($errors as $error)
-            {
-                printf("BatchError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the EditorialError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->EditorialErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError)
-            ? $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError);
-
-            foreach ($errors as $error)
-            {
-                printf("EditorialError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-                printf("Appealable: %s\nDisapproved Text: %s\nCountry: %s\n", $error->Appealable, $error->DisapprovedText, $error->PublisherCountry);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the OperationError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->OperationErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->OperationErrors->OperationError)
-            ? $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError
-            : array('OperationError' => $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError);
-
-            foreach ($errors as $error)
-            {
-                print "OperationError\n";
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 106:   // UserIsNotAuthorized
-                        break;
-                    case 1102:  // CampaignServiceInvalidAccountId
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
+        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

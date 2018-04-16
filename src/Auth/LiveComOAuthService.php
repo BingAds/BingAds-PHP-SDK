@@ -90,10 +90,14 @@ class LiveComOAuthService extends IOAuthService
                 ->withAccessTokenExpiresInSeconds($expiresIn)
                 ->withRefreshToken($refreshToken);
         }
-        else
+        else if(isset($responseArray['error']))
         {
             $errorName = $responseArray['error'];
-            $errorDesc = $responseArray['error_description'];
+            $errorDesc = "The error_description was not provided by the authentication service.";
+            if(isset($responseArray['error_description'])){
+                $errorDesc = $responseArray['error_description'];
+            }
+            
             throw (new OAuthTokenRequestException())
                 ->withError($errorName)
                 ->withDescription($errorDesc);

@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** A cumulative report for the previous day. */
         const Yesterday = 'Yesterday';
 
-        /** A report for the previous seven days, one row for each day. */
+        /** A cumulative report for the previous seven days. */
         const LastSevenDays = 'LastSevenDays';
 
         /** A cumulative report for the current calendar week. */

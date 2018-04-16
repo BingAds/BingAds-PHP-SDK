@@ -7,9 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -32,14 +31,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -48,29 +45,11 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
-
-    $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     // Specify one or more campaigns.
     
@@ -86,11 +65,11 @@ try
     $campaigns[] = $campaign;
 
     print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
-    CampaignManagementHelper::OutputIds($nillableCampaignIds);
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
     }
 
     // You may choose to associate an exclusive set of negative keywords to an individual campaign 
@@ -102,138 +81,92 @@ try
     $negativeKeyword->Text = "auto";
              
     $entityNegativeKeyword = new EntityNegativeKeyword();
-    $entityNegativeKeyword->EntityId = $nillableCampaignIds[0];
+    $entityNegativeKeyword->EntityId = $nillableCampaignIds->long[0];
     $entityNegativeKeyword->EntityType = "Campaign";
     $entityNegativeKeyword->NegativeKeywords = array($negativeKeyword);
 
-    $addNegativeKeywordsToEntitiesResponse = CampaignManagementHelper::AddNegativeKeywordsToEntities(array($entityNegativeKeyword));
-    if((count((array)$addNegativeKeywordsToEntitiesResponse->NestedPartialErrors) == 0) 
-        || !is_array($addNegativeKeywordsToEntitiesResponse->NestedPartialErrors->BatchErrorCollection))
-    {
-        print "Added an exclusive set of negative keywords to the Campaign.\n\n";
-        CampaignManagementHelper::OutputNegativeKeywordIds($addNegativeKeywordsToEntitiesResponse->NegativeKeywordIds->IdCollection);
-    }
-    else
-    {
-        CampaignManagementHelper::OutputBatchErrorCollections($addNegativeKeywordsToEntitiesResponse->NestedPartialErrors->BatchErrorCollection);
-    }
+    print "Add an exclusive set of negative keywords to the Campaign.\n\n";
+    $addNegativeKeywordsToEntitiesResponse = CampaignManagementExampleHelper::AddNegativeKeywordsToEntities(array($entityNegativeKeyword));
+    CampaignManagementExampleHelper::OutputArrayOfIdCollection($addNegativeKeywordsToEntitiesResponse->NegativeKeywordIds->IdCollection);
+    CampaignManagementExampleHelper::OutputArrayOfBatchErrorCollection($addNegativeKeywordsToEntitiesResponse->NestedPartialErrors);
 
-    $getNegativeKeywordsByEntityIdsResponse = CampaignManagementHelper::GetNegativeKeywordsByEntityIds($nillableCampaignIds, "Campaign", $GLOBALS['AuthorizationData']->AccountId);
-    if((count((array)$getNegativeKeywordsByEntityIdsResponse->PartialErrors) == 0) 
-        || !is_array($getNegativeKeywordsByEntityIdsResponse->PartialErrors->BatchError))
-    {
-        print "Retrieved an exclusive set of negative keywords for the Campaign.\n\n";
-        CampaignManagementHelper::OutputEntityNegativeKeywords($getNegativeKeywordsByEntityIdsResponse->EntityNegativeKeywords->EntityNegativeKeyword);
-    }
-    else
-    {
-        CampaignManagementHelper::OutputPartialErrors($getNegativeKeywordsByEntityIdsResponse->PartialErrors->BatchError);
-    }
-       
+    print "Retrieve the exclusive set of negative keywords for the Campaign.\n\n";
+    $getNegativeKeywordsByEntityIdsResponse = CampaignManagementExampleHelper::GetNegativeKeywordsByEntityIds(
+        $nillableCampaignIds, 
+        "Campaign", 
+        $GLOBALS['AuthorizationData']->AccountId);
+    CampaignManagementExampleHelper::OutputArrayOfEntityNegativeKeyword($getNegativeKeywordsByEntityIdsResponse->EntityNegativeKeywords);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($getNegativeKeywordsByEntityIdsResponse->PartialErrors);
+           
     // If you attempt to delete a negative keyword without an identifier the operation will
     // succeed but will return partial errors corresponding to the index of the negative keyword
     // that was not deleted. 
-    $nestedPartialErrors = CampaignManagementHelper::DeleteNegativeKeywordsFromEntities(array($entityNegativeKeyword));
-    if ((count((array)$nestedPartialErrors) == 0) || !is_array($nestedPartialErrors->BatchErrorCollection))
-    {
-        print "Deleted an exclusive set of negative keywords from the Campaign.\n\n";   
-    }
-    else
-    {
-        print "Attempt to DeleteNegativeKeywordsFromEntities without NegativeKeyword identifier partially fails by design.\n\n";
-        CampaignManagementHelper::OutputBatchErrorCollections($nestedPartialErrors->BatchErrorCollection);
-    }
+    $nestedPartialErrors = CampaignManagementExampleHelper::DeleteNegativeKeywordsFromEntities(array($entityNegativeKeyword))->NestedPartialErrors;
+    print "Attempt to DeleteNegativeKeywordsFromEntities without NegativeKeyword identifier partially fails by design.\n\n";
+    CampaignManagementExampleHelper::OutputArrayOfBatchErrorCollection($nestedPartialErrors);
 
     // Delete the negative keywords with identifiers that were returned above.
-    $nestedPartialErrors = CampaignManagementHelper::DeleteNegativeKeywordsFromEntities($getNegativeKeywordsByEntityIdsResponse->EntityNegativeKeywords->EntityNegativeKeyword);
-    if ((count((array)$nestedPartialErrors) == 0) || !is_array($nestedPartialErrors->BatchErrorCollection))
-    {
-        print "Deleted an exclusive set of negative keywords from the Campaign.\n\n";
-    }
-    else
-    {
-        CampaignManagementHelper::OutputBatchErrorCollections($nestedPartialErrors->BatchErrorCollection);
-    }
+    print "Deleted an exclusive set of negative keywords from the Campaign.\n\n";
+    $nestedPartialErrors = CampaignManagementExampleHelper::DeleteNegativeKeywordsFromEntities($getNegativeKeywordsByEntityIdsResponse->EntityNegativeKeywords->EntityNegativeKeyword);
+    CampaignManagementExampleHelper::OutputArrayOfBatchErrorCollection($nestedPartialErrors);
 
     // Negative keywords can also be added and deleted from a shared negative keyword list. 
     // The negative keyword list can be shared or associated with multiple campaigns.
     // NegativeKeywordList inherits from SharedList which inherits from SharedEntity.
 
     $negativeKeywordList = new NegativeKeywordList();
-    $negativeKeywordList->Name = "My Negative Keyword List";
+    $negativeKeywordList->Name = "My Negative Keyword List" . $_SERVER['REQUEST_TIME'];
     $negativeKeywordList->Type = "NegativeKeywordList";
-    $encodedNegativeKeywordList = new SoapVar($negativeKeywordList, SOAP_ENC_OBJECT, 'NegativeKeywordList', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedNegativeKeywordList = new SoapVar($negativeKeywordList, SOAP_ENC_OBJECT, 'NegativeKeywordList', $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
     $negativeKeywords = array();
     $negativeKeyword = new NegativeKeyword();
     $negativeKeyword->Text = "car";
     $negativeKeyword->Type = "NegativeKeyword";
     $negativeKeyword->MatchType = MatchType::Exact;
-    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $negativeKeywords[] = $encodedNegativeKeyword;
 
     $negativeKeyword = new NegativeKeyword();
     $negativeKeyword->Text = "car";
     $negativeKeyword->Type = "NegativeKeyword";
     $negativeKeyword->MatchType = MatchType::Phrase;
-    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $negativeKeywords[] = $encodedNegativeKeyword;
 
     // You can create a new list for negative keywords with or without negative keywords.
        
-    $addSharedEntityResponse = CampaignManagementHelper::AddSharedEntity($encodedNegativeKeywordList, $negativeKeywords);
+    $addSharedEntityResponse = CampaignManagementExampleHelper::AddSharedEntity($encodedNegativeKeywordList, $negativeKeywords);
     $sharedEntityId = $addSharedEntityResponse->SharedEntityId;
     $listItemIds = $addSharedEntityResponse->ListItemIds;
 
     printf("NegativeKeywordList successfully added to account library and assigned identifer %d\n\n", $sharedEntityId);
-
-    CampaignManagementHelper::OutputNegativeKeywordResults(
-        $sharedEntityId,
-        $negativeKeywords, 
-        $listItemIds->long, 
-        $addSharedEntityResponse->PartialErrors);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addSharedEntityResponse->PartialErrors);
 
     print "Negative keywords currently in NegativeKeywordList:\n";
     $negativeKeywordList->Id = $sharedEntityId;
-    $encodedNegativeKeywordList = new SoapVar($negativeKeywordList, SOAP_ENC_OBJECT, 'NegativeKeywordList', $GLOBALS['CampaignProxy']->GetNamespace());
-    $negativeKeywords = CampaignManagementHelper::GetListItemsBySharedList($encodedNegativeKeywordList);
-
-    if((count((array)$negativeKeywords) == 0) || !is_array($negativeKeywords->SharedListItem))
-    {
-        print "None\n\n";
-    }
-    else
-    {
-        CampaignManagementHelper::OutputNegativeKeywords($negativeKeywords->SharedListItem);
-    }             
+    $encodedNegativeKeywordList = new SoapVar(
+        $negativeKeywordList, 
+        SOAP_ENC_OBJECT, 
+        'NegativeKeywordList', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+    $negativeKeywords = CampaignManagementExampleHelper::GetListItemsBySharedList($encodedNegativeKeywordList);
+    CampaignManagementExampleHelper::OutputArrayOfNegativeKeyword($negativeKeywords);
+        
 
     // To update the list of negative keywords, you must either add or remove from the list
     // using the respective AddListItemsToSharedList or DeleteListItemsFromSharedList operations.
     // To remove the negative keywords from the list pass the negative keyword identifers
     // and negative keyword list (SharedEntity) identifer.
 
-    $partialErrors = CampaignManagementHelper::DeleteListItemsFromSharedList($listItemIds, $encodedNegativeKeywordList);
-    if((count((array)$partialErrors) == 0) || !is_array($partialErrors))
-    {
-        print "Deleted most recently added negative keywords from negative keyword list.\n\n";
-
-    }
-    else
-    {
-        CampaignManagementHelper::OutputPartialErrors($partialErrors);
-    }
-       
+    print "Delete most recently added negative keywords from negative keyword list.\n\n";
+    $partialErrors = CampaignManagementExampleHelper::DeleteListItemsFromSharedList($listItemIds, $encodedNegativeKeywordList);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($partialErrors);
+    
+    $negativeKeywords = CampaignManagementExampleHelper::GetListItemsBySharedList($encodedNegativeKeywordList);
     print "Negative keywords currently in NegativeKeywordList:\n";
-    $negativeKeywords = CampaignManagementHelper::GetListItemsBySharedList($encodedNegativeKeywordList);
-    if((count((array)$negativeKeywords) == 0) || !is_array($negativeKeywords->SharedListItem))
-    {
-        print "None\n\n";
-    }
-    else
-    {
-        CampaignManagementHelper::OutputNegativeKeywords($negativeKeywords->SharedListItem);
-    }
-       
+    CampaignManagementExampleHelper::OutputArrayOfNegativeKeyword($negativeKeywords);
+           
     // Whether you created the list with or without negative keywords, more can be added 
     // using the AddListItemsToSharedList operation.
 
@@ -242,59 +175,59 @@ try
     $negativeKeyword->Text = "auto";
     $negativeKeyword->Type = "NegativeKeyword";
     $negativeKeyword->MatchType = MatchType::Exact;
-    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $negativeKeywords[] = $encodedNegativeKeyword;
 
     $negativeKeyword = new NegativeKeyword();
     $negativeKeyword->Text = "auto";
     $negativeKeyword->Type = "NegativeKeyword";
     $negativeKeyword->MatchType = MatchType::Phrase;
-    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedNegativeKeyword = new SoapVar($negativeKeyword, SOAP_ENC_OBJECT, 'NegativeKeyword', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $negativeKeywords[] = $encodedNegativeKeyword;
 
-    $addListItemsToSharedListResponse = CampaignManagementHelper::AddListItemsToSharedList(
+    print "Calling AddListItemsToSharedList . . .\n";
+    $addListItemsToSharedListResponse = CampaignManagementExampleHelper::AddListItemsToSharedList(
         $negativeKeywords,
         $encodedNegativeKeywordList);
     $listItemIds = $addListItemsToSharedListResponse->ListItemIds;
 
-    CampaignManagementHelper::OutputNegativeKeywordResults(
-        $sharedEntityId,
-        $negativeKeywords, 
-        $listItemIds->long, 
-        $addListItemsToSharedListResponse->PartialErrors);
-
+    $negativeKeywords = CampaignManagementExampleHelper::GetListItemsBySharedList($encodedNegativeKeywordList);
     print "Negative keywords currently in NegativeKeywordList:\n";
-    $negativeKeywords = CampaignManagementHelper::GetListItemsBySharedList($encodedNegativeKeywordList);
-    if((count((array)$negativeKeywords) == 0) || !is_array($negativeKeywords->SharedListItem))
-    {
-        print "None\n\n";
-    }
-    else
-    {
-        CampaignManagementHelper::OutputNegativeKeywords($negativeKeywords->SharedListItem);
-    }
-
+    CampaignManagementExampleHelper::OutputArrayOfNegativeKeyword($negativeKeywords);
+    
     // You can update the name of the negative keyword list. 
 
     $negativeKeywordList->Name = "My Updated Negative Keyword List";
     $negativeKeywordList->Type = "NegativeKeywordList";
-    $encodedNegativeKeywordList = new SoapVar($negativeKeywordList, SOAP_ENC_OBJECT, 'NegativeKeywordList', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedNegativeKeywordList = new SoapVar(
+        $negativeKeywordList, 
+        SOAP_ENC_OBJECT, 
+        'NegativeKeywordList', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
-    $partialErrors = CampaignManagementHelper::UpdateSharedEntities(array($encodedNegativeKeywordList));
-    if((count((array)$partialErrors) == 0) || !is_array($partialErrors))
-    {
-        printf("Updated Negative Keyword List Name to %s.\n\n", $negativeKeywordList->Name);
-    }
-    else
-    {
-        CampaignManagementHelper::OutputPartialErrors($partialErrors);
-    }
+    printf("Update Negative Keyword List Name to %s.\n\n", $negativeKeywordList->Name);
+    $partialErrors = CampaignManagementExampleHelper::UpdateSharedEntities(array($encodedNegativeKeywordList));
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($partialErrors);
 
     // Get and print the negative keyword lists and return the list of identifiers.
 
     $sharedEntityType = "NegativeKeywordList";
-    $sharedEntityIds = CampaignManagementHelper::GetAndOutputSharedEntityIdentifiers($sharedEntityType);
-       
+    $sharedEntities = CampaignManagementExampleHelper::GetSharedEntitiesByAccountId($sharedEntityType)->SharedEntities;
+    CampaignManagementExampleHelper::OutputArrayOfSharedEntity($sharedEntities);
+
+    // Use the list of shared entity IDs in the call to GetSharedEntityAssociationsBySharedEntityIds below.
+    $sharedEntityIds = array();
+    if((count((array)$sharedEntities) != 0) && is_array($sharedEntities->SharedEntity))
+    {
+        for ($index = 0; $index < count($sharedEntities->SharedEntity); $index++)
+        {
+            if(!is_null($sharedEntities->SharedEntity[$index]->Id))
+            {
+                $sharedEntityIds[] = $sharedEntities->SharedEntity[$index]->Id;
+            }
+        }
+    }
+           
     // Negative keywords were added to the negative keyword list above. You can associate the 
     // shared list of negative keywords with a campaign with or without negative keywords. 
     // Shared negative keyword lists cannot be associated with an ad group. An ad group can only 
@@ -302,185 +235,76 @@ try
 
     $associations = array();
     $association = new SharedEntityAssociation();
-    $association->EntityId = $nillableCampaignIds[0];
+    $association->EntityId = $nillableCampaignIds->long[0];
     $association->EntityType = "Campaign";
     $association->SharedEntityId = $sharedEntityId;
     $association->SharedEntityType = "NegativeKeywordList";
     $associations[] = $association;
 
-    $partialErrors = CampaignManagementHelper::SetSharedEntityAssociations($associations);
-    if((count((array)$partialErrors) == 0) || !is_array($partialErrors))
-    {
-        printf("Associated CampaignId %d with Negative Keyword List Id %d.\n\n", $nillableCampaignIds[0], $sharedEntityId);
-    }
-    else
-    {
-        CampaignManagementHelper::OutputPartialErrors($partialErrors);
-    }
+    printf("Associate CampaignId %d with Negative Keyword List Id %d.\n\n", $nillableCampaignIds->long[0], $sharedEntityId);
+    $partialErrors = CampaignManagementExampleHelper::SetSharedEntityAssociations($associations);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($partialErrors);
        
     // Get and print the associations either by Campaign or NegativeKeywordList identifier.
-    $getSharedEntityAssociationsByEntityIdsResponse = 
-        CampaignManagementHelper::GetSharedEntityAssociationsByEntityIds(array($nillableCampaignIds[0]), "Campaign", "NegativeKeywordList");
-    if(isset($getSharedEntityAssociationsByEntityIdsResponse->Associations) && 
-       isset($getSharedEntityAssociationsByEntityIdsResponse->Associations->SharedEntityAssociation))
-    {
-        CampaignManagementHelper::OutputSharedEntityAssociations($getSharedEntityAssociationsByEntityIdsResponse->Associations->SharedEntityAssociation);
-    }
-    CampaignManagementHelper::OutputPartialErrors($getSharedEntityAssociationsByEntityIdsResponse->PartialErrors);
-       
-    $getSharedEntityAssociationsBySharedEntityIdsResponse = 
-        CampaignManagementHelper::GetSharedEntityAssociationsBySharedEntityIds("Campaign", array($sharedEntityIds[count(array($sharedEntityIds))-1]), "NegativeKeywordList");
-    if(isset($getSharedEntityAssociationsBySharedEntityIdsResponse->Associations) && 
-       isset($getSharedEntityAssociationsBySharedEntityIdsResponse->Associations->SharedEntityAssociation))
-    {
-        CampaignManagementHelper::OutputSharedEntityAssociations($getSharedEntityAssociationsBySharedEntityIdsResponse->Associations->SharedEntityAssociation);
-    }
-    CampaignManagementHelper::OutputPartialErrors($getSharedEntityAssociationsBySharedEntityIdsResponse->PartialErrors);
-       
+    $getSharedEntityAssociationsByEntityIdsResponse = CampaignManagementExampleHelper::GetSharedEntityAssociationsByEntityIds(
+        array($nillableCampaignIds->long[0]), 
+        "Campaign", 
+        "NegativeKeywordList");
+    CampaignManagementExampleHelper::OutputArrayOfSharedEntityAssociation($getSharedEntityAssociationsByEntityIdsResponse->Associations);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($getSharedEntityAssociationsByEntityIdsResponse->PartialErrors);
+           
+    $getSharedEntityAssociationsBySharedEntityIdsResponse = CampaignManagementExampleHelper::GetSharedEntityAssociationsBySharedEntityIds(
+            "Campaign", 
+            array($sharedEntityIds[count(array($sharedEntityIds))-1]), 
+            "NegativeKeywordList");
+    CampaignManagementExampleHelper::OutputArrayOfSharedEntityAssociation($getSharedEntityAssociationsBySharedEntityIdsResponse->Associations);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($getSharedEntityAssociationsBySharedEntityIdsResponse->PartialErrors);
+    
     // Explicitly delete the association between the campaign and the negative keyword list.
 
-    $partialErrors = CampaignManagementHelper::DeleteSharedEntityAssociations($associations);
-    if((count((array)$partialErrors) == 0) || !is_array($partialErrors))
-    {
-        print "Deleted NegativeKeywordList associations\n\n";
-    }
-    else
-    {
-        CampaignManagementHelper::OutputPartialErrors($partialErrors);
-    }
+    print "Delete NegativeKeywordList associations\n\n";
+    $partialErrors = CampaignManagementExampleHelper::DeleteSharedEntityAssociations($associations);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($partialErrors);
        
     // Delete the campaign and any remaining assocations. 
 
-    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
-    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds[0]);
+    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
+    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
 
     // DeleteCampaigns does not delete the negative keyword list from the account's library. 
     // Call the DeleteSharedEntities operation to delete the shared entities.
 
-    $partialErrors = CampaignManagementHelper::DeleteSharedEntities(array($encodedNegativeKeywordList));
-    if((count((array)$partialErrors) == 0) || !is_array($partialErrors))
-    {
-        printf("Deleted Negative Keyword List (SharedEntity) Id %d\n\n", $sharedEntityId);
-    }
-    else
-    {
-        CampaignManagementHelper::OutputPartialErrors($partialErrors);
-    }    
+    printf("Delete Negative Keyword List (SharedEntity) Id %d\n\n", $sharedEntityId);
+    $partialErrors = CampaignManagementExampleHelper::DeleteSharedEntities(array($encodedNegativeKeywordList));
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($partialErrors);
 }
 catch (SoapFault $e)
 {
-    // Output the last request/response.
-	
-    print "\nLast SOAP request/response:\n";
+	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
+	print $GLOBALS['Proxy']->GetWsdl() . "\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Campaign Management service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-        ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-        : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                default:
-                    print "Please see MSDN documentation for more details about the error code output above.\n";
-                    break;
-            }
-        }
+        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Campaign Management service operations can throw ApiFaultDetail.
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
     elseif (isset($e->detail->EditorialApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        // If the BatchError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->BatchErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->BatchErrors->BatchError)
-            ? $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError);
-
-            foreach ($errors as $error)
-            {
-                printf("BatchError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the EditorialError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->EditorialErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError)
-            ? $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError);
-
-            foreach ($errors as $error)
-            {
-                printf("EditorialError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-                printf("Appealable: %s\nDisapproved Text: %s\nCountry: %s\n", $error->Appealable, $error->DisapprovedText, $error->PublisherCountry);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the OperationError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->OperationErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->OperationErrors->OperationError)
-            ? $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError
-            : array('OperationError' => $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError);
-
-            foreach ($errors as $error)
-            {
-                print "OperationError\n";
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
+        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

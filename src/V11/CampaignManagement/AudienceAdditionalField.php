@@ -13,6 +13,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     {
         /** Request that the SearchSize element be included within each returned Audience object. */
         const SearchSize = 'SearchSize';
+
+        /** Request that the AudienceNetworkSize element be included within each returned Audience object. */
+        const AudienceNetworkSize = 'AudienceNetworkSize';
     }
 
 }

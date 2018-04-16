@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * 
      * @used-by AdDynamicTextPerformanceReportRequest
      * @used-by AdPerformanceReportRequest
+     * @used-by AgeGenderAudienceReportRequest
      * @used-by AgeGenderDemographicReportRequest
      * @used-by ConversionPerformanceReportRequest
      * @used-by DestinationUrlPerformanceReportRequest
@@ -16,6 +17,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by DSACategoryPerformanceReportRequest
      * @used-by GeographicPerformanceReportRequest
      * @used-by GoalsAndFunnelsReportRequest
+     * @used-by ProfessionalDemographicsAudienceReportRequest
      * @used-by PublisherUsagePerformanceReportRequest
      * @used-by ShareOfVoiceReportRequest
      * @used-by UserLocationPerformanceReportRequest

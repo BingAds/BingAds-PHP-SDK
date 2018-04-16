@@ -11,6 +11,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by AdDynamicTextPerformanceReportFilter
      * @used-by AdGroupPerformanceReportFilter
      * @used-by AdPerformanceReportFilter
+     * @used-by AgeGenderAudienceReportFilter
      * @used-by AgeGenderDemographicReportFilter
      * @used-by CampaignPerformanceReportFilter
      * @used-by ConversionPerformanceReportFilter
@@ -18,6 +19,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by GeographicPerformanceReportFilter
      * @used-by GoalsAndFunnelsReportFilter
      * @used-by KeywordPerformanceReportFilter
+     * @used-by ProfessionalDemographicsAudienceReportFilter
      * @used-by PublisherUsagePerformanceReportFilter
      * @used-by SearchCampaignChangeHistoryReportFilter
      * @used-by ShareOfVoiceReportFilter

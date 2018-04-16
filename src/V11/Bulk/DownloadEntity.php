@@ -275,6 +275,21 @@ namespace Microsoft\BingAds\V11\Bulk;
 
         /** Reserved. */
         const ResponsiveAdLabels = 'ResponsiveAdLabels';
+
+        /** Reserved. */
+        const ProductAudiences = 'ProductAudiences';
+
+        /** Reserved. */
+        const AdGroupProductAudienceAssociations = 'AdGroupProductAudienceAssociations';
+
+        /** Reserved. */
+        const AdGroupNegativeProductAudienceAssociations = 'AdGroupNegativeProductAudienceAssociations';
+
+        /** Reserved. */
+        const AudienceNetworkInMarketAudiences = 'AudienceNetworkInMarketAudiences';
+
+        /** Reserved. */
+        const AudienceNetworkAudiences = 'AudienceNetworkAudiences';
     }
 
 }

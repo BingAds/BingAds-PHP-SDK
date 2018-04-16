@@ -7,9 +7,9 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/OutputHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -55,14 +55,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -71,29 +69,14 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
-
-    $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
+        ServiceClientType::CampaignManagementVersion11, 
+        $GLOBALS['AuthorizationData'], 
+        AuthHelper::GetApiEnvironment());
 
     date_default_timezone_set('UTC');
        
@@ -115,11 +98,11 @@ try
     $campaigns[] = $campaign;
     
     print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
-    CampaignManagementHelper::OutputIds($nillableCampaignIds);
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
     }
 	
     // Specify the extensions.
@@ -133,7 +116,7 @@ try
     $extension->AppStoreId="AppStoreIdGoesHere";
     $extension->DisplayText= "Contoso";
     $extension->DestinationUrl="DestinationUrlGoesHere";
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'AppAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'AppAdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     // If you supply the AppAdExtension properties above, then you can add this line.
     //$adExtensions[] = $encodedExtension;
     
@@ -170,14 +153,14 @@ try
     $callSchedulingEndDate->Year = date("Y");
     $callScheduling->EndDate = $callSchedulingEndDate;
     $extension->Scheduling = $callScheduling;
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'CallAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'CallAdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $adExtensions[] = $encodedExtension;
 
     // Specify a callout extension.
     
     $extension = new CalloutAdExtension();
     $extension->Text = "Callout Text";
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'CalloutAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'CalloutAdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $adExtensions[] = $encodedExtension;
     
     // Specify a location extension.
@@ -185,13 +168,11 @@ try
     $extension = new LocationAdExtension();
     $extension->PhoneNumber = "206-555-0100";
     $extension->CompanyName = "Alpine Ski House";
-    $extension->IconMediaId = null;  // Using the default map icon
-    $extension->ImageMediaId = null;
     $extension->Address = new Address;
     $extension->Address->StreetAddress = "1234 Washington Place";
     $extension->Address->StreetAddress2 = "Suite 1210";
     $extension->Address->CityName = "Woodinville";
-    $extension->Address->ProvinceName = "WA"; // Can contain the state name or code (e.g. WA)
+    $extension->Address->ProvinceName = "WA"; 
     $extension->Address->CountryCode = "US";
     $extension->Address->PostalCode = "98608";
     $locationScheduling = new Schedule();
@@ -212,8 +193,8 @@ try
     $locationSchedulingEndDate->Year = date("Y");
     $locationScheduling->EndDate = $locationSchedulingEndDate;
     $extension->Scheduling = $locationScheduling;
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'LocationAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
-    $adExtensions[] = $encodedExtension;
+    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'LocationAdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
+    $adExtensions[] = $encodedExtension;  
 
     // Specify a review extension.
     
@@ -221,8 +202,9 @@ try
     $extension->IsExact = true;
     $extension->Source = "Review Source Name";
     $extension->Text = "Review Text";
-    $extension->Url = "http://review.contoso.com"; // The Url of the third-party review. This is not your business Url.
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'ReviewAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+    // The Url of the third-party review. This is not your business Url.
+    $extension->Url = "http://review.contoso.com"; 
+    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'ReviewAdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $adExtensions[] = $encodedExtension;
     
     // Specify a structured snippet extension.
@@ -230,7 +212,7 @@ try
     $extension = new StructuredSnippetAdExtension();
     $extension->Header = "Brands";
     $extension->Values = array("Windows", "Xbox", "Skype");
-    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'StructuredSnippetAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'StructuredSnippetAdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $adExtensions[] = $encodedExtension;
     
     foreach(GetSampleSitelink2AdExtensions() as $encodedExtension)
@@ -240,13 +222,16 @@ try
         
     // Add all extensions to the account's ad extension library
     
-    $adExtensionIdentities = CampaignManagementHelper::AddAdExtensions(
+    print("Add ad extensions.\n\n");
+    $addAdExtensionsResponse = CampaignManagementExampleHelper::AddAdExtensions(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensions
-    	)->AdExtensionIdentities;
+        );    
+    CampaignManagementExampleHelper::OutputArrayOfAdExtensionIdentity($addAdExtensionsResponse->AdExtensionIdentities);
+    CampaignManagementExampleHelper::OutputArrayOfBatchErrorCollection($addAdExtensionsResponse->NestedPartialErrors);
         
-    print("Added ad extensions.\n\n");
-    
+    $adExtensionIdentities = $addAdExtensionsResponse->AdExtensionIdentities;
+
     // DeleteAdExtensionsAssociations, SetAdExtensionsAssociations, and GetAdExtensionsEditorialReasons 
     // operations each require a list of type AdExtensionIdToEntityIdAssociation.
     
@@ -267,23 +252,24 @@ try
         {
             $adExtensionIdToEntityIdAssociations[$index] = new AdExtensionIdToEntityIdAssociation();
             $adExtensionIdToEntityIdAssociations[$index]->AdExtensionId = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;;
-            $adExtensionIdToEntityIdAssociations[$index]->EntityId = $nillableCampaignIds[0];
+            $adExtensionIdToEntityIdAssociations[$index]->EntityId = $nillableCampaignIds->long[0];
                     
             $adExtensionIds[$index] = $adExtensionIdentities->AdExtensionIdentity[$index]->Id;
         }
     };
-    
+
     // Associate the specified ad extensions with the respective campaigns or ad groups. 
     
-    CampaignManagementHelper::SetAdExtensionsAssociations(
+    $setAdExtensionsAssociationsResponse = CampaignManagementExampleHelper::SetAdExtensionsAssociations(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIdToEntityIdAssociations,
     	AssociationType::Campaign
     	);
-    
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($setAdExtensionsAssociationsResponse->PartialErrors);
+
     // Get editorial rejection reasons for the respective ad extension and entity associations.
     
-    $adExtensionEditorialReasonCollection = CampaignManagementHelper::GetAdExtensionsEditorialReasons(
+    $adExtensionEditorialReasonCollection = CampaignManagementExampleHelper::GetAdExtensionsEditorialReasons(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIdToEntityIdAssociations,
     	AssociationType::Campaign
@@ -302,20 +288,20 @@ try
     
     // Get the specified ad extensions from the account'ss ad extension library.
             
-    $adExtensions = CampaignManagementHelper::GetAdExtensionsByIds(
+    $adExtensions = CampaignManagementExampleHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIds,
     	$adExtensionsTypeFilter
-    	)->AdExtensions;
-    
+        )->AdExtensions;
+            
     print("List of ad extensions that were added above:\n\n");
-    CampaignManagementHelper::OutputAdExtensionsWithEditorialReasons($adExtensions, $adExtensionEditorialReasonCollection);
+    CampaignManagementExampleHelper::OutputArrayOfAdExtension($adExtensions);
     
     // Get only the location extensions and remove scheduling.
 
     $adExtensionsTypeFilter = array(AdExtensionsTypeFilter::LocationAdExtension);
 
-    $adExtensions = CampaignManagementHelper::GetAdExtensionsByIds(
+    $adExtensions = CampaignManagementExampleHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIds,
     	$adExtensionsTypeFilter
@@ -330,7 +316,7 @@ try
         if(!empty($extension) && isset($extension->Id))
         {
             // Remove read-only elements that would otherwise cause the update operation to fail.
-            $updateExtension = CampaignManagementHelper::SetReadOnlyAdExtensionElementsToNull($extension);
+            $updateExtension = OutputHelper::SetReadOnlyAdExtensionElementsToNull($extension);
 
             // If you set the Scheduling element null, any existing scheduling set for the ad extension will remain unchanged. 
             // If you set this to any non-null Schedule object, you are effectively replacing existing scheduling 
@@ -338,36 +324,41 @@ try
             // to an empty Schedule object.
             $updateExtension->Scheduling = new Schedule();
 
-            $updateExtensions[] = new SoapVar($updateExtension, SOAP_ENC_OBJECT, 'LocationAdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+            $updateExtensions[] = new SoapVar(
+                $updateExtension, 
+                SOAP_ENC_OBJECT, 
+                'LocationAdExtension', 
+                $GLOBALS['CampaignManagementProxy']->GetNamespace());
+            
             $updateExtensionIds[] = $updateExtension->Id;
         }
     }
 
     print("Removing scheduling from the location ad extensions..\n\n");
-    CampaignManagementHelper::UpdateAdExtensions($GLOBALS['AuthorizationData']->AccountId, $updateExtensions);
-
-    $adExtensions = CampaignManagementHelper::GetAdExtensionsByIds(
+    CampaignManagementExampleHelper::UpdateAdExtensions($GLOBALS['AuthorizationData']->AccountId, $updateExtensions);
+	
+    $adExtensions = CampaignManagementExampleHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$updateExtensionIds,
     	$adExtensionsTypeFilter
     	)->AdExtensions;
 
     print("List of ad extensions that were updated above:\n\n");
-    CampaignManagementHelper::OutputAdExtensionsWithEditorialReasons($adExtensions, null);
+    CampaignManagementExampleHelper::OutputArrayOfAdExtension($adExtensions);
     
     // You should omit these delete operations if you want to view the added entities in the 
     // Bing Ads web application or another tool.
 
     // Remove the specified associations from the respective campaigns or ad groups.
     // The extensions are still available in the account's extensions library.
-    CampaignManagementHelper::DeleteAdExtensionsAssociations(
+    CampaignManagementExampleHelper::DeleteAdExtensionsAssociations(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensionIdToEntityIdAssociations, 
     	AssociationType::Campaign
     );
     
     // Deletes the ad extensions from the account's ad extension library.
-    CampaignManagementHelper::DeleteAdExtensions(
+    CampaignManagementExampleHelper::DeleteAdExtensions(
     	$GLOBALS['AuthorizationData']->AccountId, 
     	$adExtensionIds
     );
@@ -378,140 +369,37 @@ try
     }
 
     // Delete the campaign. 
-    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
-    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds[0]);
+    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
+    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
     
 }
 catch (SoapFault $e)
 {
-	// Output the last request/response.
-	
 	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Campaign Management service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-        ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-        : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %s\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                case 0:    // InternalError
-                    break;
-                case 105:  // InvalidCredentials
-                    break;
-                case 117:  // CallRateExceeded
-                    break;
-                default:
-                    print "Please see MSDN documentation for more details about the error code output above.\n";
-                    break;
-            }
-        }
+        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Campaign Management service operations can throw ApiFaultDetail.
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
     elseif (isset($e->detail->EditorialApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        // If the BatchError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->BatchErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->BatchErrors->BatchError)
-            ? $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError);
-
-            foreach ($errors as $error)
-            {
-                printf("BatchError at Index: %s\n", $error->Index);
-                printf("Code: %s\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 0:     // InternalError
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the EditorialError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->EditorialErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError)
-            ? $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError);
-
-            foreach ($errors as $error)
-            {
-                printf("EditorialError at Index: %s\n", $error->Index);
-                printf("Code: %s\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-                printf("Appealable: %s\nDisapproved Text: %s\nCountry: %s\n", $error->Appealable, $error->DisapprovedText, $error->PublisherCountry);
-
-                switch ($error->Code)
-                {
-                    case 0:     // InternalError
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the OperationError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->OperationErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->OperationErrors->OperationError)
-            ? $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError
-            : array('OperationError' => $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError);
-
-            foreach ($errors as $error)
-            {
-                print "OperationError\n";
-                printf("Code: %s\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 0:     // InternalError
-                        break;
-                    case 106:   // UserIsNotAuthorized
-                        break;
-                    case 1102:  // CampaignServiceInvalidAccountId
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
+        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";
@@ -530,16 +418,6 @@ function GetSampleSitelink2AdExtensions()
         $extension->Description2 = "No Upfront Cost.";
         $extension->DisplayText = "Women's Shoe Sale " . ($index+1);
 
-        // Destination URLs are deprecated. 
-        // If you are currently using the Destination URL, you must upgrade to Final URLs. 
-        // Here is an example of a DestinationUrl you might have used previously. 
-        // $extension->DestinationUrl = "http://www.contoso.com/womenshoesale/?season=spring&promocode=PROMO123";
-
-        // To migrate from DestinationUrl to FinalUrls, you can set DestinationUrl
-        // to an empty string when updating the sitelink. If you are removing DestinationUrl,
-        // then FinalUrls is required.
-        // $extension->DestinationUrl = "";
-
         // With FinalUrls you can separate the tracking template, custom parameters, and 
         // landing page URLs. 
 
@@ -550,16 +428,8 @@ function GetSampleSitelink2AdExtensions()
         // for mobile devices.
         $extension->FinalMobileUrls = array();
         $extension->FinalMobileUrls[] = "http://mobile.contoso.com/womenshoesale";
- 
-        // You could use a tracking template which would override the campaign level
-        // tracking template. Tracking templates defined for lower level entities 
-        // override those set for higher level entities.
-        // In this example we are using the campaign level tracking template.
-        $extension->TrackingUrlTemplate = null;
 
-        // Set custom parameters that are specific to this sitelink, 
-        // and can be used by the sitelink, ad group, campaign, or account level tracking template. 
-        // In this example we are using the campaign level tracking template.
+        // Set custom parameters that are specific to this sitelink.
         $extension->UrlCustomParameters = new CustomParameters();
         $extension->UrlCustomParameters->Parameters = array();
         $customParameter1 = new CustomParameter();
@@ -571,9 +441,11 @@ function GetSampleSitelink2AdExtensions()
         $customParameter2->Value = "summer";
         $extension->UrlCustomParameters->Parameters[] = $customParameter2;   
         
-        $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'Sitelink2AdExtension', $GLOBALS['CampaignProxy']->GetNamespace());
+        $encodedExtension = new SoapVar($extension, SOAP_ENC_OBJECT, 'Sitelink2AdExtension', $GLOBALS['CampaignManagementProxy']->GetNamespace());
         $adExtensions[] = $encodedExtension;
     }
     
     return $adExtensions;
 }
+
+

@@ -44,7 +44,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The language of the country the ad is served in. */

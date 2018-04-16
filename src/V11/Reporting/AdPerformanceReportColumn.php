@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The account currency type. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The number of times an ad has been displayed on search results pages. */
@@ -169,6 +169,15 @@ namespace Microsoft\BingAds\V11\Reporting;
 
         /** The title part 2 attribute of an ad. */
         const TitlePart2 = 'TitlePart2';
+
+        /** The shorter of two possible responsive ad headlines for Audience campaigns. */
+        const Headline = 'Headline';
+
+        /** The longer of two possible responsive ad headlines for Audience campaigns. */
+        const LongHeadline = 'LongHeadline';
+
+        /** Depending on your responsive ad's placement, your business's name may appear in your ad. */
+        const BusinessName = 'BusinessName';
 
         /** The path 1 attribute of an ad. */
         const Path1 = 'Path1';

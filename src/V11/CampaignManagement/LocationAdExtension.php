@@ -38,13 +38,13 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $GeoPoint;
 
         /**
-         * The identifier of an icon used to mark the business location on Bing Maps.
+         * Reserved for internal use.
          * @var integer
          */
         public $IconMediaId;
 
         /**
-         * The identifier of the image to include in the ad.
+         * Reserved for internal use.
          * @var integer
          */
         public $ImageMediaId;

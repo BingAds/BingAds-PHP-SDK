@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The Bing Ads assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The age group of the audience who viewed the ad. */

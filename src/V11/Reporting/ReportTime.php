@@ -16,6 +16,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by AdExtensionDetailReportRequest
      * @used-by AdGroupPerformanceReportRequest
      * @used-by AdPerformanceReportRequest
+     * @used-by AgeGenderAudienceReportRequest
      * @used-by AgeGenderDemographicReportRequest
      * @used-by AudiencePerformanceReportRequest
      * @used-by CallDetailReportRequest
@@ -29,9 +30,11 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by GoalsAndFunnelsReportRequest
      * @used-by KeywordPerformanceReportRequest
      * @used-by ProductDimensionPerformanceReportRequest
+     * @used-by ProductMatchCountReportRequest
      * @used-by ProductPartitionPerformanceReportRequest
      * @used-by ProductPartitionUnitPerformanceReportRequest
      * @used-by ProductSearchQueryPerformanceReportRequest
+     * @used-by ProfessionalDemographicsAudienceReportRequest
      * @used-by PublisherUsagePerformanceReportRequest
      * @used-by SearchCampaignChangeHistoryReportRequest
      * @used-by SearchQueryPerformanceReportRequest

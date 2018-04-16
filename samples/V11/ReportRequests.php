@@ -7,9 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CustomerManagementHelper.php";
-include "/ReportingHelper.php";
+include "/AuthHelper.php";
+include "/ReportRequestLibrary.php";
 
 use SoapVar;
 use SoapFault;
@@ -23,14 +22,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
-use Microsoft\BingAds\Samples\V11\ReportingHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\ReportRequestLibrary;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -56,40 +53,22 @@ if (!is_dir($folder))
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
-
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
+    AuthHelper::Authenticate();
 
     $GLOBALS['ReportingProxy'] = new ServiceClient(ServiceClientType::ReportingVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     // You can submit one of the example reports, or build your own.
-    $report = ReportingHelper::GetAccountPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
-    //$report = ReportingHelper::GetAudiencePerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
-    //$report = ReportingHelper::GetKeywordPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
+    $report = ReportRequestLibrary::GetAccountPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
+    $report = ReportRequestLibrary::GetAudiencePerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
+    $report = ReportRequestLibrary::GetKeywordPerformanceReportRequest($GLOBALS['AuthorizationData']->AccountId);
     
     // SubmitGenerateReport helper method calls the corresponding Bing Ads service operation
     // to request the report identifier. The identifier is used to check report generation status
     // before downloading the report.
     
-    $reportRequestId = ReportingHelper::SubmitGenerateReport($report)->ReportRequestId;
+    $reportRequestId = ReportRequestLibrary::SubmitGenerateReport($report)->ReportRequestId;
     
     printf("Report Request ID: %s\n\n", $reportRequestId);
     
@@ -108,7 +87,7 @@ try
     	// PollGenerateReport helper method calls the corresponding Bing Ads service operation
     	// to get the report request status.
     	
-    	$reportRequestStatus = ReportingHelper::PollGenerateReport($reportRequestId)->ReportRequestStatus;
+    	$reportRequestStatus = ReportRequestLibrary::PollGenerateReport($reportRequestId)->ReportRequestStatus;
     
     	if ($reportRequestStatus->Status == ReportRequestStatusType::Success ||
     		$reportRequestStatus->Status == ReportRequestStatusType::Error)
@@ -151,108 +130,27 @@ try
 }
 catch (SoapFault $e)
 {
-    // Output the last request/response.
-
 	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	 
-	// Reporting service operations can throw AdApiFaultDetail.
-	if (isset($e->detail->AdApiFaultDetail))
-	{
-		// Log this fault.
-
-		print "The operation failed with the following faults:\n";
-
-		$errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-		? $e->detail->AdApiFaultDetail->Errors->AdApiError
-		: array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-		// If the AdApiError array is not null, the following are examples of error codes that may be found.
-		foreach ($errors as $error)
-		{
-			print "AdApiError\n";
-			printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-			switch ($error->Code)
-			{
-				case 0:    // InternalError
-					break;
-				case 105:  // InvalidCredentials
-					break;
-				default:
-					print "Please see MSDN documentation for more details about the error code output above.\n";
-					break;
-			}
-		}
-	}
-
-	// Reporting service operations can throw ApiFaultDetail.
-	elseif (isset($e->detail->ApiFaultDetail))
-	{
-		// Log this fault.
-
-		print "The operation failed with the following faults:\n";
-
-		// If the BatchError array is not null, the following are examples of error codes that may be found.
-		if (!empty($e->detail->ApiFaultDetail->BatchErrors))
-		{
-			$errors = is_array($e->detail->ApiFaultDetail->BatchErrors->BatchError)
-			? $e->detail->ApiFaultDetail->BatchErrors->BatchError
-			: array('BatchError' => $e->detail->ApiFaultDetail->BatchErrors->BatchError);
-
-			foreach ($errors as $error)
-			{
-				printf("BatchError at Index: %d\n", $error->Index);
-				printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-				switch ($error->Code)
-				{
-					case 0:     // InternalError
-						break;
-					default:
-						print "Please see MSDN documentation for more details about the error code output above.\n";
-						break;
-				}
-			}
-		}
-
-		// If the OperationError array is not null, the following are examples of error codes that may be found.
-		if (!empty($e->detail->ApiFaultDetail->OperationErrors))
-		{
-			$errors = is_array($e->detail->ApiFaultDetail->OperationErrors->OperationError)
-			? $e->detail->ApiFaultDetail->OperationErrors->OperationError
-			: array('OperationError' => $e->detail->ApiFaultDetail->OperationErrors->OperationError);
-
-			foreach ($errors as $error)
-			{
-				print "OperationError\n";
-				printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-				switch ($error->Code)
-				{
-					case 0:     // InternalError
-						break;
-					case 106:   // UserIsNotAuthorized
-						break;
-					case 2100:  // ReportingServiceInvalidReportId
-						break;
-					default:
-						print "Please see MSDN documentation for more details about the error code output above.\n";
-						break;
-				}
-			}
-		}
-	}
+	
+    if (isset($e->detail->AdApiFaultDetail))
+    {
+        ReportingExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
+    }
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        ReportingExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

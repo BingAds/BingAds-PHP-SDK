@@ -7,9 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -37,14 +36,12 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
@@ -53,39 +50,21 @@ ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
-
-    $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     // Before you can track conversions or target audiences using a remarketing list, 
     // you need to create a UET tag in Bing Ads (web application or API) and then 
     // add the UET tag tracking code to every page of your website. For more information, please see 
-    // Universal Event Tracking at https://msdn.microsoft.com/library/bing-ads-universal-event-tracking-guide.aspx.
+    // Universal Event Tracking at https://docs.microsoft.com/en-us/bingads/guides/universal-event-tracking.
 
     // First you should call the GetUetTagsByIds operation to check whether a tag has already been created. 
     // You can leave the TagIds element null or empty to request all UET tags available for the customer.
 
-    $uetTags = CampaignManagementHelper::GetUetTagsByIds(null)->UetTags;
+    $uetTags = CampaignManagementExampleHelper::GetUetTagsByIds(null)->UetTags;
     
     // If you do not already have a UET tag that can be used, or if you need another UET tag, 
     // call the AddUetTags service operation to create a new UET tag. If the call is successful, 
@@ -100,7 +79,7 @@ try
         $uetTag->Name = "New Uet Tag";
         $addUetTags[] = $uetTag;
                 
-        $uetTags = CampaignManagementHelper::AddUetTags($addUetTags)->UetTags;
+        $uetTags = CampaignManagementExampleHelper::AddUetTags($addUetTags)->UetTags;
     }
 
     if ($uetTags == null || count($uetTags) < 1)
@@ -114,7 +93,7 @@ try
     print("List of all UET Tags:\n\n");
     foreach ($uetTags->UetTag as $uetTag)
     {
-        CampaignManagementHelper::OutputUetTag($uetTag);
+        CampaignManagementExampleHelper::OutputUetTag($uetTag);
     }
 
     // After you retreive the tracking script from the AddUetTags or GetUetTagsByIds operation, 
@@ -122,8 +101,7 @@ try
     // or your website administrator, add it to your entire website in either the head or body sections. 
     // If your website has a master page, then that is the best place to add it because you add it once 
     // and it is included on all pages. For more information, please see 
-    // Universal Event Tracking at https://msdn.microsoft.com/library/bing-ads-universal-event-tracking-guide.aspx.
-
+    // Universal Event Tracking at https://docs.microsoft.com/en-us/bingads/guides/universal-event-tracking.
 
     // We will use the same UET tag for the remainder of this example.
 
@@ -132,7 +110,7 @@ try
     // Optionally you can update the name and description of a UetTag with the UpdateUetTags operation.
 
     print("UET Tag BEFORE update:\n\n");
-    CampaignManagementHelper::OutputUetTag($uetTags->UetTag[0]);
+    CampaignManagementExampleHelper::OutputUetTag($uetTags->UetTag[0]);
 
     $uetTags = array();
     $updateUetTag = new UetTag();
@@ -141,14 +119,14 @@ try
     $updateUetTag->Name = "Updated Uet Tag Name " . $_SERVER['REQUEST_TIME'];
     $uetTags[] = $updateUetTag;
     
-    CampaignManagementHelper::UpdateUetTags($uetTags);
+    CampaignManagementExampleHelper::UpdateUetTags($uetTags);
 
     $tagIds = array();
     $tagIds[] = $tagId;
-    $uetTags = CampaignManagementHelper::GetUetTagsByIds($tagIds)->UetTags;
+    $uetTags = CampaignManagementExampleHelper::GetUetTagsByIds($tagIds)->UetTags;
 
     print("UET Tag AFTER update:\n\n");
-    CampaignManagementHelper::OutputUetTag($uetTags->UetTag[0]);
+    CampaignManagementExampleHelper::OutputUetTag($uetTags->UetTag[0]);
     
     // Add conversion goals that depend on the UET Tag Id retreived above.
     // Please note that you cannot delete conversion goals. If you want to stop 
@@ -169,7 +147,7 @@ try
     $addDurationGoal->Scope = EntityScope::Account;
     $addDurationGoal->Status = ConversionGoalStatus::Active;
     $addDurationGoal->TagId = $tagId;
-    $encodedDurationGoal = new SoapVar($addDurationGoal, SOAP_ENC_OBJECT, 'DurationGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedDurationGoal = new SoapVar($addDurationGoal, SOAP_ENC_OBJECT, 'DurationGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $addConversionGoals[] = $encodedDurationGoal;
     
     
@@ -198,7 +176,7 @@ try
     // Could be length of the video played etc.
     $addEventGoal->Value = 5.00;
     $addEventGoal->ValueOperator = ValueOperator::Equals;
-    $encodedEventGoal = new SoapVar($addEventGoal, SOAP_ENC_OBJECT, 'EventGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedEventGoal = new SoapVar($addEventGoal, SOAP_ENC_OBJECT, 'EventGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $addConversionGoals[] = $encodedEventGoal;
         
     $addPagesViewedPerVisitGoal = new PagesViewedPerVisitGoal();
@@ -214,7 +192,7 @@ try
     $addPagesViewedPerVisitGoal->Scope = EntityScope::Account;
     $addPagesViewedPerVisitGoal->Status = ConversionGoalStatus::Active;
     $addPagesViewedPerVisitGoal->TagId = $tagId;
-    $encodedPagesViewedPerVisitGoal = new SoapVar($addPagesViewedPerVisitGoal, SOAP_ENC_OBJECT, 'PagesViewedPerVisitGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedPagesViewedPerVisitGoal = new SoapVar($addPagesViewedPerVisitGoal, SOAP_ENC_OBJECT, 'PagesViewedPerVisitGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $addConversionGoals[] = $encodedPagesViewedPerVisitGoal;
     
     $addUrlGoal = new UrlGoal();
@@ -231,7 +209,7 @@ try
     $addUrlGoal->UrlExpression = "contoso";
     $addUrlGoal->UrlOperator = ExpressionOperator::Contains;
     $addUrlGoal->TagId = $tagId;
-    $encodedUrlGoal = new SoapVar($addUrlGoal, SOAP_ENC_OBJECT, 'UrlGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedUrlGoal = new SoapVar($addUrlGoal, SOAP_ENC_OBJECT, 'UrlGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $addConversionGoals[] = $encodedUrlGoal;
     
     $addAppInstallGoal = new AppInstallGoal();
@@ -254,10 +232,10 @@ try
     // The TagId is inherited from the ConversionGoal base class,
     // however, App Install goals do not use a UET tag.
     $addAppInstallGoal->TagId = null;
-    $encodedAppInstallGoal = new SoapVar($addAppInstallGoal, SOAP_ENC_OBJECT, 'AppInstallGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedAppInstallGoal = new SoapVar($addAppInstallGoal, SOAP_ENC_OBJECT, 'AppInstallGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $addConversionGoals[] = $encodedAppInstallGoal;
     
-    $addConversionGoalsResponse = CampaignManagementHelper::AddConversionGoals($addConversionGoals);
+    $addConversionGoalsResponse = CampaignManagementExampleHelper::AddConversionGoals($addConversionGoals);
 
     // Find the conversion goals that were added successfully. 
 
@@ -271,7 +249,7 @@ try
     }
 
     print("List of errors returned from AddConversionGoals (if any):\n\n");
-    CampaignManagementHelper::OutputPartialErrors($addConversionGoalsResponse->PartialErrors);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addConversionGoalsResponse->PartialErrors);
 
     $conversionGoalTypes = array(
         ConversionGoalType::AppInstall,
@@ -281,14 +259,11 @@ try
         ConversionGoalType::Url
     );
     
-    $getConversionGoals = CampaignManagementHelper::GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
+    $getConversionGoals = CampaignManagementExampleHelper::GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
 
     print("List of conversion goals BEFORE update:\n\n");
-    foreach ($getConversionGoals->ConversionGoal as $conversionGoal)
-    {
-        CampaignManagementHelper::OutputConversionGoal($conversionGoal);
-    }
-
+    CampaignManagementExampleHelper::OutputArrayOfConversionGoal($getConversionGoals);
+    
     $updateConversionGoals = array();
     
     $updateDurationGoal = new DurationGoal();
@@ -312,7 +287,7 @@ try
     // You can update the tag as needed. In this example we will explicitly use the same UET tag.
     // To keep the UET tag unchanged, you can also leave this element nil or empty.
     $updateDurationGoal->TagId = $tagId;
-    $encodedDurationGoal = new SoapVar($updateDurationGoal, SOAP_ENC_OBJECT, 'DurationGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedDurationGoal = new SoapVar($updateDurationGoal, SOAP_ENC_OBJECT, 'DurationGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $updateConversionGoals[] = $encodedDurationGoal;
     
     $updateEventGoal = new EventGoal();
@@ -347,7 +322,7 @@ try
     // unless you want them deleted during the update conversion goal operation.
     $updateEventGoal->Value = 5.00;
     $updateEventGoal->ValueOperator = ValueOperator::Equals;
-    $encodedEventGoal = new SoapVar($updateEventGoal, SOAP_ENC_OBJECT, 'EventGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedEventGoal = new SoapVar($updateEventGoal, SOAP_ENC_OBJECT, 'EventGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $updateConversionGoals[] = $encodedEventGoal;
     
     $updatePagesViewedPerVisitGoal = new PagesViewedPerVisitGoal();
@@ -359,7 +334,7 @@ try
     // any previous revenue settings, set the Revenue element to an empty ConversionGoalRevenue object.
     $updatePagesViewedPerVisitGoalRevenue = new ConversionGoalRevenue();
     $updatePagesViewedPerVisitGoal->Revenue = $updatePagesViewedPerVisitGoalRevenue;
-    $encodedPagesViewedPerVisitGoal = new SoapVar($updatePagesViewedPerVisitGoal, SOAP_ENC_OBJECT, 'PagesViewedPerVisitGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedPagesViewedPerVisitGoal = new SoapVar($updatePagesViewedPerVisitGoal, SOAP_ENC_OBJECT, 'PagesViewedPerVisitGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $updateConversionGoals[] = $encodedPagesViewedPerVisitGoal;
     
     $updateUrlGoal = new UrlGoal();
@@ -368,148 +343,50 @@ try
     // If not specified during update, the previous Url settings are retained.
     $updateUrlGoal->UrlExpression = null;
     $updateUrlGoal->UrlOperator = ExpressionOperator::BeginsWith;
-    $encodedUrlGoal = new SoapVar($updateUrlGoal, SOAP_ENC_OBJECT, 'UrlGoal', $GLOBALS['CampaignProxy']->GetNamespace());
+    $encodedUrlGoal = new SoapVar($updateUrlGoal, SOAP_ENC_OBJECT, 'UrlGoal', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     $updateConversionGoals[] = $encodedUrlGoal;
     
 
-    $updateConversionGoalsResponse = CampaignManagementHelper::UpdateConversionGoals($updateConversionGoals);
+    $updateConversionGoalsResponse = CampaignManagementExampleHelper::UpdateConversionGoals($updateConversionGoals);
     
     print("List of errors returned from AddConversionGoals (if any):\n\n");
-    CampaignManagementHelper::OutputPartialErrors($updateConversionGoalsResponse->PartialErrors);
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($updateConversionGoalsResponse->PartialErrors);
 
-    $getConversionGoals = CampaignManagementHelper::GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
+    $getConversionGoals = CampaignManagementExampleHelper::GetConversionGoalsByIds($conversionGoalIds, $conversionGoalTypes)->ConversionGoals;
 
     print("List of conversion goals AFTER update:\n\n");
-    foreach ($getConversionGoals->ConversionGoal as $conversionGoal)
-    {
-        CampaignManagementHelper::OutputConversionGoal($conversionGoal);
-    }
-
+    CampaignManagementExampleHelper::OutputArrayOfConversionGoal($getConversionGoals);
+    
     print("Program execution completed\n"); 
 
 }
 catch (SoapFault $e)
 {
-    // Output the last request/response.
-	
-    print "\nLast SOAP request/response:\n";
+	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
+	print $GLOBALS['Proxy']->GetWsdl() . "\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Campaign Management service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-        ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-        : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                case 105:  // InvalidCredentials
-                    break;
-                case 117:  // CallRateExceeded
-                    break;
-                default:
-                    print "Please see MSDN documentation for more details about the error code Output above.\n";
-                    break;
-            }
-        }
+        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Campaign Management service operations can throw ApiFaultDetail.
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
     elseif (isset($e->detail->EditorialApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        // If the BatchError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->BatchErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->BatchErrors->BatchError)
-            ? $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError);
-
-            foreach ($errors as $error)
-            {
-                printf("BatchError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code Output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the EditorialError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->EditorialErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError)
-            ? $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError);
-
-            foreach ($errors as $error)
-            {
-                printf("EditorialError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-                printf("Appealable: %s\nDisapproved Text: %s\nCountry: %s\n", $error->Appealable, $error->DisapprovedText, $error->PublisherCountry);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code Output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the OperationError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->OperationErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->OperationErrors->OperationError)
-            ? $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError
-            : array('OperationError' => $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError);
-
-            foreach ($errors as $error)
-            {
-                print "OperationError\n";
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 106:   // UserIsNotAuthorized
-                        break;
-                    case 1102:  // CampaignServiceInvalidAccountId
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code Output above.\n";
-                        break;
-                }
-            }
-        }
+        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

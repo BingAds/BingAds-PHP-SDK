@@ -71,7 +71,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The Bing Ads assigned identifier of the dynamic ad target, also known in Campaign Management and Bulk API as the ad group criterion ID. */
         const DynamicAdTargetId = 'DynamicAdTargetId';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The language of the country the ad is served in. */

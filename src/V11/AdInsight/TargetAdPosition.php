@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 
 {
     /**
-     * Defines the possible positions where you can target an ad to appear in the search results or on a content-based webpage.
+     * Defines the possible positions where you can target an ad to appear in the search results.
      * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/targetadposition?view=bingads-11 TargetAdPosition Value Set
      * 
      * @used-by GetEstimatedBidByKeywordIdsRequest

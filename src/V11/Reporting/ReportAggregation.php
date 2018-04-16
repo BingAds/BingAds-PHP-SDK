@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V11\Reporting;
      * @used-by CampaignPerformanceReportRequest
      * @used-by KeywordPerformanceReportRequest
      * @used-by ProductDimensionPerformanceReportRequest
+     * @used-by ProductMatchCountReportRequest
      * @used-by ProductPartitionPerformanceReportRequest
      * @used-by ProductPartitionUnitPerformanceReportRequest
      * @used-by ProductSearchQueryPerformanceReportRequest

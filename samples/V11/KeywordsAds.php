@@ -7,9 +7,8 @@ namespace Microsoft\BingAds\Samples\V11;
 
 require_once "/../vendor/autoload.php";
 
-include "/../AuthHelper.php";
-include "/CampaignManagementHelper.php";
-include "/CustomerManagementHelper.php";
+include "/AuthHelper.php";
+include "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -44,45 +43,25 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementHelper;
-use Microsoft\BingAds\Samples\V11\CustomerManagementHelper;
+use Microsoft\BingAds\Samples\V11\AuthHelper;
+use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerProxy'] = null; 
-$GLOBALS['CampaignProxy'] = null; 
+$GLOBALS['CampaignManagementProxy'] = null; 
 
 // Disable WSDL caching.
 
 ini_set("soap.wsdl_cache_enabled", "0");
 ini_set("soap.wsdl_cache_ttl", "0");
-
+    
 try
 {
-    // You should authenticate for Bing Ads services with a Microsoft Account, 
-    // instead of providing the Bing Ads username and password set. 
+    // Authenticate for Bing Ads services with a Microsoft Account.
     
-    AuthHelper::AuthenticateWithOAuth();
+    AuthHelper::Authenticate();
 
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    //AuthHelper::AuthenticateWithUserName();
-
-    $GLOBALS['CustomerProxy'] = new ServiceClient(ServiceClientType::CustomerManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementHelper::GetUser(null)->User;
-
-    // For this example we'll use the first account.
-
-    $accounts = CustomerManagementHelper::SearchAccountsByUserId($user->Id)->Accounts;
-    $GLOBALS['AuthorizationData']->AccountId = $accounts->Account[0]->Id;
-    $GLOBALS['AuthorizationData']->CustomerId = $accounts->Account[0]->ParentCustomerId;
-
-    $GLOBALS['CampaignProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion11, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
 
     // Let's create a new budget and share it with a new campaign.
 
@@ -94,7 +73,7 @@ try
     $budget->Name = "My Shared Budget " . $_SERVER['REQUEST_TIME'];
     
     $budgets[] = $budget;
-    $budgetIds = CampaignManagementHelper::AddBudgets($budgets)->BudgetIds;
+    $budgetIds = CampaignManagementExampleHelper::AddBudgets($budgets)->BudgetIds;
                 
     // Specify one or more campaigns.
     
@@ -120,7 +99,7 @@ try
         $biddingScheme, 
         SOAP_ENC_OBJECT, 
         'EnhancedCpcBiddingScheme', 
-        $GLOBALS['CampaignProxy']->GetNamespace()
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
         );
         
     // Used with FinalUrls shown in the ads that we will add below.
@@ -155,7 +134,7 @@ try
         $biddingScheme, 
         SOAP_ENC_OBJECT, 
         'ManualCpcBiddingScheme', 
-        $GLOBALS['CampaignProxy']->GetNamespace()
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
         );
     
     // You could use a tracking template which would override the campaign level
@@ -186,7 +165,7 @@ try
         $biddingScheme, 
         SOAP_ENC_OBJECT, 
         'InheritFromParentBiddingScheme', 
-        $GLOBALS['CampaignProxy']->GetNamespace()
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
         );
     $keywords[] = $keyword;
 
@@ -203,7 +182,7 @@ try
         $biddingScheme, 
         SOAP_ENC_OBJECT, 
         'InheritFromParentBiddingScheme', 
-        $GLOBALS['CampaignProxy']->GetNamespace()
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
         );
     $keywords[] = $keyword;
 
@@ -220,7 +199,7 @@ try
         $biddingScheme, 
         SOAP_ENC_OBJECT, 
         'InheritFromParentBiddingScheme', 
-        $GLOBALS['CampaignProxy']->GetNamespace()
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
         );
     $keywords[] = $keyword;
 
@@ -270,7 +249,7 @@ try
         $customParameter2->Value = "summer";
         $expandedTextAd->UrlCustomParameters->Parameters[] = $customParameter2;   
 
-        $ads[] = new SoapVar($expandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignProxy']->GetNamespace());
+        $ads[] = new SoapVar($expandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignManagementProxy']->GetNamespace());
     }
 
     $ads[1]->enc_value->TitlePart2 = "Quick & Easy Setup";
@@ -281,35 +260,35 @@ try
     // Add the campaign, ad group, keywords, and ads
     
     print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds->long;
-    CampaignManagementHelper::OutputIds($nillableCampaignIds);
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
     }
 
     print "AddAdGroups\n";
-    $addAdGroupsResponse = CampaignManagementHelper::AddAdGroups($nillableCampaignIds[0], $adGroups);
-    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds->long;
-    CampaignManagementHelper::OutputIds($nillableAdGroupIds);
+    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups($nillableCampaignIds->long[0], $adGroups);
+    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addAdGroupsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors->BatchError);
     }
 
     print "AddKeywords\n";
-    $addKeywordsResponse = CampaignManagementHelper::AddKeywords($nillableAdGroupIds[0], $keywords);
-    $nillableKeywordIds = $addKeywordsResponse->KeywordIds->long;
-    CampaignManagementHelper::OutputIds($nillableKeywordIds);
+    $addKeywordsResponse = CampaignManagementExampleHelper::AddKeywords($nillableAdGroupIds->long[0], $keywords);
+    $nillableKeywordIds = $addKeywordsResponse->KeywordIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableKeywordIds);
     if(isset($addKeywordsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addKeywordsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addKeywordsResponse->PartialErrors->BatchError);
     }
 
 	print "AddAds\n";
-    $addAdsResponse = CampaignManagementHelper::AddAds($nillableAdGroupIds[0], $ads);
-    $nillableAdIds = $addAdsResponse->AdIds->long;
-    CampaignManagementHelper::OutputIds($nillableAdIds);
+    $addAdsResponse = CampaignManagementExampleHelper::AddAds($nillableAdGroupIds->long[0], $ads);
+    $nillableAdIds = $addAdsResponse->AdIds;
+    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdIds);
     if(isset($addAdsResponse->PartialErrors->BatchError)){
-        CampaignManagementHelper::OutputPartialErrors($addAdsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors->BatchError);
     }
           
     
@@ -319,9 +298,9 @@ try
     // the budget amount of a campaign that has a shared budget, the service will return 
     // the CampaignServiceCannotUpdateSharedBudget error code.
 
-    $getCampaigns = CampaignManagementHelper::GetCampaignsByAccountId(
+    $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByAccountId(
             $GLOBALS['AuthorizationData']->AccountId, 
-            CampaignManagementHelper::AllCampaignTypes)->Campaigns;
+            AuthHelper::CampaignTypes)->Campaigns;
 
     $updateCampaigns = array();
     $updateBudgets = array();
@@ -345,17 +324,17 @@ try
         // To simply the example we will update the first 100.
         $getUniqueBudgetIds = array_unique($getBudgetIds, SORT_REGULAR);
         $top100BudgetIds = array_slice($getUniqueBudgetIds, 0, 100);
-        $getBudgets = CampaignManagementHelper::GetBudgetsByIds($top100BudgetIds)->Budgets;
+        $getBudgets = CampaignManagementExampleHelper::GetBudgetsByIds($top100BudgetIds)->Budgets;
 
         print("List of shared budgets BEFORE update:\n\n");
         foreach ($getBudgets->Budget as $budget)
         {
             print("Budget:\n");
-            CampaignManagementHelper::OutputBudget($budget);
+            CampaignManagementExampleHelper::OutputBudget($budget);
         }
 
         print("List of campaigns that share each budget:\n\n");
-        $getCampaignIdCollection = CampaignManagementHelper::GetCampaignIdsByBudgetIds($top100BudgetIds)->CampaignIdCollection;
+        $getCampaignIdCollection = CampaignManagementExampleHelper::GetCampaignIdsByBudgetIds($top100BudgetIds)->CampaignIdCollection;
         for($index = 0; $index < count($getCampaignIdCollection); $index++)
         {
             printf("BudgetId: %s\n", $top100BudgetIds[$index]);
@@ -379,15 +358,15 @@ try
                 $updateBudgets[] = $budget;
             }
         }
-        CampaignManagementHelper::UpdateBudgets($updateBudgets);
+        CampaignManagementExampleHelper::UpdateBudgets($updateBudgets);
 
-        $getBudgets = CampaignManagementHelper::GetBudgetsByIds($top100BudgetIds)->Budgets;
+        $getBudgets = CampaignManagementExampleHelper::GetBudgetsByIds($top100BudgetIds)->Budgets;
 
         print("List of shared budgets AFTER update:\n\n");
         foreach ($getBudgets->Budget as $budget)
         {
             print("Budget:\n");
-            CampaignManagementHelper::OutputBudget($budget);
+            CampaignManagementExampleHelper::OutputBudget($budget);
         }
     }
 
@@ -402,7 +381,7 @@ try
         {
             $campaign = $getCampaigns->Campaign[$index];
             print("Campaign:\n");
-            CampaignManagementHelper::OutputCampaign($campaign);
+            CampaignManagementExampleHelper::OutputCampaign($campaign);
 
             $updateCampaign = new Campaign();
             $updateCampaign->Id = $campaign->Id;
@@ -425,18 +404,18 @@ try
             $index++;
         }
         
-        CampaignManagementHelper::UpdateCampaigns($GLOBALS['AuthorizationData']->AccountId, $updateCampaigns);
+        CampaignManagementExampleHelper::UpdateCampaigns($GLOBALS['AuthorizationData']->AccountId, $updateCampaigns);
 
-        $getCampaigns = CampaignManagementHelper::GetCampaignsByIds(
+        $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByIds(
             $GLOBALS['AuthorizationData']->AccountId, 
             $getCampaignIds, 
-            CampaignManagementHelper::AllCampaignTypes)->Campaigns;
+            AuthHelper::CampaignTypes)->Campaigns;
 
         print("List of campaigns AFTER update:\n");
         foreach ($getCampaigns->Campaign as $campaign)
         {
             print("Campaign:\n");
-            CampaignManagementHelper::OutputCampaign($campaign);
+            CampaignManagementExampleHelper::OutputCampaign($campaign);
         }
     }
     
@@ -446,24 +425,24 @@ try
     $updateAds = array();
 
     $updateExpandedTextAd = new ExpandedTextAd();
-    $updateExpandedTextAd->Id = $nillableAdIds[0];
+    $updateExpandedTextAd->Id = $nillableAdIds->long[0];
     $updateExpandedTextAd->Text = "Huge Savings on All Red Shoes.";
     // Set the UrlCustomParameters element to null or empty to retain any 
     // existing custom parameters.
     $updateExpandedTextAd->UrlCustomParameters = null;
-    $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignProxy']->GetNamespace());
+    $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
     $updateExpandedTextAd = new ExpandedTextAd();
-    $updateExpandedTextAd->Id = $nillableAdIds[1];
+    $updateExpandedTextAd->Id = $nillableAdIds->long[1];
     $updateExpandedTextAd->Text = "Huge Savings on All Red Shoes.";
     // To remove all custom parameters, set the Parameters element of the  
     // CustomParameters object to null or empty.
     $updateExpandedTextAd->UrlCustomParameters = new CustomParameters();
     $updateExpandedTextAd->UrlCustomParameters->Parameters = null;
-    $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignProxy']->GetNamespace());
+    $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignManagementProxy']->GetNamespace());
  
     $updateExpandedTextAd = new ExpandedTextAd();
-    $updateExpandedTextAd->Id = $nillableAdIds[2];
+    $updateExpandedTextAd->Id = $nillableAdIds->long[2];
     $updateExpandedTextAd->Text = "Huge Savings on All Red Shoes.";
     // To remove a subset of custom parameters, specify the custom parameters that 
     // you want to keep in the Parameters element of the CustomParameters object.
@@ -473,22 +452,23 @@ try
     $updateCustomParameter->Key = "promoCode";
     $updateCustomParameter->Value = "updatedpromo";
     $updateExpandedTextAd->UrlCustomParameters->Parameters[] = $updateCustomParameter;
-    $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignProxy']->GetNamespace());
+    $updateAds[] = new SoapVar($updateExpandedTextAd, SOAP_ENC_OBJECT, 'ExpandedTextAd', $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
     // As an exercise you can view the results before and after update.
 
     $adTypes = array(AdType::AppInstall, AdType::DynamicSearch, AdType::ExpandedText, AdType::Product, AdType::Text);
-    $ads = CampaignManagementHelper::GetAdsByAdGroupId($nillableAdGroupIds[0], $adTypes);
-    var_dump($ads);
-    $updateAdsResponse = CampaignManagementHelper::UpdateAds($nillableAdGroupIds[0], $updateAds);
-    $ads = CampaignManagementHelper::GetAdsByAdGroupId($nillableAdGroupIds[0], $adTypes);
-    var_dump($ads);
+    $ads = CampaignManagementExampleHelper::GetAdsByAdGroupId($nillableAdGroupIds->long[0], $adTypes);
+    CampaignManagementExampleHelper::OutputArrayOfAd($ads);
+
+    $updateAdsResponse = CampaignManagementExampleHelper::UpdateAds($nillableAdGroupIds->long[0], $updateAds);
+    $ads = CampaignManagementExampleHelper::GetAdsByAdGroupId($nillableAdGroupIds->long[0], $adTypes);
+    CampaignManagementExampleHelper::OutputArrayOfAd($ads);
 
     // Here is a simple example that updates the keyword bid to use the ad group bid
 
     $updateKeywords = array();
     $updateKeyword = new Keyword();
-    $updateKeyword->Id = $nillableKeywordIds[1];
+    $updateKeyword->Id = $nillableKeywordIds->long[1];
     // Set Bid.Amount null (new empty Bid) to use the ad group bid.
     // If the Bid property is null, your keyword bid will not be updated.
     $updateKeyword->Bid = new Bid();
@@ -496,147 +476,53 @@ try
 
     // As an exercise you can view the results before and after update.
 
-    $keywords = CampaignManagementHelper::GetKeywordsByAdGroupId($nillableAdGroupIds[0]);
-    var_dump($keywords);
-    $updateKeywordsResponse = CampaignManagementHelper::UpdateKeywords($nillableAdGroupIds[0], $updateKeywords);
-    $keywords = CampaignManagementHelper::GetKeywordsByAdGroupId($nillableAdGroupIds[0]);
-    var_dump($keywords);
+    $keywords = CampaignManagementExampleHelper::GetKeywordsByAdGroupId($nillableAdGroupIds->long[0], null);
+    CampaignManagementExampleHelper::OutputArrayOfKeyword($keywords);
+
+    $updateKeywordsResponse = CampaignManagementExampleHelper::UpdateKeywords($nillableAdGroupIds->long[0], $updateKeywords);
+    $keywords = CampaignManagementExampleHelper::GetKeywordsByAdGroupId($nillableAdGroupIds->long[0], null);
+    CampaignManagementExampleHelper::OutputArrayOfKeyword($keywords);
     
     // As an exercise you can delete the keyword
-    CampaignManagementHelper::DeleteKeywords($nillableAdGroupIds[0], array($nillableKeywordIds[1]));
+    CampaignManagementExampleHelper::DeleteKeywords($nillableAdGroupIds->long[0], array($nillableKeywordIds->long[1]));
 
     // Delete the campaign, budget, ad group, keyword, and ad that were previously added. 
     // You should remove these lines if you want to view the added entities in the 
     // Bing Ads web application or another tool.
     
-    CampaignManagementHelper::DeleteBudgets(array($budgetIds->long[0]));
+    CampaignManagementExampleHelper::DeleteBudgets(array($budgetIds->long[0]));
     printf("Deleted BudgetId %d\n\n", $budgetIds->long[0]);
 
-    CampaignManagementHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds[0]));
-    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds[0]);
+    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
+    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-    // Output the last request/response.
-	
-    print "\nLast SOAP request/response:\n";
+	print "\nLast SOAP request/response:\n";
     printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
+	print $GLOBALS['Proxy']->GetWsdl() . "\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
 	
-    // Campaign Management service operations can throw AdApiFaultDetail.
     if (isset($e->detail->AdApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        $errors = is_array($e->detail->AdApiFaultDetail->Errors->AdApiError)
-        ? $e->detail->AdApiFaultDetail->Errors->AdApiError
-        : array('AdApiError' => $e->detail->AdApiFaultDetail->Errors->AdApiError);
-
-        // If the AdApiError array is not null, the following are examples of error codes that may be found.
-        foreach ($errors as $error)
-        {
-            print "AdApiError\n";
-            printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-            switch ($error->Code)
-            {
-                case 105:  // InvalidCredentials
-                    break;
-                case 117:  // CallRateExceeded
-                    break;
-                default:
-                    print "Please see MSDN documentation for more details about the error code output above.\n";
-                    break;
-            }
-        }
+        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
+        
     }
-
-    // Campaign Management service operations can throw ApiFaultDetail.
+    elseif (isset($e->detail->ApiFaultDetail))
+    {
+        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
+    }
     elseif (isset($e->detail->EditorialApiFaultDetail))
     {
-        // Log this fault.
-
-        print "The operation failed with the following faults:\n";
-
-        // If the BatchError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->BatchErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->BatchErrors->BatchError)
-            ? $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->BatchErrors->BatchError);
-
-            foreach ($errors as $error)
-            {
-                printf("BatchError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the EditorialError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->EditorialErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError)
-            ? $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError
-            : array('BatchError' => $e->detail->EditorialApiFaultDetail->EditorialErrors->EditorialError);
-
-            foreach ($errors as $error)
-            {
-                printf("EditorialError at Index: %d\n", $error->Index);
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-                printf("Appealable: %s\nDisapproved Text: %s\nCountry: %s\n", $error->Appealable, $error->DisapprovedText, $error->PublisherCountry);
-
-                switch ($error->Code)
-                {
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
-
-        // If the OperationError array is not null, the following are examples of error codes that may be found.
-        if (!empty($e->detail->EditorialApiFaultDetail->OperationErrors))
-        {
-            $errors = is_array($e->detail->EditorialApiFaultDetail->OperationErrors->OperationError)
-            ? $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError
-            : array('OperationError' => $e->detail->EditorialApiFaultDetail->OperationErrors->OperationError);
-
-            foreach ($errors as $error)
-            {
-                print "OperationError\n";
-                printf("Code: %d\nError Code: %s\nMessage: %s\n", $error->Code, $error->ErrorCode, $error->Message);
-
-                switch ($error->Code)
-                {
-                    case 106:   // UserIsNotAuthorized
-                        break;
-                    case 1102:  // CampaignServiceInvalidAccountId
-                        break;
-                    default:
-                        print "Please see MSDN documentation for more details about the error code output above.\n";
-                        break;
-                }
-            }
-        }
+        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
     }
 }
 catch (Exception $e)
 {
+    // Ignore fault exceptions that we already caught.
     if ($e->getPrevious())
-    {
-        ; // Ignore fault exceptions that we already caught.
-    }
+    { ; }
     else
     {
         print $e->getCode()." ".$e->getMessage()."\n\n";

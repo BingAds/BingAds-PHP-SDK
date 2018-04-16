@@ -113,7 +113,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The cost per conversion. */
         const CostPerConversion = 'CostPerConversion';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The percentage of clicks that went to your ads. */

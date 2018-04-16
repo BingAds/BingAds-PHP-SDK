@@ -60,7 +60,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The ad distribution attribute of an ad group. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The number of times an ad has been displayed on search results pages. */
@@ -201,10 +201,10 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates will place your ad at the top of search results. */
         const Mainline1Bid = 'Mainline1Bid';
 
-        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates for your ad to be placed on the first page sidebar in the search results. */
+        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates for your ad to be placed on the first page in the search results. */
         const MainlineBid = 'MainlineBid';
 
-        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates for your ad to be placed on the first page sidebar in the search results. */
+        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates for your ad to be placed on the first page in the search results. */
         const SidebarBid = 'SidebarBid';
     }
 

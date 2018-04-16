@@ -15,8 +15,7 @@ class HttpService
 
         $query = "";
 
-        while(list($key, $val) = each($postData))
-        {
+        foreach ($postData as $key => $val) {
             if(strlen($query) > 0)
             {
                 $query = $query . '&';

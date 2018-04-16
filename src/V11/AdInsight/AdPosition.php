@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\AdInsight;
 
 {
     /**
-     * Defines the possible positions of an ad in the search results or on a content-based webpage.
+     * Defines the possible positions of an ad in the search results.
      * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/adposition?view=bingads-11 AdPosition Value Set
      * 
      * @used-by KeywordKPI

@@ -30,5 +30,11 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var AudienceAdditionalField
          */
         public $ReturnAdditionalFields;
+
+        /**
+         * Determines whether or not to return the list of campaign types that support this audience.
+         * @var boolean
+         */
+        public $ReturnSupportedCampaignTypes;
     }
 }
