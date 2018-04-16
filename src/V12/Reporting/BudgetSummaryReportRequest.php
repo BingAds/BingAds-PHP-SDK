@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         public $Columns;
 
         /**
-         * The scope of the report.
+         * The entity scope of the report.
          * @var AccountThroughCampaignReportScope
          */
         public $Scope;

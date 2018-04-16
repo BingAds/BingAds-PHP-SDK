@@ -3,14 +3,6 @@
 namespace Microsoft\BingAds\V11\AdInsight;
 
 {
-    /**
-     * Reserved.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/field?view=bingads-11 Field Value Set
-     * 
-     * @used-by OrderBy
-     * @used-by Predicate
-     * @used-by Selector
-     */
     final class Field
     {
         /** Reserved. */

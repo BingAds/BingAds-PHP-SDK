@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         public $MaxRows;
 
         /**
-         * The scope of the report.
+         * The entity scope of the report.
          * @var AccountThroughAdGroupReportScope
          */
         public $Scope;
