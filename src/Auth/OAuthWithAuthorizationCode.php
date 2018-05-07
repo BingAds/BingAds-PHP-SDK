@@ -42,7 +42,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
      */
     public function withEnvironment($environment) {
         $this->Environment = $environment;
-        $this->RedirectUri=LiveComOAuthService::getRedirectUrl($environment);
+        $this->RedirectUri=LiveComOAuthService::GetRedirectUrl($environment);
         return $this;
     }
 
