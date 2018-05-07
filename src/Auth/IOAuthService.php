@@ -13,6 +13,6 @@ abstract class IOAuthService
      */
     abstract function GetAccessTokens(OAuthRequestParameters $oauthParameters, $environment);
 
-    abstract static function getRedirectUrl($environment);
+    abstract function GetRedirectUrl($environment);
     
 }
