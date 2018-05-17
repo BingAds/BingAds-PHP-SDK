@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         /** The ad group criterion is a webpage criterion. */
         const Webpage = 'Webpage';
 
-        /** Represents one or more AgeCriterion, DayTimeCriterion, DeviceCriterion, GenderCriterion, LocationCriterion, LocationIntentCriterion, and RadiusCriterion objects that can be managed together to show ads based on your target criteria. */
+        /** Represents one or more AgeCriterion, DayTimeCriterion, DeviceCriterion, GenderCriterion, LocationCriterion, LocationIntentCriterion, ProfileCriterion, and RadiusCriterion objects that can be managed together to show ads based on your target criteria. */
         const Targets = 'Targets';
 
         /** The ad group criterion is an age criterion. */
@@ -56,16 +56,16 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         /** The ad group criterion is a remarketing list association. */
         const RemarketingList = 'RemarketingList';
 
-        /** Reserved. */
+        /** The ad group criterion is a company name profile criterion. */
         const CompanyName = 'CompanyName';
 
-        /** Reserved. */
+        /** The ad group criterion is a job function profile criterion. */
         const JobFunction = 'JobFunction';
 
-        /** Reserved. */
+        /** The ad group criterion is an industry profile criterion. */
         const Industry = 'Industry';
 
-        /** Reserved. */
+        /** The ad group criterion is product audience association. */
         const ProductAudience = 'ProductAudience';
     }
 

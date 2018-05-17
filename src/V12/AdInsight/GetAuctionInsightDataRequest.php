@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 
 {
     /**
-     * Gets auction insight data.
+     * Gets auction insight data for an account, campaigns, ad groups, or keywords.
      * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getauctioninsightdata?view=bingads-12 GetAuctionInsightData Request Object
      * 
      * @uses EntityType
@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V12\AdInsight;
     final class GetAuctionInsightDataRequest
     {
         /**
-         * Reserved.
+         * The entity level that you want to request auction insight data.
          * @var EntityType
          */
         public $EntityType;
 
         /**
-         * Reserved.
+         * The Bing Ads identifiers for up to 200 campaigns, ad groups, or keywords.
          * @var integer[]
          */
         public $EntityIds;
 
         /**
-         * Reserved.
+         * The search parameters define your criteria and filters for the auction insight data.
          * @var SearchParameter[]
          */
         public $SearchParameters;

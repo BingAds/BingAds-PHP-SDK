@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Determines whether you want to use the "target and bid" option or the "bid only" target option for the criterion type group.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/targetsettingdetail?view=bingads-11 TargetSettingDetail Data Object
      * 
      * @uses CriterionTypeGroup
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     final class TargetSettingDetail
     {
         /**
-         * Reserved.
+         * The criterion type group that you want to set either the "target and bid" option or the "bid only" target option.
          * @var CriterionTypeGroup
          */
         public $CriterionTypeGroup;
 
         /**
-         * Reserved.
+         * Determines whether you want to use the "target and bid" option or the "bid only" target option for the criterion type group.
          * @var boolean
          */
         public $TargetAndBid;

@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V11\Reporting;
         /** The Bing Ads assigned identifier of the audience, for example the remarketing list ID. */
         const AudienceId = 'AudienceId';
 
-        /** The audienc name. */
+        /** The audience name. */
         const AudienceName = 'AudienceName';
 
         /** The status of the association between the ad group and remarketing list, which indicates whether ads are eligible to display. */

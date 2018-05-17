@@ -4,29 +4,29 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The type used to group criterions.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/criteriontypegroup?view=bingads-11 CriterionTypeGroup Value Set
      * 
      * @used-by TargetSettingDetail
      */
     final class CriterionTypeGroup
     {
-        /** Reserved. */
+        /** The gender criterion type group. */
         const Gender = 'Gender';
 
-        /** Reserved. */
+        /** The age criterion type group. */
         const Age = 'Age';
 
-        /** Reserved. */
+        /** The audience criterion type group. */
         const Audience = 'Audience';
 
-        /** Reserved. */
+        /** The company name criterion type group. */
         const CompanyName = 'CompanyName';
 
-        /** Reserved. */
+        /** The job function criterion type group. */
         const JobFunction = 'JobFunction';
 
-        /** Reserved. */
+        /** The industry criterion type group. */
         const Industry = 'Industry';
     }
 

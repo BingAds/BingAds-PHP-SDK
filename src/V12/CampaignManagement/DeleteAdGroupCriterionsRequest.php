@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class DeleteAdGroupCriterionsRequest
     {
         /**
-         * A list of unique identifiers that identify the criterion to delete.
+         * A list of unique identifiers that identify the criterions to delete.
          * @var integer[]
          */
         public $AdGroupCriterionIds;
 
         /**
-         * The identifier of the ad group that owns the criterion to delete.
+         * The identifier of the ad group that has the criterions you want to delete.
          * @var integer
          */
         public $AdGroupId;

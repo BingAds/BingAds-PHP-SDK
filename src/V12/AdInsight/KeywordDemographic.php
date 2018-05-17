@@ -18,31 +18,31 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $Device;
 
         /**
-         * Reserved.
+         * The percentage of time that users 18 through 24 years of age searched for the keyword.
          * @var double
          */
         public $EighteenToTwentyFour;
 
         /**
-         * Reserved.
+         * The percentage of time that users 25 through 34 years of age searched for the keyword.
          * @var double
          */
         public $TwentyFiveToThirtyFour;
 
         /**
-         * Reserved.
+         * The percentage of time that users 35 through 49 years of age searched for the keyword.
          * @var double
          */
         public $ThirtyFiveToFourtyNine;
 
         /**
-         * Reserved.
+         * The percentage of time that users 50 through 64 years of age searched for the keyword.
          * @var double
          */
         public $FiftyToSixtyFour;
 
         /**
-         * Reserved.
+         * The percentage of time that users 65 years of age or older searched for the keyword.
          * @var double
          */
         public $SixtyFiveAndAbove;

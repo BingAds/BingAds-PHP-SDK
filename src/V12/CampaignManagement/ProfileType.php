@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible types of profile criterions.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/profiletype?view=bingads-12 ProfileType Value Set
      * 
      * @used-by ProfileCriterion
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      */
     final class ProfileType
     {
-        /** Reserved. */
+        /** Target people at a specific company according to LinkedIn. */
         const CompanyName = 'CompanyName';
 
-        /** Reserved. */
+        /** Target people in a specific job function according to LinkedIn. */
         const JobFunction = 'JobFunction';
 
-        /** Reserved. */
+        /** Target people in a specific industry according to LinkedIn. */
         const Industry = 'Industry';
     }
 

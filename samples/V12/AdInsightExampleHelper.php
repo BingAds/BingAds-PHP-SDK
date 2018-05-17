@@ -638,7 +638,7 @@ final class AdInsightExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputAuctionInsightKpi * * *");
         if (!empty($dataObject))
         {
-            self::OutputStatusMessage(sprintf("Segment: %s", $dataObject->Segment));
+            self::OutputArrayOfString($dataObject->Segments);
             self::OutputStatusMessage(sprintf("ImpressionShare: %s", $dataObject->ImpressionShare));
             self::OutputStatusMessage(sprintf("OverlapRate: %s", $dataObject->OverlapRate));
             self::OutputStatusMessage(sprintf("AveragePosition: %s", $dataObject->AveragePosition));
@@ -666,7 +666,7 @@ final class AdInsightExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputAuctionInsightResult * * *");
         if (!empty($dataObject))
         {
-            self::OutputStatusMessage(sprintf("Segment: %s", $dataObject->Segment));
+            self::OutputArrayOfAuctionSegment($dataObject->Segments);
             self::OutputArrayOfAuctionInsightEntry($dataObject->Entries);
             self::OutputStatusMessage(sprintf("UsedImpressions: %s", $dataObject->UsedImpressions));
             self::OutputStatusMessage(sprintf("UsedKeywords: %s", $dataObject->UsedKeywords));

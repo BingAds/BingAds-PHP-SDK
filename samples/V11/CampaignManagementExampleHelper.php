@@ -705,7 +705,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetAdGroupsByCampaignId(
         $campaignId,
-        $returnAdditionalFields)
+        $returnAdditionalFields,
+        $returnCoOpAdGroups)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -714,13 +715,15 @@ final class CampaignManagementExampleHelper {
 
         $request->CampaignId = $campaignId;
         $request->ReturnAdditionalFields = $returnAdditionalFields;
+        $request->ReturnCoOpAdGroups = $returnCoOpAdGroups;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByCampaignId($request);
     }
     static function GetAdGroupsByIds(
         $campaignId,
         $adGroupIds,
-        $returnAdditionalFields)
+        $returnAdditionalFields,
+        $returnCoOpAdGroups)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -730,6 +733,7 @@ final class CampaignManagementExampleHelper {
         $request->CampaignId = $campaignId;
         $request->AdGroupIds = $adGroupIds;
         $request->ReturnAdditionalFields = $returnAdditionalFields;
+        $request->ReturnCoOpAdGroups = $returnCoOpAdGroups;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByIds($request);
     }
@@ -797,13 +801,15 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAudiencesByIds($request);
     }
-    static function GetBMCStoresByCustomerId()
+    static function GetBMCStoresByCustomerId(
+        $returnCoOpStores)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
         $request = new GetBMCStoresByCustomerIdRequest();
 
+        $request->ReturnCoOpStores = $returnCoOpStores;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetBMCStoresByCustomerId($request);
     }
@@ -859,7 +865,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetCampaignsByAccountId(
         $accountId,
-        $campaignType)
+        $campaignType,
+        $returnCoOpCampaigns)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -868,13 +875,15 @@ final class CampaignManagementExampleHelper {
 
         $request->AccountId = $accountId;
         $request->CampaignType = $campaignType;
+        $request->ReturnCoOpCampaigns = $returnCoOpCampaigns;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByAccountId($request);
     }
     static function GetCampaignsByIds(
         $accountId,
         $campaignIds,
-        $campaignType)
+        $campaignType,
+        $returnCoOpCampaigns)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -884,6 +893,7 @@ final class CampaignManagementExampleHelper {
         $request->AccountId = $accountId;
         $request->CampaignIds = $campaignIds;
         $request->CampaignType = $campaignType;
+        $request->ReturnCoOpCampaigns = $returnCoOpCampaigns;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByIds($request);
     }
@@ -2469,6 +2479,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("IsActive: %s", $dataObject->IsActive));
             self::OutputStatusMessage(sprintf("IsProductAdsEnabled: %s", $dataObject->IsProductAdsEnabled));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(sprintf("SubType: %s", $dataObject->SubType));
         }
         self::OutputStatusMessage("* * * End OutputBMCStore * * *");
     }
@@ -2573,6 +2584,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("NativeBidAdjustment: %s", $dataObject->NativeBidAdjustment));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage(sprintf("SubType: %s", $dataObject->SubType));
             self::OutputStatusMessage(sprintf("TimeZone: %s", $dataObject->TimeZone));
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
@@ -2736,6 +2748,30 @@ final class CampaignManagementExampleHelper {
             self::OutputConversionGoalRevenue($dataObject);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfConversionGoalRevenue * * *");
+    }
+    static function OutputCoOpSetting($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputCoOpSetting * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("BidBoostValue: %s", $dataObject->BidBoostValue));
+            self::OutputStatusMessage(sprintf("BidMaxValue: %s", $dataObject->BidMaxValue));
+            self::OutputStatusMessage(sprintf("BidOption: %s", $dataObject->BidOption));
+        }
+        self::OutputStatusMessage("* * * End OutputCoOpSetting * * *");
+    }
+    static function OutputArrayOfCoOpSetting($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CoOpSetting))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfCoOpSetting * * *");
+        foreach ($dataObjects->CoOpSetting as $dataObject)
+        {
+            self::OutputCoOpSetting($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfCoOpSetting * * *");
     }
     static function OutputCriterion($dataObject)
     {
@@ -4627,6 +4663,10 @@ final class CampaignManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            if($dataObject->Type === "CoOpSetting")
+            {
+                self::OutputCoOpSetting($dataObject);
+            }
             if($dataObject->Type === "DynamicSearchAdsSetting")
             {
                 self::OutputDynamicSearchAdsSetting($dataObject);
@@ -6608,7 +6648,6 @@ final class CampaignManagementExampleHelper {
     }
     static function OutputArrayOfString($items)
     {
-        var_dump($items);
         if(count((array)$items) == 0 || !isset($items->string))
         {
             return;

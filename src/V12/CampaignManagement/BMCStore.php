@@ -31,7 +31,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $IsActive;
 
         /**
-         * Value will be true if the store is enabled for product ads in Bing Ads, and otherwise the value is false.
+         * Reserved for internal use.
          * @var boolean
          */
         public $IsProductAdsEnabled;
@@ -43,7 +43,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Name;
 
         /**
-         * Reserved.
+         * The Bing Merchant Center store sub type.
          * @var BMCStoreSubType
          */
         public $SubType;

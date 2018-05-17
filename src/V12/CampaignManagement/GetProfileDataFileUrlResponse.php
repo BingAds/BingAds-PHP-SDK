@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets a temporary URL that you can use to download company name, industry, or job function profile data.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getprofiledatafileurl?view=bingads-12 GetProfileDataFileUrl Response Object
      * 
      * @used-by BingAdsCampaignManagementService::GetProfileDataFileUrl
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class GetProfileDataFileUrlResponse
     {
         /**
-         * Reserved.
+         * The file URL that you can use to download the profile data for the profile type, language, and locale that you requested.
          * @var string
          */
         public $FileUrl;
 
         /**
-         * Reserved.
+         * The date and time that the provided file URL will expire.
          * @var \DateTime
          */
         public $FileUrlExpiryTimeUtc;
 
         /**
-         * Reserved.
+         * The date and time that the profile data for the profile type, language, and locale was last updated.
          * @var \DateTime
          */
         public $LastModifiedTimeUtc;

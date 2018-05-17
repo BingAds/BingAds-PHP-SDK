@@ -100,7 +100,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * The campaign type determines whether the campaign is a Bing Shopping campaign, Dynamic Search Ads campaign, or Search campaign.
+         * The campaign type determines whether the campaign is an Audience, Dynamic Search Ads, Search, or Shopping campaign.
          * @var CampaignType
          */
         public $CampaignType;

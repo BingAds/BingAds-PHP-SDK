@@ -100,7 +100,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $PricingModel;
 
         /**
-         * Reserved.
+         * Indicates whether or not your ad group target criteria e.
          * @var AdGroupPrivacyStatus
          */
         public $PrivacyStatus;

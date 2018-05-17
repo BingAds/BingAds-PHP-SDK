@@ -9,7 +9,6 @@ use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\V11\AdInsight classes that will be used.
-use Microsoft\BingAds\V11\AdInsight\GetAuctionInsightDataRequest;
 use Microsoft\BingAds\V11\AdInsight\GetBidLandscapeByAdGroupIdsRequest;
 use Microsoft\BingAds\V11\AdInsight\GetBidLandscapeByKeywordIdsRequest;
 use Microsoft\BingAds\V11\AdInsight\GetBidOpportunitiesRequest;
@@ -32,18 +31,6 @@ use Microsoft\BingAds\V11\AdInsight\SuggestKeywordsForUrlRequest;
 use Microsoft\BingAds\V11\AdInsight\SuggestKeywordsFromExistingKeywordsRequest;
 
 final class AdInsightExampleHelper {
-    static function GetAuctionInsightData(
-        $selector)
-    {
-        $GLOBALS['AdInsightProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
-        $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
-
-        $request = new GetAuctionInsightDataRequest();
-
-        $request->Selector = $selector;
-
-        return $GLOBALS['AdInsightProxy']->GetService()->GetAuctionInsightData($request);
-    }
     static function GetBidLandscapeByAdGroupIds(
         $adGroupBidLandscapeInputs)
     {
@@ -605,82 +592,6 @@ final class AdInsightExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfApplicationFault * * *");
     }
-    static function OutputAuctionInsightKPINode($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputAuctionInsightKPINode * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputArrayOfString($dataObject->DimensionNames);
-            self::OutputStatusMessage(sprintf("ImpressionShare: %s", $dataObject->ImpressionShare));
-            self::OutputStatusMessage(sprintf("OverlapRate: %s", $dataObject->OverlapRate));
-            self::OutputStatusMessage(sprintf("AveragePosition: %s", $dataObject->AveragePosition));
-            self::OutputStatusMessage(sprintf("AboveRate: %s", $dataObject->AboveRate));
-            self::OutputStatusMessage(sprintf("TopOfPageRate: %s", $dataObject->TopOfPageRate));
-        }
-        self::OutputStatusMessage("* * * End OutputAuctionInsightKPINode * * *");
-    }
-    static function OutputArrayOfAuctionInsightKPINode($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AuctionInsightKPINode))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightKPINode * * *");
-        foreach ($dataObjects->AuctionInsightKPINode as $dataObject)
-        {
-            self::OutputAuctionInsightKPINode($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightKPINode * * *");
-    }
-    static function OutputAuctionInsightResult($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputAuctionInsightResult * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputStatusMessage(sprintf("TotalNumEntries: %s", $dataObject->TotalNumEntries));
-            self::OutputArrayOfAuctionInsightV2Entity($dataObject->Entries);
-            self::OutputStatusMessage(sprintf("UsedImpressions: %s", $dataObject->UsedImpressions));
-            self::OutputStatusMessage(sprintf("UsedKeywords: %s", $dataObject->UsedKeywords));
-        }
-        self::OutputStatusMessage("* * * End OutputAuctionInsightResult * * *");
-    }
-    static function OutputArrayOfAuctionInsightResult($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AuctionInsightResult))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightResult * * *");
-        foreach ($dataObjects->AuctionInsightResult as $dataObject)
-        {
-            self::OutputAuctionInsightResult($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightResult * * *");
-    }
-    static function OutputAuctionInsightV2Entity($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputAuctionInsightV2Entity * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputStatusMessage(sprintf("DisplayDomain: %s", $dataObject->DisplayDomain));
-            self::OutputAuctionInsightKPINode($dataObject->AggregatedKPI);
-            self::OutputArrayOfAuctionInsightKPINode($dataObject->KPIs);
-        }
-        self::OutputStatusMessage("* * * End OutputAuctionInsightV2Entity * * *");
-    }
-    static function OutputArrayOfAuctionInsightV2Entity($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AuctionInsightV2Entity))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightV2Entity * * *");
-        foreach ($dataObjects->AuctionInsightV2Entity as $dataObject)
-        {
-            self::OutputAuctionInsightV2Entity($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightV2Entity * * *");
-    }
     static function OutputBatchError($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
@@ -1005,29 +916,6 @@ final class AdInsightExampleHelper {
             self::OutputCriterion($dataObject);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfCriterion * * *");
-    }
-    static function OutputDateRange($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputDateRange * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputStatusMessage(sprintf("MaxDate: %s", $dataObject->MaxDate));
-            self::OutputStatusMessage(sprintf("MinDate: %s", $dataObject->MinDate));
-        }
-        self::OutputStatusMessage("* * * End OutputDateRange * * *");
-    }
-    static function OutputArrayOfDateRange($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DateRange))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDateRange * * *");
-        foreach ($dataObjects->DateRange as $dataObject)
-        {
-            self::OutputDateRange($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfDateRange * * *");
     }
     static function OutputDateRangeSearchParameter($dataObject)
     {
@@ -2089,76 +1977,6 @@ final class AdInsightExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfOpportunity * * *");
     }
-    static function OutputOrderBy($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputOrderBy * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputStatusMessage(sprintf("SortOrder: %s", $dataObject->SortOrder));
-            self::OutputStatusMessage(sprintf("SortingField: %s", $dataObject->SortingField));
-        }
-        self::OutputStatusMessage("* * * End OutputOrderBy * * *");
-    }
-    static function OutputArrayOfOrderBy($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->OrderBy))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOrderBy * * *");
-        foreach ($dataObjects->OrderBy as $dataObject)
-        {
-            self::OutputOrderBy($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfOrderBy * * *");
-    }
-    static function OutputPaging($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputPaging * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
-            self::OutputStatusMessage(sprintf("Size: %s", $dataObject->Size));
-        }
-        self::OutputStatusMessage("* * * End OutputPaging * * *");
-    }
-    static function OutputArrayOfPaging($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Paging))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPaging * * *");
-        foreach ($dataObjects->Paging as $dataObject)
-        {
-            self::OutputPaging($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfPaging * * *");
-    }
-    static function OutputPredicate($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputPredicate * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputStatusMessage(sprintf("FilteringField: %s", $dataObject->FilteringField));
-            self::OutputStatusMessage(sprintf("Operator: %s", $dataObject->Operator));
-            self::OutputArrayOfString($dataObject->Values);
-        }
-        self::OutputStatusMessage("* * * End OutputPredicate * * *");
-    }
-    static function OutputArrayOfPredicate($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Predicate))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPredicate * * *");
-        foreach ($dataObjects->Predicate as $dataObject)
-        {
-            self::OutputPredicate($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfPredicate * * *");
-    }
     static function OutputQuerySearchParameter($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputQuerySearchParameter * * *");
@@ -2303,33 +2121,6 @@ final class AdInsightExampleHelper {
             self::OutputSearchVolumeSearchParameter($dataObject);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfSearchVolumeSearchParameter * * *");
-    }
-    static function OutputSelector($dataObject)
-    {
-        self::OutputStatusMessage("* * * Begin OutputSelector * * *");
-        if (!empty($dataObject))
-        {
-            self::OutputDateRange($dataObject->DateRange);
-            self::OutputArrayOfField($dataObject->GroupBy);
-            self::OutputArrayOfOrderBy($dataObject->Ordering);
-            self::OutputPaging($dataObject->PageInfo);
-            self::OutputArrayOfPredicate($dataObject->Predicates);
-            self::OutputArrayOfField($dataObject->SelectedFields);
-        }
-        self::OutputStatusMessage("* * * End OutputSelector * * *");
-    }
-    static function OutputArrayOfSelector($dataObjects)
-    {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Selector))
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSelector * * *");
-        foreach ($dataObjects->Selector as $dataObject)
-        {
-            self::OutputSelector($dataObject);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfSelector * * *");
     }
     static function OutputSuggestedBidSearchParameter($dataObject)
     {
@@ -2632,75 +2423,6 @@ final class AdInsightExampleHelper {
             self::OutputAdPosition($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAdPosition * * *");
-    }
-    static function OutputField($valueSet)
-    {
-        self::OutputStatusMessage("* * * Begin OutputField * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
-        foreach ($valueSet->string as $value)
-        {
-            self::OutputStatusMessage($value);
-        }
-        self::OutputStatusMessage("* * * End OutputField * * *");
-    }
-    static function OutputArrayOfField($valueSets)
-    {
-        if(count((array)$valueSets) == 0)
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfField * * *");
-        foreach ($valueSets->Field as $valueSet)
-        {
-            self::OutputField($valueSet);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfField * * *");
-    }
-    static function OutputSortOrder($valueSet)
-    {
-        self::OutputStatusMessage("* * * Begin OutputSortOrder * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
-        foreach ($valueSet->string as $value)
-        {
-            self::OutputStatusMessage($value);
-        }
-        self::OutputStatusMessage("* * * End OutputSortOrder * * *");
-    }
-    static function OutputArrayOfSortOrder($valueSets)
-    {
-        if(count((array)$valueSets) == 0)
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSortOrder * * *");
-        foreach ($valueSets->SortOrder as $valueSet)
-        {
-            self::OutputSortOrder($valueSet);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfSortOrder * * *");
-    }
-    static function OutputOperator($valueSet)
-    {
-        self::OutputStatusMessage("* * * Begin OutputOperator * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
-        foreach ($valueSet->string as $value)
-        {
-            self::OutputStatusMessage($value);
-        }
-        self::OutputStatusMessage("* * * End OutputOperator * * *");
-    }
-    static function OutputArrayOfOperator($valueSets)
-    {
-        if(count((array)$valueSets) == 0)
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOperator * * *");
-        foreach ($valueSets->Operator as $valueSet)
-        {
-            self::OutputOperator($valueSet);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfOperator * * *");
     }
     static function OutputKeywordIdeaAttribute($valueSet)
     {

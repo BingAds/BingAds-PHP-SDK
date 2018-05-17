@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a criterion that can be used to show ads to users in a specific company, industry, or job function.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/profilecriterion?view=bingads-11 ProfileCriterion Data Object
      * 
      * @uses ProfileType
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
     final class ProfileCriterion extends Criterion
     {
         /**
-         * Reserved.
+         * The identifier of the audience profile that you want to target.
          * @var integer
          */
         public $ProfileId;
 
         /**
-         * Reserved.
+         * Determines whether the profile criterion corresponds to a company name, industry, or job function.
          * @var ProfileType
          */
         public $ProfileType;

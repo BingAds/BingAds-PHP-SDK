@@ -12,22 +12,22 @@ namespace Microsoft\BingAds\V12\AdInsight;
      */
     final class AuctionSegment
     {
-        /** Reserved. */
+        /** The auction insight data is segmented by day. */
         const Day = 'Day';
 
-        /** Reserved. */
+        /** The auction insight data is segmented by week. */
         const Week = 'Week';
 
-        /** Reserved. */
+        /** The auction insight data is segmented by month. */
         const Month = 'Month';
 
-        /** Reserved. */
+        /** The auction insight data is segmented by quarter. */
         const Quarter = 'Quarter';
 
-        /** Reserved. */
+        /** The auction insight data is segmented by day of week. */
         const DayOfWeek = 'DayOfWeek';
 
-        /** Reserved. */
+        /** The auction insight data is segmented by device. */
         const Device = 'Device';
     }
 

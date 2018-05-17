@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $AdGroupCriterionIds;
 
         /**
-         * Reserved.
+         * Determines whether or not to return ad group criterions where the AgeRange or GenderType values are Unknown.
          * @var boolean
          */
         public $ReturnAgeGenderUnknownValue;

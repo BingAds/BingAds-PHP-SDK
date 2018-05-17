@@ -23,5 +23,11 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var AdGroupAdditionalField
          */
         public $ReturnAdditionalFields;
+
+        /**
+         * The ad groups within Bing Shopping campaigns with SubType set to ShoppingCoOperative are not returned at all unless you set ReturnCoOpAdGroups true.
+         * @var boolean
+         */
+        public $ReturnCoOpAdGroups;
     }
 }
