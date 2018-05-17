@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         /** Refers to a DynamicSearchAd. */
         const DynamicSearch = 'DynamicSearch';
 
-        /** Reserved. */
+        /** Refers to a ResponsiveAd. */
         const ResponsiveAd = 'ResponsiveAd';
     }
 

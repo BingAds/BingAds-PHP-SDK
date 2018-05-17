@@ -11,16 +11,16 @@ namespace Microsoft\BingAds\V12\AdInsight;
      */
     final class EntityType
     {
-        /** Reserved. */
+        /** Request account level auction insight data. */
         const Account = 'Account';
 
-        /** Reserved. */
+        /** Request campaign level auction insight data. */
         const Campaign = 'Campaign';
 
-        /** Reserved. */
+        /** Request ad group level auction insight data. */
         const AdGroup = 'AdGroup';
 
-        /** Reserved. */
+        /** Request keyword level auction insight data. */
         const Keyword = 'Keyword';
     }
 

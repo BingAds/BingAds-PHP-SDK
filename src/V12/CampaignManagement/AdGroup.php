@@ -85,7 +85,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Network;
 
         /**
-         * Reserved.
+         * Indicates whether or not your ad group target criteria e.
          * @var AdGroupPrivacyStatus
          */
         public $PrivacyStatus;

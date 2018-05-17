@@ -9,7 +9,6 @@ use SoapFault;
 use Exception;
 
 // Specify the Microsoft\BingAds\V11\CustomerManagement classes that will be used.
-use Microsoft\BingAds\V11\CustomerManagement\AddAccountRequest;
 use Microsoft\BingAds\V11\CustomerManagement\AddClientLinksRequest;
 use Microsoft\BingAds\V11\CustomerManagement\DeleteAccountRequest;
 use Microsoft\BingAds\V11\CustomerManagement\DeleteCustomerRequest;
@@ -36,18 +35,6 @@ use Microsoft\BingAds\V11\CustomerManagement\UpdateUserRequest;
 use Microsoft\BingAds\V11\CustomerManagement\UpdateUserRolesRequest;
 
 final class CustomerManagementExampleHelper {
-    static function AddAccount(
-        $account)
-    {
-        $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
-        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
-
-        $request = new AddAccountRequest();
-
-        $request->Account = $account;
-
-        return $GLOBALS['CustomerManagementProxy']->GetService()->AddAccount($request);
-    }
     static function AddClientLinks(
         $clientLinks)
     {

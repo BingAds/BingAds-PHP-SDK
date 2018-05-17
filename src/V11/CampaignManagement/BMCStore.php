@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      * Defines a Bing Merchant Center store.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/bmcstore?view=bingads-11 BMCStore Data Object
      * 
+     * @uses BMCStoreSubType
      * @used-by GetBMCStoresByCustomerIdResponse
      */
     final class BMCStore
@@ -30,7 +31,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $IsActive;
 
         /**
-         * Value will be true if the store is enabled for product ads in Bing Ads, and otherwise the value is false.
+         * Reserved for internal use.
          * @var boolean
          */
         public $IsProductAdsEnabled;
@@ -40,6 +41,12 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var string
          */
         public $Name;
+
+        /**
+         * The Bing Merchant Center store sub type.
+         * @var BMCStoreSubType
+         */
+        public $SubType;
     }
 
 }

@@ -4,15 +4,17 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Determines whether or not to amplify your partner's bid.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/bidoption?view=bingads-11 BidOption Value Set
+     * 
+     * @used-by CoOpSetting
      */
     final class BidOption
     {
-        /** Reserved. */
+        /** A bid value ad group allows you to bid on products that your merchandising partner doesn't target. */
         const BidValue = 'BidValue';
 
-        /** Reserved. */
+        /** A bid boost allows you to amplify your partner's bid. */
         const BidBoost = 'BidBoost';
     }
 

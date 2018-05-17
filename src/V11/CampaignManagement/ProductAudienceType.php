@@ -4,26 +4,26 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible types of product audiences.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/productaudiencetype?view=bingads-11 ProductAudienceType Value Set
      * 
      * @used-by ProductAudience
      */
     final class ProductAudienceType
     {
-        /** Reserved. */
+        /** The audience includes general visitors. */
         const GeneralVisitors = 'GeneralVisitors';
 
-        /** Reserved. */
+        /** The audience includes product searchers. */
         const ProductSearchers = 'ProductSearchers';
 
-        /** Reserved. */
+        /** The audience includes product viewers. */
         const ProductViewers = 'ProductViewers';
 
-        /** Reserved. */
+        /** The audience includes shopping cart abandoners. */
         const ShoppingCartAbandoners = 'ShoppingCartAbandoners';
 
-        /** Reserved. */
+        /** The audience includes past buyers. */
         const PastBuyers = 'PastBuyers';
     }
 

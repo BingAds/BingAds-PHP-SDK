@@ -12,43 +12,43 @@ namespace Microsoft\BingAds\V12\AdInsight;
     final class AuctionInsightKpi
     {
         /**
-         * Reserved.
-         * @var string
+         * The list of strings identifies a distinct combination of requested segments.
+         * @var string[]
          */
-        public $Segment;
+        public $Segments;
 
         /**
-         * Reserved.
+         * The number of times an ad is shown on the Bing Network divided by the total available impressions.
          * @var double
          */
         public $ImpressionShare;
 
         /**
-         * Reserved.
+         * The percentage of time competitors' ads showed up on the search results page when your ad was shown.
          * @var double
          */
         public $OverlapRate;
 
         /**
-         * Reserved.
+         * The average position on the web page for ads that were delivered.
          * @var double
          */
         public $AveragePosition;
 
         /**
-         * Reserved.
+         * The percentage of time competitors' ads showed up higher than your ads on the search results page.
          * @var double
          */
         public $AboveRate;
 
         /**
-         * Reserved.
+         * The percentage of time your ad showed up in the mainline, the premium ad position above the organic search results.
          * @var double
          */
         public $TopOfPageRate;
 
         /**
-         * Reserved.
+         * The percentage of time your ad showed up higher on the search results pages than your competitors or your ad showed when theirs did not.
          * @var double
          */
         public $OutrankingShare;

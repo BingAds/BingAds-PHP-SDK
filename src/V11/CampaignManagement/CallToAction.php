@@ -4,74 +4,74 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible values for a brief, punchy reason for customers to click your ad right now.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/calltoaction?view=bingads-11 CallToAction Value Set
      * 
      * @used-by ResponsiveAd
      */
     final class CallToAction
     {
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const AddToCart = 'AddToCart';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ApplyNow = 'ApplyNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BookNow = 'BookNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BookTravel = 'BookTravel';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Buy = 'Buy';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BuyNow = 'BuyNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ContactUs = 'ContactUs';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Download = 'Download';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const GetQuote = 'GetQuote';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Install = 'Install';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const LearnMore = 'LearnMore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const NoButton = 'NoButton';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const OpenLink = 'OpenLink';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const OrderNow = 'OrderNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const RegisterNow = 'RegisterNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SeeMore = 'SeeMore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ShopNow = 'ShopNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SignUp = 'SignUp';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Subscribe = 'Subscribe';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const VisitSite = 'VisitSite';
     }
 

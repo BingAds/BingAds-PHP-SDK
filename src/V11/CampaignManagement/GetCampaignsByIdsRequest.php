@@ -29,5 +29,11 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
          * @var CampaignType
          */
         public $CampaignType;
+
+        /**
+         * The Bing Shopping campaigns with SubType set to ShoppingCoOperative are not returned at all unless you set ReturnCoOpCampaigns true.
+         * @var boolean
+         */
+        public $ReturnCoOpCampaigns;
     }
 }

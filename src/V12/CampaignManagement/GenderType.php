@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      */
     final class GenderType
     {
-        /** Reserved for future use. */
+        /** The gender is not known. */
         const Unknown = 'Unknown';
 
         /** The gender is male. */

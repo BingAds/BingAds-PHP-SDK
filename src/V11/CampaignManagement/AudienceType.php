@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         /** The audience is an in-market audience. */
         const InMarket = 'InMarket';
 
-        /** Reserved. */
+        /** The audience is a product audience. */
         const Product = 'Product';
     }
 

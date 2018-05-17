@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Ad Group records in the download data. */
         const AdGroups = 'AdGroups';
 
-        /** Include App Install Ad, Dynamic Search Ad, Expanded Text Ad, Product Ad, and Text Ad records in the download data. */
+        /** Include App Install Ad, Dynamic Search Ad, Expanded Text Ad, Product Ad, Responsive Ad, and Text Ad records in the download data. */
         const Ads = 'Ads';
 
         /** Include Keyword records in the download data. */
@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Campaign Age Criterion, Campaign DayTime Criterion, Campaign DeviceOS Criterion, Campaign Gender Criterion, Campaign Location Criterion, Campaign Location Intent Criterion, Campaign Negative Location Criterion, and Campaign Radius Criterion records in the download data. */
         const CampaignTargetCriterions = 'CampaignTargetCriterions';
 
-        /** Include Ad Group Age Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Location Criterion, and Ad Group Radius Criterion records in the download data. */
+        /** Include Ad Group Age Criterion, Ad Group Company Name Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Industry Criterion, Ad Group Job Function Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Age Criterion, Ad Group Negative Company Name Criterion, Ad Group Negative Gender Criterion, Ad Group Negative Industry Criterion, Ad Group Negative Job Function Criterion, Ad Group Negative Location Criterion, and Ad Group Radius Criterion records in the download data. */
         const AdGroupTargetCriterions = 'AdGroupTargetCriterions';
 
         /** Include Campaign Negative Site records in the download data. */
@@ -219,13 +219,13 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Include Ad Group Negative In Market Audience Association records in the download that each represent the association relationship between an ad group and an in-market audience exclusion. */
         const AdGroupNegativeInMarketAudienceAssociations = 'AdGroupNegativeInMarketAudienceAssociations';
 
-        /** Include Custom Audience, In Market Audience, and Remarketing List records in the download data. */
+        /** Include Custom Audience, In Market Audience, Product Audience, and Remarketing List records in the download data. */
         const Audiences = 'Audiences';
 
-        /** Include Ad Group Custom Audience Association, Ad Group In Market Audience Association, and Ad Group Remarketing List Association records in the download data. */
+        /** Include Ad Group Custom Audience Association, Ad Group In Market Audience Association, Ad Group Product Audience Association, and Ad Group Remarketing List Association records in the download data. */
         const AdGroupAudienceAssociations = 'AdGroupAudienceAssociations';
 
-        /** Include Ad Group Negative Custom Audience Association, Ad Group Negative In Market Audience Association, and Ad Group Negative Remarketing List Association records in the download data. */
+        /** Include Ad Group Negative Custom Audience Association, Ad Group Negative In Market Audience Association, Ad Group Negative Product Audience Association, and Ad Group Negative Remarketing List Association records in the download data. */
         const AdGroupNegativeAudienceAssociations = 'AdGroupNegativeAudienceAssociations';
 
         /** Include Product Ad Label records in the download that each represent a label applied to a product ad. */
@@ -270,25 +270,25 @@ namespace Microsoft\BingAds\V11\Bulk;
         /** Reserved. */
         const CoOpCampaigns = 'CoOpCampaigns';
 
-        /** Reserved. */
+        /** Include Responsive Ad records in the download data. */
         const ResponsiveAds = 'ResponsiveAds';
 
-        /** Reserved. */
+        /** Include Responsive Ad Label records in the download that each represent a label applied to a responsive ad. */
         const ResponsiveAdLabels = 'ResponsiveAdLabels';
 
-        /** Reserved. */
+        /** Include Product Audience records in the download data. */
         const ProductAudiences = 'ProductAudiences';
 
-        /** Reserved. */
+        /** Include Ad Group Product Audience Association records in the download that each represent the association relationship between an ad group and a product audience. */
         const AdGroupProductAudienceAssociations = 'AdGroupProductAudienceAssociations';
 
-        /** Reserved. */
+        /** Include Ad Group Negative Product Audience Association records in the download that each represent the association relationship between an ad group and a product audience exclusion. */
         const AdGroupNegativeProductAudienceAssociations = 'AdGroupNegativeProductAudienceAssociations';
 
-        /** Reserved. */
+        /** Include In Market Audience records in the download data, including in-market audiences that are only supported with the Audience network. */
         const AudienceNetworkInMarketAudiences = 'AudienceNetworkInMarketAudiences';
 
-        /** Reserved. */
+        /** Include Custom Audience, In Market Audience, Product Audience, and Remarketing List records in the download data. */
         const AudienceNetworkAudiences = 'AudienceNetworkAudiences';
     }
 

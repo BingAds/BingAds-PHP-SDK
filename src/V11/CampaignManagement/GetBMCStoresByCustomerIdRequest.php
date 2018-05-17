@@ -11,5 +11,10 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
      */
     final class GetBMCStoresByCustomerIdRequest
     {
+        /**
+         * The Bing Merchant Center stores with SubType set to CoOp are not returned at all unless you set ReturnCoOpStores true.
+         * @var boolean
+         */
+        public $ReturnCoOpStores;
     }
 }

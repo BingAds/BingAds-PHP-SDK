@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * A responsive ad format for Audience ads in the Microsoft Audience Network.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/responsivead?view=bingads-12 ResponsiveAd Data Object
      * 
      * @uses CallToAction
@@ -12,55 +12,55 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class ResponsiveAd extends Ad
     {
         /**
-         * Reserved.
+         * The name of the business.
          * @var string
          */
         public $BusinessName;
 
         /**
-         * Reserved.
+         * A brief, punchy reason for customers to click your ad right now.
          * @var CallToAction
          */
         public $CallToAction;
 
         /**
-         * Reserved.
+         * This is one of two possible headlines that could appear in your audience ads.
          * @var string
          */
         public $Headline;
 
         /**
-         * Reserved.
+         * This is the identifier of the media corresponding to one of two possible aspect ratios for images that could appear in your audience ads.
          * @var integer
          */
         public $LandscapeImageMediaId;
 
         /**
-         * Reserved.
+         * This is the identifier of the media corresponding to one of two possible aspect ratios for logos that could appear in your audience ads.
          * @var integer
          */
         public $LandscapeLogoMediaId;
 
         /**
-         * Reserved.
+         * This is one of two possible headlines that could appear in your audience ads.
          * @var string
          */
         public $LongHeadline;
 
         /**
-         * Reserved.
+         * This is one of two possible aspect ratios for images that could appear in your audience ads.
          * @var integer
          */
         public $SquareImageMediaId;
 
         /**
-         * Reserved.
+         * This is one of two possible aspect ratios for logos that could appear in your audience ads.
          * @var integer
          */
         public $SquareLogoMediaId;
 
         /**
-         * Reserved.
+         * Depending on your audience ad's placement, this text will appear below or adjacent to your ad's long or short headline.
          * @var string
          */
         public $Text;

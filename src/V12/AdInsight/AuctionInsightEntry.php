@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 
 {
     /**
-     * Defines an auction insight entry.
+     * Defines an auction insight entry for a domain.
      * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/auctioninsightentry?view=bingads-12 AuctionInsightEntry Data Object
      * 
      * @uses AuctionInsightKpi
@@ -13,19 +13,19 @@ namespace Microsoft\BingAds\V12\AdInsight;
     final class AuctionInsightEntry
     {
         /**
-         * Reserved.
+         * The display URL of another advertiser who participates in the same auctions as you.
          * @var string
          */
         public $DisplayDomain;
 
         /**
-         * Reserved.
+         * The auction insight key performance indicators across all segments for the display domain.
          * @var AuctionInsightKpi
          */
         public $AggregatedKpi;
 
         /**
-         * Reserved.
+         * The list of auction insight key performance indicators for each unique combination of the requested segments.
          * @var AuctionInsightKpi[]
          */
         public $SegmentedKpis;

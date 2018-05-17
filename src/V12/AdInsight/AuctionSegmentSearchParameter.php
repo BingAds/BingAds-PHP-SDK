@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
     final class AuctionSegmentSearchParameter extends SearchParameter
     {
         /**
-         * Reserved.
+         * Determines how you want the SegmentedKpis data segmented in the result from the GetAuctionInsightData operation.
          * @var AuctionSegment
          */
         public $Segment;
