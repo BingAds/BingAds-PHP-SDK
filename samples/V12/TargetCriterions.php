@@ -308,7 +308,7 @@ function GetExampleCampaignIds()
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
     }
 
     print "AddAdGroups\n";
@@ -319,7 +319,7 @@ function GetExampleCampaignIds()
     $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
     }
 
     $campaignIds = array();

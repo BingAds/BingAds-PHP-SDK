@@ -136,7 +136,7 @@ try
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
     }
 
     print "AddAdGroups\n";
@@ -144,7 +144,7 @@ try
     $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
     }
 
     // If the campaign or ad group add operations failed then we cannot continue this example. 

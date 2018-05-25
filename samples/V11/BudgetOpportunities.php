@@ -55,7 +55,8 @@ try
 
     $campaigns = CampaignManagementExampleHelper::GetCampaignsByAccountId(
     	$GLOBALS['AuthorizationData']->AccountId,
-        AuthHelper::CampaignTypes);
+        AuthHelper::CampaignTypes,
+        false);
 
     if(isset($campaigns->Campaigns))
     {

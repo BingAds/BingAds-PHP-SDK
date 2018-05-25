@@ -31,7 +31,7 @@ $GLOBALS['CampaignManagementProxy'] = null;
 
 $GLOBALS['LocalFile'] = "c:\\geolocations\\geolocations.csv";
 
-// The temporary location of the downloaded locations file.
+// The temporary location of the download file.
 
 $GLOBALS['TempFile'] = "c:\\geolocations\\temp.csv";
 
@@ -149,7 +149,7 @@ function DownloadFile($fileUrl){
     }
     else
     {
-        printf("The locations file was not successfully download.\n");
+        printf("The geographical locations file was not successfully downloaded.\n");
         unlink($GLOBALS['TempFile']);
     }
 }

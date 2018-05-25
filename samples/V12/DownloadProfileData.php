@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\BingAds\Samples\V11;
+namespace Microsoft\BingAds\Samples\V12;
 
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
@@ -19,29 +19,27 @@ use DateTime;
 use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
+//Specify the Microsoft\BingAds\V12\CampaignManagement classes that will be used.
+use Microsoft\BingAds\V12\CampaignManagement\ProfileType;
+
 // Specify the Microsoft\BingAds\Samples classes that will be used.
-use Microsoft\BingAds\Samples\V11\AuthHelper;
-use Microsoft\BingAds\Samples\V11\CampaignManagementExampleHelper;
+use Microsoft\BingAds\Samples\V12\AuthHelper;
+use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
 $GLOBALS['CampaignManagementProxy'] = null; 
 
-// The full path where you want to download the geographical locations file.
+// The full path to the profile data.
 
-$GLOBALS['LocalFile'] = "c:\\geolocations\\geolocations.csv";
+$GLOBALS['LocalFile'] = "c:\\profiledata\\profiledata.csv";
 
-// The temporary location of the downloaded locations file.
+// The temporary location of the download file.
 
-$GLOBALS['TempFile'] = "c:\\geolocations\\temp.csv";
+$GLOBALS['TempFile'] = "c:\\profiledata\\temp.csv";
 
-// The latest supported file format version is 2.0. 
-
-$Version = "2.0";
-
-// The language and locale of the geographical locations file available for download.
-// This example uses 'en' (English). Supported locales are 'zh-Hant' (Traditional Chinese), 'en' (English), 'fr' (French), 
-// 'de' (German), 'it' (Italian), 'pt-BR' (Portuguese - Brazil), and 'es' (Spanish). 
+// The language and locale of the profile data available for download.
+// This example uses 'en' (English).
 
 $LanguageLocale = "en";
 
@@ -57,7 +55,7 @@ try
     AuthHelper::Authenticate();
 
     $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion11, 
+        ServiceClientType::CampaignManagementVersion12, 
         $GLOBALS['AuthorizationData'], 
         AuthHelper::GetApiEnvironment());
 
@@ -65,15 +63,17 @@ try
 
     // Going forward you should track the date and time of the previous download,  
     // and compare it with the last modified time provided by the service.
-    $previousSyncTimeUtc = new DateTime('2017-08-10T00:00:00-00:00');
+    $previousSyncTimeUtc = new DateTime('2018-04-26T00:00:00-00:00');
     
-    $getGeoLocationsFileUrlResponse = CampaignManagementExampleHelper::GetGeoLocationsFileUrl(
-        $Version, 
-        $LanguageLocale);
+    // Supported profile types are CompanyName, Industry, and JobFunction
 
-    $fileUrl = $getGeoLocationsFileUrlResponse->FileUrl;
-    $fileUrlExpiryTimeUtc = $getGeoLocationsFileUrlResponse->FileUrlExpiryTimeUtc;
-    $lastModifiedTimeUtc = $getGeoLocationsFileUrlResponse->LastModifiedTimeUtc;
+    $getProfileDataFileUrlResponse = CampaignManagementExampleHelper::GetProfileDataFileUrl(
+        $LanguageLocale, 
+        ProfileType::CompanyName);
+
+    $fileUrl = $getProfileDataFileUrlResponse->FileUrl;
+    $fileUrlExpiryTimeUtc = $getProfileDataFileUrlResponse->FileUrlExpiryTimeUtc;
+    $lastModifiedTimeUtc = $getProfileDataFileUrlResponse->LastModifiedTimeUtc;
 
     printf("FileUrl: %s\n", $fileUrl);
     printf("FileUrlExpiryTimeUtc: %s\n", $fileUrlExpiryTimeUtc);
@@ -144,12 +144,12 @@ function DownloadFile($fileUrl){
     
     if ($httpCode == 200)
     {
-        printf("Downloaded the geographical locations to %s.\n", $GLOBALS['LocalFile']);
+        printf("Downloaded the profile data to %s.\n", $GLOBALS['LocalFile']);
         rename($GLOBALS['TempFile'], $GLOBALS['LocalFile']);
     }
     else
     {
-        printf("The geographical locations file was not successfully downloaded.\n");
+        printf("The profile data was not successfully downloaded.\n");
         unlink($GLOBALS['TempFile']);
     }
 }

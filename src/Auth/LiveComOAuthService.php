@@ -118,15 +118,15 @@ class LiveComOAuthService extends IOAuthService
         ) . (($parameters->State == null) ? "" : ("&state=" . $parameters->State));
     }
 
-    public function GetRedirectUrl($environment) {
+    public static function GetRedirectUrl($environment) {
         return LiveComOAuthService::REDIRECTION_URI[$environment];
     }
 
-    public function GetAuthTokenUrl($environment) {
+    public static function GetAuthTokenUrl($environment) {
         return LiveComOAuthService::AUTH_TOKEN_URI[$environment];
     }
 
-    public function GetAuthorizeUrl($environment) {
+    public static function GetAuthorizeUrl($environment) {
         return LiveComOAuthService::AUTHORIZE_URI[$environment];
     }
 }

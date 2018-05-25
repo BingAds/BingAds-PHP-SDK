@@ -300,7 +300,8 @@ try
 
     $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByAccountId(
             $GLOBALS['AuthorizationData']->AccountId, 
-            AuthHelper::CampaignTypes)->Campaigns;
+            AuthHelper::CampaignTypes,
+            false)->Campaigns;
 
     $updateCampaigns = array();
     $updateBudgets = array();
