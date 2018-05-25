@@ -71,7 +71,7 @@ try
 		$GLOBALS['AuthorizationData'], 
 		AuthHelper::GetApiEnvironment());
 
-    $stores= CampaignManagementExampleHelper::GetBMCStoresByCustomerId($GLOBALS['CampaignManagementProxy'])->BMCStores->BMCStore;
+    $stores= CampaignManagementExampleHelper::GetBMCStoresByCustomerId(false)->BMCStores->BMCStore;
 	
     if (!isset($stores))
     {

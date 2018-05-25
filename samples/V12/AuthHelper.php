@@ -17,9 +17,7 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples\V12 classes that will be used.
-
 use Microsoft\BingAds\Samples\V12\CustomerManagementExampleHelper;
-
 
 // Specify the Microsoft\BingAds\V12\CampaignManagement classes that will be used.
 use Microsoft\BingAds\V12\CampaignManagement\AdGroupCriterionType;
@@ -49,6 +47,7 @@ final class AuthHelper {
     const ClientSecret = 'ClientSecretGoesHere'; 
 
     const CampaignTypes = 
+        CampaignType::Audience . ' ' . 
         CampaignType::Search . ' ' . 
         CampaignType::Shopping . ' ' . 
         CampaignType::DynamicSearchAds;

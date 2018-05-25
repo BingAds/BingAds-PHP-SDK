@@ -12,7 +12,4 @@ abstract class IOAuthService
      * deserialize the response, and return back OAuth tokens.
      */
     abstract function GetAccessTokens(OAuthRequestParameters $oauthParameters, $environment);
-
-    abstract function GetRedirectUrl($environment);
-    
 }

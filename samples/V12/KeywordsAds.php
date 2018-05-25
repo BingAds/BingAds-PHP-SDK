@@ -62,7 +62,10 @@ try
     
     AuthHelper::Authenticate();
 
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(ServiceClientType::CampaignManagementVersion12, $GLOBALS['AuthorizationData'], AuthHelper::GetApiEnvironment());
+    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
+        ServiceClientType::CampaignManagementVersion12, 
+        $GLOBALS['AuthorizationData'], 
+        AuthHelper::GetApiEnvironment());
 
     // Let's create a new budget and share it with a new campaign.
 
@@ -263,7 +266,7 @@ try
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
     }
 
     print "AddAdGroups\n";
@@ -274,7 +277,7 @@ try
     $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
     }
 
     print "AddKeywords\n";
@@ -285,7 +288,7 @@ try
     $nillableKeywordIds = $addKeywordsResponse->KeywordIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableKeywordIds);
     if(isset($addKeywordsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addKeywordsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addKeywordsResponse->PartialErrors);
     }
 
 	print "AddAds\n";
@@ -293,7 +296,7 @@ try
     $nillableAdIds = $addAdsResponse->AdIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdIds);
     if(isset($addAdsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors);
     }
           
     

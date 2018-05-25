@@ -70,7 +70,7 @@ try
 		$GLOBALS['AuthorizationData'], 
 		AuthHelper::GetApiEnvironment());
 
-    $stores= CampaignManagementExampleHelper::GetBMCStoresByCustomerId($GLOBALS['CampaignManagementProxy'])->BMCStores->BMCStore;
+    $stores= CampaignManagementExampleHelper::GetBMCStoresByCustomerId(false)->BMCStores->BMCStore;
 	
     if (!isset($stores))
     {
@@ -147,7 +147,7 @@ try
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
     }
 
     print "AddAdGroups\n";
@@ -155,7 +155,7 @@ try
     $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
     if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
     }
 
 	print "AddAds\n";
@@ -163,7 +163,7 @@ try
     $nillableAdIds = $addAdsResponse->AdIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdIds);
     if(isset($addAdsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors->BatchError);
+        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors);
     }
 
     // Add criterion to the campaign. The criterion is used to limit the campaign to a subset of

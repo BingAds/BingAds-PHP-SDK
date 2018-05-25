@@ -160,7 +160,7 @@ try
             CampaignManagementExampleHelper::OutputArrayOfCampaignCriterion($campaignCriterions);
         }        
 
-        $getAdGroups = CampaignManagementExampleHelper::GetAdGroupsByCampaignId($campaignId, null)->AdGroups;
+        $getAdGroups = CampaignManagementExampleHelper::GetAdGroupsByCampaignId($campaignId, null, false)->AdGroups;
 
         // Loop through all ad groups to get the target criterion IDs.
         foreach ($getAdGroups->AdGroup as $adGroup)

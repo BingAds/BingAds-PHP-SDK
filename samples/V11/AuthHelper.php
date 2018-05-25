@@ -18,9 +18,7 @@ use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples\V11 classes that will be used.
-
 use Microsoft\BingAds\Samples\V11\CustomerManagementExampleHelper;
-
 
 // Specify the Microsoft\BingAds\V11\CampaignManagement classes that will be used.
 use Microsoft\BingAds\V11\CampaignManagement\AdGroupCriterionType;
