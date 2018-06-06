@@ -47,7 +47,7 @@ $mediaFilePath = "c:\\dev\\media\\";
 $landscapeImageMediaFileName = "imageresponsivead1200x628.png";
 $landscapeLogoMediaFileName = "imageresponsivead1200x300.png";
 $squareImageMediaFileName = "imageresponsivead1200x1200.png";
-$squareLogoMediaFileName = "imageresponsivead1200x1200.png";
+$squareLogoMediaFileName = "imageresponsivead1100x1100.png";
 $imageAdExtensionMediaFileName = "imageadextension300x200.png";
 
 try
