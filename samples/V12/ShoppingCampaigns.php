@@ -132,7 +132,6 @@ try
 
     $ads = array();
     $ad = new ProductAd();
-    $ad->PromotionalText = "Free shipping on $99 purchases.";
     $encodedAd = new SoapVar(
 		$ad, 
 		SOAP_ENC_OBJECT, 
