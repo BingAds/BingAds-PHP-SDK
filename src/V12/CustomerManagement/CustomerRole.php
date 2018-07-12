@@ -28,6 +28,12 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
          * @var integer[]
          */
         public $AccountIds;
+
+        /**
+         * Reserved.
+         * @var integer[]
+         */
+        public $LinkedAccountIds;
     }
 
 }
