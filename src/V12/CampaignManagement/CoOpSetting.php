@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class CoOpSetting extends Setting
     {
         /**
-         * The percentage that allows your cooperative bid to flex.
+         * The percentage (greater than zero) that allows your cooperative bid to flex.
          * @var double
          */
         public $BidBoostValue;

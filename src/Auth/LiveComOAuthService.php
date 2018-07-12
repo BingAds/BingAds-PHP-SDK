@@ -51,7 +51,8 @@ class LiveComOAuthService extends IOAuthService
             'client_id' => $oauthRequestParameters->ClientId,
             'grant_type' => $oauthRequestParameters->GrantType,
             $oauthRequestParameters->GrantParamName => $oauthRequestParameters->GrantValue,
-            'redirect_uri' => $oauthRequestParameters->RedirectUri
+            'redirect_uri' => $oauthRequestParameters->RedirectUri,
+            'scope' => 'bingads.manage'
         );
 
         if ($oauthRequestParameters->ClientSecret != null)

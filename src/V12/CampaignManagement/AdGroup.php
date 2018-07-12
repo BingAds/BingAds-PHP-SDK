@@ -91,7 +91,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $PrivacyStatus;
 
         /**
-         * The ad group settings for criterion type group targets.
+         * The ad group settings that typically vary by campaign type.
          * @var Setting[]
          */
         public $Settings;

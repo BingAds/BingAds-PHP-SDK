@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class ProductAd extends Ad
     {
         /**
-         * The promotional text to display in a product ad.
+         * This property is reserved for internal use and will be removed from a future version of the API.
          * @var string
          */
         public $PromotionalText;

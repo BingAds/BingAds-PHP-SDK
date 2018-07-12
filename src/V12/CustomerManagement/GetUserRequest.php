@@ -16,5 +16,11 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
          * @var integer
          */
         public $UserId;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IncludeLinkedAccountIds;
     }
 }

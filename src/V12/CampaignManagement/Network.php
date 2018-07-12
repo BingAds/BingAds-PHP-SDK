@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** Display ads on only syndicated search networks. */
         const SyndicatedSearchOnly = 'SyndicatedSearchOnly';
 
-        /** Reserved. */
+        /** Reserved for future use. */
         const InHousePromotion = 'InHousePromotion';
     }
 
