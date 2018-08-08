@@ -5,10 +5,10 @@ namespace Microsoft\BingAds\Samples\V12;
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
-include "/AuthHelper.php";
-include "/BulkExampleHelper.php";
+include __DIR__ . "/AuthHelper.php";
+include __DIR__ . "/BulkExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -23,7 +23,6 @@ use Microsoft\BingAds\V12\Bulk\DataScope;
 use Microsoft\BingAds\V12\Bulk\CampaignScope;
 use Microsoft\BingAds\V12\Bulk\GetBulkDownloadStatusRequest;
 use Microsoft\BingAds\V12\Bulk\DownloadFileType;
-use Microsoft\BingAds\V12\Bulk\PerformanceStatsDateRange;
 use Microsoft\BingAds\V12\Bulk\CustomDateRangeEnd;
 use Microsoft\BingAds\V12\Bulk\CustomDateRangeStart;
 use Microsoft\BingAds\V12\Bulk\Date;
@@ -273,8 +272,7 @@ function UploadFile($uploadUrl, $filePath)
         throw new Exception("AuthorizationData is not set.");
     }
     
-    // If you are using OAuth, then you must include the AuthenticationToken header element
-    // instead of UserName and Password.
+    // Set the authorization headers.
     if(isset($GLOBALS['AuthorizationData']->Authentication) && isset($GLOBALS['AuthorizationData']->Authentication->Type))
     {
         $authorizationHeaders = array();
@@ -282,14 +280,7 @@ function UploadFile($uploadUrl, $filePath)
         $authorizationHeaders[] = "CustomerId: " . $GLOBALS['AuthorizationData']->CustomerId;
         $authorizationHeaders[] = "CustomerAccountId: " . $GLOBALS['AuthorizationData']->AccountId;
         
-        if($GLOBALS['AuthorizationData']->Authentication->Type == "PasswordAuthentication")
-        {
-            $authorizationHeaders[] = "UserName: " . $GLOBALS['AuthorizationData']->Authentication->UserName;
-            $authorizationHeaders[] = "Password: " . $GLOBALS['AuthorizationData']->Authentication->Password;
-        }
-        elseif($GLOBALS['AuthorizationData']->Authentication->Type == "OAuthWebAuthCodeGrant" ||
-                $GLOBALS['AuthorizationData']->Authentication->Type == "OAuthDesktopMobileAuthCodeGrant" ||
-                $GLOBALS['AuthorizationData']->Authentication->Type == "OAuthDesktopMobileImplicitGrant") 
+        if(isset($GLOBALS['AuthorizationData']->Authentication->OAuthTokens)) 
         {
             $authorizationHeaders[] = "AuthenticationToken: " . $GLOBALS['AuthorizationData']->Authentication->OAuthTokens->AccessToken;
         }

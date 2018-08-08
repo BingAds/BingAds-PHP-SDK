@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
     final class SearchAccountsResponse
     {
         /**
-         * A  list of accounts that meet the specified criteria.
+         * A list of accounts that meet the specified criteria.
          * @var AdvertiserAccount[]
          */
         public $Accounts;

@@ -3,7 +3,7 @@
 namespace Microsoft\BingAds\Auth;
 
 /** 
- * Represents the UserName and Password authentication headers that should be used in calls to the Bing Ads web services. 
+ * Represents the deprecated UserName and Password authentication headers. 
  */
 class PasswordAuthentication extends Authentication 
 {

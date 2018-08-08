@@ -8,10 +8,8 @@ namespace Microsoft\BingAds\Samples;
  */
 final class WebAuthHelper {
 
-    const DeveloperToken = 'DeveloperTokenGoesHere';
-    const ApiEnvironment = ApiEnvironment::Production;
-    const UserName = 'UserNameGoesHere';
-    const Password = 'PasswordGoesHere';
+    const DeveloperToken = 'BBD37VB98'; // For sandbox use BBD37VB98
+    const ApiEnvironment = ApiEnvironment::Sandbox;
     const ClientId = 'ClientIdGoesHere'; 
     const ClientSecret = 'ClientSecretGoesHere'; 
     const RedirectUri = 'RedirectUriGoesHere'; 

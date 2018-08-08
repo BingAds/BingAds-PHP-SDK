@@ -43,6 +43,15 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** The campaign criterion is a location intent criterion. */
         const LocationIntent = 'LocationIntent';
+
+        /** The campaign criterion is a company name profile criterion. */
+        const CompanyName = 'CompanyName';
+
+        /** The campaign criterion is a job function profile criterion. */
+        const JobFunction = 'JobFunction';
+
+        /** The campaign criterion is an industry profile criterion. */
+        const Industry = 'Industry';
     }
 
 }

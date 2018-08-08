@@ -2,7 +2,7 @@
 
 namespace Microsoft\BingAds\Samples\V11;
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 use SoapVar;
 use SoapFault;

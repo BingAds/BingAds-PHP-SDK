@@ -2,7 +2,7 @@
 
 namespace Microsoft\BingAds\Samples\V12;
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 use SoapVar;
 use SoapFault;
@@ -2184,6 +2184,10 @@ final class CampaignManagementExampleHelper {
             if($dataObject->Type === "RemarketingList")
             {
                 self::OutputRemarketingList($dataObject);
+            }
+            if($dataObject->Type === "SimilarRemarketingList")
+            {
+                self::OutputSimilarRemarketingList($dataObject);
             }
         }
         self::OutputStatusMessage("* * * End OutputAudience * * *");
@@ -4821,6 +4825,28 @@ final class CampaignManagementExampleHelper {
             self::OutputShoppingSetting($dataObject);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfShoppingSetting * * *");
+    }
+    static function OutputSimilarRemarketingList($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputSimilarRemarketingList * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("SourceId: %s", $dataObject->SourceId));
+        }
+        self::OutputStatusMessage("* * * End OutputSimilarRemarketingList * * *");
+    }
+    static function OutputArrayOfSimilarRemarketingList($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->SimilarRemarketingList))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfSimilarRemarketingList * * *");
+        foreach ($dataObjects->SimilarRemarketingList as $dataObject)
+        {
+            self::OutputSimilarRemarketingList($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfSimilarRemarketingList * * *");
     }
     static function OutputSitelinkAdExtension($dataObject)
     {

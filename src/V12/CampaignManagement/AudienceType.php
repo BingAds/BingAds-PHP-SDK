@@ -24,6 +24,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** The audience is a product audience. */
         const Product = 'Product';
+
+        /** The audience is a similar remarketing list. */
+        const SimilarRemarketingList = 'SimilarRemarketingList';
     }
 
 }

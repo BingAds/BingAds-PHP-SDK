@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $SalesCountryCode;
 
         /**
-         * The unique identifier for the Bing Merchant Center store that your product catalog feed belongs to.
+         * The unique identifier for the Bing Merchant Center store that contains a product catalog feed that you want to use for the campaign.
          * @var integer
          */
         public $StoreId;

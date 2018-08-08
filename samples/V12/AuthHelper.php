@@ -2,9 +2,9 @@
 
 namespace Microsoft\BingAds\Samples\V12;
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
-require_once "/CustomerManagementExampleHelper.php";
+require_once __DIR__ . "/CustomerManagementExampleHelper.php";
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 
@@ -40,8 +40,8 @@ use Exception;
  */
 final class AuthHelper {
 
-    const DeveloperToken = 'DeveloperTokenGoesHere'; // For sandbox use BBD37VB98
-    const ApiEnvironment = ApiEnvironment::Production;
+    const DeveloperToken = 'BBD37VB98'; // For sandbox use BBD37VB98
+    const ApiEnvironment = ApiEnvironment::Sandbox;
     const OAuthRefreshTokenPath = 'refresh.txt';
     const ClientId = 'ClientIdGoesHere'; 
     const ClientSecret = 'ClientSecretGoesHere'; 
@@ -82,7 +82,7 @@ final class AuthHelper {
             
         // Set to an empty user identifier to get the current authenticated Bing Ads user,
         // and then search for all accounts the user may access.
-        $user = CustomerManagementExampleHelper::GetUser(null)->User;
+        $user = CustomerManagementExampleHelper::GetUser(null, true)->User;
         $accounts = AuthHelper::SearchAccountsByUserId($user->Id)->Accounts;
     
         // For this example we'll use the first account.

@@ -2,7 +2,7 @@
 
 namespace Microsoft\BingAds\Samples\V12;
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
 use SoapVar;
 use SoapFault;
@@ -34,6 +34,7 @@ use Microsoft\BingAds\V12\CustomerManagement\UpdateClientLinksRequest;
 use Microsoft\BingAds\V12\CustomerManagement\UpdateCustomerRequest;
 use Microsoft\BingAds\V12\CustomerManagement\UpdateUserRequest;
 use Microsoft\BingAds\V12\CustomerManagement\UpdateUserRolesRequest;
+use Microsoft\BingAds\V12\CustomerManagement\ValidateAddressRequest;
 
 final class CustomerManagementExampleHelper {
     static function AddAccount(
@@ -159,7 +160,8 @@ final class CustomerManagementExampleHelper {
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetAccountsInfo($request);
     }
     static function GetCustomer(
-        $customerId)
+        $customerId,
+        $includeCustomerAddress)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -167,6 +169,7 @@ final class CustomerManagementExampleHelper {
         $request = new GetCustomerRequest();
 
         $request->CustomerId = $customerId;
+        $request->IncludeCustomerAddress = $includeCustomerAddress;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetCustomer($request);
     }
@@ -197,7 +200,8 @@ final class CustomerManagementExampleHelper {
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetCustomersInfo($request);
     }
     static function GetUser(
-        $userId)
+        $userId,
+        $includeLinkedAccountIds)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -205,6 +209,7 @@ final class CustomerManagementExampleHelper {
         $request = new GetUserRequest();
 
         $request->UserId = $userId;
+        $request->IncludeLinkedAccountIds = $includeLinkedAccountIds;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($request);
     }
@@ -258,7 +263,8 @@ final class CustomerManagementExampleHelper {
         $predicates,
         $dateRange,
         $ordering,
-        $pageInfo)
+        $pageInfo,
+        $includeCustomerAddress)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -269,6 +275,7 @@ final class CustomerManagementExampleHelper {
         $request->DateRange = $dateRange;
         $request->Ordering = $ordering;
         $request->PageInfo = $pageInfo;
+        $request->IncludeCustomerAddress = $includeCustomerAddress;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->SearchCustomers($request);
     }
@@ -385,6 +392,18 @@ final class CustomerManagementExampleHelper {
         $request->DeleteCustomerIds = $deleteCustomerIds;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->UpdateUserRoles($request);
+    }
+    static function ValidateAddress(
+        $address)
+    {
+        $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+
+        $request = new ValidateAddressRequest();
+
+        $request->Address = $address;
+
+        return $GLOBALS['CustomerManagementProxy']->GetService()->ValidateAddress($request);
     }
     static function OutputAccountInfo($dataObject)
     {
@@ -711,6 +730,7 @@ final class CustomerManagementExampleHelper {
             self::OutputStatusMessage(sprintf("CustomerLifeCycleStatus: %s", $dataObject->CustomerLifeCycleStatus));
             self::OutputStatusMessage(sprintf("TimeStamp: %s", $dataObject->TimeStamp));
             self::OutputStatusMessage(sprintf("Number: %s", $dataObject->Number));
+            self::OutputAddress($dataObject->CustomerAddress);
         }
         self::OutputStatusMessage("* * * End OutputCustomer * * *");
     }
@@ -758,6 +778,7 @@ final class CustomerManagementExampleHelper {
             self::OutputStatusMessage(sprintf("RoleId: %s", $dataObject->RoleId));
             self::OutputStatusMessage(sprintf("CustomerId: %s", $dataObject->CustomerId));
             self::OutputArrayOfLong($dataObject->AccountIds);
+            self::OutputArrayOfLong($dataObject->LinkedAccountIds);
         }
         self::OutputStatusMessage("* * * End OutputCustomerRole * * *");
     }

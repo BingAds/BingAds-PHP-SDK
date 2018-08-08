@@ -21,13 +21,13 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $Predicates;
 
         /**
-         * Determines the order of results by the specified property of an account<br/><br/> You should only specify one OrderBy element in the array.
+         * Determines the order of results by the specified property of an account.
          * @var OrderBy[]
          */
         public $Ordering;
 
         /**
-         * Determines the index and size of  results per page.
+         * Determines the index and size of results per page.
          * @var Paging
          */
         public $PageInfo;

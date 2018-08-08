@@ -67,6 +67,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** The ad group criterion is product audience association. */
         const ProductAudience = 'ProductAudience';
+
+        /** The ad group criterion is a similar remarketing list association. */
+        const SimilarRemarketingList = 'SimilarRemarketingList';
     }
 
 }

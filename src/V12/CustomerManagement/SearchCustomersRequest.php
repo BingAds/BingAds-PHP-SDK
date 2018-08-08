@@ -38,5 +38,11 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * Determines whether or not to return the Address element in each returned Customer object.
+         * @var boolean
+         */
+        public $IncludeCustomerAddress;
     }
 }

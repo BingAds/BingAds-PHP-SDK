@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $AdGroups;
 
         /**
-         * Reserved.
+         * Determines whether or not the service should use the AudienceAdsBidAdjustment element of each specified AdGroup during update.
          * @var boolean
          */
         public $UpdateAudienceAdsBidAdjustment;

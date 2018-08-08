@@ -4,9 +4,9 @@ namespace Microsoft\BingAds\Samples;
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
 
-require_once "./vendor/autoload.php";
+require_once __DIR__ . "./vendor/autoload.php";
 
-include "WebAuthHelper.php";
+include __DIR__ . "WebAuthHelper.php";
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\AuthorizationData;
