@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $AccountIds;
 
         /**
-         * Reserved.
+         * The list of linked accounts that the user can access as an agency on behalf of another customer.
          * @var integer[]
          */
         public $LinkedAccountIds;

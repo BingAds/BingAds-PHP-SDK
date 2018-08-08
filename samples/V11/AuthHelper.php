@@ -2,13 +2,12 @@
 
 namespace Microsoft\BingAds\Samples\V11;
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
-require_once "/CustomerManagementExampleHelper.php";
+require_once __DIR__ . "/CustomerManagementExampleHelper.php";
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 
-use Microsoft\BingAds\Auth\PasswordAuthentication;
 use Microsoft\BingAds\Auth\OAuthDesktopMobileAuthCodeGrant;
 use Microsoft\BingAds\Auth\OAuthWebAuthCodeGrant;
 use Microsoft\BingAds\Auth\AuthorizationData;
@@ -41,8 +40,8 @@ use Exception;
  */
 final class AuthHelper {
 
-    const DeveloperToken = 'DeveloperTokenGoesHere'; // For sandbox use BBD37VB98
-    const ApiEnvironment = ApiEnvironment::Production;
+    const DeveloperToken = 'BBD37VB98'; // For sandbox use BBD37VB98
+    const ApiEnvironment = ApiEnvironment::Sandbox;
     const OAuthRefreshTokenPath = 'refresh.txt';
     const ClientId = 'ClientIdGoesHere'; 
     const ClientSecret = 'ClientSecretGoesHere'; 
@@ -76,10 +75,6 @@ final class AuthHelper {
         // instead of providing the Bing Ads username and password set. 
         AuthHelper::AuthenticateWithOAuth();
     
-        // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-        // so this method is deprecated.
-        //AuthHelper::AuthenticateWithUserName();
-
         $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
             ServiceClientType::CustomerManagementVersion11, 
             $GLOBALS['AuthorizationData'], 
@@ -118,21 +113,6 @@ final class AuthHelper {
         return $GLOBALS['Proxy']->GetService()->SearchAccounts($request);
     }
     
-    // Sets the global authorization data instance with PasswordAuthentication.
-    // Bing Ads API Version 11 is the last version to support UserName and Password authentication,
-    // so this function is deprecated.
-    
-    static function AuthenticateWithUserName() 
-    {
-        $authentication = (new PasswordAuthentication())
-            ->withUserName(AuthHelper::UserName)
-            ->withPassword(AuthHelper::Password);
-
-        $GLOBALS['AuthorizationData'] = (new AuthorizationData())
-            ->withAuthentication($authentication)
-            ->withDeveloperToken(AuthHelper::DeveloperToken);
-    }
-
     // Sets the global authorization data instance with OAuthDesktopMobileAuthCodeGrant.
 
     static function AuthenticateWithOAuth() 

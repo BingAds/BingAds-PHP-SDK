@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Defines an object that represents the target CPA bid strategy type.
+     * With the TargetCpa (cost per acquisition) bid strategy, you don't need to set ad group or keyword bids.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/targetcpabiddingscheme?view=bingads-11 TargetCpaBiddingScheme Data Object
      * 
      * @uses Bid

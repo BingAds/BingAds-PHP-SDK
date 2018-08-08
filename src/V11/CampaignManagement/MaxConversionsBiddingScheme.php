@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Defines an object that represents the maximum conversions bid strategy type.
+     * With the MaxConversions bid strategy, you don't need to set ad group or keyword bids.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/maxconversionsbiddingscheme?view=bingads-11 MaxConversionsBiddingScheme Data Object
      * 
      * @uses Bid

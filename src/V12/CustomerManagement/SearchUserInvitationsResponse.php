@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
     final class SearchUserInvitationsResponse
     {
         /**
-         * A  list of user invitations that meet the specified criteria.
+         * A list of user invitations that meet the specified criteria.
          * @var UserInvitation[]
          */
         public $UserInvitations;

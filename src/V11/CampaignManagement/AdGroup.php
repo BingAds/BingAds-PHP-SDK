@@ -118,7 +118,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
         public $SearchBid;
 
         /**
-         * Reserved for future use.
+         * The ad group settings that typically vary by campaign type.
          * @var Setting[]
          */
         public $Settings;

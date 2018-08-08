@@ -13,6 +13,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
      * @uses LanguageType
      * @uses ServiceLevel
      * @uses CustomerLifeCycleStatus
+     * @uses Address
      * @used-by GetAccessibleCustomerResponse
      * @used-by GetCustomerResponse
      * @used-by SearchCustomersResponse
@@ -98,6 +99,12 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
          * @var string
          */
         public $Number;
+
+        /**
+         * The customer's business address.
+         * @var Address
+         */
+        public $CustomerAddress;
     }
 
 }

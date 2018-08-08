@@ -20,6 +20,9 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
         /** Used to get or set the property that determines whether MSCLKID auto-tagging is enabled for the account. */
         const MSCLKIDAutoTaggingEnabled = 'MSCLKIDAutoTaggingEnabled';
+
+        /** Reserved. */
+        const AdClickParallelTracking = 'AdClickParallelTracking';
     }
 
 }

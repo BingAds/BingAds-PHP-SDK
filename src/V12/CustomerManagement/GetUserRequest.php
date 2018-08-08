@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $UserId;
 
         /**
-         * Reserved.
+         * Determines a) whether or not the CustomerRole objects that represent the user's permissions on agency-linked accounts should be returned, and b) whether or not the LinkedAccountIds element should be included in all returned CustomerRole objects.
          * @var boolean
          */
         public $IncludeLinkedAccountIds;

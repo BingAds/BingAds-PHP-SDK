@@ -5,11 +5,11 @@ namespace Microsoft\BingAds\Samples\V12;
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
-require_once "/CustomerManagementExampleHelper.php";
+require_once __DIR__ . "/CustomerManagementExampleHelper.php";
 
-include "/AuthHelper.php";
+include __DIR__ . "/AuthHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -129,7 +129,7 @@ try
     
     foreach ($usersInfo->UserInfo as $userInfo)
     {
-        $getUserResponse = CustomerManagementExampleHelper::GetUser($userInfo->Id);
+        $getUserResponse = CustomerManagementExampleHelper::GetUser($userInfo->Id, true);
         CustomerManagementExampleHelper::OutputUser($getUserResponse->User);
         CustomerManagementExampleHelper::OutputArrayOfCustomerRole($getUserResponse->CustomerRoles);
     }

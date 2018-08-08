@@ -16,5 +16,11 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
          * @var integer
          */
         public $CustomerId;
+
+        /**
+         * Determines whether or not to return the Address element in the returned Customer object.
+         * @var boolean
+         */
+        public $IncludeCustomerAddress;
     }
 }

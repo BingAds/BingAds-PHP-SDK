@@ -5,12 +5,12 @@ namespace Microsoft\BingAds\Samples\V12;
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
-require_once "/CustomerManagementExampleHelper.php";
+require_once __DIR__ . "/CustomerManagementExampleHelper.php";
 
-include "/AuthHelper.php";
-include "/CampaignManagementExampleHelper.php";
+include __DIR__ . "/AuthHelper.php";
+include __DIR__ . "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;
@@ -64,7 +64,7 @@ try
     // Set the GetUser request parameter to an empty user identifier to get the current 
     // authenticated Bing Ads user, and then search for all accounts the user may access.
 
-    $user = CustomerManagementExampleHelper::GetUser(null)->User;
+    $user = CustomerManagementExampleHelper::GetUser(null, true)->User;
 
     // Search for the Bing Ads accounts that the user can access.
 

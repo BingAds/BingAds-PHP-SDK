@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V11\CampaignManagement;
 
 {
     /**
-     * Defines an object that represents the maximum clicks bid strategy type.
+     * With the MaxClicks bid strategy, you don't need to set ad group or keyword bids.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/maxclicksbiddingscheme?view=bingads-11 MaxClicksBiddingScheme Data Object
      * 
      * @uses Bid

@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     class Audience
     {
         /**
-         * The total number of people who belong to this audience in the Audience network i.
+         * The total number of people who are active members of this audience in the Audience network.
          * @var integer
          */
         public $AudienceNetworkSize;
@@ -65,7 +65,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Scope;
 
         /**
-         * The total number of people who belong to this audience in the Search network.
+         * The total number of people who are active members of this audience in the Search network.
          * @var integer
          */
         public $SearchSize;

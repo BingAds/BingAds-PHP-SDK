@@ -64,6 +64,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The value after the change. */
         const NewValue = 'NewValue';
+
+        /** The name of the entity that was updated. */
+        const EntityName = 'EntityName';
+
+        /** The Bing Ads system identifier of the entity that was updated. */
+        const EntityId = 'EntityId';
     }
 
 }

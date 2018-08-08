@@ -5,11 +5,11 @@ namespace Microsoft\BingAds\Samples\v11;
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
 
-require_once "/../vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 
-include "/AuthHelper.php";
-include "/AdInsightExampleHelper.php";
-include "/CampaignManagementExampleHelper.php";
+include __DIR__ . "/AuthHelper.php";
+include __DIR__ . "/AdInsightExampleHelper.php";
+include __DIR__ . "/CampaignManagementExampleHelper.php";
 
 use SoapVar;
 use SoapFault;

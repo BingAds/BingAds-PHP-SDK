@@ -9,6 +9,9 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
      * 
      * @used-by AdvertiserAccount
      * @used-by ContactInfo
+     * @used-by Customer
+     * @used-by ValidateAddressRequest
+     * @used-by ValidateAddressResponse
      */
     final class Address
     {
