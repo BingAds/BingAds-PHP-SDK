@@ -81,24 +81,27 @@ final class AuthHelper {
             AuthHelper::GetApiEnvironment());
             
         // Set to an empty user identifier to get the current authenticated Bing Ads user,
-        // and then search for all accounts the user may access.
+        // and then search for accounts the user can access.
         $user = CustomerManagementExampleHelper::GetUser(null, true)->User;
-        $accounts = AuthHelper::SearchAccountsByUserId($user->Id)->Accounts;
+
+        // To retrieve more than 100 accounts, increase the page size up to 1,000.
+        // To retrieve more than 1,000 accounts you'll need to implement paging.
+        $accounts = AuthHelper::SearchAccountsByUserId($user->Id, 0, 100)->Accounts;
     
         // For this example we'll use the first account.
         $GLOBALS['AuthorizationData']->AccountId = $accounts->AdvertiserAccount[0]->Id;
         $GLOBALS['AuthorizationData']->CustomerId = $accounts->AdvertiserAccount[0]->ParentCustomerId;
     }
 
-    static function SearchAccountsByUserId($userId)
+    static function SearchAccountsByUserId($userId, $pageIndex, $pageSize)
     {
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy']; 
     
         // Specify the page index and number of account results per page.
 
         $pageInfo = new Paging();
-        $pageInfo->Index = 0;    // The first page
-        $pageInfo->Size = 100;   // The first 100 accounts for this page of results    
+        $pageInfo->Index = $pageIndex;
+        $pageInfo->Size = $pageSize;  
 
         $predicate = new Predicate();
         $predicate->Field = "UserId";
