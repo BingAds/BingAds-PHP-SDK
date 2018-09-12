@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * 
      * @uses AdEditorialStatus
      * @uses AdType
+     * @uses AdAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAdsByEditorialStatus
      */
     final class GetAdsByEditorialStatusRequest
@@ -30,5 +31,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var AdType[]
          */
         public $AdTypes;
+
+        /**
+         * The list of additional properties that you want included within each returned Ad object.
+         * @var AdAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

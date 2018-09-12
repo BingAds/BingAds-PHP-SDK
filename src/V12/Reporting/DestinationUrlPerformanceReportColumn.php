@@ -139,6 +139,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The ad status. */
         const AdStatus = 'AdStatus';
+
+        /** The Bing Ads assigned identifier of a customer. */
+        const CustomerId = 'CustomerId';
+
+        /** The customer name. */
+        const CustomerName = 'CustomerName';
     }
 
 }

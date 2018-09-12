@@ -34,6 +34,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Text;
 
         /**
+         * Reserved for future use.
+         * @var string
+         */
+        public $TextPart2;
+
+        /**
          * The first part of the ad title.
          * @var string
          */
@@ -44,6 +50,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var string
          */
         public $TitlePart2;
+
+        /**
+         * Reserved for future use.
+         * @var string
+         */
+        public $TitlePart3;
     }
 
 }

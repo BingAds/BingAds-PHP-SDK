@@ -63,7 +63,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         public $PredefinedTime;
 
         /**
-         * Determines the time zone that you want the Reporting service to use for the selected date range.
+         * Determines the time zone that is used to establish today's date.
          * @var ReportTimeZone
          */
         public $ReportTimeZone;

@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     class Ad
     {
         /**
-         * The Ad Format Preference is used to indicate whether or not you prefer the ad copy to be shown to users as a search or native ad.
+         * The Ad Format Preference is used to indicate whether or not you prefer the ad copy to be shown to users as a search or audience ad.
          * @var string
          */
         public $AdFormatPreference;

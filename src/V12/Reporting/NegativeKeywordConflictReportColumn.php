@@ -70,6 +70,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The current keyword status. */
         const KeywordStatus = 'KeywordStatus';
+
+        /** The type of negative keyword conflict encountered. */
+        const ConflictType = 'ConflictType';
     }
 
 }

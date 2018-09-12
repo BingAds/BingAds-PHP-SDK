@@ -118,6 +118,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The revenue per assist. */
         const RevenuePerAssist = 'RevenuePerAssist';
+
+        /** The Bing Ads assigned identifier of a customer. */
+        const CustomerId = 'CustomerId';
+
+        /** The customer name. */
+        const CustomerName = 'CustomerName';
     }
 
 }

@@ -50,13 +50,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Price;
 
         /**
-         * The price qualifier.
+         * The price qualifier for a given product or service e.
          * @var PriceQualifier
          */
         public $PriceQualifier;
 
         /**
-         * The price unit.
+         * The price unit allows you to specify the cost in terms of hour, day, week, etc.
          * @var PriceUnit
          */
         public $PriceUnit;

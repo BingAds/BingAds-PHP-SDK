@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Reserved.
+     * Determines whether or not the submitted address is valid for Bing Ads accounts.
      * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/validateaddress?view=bingads-12 ValidateAddress Response Object
      * 
      * @uses Address
@@ -13,19 +13,19 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
     final class ValidateAddressResponse
     {
         /**
-         * Reserved.
+         * The address that was submitted for validation.
          * @var Address
          */
         public $OriginalAddress;
 
         /**
-         * Reserved.
+         * Determines whether or not the submitted address is valid for Bing Ads accounts, and whether or not any address suggestions are available via the SuggestedAddresses response element.
          * @var string
          */
         public $Status;
 
         /**
-         * Reserved.
+         * One or more suggested addresses if the Status is either AddressValidWithSuggestions or AddressInvalidWithSuggestions.
          * @var Address[]
          */
         public $SuggestedAddresses;

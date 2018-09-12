@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The report will contain search ads. */
         const Search = 'Search';
 
-        /** The report will contain intent ads. */
+        /** The report will contain audience ads. */
         const Audience = 'Audience';
     }
 
