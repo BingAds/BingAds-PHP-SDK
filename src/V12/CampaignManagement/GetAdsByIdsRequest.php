@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadsbyids?view=bingads-12 GetAdsByIds Request Object
      * 
      * @uses AdType
+     * @uses AdAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAdsByIds
      */
     final class GetAdsByIdsRequest
@@ -29,5 +30,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var AdType[]
          */
         public $AdTypes;
+
+        /**
+         * The list of additional properties that you want included within each returned Ad object.
+         * @var AdAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

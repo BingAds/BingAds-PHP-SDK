@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         public $ReportName;
 
         /**
-         * Determines whether you want the service to generate the report only if all the data has been processed and is available.
+         * Determines whether or not the service must ensure that all the data has been processed and is available.
          * @var boolean
          */
         public $ReturnOnlyCompleteData;

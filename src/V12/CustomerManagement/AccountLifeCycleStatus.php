@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         /** For internal use only. */
         const Pending = 'Pending';
 
-        /** Your account has been suspended and no ads are eligible for delivery because of potentially fraudulent activity. */
+        /** Your account has been suspended because of suspicious activity, and no ads are eligible for delivery. */
         const Suspended = 'Suspended';
     }
 

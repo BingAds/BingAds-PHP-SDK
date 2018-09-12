@@ -175,6 +175,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The labels applied to the ad. */
         const AdLabels = 'AdLabels';
+
+        /** The Bing Ads assigned identifier of a customer. */
+        const CustomerId = 'CustomerId';
+
+        /** The customer name. */
+        const CustomerName = 'CustomerName';
     }
 
 }

@@ -139,6 +139,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The type of campaign. */
         const CampaignType = 'CampaignType';
+
+        /** The Bing Ads assigned identifier of a customer. */
+        const CustomerId = 'CustomerId';
+
+        /** The customer name. */
+        const CustomerName = 'CustomerName';
     }
 
 }

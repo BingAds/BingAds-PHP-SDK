@@ -157,6 +157,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The estimated percentage of impressions that your account received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
+
+        /** The Bing Ads assigned identifier of a customer. */
+        const CustomerId = 'CustomerId';
+
+        /** The customer name. */
+        const CustomerName = 'CustomerName';
     }
 
 }

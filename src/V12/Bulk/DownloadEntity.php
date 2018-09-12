@@ -272,6 +272,15 @@ namespace Microsoft\BingAds\V12\Bulk;
 
         /** Include Ad Group Negative Product Audience Association records in the download that each represent the association relationship between an ad group and a product audience exclusion. */
         const AdGroupNegativeProductAudienceAssociations = 'AdGroupNegativeProductAudienceAssociations';
+
+        /** Include Similar Remarketing List records in the download data. */
+        const SimilarRemarketingLists = 'SimilarRemarketingLists';
+
+        /** Include Ad Group Similar Remarketing List Association records in the download that each represent the association relationship between an ad group and a similar remarketing list. */
+        const AdGroupSimilarRemarketingListAssociations = 'AdGroupSimilarRemarketingListAssociations';
+
+        /** Include Ad Group Negative Similar Remarketing List Association records in the download that each represent the association relationship between an ad group and a similar remarketing list exclusion. */
+        const AdGroupNegativeSimilarRemarketingListAssociations = 'AdGroupNegativeSimilarRemarketingListAssociations';
     }
 
 }

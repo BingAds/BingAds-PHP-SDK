@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** The campaign is deleted. */
         const Deleted = 'Deleted';
 
-        /** Your campaign has been suspended and no ads are eligible for delivery because of potentially fraudulent activity. */
+        /** Your campaign has been suspended because of suspicious activity, and no ads are eligible for delivery. */
         const Suspended = 'Suspended';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Reserved.
+     * Determines whether or not the submitted address is valid for Bing Ads accounts.
      * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/validateaddress?view=bingads-12 ValidateAddress Request Object
      * 
      * @uses Address
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
     final class ValidateAddressRequest
     {
         /**
-         * Reserved.
+         * The address to validate.
          * @var Address
          */
         public $Address;
