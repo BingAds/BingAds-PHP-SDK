@@ -68,7 +68,10 @@ try
     $campaigns[] = $campaign;
 
     print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        $campaigns,
+        false);
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){

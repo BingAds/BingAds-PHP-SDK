@@ -138,7 +138,8 @@ try
 
     $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
         $GLOBALS['AuthorizationData']->AccountId, 
-        $campaigns);
+        $campaigns,
+        false);
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     $campaignErrors = $addLabelsResponse->PartialErrors;
     print("New Campaign Ids:\n");

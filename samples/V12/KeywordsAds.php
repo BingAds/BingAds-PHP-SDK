@@ -23,6 +23,7 @@ use Microsoft\BingAds\V12\CampaignManagement\AdGroup;
 use Microsoft\BingAds\V12\CampaignManagement\Keyword;
 use Microsoft\BingAds\V12\CampaignManagement\Ad;
 use Microsoft\BingAds\V12\CampaignManagement\AdType;
+use Microsoft\BingAds\V12\CampaignManagement\AdAdditionalField;
 use Microsoft\BingAds\V12\CampaignManagement\ExpandedTextAd;
 use Microsoft\BingAds\V12\CampaignManagement\Bid;
 use Microsoft\BingAds\V12\CampaignManagement\BiddingScheme;
@@ -262,7 +263,10 @@ try
     // Add the campaign, ad group, keywords, and ads
     
     print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns($GLOBALS['AuthorizationData']->AccountId, $campaigns);
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        $campaigns,
+        false);
     $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
     CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
     if(isset($addCampaignsResponse->PartialErrors->BatchError)){
@@ -412,7 +416,10 @@ try
             $index++;
         }
         
-        CampaignManagementExampleHelper::UpdateCampaigns($GLOBALS['AuthorizationData']->AccountId, $updateCampaigns);
+        CampaignManagementExampleHelper::UpdateCampaigns(
+            $GLOBALS['AuthorizationData']->AccountId, 
+            $updateCampaigns,
+            false);
 
         $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByIds(
             $GLOBALS['AuthorizationData']->AccountId, 
@@ -465,12 +472,23 @@ try
     // As an exercise you can view the results before and after update.
 
     $adTypes = array(AdType::AppInstall, AdType::DynamicSearch, AdType::ExpandedText, AdType::Product, AdType::Text);
-    $ads = CampaignManagementExampleHelper::GetAdsByAdGroupId($nillableAdGroupIds->long[0], $adTypes);
-    CampaignManagementExampleHelper::OutputArrayOfAd($ads);
+    $adAdditionalFields = array(AdAdditionalField::TextPart2, AdAdditionalField::TitlePart3);
+    $ads = CampaignManagementExampleHelper::GetAdsByAdGroupId(
+        $nillableAdGroupIds->long[0], 
+        $adTypes,
+        $adAdditionalFields);
+    if(isset($ads->Ads)){
+        CampaignManagementExampleHelper::OutputArrayOfAd($ads->Ads);
+    }    
 
     $updateAdsResponse = CampaignManagementExampleHelper::UpdateAds($nillableAdGroupIds->long[0], $updateAds);
-    $ads = CampaignManagementExampleHelper::GetAdsByAdGroupId($nillableAdGroupIds->long[0], $adTypes);
-    CampaignManagementExampleHelper::OutputArrayOfAd($ads);
+    $ads = CampaignManagementExampleHelper::GetAdsByAdGroupId(
+        $nillableAdGroupIds->long[0], 
+        $adTypes,
+        $adAdditionalFields);
+    if(isset($ads->Ads)){
+        CampaignManagementExampleHelper::OutputArrayOfAd($ads->Ads);
+    }  
 
     // Here is a simple example that updates the keyword bid to use the ad group bid
 
@@ -485,15 +503,19 @@ try
     // As an exercise you can view the results before and after update.
 
     $keywords = CampaignManagementExampleHelper::GetKeywordsByAdGroupId($nillableAdGroupIds->long[0], null);
-    CampaignManagementExampleHelper::OutputArrayOfKeyword($keywords);
+    if(isset($keywords->Keywords)){
+        CampaignManagementExampleHelper::OutputArrayOfKeyword($keywords->Keywords);
+    }  
 
     $updateKeywordsResponse = CampaignManagementExampleHelper::UpdateKeywords(
         $nillableAdGroupIds->long[0], 
         $updateKeywords,
         null);
     $keywords = CampaignManagementExampleHelper::GetKeywordsByAdGroupId($nillableAdGroupIds->long[0], null);
-    CampaignManagementExampleHelper::OutputArrayOfKeyword($keywords);
-    
+    if(isset($keywords->Keywords)){
+        CampaignManagementExampleHelper::OutputArrayOfKeyword($keywords->Keywords);
+    }  
+        
     // As an exercise you can delete the keyword
     CampaignManagementExampleHelper::DeleteKeywords($nillableAdGroupIds->long[0], array($nillableKeywordIds->long[1]));
 
