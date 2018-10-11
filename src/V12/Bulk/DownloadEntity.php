@@ -281,6 +281,9 @@ namespace Microsoft\BingAds\V12\Bulk;
 
         /** Include Ad Group Negative Similar Remarketing List Association records in the download that each represent the association relationship between an ad group and a similar remarketing list exclusion. */
         const AdGroupNegativeSimilarRemarketingListAssociations = 'AdGroupNegativeSimilarRemarketingListAssociations';
+
+        /** Reserved. */
+        const Experiments = 'Experiments';
     }
 
 }

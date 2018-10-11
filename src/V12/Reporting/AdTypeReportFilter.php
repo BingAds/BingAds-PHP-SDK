@@ -32,6 +32,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The report will include expanded text ads. */
         const ExpandedText = 'ExpandedText';
+
+        /** The report will include responsive ads. */
+        const ResponsiveAd = 'ResponsiveAd';
     }
 
 }
