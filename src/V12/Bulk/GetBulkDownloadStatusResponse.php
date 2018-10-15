@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V12\Bulk;
         public $RequestStatus;
 
         /**
-         * The URL that contains the download data.
+         * The URL that contains the download data when the RequestStatus value is Completed.
          * @var string
          */
         public $ResultFileUrl;

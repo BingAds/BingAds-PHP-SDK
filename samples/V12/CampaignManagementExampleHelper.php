@@ -206,7 +206,8 @@ final class CampaignManagementExampleHelper {
     }
     static function AddCampaigns(
         $accountId,
-        $campaigns)
+        $campaigns,
+        $includeDynamicSearchAdsSource)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -215,6 +216,7 @@ final class CampaignManagementExampleHelper {
 
         $request->AccountId = $accountId;
         $request->Campaigns = $campaigns;
+        $request->IncludeDynamicSearchAdsSource = $includeDynamicSearchAdsSource;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->AddCampaigns($request);
     }
@@ -732,7 +734,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetAdsByAdGroupId(
         $adGroupId,
-        $adTypes)
+        $adTypes,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -741,13 +744,15 @@ final class CampaignManagementExampleHelper {
 
         $request->AdGroupId = $adGroupId;
         $request->AdTypes = $adTypes;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdsByAdGroupId($request);
     }
     static function GetAdsByEditorialStatus(
         $adGroupId,
         $editorialStatus,
-        $adTypes)
+        $adTypes,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -757,13 +762,15 @@ final class CampaignManagementExampleHelper {
         $request->AdGroupId = $adGroupId;
         $request->EditorialStatus = $editorialStatus;
         $request->AdTypes = $adTypes;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdsByEditorialStatus($request);
     }
     static function GetAdsByIds(
         $adGroupId,
         $adIds,
-        $adTypes)
+        $adTypes,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -773,6 +780,7 @@ final class CampaignManagementExampleHelper {
         $request->AdGroupId = $adGroupId;
         $request->AdIds = $adIds;
         $request->AdTypes = $adTypes;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdsByIds($request);
     }
@@ -1368,7 +1376,8 @@ final class CampaignManagementExampleHelper {
     }
     static function UpdateCampaigns(
         $accountId,
-        $campaigns)
+        $campaigns,
+        $includeDynamicSearchAdsSource)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1377,6 +1386,7 @@ final class CampaignManagementExampleHelper {
 
         $request->AccountId = $accountId;
         $request->Campaigns = $campaigns;
+        $request->IncludeDynamicSearchAdsSource = $includeDynamicSearchAdsSource;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateCampaigns($request);
     }
@@ -3347,8 +3357,10 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("Path1: %s", $dataObject->Path1));
             self::OutputStatusMessage(sprintf("Path2: %s", $dataObject->Path2));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage(sprintf("TextPart2: %s", $dataObject->TextPart2));
             self::OutputStatusMessage(sprintf("TitlePart1: %s", $dataObject->TitlePart1));
             self::OutputStatusMessage(sprintf("TitlePart2: %s", $dataObject->TitlePart2));
+            self::OutputStatusMessage(sprintf("TitlePart3: %s", $dataObject->TitlePart3));
         }
         self::OutputStatusMessage("* * * End OutputExpandedTextAd * * *");
     }
@@ -5228,6 +5240,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfCallToAction * * *");
     }
+    static function OutputAssetLinkEditorialStatus($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAssetLinkEditorialStatus * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAssetLinkEditorialStatus * * *");
+    }
+    static function OutputArrayOfAssetLinkEditorialStatus($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAssetLinkEditorialStatus * * *");
+        foreach ($valueSets->AssetLinkEditorialStatus as $valueSet)
+        {
+            self::OutputAssetLinkEditorialStatus($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAssetLinkEditorialStatus * * *");
+    }
     static function OutputBudgetLimitType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputBudgetLimitType * * *");
@@ -5457,6 +5492,29 @@ final class CampaignManagementExampleHelper {
             self::OutputAdGroupStatus($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAdGroupStatus * * *");
+    }
+    static function OutputAdAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAdAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAdAdditionalField * * *");
+    }
+    static function OutputArrayOfAdAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAdAdditionalField * * *");
+        foreach ($valueSets->AdAdditionalField as $valueSet)
+        {
+            self::OutputAdAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAdAdditionalField * * *");
     }
     static function OutputKeywordEditorialStatus($valueSet)
     {

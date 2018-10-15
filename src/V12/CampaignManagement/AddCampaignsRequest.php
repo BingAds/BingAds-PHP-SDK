@@ -23,5 +23,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var Campaign[]
          */
         public $Campaigns;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IncludeDynamicSearchAdsSource;
     }
 }
