@@ -253,7 +253,8 @@ namespace Microsoft\BingAds\V12\AdInsight;
         const TND = 'TND';
 
         /** The corresponding currency type. */
-        const TRY = 'TRY';
+        // 'TRY' is a reserved keyword in PHP5
+        const TRYx = 'TRY';
 
         /** The corresponding currency type. */
         const TTD = 'TTD';
