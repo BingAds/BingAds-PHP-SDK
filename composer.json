@@ -11,11 +11,6 @@
         "ext-openssl": "*",
         "ext-soap": "*"
     },
-    "require-dev": {
-        "ext-curl": "*",
-        "ext-openssl": "*",
-        "ext-soap": "*"
-    },
     "autoload": {
         "psr-4": {
             "Microsoft\\BingAds\\": "/src/"
