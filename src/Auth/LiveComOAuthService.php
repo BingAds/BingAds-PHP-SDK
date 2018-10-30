@@ -41,9 +41,15 @@ class LiveComOAuthService extends IOAuthService
         }
     }
 
-    
-    /** 
+
+    /**
      * Calls live.com authorization server with the oauthRequestParameters passed in, deserializes the response and returns back OAuth tokens.
+     *
+     * @param OAuthRequestParameters $oauthRequestParameters
+     * @param string $environment
+     *
+     * @return OAuthTokens
+     * @throws \Exception
      */
     public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment)
     {
@@ -104,9 +110,14 @@ class LiveComOAuthService extends IOAuthService
                 ->withDescription($errorDesc);
         }
     }
-    
-    /** 
+
+    /**
      * Gets the Microsoft Account authorization endpoint, for example where the user should be navigated to give their consent.
+     *
+     * @param OAuthUrlParameters $parameters
+     * @param string $environment
+     *
+     * @return string
      */
     public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment)
     {

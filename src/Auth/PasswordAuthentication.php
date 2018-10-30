@@ -15,16 +15,24 @@ class PasswordAuthentication extends Authentication
         $this->Type = 'PasswordAuthentication';
     }
 
-    /** 
+    /**
      * Includes the user name.
+     *
+     * @param string $userName
+     *
+     * @return PasswordAuthentication
      */
     public function withUserName($userName) {
         $this->UserName = $userName;
         return $this;
     }
 
-    /** 
+    /**
      * Includes the password.
+     *
+     * @param string $password
+     *
+     * @return PasswordAuthentication
      */
     public function withPassword($password) {
         $this->Password = $password;

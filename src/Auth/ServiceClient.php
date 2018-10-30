@@ -85,18 +85,26 @@ class ServiceClient
 		ServiceClientType::CustomerManagementVersion11 => CustomerManagementServiceSettingsVersion11::ServiceNamespace,
 		ServiceClientType::ReportingVersion11 => ReportingServiceSettingsVersion11::ServiceNamespace
 	);
-	
-	/** 
+
+    /**
      * Converts long types found in SOAP responses to string types in PHP.
-     */  
+     *
+     * @param string $xmlFragmentString
+     *
+     * @return string
+     */
 	private function from_long_xml($xmlFragmentString)
 	{
 		return (string)strip_tags($xmlFragmentString);
 	}
-	
-	/** 
+
+    /**
      * Converts PHP string types to long types in SOAP requests.
-     */ 
+     *
+     * @param string $longVal
+     *
+     * @return string
+     */
 	private function to_long_xml($longVal)
 	{
 		return '<long>' . $longVal . '</long>';
@@ -134,10 +142,14 @@ class ServiceClient
 	public function GetWsdl() { return $this->wsdlUrl; }
 	public function GetApiEnvironment() { return $this->apiEnvironment; }
 
-    /** 
+    /**
      * This function gets the namespace from the WSDL, so you do
-	 * not have to hardcode it in the client.
-     */ 
+     * not have to hardcode it in the client.
+     *
+     * @param string $url
+     *
+     * @return string
+     */
 	private function GetServiceNamespace($url)
 	{
 		$doc = new DOMDocument;
@@ -159,9 +171,13 @@ class ServiceClient
 		return $namespace;
 	}
 
-    /** 
-     * Set the authentication headers that should be used in calls to the Bing Ads web services. 
-     */ 
+    /**
+     * Set the authentication headers that should be used in calls to the Bing Ads web services.
+     *
+     * @param $authorizationData
+     *
+     * @throws Exception
+     */
 	public function SetAuthorizationData($authorizationData) {
 		if(!isset($authorizationData))
 		{

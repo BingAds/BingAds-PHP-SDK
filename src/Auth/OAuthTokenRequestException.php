@@ -14,16 +14,24 @@ class OAuthTokenRequestException extends Exception
 
     public function __construct() {}
 
-    /** 
+    /**
      * Includes the error.
+     *
+     * @param string $error
+     *
+     * @return OAuthTokenRequestException
      */
     public function withError($error) {
         $this->Error = $error;
         return $this;
     }
 
-    /** 
+    /**
      * Includes the error description.
+     *
+     * @param string $description
+     *
+     * @return OAuthTokenRequestException
      */
     public function withDescription($description) {
         $this->Description = $description;

@@ -69,10 +69,15 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
 
         return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment);
     }
- 
-    /** 
-     * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service 
+
+    /**
+     * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service
      * using the specified authorization response redirect Uri.
+     *
+     * @param string $responseUri
+     *
+     * @return OAuthTokens
+     * @throws Exception
      */
     public function RequestOAuthTokensByResponseUri($responseUri)
     {
@@ -114,9 +119,14 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         return $this->OAuthTokens; 
     }
 
-    /** 
-     * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service 
+    /**
+     * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service
      * using the specified refresh token.
+     *
+     * @param string $refreshToken
+     *
+     * @return OAuthTokens
+     * @throws Exception
      */
     public function RequestOAuthTokensByRefreshToken($refreshToken) 
     {

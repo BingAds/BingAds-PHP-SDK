@@ -57,8 +57,13 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
         return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment);
     }
 
-    /** 
+    /**
      * Extracts the access token from the specified Uri.
+     *
+     * @param string $redirectUri
+     *
+     * @return OAuthTokens
+     * @throws Exception
      */
     public function ExtractAccessTokenFromUri($redirectUri){
         $fragmentParts = parse_url($redirectUri)["fragment"];
