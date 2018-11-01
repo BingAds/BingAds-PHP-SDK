@@ -44,7 +44,6 @@ final class AuthHelper {
     const ApiEnvironment = ApiEnvironment::Sandbox;
     const OAuthRefreshTokenPath = 'refresh.txt';
     const ClientId = 'ClientIdGoesHere'; 
-    const ClientSecret = 'ClientSecretGoesHere'; 
 
     const CampaignTypes = 
         CampaignType::Audience . ' ' . 

@@ -60,10 +60,10 @@ try
     if(isset($getCampaignsByAccountIdResponse->Campaigns))
     {
         foreach ($getCampaignsByAccountIdResponse->Campaigns->Campaign as $campaign)
-	{
-	    $opportunities = AdInsightExampleHelper::GetBudgetOpportunities($campaign->Id)->Opportunities;
-	    AdInsightExampleHelper::OutputArrayOfBudgetOpportunity($opportunities, $campaign->Id);
-	}
+        {
+            $opportunities = AdInsightExampleHelper::GetBudgetOpportunities($campaign->Id)->Opportunities;
+            AdInsightExampleHelper::OutputArrayOfBudgetOpportunity($opportunities, $campaign->Id);
+        }
     }
 }
 catch (SoapFault $e)
