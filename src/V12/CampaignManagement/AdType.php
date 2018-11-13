@@ -34,6 +34,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** Refers to a ResponsiveAd. */
         const ResponsiveAd = 'ResponsiveAd';
+
+        /** Refers to a ResponsiveSearchAd. */
+        const ResponsiveSearch = 'ResponsiveSearch';
     }
 
 }

@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $MediaType;
 
         /**
-         * An array of MediaRepresentation-derived objects, for example ImageMediaRepresentation, that each include download Urls for one or more media representations.
+         * A list of ImageMediaRepresentation that each include download URLs for one or more media representations.
          * @var MediaRepresentation[]
          */
         public $Representations;

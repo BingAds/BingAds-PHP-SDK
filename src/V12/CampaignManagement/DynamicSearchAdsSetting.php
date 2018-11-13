@@ -24,13 +24,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Language;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var integer[]
          */
         public $PageFeedIds;
 
         /**
-         * Reserved.
+         * Determines whether to use Bing's index, advertiser supplied URLs, or both.
          * @var DynamicSearchAdsSource
          */
         public $Source;

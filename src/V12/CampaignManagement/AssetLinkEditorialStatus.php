@@ -4,21 +4,26 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved for future use.
+     * Defines the editorial review status values of a linked asset.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/assetlinkeditorialstatus?view=bingads-12 AssetLinkEditorialStatus Value Set
+     * 
+     * @used-by AssetLink
      */
     final class AssetLinkEditorialStatus
     {
-        /** Reserved. */
+        /** Reserved for future use. */
+        const Unknown = 'Unknown';
+
+        /** The asset passed editorial review. */
         const Active = 'Active';
 
-        /** Reserved. */
+        /** The asset failed editorial review. */
         const Disapproved = 'Disapproved';
 
-        /** Reserved. */
+        /** One or more elements of the asset is undergoing editorial review. */
         const Inactive = 'Inactive';
 
-        /** Reserved. */
+        /** The asset passed editorial review in one or more markets, and one or more elements of the asset is undergoing editorial review in another market. */
         const ActiveLimited = 'ActiveLimited';
     }
 

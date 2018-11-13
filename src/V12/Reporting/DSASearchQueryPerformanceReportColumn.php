@@ -139,6 +139,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The customer name. */
         const CustomerName = 'CustomerName';
+
+        /** Reserved. */
+        const FeedUrl = 'FeedUrl';
     }
 
 }

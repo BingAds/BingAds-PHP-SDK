@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @used-by AddBudgetsResponse
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
+     * @used-by AddExperimentsResponse
      * @used-by AddKeywordsResponse
      * @used-by AddLabelsResponse
      * @used-by AddListItemsToSharedListResponse
@@ -34,6 +35,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @used-by DeleteBudgetsResponse
      * @used-by DeleteCampaignCriterionsResponse
      * @used-by DeleteCampaignsResponse
+     * @used-by DeleteExperimentsResponse
      * @used-by DeleteKeywordsResponse
      * @used-by DeleteLabelAssociationsResponse
      * @used-by DeleteLabelsResponse
@@ -55,6 +57,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @used-by GetConversionGoalsByIdsResponse
      * @used-by GetConversionGoalsByTagIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
+     * @used-by GetExperimentsByIdsResponse
      * @used-by GetKeywordsByIdsResponse
      * @used-by GetLabelAssociationsByEntityIdsResponse
      * @used-by GetLabelAssociationsByLabelIdsResponse
@@ -78,6 +81,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @used-by UpdateBudgetsResponse
      * @used-by UpdateCampaignsResponse
      * @used-by UpdateConversionGoalsResponse
+     * @used-by UpdateExperimentsResponse
      * @used-by UpdateKeywordsResponse
      * @used-by UpdateLabelsResponse
      * @used-by UpdateSharedEntitiesResponse

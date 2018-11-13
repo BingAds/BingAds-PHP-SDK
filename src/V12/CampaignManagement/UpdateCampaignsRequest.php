@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Campaigns;
 
         /**
-         * Reserved.
+         * Determines whether or not to apply the target Source for Dynamic Search Ads campaign settings.
          * @var boolean
          */
         public $IncludeDynamicSearchAdsSource;

@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/date?view=bingads-12 Date Data Object
      * 
      * @used-by AdGroup
+     * @used-by Experiment
      * @used-by Schedule
      */
     final class Date

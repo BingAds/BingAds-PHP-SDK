@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class Campaign
     {
         /**
-         * The percent amount by which to adjust your bid for intent ads above or below the base ad group or keyword bid.
+         * The percent amount by which to adjust your bid for audience ads above or below the base ad group or keyword bid.
          * @var integer
          */
         public $AudienceAdsBidAdjustment;
@@ -50,6 +50,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var string
          */
         public $Description;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $ExperimentId;
 
         /**
          * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.

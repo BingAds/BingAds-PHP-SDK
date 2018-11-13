@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class Keyword
     {
         /**
-         * The bid to use when the user's search  term and the keyword match.
+         * The highest price that you want to pay each time someone clicks your ad.
          * @var Bid
          */
         public $Bid;

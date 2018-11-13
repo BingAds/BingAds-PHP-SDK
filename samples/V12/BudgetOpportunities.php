@@ -26,6 +26,7 @@ use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
 // Specify the Microsoft\BingAds\V12\CampaignManagement classes that will be used.
 use Microsoft\BingAds\V12\CampaignManagement\CampaignType;
+use Microsoft\BingAds\V12\CampaignManagement\CampaignAdditionalField;
 
 $GLOBALS['AuthorizationData'] = null;
 $GLOBALS['Proxy'] = null;
@@ -55,7 +56,9 @@ try
 
     $getCampaignsByAccountIdResponse = CampaignManagementExampleHelper::GetCampaignsByAccountId(
     	$GLOBALS['AuthorizationData']->AccountId,
-        AuthHelper::CampaignTypes);
+        AuthHelper::CampaignTypes,
+        CampaignAdditionalField::ExperimentId
+    );
 
     if(isset($getCampaignsByAccountIdResponse->Campaigns))
     {

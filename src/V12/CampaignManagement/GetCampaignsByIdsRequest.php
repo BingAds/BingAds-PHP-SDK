@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getcampaignsbyids?view=bingads-12 GetCampaignsByIds Request Object
      * 
      * @uses CampaignType
+     * @uses CampaignAdditionalField
      * @used-by BingAdsCampaignManagementService::GetCampaignsByIds
      */
     final class GetCampaignsByIdsRequest
@@ -29,5 +30,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var CampaignType
          */
         public $CampaignType;
+
+        /**
+         * Reserved.
+         * @var CampaignAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

@@ -24,6 +24,7 @@ use Microsoft\BingAds\V12\CampaignManagement\Keyword;
 use Microsoft\BingAds\V12\CampaignManagement\Ad;
 use Microsoft\BingAds\V12\CampaignManagement\AdType;
 use Microsoft\BingAds\V12\CampaignManagement\AdAdditionalField;
+use Microsoft\BingAds\V12\CampaignManagement\CampaignAdditionalField;
 use Microsoft\BingAds\V12\CampaignManagement\ExpandedTextAd;
 use Microsoft\BingAds\V12\CampaignManagement\Bid;
 use Microsoft\BingAds\V12\CampaignManagement\BiddingScheme;
@@ -312,7 +313,9 @@ try
 
     $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByAccountId(
             $GLOBALS['AuthorizationData']->AccountId, 
-            AuthHelper::CampaignTypes)->Campaigns;
+            AuthHelper::CampaignTypes,
+            CampaignAdditionalField::ExperimentId
+        )->Campaigns;
 
     $updateCampaigns = array();
     $updateBudgets = array();
@@ -424,7 +427,9 @@ try
         $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByIds(
             $GLOBALS['AuthorizationData']->AccountId, 
             $getCampaignIds, 
-            AuthHelper::CampaignTypes)->Campaigns;
+            AuthHelper::CampaignTypes,
+            CampaignAdditionalField::ExperimentId
+        )->Campaigns;
 
         print("List of campaigns AFTER update:\n");
         foreach ($getCampaigns->Campaign as $campaign)
@@ -477,6 +482,7 @@ try
         $nillableAdGroupIds->long[0], 
         $adTypes,
         $adAdditionalFields);
+
     if(isset($ads->Ads)){
         CampaignManagementExampleHelper::OutputArrayOfAd($ads->Ads);
     }    

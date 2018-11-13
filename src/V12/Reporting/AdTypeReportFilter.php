@@ -35,6 +35,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The report will include responsive ads. */
         const ResponsiveAd = 'ResponsiveAd';
+
+        /** The report will include responsive search ads. */
+        const ResponsiveSearchAd = 'ResponsiveSearchAd';
     }
 
 }

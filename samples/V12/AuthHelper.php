@@ -122,7 +122,7 @@ final class AuthHelper {
         $authentication = (new OAuthDesktopMobileAuthCodeGrant())
             ->withEnvironment(AuthHelper::ApiEnvironment)
             ->withClientId(AuthHelper::ClientId);
-
+            
         $GLOBALS['AuthorizationData'] = (new AuthorizationData())
             ->withAuthentication($authentication)
             ->withDeveloperToken(AuthHelper::DeveloperToken);
@@ -139,8 +139,7 @@ final class AuthHelper {
             else
             {
                 AuthHelper::RequestUserConsent();
-            }
-            
+            }            
         }
         catch(OAuthTokenRequestException $e)
         {

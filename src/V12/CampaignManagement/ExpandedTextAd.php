@@ -28,13 +28,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Path2;
 
         /**
-         * The ad copy.
+         * The first part of the ad description.
          * @var string
          */
         public $Text;
 
         /**
-         * Reserved for future use.
+         * The second part of the ad description.
          * @var string
          */
         public $TextPart2;
@@ -52,7 +52,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $TitlePart2;
 
         /**
-         * Reserved for future use.
+         * The third part of the ad title.
          * @var string
          */
         public $TitlePart3;

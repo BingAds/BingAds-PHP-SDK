@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/customparameters?view=bingads-12 CustomParameters Data Object
      * 
      * @uses CustomParameter
+     * @used-by ActionAdExtension
      * @used-by Ad
      * @used-by AdGroup
      * @used-by AppAdExtension

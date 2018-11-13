@@ -31,7 +31,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $AdRotation;
 
         /**
-         * The percent amount by which to adjust your bid for intent ads above or below the base ad group or keyword bid.
+         * The percent amount by which to adjust your bid for audience ads above or below the base ad group or keyword bid.
          * @var integer
          */
         public $AudienceAdsBidAdjustment;

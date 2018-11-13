@@ -33,6 +33,7 @@ use Microsoft\BingAds\V12\CampaignManagement\CampaignCriterionStatus;
 use Microsoft\BingAds\V12\CampaignManagement\BudgetLimitType;
 use Microsoft\BingAds\V12\CampaignManagement\Bid;
 use Microsoft\BingAds\V12\CampaignManagement\Date;
+use Microsoft\BingAds\V12\CampaignManagement\CampaignAdditionalField;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -70,7 +71,9 @@ try
     $getCampaigns = CampaignManagementExampleHelper::GetCampaignsByIds(
         $GLOBALS['AuthorizationData']->AccountId, 
         $campaignIds, 
-        AuthHelper::CampaignTypes)->Campaigns;
+        AuthHelper::CampaignTypes,
+        CampaignAdditionalField::ExperimentId
+        )->Campaigns;
     
     // Loop through all campaigns and ad groups to get the target criterion IDs.
 
