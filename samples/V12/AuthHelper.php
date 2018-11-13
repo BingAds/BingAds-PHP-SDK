@@ -9,7 +9,6 @@ require_once __DIR__ . "/CustomerManagementExampleHelper.php";
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 
 use Microsoft\BingAds\Auth\OAuthDesktopMobileAuthCodeGrant;
-use Microsoft\BingAds\Auth\OAuthDesktopMobileImplicitGrant;
 use Microsoft\BingAds\Auth\OAuthWebAuthCodeGrant;
 use Microsoft\BingAds\Auth\AuthorizationData;
 use Microsoft\BingAds\Auth\OAuthTokenRequestException;
@@ -120,10 +119,6 @@ final class AuthHelper {
 
     static function AuthenticateWithOAuth() 
     {
-        // $authentication = (new OAuthDesktopMobileAuthCodeGrant())
-        //     ->withEnvironment(AuthHelper::ApiEnvironment)
-        //     ->withClientId(AuthHelper::ClientId);
-
         $authentication = (new OAuthDesktopMobileImplicitGrant())
             ->withEnvironment(AuthHelper::ApiEnvironment)
             ->withClientId(AuthHelper::ClientId);
@@ -144,8 +139,7 @@ final class AuthHelper {
             else
             {
                 AuthHelper::RequestUserConsent();
-            }
-            var_dump($GLOBALS['AuthorizationData']);
+            }            
         }
         catch(OAuthTokenRequestException $e)
         {
