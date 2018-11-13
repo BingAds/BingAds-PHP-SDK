@@ -119,7 +119,7 @@ final class AuthHelper {
 
     static function AuthenticateWithOAuth() 
     {
-        $authentication = (new OAuthDesktopMobileImplicitGrant())
+        $authentication = (new OAuthDesktopMobileAuthCodeGrant())
             ->withEnvironment(AuthHelper::ApiEnvironment)
             ->withClientId(AuthHelper::ClientId);
             
