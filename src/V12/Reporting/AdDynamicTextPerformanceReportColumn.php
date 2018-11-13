@@ -110,6 +110,9 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The title part 2 attribute of an ad. */
         const TitlePart2 = 'TitlePart2';
 
+        /** Reserved. */
+        const TitlePart3 = 'TitlePart3';
+
         /** The path 1 attribute of an ad. */
         const Path1 = 'Path1';
 
@@ -127,6 +130,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The text attribute of an ad. */
         const AdDescription = 'AdDescription';
+
+        /** Reserved. */
+        const AdDescription2 = 'AdDescription2';
 
         /** The labels applied to the ad. */
         const AdLabels = 'AdLabels';

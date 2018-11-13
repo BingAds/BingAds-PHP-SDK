@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Defines the operands that can be applied to arguments of a webpage condition or criterion for dynamic search ads.
+     * Defines the possible operand values that can be applied to the argument of a webpage condition for dynamic search ads.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/webpageconditionoperand?view=bingads-12 WebpageConditionOperand Value Set
      * 
      * @used-by WebpageCondition
@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** Set a condition that the argument must match any of your site's content that is indexed by Bing. */
         const PageContent = 'PageContent';
 
-        /** Reserved. */
+        /** Set a condition that the argument must match any of your page feed custom labels. */
         const CustomLabel = 'CustomLabel';
     }
 

@@ -9,13 +9,6 @@ use Microsoft\BingAds\V12\CustomerBilling\CustomerBillingServiceSettings as Cust
 use Microsoft\BingAds\V12\CustomerManagement\CustomerManagementServiceSettings as CustomerManagementServiceSettingsVersion12;
 use Microsoft\BingAds\V12\Reporting\ReportingServiceSettings as ReportingServiceSettingsVersion12;
 
-use Microsoft\BingAds\V11\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion11;
-use Microsoft\BingAds\V11\Bulk\BulkServiceSettings as BulkServiceSettingsVersion11;
-use Microsoft\BingAds\V11\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion11;
-use Microsoft\BingAds\V11\CustomerBilling\CustomerBillingServiceSettings as CustomerBillingServiceSettingsVersion11;
-use Microsoft\BingAds\V11\CustomerManagement\CustomerManagementServiceSettings as CustomerManagementServiceSettingsVersion11;
-use Microsoft\BingAds\V11\Reporting\ReportingServiceSettings as ReportingServiceSettingsVersion11;
-
 use \DOMDocument;
 use \DOMXPath;
 use \SoapHeader;
@@ -45,13 +38,6 @@ class ServiceClient
 		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::SandboxEndpoint,
 		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::SandboxEndpoint,
 		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::SandboxEndpoint,
-
-		ServiceClientType::AdInsightVersion11 => AdInsightServiceSettingsVersion11::SandboxEndpoint,
-		ServiceClientType::BulkVersion11 => BulkServiceSettingsVersion11::SandboxEndpoint,
-		ServiceClientType::CampaignManagementVersion11 => CampaignManagementServiceSettingsVersion11::SandboxEndpoint,
-		ServiceClientType::CustomerBillingVersion11 => CustomerBillingServiceSettingsVersion11::SandboxEndpoint,
-		ServiceClientType::CustomerManagementVersion11 => CustomerManagementServiceSettingsVersion11::SandboxEndpoint,
-		ServiceClientType::ReportingVersion11 => ReportingServiceSettingsVersion11::SandboxEndpoint
 	);
 
 	private $productionServiceClientEndpoints = array(
@@ -61,13 +47,6 @@ class ServiceClient
 		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ProductionEndpoint,
 		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ProductionEndpoint,
 		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ProductionEndpoint,
-
-		ServiceClientType::AdInsightVersion11 => AdInsightServiceSettingsVersion11::ProductionEndpoint,
-		ServiceClientType::BulkVersion11 => BulkServiceSettingsVersion11::ProductionEndpoint,
-		ServiceClientType::CampaignManagementVersion11 => CampaignManagementServiceSettingsVersion11::ProductionEndpoint,
-		ServiceClientType::CustomerBillingVersion11 => CustomerBillingServiceSettingsVersion11::ProductionEndpoint,
-		ServiceClientType::CustomerManagementVersion11 => CustomerManagementServiceSettingsVersion11::ProductionEndpoint,
-		ServiceClientType::ReportingVersion11 => ReportingServiceSettingsVersion11::ProductionEndpoint
 	);
 
 	private $serviceClientNamespaces = array(
@@ -77,13 +56,6 @@ class ServiceClient
 		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ServiceNamespace,
 		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ServiceNamespace,
 		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ServiceNamespace,
-
-		ServiceClientType::AdInsightVersion11 => AdInsightServiceSettingsVersion11::ServiceNamespace,
-		ServiceClientType::BulkVersion11 => BulkServiceSettingsVersion11::ServiceNamespace,
-		ServiceClientType::CampaignManagementVersion11 => CampaignManagementServiceSettingsVersion11::ServiceNamespace,
-		ServiceClientType::CustomerBillingVersion11 => CustomerBillingServiceSettingsVersion11::ServiceNamespace,
-		ServiceClientType::CustomerManagementVersion11 => CustomerManagementServiceSettingsVersion11::ServiceNamespace,
-		ServiceClientType::ReportingVersion11 => ReportingServiceSettingsVersion11::ServiceNamespace
 	);
 	
 	/** 

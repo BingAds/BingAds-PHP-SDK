@@ -196,6 +196,18 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The unique identifier for the Bing Merchant Center store. */
         const StoreId = 'StoreId';
+
+        /** Reserved. */
+        const AssistedImpressions = 'AssistedImpressions';
+
+        /** Reserved. */
+        const AssistedClicks = 'AssistedClicks';
+
+        /** Reserved. */
+        const ClickSharePercent = 'ClickSharePercent';
+
+        /** Reserved. */
+        const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
     }
 
 }

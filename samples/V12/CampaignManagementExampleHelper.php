@@ -18,6 +18,7 @@ use Microsoft\BingAds\V12\CampaignManagement\AddBudgetsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\AddCampaignCriterionsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\AddCampaignsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\AddConversionGoalsRequest;
+use Microsoft\BingAds\V12\CampaignManagement\AddExperimentsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\AddKeywordsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\AddLabelsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\AddListItemsToSharedListRequest;
@@ -37,6 +38,7 @@ use Microsoft\BingAds\V12\CampaignManagement\DeleteAudiencesRequest;
 use Microsoft\BingAds\V12\CampaignManagement\DeleteBudgetsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\DeleteCampaignCriterionsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\DeleteCampaignsRequest;
+use Microsoft\BingAds\V12\CampaignManagement\DeleteExperimentsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\DeleteKeywordsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\DeleteLabelAssociationsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\DeleteLabelsRequest;
@@ -68,6 +70,7 @@ use Microsoft\BingAds\V12\CampaignManagement\GetCampaignsByIdsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetConversionGoalsByIdsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetConversionGoalsByTagIdsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetEditorialReasonsByIdsRequest;
+use Microsoft\BingAds\V12\CampaignManagement\GetExperimentsByIdsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetGeoLocationsFileUrlRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetKeywordsByAdGroupIdRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetKeywordsByEditorialStatusRequest;
@@ -102,6 +105,7 @@ use Microsoft\BingAds\V12\CampaignManagement\UpdateBudgetsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\UpdateCampaignCriterionsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\UpdateCampaignsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\UpdateConversionGoalsRequest;
+use Microsoft\BingAds\V12\CampaignManagement\UpdateExperimentsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\UpdateKeywordsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\UpdateLabelsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\UpdateSharedEntitiesRequest;
@@ -231,6 +235,18 @@ final class CampaignManagementExampleHelper {
         $request->ConversionGoals = $conversionGoals;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->AddConversionGoals($request);
+    }
+    static function AddExperiments(
+        $experiments)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new AddExperimentsRequest();
+
+        $request->Experiments = $experiments;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->AddExperiments($request);
     }
     static function AddKeywords(
         $adGroupId,
@@ -493,6 +509,18 @@ final class CampaignManagementExampleHelper {
         $request->CampaignIds = $campaignIds;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteCampaigns($request);
+    }
+    static function DeleteExperiments(
+        $experimentIds)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new DeleteExperimentsRequest();
+
+        $request->ExperimentIds = $experimentIds;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteExperiments($request);
     }
     static function DeleteKeywords(
         $adGroupId,
@@ -860,7 +888,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetCampaignsByAccountId(
         $accountId,
-        $campaignType)
+        $campaignType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -869,13 +898,15 @@ final class CampaignManagementExampleHelper {
 
         $request->AccountId = $accountId;
         $request->CampaignType = $campaignType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByAccountId($request);
     }
     static function GetCampaignsByIds(
         $accountId,
         $campaignIds,
-        $campaignType)
+        $campaignType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -885,6 +916,7 @@ final class CampaignManagementExampleHelper {
         $request->AccountId = $accountId;
         $request->CampaignIds = $campaignIds;
         $request->CampaignType = $campaignType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByIds($request);
     }
@@ -931,6 +963,20 @@ final class CampaignManagementExampleHelper {
         $request->EntityType = $entityType;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetEditorialReasonsByIds($request);
+    }
+    static function GetExperimentsByIds(
+        $experimentIds,
+        $pageInfo)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new GetExperimentsByIdsRequest();
+
+        $request->ExperimentIds = $experimentIds;
+        $request->PageInfo = $pageInfo;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->GetExperimentsByIds($request);
     }
     static function GetGeoLocationsFileUrl(
         $version,
@@ -1057,7 +1103,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetMediaAssociations($request);
     }
     static function GetMediaMetaDataByAccountId(
-        $mediaEnabledEntities)
+        $mediaEnabledEntities,
+        $pageInfo)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1065,6 +1112,7 @@ final class CampaignManagementExampleHelper {
         $request = new GetMediaMetaDataByAccountIdRequest();
 
         $request->MediaEnabledEntities = $mediaEnabledEntities;
+        $request->PageInfo = $pageInfo;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetMediaMetaDataByAccountId($request);
     }
@@ -1402,6 +1450,18 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateConversionGoals($request);
     }
+    static function UpdateExperiments(
+        $experiments)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new UpdateExperimentsRequest();
+
+        $request->Experiments = $experiments;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateExperiments($request);
+    }
     static function UpdateKeywords(
         $adGroupId,
         $keywords,
@@ -1500,6 +1560,33 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAccountProperty * * *");
     }
+    static function OutputActionAdExtension($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputActionAdExtension * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("ActionType: %s", $dataObject->ActionType));
+            self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputArrayOfString($dataObject->FinalUrls);
+            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputCustomParameters($dataObject->UrlCustomParameters);
+        }
+        self::OutputStatusMessage("* * * End OutputActionAdExtension * * *");
+    }
+    static function OutputArrayOfActionAdExtension($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ActionAdExtension))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfActionAdExtension * * *");
+        foreach ($dataObjects->ActionAdExtension as $dataObject)
+        {
+            self::OutputActionAdExtension($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfActionAdExtension * * *");
+    }
     static function OutputAd($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputAd * * *");
@@ -1536,6 +1623,10 @@ final class CampaignManagementExampleHelper {
             if($dataObject->Type === "ResponsiveAd")
             {
                 self::OutputResponsiveAd($dataObject);
+            }
+            if($dataObject->Type === "ResponsiveSearchAd")
+            {
+                self::OutputResponsiveSearchAd($dataObject);
             }
             if($dataObject->Type === "TextAd")
             {
@@ -1649,6 +1740,10 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             self::OutputStatusMessage(sprintf("Version: %s", $dataObject->Version));
+            if($dataObject->Type === "ActionAdExtension")
+            {
+                self::OutputActionAdExtension($dataObject);
+            }
             if($dataObject->Type === "AppAdExtension")
             {
                 self::OutputAppAdExtension($dataObject);
@@ -2163,6 +2258,59 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAppUrl * * *");
     }
+    static function OutputAsset($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAsset * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            if($dataObject->Type === "TextAsset")
+            {
+                self::OutputTextAsset($dataObject);
+            }
+        }
+        self::OutputStatusMessage("* * * End OutputAsset * * *");
+    }
+    static function OutputArrayOfAsset($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Asset))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAsset * * *");
+        foreach ($dataObjects->Asset as $dataObject)
+        {
+            self::OutputAsset($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAsset * * *");
+    }
+    static function OutputAssetLink($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAssetLink * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputAsset($dataObject->Asset);
+            self::OutputStatusMessage(sprintf("AssetPerformanceLabel: %s", $dataObject->AssetPerformanceLabel));
+            self::OutputStatusMessage(sprintf("EditorialStatus: %s", $dataObject->EditorialStatus));
+            self::OutputStatusMessage(sprintf("PinnedField: %s", $dataObject->PinnedField));
+        }
+        self::OutputStatusMessage("* * * End OutputAssetLink * * *");
+    }
+    static function OutputArrayOfAssetLink($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AssetLink))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAssetLink * * *");
+        foreach ($dataObjects->AssetLink as $dataObject)
+        {
+            self::OutputAssetLink($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAssetLink * * *");
+    }
     static function OutputAudience($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputAudience * * *");
@@ -2557,6 +2705,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("BudgetType: %s", $dataObject->BudgetType));
             self::OutputStatusMessage(sprintf("DailyBudget: %s", $dataObject->DailyBudget));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
+            self::OutputStatusMessage(sprintf("ExperimentId: %s", $dataObject->ExperimentId));
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
@@ -3376,6 +3525,36 @@ final class CampaignManagementExampleHelper {
             self::OutputExpandedTextAd($dataObject);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfExpandedTextAd * * *");
+    }
+    static function OutputExperiment($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputExperiment * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("BaseCampaignId: %s", $dataObject->BaseCampaignId));
+            self::OutputDate($dataObject->EndDate);
+            self::OutputStatusMessage(sprintf("ExperimentCampaignId: %s", $dataObject->ExperimentCampaignId));
+            self::OutputStatusMessage(sprintf("ExperimentStatus: %s", $dataObject->ExperimentStatus));
+            self::OutputStatusMessage(sprintf("ExperimentType: %s", $dataObject->ExperimentType));
+            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputDate($dataObject->StartDate);
+            self::OutputStatusMessage(sprintf("TrafficSplitPercent: %s", $dataObject->TrafficSplitPercent));
+        }
+        self::OutputStatusMessage("* * * End OutputExperiment * * *");
+    }
+    static function OutputArrayOfExperiment($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Experiment))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfExperiment * * *");
+        foreach ($dataObjects->Experiment as $dataObject)
+        {
+            self::OutputExperiment($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfExperiment * * *");
     }
     static function OutputFixedBid($dataObject)
     {
@@ -4569,6 +4748,32 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfResponsiveAd * * *");
     }
+    static function OutputResponsiveSearchAd($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputResponsiveSearchAd * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputArrayOfAssetLink($dataObject->Descriptions);
+            self::OutputStatusMessage(sprintf("Domain: %s", $dataObject->Domain));
+            self::OutputArrayOfAssetLink($dataObject->Headlines);
+            self::OutputStatusMessage(sprintf("Path1: %s", $dataObject->Path1));
+            self::OutputStatusMessage(sprintf("Path2: %s", $dataObject->Path2));
+        }
+        self::OutputStatusMessage("* * * End OutputResponsiveSearchAd * * *");
+    }
+    static function OutputArrayOfResponsiveSearchAd($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ResponsiveSearchAd))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfResponsiveSearchAd * * *");
+        foreach ($dataObjects->ResponsiveSearchAd as $dataObject)
+        {
+            self::OutputResponsiveSearchAd($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfResponsiveSearchAd * * *");
+    }
     static function OutputReviewAdExtension($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputReviewAdExtension * * *");
@@ -5030,6 +5235,28 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfTextAd * * *");
     }
+    static function OutputTextAsset($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputTextAsset * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+        }
+        self::OutputStatusMessage("* * * End OutputTextAsset * * *");
+    }
+    static function OutputArrayOfTextAsset($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->TextAsset))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfTextAsset * * *");
+        foreach ($dataObjects->TextAsset as $dataObject)
+        {
+            self::OutputTextAsset($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfTextAsset * * *");
+    }
     static function OutputUetTag($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputUetTag * * *");
@@ -5401,6 +5628,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfBidOption * * *");
     }
+    static function OutputCampaignAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputCampaignAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputCampaignAdditionalField * * *");
+    }
+    static function OutputArrayOfCampaignAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaignAdditionalField * * *");
+        foreach ($valueSets->CampaignAdditionalField as $valueSet)
+        {
+            self::OutputCampaignAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfCampaignAdditionalField * * *");
+    }
     static function OutputAdRotationType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdRotationType * * *");
@@ -5768,6 +6018,29 @@ final class CampaignManagementExampleHelper {
             self::OutputBusinessGeoCodeStatus($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfBusinessGeoCodeStatus * * *");
+    }
+    static function OutputActionAdExtensionActionType($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputActionAdExtensionActionType * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputActionAdExtensionActionType * * *");
+    }
+    static function OutputArrayOfActionAdExtensionActionType($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfActionAdExtensionActionType * * *");
+        foreach ($valueSets->ActionAdExtensionActionType as $valueSet)
+        {
+            self::OutputActionAdExtensionActionType($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfActionAdExtensionActionType * * *");
     }
     static function OutputPriceExtensionType($valueSet)
     {

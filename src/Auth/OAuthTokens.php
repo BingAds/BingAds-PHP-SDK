@@ -22,6 +22,12 @@ class OAuthTokens
      */
     public $RefreshToken;
 
+    /** 
+     * Represents the full set of fragments returned from the authorization service 
+     * in resposne to an access token request.
+     */
+    public $ResponseFragments;
+
     public function __construct() {}
 
     /** 
@@ -45,6 +51,14 @@ class OAuthTokens
      */
     public function withRefreshToken($refreshToken) {
         $this->RefreshToken = $refreshToken;
+        return $this;
+    }
+    
+    /** 
+     * Includes the response fragments.
+     */
+    public function withResponseFragments($responseFragments) {
+        $this->ResponseFragments = $responseFragments;
         return $this;
     }
 }

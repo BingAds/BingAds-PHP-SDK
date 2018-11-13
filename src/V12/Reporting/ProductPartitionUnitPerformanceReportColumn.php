@@ -136,6 +136,12 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** An alphanumeric identifier defined by the merchant to uniquely identify each local store. */
         const LocalStoreCode = 'LocalStoreCode';
+
+        /** Reserved. */
+        const AssistedImpressions = 'AssistedImpressions';
+
+        /** Reserved. */
+        const AssistedClicks = 'AssistedClicks';
     }
 
 }

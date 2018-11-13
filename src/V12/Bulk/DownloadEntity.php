@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group records in the download data. */
         const AdGroups = 'AdGroups';
 
-        /** Include App Install Ad, Dynamic Search Ad, Expanded Text Ad, Product Ad, Responsive Ad, and Text Ad records in the download data. */
+        /** Include App Install Ad, Dynamic Search Ad, Expanded Text Ad, Product Ad, Responsive Ad, Responsive Search Ad, and Text Ad records in the download data. */
         const Ads = 'Ads';
 
         /** Include Keyword records in the download data. */
@@ -120,13 +120,13 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group Sitelink Ad Extension records in the download that each represent the association relationship between an ad group and a sitelink ad extension. */
         const AdGroupSitelinkAdExtensions = 'AdGroupSitelinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const ActionLinkAdExtensions = 'ActionLinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const CampaignActionLinkAdExtensions = 'CampaignActionLinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const AdGroupActionLinkAdExtensions = 'AdGroupActionLinkAdExtensions';
 
         /** Include Structured Snippet Ad Extension records in the download data. */
@@ -252,7 +252,7 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Account Sitelink Ad Extension records in the download that represents the association relationship between an account and a sitelink ad extension. */
         const AccountSitelinkAdExtensions = 'AccountSitelinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const AccountActionLinkAdExtensions = 'AccountActionLinkAdExtensions';
 
         /** Include Account Structured Snippet Ad Extension records in the download that represents the association relationship between an account and a structured snippet ad extension. */
@@ -282,8 +282,26 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group Negative Similar Remarketing List Association records in the download that each represent the association relationship between an ad group and a similar remarketing list exclusion. */
         const AdGroupNegativeSimilarRemarketingListAssociations = 'AdGroupNegativeSimilarRemarketingListAssociations';
 
-        /** Reserved. */
+        /** Include Experiment records in the download data. */
         const Experiments = 'Experiments';
+
+        /** Reserved for future use. */
+        const ActionAdExtensions = 'ActionAdExtensions';
+
+        /** Reserved for future use. */
+        const CampaignActionAdExtensions = 'CampaignActionAdExtensions';
+
+        /** Reserved for future use. */
+        const AdGroupActionAdExtensions = 'AdGroupActionAdExtensions';
+
+        /** Reserved for future use. */
+        const AccountActionAdExtensions = 'AccountActionAdExtensions';
+
+        /** Include Responsive Search Ad records in the download data. */
+        const ResponsiveSearchAds = 'ResponsiveSearchAds';
+
+        /** Include Responsive Search Ad Label records in the download that each represent a label applied to a responsive search ad. */
+        const ResponsiveSearchAdLabels = 'ResponsiveSearchAdLabels';
     }
 
 }

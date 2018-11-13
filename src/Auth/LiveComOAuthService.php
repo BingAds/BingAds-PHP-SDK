@@ -89,7 +89,8 @@ class LiveComOAuthService extends IOAuthService
             return (new OAuthTokens())
                 ->withAccessToken($accessToken)
                 ->withAccessTokenExpiresInSeconds($expiresIn)
-                ->withRefreshToken($refreshToken);
+                ->withRefreshToken($refreshToken)
+                ->withResponseFragments($responseArray);
         }
         else if(isset($responseArray['error']))
         {

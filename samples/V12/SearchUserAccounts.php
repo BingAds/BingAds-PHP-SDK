@@ -20,6 +20,7 @@ use Exception;
 use Microsoft\BingAds\V12\CampaignManagement\GetCampaignsByAccountIdRequest;
 use Microsoft\BingAds\V12\CampaignManagement\Campaign;
 use Microsoft\BingAds\V12\CampaignManagement\CampaignType;
+use Microsoft\BingAds\V12\CampaignManagement\CampaignAdditionalField;
 
 // Specify the Microsoft\BingAds\V12\CustomerManagement classes that will be used.
 use Microsoft\BingAds\V12\CustomerManagement\Paging;
@@ -96,7 +97,9 @@ try
         CustomerManagementExampleHelper::OutputArrayOfInt($featurePilotFlags);
         $getCampaignsByAccountIdResponse = CampaignManagementExampleHelper::GetCampaignsByAccountId(
             $account->Id, 
-            AuthHelper::CampaignTypes);
+            AuthHelper::CampaignTypes,
+            CampaignAdditionalField::ExperimentId
+        );
         CampaignManagementExampleHelper::OutputArrayOfCampaign($getCampaignsByAccountIdResponse->Campaigns);
     }
 }
