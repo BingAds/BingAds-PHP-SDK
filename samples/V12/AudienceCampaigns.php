@@ -29,7 +29,7 @@ use Microsoft\BingAds\V12\CampaignManagement\CallToAction;
 use Microsoft\BingAds\V12\CampaignManagement\Ad;
 use Microsoft\BingAds\V12\CampaignManagement\ResponsiveAd;
 use Microsoft\BingAds\V12\CampaignManagement\Bid;
-use Microsoft\BingAds\V12\CampaignManagement\FixedBid;
+use Microsoft\BingAds\V12\CampaignManagement\BidMultiplier;
 use Microsoft\BingAds\V12\CampaignManagement\BudgetLimitType;
 use Microsoft\BingAds\V12\CampaignManagement\Date;
 use Microsoft\BingAds\V12\CampaignManagement\Setting;
@@ -216,12 +216,12 @@ try
     // criterion type group, you can set bid adjustments for specific criteria.
 
     $adGroupCriterions = array();
-    $criterionBid = new FixedBid();
-    $criterionBid->Amount = 0.50;
+    $criterionBid = new BidMultiplier();
+    $criterionBid->Multiplier = 20;
     $encodedCriterionBid = new SoapVar(
         $criterionBid, 
         SOAP_ENC_OBJECT, 
-        'FixedBid', 
+        'BidMultiplier', 
         $GLOBALS['CampaignManagementProxy']->GetNamespace());
 
     // ProfileCriterion for CompanyName
@@ -319,7 +319,7 @@ try
 catch (SoapFault $e)
 {
 	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
+        printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
