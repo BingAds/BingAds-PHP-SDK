@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The report will contain ads that are active. */
         const Active = 'Active';
 
-        /** The report will contain ads that have been rejected by editorial review. */
+        /** The report will contain ads that have failed editorial review. */
         const Rejected = 'Rejected';
 
         /** The report will contain ads that have been deleted. */

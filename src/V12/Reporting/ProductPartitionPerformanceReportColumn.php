@@ -173,16 +173,16 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** An alphanumeric identifier defined by the merchant to uniquely identify each local store. */
         const LocalStoreCode = 'LocalStoreCode';
 
-        /** Reserved. */
+        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Bing Network. */
         const AssistedImpressions = 'AssistedImpressions';
 
-        /** Reserved. */
+        /** Clicks on your ads that have received co-bids from your manufacturer partners. */
         const AssistedClicks = 'AssistedClicks';
 
-        /** Reserved. */
+        /** The percentage of clicks that went to your ads. */
         const ClickSharePercent = 'ClickSharePercent';
 
-        /** Reserved. */
+        /** The number of times your ad is shown in the top position as a percentage of the total available impressions in the market you were targeting. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
     }
 

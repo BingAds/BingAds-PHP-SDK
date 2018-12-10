@@ -125,10 +125,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The customer name. */
         const CustomerName = 'CustomerName';
 
-        /** Reserved. */
+        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Bing Network. */
         const AssistedImpressions = 'AssistedImpressions';
 
-        /** Reserved. */
+        /** Clicks on your ads that have received co-bids from your manufacturer partners. */
         const AssistedClicks = 'AssistedClicks';
     }
 

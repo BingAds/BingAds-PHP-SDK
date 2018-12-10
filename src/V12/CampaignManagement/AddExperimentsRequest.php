@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds experiments and creates experiment campaigns based on existing campaigns in an account.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addexperiments?view=bingads-12 AddExperiments Request Object
      * 
      * @uses Experiment
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class AddExperimentsRequest
     {
         /**
-         * Reserved.
+         * The list of experiments to add.
          * @var Experiment[]
          */
         public $Experiments;

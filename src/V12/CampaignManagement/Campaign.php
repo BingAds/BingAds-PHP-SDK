@@ -52,7 +52,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Description;
 
         /**
-         * Reserved.
+         * The system generated identifier of the Experiment.
          * @var integer
          */
         public $ExperimentId;

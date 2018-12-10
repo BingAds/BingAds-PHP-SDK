@@ -41,10 +41,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The ad title. */
         const AdTitle = 'AdTitle';
 
-        /** The text attribute of an ad. */
+        /** The first ad description that appears below the path in your ad. */
         const AdDescription = 'AdDescription';
 
-        /** Reserved. */
+        /** The second ad description that appears below the path in your ad. */
         const AdDescription2 = 'AdDescription2';
 
         /** The ad type. */
@@ -161,7 +161,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The title part 2 attribute of an ad. */
         const TitlePart2 = 'TitlePart2';
 
-        /** Reserved. */
+        /** The title part 3 attribute of an ad. */
         const TitlePart3 = 'TitlePart3';
 
         /** The shorter of two possible responsive ad headlines for Audience campaigns. */

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved for future use.
+     * Defines an action ad extension with a call-to-action button.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/actionadextension?view=bingads-12 ActionAdExtension Data Object
      * 
      * @uses ActionAdExtensionActionType
@@ -13,37 +13,37 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class ActionAdExtension extends AdExtension
     {
         /**
-         * Reserved.
+         * The text you choose here is what is displayed on your call-to-action button.
          * @var ActionAdExtensionActionType
          */
         public $ActionType;
 
         /**
-         * Reserved.
+         * This is a mobile-friendly landing page URL when Action Extensions are served on mobile devices.
          * @var string[]
          */
         public $FinalMobileUrls;
 
         /**
-         * Reserved.
+         * This is the link to your specific web page or form that corresponds to the action text.
          * @var string[]
          */
         public $FinalUrls;
 
         /**
-         * Reserved.
+         * The language that the ad extension will be served in.
          * @var string
          */
         public $Language;
 
         /**
-         * Reserved.
+         * The tracking template to use as a default for all FinalUrls and FinalMobileUrls.
          * @var string
          */
         public $TrackingUrlTemplate;
 
         /**
-         * Reserved.
+         * Your custom collection of key and value parameters for URL tracking.
          * @var CustomParameters
          */
         public $UrlCustomParameters;

@@ -1210,6 +1210,7 @@ final class ReportingExampleHelper {
             self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
             self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
             self::OutputStatusMessage(sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
+            self::OutputStatusMessage(sprintf("FeedUrl: %s", $dataObject->FeedUrl));
             self::OutputArrayOfString($dataObject->LanguageCode);
             self::OutputArrayOfString($dataObject->SearchQueries);
         }

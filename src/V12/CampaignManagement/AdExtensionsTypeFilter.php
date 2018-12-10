@@ -40,7 +40,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** An ad extension that includes between 3 and 8 price table rows. */
         const PriceAdExtension = 'PriceAdExtension';
 
-        /** Reserved. */
+        /** An ad extension that contains a call-to-action button. */
         const ActionAdExtension = 'ActionAdExtension';
     }
 

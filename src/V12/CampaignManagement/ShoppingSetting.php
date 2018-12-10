@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Defines the campaign level settings for feed-based audience or shopping campaigns.
+     * Defines the campaign level settings to leverage your Bing Merchant Center store.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/shoppingsetting?view=bingads-12 ShoppingSetting Data Object
      */
     final class ShoppingSetting extends Setting

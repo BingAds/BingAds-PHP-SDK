@@ -4,209 +4,209 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved for future use.
+     * Defines the possible options for action text that can be displayed in an action ad extension.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/actionadextensionactiontype?view=bingads-12 ActionAdExtensionActionType Value Set
      * 
      * @used-by ActionAdExtension
      */
     final class ActionAdExtensionActionType
     {
-        /** Reserved. */
+        /** Reserved for future use. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** Use the translated version of ActNow in the action ad extension. */
         const ActNow = 'ActNow';
 
-        /** Reserved. */
+        /** Use the translated version of ApplyNow in the action ad extension. */
         const ApplyNow = 'ApplyNow';
 
-        /** Reserved. */
+        /** Use the translated version of BetNow in the action ad extension. */
         const BetNow = 'BetNow';
 
-        /** Reserved. */
+        /** Use the translated version of BidNow in the action ad extension. */
         const BidNow = 'BidNow';
 
-        /** Reserved. */
+        /** Use the translated version of BookACar in the action ad extension. */
         const BookACar = 'BookACar';
 
-        /** Reserved. */
+        /** Use the translated version of BookHotel in the action ad extension. */
         const BookHotel = 'BookHotel';
 
-        /** Reserved. */
+        /** Use the translated version of BookNow in the action ad extension. */
         const BookNow = 'BookNow';
 
-        /** Reserved. */
+        /** Use the translated version of Browse in the action ad extension. */
         const Browse = 'Browse';
 
-        /** Reserved. */
+        /** Use the translated version of BuyNow in the action ad extension. */
         const BuyNow = 'BuyNow';
 
-        /** Reserved. */
+        /** Use the translated version of ChatNow in the action ad extension. */
         const ChatNow = 'ChatNow';
 
-        /** Reserved. */
+        /** Use the translated version of Compare in the action ad extension. */
         const Compare = 'Compare';
 
-        /** Reserved. */
+        /** Use the translated version of ContactUs in the action ad extension. */
         const ContactUs = 'ContactUs';
 
-        /** Reserved. */
+        /** Use the translated version of Coupon in the action ad extension. */
         const Coupon = 'Coupon';
 
-        /** Reserved. */
+        /** Use the translated version of Donate in the action ad extension. */
         const Donate = 'Donate';
 
-        /** Reserved. */
+        /** Use the translated version of Download in the action ad extension. */
         const Download = 'Download';
 
-        /** Reserved. */
+        /** Use the translated version of EmailNow in the action ad extension. */
         const EmailNow = 'EmailNow';
 
-        /** Reserved. */
+        /** Use the translated version of EnrollNow in the action ad extension. */
         const EnrollNow = 'EnrollNow';
 
-        /** Reserved. */
+        /** Use the translated version of Explore in the action ad extension. */
         const Explore = 'Explore';
 
-        /** Reserved. */
+        /** Use the translated version of FileNow in the action ad extension. */
         const FileNow = 'FileNow';
 
-        /** Reserved. */
+        /** Use the translated version of FindJob in the action ad extension. */
         const FindJob = 'FindJob';
 
-        /** Reserved. */
+        /** Use the translated version of FreePlay in the action ad extension. */
         const FreePlay = 'FreePlay';
 
-        /** Reserved. */
+        /** Use the translated version of FreeQuote in the action ad extension. */
         const FreeQuote = 'FreeQuote';
 
-        /** Reserved. */
+        /** Use the translated version of FreeTrial in the action ad extension. */
         const FreeTrial = 'FreeTrial';
 
-        /** Reserved. */
+        /** Use the translated version of GetDeals in the action ad extension. */
         const GetDeals = 'GetDeals';
 
-        /** Reserved. */
+        /** Use the translated version of GetOffer in the action ad extension. */
         const GetOffer = 'GetOffer';
 
-        /** Reserved. */
+        /** Use the translated version of GetQuote in the action ad extension. */
         const GetQuote = 'GetQuote';
 
-        /** Reserved. */
+        /** Use the translated version of JoinNow in the action ad extension. */
         const JoinNow = 'JoinNow';
 
-        /** Reserved. */
+        /** Use the translated version of LearnMore in the action ad extension. */
         const LearnMore = 'LearnMore';
 
-        /** Reserved. */
+        /** Use the translated version of ListenNow in the action ad extension. */
         const ListenNow = 'ListenNow';
 
-        /** Reserved. */
+        /** Use the translated version of LogIn in the action ad extension. */
         const LogIn = 'LogIn';
 
-        /** Reserved. */
+        /** Use the translated version of Message in the action ad extension. */
         const Message = 'Message';
 
-        /** Reserved. */
+        /** Use the translated version of NewCars in the action ad extension. */
         const NewCars = 'NewCars';
 
-        /** Reserved. */
+        /** Use the translated version of OrderNow in the action ad extension. */
         const OrderNow = 'OrderNow';
 
-        /** Reserved. */
+        /** Use the translated version of PlayGame in the action ad extension. */
         const PlayGame = 'PlayGame';
 
-        /** Reserved. */
+        /** Use the translated version of PlayNow in the action ad extension. */
         const PlayNow = 'PlayNow';
 
-        /** Reserved. */
+        /** Use the translated version of PostJob in the action ad extension. */
         const PostJob = 'PostJob';
 
-        /** Reserved. */
+        /** Use the translated version of Register in the action ad extension. */
         const Register = 'Register';
 
-        /** Reserved. */
+        /** Use the translated version of RentACar in the action ad extension. */
         const RentACar = 'RentACar';
 
-        /** Reserved. */
+        /** Use the translated version of RentNow in the action ad extension. */
         const RentNow = 'RentNow';
 
-        /** Reserved. */
+        /** Use the translated version of Reserve in the action ad extension. */
         const Reserve = 'Reserve';
 
-        /** Reserved. */
+        /** Use the translated version of Sale in the action ad extension. */
         const Sale = 'Sale';
 
-        /** Reserved. */
+        /** Use the translated version of SaveNow in the action ad extension. */
         const SaveNow = 'SaveNow';
 
-        /** Reserved. */
+        /** Use the translated version of Schedule in the action ad extension. */
         const Schedule = 'Schedule';
 
-        /** Reserved. */
+        /** Use the translated version of SeeMenu in the action ad extension. */
         const SeeMenu = 'SeeMenu';
 
-        /** Reserved. */
+        /** Use the translated version of SeeMore in the action ad extension. */
         const SeeMore = 'SeeMore';
 
-        /** Reserved. */
+        /** Use the translated version of SeeOffer in the action ad extension. */
         const SeeOffer = 'SeeOffer';
 
-        /** Reserved. */
+        /** Use the translated version of SellNow in the action ad extension. */
         const SellNow = 'SellNow';
 
-        /** Reserved. */
+        /** Use the translated version of ShopNOw in the action ad extension. */
         const ShopNow = 'ShopNow';
 
-        /** Reserved. */
+        /** Use the translated version of Showtimes in the action ad extension. */
         const Showtimes = 'Showtimes';
 
-        /** Reserved. */
+        /** Use the translated version of SignIn in the action ad extension. */
         const SignIn = 'SignIn';
 
-        /** Reserved. */
+        /** Use the translated version of SignUp in the action ad extension. */
         const SignUp = 'SignUp';
 
-        /** Reserved. */
+        /** Use the translated version of StartFree in the action ad extension. */
         const StartFree = 'StartFree';
 
-        /** Reserved. */
+        /** Use the translated version of StartNow in the action ad extension. */
         const StartNow = 'StartNow';
 
-        /** Reserved. */
+        /** Use the translated version of Subscribe in the action ad extension. */
         const Subscribe = 'Subscribe';
 
-        /** Reserved. */
+        /** Use the translated version of TestDrive in the action ad extension. */
         const TestDrive = 'TestDrive';
 
-        /** Reserved. */
+        /** Use the translated version of TryNow in the action ad extension. */
         const TryNow = 'TryNow';
 
-        /** Reserved. */
+        /** Use the translated version of UsedCars in the action ad extension. */
         const UsedCars = 'UsedCars';
 
-        /** Reserved. */
+        /** Use the translated version of ViewCars in the action ad extension. */
         const ViewCars = 'ViewCars';
 
-        /** Reserved. */
+        /** Use the translated version of ViewNow in the action ad extension. */
         const ViewNow = 'ViewNow';
 
-        /** Reserved. */
+        /** Use the translated version of ViewPlans in the action ad extension. */
         const ViewPlans = 'ViewPlans';
 
-        /** Reserved. */
+        /** Use the translated version of VisitSite in the action ad extension. */
         const VisitSite = 'VisitSite';
 
-        /** Reserved. */
+        /** Use the translated version of VoteNow in the action ad extension. */
         const VoteNow = 'VoteNow';
 
-        /** Reserved. */
+        /** Use the translated version of Watch in the action ad extension. */
         const Watch = 'Watch';
 
-        /** Reserved. */
+        /** Use the translated version of WatchMore in the action ad extension. */
         const WatchMore = 'WatchMore';
 
-        /** Reserved. */
+        /** Use the translated version of WatchNow in the action ad extension. */
         const WatchNow = 'WatchNow';
     }
 

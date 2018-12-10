@@ -285,16 +285,16 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Experiment records in the download data. */
         const Experiments = 'Experiments';
 
-        /** Reserved for future use. */
+        /** Include Action Ad Extension records in the download data. */
         const ActionAdExtensions = 'ActionAdExtensions';
 
-        /** Reserved for future use. */
+        /** Include Campaign Action Ad Extension records in the download that represents the association relationship between a campaign and an action ad extension. */
         const CampaignActionAdExtensions = 'CampaignActionAdExtensions';
 
-        /** Reserved for future use. */
+        /** Include Ad Group Action Ad Extension records in the download that each represent the association relationship between an ad group and an action ad extension. */
         const AdGroupActionAdExtensions = 'AdGroupActionAdExtensions';
 
-        /** Reserved for future use. */
+        /** Include Account Action Ad Extension records in the download that represents the association relationship between an account and an action ad extension. */
         const AccountActionAdExtensions = 'AccountActionAdExtensions';
 
         /** Include Responsive Search Ad records in the download data. */

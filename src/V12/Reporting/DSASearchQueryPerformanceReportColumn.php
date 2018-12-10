@@ -140,7 +140,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The customer name. */
         const CustomerName = 'CustomerName';
 
-        /** Reserved. */
+        /** The feed URL will appear either as "True" or "False". */
         const FeedUrl = 'FeedUrl';
     }
 

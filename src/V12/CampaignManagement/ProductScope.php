@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class ProductScope extends Criterion
     {
         /**
-         * A list of up to 7 product conditions that helps determine whether a product from the Bing Merchant Center store gets served as an ad.
+         * A list of up to product conditions that helps determine whether a product from the Bing Merchant Center store gets served as an ad.
          * @var ProductCondition[]
          */
         public $Conditions;

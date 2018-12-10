@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets experiments by experiment identifiers.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getexperimentsbyids?view=bingads-12 GetExperimentsByIds Request Object
      * 
      * @uses Paging
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class GetExperimentsByIdsRequest
     {
         /**
-         * Reserved.
+         * The identifiers of the experiments to get.
          * @var integer[]
          */
         public $ExperimentIds;
 
         /**
-         * Reserved.
+         * Determines the index and size of experiment results per page.
          * @var Paging
          */
         public $PageInfo;
