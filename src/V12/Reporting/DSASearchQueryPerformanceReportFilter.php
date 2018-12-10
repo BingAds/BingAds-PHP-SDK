@@ -46,6 +46,12 @@ namespace Microsoft\BingAds\V12\Reporting;
         public $ExcludeZeroClicks;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $FeedUrl;
+
+        /**
          * The report will include data for only websites that used the specified languages.
          * @var string[]
          */

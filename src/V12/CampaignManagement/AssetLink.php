@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * 
      * @uses Asset
      * @uses AssetLinkEditorialStatus
+     * @used-by ResponsiveAd
      * @used-by ResponsiveSearchAd
      */
     final class AssetLink

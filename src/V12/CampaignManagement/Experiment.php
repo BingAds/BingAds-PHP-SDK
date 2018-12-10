@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an experiment where you split a campaign's budget and traffic, and then run an A/B test during a limited date range.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/experiment?view=bingads-12 Experiment Data Object
      * 
      * @uses Date
@@ -15,55 +15,55 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class Experiment
     {
         /**
-         * Reserved.
+         * The Bing Ads identifier of the campaign used as the base for the experiment campaign.
          * @var integer
          */
         public $BaseCampaignId;
 
         /**
-         * Reserved.
+         * The date that the experiment will expire.
          * @var Date
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The Bing Ads identifier of the campaign that is created as a copy of the base campaign.
          * @var integer
          */
         public $ExperimentCampaignId;
 
         /**
-         * Reserved.
+         * The status of the experiment.
          * @var string
          */
         public $ExperimentStatus;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var string
          */
         public $ExperimentType;
 
         /**
-         * Reserved.
+         * The unique Bing Ads identifier of the experiment.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The name of the experiment.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The date that the experiment campaign can begin serving ads.
          * @var Date
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The percentage of the base campaign's budget and ad traffic that you want to allocate for this experiment.
          * @var integer
          */
         public $TrafficSplitPercent;

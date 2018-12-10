@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds experiments and creates experiment campaigns based on existing campaigns in an account.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addexperiments?view=bingads-12 AddExperiments Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class AddExperimentsResponse
     {
         /**
-         * Reserved.
+         * A list of unique system identifiers corresponding to the experiments that were added.
          * @var integer[]
          */
         public $ExperimentIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

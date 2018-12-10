@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $CampaignType;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned Campaign object.
          * @var CampaignAdditionalField
          */
         public $ReturnAdditionalFields;

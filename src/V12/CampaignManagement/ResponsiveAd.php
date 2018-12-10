@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/responsivead?view=bingads-12 ResponsiveAd Data Object
      * 
      * @uses CallToAction
+     * @uses AssetLink
      */
     final class ResponsiveAd extends Ad
     {
@@ -28,6 +29,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var string
          */
         public $Headline;
+
+        /**
+         * Reserved.
+         * @var AssetLink[]
+         */
+        public $Images;
 
         /**
          * This is the identifier of the media corresponding to one of two possible aspect ratios for images that could appear in your audience ads.

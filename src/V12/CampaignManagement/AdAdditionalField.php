@@ -18,6 +18,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** Request that the TextPart2 element be included within each returned ExpandedTextAd object. */
         const TextPart2 = 'TextPart2';
+
+        /** Request that the Images element be included within each returned ResponsiveAd object. */
+        const Images = 'Images';
     }
 
 }

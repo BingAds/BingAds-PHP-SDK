@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Defines an app ad extension that can be included in a text ad.
+     * Defines an app ad extension that can be included in an ad.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appadextension?view=bingads-12 AppAdExtension Data Object
      * 
      * @uses AppUrl

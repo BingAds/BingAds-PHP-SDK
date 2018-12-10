@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified experiments.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateexperiments?view=bingads-12 UpdateExperiments Request Object
      * 
      * @uses Experiment
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class UpdateExperimentsRequest
     {
         /**
-         * Reserved.
+         * An array of Experiment objects to update within the account.
          * @var Experiment[]
          */
         public $Experiments;

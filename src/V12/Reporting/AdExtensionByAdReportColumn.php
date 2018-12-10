@@ -134,7 +134,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The title part 2 attribute of an ad. */
         const TitlePart2 = 'TitlePart2';
 
-        /** Reserved. */
+        /** The title part 3 attribute of an ad. */
         const TitlePart3 = 'TitlePart3';
     }
 

@@ -2266,6 +2266,10 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            if($dataObject->Type === "ImageAsset")
+            {
+                self::OutputImageAsset($dataObject);
+            }
             if($dataObject->Type === "TextAsset")
             {
                 self::OutputTextAsset($dataObject);
@@ -3697,6 +3701,32 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfImageAdExtension * * *");
     }
+    static function OutputImageAsset($dataObject)
+    {
+        self::OutputStatusMessage("* * * Begin OutputImageAsset * * *");
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage(sprintf("CropHeight: %s", $dataObject->CropHeight));
+            self::OutputStatusMessage(sprintf("CropWidth: %s", $dataObject->CropWidth));
+            self::OutputStatusMessage(sprintf("CropX: %s", $dataObject->CropX));
+            self::OutputStatusMessage(sprintf("CropY: %s", $dataObject->CropY));
+            self::OutputStatusMessage(sprintf("SubType: %s", $dataObject->SubType));
+        }
+        self::OutputStatusMessage("* * * End OutputImageAsset * * *");
+    }
+    static function OutputArrayOfImageAsset($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ImageAsset))
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfImageAsset * * *");
+        foreach ($dataObjects->ImageAsset as $dataObject)
+        {
+            self::OutputImageAsset($dataObject);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfImageAsset * * *");
+    }
     static function OutputImageMediaRepresentation($dataObject)
     {
         self::OutputStatusMessage("* * * Begin OutputImageMediaRepresentation * * *");
@@ -4726,6 +4756,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("BusinessName: %s", $dataObject->BusinessName));
             self::OutputStatusMessage(sprintf("CallToAction: %s", $dataObject->CallToAction));
             self::OutputStatusMessage(sprintf("Headline: %s", $dataObject->Headline));
+            self::OutputArrayOfAssetLink($dataObject->Images);
             self::OutputStatusMessage(sprintf("LandscapeImageMediaId: %s", $dataObject->LandscapeImageMediaId));
             self::OutputStatusMessage(sprintf("LandscapeLogoMediaId: %s", $dataObject->LandscapeLogoMediaId));
             self::OutputStatusMessage(sprintf("LongHeadline: %s", $dataObject->LongHeadline));

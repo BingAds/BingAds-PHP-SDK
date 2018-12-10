@@ -38,10 +38,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The Bing Ads assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The ad title. */
+        /** The ad title parts. */
         const AdTitle = 'AdTitle';
 
-        /** The text attribute of an ad. */
+        /** The first ad description that appears below the path in your ad. */
         const AdDescription = 'AdDescription';
 
         /** The ad display URL. */
