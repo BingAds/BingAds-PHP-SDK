@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $SuggestedKeyword;
 
         /**
-         * A score from 0.
+         * A score from 0.0 to 1.0 that indicates the probability that the keyword would match a user's search query.
          * @var double
          */
         public $ConfidenceScore;

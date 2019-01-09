@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The Bing Ads assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The ad title parts. */
+        /** The ad title parts.This column will be empty if ItemChanged is not Ad. */
         const AdTitle = 'AdTitle';
 
         /** The first ad description that appears below the path in your ad. */

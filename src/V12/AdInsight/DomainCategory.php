@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $CategoryName;
 
         /**
-         * A score from 0.
+         * A score from 0.0 to 1.0 that indicates the percentage of pages in the requested language that belong to a particular domain out of all the pages that Bing has indexed for the same language your website's domain.
          * @var double
          */
         public $Coverage;

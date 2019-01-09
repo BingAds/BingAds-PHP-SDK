@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** The ad group is eligible to serve. */
         const Active = 'Active';
 
-        /** The ad group is not eligible to serve because your ad group target criteria e. */
+        /** The ad group is not eligible to serve because your ad group target criteria e.g., ProfileCriterion are too narrowly defined. */
         const TargetingTooNarrow = 'TargetingTooNarrow';
 
         /** The privacy evaluation is still in progress, and the ad group is not yet eligible to serve. */

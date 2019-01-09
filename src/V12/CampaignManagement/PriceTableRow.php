@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Price;
 
         /**
-         * The price qualifier for a given product or service e.
+         * The price qualifier for a given product or service e.g., starting from a specific price and up to a maximum price.
          * @var PriceQualifier
          */
         public $PriceQualifier;

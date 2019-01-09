@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class InheritFromParentBiddingScheme extends BiddingScheme
     {
         /**
-         * The type of bidding scheme (a.
+         * The type of bidding scheme (a.k.a.
          * @var string
          */
         public $InheritedBidStrategyType;

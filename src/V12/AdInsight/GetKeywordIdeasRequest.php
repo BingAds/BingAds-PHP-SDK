@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $ExpandIdeas;
 
         /**
-         * The keyword idea attributes that you want included in the response e.
+         * The keyword idea attributes that you want included in the response e.g., Keyword, Competition, MonthlySearchCounts, and SuggestedBid.
          * @var KeywordIdeaAttribute[]
          */
         public $IdeaAttributes;

@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $Segments;
 
         /**
-         * One or more auction insight entries i.
+         * One or more auction insight entries i.e., one result per domain that you competed with in the auction.
          * @var AuctionInsightEntry[]
          */
         public $Entries;

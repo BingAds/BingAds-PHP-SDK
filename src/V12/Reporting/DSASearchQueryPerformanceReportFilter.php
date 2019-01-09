@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         public $ExcludeZeroClicks;
 
         /**
-         * Reserved.
+         * The feed URL will appear either as "True" or "False".
          * @var boolean
          */
         public $FeedUrl;
