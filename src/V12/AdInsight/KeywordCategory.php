@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $Category;
 
         /**
-         * A score from 0.
+         * A score from 0.0 to 1.0 that indicates the likelihood that the keyword belongs to the category.
          * @var double
          */
         public $ConfidenceScore;

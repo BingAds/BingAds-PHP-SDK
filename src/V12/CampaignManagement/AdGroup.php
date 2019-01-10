@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class AdGroup
     {
         /**
-         * Determines how often you'd like the ads in your ad group to show in relation to one another.
+         * Ad rotation sets how often Bing Ads selects which ads to serve, if you have multiple ads within an ad group.
          * @var AdRotation
          */
         public $AdRotation;
@@ -85,7 +85,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Network;
 
         /**
-         * Indicates whether or not your ad group target criteria e.
+         * Indicates whether or not your ad group target criteria e.g., ProfileCriterion are too narrow for ad groups in Audience campaigns.
          * @var AdGroupPrivacyStatus
          */
         public $PrivacyStatus;

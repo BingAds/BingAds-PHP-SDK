@@ -1604,19 +1604,19 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
-            if($dataObject->Type === "AppInstallAd")
+            if($dataObject->Type === "AppInstall")
             {
                 self::OutputAppInstallAd($dataObject);
             }
-            if($dataObject->Type === "DynamicSearchAd")
+            if($dataObject->Type === "DynamicSearch")
             {
                 self::OutputDynamicSearchAd($dataObject);
             }
-            if($dataObject->Type === "ExpandedTextAd")
+            if($dataObject->Type === "ExpandedText")
             {
                 self::OutputExpandedTextAd($dataObject);
             }
-            if($dataObject->Type === "ProductAd")
+            if($dataObject->Type === "Product")
             {
                 self::OutputProductAd($dataObject);
             }
@@ -1624,11 +1624,11 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputResponsiveAd($dataObject);
             }
-            if($dataObject->Type === "ResponsiveSearchAd")
+            if($dataObject->Type === "ResponsiveSearch")
             {
                 self::OutputResponsiveSearchAd($dataObject);
             }
-            if($dataObject->Type === "TextAd")
+            if($dataObject->Type === "Text")
             {
                 self::OutputTextAd($dataObject);
             }
@@ -2331,15 +2331,15 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("SearchSize: %s", $dataObject->SearchSize));
             self::OutputArrayOfString($dataObject->SupportedCampaignTypes);
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
-            if($dataObject->Type === "CustomAudience")
+            if($dataObject->Type === "Custom")
             {
                 self::OutputCustomAudience($dataObject);
             }
-            if($dataObject->Type === "InMarketAudience")
+            if($dataObject->Type === "InMarket")
             {
                 self::OutputInMarketAudience($dataObject);
             }
-            if($dataObject->Type === "ProductAudience")
+            if($dataObject->Type === "Product")
             {
                 self::OutputProductAudience($dataObject);
             }
