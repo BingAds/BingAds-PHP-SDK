@@ -34,28 +34,14 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
-
-    $offlineConversionGoalName = "My Offline Conversion Goal " . $_SERVER['REQUEST_TIME'];
-
+    // A conversion goal cannot be deleted, so even if this is a test
+    // please choose an appropriate name accordingly. 
+    $offlineConversionGoalName = "My Offline Conversion Goal";
     
     $conversionGoals = array();
     $offlineConversionGoal = new OfflineConversionGoal();
@@ -79,22 +65,32 @@ try
         $offlineConversionGoal, 
         SOAP_ENC_OBJECT, 
         'OfflineConversionGoal', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $conversionGoals[] = $encodedOfflineConversionGoal;
 
-    print("Add conversion goal...\n\n");
-    $addConversionGoalsResponse = CampaignManagementExampleHelper::AddConversionGoals($conversionGoals);
+    print("-----\r\nAddConversionGoals:\r\n");
+    $addConversionGoalsResponse = CampaignManagementExampleHelper::AddConversionGoals(
+        $conversionGoals
+    );
     $conversionGoalIds = $addConversionGoalsResponse->ConversionGoalIds;
+    print("ConversionGoalIds:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfLong($conversionGoalIds);
-    if(isset($addConversionGoalsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addConversionGoalsResponse->PartialErrors);
-    }
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addConversionGoalsResponse->PartialErrors);
 
     $conversionGoalTypes = array(ConversionGoalType::OfflineConversion);
-    $getConversionGoals = CampaignManagementExampleHelper::GetConversionGoalsByIds(
+
+    print("-----\r\nGetConversionGoalsByIds:\r\n");
+    $getConversionGoalsResponse = CampaignManagementExampleHelper::GetConversionGoalsByIds(
         $conversionGoalIds, 
-        $conversionGoalTypes)->ConversionGoals;
+        $conversionGoalTypes
+    );
+    $getConversionGoals = $getConversionGoalsResponse->ConversionGoals;
+    print("ConversionGoals:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfConversionGoal($getConversionGoals);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($getConversionGoalsResponse->PartialErrors);
 
     // Every time you create a new OfflineConversionGoal via either the Bing Ads web application or Campaign Management API, 
     // the MSCLKIDAutoTaggingEnabled value of the corresponding AccountProperty is set to 'true' automatically.
@@ -102,10 +98,15 @@ try
 
     $accountPropertyNames = array(AccountPropertyName::MSCLKIDAutoTaggingEnabled);
 
-    print("Get account properties...\n\n");
-    $getAccountPropertiesResponse = CampaignManagementExampleHelper::GetAccountProperties($accountPropertyNames);
+    print("-----\r\nGetAccountProperties:\r\n");
+    $getAccountPropertiesResponse = CampaignManagementExampleHelper::GetAccountProperties(
+        $accountPropertyNames
+    );
+    print("AccountProperties:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfAccountProperty($getAccountPropertiesResponse->AccountProperties);
-
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($getAccountPropertiesResponse->PartialErrors);
+    
     $offlineConversions = array();
     $offlineConversion = new OfflineConversion();
     // If you do not specify an offline conversion currency code, 
@@ -128,33 +129,21 @@ try
     // This example would not succeed in production because we created the goal very recently i.e., 
     // please see above call to AddConversionGoalsAsync. 
 
-    print("Apply the offline conversion...\n\n");
-    $applyOfflineConversionsResponse = CampaignManagementExampleHelper::ApplyOfflineConversions($offlineConversions);
-    var_dump($offlineConversions);
-    
-    print("Program execution completed\n"); 
+    print("-----\r\nApplyOfflineConversions:\r\n");
+    $applyOfflineConversionsResponse = CampaignManagementExampleHelper::ApplyOfflineConversions(
+        $offlineConversions
+    );
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($applyOfflineConversionsResponse->PartialErrors);
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
-    elseif (isset($e->detail->EditorialApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {

@@ -16,12 +16,6 @@ use SoapVar;
 use SoapFault;
 use Exception;
 
-// Specify the Microsoft\BingAds\V12\CampaignManagement classes that will be used.
-use Microsoft\BingAds\V12\CampaignManagement\GetCampaignsByAccountIdRequest;
-use Microsoft\BingAds\V12\CampaignManagement\Campaign;
-use Microsoft\BingAds\V12\CampaignManagement\CampaignType;
-use Microsoft\BingAds\V12\CampaignManagement\CampaignAdditionalField;
-
 // Specify the Microsoft\BingAds\V12\CustomerManagement classes that will be used.
 use Microsoft\BingAds\V12\CustomerManagement\Paging;
 use Microsoft\BingAds\V12\CustomerManagement\Predicate;
@@ -33,41 +27,27 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\V12\AuthHelper;
-use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 use Microsoft\BingAds\Samples\V12\CustomerManagementExampleHelper;
-
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerManagementProxy'] = null; 
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
-        ServiceClientType::CustomerManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
+    print("-----\r\nGetUser:\r\n");
+    $getUserResponse = CustomerManagementExampleHelper::GetUser(
+        null, 
+        true
+    );
+    $user = $getUserResponse->User;
+    print("User:");
+    CustomerManagementExampleHelper::OutputUser($user);
+    print("CustomerRoles:");
+    CustomerManagementExampleHelper::OutputArrayOfCustomerRole($getUserResponse->CustomerRoles);
 
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
-
-    // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
-
-    $user = CustomerManagementExampleHelper::GetUser(null, true)->User;
-
-    // Search for the Bing Ads accounts that the user can access.
+    // Search for the accounts that the user can access.
+    // To retrieve more than 100 accounts, increase the page size up to 1,000.
+    // To retrieve more than 1,000 accounts you'll need to add paging.
 
     $pageInfo = new Paging();
     $pageInfo->Index = 0;    // The first page
@@ -78,48 +58,43 @@ try
     $predicate->Operator = PredicateOperator::Equals;
     $predicate->Value = $user->Id; 
 
+    print("-----\r\nSearchAccounts:\r\n");
     $accounts = CustomerManagementExampleHelper::SearchAccounts(
         array($predicate),
         null,
-        $pageInfo)->Accounts;
+        $pageInfo
+    )->Accounts;
+    print("Accounts:\r\n");
+    CustomerManagementExampleHelper::OutputArrayOfAdvertiserAccount($accounts);
 
+    $customerIds = array();
     foreach ($accounts->AdvertiserAccount as $account)
     {
-        $GLOBALS['AuthorizationData']->AccountId = $account->Id;
-        $GLOBALS['AuthorizationData']->CustomerId = $account->ParentCustomerId;
-
-        CustomerManagementExampleHelper::OutputAdvertiserAccount($account);
-
-        // Optionally you can find out which pilot features the customer is able to use. 
+        $customerIds[] = $account->ParentCustomerId;
+    }
+    $distinctCustomerIds = array_unique($customerIds, SORT_REGULAR);
+    
+    foreach ($distinctCustomerIds as $customerId)
+    {
+        // You can find out which pilot features the customer is able to use. 
         // Each account could belong to a different customer, so use the customer ID in each account.
-        $featurePilotFlags = CustomerManagementExampleHelper::GetCustomerPilotFeatures($account->ParentCustomerId)->FeaturePilotFlags;
-        print "Customer Pilot Flags:\n";
-        CustomerManagementExampleHelper::OutputArrayOfInt($featurePilotFlags);
-        $getCampaignsByAccountIdResponse = CampaignManagementExampleHelper::GetCampaignsByAccountId(
-            $account->Id, 
-            AuthHelper::CampaignTypes,
-            CampaignAdditionalField::ExperimentId
-        );
-        CampaignManagementExampleHelper::OutputArrayOfCampaign($getCampaignsByAccountIdResponse->Campaigns);
+        print("-----\r\nGetCustomerPilotFeatures:\r\n");
+        printf("Requested by CustomerId: %s\r\n", $customerId);
+        $featurePilotFlags = CustomerManagementExampleHelper::GetCustomerPilotFeatures(
+            $customerId
+        )->FeaturePilotFlags;
+        print("Customer Pilot Flags:\r\n");
+        print join('; ', $featurePilotFlags->int);
     }
 }
 catch (SoapFault $e)
 {
-    print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CustomerManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFault))
-    {
-        CustomerManagementExampleHelper::OutputApiFault($e->detail->ApiFault);
-    }
+    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {

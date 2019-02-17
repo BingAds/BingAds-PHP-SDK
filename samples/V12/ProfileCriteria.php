@@ -45,172 +45,92 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-    
-// You'll need to add media before you can run this example. 
-// For details, see ImageMedia.php
-
-$landscapeImageMediaId = 0;
-$landscapeLogoMediaId = 0;
-$squareImageMediaId = 0;
-$squareLogoMediaId = 0;
-
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
-
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
                     
-    // Setup an Audience campaign with one ad group and a responsive ad.
-    
+    // Create an Audience campaign with one ad group.
+
     $campaigns = array();   
     $campaign = new Campaign();
+    $campaign->Name = "Women's Shoes " . $_SERVER['REQUEST_TIME'];
     // CampaignType must be set for Audience campaigns
     $campaign->CampaignType = CampaignType::Audience;
-    // Languages must be set for Audience campaigns
-    $campaign->Languages = array("All");
-    $campaign->Name = "Women's Shoes " . $_SERVER['REQUEST_TIME'];
     $campaign->Description = "Red shoes line.";
-    $campaign->DailyBudget = 50;
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
+    $campaign->DailyBudget = 50.00;
+    $campaign->Languages = array("All");
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
     $campaigns[] = $campaign;
     
-    // Specify one or more ad groups.
+    print("-----\r\nAddCampaigns:\r\n");
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        $campaigns,
+        false
+    );
+    $campaignIds = $addCampaignsResponse->CampaignIds;
+    print("CampaignIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($campaignIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
+    
+    // Add an ad group within the campaign.
 
     $adGroups = array();
-
+    $adGroup = new AdGroup();
+    $adGroup->CpcBid = new Bid();
+    $adGroup->CpcBid->Amount = 0.09;
     date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
     $endDate->Year = date("Y");
-
-    $adGroup = new AdGroup();
-    $adGroup->Name = "Women's Red Shoe Sale";
-    $adGroup->StartDate = null;
     $adGroup->EndDate = $endDate;
-    $adGroup->CpcBid = new Bid();
-    $adGroup->CpcBid->Amount = 0.09;
-    // Language cannot be set for ad groups in Audience campaigns
-    $adGroup->Language = null;
-    // Network cannot be set for ad groups in Audience campaigns
-    $adGroup->Network = null;
-    
-    // By including the corresponding TargetSettingDetail, 
-    // this example sets the "target and bid" option for 
-    // CompanyName, Industry, and JobFunction. We will only deliver ads to 
-    // people who meet at least one of your criteria.
+    $adGroup->Name = "Women's Red Shoe Sale";    
+    $adGroup->StartDate = null; 
+    // Sets the "target and bid" option for CompanyName, Industry, and JobFunction. 
+    // Microsoft will only deliver ads to people who meet at least one of your criteria.
     // By default the "bid only" option is set for Audience, Age, and Gender.
-    // We will deliver ads to all audiences, ages, and genders, if they meet
-    // your company name, industry, or job function criteria.  
+    // Microsoft will deliver ads to all audiences, ages, and genders, if they meet
+    // your company name, industry, or job function criteria.
     $adGroupSettings = array();
     $adGroupTargetSetting = new TargetSetting();
-
+    $adGroupTargetSetting->Details = array();
     $adGroupCompanyNameTargetSettingDetail = new TargetSettingDetail();
     $adGroupCompanyNameTargetSettingDetail->CriterionTypeGroup = CriterionTypeGroup::CompanyName;
     $adGroupCompanyNameTargetSettingDetail->TargetAndBid = True;
-
+    $adGroupTargetSetting->Details[] = $adGroupCompanyNameTargetSettingDetail;
     $adGroupIndustryTargetSettingDetail = new TargetSettingDetail();
     $adGroupIndustryTargetSettingDetail->CriterionTypeGroup = CriterionTypeGroup::Industry;
     $adGroupIndustryTargetSettingDetail->TargetAndBid = True;
-
+    $adGroupTargetSetting->Details[] = $adGroupIndustryTargetSettingDetail;
     $adGroupJobFunctionTargetSettingDetail = new TargetSettingDetail();
     $adGroupJobFunctionTargetSettingDetail->CriterionTypeGroup = CriterionTypeGroup::JobFunction;
     $adGroupJobFunctionTargetSettingDetail->TargetAndBid = True;
-
-    $adGroupTargetSetting->Details = array();
-    $adGroupTargetSetting->Details[] = $adGroupCompanyNameTargetSettingDetail;
-    $adGroupTargetSetting->Details[] = $adGroupIndustryTargetSettingDetail;
     $adGroupTargetSetting->Details[] = $adGroupJobFunctionTargetSettingDetail;
-
     $encodedAdGroupTargetSetting = new SoapVar(
         $adGroupTargetSetting, 
         SOAP_ENC_OBJECT, 
         'TargetSetting', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $adGroupSettings[] = $encodedAdGroupTargetSetting;
-    $adGroup->Settings=$adGroupSettings;
-    
+    $adGroup->Settings=$adGroupSettings;   
     $adGroups[] = $adGroup;
-
-    $ads = array();
-
-    $responsiveAd = new ResponsiveAd();
-    $responsiveAd->TitlePart1 = "Contoso";
-    // Not applicable for responsive ads
-    $responsiveAd->AdFormatPreference = null;
-    $responsiveAd->BusinessName = "Contoso";
-    $responsiveAd->CallToAction = CallToAction::AddToCart;
-    // Not applicable for responsive ads
-    $responsiveAd->DevicePreference = null;
-    $responsiveAd->EditorialStatus = null;
-    $responsiveAd->FinalAppUrls = null;
-    $responsiveAd->FinalMobileUrls = array("http://mobile.contoso.com/womenshoesale");
-    $responsiveAd->FinalUrls = array("http://www.contoso.com/womenshoesale");
-    $responsiveAd->ForwardCompatibilityMap = null;
-    $responsiveAd->Headline = "Fast & Easy Setup";
-    $responsiveAd->Id = null;
-    $responsiveAd->LandscapeImageMediaId = $landscapeImageMediaId;
-    $responsiveAd->LandscapeLogoMediaId = $landscapeLogoMediaId;
-    $responsiveAd->LongHeadline = "Find New Customers & Increase Sales!";
-    $responsiveAd->SquareImageMediaId = $squareImageMediaId;
-    $responsiveAd->SquareLogoMediaId = $squareLogoMediaId;
-    $responsiveAd->Status = null;
-    $responsiveAd->Text = "Find New Customers & Increase Sales! Start Advertising on Contoso Today.";
-    $responsiveAd->TrackingUrlTemplate = null;
-    $responsiveAd->Type = null;
-    $responsiveAd->UrlCustomParameters = null;  
-
-    $ads[] = new SoapVar(
-        $responsiveAd, 
-        SOAP_ENC_OBJECT, 
-        'ResponsiveAd', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
-
-    // Add the campaign, ad group, and ad
-    
-    print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
-        $GLOBALS['AuthorizationData']->AccountId, 
-        $campaigns,
-        false);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
-    if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
-    }
-    
-    print "AddAdGroups\n";
+ 
+    print("-----\r\nAddAdGroups:\r\n");
     $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups(
-        $nillableCampaignIds->long[0], 
+        $campaignIds->long[0], 
         $adGroups,
-        null);
-    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
-    if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
-    }
-
-	print "AddAds\n";
-    $addAdsResponse = CampaignManagementExampleHelper::AddAds($nillableAdGroupIds->long[0], $ads);
-    $nillableAdIds = $addAdsResponse->AdIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdIds);
-    if(isset($addAdsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors);
-    }
+        null
+    );
+    $adGroupIds = $addAdGroupsResponse->AdGroupIds;
+    print("AdGroupIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($adGroupIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
 
     // Whether or not the "target and bid" option has been set for a given
     // criterion type group, you can set bid adjustments for specific criteria.
@@ -222,11 +142,12 @@ try
         $criterionBid, 
         SOAP_ENC_OBJECT, 
         'BidMultiplier', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
 
     // ProfileCriterion for CompanyName
     $adGroupCompanyNameCriterion = new BiddableAdGroupCriterion();
-    $adGroupCompanyNameCriterion->AdGroupId = $nillableAdGroupIds->long[0];
+    $adGroupCompanyNameCriterion->AdGroupId = $adGroupIds->long[0];
     $adGroupCompanyNameCriterion->CriterionBid = $encodedCriterionBid;
     $companyNameCriterion = new ProfileCriterion();
     $companyNameCriterion->ProfileId = 808251207; // Microsoft
@@ -235,16 +156,18 @@ try
         $companyNameCriterion, 
         SOAP_ENC_OBJECT, 
         'ProfileCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $adGroupCriterions[] = new SoapVar(
         $adGroupCompanyNameCriterion, 
         SOAP_ENC_OBJECT, 
         'BiddableAdGroupCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
 
     // ProfileCriterion for Industry
     $adGroupIndustryCriterion = new BiddableAdGroupCriterion();
-    $adGroupIndustryCriterion->AdGroupId = $nillableAdGroupIds->long[0];
+    $adGroupIndustryCriterion->AdGroupId = $adGroupIds->long[0];
     $adGroupIndustryCriterion->CriterionBid = $encodedCriterionBid;
     $industryCriterion = new ProfileCriterion();
     $industryCriterion->ProfileId = 807658654; // Computer & Network Security
@@ -253,16 +176,18 @@ try
         $industryCriterion, 
         SOAP_ENC_OBJECT, 
         'ProfileCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $adGroupCriterions[] = new SoapVar(
         $adGroupIndustryCriterion, 
         SOAP_ENC_OBJECT, 
         'BiddableAdGroupCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
 
     // ProfileCriterion for JobFunction
     $adGroupJobFunctionCriterion = new BiddableAdGroupCriterion();
-    $adGroupJobFunctionCriterion->AdGroupId = $nillableAdGroupIds->long[0];
+    $adGroupJobFunctionCriterion->AdGroupId = $adGroupIds->long[0];
     $adGroupJobFunctionCriterion->CriterionBid = $encodedCriterionBid;
     $jobFunctionCriterion = new ProfileCriterion();
     $jobFunctionCriterion->ProfileId = 807658477; // Engineering
@@ -271,72 +196,63 @@ try
         $jobFunctionCriterion, 
         SOAP_ENC_OBJECT, 
         'ProfileCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $adGroupCriterions[] = new SoapVar(
         $adGroupJobFunctionCriterion, 
         SOAP_ENC_OBJECT, 
         'BiddableAdGroupCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
 
     // Exclude ages twenty-five through thirty-four.
 
     $adGroupNegativeAgeCriterion = new NegativeAdGroupCriterion();
-    $adGroupNegativeAgeCriterion->AdGroupId = $nillableAdGroupIds->long[0];
+    $adGroupNegativeAgeCriterion->AdGroupId = $adGroupIds->long[0];
     $ageCriterion = new AgeCriterion();
     $ageCriterion->AgeRange = AgeRange::TwentyFiveToThirtyFour;
     $adGroupNegativeAgeCriterion->Criterion = new SoapVar(
         $ageCriterion, 
         SOAP_ENC_OBJECT, 
         'AgeCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $adGroupCriterions[] = new SoapVar(
         $adGroupNegativeAgeCriterion, 
         SOAP_ENC_OBJECT, 
         'NegativeAdGroupCriterion', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
 
-    print("Adding Ad Group Criteria . . . \n\n");
-    CampaignManagementExampleHelper::OutputArrayOfAdGroupCriterion($adGroupCriterions);
+    print("-----\r\nAddAdGroupCriterions:\r\n");
     $addAdGroupCriterionsResponse =  CampaignManagementExampleHelper::AddAdGroupCriterions(
-            $adGroupCriterions, 
-            AdGroupCriterionType::Targets);
+        $adGroupCriterions, 
+        AdGroupCriterionType::Targets
+    );
     $adGroupCriterionIds = $addAdGroupCriterionsResponse->AdGroupCriterionIds;
-    print("New Ad Group Criterion Ids:\n\n");
+    print("AdGroupCriterionIds:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfLong($adGroupCriterionIds);
     $adGroupCriterionErrors = $addAdGroupCriterionsResponse->NestedPartialErrors;
-    print("\nAddAdGroupCriterions Errors:\n\n");
+    print("NestedPartialErrors:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfBatchErrorCollection($adGroupCriterionErrors);
 
-    // Delete the campaign, ad group, criteria, and ad that were previously added. 
-    // You should remove this line if you want to view the added entities in the 
-    // Bing Ads web application or another tool.
+    // Delete the campaign and everything it contains e.g., ad groups and ads.
 
+    print("-----\r\nDeleteCampaigns:\r\n");
     CampaignManagementExampleHelper::DeleteCampaigns(
         $GLOBALS['AuthorizationData']->AccountId, 
-        array($nillableCampaignIds->long[0]));
-    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
+        array($campaignIds->long[0])
+    );
+    printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-        printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
-    elseif (isset($e->detail->EditorialApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
-    }
+    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -345,7 +261,7 @@ catch (Exception $e)
     { ; }
     else
     {
-        print $e->getCode()." ".$e->getMessage()."\n\n";
-        print $e->getTraceAsString()."\n\n";
+        print $e->getCode()." ".$e->getMessage()."\r\n";
+        print $e->getTraceAsString()."\r\n";
     }
 }

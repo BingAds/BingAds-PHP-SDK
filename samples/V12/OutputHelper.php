@@ -14,8 +14,8 @@ use Exception;
 final class OutputHelper {
 
     /// Set the read-only properties of an ad extension to null. This operation can be useful between calls to
-    /// GetAdExtensionsByIds and UpdateAdExtensions. The update operation would fail if you send certain read-only
-    /// fields.
+    /// GetAdExtensionsByIds and UpdateAdExtensions. 
+    /// Otherwise, the update operation would fail if you send certain read-only fields.
     static function SetReadOnlyAdExtensionElementsToNull($extension)
     {
         if (empty($extension) || !isset($extension->Id))

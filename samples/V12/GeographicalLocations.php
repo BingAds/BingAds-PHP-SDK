@@ -23,10 +23,6 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
 // The full path where you want to download the geographical locations file.
 
 $GLOBALS['LocalFile'] = "c:\\geolocations\\geolocations.csv";
@@ -45,21 +41,10 @@ $Version = "2.0";
 
 $LanguageLocale = "en";
 
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
-
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
 
     date_default_timezone_set('UTC');
 
@@ -67,50 +52,43 @@ try
     // and compare it with the last modified time provided by the service.
     $previousSyncTimeUtc = new DateTime('2017-08-10T00:00:00-00:00');
     
+    print("-----\r\nGetGeoLocationsFileUrl:\r\n");
     $getGeoLocationsFileUrlResponse = CampaignManagementExampleHelper::GetGeoLocationsFileUrl(
         $Version, 
-        $LanguageLocale);
+        $LanguageLocale
+    );
 
     $fileUrl = $getGeoLocationsFileUrlResponse->FileUrl;
     $fileUrlExpiryTimeUtc = $getGeoLocationsFileUrlResponse->FileUrlExpiryTimeUtc;
     $lastModifiedTimeUtc = $getGeoLocationsFileUrlResponse->LastModifiedTimeUtc;
 
-    printf("FileUrl: %s\n", $fileUrl);
-    printf("FileUrlExpiryTimeUtc: %s\n", $fileUrlExpiryTimeUtc);
-    printf("LastModifiedTimeUtc: %s\n", $lastModifiedTimeUtc);
+    printf("FileUrl: %s\r\n", $fileUrl);
+    printf("FileUrlExpiryTimeUtc: %s\r\n", $fileUrlExpiryTimeUtc);
+    printf("LastModifiedTimeUtc: %s\r\n", $lastModifiedTimeUtc);
     
     // Download the file if it was modified since the previous download.
     if($previousSyncTimeUtc < new DateTime($lastModifiedTimeUtc))
     {
-        printf("Downloading the file locally: %s\n", $GLOBALS['LocalFile']);
+        printf("Downloading the file locally: %s\r\n", 
+            $GLOBALS['LocalFile']
+        );
         DownloadFile($fileUrl);
     }
     else
     {
-        printf("The file has not been modified since your previous sync time (%s).\n", $previousSyncTimeUtc->format('Y-m-d\TH:i:se'));
+        printf("The file has not been modified since your previous sync time (%s).\r\n", 
+            $previousSyncTimeUtc->format('Y-m-d\TH:i:se')
+        );
     }
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
-    elseif (isset($e->detail->EditorialApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -119,8 +97,8 @@ catch (Exception $e)
     { ; }
     else
     {
-        print $e->getCode()." ".$e->getMessage()."\n\n";
-        print $e->getTraceAsString()."\n\n";
+        print $e->getCode()." ".$e->getMessage()."\r\n";
+        print $e->getTraceAsString()."\r\n";
     }
 }
 
@@ -144,12 +122,12 @@ function DownloadFile($fileUrl){
     
     if ($httpCode == 200)
     {
-        printf("Downloaded the geographical locations to %s.\n", $GLOBALS['LocalFile']);
+        printf("Downloaded the geographical locations to %s.\r\n", $GLOBALS['LocalFile']);
         rename($GLOBALS['TempFile'], $GLOBALS['LocalFile']);
     }
     else
     {
-        printf("The geographical locations file was not successfully downloaded.\n");
+        printf("The geographical locations file was not successfully downloaded.\r\n");
         unlink($GLOBALS['TempFile']);
     }
 }

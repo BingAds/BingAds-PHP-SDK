@@ -1,12 +1,9 @@
 <?php
 namespace Microsoft\BingAds\Samples;
 
-// For more information about installing and using the Bing Ads PHP SDK, 
-// see https://go.microsoft.com/fwlink/?linkid=838593.
+require_once "./vendor/autoload.php";
 
-require_once __DIR__ . "./vendor/autoload.php";
-
-include __DIR__ . "WebAuthHelper.php";
+include "WebAuthHelper.php";
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\AuthorizationData;
@@ -15,6 +12,8 @@ use Microsoft\BingAds\Auth\OAuthWebAuthCodeGrant;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\WebAuthHelper;
+
+use Exception;
 
 try 
 {
@@ -41,12 +40,11 @@ try
         
         // The user needs to provide consent for the application to access their Bing Ads accounts.
         header('Location: '. $_SESSION['AuthorizationData']->Authentication->GetAuthorizationEndpoint());
-
     }
     
     // If the current HTTP request is a callback from the Microsoft Account authorization server,
     // use the current request url containing authorization code to request new access and refresh tokens
-    if($_GET['code'] != null)
+    if(isset($_GET['code']))
     {   
         // Verify whether the 'state' value is the same random value we created
         // when the authorization request was initiated.
@@ -58,7 +56,8 @@ try
                 $_SESSION['state']));
         }   
         
-        $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+        $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri(
+            $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
                 
         header('Location: '. '/CallBingAdsServices.php');
     }
@@ -72,4 +71,4 @@ catch(OAuthTokenRequestException $e)
 catch(Exception $e)
 {
     print $e;
-}
+}   

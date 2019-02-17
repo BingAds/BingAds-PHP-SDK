@@ -19,8 +19,6 @@ use Exception;
 use Microsoft\BingAds\V12\CustomerManagement\Paging;
 use Microsoft\BingAds\V12\CustomerManagement\Predicate;
 use Microsoft\BingAds\V12\CustomerManagement\PredicateOperator;
-use Microsoft\BingAds\V12\CustomerManagement\Account;
-use Microsoft\BingAds\V12\CustomerManagement\User;
 use Microsoft\BingAds\V12\CustomerManagement\ClientLink;
 use Microsoft\BingAds\V12\CustomerManagement\ClientLinkStatus;
 use Microsoft\BingAds\V12\CustomerManagement\OrderBy;
@@ -36,40 +34,27 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CustomerManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerManagementProxy'] = null; 
+// How to use agency credentials to invite a client, and use client credentials to accept the invitation. 
+// Run this sample multiple times alternating between agency and client credentials 
+// to update and observe the status change, for example from LinkPending to LinkAccepted to Active.
 
-/** 
- * This example demonstrates how to use agency credentials to invite a client, 
- * and use client credentials to accept the invitation. 
- * Run this sample multiple times alternating between agency and client credentials 
- * to update and observe the status change, for example from LinkPending to LinkAccepted to Active.
- */
+print "You must edit this example to provide the ClientAccountId for the client link. " .
+    "When adding a client link, the client link's ManagingCustomerId is set to the CustomerId " .
+    "of the current authenticated user, who must be a Super Admin of the agency. " .
+    "Login as an agency Super Admin user to send a client link invitation, or unlink an existing client link. " .
+    "Login as a client Super Admin user to accept a client link invitation.\r\n";
 
-print "You must edit this sample to provide the ClientAccountId for the client link.\n";
-print "When adding a client link, the client link's ManagingCustomerId is set to the CustomerId of the current " .
-       "authenticated user, who must be a Super Admin of the agency.\n";
-print "Authenticate (e.g. edit AuthHelper.php) as an agency Super Admin user to send a client link invitation, " .
-       "or unlink an existing client link.\n";
-print "Authenticate (e.g. edit AuthHelper.php) as a client Super Admin user to accept a client link invitation.\n\n";
-
-$ClientAccountId = 0; //<ClientAccountIdGoesHere>;
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
+// REQUIRED: The Client Account Id that you want to access.
+$ClientAccountId = 0; 
 
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
     $updateClientLinksResponse = null;
 
-    // Specify the client link search criteria
+    // Set the client link search criteria.
 
     $pageInfo = new Paging();
     $pageInfo->Index = 0;    // The first page
@@ -84,13 +69,22 @@ try
     $predicate->Operator = PredicateOperator::In;
     $predicate->Value = $ClientAccountId; 
 
-    // Search for client links that match the specified criteria.
+    // Search for client links that match the criteria.
 
+    print("-----\r\nSearchClientLinks:\r\n");
     $clientLinks = CustomerManagementExampleHelper::SearchClientLinks(
-        $GLOBALS['CustomerManagementProxy'], 
+        array($predicate),
         array($ordering),
-        $pageInfo,
-        array($predicate));
+        $pageInfo
+    );
+    print("ClientLinks:\r\n");
+    CustomerManagementExampleHelper::OutputArrayOfClientLink($clientLinks);
+
+    print "-----\r\nLast SOAP request/response:\r\n";
+    printf("Fault Code: %s\r\nFault String: %s\r\n", $e->faultcode, $e->faultstring);
+	print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 
     // Determine whether the agency is already managing the specified client account. 
     // If a link exists with status either Active, LinkInProgress, LinkPending, 
@@ -102,7 +96,7 @@ try
     if (isset($clientLinks->ClientLink) && count((array)$clientLinks->ClientLink) > 0)
     {
         $clientLink = $clientLinks->ClientLink[0];
-        printf("Current ClientLink Status: %s.\n\n", $clientLink->Status);
+        printf("Current ClientLink Status: %s.\r\n", $clientLink->Status);
 
         switch ($clientLink->Status)
         {
@@ -110,18 +104,21 @@ try
             // which would terminate the existing relationship with the client. 
             case ClientLinkStatus::Active:
                 $clientLink->Status = ClientLinkStatus::UnlinkRequested;
-                $updateClientLinksResponse = CustomerManagementExampleHelper::UpdateClientLinks(array($clientLink));
-                print("The agency updated status: UnlinkRequested.\n\n");
+                print("-----\r\nUpdateClientLinks:\r\n");
+                $updateClientLinksResponse = CustomerManagementExampleHelper::UpdateClientLinks(
+                    array($clientLink)
+                );
+                print("UnlinkRequested\r\n");
                 $newLinkRequired = false;
                 break;
             // Waiting on a system status transition or waiting for the StartDate.
             case ClientLinkStatus::LinkAccepted:
-                print("The status is transitioning towards LinkInProgress.\n\n");
+                print("The status is transitioning towards LinkInProgress.\r\n");
                 $newLinkRequired = false;
                 break;
             // Waiting on a system status transition.
             case ClientLinkStatus::LinkInProgress:
-                print("The status is transitioning towards Active.\n\n");
+                print("The status is transitioning towards Active.\r\n");
                 $newLinkRequired = false;
                 break;
             // When the status is LinkPending, either the agency or client may update the status.
@@ -130,35 +127,37 @@ try
             // If the client does not accept or decline the invitation within 30 days, and if the agency
             // does not update the status to LinkCanceled, the system updates the status to LinkExpired.
             case ClientLinkStatus::LinkPending:
-                //$clientLink->Status = ClientLinkStatus::LinkCanceled;
-                //$updateClientLinksResponse = CustomerManagementExampleHelper::UpdateClientLinks(array($clientLink));
-                //print("The agency updated status: LinkCanceled.\n\n");
                 $clientLink->Status = ClientLinkStatus::LinkAccepted;
-                $updateClientLinksResponse = CustomerManagementExampleHelper::UpdateClientLinks(array($clientLink));
-                print("The client updated status: LinkAccepted.\n\n");
+                print("-----\r\nUpdateClientLinks:\r\n");
+                $updateClientLinksResponse = CustomerManagementExampleHelper::UpdateClientLinks(
+                    array($clientLink)
+                );
+                print("LinkAccepted\r\n");
                 $newLinkRequired = false;
                 break;
             // Waiting on a system status transition.
             case ClientLinkStatus::UnlinkInProgress:
-                print("The status is transitioning towards Inactive.\n\n");
+                print("The status is transitioning towards Inactive.\r\n");
                 $newLinkRequired = false;
                 break;
             // Waiting on a system status transition.
             case ClientLinkStatus::UnlinkPending:
-                print("The status is transitioning towards Inactive.\n\n");
+                print("The status is transitioning towards Inactive.\r\n");
                 $newLinkRequired = false;
                 break;
             // The link lifecycle has ended.  
             default:
-                print("A new client link invitation is required.\n\n");
+                print("A new client link invitation is required.\r\n");
                 break;
         }
 
-        // Print errors if any occurred when updating the client link.
+        // Output errors if any occurred when updating the client link.
         
         if (!empty($updateClientLinksResponse))
         {
+            print("OperationErrors:\r\n");
             CustomerManagementExampleHelper::OutputArrayOfOperationError($updateClientLinksResponse->OperationErrors);
+            print("PartialErrors:\r\n");
             foreach ($updateClientLinksResponse->PartialErrors as $operationErrors)
             {
                 CustomerManagementExampleHelper::OutputArrayOfOperationError($operationErrors);
@@ -180,39 +179,38 @@ try
         $clientLink->StartDate = null;
         $clientLink->SuppressNotification = false;
     
-        $addClientLinksResponse = CustomerManagementExampleHelper::AddClientLinks(array($clientLink));
-
-        // Print errors if any occurred when adding the client link.
-        CustomerManagementExampleHelper::OutputArrayOfBatchError($addClientLinksResponse->OperationErrors, $addClientLinksResponse->PartialErrors);
-        print("The agency attempted to add a new ClientLink.\n\n");
+        print("-----\r\nAddClientLinks:\r\n");
+        $addClientLinksResponse = CustomerManagementExampleHelper::AddClientLinks(
+            array($clientLink)
+        );
+        print("OperationErrors:\r\n");
+        CustomerManagementExampleHelper::OutputArrayOfOperationError($addClientLinksResponse->OperationErrors);
+        print("PartialErrors:\r\n");
+        foreach ($addClientLinksResponse->PartialErrors as $operationErrors)
+        {
+            CustomerManagementExampleHelper::OutputArrayOfOperationError($operationErrors);
+        }
     }
 
-    // Get and print the current client link
+    // Output the client links after any status updates above.
 
+    print("-----\r\nSearchClientLinks:\r\n");
     $clientLinks = CustomerManagementExampleHelper::SearchClientLinks(
+        array($predicate),
         array($ordering),
-        $pageInfo,
-        array($predicate));
-
+        $pageInfo
+    );
+    print("ClientLinks:\r\n");
     CustomerManagementExampleHelper::OutputArrayOfClientLink($clientLinks);
 }
 catch (SoapFault $e)
 {
-    print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CustomerManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFault))
-    {
-        CustomerManagementExampleHelper::OutputApiFault($e->detail->ApiFault);
-    }
+    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -221,7 +219,7 @@ catch (Exception $e)
     { ; }
     else
     {
-        print $e->getCode()." ".$e->getMessage()."\n\n";
-        print $e->getTraceAsString()."\n\n";
+        print $e->getCode()." ".$e->getMessage()."\r\n";
+        print $e->getTraceAsString()."\r\n";
     }
 }
