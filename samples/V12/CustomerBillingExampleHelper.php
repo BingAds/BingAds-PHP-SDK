@@ -118,15 +118,15 @@ final class CustomerBillingExampleHelper {
     }
     static function OutputAdApiError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Detail: %s", $dataObject->Detail));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputAdApiError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdApiError * * *");
     }
     static function OutputArrayOfAdApiError($dataObjects)
     {
@@ -139,21 +139,20 @@ final class CustomerBillingExampleHelper {
             self::OutputAdApiError($dataObjects->AdApiError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdApiError * * *");
         foreach ($dataObjects->AdApiError as $dataObject)
         {
             self::OutputAdApiError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdApiError * * *");
     }
     static function OutputAdApiFaultDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdApiFaultDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdApiFaultDetail * * *");
+            self::OutputStatusMessage("Errors:");
             self::OutputArrayOfAdApiError($dataObject->Errors);
+            self::OutputStatusMessage("* * * End OutputAdApiFaultDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdApiFaultDetail * * *");
     }
     static function OutputArrayOfAdApiFaultDetail($dataObjects)
     {
@@ -161,21 +160,20 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdApiFaultDetail * * *");
         foreach ($dataObjects->AdApiFaultDetail as $dataObject)
         {
             self::OutputAdApiFaultDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdApiFaultDetail * * *");
     }
     static function OutputApiBatchFault($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApiBatchFault * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApiBatchFault * * *");
+            self::OutputStatusMessage("BatchErrors:");
             self::OutputArrayOfBatchError($dataObject->BatchErrors);
+            self::OutputStatusMessage("* * * End OutputApiBatchFault * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApiBatchFault * * *");
     }
     static function OutputArrayOfApiBatchFault($dataObjects)
     {
@@ -183,25 +181,24 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApiBatchFault * * *");
         foreach ($dataObjects->ApiBatchFault as $dataObject)
         {
             self::OutputApiBatchFault($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApiBatchFault * * *");
     }
     static function OutputApiFault($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApiFault * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApiFault * * *");
+            self::OutputStatusMessage("OperationErrors:");
             self::OutputArrayOfOperationError($dataObject->OperationErrors);
             if($dataObject->Type === "ApiBatchFault")
             {
                 self::OutputApiBatchFault($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputApiFault * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApiFault * * *");
     }
     static function OutputArrayOfApiFault($dataObjects)
     {
@@ -209,18 +206,16 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApiFault * * *");
         foreach ($dataObjects->ApiFault as $dataObject)
         {
             self::OutputApiFault($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApiFault * * *");
     }
     static function OutputApplicationFault($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
             self::OutputStatusMessage(sprintf("TrackingId: %s", $dataObject->TrackingId));
             if($dataObject->Type === "AdApiFaultDetail")
             {
@@ -230,8 +225,8 @@ final class CustomerBillingExampleHelper {
             {
                 self::OutputApiFault($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputApplicationFault * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApplicationFault * * *");
     }
     static function OutputArrayOfApplicationFault($dataObjects)
     {
@@ -239,24 +234,22 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApplicationFault * * *");
         foreach ($dataObjects->ApplicationFault as $dataObject)
         {
             self::OutputApplicationFault($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApplicationFault * * *");
     }
     static function OutputBatchError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputBatchError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBatchError * * *");
     }
     static function OutputArrayOfBatchError($dataObjects)
     {
@@ -264,23 +257,21 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBatchError * * *");
         foreach ($dataObjects->BatchError as $dataObject)
         {
             self::OutputBatchError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBatchError * * *");
     }
     static function OutputBillingDocument($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBillingDocument * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBillingDocument * * *");
             self::OutputStatusMessage(sprintf("Data: %s", $dataObject->Data));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage("* * * End OutputBillingDocument * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBillingDocument * * *");
     }
     static function OutputArrayOfBillingDocument($dataObjects)
     {
@@ -288,18 +279,16 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBillingDocument * * *");
         foreach ($dataObjects->BillingDocument as $dataObject)
         {
             self::OutputBillingDocument($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBillingDocument * * *");
     }
     static function OutputBillingDocumentInfo($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBillingDocumentInfo * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBillingDocumentInfo * * *");
             self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
             self::OutputStatusMessage(sprintf("AccountName: %s", $dataObject->AccountName));
             self::OutputStatusMessage(sprintf("AccountNumber: %s", $dataObject->AccountNumber));
@@ -308,8 +297,8 @@ final class CustomerBillingExampleHelper {
             self::OutputStatusMessage(sprintf("DocumentDate: %s", $dataObject->DocumentDate));
             self::OutputStatusMessage(sprintf("DocumentId: %s", $dataObject->DocumentId));
             self::OutputStatusMessage(sprintf("CustomerId: %s", $dataObject->CustomerId));
+            self::OutputStatusMessage("* * * End OutputBillingDocumentInfo * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBillingDocumentInfo * * *");
     }
     static function OutputArrayOfBillingDocumentInfo($dataObjects)
     {
@@ -317,18 +306,16 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBillingDocumentInfo * * *");
         foreach ($dataObjects->BillingDocumentInfo as $dataObject)
         {
             self::OutputBillingDocumentInfo($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBillingDocumentInfo * * *");
     }
     static function OutputInsertionOrder($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputInsertionOrder * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputInsertionOrder * * *");
             self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
             self::OutputStatusMessage(sprintf("BalanceAmount: %s", $dataObject->BalanceAmount));
             self::OutputStatusMessage(sprintf("BookingCountryCode: %s", $dataObject->BookingCountryCode));
@@ -344,9 +331,10 @@ final class CustomerBillingExampleHelper {
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage(sprintf("PurchaseOrder: %s", $dataObject->PurchaseOrder));
+            self::OutputStatusMessage("PendingChanges:");
             self::OutputInsertionOrderPendingChanges($dataObject->PendingChanges);
+            self::OutputStatusMessage("* * * End OutputInsertionOrder * * *");
         }
-        self::OutputStatusMessage("* * * End OutputInsertionOrder * * *");
     }
     static function OutputArrayOfInsertionOrder($dataObjects)
     {
@@ -354,18 +342,16 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfInsertionOrder * * *");
         foreach ($dataObjects->InsertionOrder as $dataObject)
         {
             self::OutputInsertionOrder($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfInsertionOrder * * *");
     }
     static function OutputInsertionOrderPendingChanges($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputInsertionOrderPendingChanges * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputInsertionOrderPendingChanges * * *");
             self::OutputStatusMessage(sprintf("Comment: %s", $dataObject->Comment));
             self::OutputStatusMessage(sprintf("EndDate: %s", $dataObject->EndDate));
             self::OutputStatusMessage(sprintf("RequestedByUserId: %s", $dataObject->RequestedByUserId));
@@ -377,8 +363,8 @@ final class CustomerBillingExampleHelper {
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("PurchaseOrder: %s", $dataObject->PurchaseOrder));
             self::OutputStatusMessage(sprintf("ChangeStatus: %s", $dataObject->ChangeStatus));
+            self::OutputStatusMessage("* * * End OutputInsertionOrderPendingChanges * * *");
         }
-        self::OutputStatusMessage("* * * End OutputInsertionOrderPendingChanges * * *");
     }
     static function OutputArrayOfInsertionOrderPendingChanges($dataObjects)
     {
@@ -386,23 +372,21 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfInsertionOrderPendingChanges * * *");
         foreach ($dataObjects->InsertionOrderPendingChanges as $dataObject)
         {
             self::OutputInsertionOrderPendingChanges($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfInsertionOrderPendingChanges * * *");
     }
     static function OutputOperationError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputOperationError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOperationError * * *");
     }
     static function OutputArrayOfOperationError($dataObjects)
     {
@@ -415,22 +399,20 @@ final class CustomerBillingExampleHelper {
             self::OutputOperationError($dataObjects->OperationError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOperationError * * *");
         foreach ($dataObjects->OperationError as $dataObject)
         {
             self::OutputOperationError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOperationError * * *");
     }
     static function OutputOrderBy($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOrderBy * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOrderBy * * *");
             self::OutputStatusMessage(sprintf("Field: %s", $dataObject->Field));
             self::OutputStatusMessage(sprintf("Order: %s", $dataObject->Order));
+            self::OutputStatusMessage("* * * End OutputOrderBy * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOrderBy * * *");
     }
     static function OutputArrayOfOrderBy($dataObjects)
     {
@@ -438,22 +420,20 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOrderBy * * *");
         foreach ($dataObjects->OrderBy as $dataObject)
         {
             self::OutputOrderBy($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOrderBy * * *");
     }
     static function OutputPaging($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPaging * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPaging * * *");
             self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
             self::OutputStatusMessage(sprintf("Size: %s", $dataObject->Size));
+            self::OutputStatusMessage("* * * End OutputPaging * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPaging * * *");
     }
     static function OutputArrayOfPaging($dataObjects)
     {
@@ -461,23 +441,21 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPaging * * *");
         foreach ($dataObjects->Paging as $dataObject)
         {
             self::OutputPaging($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPaging * * *");
     }
     static function OutputPredicate($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPredicate * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPredicate * * *");
             self::OutputStatusMessage(sprintf("Field: %s", $dataObject->Field));
             self::OutputStatusMessage(sprintf("Operator: %s", $dataObject->Operator));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
+            self::OutputStatusMessage("* * * End OutputPredicate * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPredicate * * *");
     }
     static function OutputArrayOfPredicate($dataObjects)
     {
@@ -485,12 +463,10 @@ final class CustomerBillingExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPredicate * * *");
         foreach ($dataObjects->Predicate as $dataObject)
         {
             self::OutputPredicate($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPredicate * * *");
     }
     static function OutputDataType($valueSet)
     {
@@ -643,7 +619,7 @@ final class CustomerBillingExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfString * * *");
         foreach ($items->string as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the string: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfString * * *");
     }
@@ -656,7 +632,7 @@ final class CustomerBillingExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfLong * * *");
         foreach ($items->long as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the long: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLong * * *");
     }
@@ -669,7 +645,7 @@ final class CustomerBillingExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfInt * * *");
         foreach ($items->int as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the int: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfInt * * *");
     }

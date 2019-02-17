@@ -1,12 +1,9 @@
 <?php
 namespace Microsoft\BingAds\Samples;
 
-// For more information about installing and using the Bing Ads PHP SDK, 
-// see https://go.microsoft.com/fwlink/?linkid=838593.
+require_once "./vendor/autoload.php";
 
-require_once __DIR__ . "./vendor/autoload.php";
-
-include __DIR__ . "WebAuthHelper.php";
+include "WebAuthHelper.php";
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\WebAuthHelper;
@@ -26,6 +23,6 @@ the user to either log into your service or create a new account.
 
 <!-- 
 When the user presses this button, they will be redirected to fully formed URL to request an authorization token. 
-From here, the user will be redirected to the redirectUriPath where the authorization token can be extracted. 
+From here, the user will be redirected to the RedirectUri where the authorization token can be extracted. 
 -->
 <input type="button" onClick="return window.location='<?php echo WebAuthHelper::RedirectUri;?>';" value="OK" />

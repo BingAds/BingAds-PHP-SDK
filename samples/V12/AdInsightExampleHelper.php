@@ -410,15 +410,15 @@ final class AdInsightExampleHelper {
     }
     static function OutputAdApiError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Detail: %s", $dataObject->Detail));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputAdApiError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdApiError * * *");
     }
     static function OutputArrayOfAdApiError($dataObjects)
     {
@@ -431,21 +431,20 @@ final class AdInsightExampleHelper {
             self::OutputAdApiError($dataObjects->AdApiError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdApiError * * *");
         foreach ($dataObjects->AdApiError as $dataObject)
         {
             self::OutputAdApiError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdApiError * * *");
     }
     static function OutputAdApiFaultDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdApiFaultDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdApiFaultDetail * * *");
+            self::OutputStatusMessage("Errors:");
             self::OutputArrayOfAdApiError($dataObject->Errors);
+            self::OutputStatusMessage("* * * End OutputAdApiFaultDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdApiFaultDetail * * *");
     }
     static function OutputArrayOfAdApiFaultDetail($dataObjects)
     {
@@ -453,25 +452,26 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdApiFaultDetail * * *");
         foreach ($dataObjects->AdApiFaultDetail as $dataObject)
         {
             self::OutputAdApiFaultDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdApiFaultDetail * * *");
     }
     static function OutputAdGroupBidLandscape($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupBidLandscape * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupBidLandscape * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
             self::OutputStatusMessage(sprintf("AdGroupBidLandscapeType: %s", $dataObject->AdGroupBidLandscapeType));
+            self::OutputStatusMessage("StartDate:");
             self::OutputDayMonthAndYear($dataObject->StartDate);
+            self::OutputStatusMessage("EndDate:");
             self::OutputDayMonthAndYear($dataObject->EndDate);
+            self::OutputStatusMessage("BidLandscapePoints:");
             self::OutputArrayOfBidLandscapePoint($dataObject->BidLandscapePoints);
+            self::OutputStatusMessage("* * * End OutputAdGroupBidLandscape * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupBidLandscape * * *");
     }
     static function OutputArrayOfAdGroupBidLandscape($dataObjects)
     {
@@ -479,22 +479,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupBidLandscape * * *");
         foreach ($dataObjects->AdGroupBidLandscape as $dataObject)
         {
             self::OutputAdGroupBidLandscape($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupBidLandscape * * *");
     }
     static function OutputAdGroupBidLandscapeInput($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupBidLandscapeInput * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupBidLandscapeInput * * *");
             self::OutputStatusMessage(sprintf("AdGroupBidLandscapeType: %s", $dataObject->AdGroupBidLandscapeType));
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
+            self::OutputStatusMessage("* * * End OutputAdGroupBidLandscapeInput * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupBidLandscapeInput * * *");
     }
     static function OutputArrayOfAdGroupBidLandscapeInput($dataObjects)
     {
@@ -502,22 +500,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupBidLandscapeInput * * *");
         foreach ($dataObjects->AdGroupBidLandscapeInput as $dataObject)
         {
             self::OutputAdGroupBidLandscapeInput($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupBidLandscapeInput * * *");
     }
     static function OutputAdGroupEstimate($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupEstimate * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupEstimate * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
+            self::OutputStatusMessage("KeywordEstimates:");
             self::OutputArrayOfKeywordEstimate($dataObject->KeywordEstimates);
+            self::OutputStatusMessage("* * * End OutputAdGroupEstimate * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupEstimate * * *");
     }
     static function OutputArrayOfAdGroupEstimate($dataObjects)
     {
@@ -525,23 +522,22 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupEstimate * * *");
         foreach ($dataObjects->AdGroupEstimate as $dataObject)
         {
             self::OutputAdGroupEstimate($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupEstimate * * *");
     }
     static function OutputAdGroupEstimator($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupEstimator * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupEstimator * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
+            self::OutputStatusMessage("KeywordEstimators:");
             self::OutputArrayOfKeywordEstimator($dataObject->KeywordEstimators);
             self::OutputStatusMessage(sprintf("MaxCpc: %s", $dataObject->MaxCpc));
+            self::OutputStatusMessage("* * * End OutputAdGroupEstimator * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupEstimator * * *");
     }
     static function OutputArrayOfAdGroupEstimator($dataObjects)
     {
@@ -549,22 +545,22 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupEstimator * * *");
         foreach ($dataObjects->AdGroupEstimator as $dataObject)
         {
             self::OutputAdGroupEstimator($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupEstimator * * *");
     }
     static function OutputApiFaultDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApiFaultDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApiFaultDetail * * *");
+            self::OutputStatusMessage("BatchErrors:");
             self::OutputArrayOfBatchError($dataObject->BatchErrors);
+            self::OutputStatusMessage("OperationErrors:");
             self::OutputArrayOfOperationError($dataObject->OperationErrors);
+            self::OutputStatusMessage("* * * End OutputApiFaultDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApiFaultDetail * * *");
     }
     static function OutputArrayOfApiFaultDetail($dataObjects)
     {
@@ -572,18 +568,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApiFaultDetail * * *");
         foreach ($dataObjects->ApiFaultDetail as $dataObject)
         {
             self::OutputApiFaultDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApiFaultDetail * * *");
     }
     static function OutputApplicationFault($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
             self::OutputStatusMessage(sprintf("TrackingId: %s", $dataObject->TrackingId));
             if($dataObject->Type === "AdApiFaultDetail")
             {
@@ -593,8 +587,8 @@ final class AdInsightExampleHelper {
             {
                 self::OutputApiFaultDetail($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputApplicationFault * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApplicationFault * * *");
     }
     static function OutputArrayOfApplicationFault($dataObjects)
     {
@@ -602,23 +596,23 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApplicationFault * * *");
         foreach ($dataObjects->ApplicationFault as $dataObject)
         {
             self::OutputApplicationFault($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApplicationFault * * *");
     }
     static function OutputAuctionInsightEntry($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAuctionInsightEntry * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAuctionInsightEntry * * *");
             self::OutputStatusMessage(sprintf("DisplayDomain: %s", $dataObject->DisplayDomain));
+            self::OutputStatusMessage("AggregatedKpi:");
             self::OutputAuctionInsightKpi($dataObject->AggregatedKpi);
+            self::OutputStatusMessage("SegmentedKpis:");
             self::OutputArrayOfAuctionInsightKpi($dataObject->SegmentedKpis);
+            self::OutputStatusMessage("* * * End OutputAuctionInsightEntry * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAuctionInsightEntry * * *");
     }
     static function OutputArrayOfAuctionInsightEntry($dataObjects)
     {
@@ -626,18 +620,17 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightEntry * * *");
         foreach ($dataObjects->AuctionInsightEntry as $dataObject)
         {
             self::OutputAuctionInsightEntry($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightEntry * * *");
     }
     static function OutputAuctionInsightKpi($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAuctionInsightKpi * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAuctionInsightKpi * * *");
+            self::OutputStatusMessage("Segments:");
             self::OutputArrayOfString($dataObject->Segments);
             self::OutputStatusMessage(sprintf("ImpressionShare: %s", $dataObject->ImpressionShare));
             self::OutputStatusMessage(sprintf("OverlapRate: %s", $dataObject->OverlapRate));
@@ -645,8 +638,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("AboveRate: %s", $dataObject->AboveRate));
             self::OutputStatusMessage(sprintf("TopOfPageRate: %s", $dataObject->TopOfPageRate));
             self::OutputStatusMessage(sprintf("OutrankingShare: %s", $dataObject->OutrankingShare));
+            self::OutputStatusMessage("* * * End OutputAuctionInsightKpi * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAuctionInsightKpi * * *");
     }
     static function OutputArrayOfAuctionInsightKpi($dataObjects)
     {
@@ -654,24 +647,24 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightKpi * * *");
         foreach ($dataObjects->AuctionInsightKpi as $dataObject)
         {
             self::OutputAuctionInsightKpi($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightKpi * * *");
     }
     static function OutputAuctionInsightResult($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAuctionInsightResult * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAuctionInsightResult * * *");
+            self::OutputStatusMessage("Segments:");
             self::OutputArrayOfAuctionSegment($dataObject->Segments);
+            self::OutputStatusMessage("Entries:");
             self::OutputArrayOfAuctionInsightEntry($dataObject->Entries);
             self::OutputStatusMessage(sprintf("UsedImpressions: %s", $dataObject->UsedImpressions));
             self::OutputStatusMessage(sprintf("UsedKeywords: %s", $dataObject->UsedKeywords));
+            self::OutputStatusMessage("* * * End OutputAuctionInsightResult * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAuctionInsightResult * * *");
     }
     static function OutputArrayOfAuctionInsightResult($dataObjects)
     {
@@ -679,21 +672,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightResult * * *");
         foreach ($dataObjects->AuctionInsightResult as $dataObject)
         {
             self::OutputAuctionInsightResult($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightResult * * *");
     }
     static function OutputAuctionSegmentSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAuctionSegmentSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAuctionSegmentSearchParameter * * *");
             self::OutputStatusMessage(sprintf("Segment: %s", $dataObject->Segment));
+            self::OutputStatusMessage("* * * End OutputAuctionSegmentSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAuctionSegmentSearchParameter * * *");
     }
     static function OutputArrayOfAuctionSegmentSearchParameter($dataObjects)
     {
@@ -701,25 +692,23 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionSegmentSearchParameter * * *");
         foreach ($dataObjects->AuctionSegmentSearchParameter as $dataObject)
         {
             self::OutputAuctionSegmentSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAuctionSegmentSearchParameter * * *");
     }
     static function OutputBatchError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputBatchError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBatchError * * *");
     }
     static function OutputArrayOfBatchError($dataObjects)
     {
@@ -727,18 +716,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBatchError * * *");
         foreach ($dataObjects->BatchError as $dataObject)
         {
             self::OutputBatchError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBatchError * * *");
     }
     static function OutputBidLandscapePoint($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBidLandscapePoint * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBidLandscapePoint * * *");
             self::OutputStatusMessage(sprintf("Bid: %s", $dataObject->Bid));
             self::OutputStatusMessage(sprintf("Clicks: %s", $dataObject->Clicks));
             self::OutputStatusMessage(sprintf("Impressions: %s", $dataObject->Impressions));
@@ -746,8 +733,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
             self::OutputStatusMessage(sprintf("Cost: %s", $dataObject->Cost));
             self::OutputStatusMessage(sprintf("MarginalCPC: %s", $dataObject->MarginalCPC));
+            self::OutputStatusMessage("* * * End OutputBidLandscapePoint * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBidLandscapePoint * * *");
     }
     static function OutputArrayOfBidLandscapePoint($dataObjects)
     {
@@ -755,18 +742,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBidLandscapePoint * * *");
         foreach ($dataObjects->BidLandscapePoint as $dataObject)
         {
             self::OutputBidLandscapePoint($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBidLandscapePoint * * *");
     }
     static function OutputBidOpportunity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBidOpportunity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBidOpportunity * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
             self::OutputStatusMessage(sprintf("CurrentBid: %s", $dataObject->CurrentBid));
@@ -776,8 +761,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("KeywordId: %s", $dataObject->KeywordId));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("SuggestedBid: %s", $dataObject->SuggestedBid));
+            self::OutputStatusMessage("* * * End OutputBidOpportunity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBidOpportunity * * *");
     }
     static function OutputArrayOfBidOpportunity($dataObjects)
     {
@@ -785,18 +770,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBidOpportunity * * *");
         foreach ($dataObjects->BidOpportunity as $dataObject)
         {
             self::OutputBidOpportunity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBidOpportunity * * *");
     }
     static function OutputBroadMatchKeywordOpportunity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBroadMatchKeywordOpportunity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBroadMatchKeywordOpportunity * * *");
             self::OutputStatusMessage(sprintf("AverageCPC: %s", $dataObject->AverageCPC));
             self::OutputStatusMessage(sprintf("AverageCTR: %s", $dataObject->AverageCTR));
             self::OutputStatusMessage(sprintf("ClickShare: %s", $dataObject->ClickShare));
@@ -804,9 +787,10 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("ReferenceKeywordBid: %s", $dataObject->ReferenceKeywordBid));
             self::OutputStatusMessage(sprintf("ReferenceKeywordId: %s", $dataObject->ReferenceKeywordId));
             self::OutputStatusMessage(sprintf("ReferenceKeywordMatchType: %s", $dataObject->ReferenceKeywordMatchType));
+            self::OutputStatusMessage("SearchQueryKPIs:");
             self::OutputArrayOfBroadMatchSearchQueryKPI($dataObject->SearchQueryKPIs);
+            self::OutputStatusMessage("* * * End OutputBroadMatchKeywordOpportunity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBroadMatchKeywordOpportunity * * *");
     }
     static function OutputArrayOfBroadMatchKeywordOpportunity($dataObjects)
     {
@@ -814,25 +798,23 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBroadMatchKeywordOpportunity * * *");
         foreach ($dataObjects->BroadMatchKeywordOpportunity as $dataObject)
         {
             self::OutputBroadMatchKeywordOpportunity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBroadMatchKeywordOpportunity * * *");
     }
     static function OutputBroadMatchSearchQueryKPI($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBroadMatchSearchQueryKPI * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBroadMatchSearchQueryKPI * * *");
             self::OutputStatusMessage(sprintf("AverageCTR: %s", $dataObject->AverageCTR));
             self::OutputStatusMessage(sprintf("Clicks: %s", $dataObject->Clicks));
             self::OutputStatusMessage(sprintf("Impressions: %s", $dataObject->Impressions));
             self::OutputStatusMessage(sprintf("SRPV: %s", $dataObject->SRPV));
             self::OutputStatusMessage(sprintf("SearchQuery: %s", $dataObject->SearchQuery));
+            self::OutputStatusMessage("* * * End OutputBroadMatchSearchQueryKPI * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBroadMatchSearchQueryKPI * * *");
     }
     static function OutputArrayOfBroadMatchSearchQueryKPI($dataObjects)
     {
@@ -840,18 +822,17 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBroadMatchSearchQueryKPI * * *");
         foreach ($dataObjects->BroadMatchSearchQueryKPI as $dataObject)
         {
             self::OutputBroadMatchSearchQueryKPI($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBroadMatchSearchQueryKPI * * *");
     }
     static function OutputBudgetOpportunity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBudgetOpportunity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBudgetOpportunity * * *");
+            self::OutputStatusMessage("BudgetPoints:");
             self::OutputArrayOfBudgetPoint($dataObject->BudgetPoints);
             self::OutputStatusMessage(sprintf("BudgetType: %s", $dataObject->BudgetType));
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
@@ -861,8 +842,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("PercentageIncreaseInClicks: %s", $dataObject->PercentageIncreaseInClicks));
             self::OutputStatusMessage(sprintf("PercentageIncreaseInImpressions: %s", $dataObject->PercentageIncreaseInImpressions));
             self::OutputStatusMessage(sprintf("RecommendedBudget: %s", $dataObject->RecommendedBudget));
+            self::OutputStatusMessage("* * * End OutputBudgetOpportunity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBudgetOpportunity * * *");
     }
     static function OutputArrayOfBudgetOpportunity($dataObjects)
     {
@@ -870,25 +851,23 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBudgetOpportunity * * *");
         foreach ($dataObjects->BudgetOpportunity as $dataObject)
         {
             self::OutputBudgetOpportunity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBudgetOpportunity * * *");
     }
     static function OutputBudgetPoint($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBudgetPoint * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBudgetPoint * * *");
             self::OutputStatusMessage(sprintf("BudgetAmount: %s", $dataObject->BudgetAmount));
             self::OutputStatusMessage(sprintf("BudgetPointType: %s", $dataObject->BudgetPointType));
             self::OutputStatusMessage(sprintf("EstimatedWeeklyClicks: %s", $dataObject->EstimatedWeeklyClicks));
             self::OutputStatusMessage(sprintf("EstimatedWeeklyCost: %s", $dataObject->EstimatedWeeklyCost));
             self::OutputStatusMessage(sprintf("EstimatedWeeklyImpressions: %s", $dataObject->EstimatedWeeklyImpressions));
+            self::OutputStatusMessage("* * * End OutputBudgetPoint * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBudgetPoint * * *");
     }
     static function OutputArrayOfBudgetPoint($dataObjects)
     {
@@ -896,22 +875,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBudgetPoint * * *");
         foreach ($dataObjects->BudgetPoint as $dataObject)
         {
             self::OutputBudgetPoint($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBudgetPoint * * *");
     }
     static function OutputCampaignEstimate($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCampaignEstimate * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCampaignEstimate * * *");
+            self::OutputStatusMessage("AdGroupEstimates:");
             self::OutputArrayOfAdGroupEstimate($dataObject->AdGroupEstimates);
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage("* * * End OutputCampaignEstimate * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCampaignEstimate * * *");
     }
     static function OutputArrayOfCampaignEstimate($dataObjects)
     {
@@ -919,25 +897,26 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaignEstimate * * *");
         foreach ($dataObjects->CampaignEstimate as $dataObject)
         {
             self::OutputCampaignEstimate($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCampaignEstimate * * *");
     }
     static function OutputCampaignEstimator($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCampaignEstimator * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCampaignEstimator * * *");
+            self::OutputStatusMessage("AdGroupEstimators:");
             self::OutputArrayOfAdGroupEstimator($dataObject->AdGroupEstimators);
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage("Criteria:");
             self::OutputArrayOfCriterion($dataObject->Criteria);
             self::OutputStatusMessage(sprintf("DailyBudget: %s", $dataObject->DailyBudget));
+            self::OutputStatusMessage("NegativeKeywords:");
             self::OutputArrayOfNegativeKeyword($dataObject->NegativeKeywords);
+            self::OutputStatusMessage("* * * End OutputCampaignEstimator * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCampaignEstimator * * *");
     }
     static function OutputArrayOfCampaignEstimator($dataObjects)
     {
@@ -945,21 +924,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaignEstimator * * *");
         foreach ($dataObjects->CampaignEstimator as $dataObject)
         {
             self::OutputCampaignEstimator($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCampaignEstimator * * *");
     }
     static function OutputCategorySearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCategorySearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCategorySearchParameter * * *");
             self::OutputStatusMessage(sprintf("CategoryId: %s", $dataObject->CategoryId));
+            self::OutputStatusMessage("* * * End OutputCategorySearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCategorySearchParameter * * *");
     }
     static function OutputArrayOfCategorySearchParameter($dataObjects)
     {
@@ -967,21 +944,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCategorySearchParameter * * *");
         foreach ($dataObjects->CategorySearchParameter as $dataObject)
         {
             self::OutputCategorySearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCategorySearchParameter * * *");
     }
     static function OutputCompetitionSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCompetitionSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCompetitionSearchParameter * * *");
+            self::OutputStatusMessage("CompetitionLevels:");
             self::OutputArrayOfCompetitionLevel($dataObject->CompetitionLevels);
+            self::OutputStatusMessage("* * * End OutputCompetitionSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCompetitionSearchParameter * * *");
     }
     static function OutputArrayOfCompetitionSearchParameter($dataObjects)
     {
@@ -989,18 +965,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCompetitionSearchParameter * * *");
         foreach ($dataObjects->CompetitionSearchParameter as $dataObject)
         {
             self::OutputCompetitionSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCompetitionSearchParameter * * *");
     }
     static function OutputCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCriterion * * *");
             if($dataObject->Type === "DeviceCriterion")
             {
                 self::OutputDeviceCriterion($dataObject);
@@ -1017,8 +991,8 @@ final class AdInsightExampleHelper {
             {
                 self::OutputNetworkCriterion($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCriterion * * *");
     }
     static function OutputArrayOfCriterion($dataObjects)
     {
@@ -1026,22 +1000,22 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCriterion * * *");
         foreach ($dataObjects->Criterion as $dataObject)
         {
             self::OutputCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCriterion * * *");
     }
     static function OutputDateRangeSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDateRangeSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDateRangeSearchParameter * * *");
+            self::OutputStatusMessage("EndDate:");
             self::OutputDayMonthAndYear($dataObject->EndDate);
+            self::OutputStatusMessage("StartDate:");
             self::OutputDayMonthAndYear($dataObject->StartDate);
+            self::OutputStatusMessage("* * * End OutputDateRangeSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDateRangeSearchParameter * * *");
     }
     static function OutputArrayOfDateRangeSearchParameter($dataObjects)
     {
@@ -1049,23 +1023,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDateRangeSearchParameter * * *");
         foreach ($dataObjects->DateRangeSearchParameter as $dataObject)
         {
             self::OutputDateRangeSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDateRangeSearchParameter * * *");
     }
     static function OutputDayMonthAndYear($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDayMonthAndYear * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDayMonthAndYear * * *");
             self::OutputStatusMessage(sprintf("Day: %s", $dataObject->Day));
             self::OutputStatusMessage(sprintf("Month: %s", $dataObject->Month));
             self::OutputStatusMessage(sprintf("Year: %s", $dataObject->Year));
+            self::OutputStatusMessage("* * * End OutputDayMonthAndYear * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDayMonthAndYear * * *");
     }
     static function OutputArrayOfDayMonthAndYear($dataObjects)
     {
@@ -1073,21 +1045,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDayMonthAndYear * * *");
         foreach ($dataObjects->DayMonthAndYear as $dataObject)
         {
             self::OutputDayMonthAndYear($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDayMonthAndYear * * *");
     }
     static function OutputDeviceCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDeviceCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDeviceCriterion * * *");
             self::OutputStatusMessage(sprintf("DeviceName: %s", $dataObject->DeviceName));
+            self::OutputStatusMessage("* * * End OutputDeviceCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDeviceCriterion * * *");
     }
     static function OutputArrayOfDeviceCriterion($dataObjects)
     {
@@ -1095,21 +1065,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDeviceCriterion * * *");
         foreach ($dataObjects->DeviceCriterion as $dataObject)
         {
             self::OutputDeviceCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDeviceCriterion * * *");
     }
     static function OutputDeviceSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDeviceSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDeviceSearchParameter * * *");
+            self::OutputStatusMessage("Device:");
             self::OutputDeviceCriterion($dataObject->Device);
+            self::OutputStatusMessage("* * * End OutputDeviceSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDeviceSearchParameter * * *");
     }
     static function OutputArrayOfDeviceSearchParameter($dataObjects)
     {
@@ -1117,23 +1086,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDeviceSearchParameter * * *");
         foreach ($dataObjects->DeviceSearchParameter as $dataObject)
         {
             self::OutputDeviceSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDeviceSearchParameter * * *");
     }
     static function OutputDomainCategory($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDomainCategory * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDomainCategory * * *");
             self::OutputStatusMessage(sprintf("Bid: %s", $dataObject->Bid));
             self::OutputStatusMessage(sprintf("CategoryName: %s", $dataObject->CategoryName));
             self::OutputStatusMessage(sprintf("Coverage: %s", $dataObject->Coverage));
+            self::OutputStatusMessage("* * * End OutputDomainCategory * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDomainCategory * * *");
     }
     static function OutputArrayOfDomainCategory($dataObjects)
     {
@@ -1141,18 +1108,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDomainCategory * * *");
         foreach ($dataObjects->DomainCategory as $dataObject)
         {
             self::OutputDomainCategory($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDomainCategory * * *");
     }
     static function OutputEstimatedBidAndTraffic($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEstimatedBidAndTraffic * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEstimatedBidAndTraffic * * *");
             self::OutputStatusMessage(sprintf("MinClicksPerWeek: %s", $dataObject->MinClicksPerWeek));
             self::OutputStatusMessage(sprintf("MaxClicksPerWeek: %s", $dataObject->MaxClicksPerWeek));
             self::OutputStatusMessage(sprintf("AverageCPC: %s", $dataObject->AverageCPC));
@@ -1164,8 +1129,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("EstimatedMinBid: %s", $dataObject->EstimatedMinBid));
+            self::OutputStatusMessage("* * * End OutputEstimatedBidAndTraffic * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEstimatedBidAndTraffic * * *");
     }
     static function OutputArrayOfEstimatedBidAndTraffic($dataObjects)
     {
@@ -1173,18 +1138,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEstimatedBidAndTraffic * * *");
         foreach ($dataObjects->EstimatedBidAndTraffic as $dataObject)
         {
             self::OutputEstimatedBidAndTraffic($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEstimatedBidAndTraffic * * *");
     }
     static function OutputEstimatedPositionAndTraffic($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEstimatedPositionAndTraffic * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEstimatedPositionAndTraffic * * *");
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("MinClicksPerWeek: %s", $dataObject->MinClicksPerWeek));
             self::OutputStatusMessage(sprintf("MaxClicksPerWeek: %s", $dataObject->MaxClicksPerWeek));
@@ -1196,8 +1159,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("MaxTotalCostPerWeek: %s", $dataObject->MaxTotalCostPerWeek));
             self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
             self::OutputStatusMessage(sprintf("EstimatedAdPosition: %s", $dataObject->EstimatedAdPosition));
+            self::OutputStatusMessage("* * * End OutputEstimatedPositionAndTraffic * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEstimatedPositionAndTraffic * * *");
     }
     static function OutputArrayOfEstimatedPositionAndTraffic($dataObjects)
     {
@@ -1205,21 +1168,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEstimatedPositionAndTraffic * * *");
         foreach ($dataObjects->EstimatedPositionAndTraffic as $dataObject)
         {
             self::OutputEstimatedPositionAndTraffic($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEstimatedPositionAndTraffic * * *");
     }
     static function OutputExcludeAccountKeywordsSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputExcludeAccountKeywordsSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputExcludeAccountKeywordsSearchParameter * * *");
             self::OutputStatusMessage(sprintf("ExcludeAccountKeywords: %s", $dataObject->ExcludeAccountKeywords));
+            self::OutputStatusMessage("* * * End OutputExcludeAccountKeywordsSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputExcludeAccountKeywordsSearchParameter * * *");
     }
     static function OutputArrayOfExcludeAccountKeywordsSearchParameter($dataObjects)
     {
@@ -1227,22 +1188,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfExcludeAccountKeywordsSearchParameter * * *");
         foreach ($dataObjects->ExcludeAccountKeywordsSearchParameter as $dataObject)
         {
             self::OutputExcludeAccountKeywordsSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfExcludeAccountKeywordsSearchParameter * * *");
     }
     static function OutputHistoricalSearchCountPeriodic($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputHistoricalSearchCountPeriodic * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputHistoricalSearchCountPeriodic * * *");
             self::OutputStatusMessage(sprintf("SearchCount: %s", $dataObject->SearchCount));
+            self::OutputStatusMessage("DayMonthAndYear:");
             self::OutputDayMonthAndYear($dataObject->DayMonthAndYear);
+            self::OutputStatusMessage("* * * End OutputHistoricalSearchCountPeriodic * * *");
         }
-        self::OutputStatusMessage("* * * End OutputHistoricalSearchCountPeriodic * * *");
     }
     static function OutputArrayOfHistoricalSearchCountPeriodic($dataObjects)
     {
@@ -1250,22 +1210,22 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfHistoricalSearchCountPeriodic * * *");
         foreach ($dataObjects->HistoricalSearchCountPeriodic as $dataObject)
         {
             self::OutputHistoricalSearchCountPeriodic($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfHistoricalSearchCountPeriodic * * *");
     }
     static function OutputIdeaTextSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputIdeaTextSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputIdeaTextSearchParameter * * *");
+            self::OutputStatusMessage("Excluded:");
             self::OutputArrayOfKeyword($dataObject->Excluded);
+            self::OutputStatusMessage("Included:");
             self::OutputArrayOfKeyword($dataObject->Included);
+            self::OutputStatusMessage("* * * End OutputIdeaTextSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputIdeaTextSearchParameter * * *");
     }
     static function OutputArrayOfIdeaTextSearchParameter($dataObjects)
     {
@@ -1273,22 +1233,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfIdeaTextSearchParameter * * *");
         foreach ($dataObjects->IdeaTextSearchParameter as $dataObject)
         {
             self::OutputIdeaTextSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfIdeaTextSearchParameter * * *");
     }
     static function OutputImpressionShareSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputImpressionShareSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputImpressionShareSearchParameter * * *");
             self::OutputStatusMessage(sprintf("Maximum: %s", $dataObject->Maximum));
             self::OutputStatusMessage(sprintf("Minimum: %s", $dataObject->Minimum));
+            self::OutputStatusMessage("* * * End OutputImpressionShareSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputImpressionShareSearchParameter * * *");
     }
     static function OutputArrayOfImpressionShareSearchParameter($dataObjects)
     {
@@ -1296,23 +1254,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfImpressionShareSearchParameter * * *");
         foreach ($dataObjects->ImpressionShareSearchParameter as $dataObject)
         {
             self::OutputImpressionShareSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfImpressionShareSearchParameter * * *");
     }
     static function OutputKeyword($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeyword * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeyword * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputKeyword * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeyword * * *");
     }
     static function OutputArrayOfKeyword($dataObjects)
     {
@@ -1320,22 +1276,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeyword * * *");
         foreach ($dataObjects->Keyword as $dataObject)
         {
             self::OutputKeyword($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeyword * * *");
     }
     static function OutputKeywordAndConfidence($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordAndConfidence * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordAndConfidence * * *");
             self::OutputStatusMessage(sprintf("SuggestedKeyword: %s", $dataObject->SuggestedKeyword));
             self::OutputStatusMessage(sprintf("ConfidenceScore: %s", $dataObject->ConfidenceScore));
+            self::OutputStatusMessage("* * * End OutputKeywordAndConfidence * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordAndConfidence * * *");
     }
     static function OutputArrayOfKeywordAndConfidence($dataObjects)
     {
@@ -1343,22 +1297,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordAndConfidence * * *");
         foreach ($dataObjects->KeywordAndConfidence as $dataObject)
         {
             self::OutputKeywordAndConfidence($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordAndConfidence * * *");
     }
     static function OutputKeywordAndMatchType($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordAndMatchType * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordAndMatchType * * *");
             self::OutputStatusMessage(sprintf("KeywordText: %s", $dataObject->KeywordText));
+            self::OutputStatusMessage("MatchTypes:");
             self::OutputArrayOfMatchType($dataObject->MatchTypes);
+            self::OutputStatusMessage("* * * End OutputKeywordAndMatchType * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordAndMatchType * * *");
     }
     static function OutputArrayOfKeywordAndMatchType($dataObjects)
     {
@@ -1366,24 +1319,25 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordAndMatchType * * *");
         foreach ($dataObjects->KeywordAndMatchType as $dataObject)
         {
             self::OutputKeywordAndMatchType($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordAndMatchType * * *");
     }
     static function OutputKeywordBidLandscape($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordBidLandscape * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordBidLandscape * * *");
             self::OutputStatusMessage(sprintf("KeywordId: %s", $dataObject->KeywordId));
+            self::OutputStatusMessage("StartDate:");
             self::OutputDayMonthAndYear($dataObject->StartDate);
+            self::OutputStatusMessage("EndDate:");
             self::OutputDayMonthAndYear($dataObject->EndDate);
+            self::OutputStatusMessage("BidLandscapePoints:");
             self::OutputArrayOfBidLandscapePoint($dataObject->BidLandscapePoints);
+            self::OutputStatusMessage("* * * End OutputKeywordBidLandscape * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordBidLandscape * * *");
     }
     static function OutputArrayOfKeywordBidLandscape($dataObjects)
     {
@@ -1391,22 +1345,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordBidLandscape * * *");
         foreach ($dataObjects->KeywordBidLandscape as $dataObject)
         {
             self::OutputKeywordBidLandscape($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordBidLandscape * * *");
     }
     static function OutputKeywordCategory($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordCategory * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordCategory * * *");
             self::OutputStatusMessage(sprintf("Category: %s", $dataObject->Category));
             self::OutputStatusMessage(sprintf("ConfidenceScore: %s", $dataObject->ConfidenceScore));
+            self::OutputStatusMessage("* * * End OutputKeywordCategory * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordCategory * * *");
     }
     static function OutputArrayOfKeywordCategory($dataObjects)
     {
@@ -1414,22 +1366,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordCategory * * *");
         foreach ($dataObjects->KeywordCategory as $dataObject)
         {
             self::OutputKeywordCategory($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordCategory * * *");
     }
     static function OutputKeywordCategoryResult($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordCategoryResult * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordCategoryResult * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("KeywordCategories:");
             self::OutputArrayOfKeywordCategory($dataObject->KeywordCategories);
+            self::OutputStatusMessage("* * * End OutputKeywordCategoryResult * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordCategoryResult * * *");
     }
     static function OutputArrayOfKeywordCategoryResult($dataObjects)
     {
@@ -1437,18 +1388,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordCategoryResult * * *");
         foreach ($dataObjects->KeywordCategoryResult as $dataObject)
         {
             self::OutputKeywordCategoryResult($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordCategoryResult * * *");
     }
     static function OutputKeywordDemographic($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordDemographic * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordDemographic * * *");
             self::OutputStatusMessage(sprintf("Device: %s", $dataObject->Device));
             self::OutputStatusMessage(sprintf("EighteenToTwentyFour: %s", $dataObject->EighteenToTwentyFour));
             self::OutputStatusMessage(sprintf("TwentyFiveToThirtyFour: %s", $dataObject->TwentyFiveToThirtyFour));
@@ -1459,8 +1408,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("Female: %s", $dataObject->Female));
             self::OutputStatusMessage(sprintf("Male: %s", $dataObject->Male));
             self::OutputStatusMessage(sprintf("GenderUnknown: %s", $dataObject->GenderUnknown));
+            self::OutputStatusMessage("* * * End OutputKeywordDemographic * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordDemographic * * *");
     }
     static function OutputArrayOfKeywordDemographic($dataObjects)
     {
@@ -1468,22 +1417,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordDemographic * * *");
         foreach ($dataObjects->KeywordDemographic as $dataObject)
         {
             self::OutputKeywordDemographic($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordDemographic * * *");
     }
     static function OutputKeywordDemographicResult($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordDemographicResult * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordDemographicResult * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("KeywordDemographics:");
             self::OutputArrayOfKeywordDemographic($dataObject->KeywordDemographics);
+            self::OutputStatusMessage("* * * End OutputKeywordDemographicResult * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordDemographicResult * * *");
     }
     static function OutputArrayOfKeywordDemographicResult($dataObjects)
     {
@@ -1491,23 +1439,24 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordDemographicResult * * *");
         foreach ($dataObjects->KeywordDemographicResult as $dataObject)
         {
             self::OutputKeywordDemographicResult($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordDemographicResult * * *");
     }
     static function OutputKeywordEstimate($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordEstimate * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordEstimate * * *");
+            self::OutputStatusMessage("Keyword:");
             self::OutputKeyword($dataObject->Keyword);
+            self::OutputStatusMessage("Maximum:");
             self::OutputTrafficEstimate($dataObject->Maximum);
+            self::OutputStatusMessage("Minimum:");
             self::OutputTrafficEstimate($dataObject->Minimum);
+            self::OutputStatusMessage("* * * End OutputKeywordEstimate * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordEstimate * * *");
     }
     static function OutputArrayOfKeywordEstimate($dataObjects)
     {
@@ -1515,22 +1464,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordEstimate * * *");
         foreach ($dataObjects->KeywordEstimate as $dataObject)
         {
             self::OutputKeywordEstimate($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordEstimate * * *");
     }
     static function OutputKeywordEstimatedBid($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordEstimatedBid * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordEstimatedBid * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("EstimatedBids:");
             self::OutputArrayOfEstimatedBidAndTraffic($dataObject->EstimatedBids);
+            self::OutputStatusMessage("* * * End OutputKeywordEstimatedBid * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordEstimatedBid * * *");
     }
     static function OutputArrayOfKeywordEstimatedBid($dataObjects)
     {
@@ -1538,22 +1486,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordEstimatedBid * * *");
         foreach ($dataObjects->KeywordEstimatedBid as $dataObject)
         {
             self::OutputKeywordEstimatedBid($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordEstimatedBid * * *");
     }
     static function OutputKeywordEstimatedPosition($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordEstimatedPosition * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordEstimatedPosition * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("EstimatedPositions:");
             self::OutputArrayOfEstimatedPositionAndTraffic($dataObject->EstimatedPositions);
+            self::OutputStatusMessage("* * * End OutputKeywordEstimatedPosition * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordEstimatedPosition * * *");
     }
     static function OutputArrayOfKeywordEstimatedPosition($dataObjects)
     {
@@ -1561,22 +1508,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordEstimatedPosition * * *");
         foreach ($dataObjects->KeywordEstimatedPosition as $dataObject)
         {
             self::OutputKeywordEstimatedPosition($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordEstimatedPosition * * *");
     }
     static function OutputKeywordEstimator($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordEstimator * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordEstimator * * *");
+            self::OutputStatusMessage("Keyword:");
             self::OutputKeyword($dataObject->Keyword);
             self::OutputStatusMessage(sprintf("MaxCpc: %s", $dataObject->MaxCpc));
+            self::OutputStatusMessage("* * * End OutputKeywordEstimator * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordEstimator * * *");
     }
     static function OutputArrayOfKeywordEstimator($dataObjects)
     {
@@ -1584,22 +1530,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordEstimator * * *");
         foreach ($dataObjects->KeywordEstimator as $dataObject)
         {
             self::OutputKeywordEstimator($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordEstimator * * *");
     }
     static function OutputKeywordHistoricalPerformance($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordHistoricalPerformance * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordHistoricalPerformance * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("KeywordKPIs:");
             self::OutputArrayOfKeywordKPI($dataObject->KeywordKPIs);
+            self::OutputStatusMessage("* * * End OutputKeywordHistoricalPerformance * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordHistoricalPerformance * * *");
     }
     static function OutputArrayOfKeywordHistoricalPerformance($dataObjects)
     {
@@ -1607,29 +1552,28 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordHistoricalPerformance * * *");
         foreach ($dataObjects->KeywordHistoricalPerformance as $dataObject)
         {
             self::OutputKeywordHistoricalPerformance($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordHistoricalPerformance * * *");
     }
     static function OutputKeywordIdea($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordIdea * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordIdea * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
             self::OutputStatusMessage(sprintf("AdGroupName: %s", $dataObject->AdGroupName));
             self::OutputStatusMessage(sprintf("AdImpressionShare: %s", $dataObject->AdImpressionShare));
             self::OutputStatusMessage(sprintf("Competition: %s", $dataObject->Competition));
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("MonthlySearchCounts:");
             self::OutputArrayOfLong($dataObject->MonthlySearchCounts);
             self::OutputStatusMessage(sprintf("Relevance: %s", $dataObject->Relevance));
             self::OutputStatusMessage(sprintf("Source: %s", $dataObject->Source));
             self::OutputStatusMessage(sprintf("SuggestedBid: %s", $dataObject->SuggestedBid));
+            self::OutputStatusMessage("* * * End OutputKeywordIdea * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordIdea * * *");
     }
     static function OutputArrayOfKeywordIdea($dataObjects)
     {
@@ -1637,22 +1581,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordIdea * * *");
         foreach ($dataObjects->KeywordIdea as $dataObject)
         {
             self::OutputKeywordIdea($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordIdea * * *");
     }
     static function OutputKeywordIdeaCategory($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordIdeaCategory * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordIdeaCategory * * *");
             self::OutputStatusMessage(sprintf("CategoryId: %s", $dataObject->CategoryId));
             self::OutputStatusMessage(sprintf("CategoryName: %s", $dataObject->CategoryName));
+            self::OutputStatusMessage("* * * End OutputKeywordIdeaCategory * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordIdeaCategory * * *");
     }
     static function OutputArrayOfKeywordIdeaCategory($dataObjects)
     {
@@ -1660,22 +1602,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordIdeaCategory * * *");
         foreach ($dataObjects->KeywordIdeaCategory as $dataObject)
         {
             self::OutputKeywordIdeaCategory($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordIdeaCategory * * *");
     }
     static function OutputKeywordIdEstimatedBid($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordIdEstimatedBid * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordIdEstimatedBid * * *");
             self::OutputStatusMessage(sprintf("KeywordId: %s", $dataObject->KeywordId));
+            self::OutputStatusMessage("KeywordEstimatedBid:");
             self::OutputKeywordEstimatedBid($dataObject->KeywordEstimatedBid);
+            self::OutputStatusMessage("* * * End OutputKeywordIdEstimatedBid * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordIdEstimatedBid * * *");
     }
     static function OutputArrayOfKeywordIdEstimatedBid($dataObjects)
     {
@@ -1683,22 +1624,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordIdEstimatedBid * * *");
         foreach ($dataObjects->KeywordIdEstimatedBid as $dataObject)
         {
             self::OutputKeywordIdEstimatedBid($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordIdEstimatedBid * * *");
     }
     static function OutputKeywordIdEstimatedPosition($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordIdEstimatedPosition * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordIdEstimatedPosition * * *");
             self::OutputStatusMessage(sprintf("KeywordId: %s", $dataObject->KeywordId));
+            self::OutputStatusMessage("KeywordEstimatedPosition:");
             self::OutputKeywordEstimatedPosition($dataObject->KeywordEstimatedPosition);
+            self::OutputStatusMessage("* * * End OutputKeywordIdEstimatedPosition * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordIdEstimatedPosition * * *");
     }
     static function OutputArrayOfKeywordIdEstimatedPosition($dataObjects)
     {
@@ -1706,18 +1646,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordIdEstimatedPosition * * *");
         foreach ($dataObjects->KeywordIdEstimatedPosition as $dataObject)
         {
             self::OutputKeywordIdEstimatedPosition($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordIdEstimatedPosition * * *");
     }
     static function OutputKeywordKPI($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordKPI * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordKPI * * *");
             self::OutputStatusMessage(sprintf("Device: %s", $dataObject->Device));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("AdPosition: %s", $dataObject->AdPosition));
@@ -1727,8 +1665,8 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("CTR: %s", $dataObject->CTR));
             self::OutputStatusMessage(sprintf("TotalCost: %s", $dataObject->TotalCost));
             self::OutputStatusMessage(sprintf("AverageBid: %s", $dataObject->AverageBid));
+            self::OutputStatusMessage("* * * End OutputKeywordKPI * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordKPI * * *");
     }
     static function OutputArrayOfKeywordKPI($dataObjects)
     {
@@ -1736,23 +1674,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordKPI * * *");
         foreach ($dataObjects->KeywordKPI as $dataObject)
         {
             self::OutputKeywordKPI($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordKPI * * *");
     }
     static function OutputKeywordLocation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordLocation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordLocation * * *");
             self::OutputStatusMessage(sprintf("Device: %s", $dataObject->Device));
             self::OutputStatusMessage(sprintf("Location: %s", $dataObject->Location));
             self::OutputStatusMessage(sprintf("Percentage: %s", $dataObject->Percentage));
+            self::OutputStatusMessage("* * * End OutputKeywordLocation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordLocation * * *");
     }
     static function OutputArrayOfKeywordLocation($dataObjects)
     {
@@ -1760,22 +1696,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordLocation * * *");
         foreach ($dataObjects->KeywordLocation as $dataObject)
         {
             self::OutputKeywordLocation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordLocation * * *");
     }
     static function OutputKeywordLocationResult($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordLocationResult * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordLocationResult * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("KeywordLocations:");
             self::OutputArrayOfKeywordLocation($dataObject->KeywordLocations);
+            self::OutputStatusMessage("* * * End OutputKeywordLocationResult * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordLocationResult * * *");
     }
     static function OutputArrayOfKeywordLocationResult($dataObjects)
     {
@@ -1783,18 +1718,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordLocationResult * * *");
         foreach ($dataObjects->KeywordLocationResult as $dataObject)
         {
             self::OutputKeywordLocationResult($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordLocationResult * * *");
     }
     static function OutputKeywordOpportunity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordOpportunity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordOpportunity * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
             self::OutputStatusMessage(sprintf("AdGroupName: %s", $dataObject->AdGroupName));
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
@@ -1811,8 +1744,8 @@ final class AdInsightExampleHelper {
             {
                 self::OutputBroadMatchKeywordOpportunity($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputKeywordOpportunity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordOpportunity * * *");
     }
     static function OutputArrayOfKeywordOpportunity($dataObjects)
     {
@@ -1820,22 +1753,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordOpportunity * * *");
         foreach ($dataObjects->KeywordOpportunity as $dataObject)
         {
             self::OutputKeywordOpportunity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordOpportunity * * *");
     }
     static function OutputKeywordSearchCount($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordSearchCount * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordSearchCount * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("SearchCountsByAttributes:");
             self::OutputArrayOfSearchCountsByAttributes($dataObject->SearchCountsByAttributes);
+            self::OutputStatusMessage("* * * End OutputKeywordSearchCount * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordSearchCount * * *");
     }
     static function OutputArrayOfKeywordSearchCount($dataObjects)
     {
@@ -1843,22 +1775,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordSearchCount * * *");
         foreach ($dataObjects->KeywordSearchCount as $dataObject)
         {
             self::OutputKeywordSearchCount($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordSearchCount * * *");
     }
     static function OutputKeywordSuggestion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeywordSuggestion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeywordSuggestion * * *");
             self::OutputStatusMessage(sprintf("Keyword: %s", $dataObject->Keyword));
+            self::OutputStatusMessage("SuggestionsAndConfidence:");
             self::OutputArrayOfKeywordAndConfidence($dataObject->SuggestionsAndConfidence);
+            self::OutputStatusMessage("* * * End OutputKeywordSuggestion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeywordSuggestion * * *");
     }
     static function OutputArrayOfKeywordSuggestion($dataObjects)
     {
@@ -1866,21 +1797,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordSuggestion * * *");
         foreach ($dataObjects->KeywordSuggestion as $dataObject)
         {
             self::OutputKeywordSuggestion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeywordSuggestion * * *");
     }
     static function OutputLanguageCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLanguageCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLanguageCriterion * * *");
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage("* * * End OutputLanguageCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLanguageCriterion * * *");
     }
     static function OutputArrayOfLanguageCriterion($dataObjects)
     {
@@ -1888,21 +1817,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLanguageCriterion * * *");
         foreach ($dataObjects->LanguageCriterion as $dataObject)
         {
             self::OutputLanguageCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLanguageCriterion * * *");
     }
     static function OutputLanguageSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLanguageSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLanguageSearchParameter * * *");
+            self::OutputStatusMessage("Languages:");
             self::OutputArrayOfLanguageCriterion($dataObject->Languages);
+            self::OutputStatusMessage("* * * End OutputLanguageSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLanguageSearchParameter * * *");
     }
     static function OutputArrayOfLanguageSearchParameter($dataObjects)
     {
@@ -1910,21 +1838,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLanguageSearchParameter * * *");
         foreach ($dataObjects->LanguageSearchParameter as $dataObject)
         {
             self::OutputLanguageSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLanguageSearchParameter * * *");
     }
     static function OutputLocationCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLocationCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLocationCriterion * * *");
             self::OutputStatusMessage(sprintf("LocationId: %s", $dataObject->LocationId));
+            self::OutputStatusMessage("* * * End OutputLocationCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLocationCriterion * * *");
     }
     static function OutputArrayOfLocationCriterion($dataObjects)
     {
@@ -1932,21 +1858,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLocationCriterion * * *");
         foreach ($dataObjects->LocationCriterion as $dataObject)
         {
             self::OutputLocationCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLocationCriterion * * *");
     }
     static function OutputLocationSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLocationSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLocationSearchParameter * * *");
+            self::OutputStatusMessage("Locations:");
             self::OutputArrayOfLocationCriterion($dataObject->Locations);
+            self::OutputStatusMessage("* * * End OutputLocationSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLocationSearchParameter * * *");
     }
     static function OutputArrayOfLocationSearchParameter($dataObjects)
     {
@@ -1954,23 +1879,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLocationSearchParameter * * *");
         foreach ($dataObjects->LocationSearchParameter as $dataObject)
         {
             self::OutputLocationSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLocationSearchParameter * * *");
     }
     static function OutputNegativeKeyword($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNegativeKeyword * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNegativeKeyword * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputNegativeKeyword * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNegativeKeyword * * *");
     }
     static function OutputArrayOfNegativeKeyword($dataObjects)
     {
@@ -1978,21 +1901,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNegativeKeyword * * *");
         foreach ($dataObjects->NegativeKeyword as $dataObject)
         {
             self::OutputNegativeKeyword($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNegativeKeyword * * *");
     }
     static function OutputNetworkCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNetworkCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNetworkCriterion * * *");
             self::OutputStatusMessage(sprintf("Network: %s", $dataObject->Network));
+            self::OutputStatusMessage("* * * End OutputNetworkCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNetworkCriterion * * *");
     }
     static function OutputArrayOfNetworkCriterion($dataObjects)
     {
@@ -2000,21 +1921,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNetworkCriterion * * *");
         foreach ($dataObjects->NetworkCriterion as $dataObject)
         {
             self::OutputNetworkCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNetworkCriterion * * *");
     }
     static function OutputNetworkSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNetworkSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNetworkSearchParameter * * *");
+            self::OutputStatusMessage("Network:");
             self::OutputNetworkCriterion($dataObject->Network);
+            self::OutputStatusMessage("* * * End OutputNetworkSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNetworkSearchParameter * * *");
     }
     static function OutputArrayOfNetworkSearchParameter($dataObjects)
     {
@@ -2022,24 +1942,22 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNetworkSearchParameter * * *");
         foreach ($dataObjects->NetworkSearchParameter as $dataObject)
         {
             self::OutputNetworkSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNetworkSearchParameter * * *");
     }
     static function OutputOperationError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputOperationError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOperationError * * *");
     }
     static function OutputArrayOfOperationError($dataObjects)
     {
@@ -2052,18 +1970,16 @@ final class AdInsightExampleHelper {
             self::OutputOperationError($dataObjects->OperationError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOperationError * * *");
         foreach ($dataObjects->OperationError as $dataObject)
         {
             self::OutputOperationError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOperationError * * *");
     }
     static function OutputOpportunity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOpportunity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOpportunity * * *");
             self::OutputStatusMessage(sprintf("OpportunityKey: %s", $dataObject->OpportunityKey));
             if($dataObject->Type === "BidOpportunity")
             {
@@ -2077,8 +1993,8 @@ final class AdInsightExampleHelper {
             {
                 self::OutputKeywordOpportunity($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputOpportunity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOpportunity * * *");
     }
     static function OutputArrayOfOpportunity($dataObjects)
     {
@@ -2086,21 +2002,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOpportunity * * *");
         foreach ($dataObjects->Opportunity as $dataObject)
         {
             self::OutputOpportunity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOpportunity * * *");
     }
     static function OutputQuerySearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputQuerySearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputQuerySearchParameter * * *");
+            self::OutputStatusMessage("Queries:");
             self::OutputArrayOfString($dataObject->Queries);
+            self::OutputStatusMessage("* * * End OutputQuerySearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputQuerySearchParameter * * *");
     }
     static function OutputArrayOfQuerySearchParameter($dataObjects)
     {
@@ -2108,22 +2023,21 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfQuerySearchParameter * * *");
         foreach ($dataObjects->QuerySearchParameter as $dataObject)
         {
             self::OutputQuerySearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfQuerySearchParameter * * *");
     }
     static function OutputSearchCountsByAttributes($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSearchCountsByAttributes * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSearchCountsByAttributes * * *");
             self::OutputStatusMessage(sprintf("Device: %s", $dataObject->Device));
+            self::OutputStatusMessage("HistoricalSearchCounts:");
             self::OutputArrayOfHistoricalSearchCountPeriodic($dataObject->HistoricalSearchCounts);
+            self::OutputStatusMessage("* * * End OutputSearchCountsByAttributes * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSearchCountsByAttributes * * *");
     }
     static function OutputArrayOfSearchCountsByAttributes($dataObjects)
     {
@@ -2131,18 +2045,16 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSearchCountsByAttributes * * *");
         foreach ($dataObjects->SearchCountsByAttributes as $dataObject)
         {
             self::OutputSearchCountsByAttributes($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSearchCountsByAttributes * * *");
     }
     static function OutputSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSearchParameter * * *");
             if($dataObject->Type === "AuctionSegmentSearchParameter")
             {
                 self::OutputAuctionSegmentSearchParameter($dataObject);
@@ -2203,8 +2115,8 @@ final class AdInsightExampleHelper {
             {
                 self::OutputUrlSearchParameter($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSearchParameter * * *");
     }
     static function OutputArrayOfSearchParameter($dataObjects)
     {
@@ -2212,22 +2124,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSearchParameter * * *");
         foreach ($dataObjects->SearchParameter as $dataObject)
         {
             self::OutputSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSearchParameter * * *");
     }
     static function OutputSearchVolumeSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSearchVolumeSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSearchVolumeSearchParameter * * *");
             self::OutputStatusMessage(sprintf("Maximum: %s", $dataObject->Maximum));
             self::OutputStatusMessage(sprintf("Minimum: %s", $dataObject->Minimum));
+            self::OutputStatusMessage("* * * End OutputSearchVolumeSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSearchVolumeSearchParameter * * *");
     }
     static function OutputArrayOfSearchVolumeSearchParameter($dataObjects)
     {
@@ -2235,22 +2145,20 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSearchVolumeSearchParameter * * *");
         foreach ($dataObjects->SearchVolumeSearchParameter as $dataObject)
         {
             self::OutputSearchVolumeSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSearchVolumeSearchParameter * * *");
     }
     static function OutputSuggestedBidSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSuggestedBidSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSuggestedBidSearchParameter * * *");
             self::OutputStatusMessage(sprintf("Maximum: %s", $dataObject->Maximum));
             self::OutputStatusMessage(sprintf("Minimum: %s", $dataObject->Minimum));
+            self::OutputStatusMessage("* * * End OutputSuggestedBidSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSuggestedBidSearchParameter * * *");
     }
     static function OutputArrayOfSuggestedBidSearchParameter($dataObjects)
     {
@@ -2258,26 +2166,24 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSuggestedBidSearchParameter * * *");
         foreach ($dataObjects->SuggestedBidSearchParameter as $dataObject)
         {
             self::OutputSuggestedBidSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSuggestedBidSearchParameter * * *");
     }
     static function OutputTrafficEstimate($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputTrafficEstimate * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputTrafficEstimate * * *");
             self::OutputStatusMessage(sprintf("AverageCpc: %s", $dataObject->AverageCpc));
             self::OutputStatusMessage(sprintf("AveragePosition: %s", $dataObject->AveragePosition));
             self::OutputStatusMessage(sprintf("Clicks: %s", $dataObject->Clicks));
             self::OutputStatusMessage(sprintf("Ctr: %s", $dataObject->Ctr));
             self::OutputStatusMessage(sprintf("Impressions: %s", $dataObject->Impressions));
             self::OutputStatusMessage(sprintf("TotalCost: %s", $dataObject->TotalCost));
+            self::OutputStatusMessage("* * * End OutputTrafficEstimate * * *");
         }
-        self::OutputStatusMessage("* * * End OutputTrafficEstimate * * *");
     }
     static function OutputArrayOfTrafficEstimate($dataObjects)
     {
@@ -2285,21 +2191,19 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfTrafficEstimate * * *");
         foreach ($dataObjects->TrafficEstimate as $dataObject)
         {
             self::OutputTrafficEstimate($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfTrafficEstimate * * *");
     }
     static function OutputUrlSearchParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputUrlSearchParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputUrlSearchParameter * * *");
             self::OutputStatusMessage(sprintf("Url: %s", $dataObject->Url));
+            self::OutputStatusMessage("* * * End OutputUrlSearchParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputUrlSearchParameter * * *");
     }
     static function OutputArrayOfUrlSearchParameter($dataObjects)
     {
@@ -2307,12 +2211,10 @@ final class AdInsightExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfUrlSearchParameter * * *");
         foreach ($dataObjects->UrlSearchParameter as $dataObject)
         {
             self::OutputUrlSearchParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfUrlSearchParameter * * *");
     }
     static function OutputBidOpportunityType($valueSet)
     {
@@ -2695,7 +2597,7 @@ final class AdInsightExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfString * * *");
         foreach ($items->string as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the string: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfString * * *");
     }
@@ -2708,7 +2610,7 @@ final class AdInsightExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfLong * * *");
         foreach ($items->long as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the long: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLong * * *");
     }
@@ -2721,7 +2623,7 @@ final class AdInsightExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfInt * * *");
         foreach ($items->int as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the int: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfInt * * *");
     }

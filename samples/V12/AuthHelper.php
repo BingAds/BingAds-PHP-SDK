@@ -71,25 +71,68 @@ final class AuthHelper {
     
     static function Authenticate() 
     {   
-        // Authenticate for Bing Ads services with a Microsoft Account.
+        // Disable WSDL caching.
+        ini_set("soap.wsdl_cache_enabled", "0");
+        ini_set("soap.wsdl_cache_ttl", "0");
+
+        // Authenticate with a Microsoft Account.
         AuthHelper::AuthenticateWithOAuth();
 
         $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
             ServiceClientType::CustomerManagementVersion12, 
             $GLOBALS['AuthorizationData'], 
-            AuthHelper::GetApiEnvironment());
+            AuthHelper::GetApiEnvironment()
+        );
             
-        // Set to an empty user identifier to get the current authenticated Bing Ads user,
+        // Set to an empty user identifier to get the current authenticated user,
         // and then search for accounts the user can access.
-        $user = CustomerManagementExampleHelper::GetUser(null, true)->User;
+        $user = CustomerManagementExampleHelper::GetUser(
+            null, 
+            true
+        )->User;
 
         // To retrieve more than 100 accounts, increase the page size up to 1,000.
         // To retrieve more than 1,000 accounts you'll need to implement paging.
-        $accounts = AuthHelper::SearchAccountsByUserId($user->Id, 0, 100)->Accounts;
+        $accounts = AuthHelper::SearchAccountsByUserId(
+            $user->Id, 
+            0, 
+            100
+        )->Accounts;
     
-        // For this example we'll use the first account.
+        // We'll use the first account by default for the examples. 
+
         $GLOBALS['AuthorizationData']->AccountId = $accounts->AdvertiserAccount[0]->Id;
         $GLOBALS['AuthorizationData']->CustomerId = $accounts->AdvertiserAccount[0]->ParentCustomerId;
+
+        $GLOBALS['AdInsightProxy'] = new ServiceClient(
+            ServiceClientType::AdInsightVersion12, 
+            $GLOBALS['AuthorizationData'], 
+            AuthHelper::GetApiEnvironment()
+        );
+
+        $GLOBALS['BulkProxy'] = new ServiceClient(
+            ServiceClientType::BulkVersion12, 
+            $GLOBALS['AuthorizationData'], 
+            AuthHelper::GetApiEnvironment()
+        );
+
+        $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
+            ServiceClientType::CampaignManagementVersion12, 
+            $GLOBALS['AuthorizationData'], 
+            AuthHelper::GetApiEnvironment()
+        );
+
+        $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
+            ServiceClientType::CustomerManagementVersion12, 
+            $GLOBALS['AuthorizationData'], 
+            AuthHelper::GetApiEnvironment()
+        );
+
+        $GLOBALS['ReportingProxy'] = new ServiceClient(
+            ServiceClientType::ReportingVersion12, 
+            $GLOBALS['AuthorizationData'], 
+            AuthHelper::GetApiEnvironment()
+        );
     }
 
     static function SearchAccountsByUserId($userId, $pageIndex, $pageSize)
@@ -134,7 +177,9 @@ final class AuthHelper {
             if($refreshToken != null) 
             {
                 $GLOBALS['AuthorizationData']->Authentication->RequestOAuthTokensByRefreshToken($refreshToken);
-                AuthHelper::WriteOAuthRefreshToken($GLOBALS['AuthorizationData']->Authentication->OAuthTokens->RefreshToken);
+                AuthHelper::WriteOAuthRefreshToken(
+                    $GLOBALS['AuthorizationData']->Authentication->OAuthTokens->RefreshToken
+                );
             }
             else
             {
@@ -152,7 +197,7 @@ final class AuthHelper {
 
     static function RequestUserConsent()
     {
-        print "You need to provide consent for the application to access your Bing Ads accounts. " .
+        print "You need to provide consent for the application to access your Bing Ads Bing Ads accounts. " .
               "Copy and paste this authorization endpoint into a web browser and sign in with a Microsoft account " . 
               "with access to a Bing Ads account: \n\n" . $GLOBALS['AuthorizationData']->Authentication->GetAuthorizationEndpoint() .
               "\n\nAfter you have granted consent in the web browser for the application to access your Bing Ads accounts, " .

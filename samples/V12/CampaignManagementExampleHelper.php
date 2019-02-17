@@ -1516,13 +1516,14 @@ final class CampaignManagementExampleHelper {
     }
     static function OutputAccountMigrationStatusesInfo($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAccountMigrationStatusesInfo * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAccountMigrationStatusesInfo * * *");
             self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
+            self::OutputStatusMessage("MigrationStatusInfos:");
             self::OutputArrayOfMigrationStatusInfo($dataObject->MigrationStatusInfos);
+            self::OutputStatusMessage("* * * End OutputAccountMigrationStatusesInfo * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAccountMigrationStatusesInfo * * *");
     }
     static function OutputArrayOfAccountMigrationStatusesInfo($dataObjects)
     {
@@ -1530,22 +1531,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAccountMigrationStatusesInfo * * *");
         foreach ($dataObjects->AccountMigrationStatusesInfo as $dataObject)
         {
             self::OutputAccountMigrationStatusesInfo($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAccountMigrationStatusesInfo * * *");
     }
     static function OutputAccountProperty($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAccountProperty * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAccountProperty * * *");
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
+            self::OutputStatusMessage("* * * End OutputAccountProperty * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAccountProperty * * *");
     }
     static function OutputArrayOfAccountProperty($dataObjects)
     {
@@ -1553,26 +1552,27 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAccountProperty * * *");
         foreach ($dataObjects->AccountProperty as $dataObject)
         {
             self::OutputAccountProperty($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAccountProperty * * *");
     }
     static function OutputActionAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputActionAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputActionAdExtension * * *");
             self::OutputStatusMessage(sprintf("ActionType: %s", $dataObject->ActionType));
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputActionAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputActionAdExtension * * *");
     }
     static function OutputArrayOfActionAdExtension($dataObjects)
     {
@@ -1580,29 +1580,32 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfActionAdExtension * * *");
         foreach ($dataObjects->ActionAdExtension as $dataObject)
         {
             self::OutputActionAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfActionAdExtension * * *");
     }
     static function OutputAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAd * * *");
             self::OutputStatusMessage(sprintf("AdFormatPreference: %s", $dataObject->AdFormatPreference));
             self::OutputStatusMessage(sprintf("DevicePreference: %s", $dataObject->DevicePreference));
             self::OutputStatusMessage(sprintf("EditorialStatus: %s", $dataObject->EditorialStatus));
+            self::OutputStatusMessage("FinalAppUrls:");
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
             if($dataObject->Type === "AppInstall")
             {
@@ -1632,8 +1635,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputTextAd($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAd * * *");
     }
     static function OutputArrayOfAd($dataObjects)
     {
@@ -1641,24 +1644,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAd * * *");
         foreach ($dataObjects->Ad as $dataObject)
         {
             self::OutputAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAd * * *");
     }
     static function OutputAdApiError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Detail: %s", $dataObject->Detail));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputAdApiError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdApiError * * *");
     }
     static function OutputArrayOfAdApiError($dataObjects)
     {
@@ -1671,21 +1672,20 @@ final class CampaignManagementExampleHelper {
             self::OutputAdApiError($dataObjects->AdApiError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdApiError * * *");
         foreach ($dataObjects->AdApiError as $dataObject)
         {
             self::OutputAdApiError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdApiError * * *");
     }
     static function OutputAdApiFaultDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdApiFaultDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdApiFaultDetail * * *");
+            self::OutputStatusMessage("Errors:");
             self::OutputArrayOfAdApiError($dataObject->Errors);
+            self::OutputStatusMessage("* * * End OutputAdApiFaultDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdApiFaultDetail * * *");
     }
     static function OutputArrayOfAdApiFaultDetail($dataObjects)
     {
@@ -1693,18 +1693,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdApiFaultDetail * * *");
         foreach ($dataObjects->AdApiFaultDetail as $dataObject)
         {
             self::OutputAdApiFaultDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdApiFaultDetail * * *");
     }
     static function OutputAddress($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAddress * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAddress * * *");
             self::OutputStatusMessage(sprintf("CityName: %s", $dataObject->CityName));
             self::OutputStatusMessage(sprintf("CountryCode: %s", $dataObject->CountryCode));
             self::OutputStatusMessage(sprintf("PostalCode: %s", $dataObject->PostalCode));
@@ -1712,8 +1710,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("ProvinceName: %s", $dataObject->ProvinceName));
             self::OutputStatusMessage(sprintf("StreetAddress: %s", $dataObject->StreetAddress));
             self::OutputStatusMessage(sprintf("StreetAddress2: %s", $dataObject->StreetAddress2));
+            self::OutputStatusMessage("* * * End OutputAddress * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAddress * * *");
     }
     static function OutputArrayOfAddress($dataObjects)
     {
@@ -1721,21 +1719,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAddress * * *");
         foreach ($dataObjects->Address as $dataObject)
         {
             self::OutputAddress($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAddress * * *");
     }
     static function OutputAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtension * * *");
             self::OutputStatusMessage(sprintf("DevicePreference: %s", $dataObject->DevicePreference));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage("Scheduling:");
             self::OutputSchedule($dataObject->Scheduling);
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
@@ -1780,8 +1778,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputStructuredSnippetAdExtension($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtension * * *");
     }
     static function OutputArrayOfAdExtension($dataObjects)
     {
@@ -1789,24 +1787,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtension * * *");
         foreach ($dataObjects->AdExtension as $dataObject)
         {
             self::OutputAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtension * * *");
     }
     static function OutputAdExtensionAssociation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtensionAssociation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtensionAssociation * * *");
+            self::OutputStatusMessage("AdExtension:");
             self::OutputAdExtension($dataObject->AdExtension);
             self::OutputStatusMessage(sprintf("AssociationType: %s", $dataObject->AssociationType));
             self::OutputStatusMessage(sprintf("EditorialStatus: %s", $dataObject->EditorialStatus));
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
+            self::OutputStatusMessage("* * * End OutputAdExtensionAssociation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtensionAssociation * * *");
     }
     static function OutputArrayOfAdExtensionAssociation($dataObjects)
     {
@@ -1814,21 +1811,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionAssociation * * *");
         foreach ($dataObjects->AdExtensionAssociation as $dataObject)
         {
             self::OutputAdExtensionAssociation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionAssociation * * *");
     }
     static function OutputAdExtensionAssociationCollection($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtensionAssociationCollection * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtensionAssociationCollection * * *");
+            self::OutputStatusMessage("AdExtensionAssociations:");
             self::OutputArrayOfAdExtensionAssociation($dataObject->AdExtensionAssociations);
+            self::OutputStatusMessage("* * * End OutputAdExtensionAssociationCollection * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtensionAssociationCollection * * *");
     }
     static function OutputArrayOfAdExtensionAssociationCollection($dataObjects)
     {
@@ -1836,24 +1832,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionAssociationCollection * * *");
         foreach ($dataObjects->AdExtensionAssociationCollection as $dataObject)
         {
             self::OutputAdExtensionAssociationCollection($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionAssociationCollection * * *");
     }
     static function OutputAdExtensionEditorialReason($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtensionEditorialReason * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtensionEditorialReason * * *");
             self::OutputStatusMessage(sprintf("Location: %s", $dataObject->Location));
+            self::OutputStatusMessage("PublisherCountries:");
             self::OutputArrayOfString($dataObject->PublisherCountries);
             self::OutputStatusMessage(sprintf("ReasonCode: %s", $dataObject->ReasonCode));
             self::OutputStatusMessage(sprintf("Term: %s", $dataObject->Term));
+            self::OutputStatusMessage("* * * End OutputAdExtensionEditorialReason * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtensionEditorialReason * * *");
     }
     static function OutputArrayOfAdExtensionEditorialReason($dataObjects)
     {
@@ -1861,22 +1856,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionEditorialReason * * *");
         foreach ($dataObjects->AdExtensionEditorialReason as $dataObject)
         {
             self::OutputAdExtensionEditorialReason($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionEditorialReason * * *");
     }
     static function OutputAdExtensionEditorialReasonCollection($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtensionEditorialReasonCollection * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtensionEditorialReasonCollection * * *");
             self::OutputStatusMessage(sprintf("AdExtensionId: %s", $dataObject->AdExtensionId));
+            self::OutputStatusMessage("Reasons:");
             self::OutputArrayOfAdExtensionEditorialReason($dataObject->Reasons);
+            self::OutputStatusMessage("* * * End OutputAdExtensionEditorialReasonCollection * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtensionEditorialReasonCollection * * *");
     }
     static function OutputArrayOfAdExtensionEditorialReasonCollection($dataObjects)
     {
@@ -1884,22 +1878,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionEditorialReasonCollection * * *");
         foreach ($dataObjects->AdExtensionEditorialReasonCollection as $dataObject)
         {
             self::OutputAdExtensionEditorialReasonCollection($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionEditorialReasonCollection * * *");
     }
     static function OutputAdExtensionIdentity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtensionIdentity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtensionIdentity * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Version: %s", $dataObject->Version));
+            self::OutputStatusMessage("* * * End OutputAdExtensionIdentity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtensionIdentity * * *");
     }
     static function OutputArrayOfAdExtensionIdentity($dataObjects)
     {
@@ -1907,22 +1899,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionIdentity * * *");
         foreach ($dataObjects->AdExtensionIdentity as $dataObject)
         {
             self::OutputAdExtensionIdentity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionIdentity * * *");
     }
     static function OutputAdExtensionIdToEntityIdAssociation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdExtensionIdToEntityIdAssociation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdExtensionIdToEntityIdAssociation * * *");
             self::OutputStatusMessage(sprintf("AdExtensionId: %s", $dataObject->AdExtensionId));
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
+            self::OutputStatusMessage("* * * End OutputAdExtensionIdToEntityIdAssociation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdExtensionIdToEntityIdAssociation * * *");
     }
     static function OutputArrayOfAdExtensionIdToEntityIdAssociation($dataObjects)
     {
@@ -1930,36 +1920,42 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionIdToEntityIdAssociation * * *");
         foreach ($dataObjects->AdExtensionIdToEntityIdAssociation as $dataObject)
         {
             self::OutputAdExtensionIdToEntityIdAssociation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionIdToEntityIdAssociation * * *");
     }
     static function OutputAdGroup($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroup * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroup * * *");
+            self::OutputStatusMessage("AdRotation:");
             self::OutputAdRotation($dataObject->AdRotation);
             self::OutputStatusMessage(sprintf("AudienceAdsBidAdjustment: %s", $dataObject->AudienceAdsBidAdjustment));
+            self::OutputStatusMessage("BiddingScheme:");
             self::OutputBiddingScheme($dataObject->BiddingScheme);
+            self::OutputStatusMessage("CpcBid:");
             self::OutputBid($dataObject->CpcBid);
+            self::OutputStatusMessage("EndDate:");
             self::OutputDate($dataObject->EndDate);
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Network: %s", $dataObject->Network));
             self::OutputStatusMessage(sprintf("PrivacyStatus: %s", $dataObject->PrivacyStatus));
+            self::OutputStatusMessage("Settings:");
             self::OutputArrayOfSetting($dataObject->Settings);
+            self::OutputStatusMessage("StartDate:");
             self::OutputDate($dataObject->StartDate);
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputAdGroup * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroup * * *");
     }
     static function OutputArrayOfAdGroup($dataObjects)
     {
@@ -1967,19 +1963,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroup * * *");
         foreach ($dataObjects->AdGroup as $dataObject)
         {
             self::OutputAdGroup($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroup * * *");
     }
     static function OutputAdGroupCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupCriterion * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
+            self::OutputStatusMessage("Criterion:");
             self::OutputCriterion($dataObject->Criterion);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
@@ -1992,8 +1987,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputNegativeAdGroupCriterion($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputAdGroupCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupCriterion * * *");
     }
     static function OutputArrayOfAdGroupCriterion($dataObjects)
     {
@@ -2001,22 +1996,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupCriterion * * *");
         foreach ($dataObjects->AdGroupCriterion as $dataObject)
         {
             self::OutputAdGroupCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupCriterion * * *");
     }
     static function OutputAdGroupCriterionAction($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupCriterionAction * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupCriterionAction * * *");
             self::OutputStatusMessage(sprintf("Action: %s", $dataObject->Action));
+            self::OutputStatusMessage("AdGroupCriterion:");
             self::OutputAdGroupCriterion($dataObject->AdGroupCriterion);
+            self::OutputStatusMessage("* * * End OutputAdGroupCriterionAction * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupCriterionAction * * *");
     }
     static function OutputArrayOfAdGroupCriterionAction($dataObjects)
     {
@@ -2024,22 +2018,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupCriterionAction * * *");
         foreach ($dataObjects->AdGroupCriterionAction as $dataObject)
         {
             self::OutputAdGroupCriterionAction($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupCriterionAction * * *");
     }
     static function OutputAdGroupNegativeSites($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdGroupNegativeSites * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdGroupNegativeSites * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
+            self::OutputStatusMessage("NegativeSites:");
             self::OutputArrayOfString($dataObject->NegativeSites);
+            self::OutputStatusMessage("* * * End OutputAdGroupNegativeSites * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdGroupNegativeSites * * *");
     }
     static function OutputArrayOfAdGroupNegativeSites($dataObjects)
     {
@@ -2047,23 +2040,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupNegativeSites * * *");
         foreach ($dataObjects->AdGroupNegativeSites as $dataObject)
         {
             self::OutputAdGroupNegativeSites($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupNegativeSites * * *");
     }
     static function OutputAdRotation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAdRotation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAdRotation * * *");
             self::OutputStatusMessage(sprintf("EndDate: %s", $dataObject->EndDate));
             self::OutputStatusMessage(sprintf("StartDate: %s", $dataObject->StartDate));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage("* * * End OutputAdRotation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAdRotation * * *");
     }
     static function OutputArrayOfAdRotation($dataObjects)
     {
@@ -2071,21 +2062,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAdRotation * * *");
         foreach ($dataObjects->AdRotation as $dataObject)
         {
             self::OutputAdRotation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAdRotation * * *");
     }
     static function OutputAgeCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAgeCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAgeCriterion * * *");
             self::OutputStatusMessage(sprintf("AgeRange: %s", $dataObject->AgeRange));
+            self::OutputStatusMessage("* * * End OutputAgeCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAgeCriterion * * *");
     }
     static function OutputArrayOfAgeCriterion($dataObjects)
     {
@@ -2093,22 +2082,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAgeCriterion * * *");
         foreach ($dataObjects->AgeCriterion as $dataObject)
         {
             self::OutputAgeCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAgeCriterion * * *");
     }
     static function OutputApiFaultDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApiFaultDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApiFaultDetail * * *");
+            self::OutputStatusMessage("BatchErrors:");
             self::OutputArrayOfBatchError($dataObject->BatchErrors);
+            self::OutputStatusMessage("OperationErrors:");
             self::OutputArrayOfOperationError($dataObject->OperationErrors);
+            self::OutputStatusMessage("* * * End OutputApiFaultDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApiFaultDetail * * *");
     }
     static function OutputArrayOfApiFaultDetail($dataObjects)
     {
@@ -2116,29 +2105,31 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApiFaultDetail * * *");
         foreach ($dataObjects->ApiFaultDetail as $dataObject)
         {
             self::OutputApiFaultDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApiFaultDetail * * *");
     }
     static function OutputAppAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAppAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAppAdExtension * * *");
             self::OutputStatusMessage(sprintf("AppPlatform: %s", $dataObject->AppPlatform));
             self::OutputStatusMessage(sprintf("AppStoreId: %s", $dataObject->AppStoreId));
             self::OutputStatusMessage(sprintf("DestinationUrl: %s", $dataObject->DestinationUrl));
             self::OutputStatusMessage(sprintf("DisplayText: %s", $dataObject->DisplayText));
+            self::OutputStatusMessage("FinalAppUrls:");
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputAppAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAppAdExtension * * *");
     }
     static function OutputArrayOfAppAdExtension($dataObjects)
     {
@@ -2146,24 +2137,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAppAdExtension * * *");
         foreach ($dataObjects->AppAdExtension as $dataObject)
         {
             self::OutputAppAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAppAdExtension * * *");
     }
     static function OutputAppInstallAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAppInstallAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAppInstallAd * * *");
             self::OutputStatusMessage(sprintf("AppPlatform: %s", $dataObject->AppPlatform));
             self::OutputStatusMessage(sprintf("AppStoreId: %s", $dataObject->AppStoreId));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
             self::OutputStatusMessage(sprintf("Title: %s", $dataObject->Title));
+            self::OutputStatusMessage("* * * End OutputAppInstallAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAppInstallAd * * *");
     }
     static function OutputArrayOfAppInstallAd($dataObjects)
     {
@@ -2171,22 +2160,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAppInstallAd * * *");
         foreach ($dataObjects->AppInstallAd as $dataObject)
         {
             self::OutputAppInstallAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAppInstallAd * * *");
     }
     static function OutputAppInstallGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAppInstallGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAppInstallGoal * * *");
             self::OutputStatusMessage(sprintf("AppPlatform: %s", $dataObject->AppPlatform));
             self::OutputStatusMessage(sprintf("AppStoreId: %s", $dataObject->AppStoreId));
+            self::OutputStatusMessage("* * * End OutputAppInstallGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAppInstallGoal * * *");
     }
     static function OutputArrayOfAppInstallGoal($dataObjects)
     {
@@ -2194,18 +2181,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAppInstallGoal * * *");
         foreach ($dataObjects->AppInstallGoal as $dataObject)
         {
             self::OutputAppInstallGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAppInstallGoal * * *");
     }
     static function OutputApplicationFault($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
             self::OutputStatusMessage(sprintf("TrackingId: %s", $dataObject->TrackingId));
             if($dataObject->Type === "AdApiFaultDetail")
             {
@@ -2219,8 +2204,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputEditorialApiFaultDetail($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputApplicationFault * * *");
         }
-        self::OutputStatusMessage("* * * End OutputApplicationFault * * *");
     }
     static function OutputArrayOfApplicationFault($dataObjects)
     {
@@ -2228,22 +2213,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfApplicationFault * * *");
         foreach ($dataObjects->ApplicationFault as $dataObject)
         {
             self::OutputApplicationFault($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfApplicationFault * * *");
     }
     static function OutputAppUrl($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAppUrl * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAppUrl * * *");
             self::OutputStatusMessage(sprintf("OsType: %s", $dataObject->OsType));
             self::OutputStatusMessage(sprintf("Url: %s", $dataObject->Url));
+            self::OutputStatusMessage("* * * End OutputAppUrl * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAppUrl * * *");
     }
     static function OutputArrayOfAppUrl($dataObjects)
     {
@@ -2251,18 +2234,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAppUrl * * *");
         foreach ($dataObjects->AppUrl as $dataObject)
         {
             self::OutputAppUrl($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAppUrl * * *");
     }
     static function OutputAsset($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAsset * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAsset * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
@@ -2274,8 +2255,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputTextAsset($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputAsset * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAsset * * *");
     }
     static function OutputArrayOfAsset($dataObjects)
     {
@@ -2283,24 +2264,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAsset * * *");
         foreach ($dataObjects->Asset as $dataObject)
         {
             self::OutputAsset($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAsset * * *");
     }
     static function OutputAssetLink($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAssetLink * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAssetLink * * *");
+            self::OutputStatusMessage("Asset:");
             self::OutputAsset($dataObject->Asset);
             self::OutputStatusMessage(sprintf("AssetPerformanceLabel: %s", $dataObject->AssetPerformanceLabel));
             self::OutputStatusMessage(sprintf("EditorialStatus: %s", $dataObject->EditorialStatus));
             self::OutputStatusMessage(sprintf("PinnedField: %s", $dataObject->PinnedField));
+            self::OutputStatusMessage("* * * End OutputAssetLink * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAssetLink * * *");
     }
     static function OutputArrayOfAssetLink($dataObjects)
     {
@@ -2308,20 +2288,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAssetLink * * *");
         foreach ($dataObjects->AssetLink as $dataObject)
         {
             self::OutputAssetLink($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAssetLink * * *");
     }
     static function OutputAudience($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAudience * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAudience * * *");
             self::OutputStatusMessage(sprintf("AudienceNetworkSize: %s", $dataObject->AudienceNetworkSize));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MembershipDuration: %s", $dataObject->MembershipDuration));
@@ -2329,6 +2308,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("ParentId: %s", $dataObject->ParentId));
             self::OutputStatusMessage(sprintf("Scope: %s", $dataObject->Scope));
             self::OutputStatusMessage(sprintf("SearchSize: %s", $dataObject->SearchSize));
+            self::OutputStatusMessage("SupportedCampaignTypes:");
             self::OutputArrayOfString($dataObject->SupportedCampaignTypes);
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "Custom")
@@ -2351,8 +2331,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputSimilarRemarketingList($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputAudience * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAudience * * *");
     }
     static function OutputArrayOfAudience($dataObjects)
     {
@@ -2360,22 +2340,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAudience * * *");
         foreach ($dataObjects->Audience as $dataObject)
         {
             self::OutputAudience($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAudience * * *");
     }
     static function OutputAudienceCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputAudienceCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputAudienceCriterion * * *");
             self::OutputStatusMessage(sprintf("AudienceId: %s", $dataObject->AudienceId));
             self::OutputStatusMessage(sprintf("AudienceType: %s", $dataObject->AudienceType));
+            self::OutputStatusMessage("* * * End OutputAudienceCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputAudienceCriterion * * *");
     }
     static function OutputArrayOfAudienceCriterion($dataObjects)
     {
@@ -2383,22 +2361,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfAudienceCriterion * * *");
         foreach ($dataObjects->AudienceCriterion as $dataObject)
         {
             self::OutputAudienceCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfAudienceCriterion * * *");
     }
     static function OutputBatchError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("FieldPath: %s", $dataObject->FieldPath));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
@@ -2407,8 +2384,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputEditorialError($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputBatchError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBatchError * * *");
     }
     static function OutputArrayOfBatchError($dataObjects)
     {
@@ -2416,23 +2393,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBatchError * * *");
         foreach ($dataObjects->BatchError as $dataObject)
         {
             self::OutputBatchError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBatchError * * *");
     }
     static function OutputBatchErrorCollection($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBatchErrorCollection * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBatchErrorCollection * * *");
+            self::OutputStatusMessage("BatchErrors:");
             self::OutputArrayOfBatchError($dataObject->BatchErrors);
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("FieldPath: %s", $dataObject->FieldPath));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
@@ -2441,8 +2418,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputEditorialErrorCollection($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputBatchErrorCollection * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBatchErrorCollection * * *");
     }
     static function OutputArrayOfBatchErrorCollection($dataObjects)
     {
@@ -2450,21 +2427,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBatchErrorCollection * * *");
         foreach ($dataObjects->BatchErrorCollection as $dataObject)
         {
             self::OutputBatchErrorCollection($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBatchErrorCollection * * *");
     }
     static function OutputBid($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBid * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBid * * *");
             self::OutputStatusMessage(sprintf("Amount: %s", $dataObject->Amount));
+            self::OutputStatusMessage("* * * End OutputBid * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBid * * *");
     }
     static function OutputArrayOfBid($dataObjects)
     {
@@ -2472,28 +2447,31 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBid * * *");
         foreach ($dataObjects->Bid as $dataObject)
         {
             self::OutputBid($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBid * * *");
     }
     static function OutputBiddableAdGroupCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBiddableAdGroupCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBiddableAdGroupCriterion * * *");
+            self::OutputStatusMessage("CriterionBid:");
             self::OutputCriterionBid($dataObject->CriterionBid);
             self::OutputStatusMessage(sprintf("DestinationUrl: %s", $dataObject->DestinationUrl));
             self::OutputStatusMessage(sprintf("EditorialStatus: %s", $dataObject->EditorialStatus));
+            self::OutputStatusMessage("FinalAppUrls:");
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputBiddableAdGroupCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBiddableAdGroupCriterion * * *");
     }
     static function OutputArrayOfBiddableAdGroupCriterion($dataObjects)
     {
@@ -2501,21 +2479,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBiddableAdGroupCriterion * * *");
         foreach ($dataObjects->BiddableAdGroupCriterion as $dataObject)
         {
             self::OutputBiddableAdGroupCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBiddableAdGroupCriterion * * *");
     }
     static function OutputBiddableCampaignCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBiddableCampaignCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBiddableCampaignCriterion * * *");
+            self::OutputStatusMessage("CriterionBid:");
             self::OutputCriterionBid($dataObject->CriterionBid);
+            self::OutputStatusMessage("* * * End OutputBiddableCampaignCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBiddableCampaignCriterion * * *");
     }
     static function OutputArrayOfBiddableCampaignCriterion($dataObjects)
     {
@@ -2523,18 +2500,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBiddableCampaignCriterion * * *");
         foreach ($dataObjects->BiddableCampaignCriterion as $dataObject)
         {
             self::OutputBiddableCampaignCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBiddableCampaignCriterion * * *");
     }
     static function OutputBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBiddingScheme * * *");
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "EnhancedCpcBiddingScheme")
             {
@@ -2560,8 +2535,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputTargetCpaBiddingScheme($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBiddingScheme * * *");
     }
     static function OutputArrayOfBiddingScheme($dataObjects)
     {
@@ -2569,21 +2544,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBiddingScheme * * *");
         foreach ($dataObjects->BiddingScheme as $dataObject)
         {
             self::OutputBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBiddingScheme * * *");
     }
     static function OutputBidMultiplier($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBidMultiplier * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBidMultiplier * * *");
             self::OutputStatusMessage(sprintf("Multiplier: %s", $dataObject->Multiplier));
+            self::OutputStatusMessage("* * * End OutputBidMultiplier * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBidMultiplier * * *");
     }
     static function OutputArrayOfBidMultiplier($dataObjects)
     {
@@ -2591,26 +2564,24 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBidMultiplier * * *");
         foreach ($dataObjects->BidMultiplier as $dataObject)
         {
             self::OutputBidMultiplier($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBidMultiplier * * *");
     }
     static function OutputBMCStore($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBMCStore * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBMCStore * * *");
             self::OutputStatusMessage(sprintf("HasCatalog: %s", $dataObject->HasCatalog));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("IsActive: %s", $dataObject->IsActive));
             self::OutputStatusMessage(sprintf("IsProductAdsEnabled: %s", $dataObject->IsProductAdsEnabled));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("SubType: %s", $dataObject->SubType));
+            self::OutputStatusMessage("* * * End OutputBMCStore * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBMCStore * * *");
     }
     static function OutputArrayOfBMCStore($dataObjects)
     {
@@ -2618,25 +2589,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBMCStore * * *");
         foreach ($dataObjects->BMCStore as $dataObject)
         {
             self::OutputBMCStore($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBMCStore * * *");
     }
     static function OutputBudget($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputBudget * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputBudget * * *");
             self::OutputStatusMessage(sprintf("Amount: %s", $dataObject->Amount));
             self::OutputStatusMessage(sprintf("AssociationCount: %s", $dataObject->AssociationCount));
             self::OutputStatusMessage(sprintf("BudgetType: %s", $dataObject->BudgetType));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage("* * * End OutputBudget * * *");
         }
-        self::OutputStatusMessage("* * * End OutputBudget * * *");
     }
     static function OutputArrayOfBudget($dataObjects)
     {
@@ -2644,25 +2613,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfBudget * * *");
         foreach ($dataObjects->Budget as $dataObject)
         {
             self::OutputBudget($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfBudget * * *");
     }
     static function OutputCallAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCallAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCallAdExtension * * *");
             self::OutputStatusMessage(sprintf("CountryCode: %s", $dataObject->CountryCode));
             self::OutputStatusMessage(sprintf("IsCallOnly: %s", $dataObject->IsCallOnly));
             self::OutputStatusMessage(sprintf("IsCallTrackingEnabled: %s", $dataObject->IsCallTrackingEnabled));
             self::OutputStatusMessage(sprintf("PhoneNumber: %s", $dataObject->PhoneNumber));
             self::OutputStatusMessage(sprintf("RequireTollFreeTrackingNumber: %s", $dataObject->RequireTollFreeTrackingNumber));
+            self::OutputStatusMessage("* * * End OutputCallAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCallAdExtension * * *");
     }
     static function OutputArrayOfCallAdExtension($dataObjects)
     {
@@ -2670,21 +2637,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCallAdExtension * * *");
         foreach ($dataObjects->CallAdExtension as $dataObject)
         {
             self::OutputCallAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCallAdExtension * * *");
     }
     static function OutputCalloutAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCalloutAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCalloutAdExtension * * *");
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputCalloutAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCalloutAdExtension * * *");
     }
     static function OutputArrayOfCalloutAdExtension($dataObjects)
     {
@@ -2692,24 +2657,24 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCalloutAdExtension * * *");
         foreach ($dataObjects->CalloutAdExtension as $dataObject)
         {
             self::OutputCalloutAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCalloutAdExtension * * *");
     }
     static function OutputCampaign($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCampaign * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCampaign * * *");
             self::OutputStatusMessage(sprintf("AudienceAdsBidAdjustment: %s", $dataObject->AudienceAdsBidAdjustment));
+            self::OutputStatusMessage("BiddingScheme:");
             self::OutputBiddingScheme($dataObject->BiddingScheme);
             self::OutputStatusMessage(sprintf("BudgetType: %s", $dataObject->BudgetType));
             self::OutputStatusMessage(sprintf("DailyBudget: %s", $dataObject->DailyBudget));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
             self::OutputStatusMessage(sprintf("ExperimentId: %s", $dataObject->ExperimentId));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
@@ -2717,13 +2682,16 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("SubType: %s", $dataObject->SubType));
             self::OutputStatusMessage(sprintf("TimeZone: %s", $dataObject->TimeZone));
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
             self::OutputStatusMessage(sprintf("CampaignType: %s", $dataObject->CampaignType));
+            self::OutputStatusMessage("Settings:");
             self::OutputArrayOfSetting($dataObject->Settings);
             self::OutputStatusMessage(sprintf("BudgetId: %s", $dataObject->BudgetId));
+            self::OutputStatusMessage("Languages:");
             self::OutputArrayOfString($dataObject->Languages);
+            self::OutputStatusMessage("* * * End OutputCampaign * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCampaign * * *");
     }
     static function OutputArrayOfCampaign($dataObjects)
     {
@@ -2731,20 +2699,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaign * * *");
         foreach ($dataObjects->Campaign as $dataObject)
         {
             self::OutputCampaign($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCampaign * * *");
     }
     static function OutputCampaignCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCampaignCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCampaignCriterion * * *");
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage("Criterion:");
             self::OutputCriterion($dataObject->Criterion);
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
@@ -2757,8 +2725,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputNegativeCampaignCriterion($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputCampaignCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCampaignCriterion * * *");
     }
     static function OutputArrayOfCampaignCriterion($dataObjects)
     {
@@ -2766,22 +2734,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaignCriterion * * *");
         foreach ($dataObjects->CampaignCriterion as $dataObject)
         {
             self::OutputCampaignCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCampaignCriterion * * *");
     }
     static function OutputCampaignNegativeSites($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCampaignNegativeSites * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCampaignNegativeSites * * *");
             self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage("NegativeSites:");
             self::OutputArrayOfString($dataObject->NegativeSites);
+            self::OutputStatusMessage("* * * End OutputCampaignNegativeSites * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCampaignNegativeSites * * *");
     }
     static function OutputArrayOfCampaignNegativeSites($dataObjects)
     {
@@ -2789,22 +2756,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaignNegativeSites * * *");
         foreach ($dataObjects->CampaignNegativeSites as $dataObject)
         {
             self::OutputCampaignNegativeSites($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCampaignNegativeSites * * *");
     }
     static function OutputConversionGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputConversionGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputConversionGoal * * *");
             self::OutputStatusMessage(sprintf("ConversionWindowInMinutes: %s", $dataObject->ConversionWindowInMinutes));
             self::OutputStatusMessage(sprintf("CountType: %s", $dataObject->CountType));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage("Revenue:");
             self::OutputConversionGoalRevenue($dataObject->Revenue);
             self::OutputStatusMessage(sprintf("Scope: %s", $dataObject->Scope));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
@@ -2839,8 +2805,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputUrlGoal($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputConversionGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputConversionGoal * * *");
     }
     static function OutputArrayOfConversionGoal($dataObjects)
     {
@@ -2848,23 +2814,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfConversionGoal * * *");
         foreach ($dataObjects->ConversionGoal as $dataObject)
         {
             self::OutputConversionGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfConversionGoal * * *");
     }
     static function OutputConversionGoalRevenue($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputConversionGoalRevenue * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputConversionGoalRevenue * * *");
             self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
+            self::OutputStatusMessage("* * * End OutputConversionGoalRevenue * * *");
         }
-        self::OutputStatusMessage("* * * End OutputConversionGoalRevenue * * *");
     }
     static function OutputArrayOfConversionGoalRevenue($dataObjects)
     {
@@ -2872,23 +2836,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfConversionGoalRevenue * * *");
         foreach ($dataObjects->ConversionGoalRevenue as $dataObject)
         {
             self::OutputConversionGoalRevenue($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfConversionGoalRevenue * * *");
     }
     static function OutputCoOpSetting($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCoOpSetting * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCoOpSetting * * *");
             self::OutputStatusMessage(sprintf("BidBoostValue: %s", $dataObject->BidBoostValue));
             self::OutputStatusMessage(sprintf("BidMaxValue: %s", $dataObject->BidMaxValue));
             self::OutputStatusMessage(sprintf("BidOption: %s", $dataObject->BidOption));
+            self::OutputStatusMessage("* * * End OutputCoOpSetting * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCoOpSetting * * *");
     }
     static function OutputArrayOfCoOpSetting($dataObjects)
     {
@@ -2896,18 +2858,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCoOpSetting * * *");
         foreach ($dataObjects->CoOpSetting as $dataObject)
         {
             self::OutputCoOpSetting($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCoOpSetting * * *");
     }
     static function OutputCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCriterion * * *");
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "AgeCriterion")
             {
@@ -2957,8 +2917,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputWebpage($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCriterion * * *");
     }
     static function OutputArrayOfCriterion($dataObjects)
     {
@@ -2966,18 +2926,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCriterion * * *");
         foreach ($dataObjects->Criterion as $dataObject)
         {
             self::OutputCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCriterion * * *");
     }
     static function OutputCriterionBid($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCriterionBid * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCriterionBid * * *");
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "BidMultiplier")
             {
@@ -2987,8 +2945,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputFixedBid($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputCriterionBid * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCriterionBid * * *");
     }
     static function OutputArrayOfCriterionBid($dataObjects)
     {
@@ -2996,20 +2954,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCriterionBid * * *");
         foreach ($dataObjects->CriterionBid as $dataObject)
         {
             self::OutputCriterionBid($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCriterionBid * * *");
     }
     static function OutputCustomAudience($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCustomAudience * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCustomAudience * * *");
+            self::OutputStatusMessage("* * * End OutputCustomAudience * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCustomAudience * * *");
     }
     static function OutputArrayOfCustomAudience($dataObjects)
     {
@@ -3017,18 +2973,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCustomAudience * * *");
         foreach ($dataObjects->CustomAudience as $dataObject)
         {
             self::OutputCustomAudience($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCustomAudience * * *");
     }
     static function OutputCustomEventsRule($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCustomEventsRule * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCustomEventsRule * * *");
             self::OutputStatusMessage(sprintf("Action: %s", $dataObject->Action));
             self::OutputStatusMessage(sprintf("ActionOperator: %s", $dataObject->ActionOperator));
             self::OutputStatusMessage(sprintf("Category: %s", $dataObject->Category));
@@ -3037,8 +2991,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("LabelOperator: %s", $dataObject->LabelOperator));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
             self::OutputStatusMessage(sprintf("ValueOperator: %s", $dataObject->ValueOperator));
+            self::OutputStatusMessage("* * * End OutputCustomEventsRule * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCustomEventsRule * * *");
     }
     static function OutputArrayOfCustomEventsRule($dataObjects)
     {
@@ -3046,22 +3000,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCustomEventsRule * * *");
         foreach ($dataObjects->CustomEventsRule as $dataObject)
         {
             self::OutputCustomEventsRule($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCustomEventsRule * * *");
     }
     static function OutputCustomParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCustomParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCustomParameter * * *");
             self::OutputStatusMessage(sprintf("Key: %s", $dataObject->Key));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
+            self::OutputStatusMessage("* * * End OutputCustomParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCustomParameter * * *");
     }
     static function OutputArrayOfCustomParameter($dataObjects)
     {
@@ -3069,21 +3021,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCustomParameter * * *");
         foreach ($dataObjects->CustomParameter as $dataObject)
         {
             self::OutputCustomParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCustomParameter * * *");
     }
     static function OutputCustomParameters($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputCustomParameters * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputCustomParameters * * *");
+            self::OutputStatusMessage("Parameters:");
             self::OutputArrayOfCustomParameter($dataObject->Parameters);
+            self::OutputStatusMessage("* * * End OutputCustomParameters * * *");
         }
-        self::OutputStatusMessage("* * * End OutputCustomParameters * * *");
     }
     static function OutputArrayOfCustomParameters($dataObjects)
     {
@@ -3091,23 +3042,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfCustomParameters * * *");
         foreach ($dataObjects->CustomParameters as $dataObject)
         {
             self::OutputCustomParameters($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfCustomParameters * * *");
     }
     static function OutputDate($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDate * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDate * * *");
             self::OutputStatusMessage(sprintf("Day: %s", $dataObject->Day));
             self::OutputStatusMessage(sprintf("Month: %s", $dataObject->Month));
             self::OutputStatusMessage(sprintf("Year: %s", $dataObject->Year));
+            self::OutputStatusMessage("* * * End OutputDate * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDate * * *");
     }
     static function OutputArrayOfDate($dataObjects)
     {
@@ -3115,25 +3064,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDate * * *");
         foreach ($dataObjects->Date as $dataObject)
         {
             self::OutputDate($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDate * * *");
     }
     static function OutputDayTime($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDayTime * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDayTime * * *");
             self::OutputStatusMessage(sprintf("Day: %s", $dataObject->Day));
             self::OutputStatusMessage(sprintf("EndHour: %s", $dataObject->EndHour));
             self::OutputStatusMessage(sprintf("EndMinute: %s", $dataObject->EndMinute));
             self::OutputStatusMessage(sprintf("StartHour: %s", $dataObject->StartHour));
             self::OutputStatusMessage(sprintf("StartMinute: %s", $dataObject->StartMinute));
+            self::OutputStatusMessage("* * * End OutputDayTime * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDayTime * * *");
     }
     static function OutputArrayOfDayTime($dataObjects)
     {
@@ -3141,25 +3088,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDayTime * * *");
         foreach ($dataObjects->DayTime as $dataObject)
         {
             self::OutputDayTime($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDayTime * * *");
     }
     static function OutputDayTimeCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDayTimeCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDayTimeCriterion * * *");
             self::OutputStatusMessage(sprintf("Day: %s", $dataObject->Day));
             self::OutputStatusMessage(sprintf("FromHour: %s", $dataObject->FromHour));
             self::OutputStatusMessage(sprintf("FromMinute: %s", $dataObject->FromMinute));
             self::OutputStatusMessage(sprintf("ToHour: %s", $dataObject->ToHour));
             self::OutputStatusMessage(sprintf("ToMinute: %s", $dataObject->ToMinute));
+            self::OutputStatusMessage("* * * End OutputDayTimeCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDayTimeCriterion * * *");
     }
     static function OutputArrayOfDayTimeCriterion($dataObjects)
     {
@@ -3167,22 +3112,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDayTimeCriterion * * *");
         foreach ($dataObjects->DayTimeCriterion as $dataObject)
         {
             self::OutputDayTimeCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDayTimeCriterion * * *");
     }
     static function OutputDeviceCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDeviceCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDeviceCriterion * * *");
             self::OutputStatusMessage(sprintf("DeviceName: %s", $dataObject->DeviceName));
             self::OutputStatusMessage(sprintf("OSName: %s", $dataObject->OSName));
+            self::OutputStatusMessage("* * * End OutputDeviceCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDeviceCriterion * * *");
     }
     static function OutputArrayOfDeviceCriterion($dataObjects)
     {
@@ -3190,21 +3133,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDeviceCriterion * * *");
         foreach ($dataObjects->DeviceCriterion as $dataObject)
         {
             self::OutputDeviceCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDeviceCriterion * * *");
     }
     static function OutputDurationGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDurationGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDurationGoal * * *");
             self::OutputStatusMessage(sprintf("MinimumDurationInSeconds: %s", $dataObject->MinimumDurationInSeconds));
+            self::OutputStatusMessage("* * * End OutputDurationGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDurationGoal * * *");
     }
     static function OutputArrayOfDurationGoal($dataObjects)
     {
@@ -3212,23 +3153,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDurationGoal * * *");
         foreach ($dataObjects->DurationGoal as $dataObject)
         {
             self::OutputDurationGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDurationGoal * * *");
     }
     static function OutputDynamicSearchAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDynamicSearchAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDynamicSearchAd * * *");
             self::OutputStatusMessage(sprintf("Path1: %s", $dataObject->Path1));
             self::OutputStatusMessage(sprintf("Path2: %s", $dataObject->Path2));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputDynamicSearchAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDynamicSearchAd * * *");
     }
     static function OutputArrayOfDynamicSearchAd($dataObjects)
     {
@@ -3236,24 +3175,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDynamicSearchAd * * *");
         foreach ($dataObjects->DynamicSearchAd as $dataObject)
         {
             self::OutputDynamicSearchAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDynamicSearchAd * * *");
     }
     static function OutputDynamicSearchAdsSetting($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputDynamicSearchAdsSetting * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputDynamicSearchAdsSetting * * *");
             self::OutputStatusMessage(sprintf("DomainName: %s", $dataObject->DomainName));
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage("PageFeedIds:");
             self::OutputArrayOfLong($dataObject->PageFeedIds);
             self::OutputStatusMessage(sprintf("Source: %s", $dataObject->Source));
+            self::OutputStatusMessage("* * * End OutputDynamicSearchAdsSetting * * *");
         }
-        self::OutputStatusMessage("* * * End OutputDynamicSearchAdsSetting * * *");
     }
     static function OutputArrayOfDynamicSearchAdsSetting($dataObjects)
     {
@@ -3261,23 +3199,24 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfDynamicSearchAdsSetting * * *");
         foreach ($dataObjects->DynamicSearchAdsSetting as $dataObject)
         {
             self::OutputDynamicSearchAdsSetting($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfDynamicSearchAdsSetting * * *");
     }
     static function OutputEditorialApiFaultDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEditorialApiFaultDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEditorialApiFaultDetail * * *");
+            self::OutputStatusMessage("BatchErrors:");
             self::OutputArrayOfBatchError($dataObject->BatchErrors);
+            self::OutputStatusMessage("EditorialErrors:");
             self::OutputArrayOfEditorialError($dataObject->EditorialErrors);
+            self::OutputStatusMessage("OperationErrors:");
             self::OutputArrayOfOperationError($dataObject->OperationErrors);
+            self::OutputStatusMessage("* * * End OutputEditorialApiFaultDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEditorialApiFaultDetail * * *");
     }
     static function OutputArrayOfEditorialApiFaultDetail($dataObjects)
     {
@@ -3285,25 +3224,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEditorialApiFaultDetail * * *");
         foreach ($dataObjects->EditorialApiFaultDetail as $dataObject)
         {
             self::OutputEditorialApiFaultDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEditorialApiFaultDetail * * *");
     }
     static function OutputEditorialError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEditorialError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEditorialError * * *");
             self::OutputStatusMessage(sprintf("Appealable: %s", $dataObject->Appealable));
             self::OutputStatusMessage(sprintf("DisapprovedText: %s", $dataObject->DisapprovedText));
             self::OutputStatusMessage(sprintf("Location: %s", $dataObject->Location));
             self::OutputStatusMessage(sprintf("PublisherCountry: %s", $dataObject->PublisherCountry));
             self::OutputStatusMessage(sprintf("ReasonCode: %s", $dataObject->ReasonCode));
+            self::OutputStatusMessage("* * * End OutputEditorialError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEditorialError * * *");
     }
     static function OutputArrayOfEditorialError($dataObjects)
     {
@@ -3316,25 +3253,23 @@ final class CampaignManagementExampleHelper {
             self::OutputEditorialError($dataObjects->EditorialError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEditorialError * * *");
         foreach ($dataObjects->EditorialError as $dataObject)
         {
             self::OutputEditorialError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEditorialError * * *");
     }
     static function OutputEditorialErrorCollection($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEditorialErrorCollection * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEditorialErrorCollection * * *");
             self::OutputStatusMessage(sprintf("Appealable: %s", $dataObject->Appealable));
             self::OutputStatusMessage(sprintf("DisapprovedText: %s", $dataObject->DisapprovedText));
             self::OutputStatusMessage(sprintf("Location: %s", $dataObject->Location));
             self::OutputStatusMessage(sprintf("PublisherCountry: %s", $dataObject->PublisherCountry));
             self::OutputStatusMessage(sprintf("ReasonCode: %s", $dataObject->ReasonCode));
+            self::OutputStatusMessage("* * * End OutputEditorialErrorCollection * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEditorialErrorCollection * * *");
     }
     static function OutputArrayOfEditorialErrorCollection($dataObjects)
     {
@@ -3347,24 +3282,23 @@ final class CampaignManagementExampleHelper {
             self::OutputEditorialErrorCollection($dataObjects->EditorialErrorCollection);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEditorialErrorCollection * * *");
         foreach ($dataObjects->EditorialErrorCollection as $dataObject)
         {
             self::OutputEditorialErrorCollection($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEditorialErrorCollection * * *");
     }
     static function OutputEditorialReason($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEditorialReason * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEditorialReason * * *");
             self::OutputStatusMessage(sprintf("Location: %s", $dataObject->Location));
+            self::OutputStatusMessage("PublisherCountries:");
             self::OutputArrayOfString($dataObject->PublisherCountries);
             self::OutputStatusMessage(sprintf("ReasonCode: %s", $dataObject->ReasonCode));
             self::OutputStatusMessage(sprintf("Term: %s", $dataObject->Term));
+            self::OutputStatusMessage("* * * End OutputEditorialReason * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEditorialReason * * *");
     }
     static function OutputArrayOfEditorialReason($dataObjects)
     {
@@ -3372,24 +3306,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEditorialReason * * *");
         foreach ($dataObjects->EditorialReason as $dataObject)
         {
             self::OutputEditorialReason($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEditorialReason * * *");
     }
     static function OutputEditorialReasonCollection($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEditorialReasonCollection * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEditorialReasonCollection * * *");
             self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
             self::OutputStatusMessage(sprintf("AdOrKeywordId: %s", $dataObject->AdOrKeywordId));
             self::OutputStatusMessage(sprintf("AppealStatus: %s", $dataObject->AppealStatus));
+            self::OutputStatusMessage("Reasons:");
             self::OutputArrayOfEditorialReason($dataObject->Reasons);
+            self::OutputStatusMessage("* * * End OutputEditorialReasonCollection * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEditorialReasonCollection * * *");
     }
     static function OutputArrayOfEditorialReasonCollection($dataObjects)
     {
@@ -3397,20 +3330,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEditorialReasonCollection * * *");
         foreach ($dataObjects->EditorialReasonCollection as $dataObject)
         {
             self::OutputEditorialReasonCollection($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEditorialReasonCollection * * *");
     }
     static function OutputEnhancedCpcBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEnhancedCpcBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEnhancedCpcBiddingScheme * * *");
+            self::OutputStatusMessage("* * * End OutputEnhancedCpcBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEnhancedCpcBiddingScheme * * *");
     }
     static function OutputArrayOfEnhancedCpcBiddingScheme($dataObjects)
     {
@@ -3418,22 +3349,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEnhancedCpcBiddingScheme * * *");
         foreach ($dataObjects->EnhancedCpcBiddingScheme as $dataObject)
         {
             self::OutputEnhancedCpcBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEnhancedCpcBiddingScheme * * *");
     }
     static function OutputEntityIdToParentIdAssociation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEntityIdToParentIdAssociation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEntityIdToParentIdAssociation * * *");
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
             self::OutputStatusMessage(sprintf("ParentId: %s", $dataObject->ParentId));
+            self::OutputStatusMessage("* * * End OutputEntityIdToParentIdAssociation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEntityIdToParentIdAssociation * * *");
     }
     static function OutputArrayOfEntityIdToParentIdAssociation($dataObjects)
     {
@@ -3441,23 +3370,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEntityIdToParentIdAssociation * * *");
         foreach ($dataObjects->EntityIdToParentIdAssociation as $dataObject)
         {
             self::OutputEntityIdToParentIdAssociation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEntityIdToParentIdAssociation * * *");
     }
     static function OutputEntityNegativeKeyword($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEntityNegativeKeyword * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEntityNegativeKeyword * * *");
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
             self::OutputStatusMessage(sprintf("EntityType: %s", $dataObject->EntityType));
+            self::OutputStatusMessage("NegativeKeywords:");
             self::OutputArrayOfNegativeKeyword($dataObject->NegativeKeywords);
+            self::OutputStatusMessage("* * * End OutputEntityNegativeKeyword * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEntityNegativeKeyword * * *");
     }
     static function OutputArrayOfEntityNegativeKeyword($dataObjects)
     {
@@ -3465,18 +3393,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEntityNegativeKeyword * * *");
         foreach ($dataObjects->EntityNegativeKeyword as $dataObject)
         {
             self::OutputEntityNegativeKeyword($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEntityNegativeKeyword * * *");
     }
     static function OutputEventGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputEventGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputEventGoal * * *");
             self::OutputStatusMessage(sprintf("ActionExpression: %s", $dataObject->ActionExpression));
             self::OutputStatusMessage(sprintf("ActionOperator: %s", $dataObject->ActionOperator));
             self::OutputStatusMessage(sprintf("CategoryExpression: %s", $dataObject->CategoryExpression));
@@ -3485,8 +3411,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("LabelOperator: %s", $dataObject->LabelOperator));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
             self::OutputStatusMessage(sprintf("ValueOperator: %s", $dataObject->ValueOperator));
+            self::OutputStatusMessage("* * * End OutputEventGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputEventGoal * * *");
     }
     static function OutputArrayOfEventGoal($dataObjects)
     {
@@ -3494,18 +3420,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEventGoal * * *");
         foreach ($dataObjects->EventGoal as $dataObject)
         {
             self::OutputEventGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfEventGoal * * *");
     }
     static function OutputExpandedTextAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputExpandedTextAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputExpandedTextAd * * *");
             self::OutputStatusMessage(sprintf("Domain: %s", $dataObject->Domain));
             self::OutputStatusMessage(sprintf("Path1: %s", $dataObject->Path1));
             self::OutputStatusMessage(sprintf("Path2: %s", $dataObject->Path2));
@@ -3514,8 +3438,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("TitlePart1: %s", $dataObject->TitlePart1));
             self::OutputStatusMessage(sprintf("TitlePart2: %s", $dataObject->TitlePart2));
             self::OutputStatusMessage(sprintf("TitlePart3: %s", $dataObject->TitlePart3));
+            self::OutputStatusMessage("* * * End OutputExpandedTextAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputExpandedTextAd * * *");
     }
     static function OutputArrayOfExpandedTextAd($dataObjects)
     {
@@ -3523,29 +3447,29 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfExpandedTextAd * * *");
         foreach ($dataObjects->ExpandedTextAd as $dataObject)
         {
             self::OutputExpandedTextAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfExpandedTextAd * * *");
     }
     static function OutputExperiment($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputExperiment * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputExperiment * * *");
             self::OutputStatusMessage(sprintf("BaseCampaignId: %s", $dataObject->BaseCampaignId));
+            self::OutputStatusMessage("EndDate:");
             self::OutputDate($dataObject->EndDate);
             self::OutputStatusMessage(sprintf("ExperimentCampaignId: %s", $dataObject->ExperimentCampaignId));
             self::OutputStatusMessage(sprintf("ExperimentStatus: %s", $dataObject->ExperimentStatus));
             self::OutputStatusMessage(sprintf("ExperimentType: %s", $dataObject->ExperimentType));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage("StartDate:");
             self::OutputDate($dataObject->StartDate);
             self::OutputStatusMessage(sprintf("TrafficSplitPercent: %s", $dataObject->TrafficSplitPercent));
+            self::OutputStatusMessage("* * * End OutputExperiment * * *");
         }
-        self::OutputStatusMessage("* * * End OutputExperiment * * *");
     }
     static function OutputArrayOfExperiment($dataObjects)
     {
@@ -3553,21 +3477,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfExperiment * * *");
         foreach ($dataObjects->Experiment as $dataObject)
         {
             self::OutputExperiment($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfExperiment * * *");
     }
     static function OutputFixedBid($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputFixedBid * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputFixedBid * * *");
             self::OutputStatusMessage(sprintf("Amount: %s", $dataObject->Amount));
+            self::OutputStatusMessage("* * * End OutputFixedBid * * *");
         }
-        self::OutputStatusMessage("* * * End OutputFixedBid * * *");
     }
     static function OutputArrayOfFixedBid($dataObjects)
     {
@@ -3575,21 +3497,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfFixedBid * * *");
         foreach ($dataObjects->FixedBid as $dataObject)
         {
             self::OutputFixedBid($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfFixedBid * * *");
     }
     static function OutputGenderCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputGenderCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputGenderCriterion * * *");
             self::OutputStatusMessage(sprintf("GenderType: %s", $dataObject->GenderType));
+            self::OutputStatusMessage("* * * End OutputGenderCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputGenderCriterion * * *");
     }
     static function OutputArrayOfGenderCriterion($dataObjects)
     {
@@ -3597,22 +3517,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfGenderCriterion * * *");
         foreach ($dataObjects->GenderCriterion as $dataObject)
         {
             self::OutputGenderCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfGenderCriterion * * *");
     }
     static function OutputGeoPoint($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputGeoPoint * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputGeoPoint * * *");
             self::OutputStatusMessage(sprintf("LatitudeInMicroDegrees: %s", $dataObject->LatitudeInMicroDegrees));
             self::OutputStatusMessage(sprintf("LongitudeInMicroDegrees: %s", $dataObject->LongitudeInMicroDegrees));
+            self::OutputStatusMessage("* * * End OutputGeoPoint * * *");
         }
-        self::OutputStatusMessage("* * * End OutputGeoPoint * * *");
     }
     static function OutputArrayOfGeoPoint($dataObjects)
     {
@@ -3620,21 +3538,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfGeoPoint * * *");
         foreach ($dataObjects->GeoPoint as $dataObject)
         {
             self::OutputGeoPoint($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfGeoPoint * * *");
     }
     static function OutputIdCollection($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputIdCollection * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputIdCollection * * *");
+            self::OutputStatusMessage("Ids:");
             self::OutputArrayOfLong($dataObject->Ids);
+            self::OutputStatusMessage("* * * End OutputIdCollection * * *");
         }
-        self::OutputStatusMessage("* * * End OutputIdCollection * * *");
     }
     static function OutputArrayOfIdCollection($dataObjects)
     {
@@ -3642,21 +3559,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfIdCollection * * *");
         foreach ($dataObjects->IdCollection as $dataObject)
         {
             self::OutputIdCollection($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfIdCollection * * *");
     }
     static function OutputImage($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputImage * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputImage * * *");
             self::OutputStatusMessage(sprintf("Data: %s", $dataObject->Data));
+            self::OutputStatusMessage("* * * End OutputImage * * *");
         }
-        self::OutputStatusMessage("* * * End OutputImage * * *");
     }
     static function OutputArrayOfImage($dataObjects)
     {
@@ -3664,29 +3579,32 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfImage * * *");
         foreach ($dataObjects->Image as $dataObject)
         {
             self::OutputImage($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfImage * * *");
     }
     static function OutputImageAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputImageAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputImageAdExtension * * *");
             self::OutputStatusMessage(sprintf("AlternativeText: %s", $dataObject->AlternativeText));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
             self::OutputStatusMessage(sprintf("DestinationUrl: %s", $dataObject->DestinationUrl));
+            self::OutputStatusMessage("FinalAppUrls:");
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
+            self::OutputStatusMessage("ImageMediaIds:");
             self::OutputArrayOfLong($dataObject->ImageMediaIds);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputImageAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputImageAdExtension * * *");
     }
     static function OutputArrayOfImageAdExtension($dataObjects)
     {
@@ -3694,25 +3612,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfImageAdExtension * * *");
         foreach ($dataObjects->ImageAdExtension as $dataObject)
         {
             self::OutputImageAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfImageAdExtension * * *");
     }
     static function OutputImageAsset($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputImageAsset * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputImageAsset * * *");
             self::OutputStatusMessage(sprintf("CropHeight: %s", $dataObject->CropHeight));
             self::OutputStatusMessage(sprintf("CropWidth: %s", $dataObject->CropWidth));
             self::OutputStatusMessage(sprintf("CropX: %s", $dataObject->CropX));
             self::OutputStatusMessage(sprintf("CropY: %s", $dataObject->CropY));
             self::OutputStatusMessage(sprintf("SubType: %s", $dataObject->SubType));
+            self::OutputStatusMessage("* * * End OutputImageAsset * * *");
         }
-        self::OutputStatusMessage("* * * End OutputImageAsset * * *");
     }
     static function OutputArrayOfImageAsset($dataObjects)
     {
@@ -3720,22 +3636,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfImageAsset * * *");
         foreach ($dataObjects->ImageAsset as $dataObject)
         {
             self::OutputImageAsset($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfImageAsset * * *");
     }
     static function OutputImageMediaRepresentation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputImageMediaRepresentation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputImageMediaRepresentation * * *");
             self::OutputStatusMessage(sprintf("Height: %s", $dataObject->Height));
             self::OutputStatusMessage(sprintf("Width: %s", $dataObject->Width));
+            self::OutputStatusMessage("* * * End OutputImageMediaRepresentation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputImageMediaRepresentation * * *");
     }
     static function OutputArrayOfImageMediaRepresentation($dataObjects)
     {
@@ -3743,21 +3657,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfImageMediaRepresentation * * *");
         foreach ($dataObjects->ImageMediaRepresentation as $dataObject)
         {
             self::OutputImageMediaRepresentation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfImageMediaRepresentation * * *");
     }
     static function OutputInheritFromParentBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputInheritFromParentBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputInheritFromParentBiddingScheme * * *");
             self::OutputStatusMessage(sprintf("InheritedBidStrategyType: %s", $dataObject->InheritedBidStrategyType));
+            self::OutputStatusMessage("* * * End OutputInheritFromParentBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputInheritFromParentBiddingScheme * * *");
     }
     static function OutputArrayOfInheritFromParentBiddingScheme($dataObjects)
     {
@@ -3765,20 +3677,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfInheritFromParentBiddingScheme * * *");
         foreach ($dataObjects->InheritFromParentBiddingScheme as $dataObject)
         {
             self::OutputInheritFromParentBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfInheritFromParentBiddingScheme * * *");
     }
     static function OutputInMarketAudience($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputInMarketAudience * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputInMarketAudience * * *");
+            self::OutputStatusMessage("* * * End OutputInMarketAudience * * *");
         }
-        self::OutputStatusMessage("* * * End OutputInMarketAudience * * *");
     }
     static function OutputArrayOfInMarketAudience($dataObjects)
     {
@@ -3786,20 +3696,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfInMarketAudience * * *");
         foreach ($dataObjects->InMarketAudience as $dataObject)
         {
             self::OutputInMarketAudience($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfInMarketAudience * * *");
     }
     static function OutputInStoreTransactionGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputInStoreTransactionGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputInStoreTransactionGoal * * *");
+            self::OutputStatusMessage("* * * End OutputInStoreTransactionGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputInStoreTransactionGoal * * *");
     }
     static function OutputArrayOfInStoreTransactionGoal($dataObjects)
     {
@@ -3807,22 +3715,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfInStoreTransactionGoal * * *");
         foreach ($dataObjects->InStoreTransactionGoal as $dataObject)
         {
             self::OutputInStoreTransactionGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfInStoreTransactionGoal * * *");
     }
     static function OutputKeyValuePairOfstringstring($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeyValuePairOfstringstring * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeyValuePairOfstringstring * * *");
             self::OutputStatusMessage(sprintf("key: %s", $dataObject->key));
             self::OutputStatusMessage(sprintf("value: %s", $dataObject->value));
+            self::OutputStatusMessage("* * * End OutputKeyValuePairOfstringstring * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeyValuePairOfstringstring * * *");
     }
     static function OutputArrayOfKeyValuePairOfstringstring($dataObjects)
     {
@@ -3830,25 +3736,29 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeyValuePairOfstringstring * * *");
         foreach ($dataObjects->KeyValuePairOfstringstring as $dataObject)
         {
             self::OutputKeyValuePairOfstringstring($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeyValuePairOfstringstring * * *");
     }
     static function OutputKeyword($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputKeyword * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputKeyword * * *");
+            self::OutputStatusMessage("Bid:");
             self::OutputBid($dataObject->Bid);
+            self::OutputStatusMessage("BiddingScheme:");
             self::OutputBiddingScheme($dataObject->BiddingScheme);
             self::OutputStatusMessage(sprintf("DestinationUrl: %s", $dataObject->DestinationUrl));
             self::OutputStatusMessage(sprintf("EditorialStatus: %s", $dataObject->EditorialStatus));
+            self::OutputStatusMessage("FinalAppUrls:");
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
@@ -3858,9 +3768,10 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputKeyword * * *");
         }
-        self::OutputStatusMessage("* * * End OutputKeyword * * *");
     }
     static function OutputArrayOfKeyword($dataObjects)
     {
@@ -3868,24 +3779,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfKeyword * * *");
         foreach ($dataObjects->Keyword as $dataObject)
         {
             self::OutputKeyword($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfKeyword * * *");
     }
     static function OutputLabel($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLabel * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLabel * * *");
             self::OutputStatusMessage(sprintf("ColorCode: %s", $dataObject->ColorCode));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage("* * * End OutputLabel * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLabel * * *");
     }
     static function OutputArrayOfLabel($dataObjects)
     {
@@ -3893,22 +3802,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLabel * * *");
         foreach ($dataObjects->Label as $dataObject)
         {
             self::OutputLabel($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLabel * * *");
     }
     static function OutputLabelAssociation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLabelAssociation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLabelAssociation * * *");
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
             self::OutputStatusMessage(sprintf("LabelId: %s", $dataObject->LabelId));
+            self::OutputStatusMessage("* * * End OutputLabelAssociation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLabelAssociation * * *");
     }
     static function OutputArrayOfLabelAssociation($dataObjects)
     {
@@ -3916,25 +3823,25 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLabelAssociation * * *");
         foreach ($dataObjects->LabelAssociation as $dataObject)
         {
             self::OutputLabelAssociation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLabelAssociation * * *");
     }
     static function OutputLocationAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLocationAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLocationAdExtension * * *");
+            self::OutputStatusMessage("Address:");
             self::OutputAddress($dataObject->Address);
             self::OutputStatusMessage(sprintf("CompanyName: %s", $dataObject->CompanyName));
             self::OutputStatusMessage(sprintf("GeoCodeStatus: %s", $dataObject->GeoCodeStatus));
+            self::OutputStatusMessage("GeoPoint:");
             self::OutputGeoPoint($dataObject->GeoPoint);
             self::OutputStatusMessage(sprintf("PhoneNumber: %s", $dataObject->PhoneNumber));
+            self::OutputStatusMessage("* * * End OutputLocationAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLocationAdExtension * * *");
     }
     static function OutputArrayOfLocationAdExtension($dataObjects)
     {
@@ -3942,24 +3849,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLocationAdExtension * * *");
         foreach ($dataObjects->LocationAdExtension as $dataObject)
         {
             self::OutputLocationAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLocationAdExtension * * *");
     }
     static function OutputLocationCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLocationCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLocationCriterion * * *");
             self::OutputStatusMessage(sprintf("DisplayName: %s", $dataObject->DisplayName));
+            self::OutputStatusMessage("EnclosedLocationIds:");
             self::OutputArrayOfLong($dataObject->EnclosedLocationIds);
             self::OutputStatusMessage(sprintf("LocationId: %s", $dataObject->LocationId));
             self::OutputStatusMessage(sprintf("LocationType: %s", $dataObject->LocationType));
+            self::OutputStatusMessage("* * * End OutputLocationCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLocationCriterion * * *");
     }
     static function OutputArrayOfLocationCriterion($dataObjects)
     {
@@ -3967,21 +3873,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLocationCriterion * * *");
         foreach ($dataObjects->LocationCriterion as $dataObject)
         {
             self::OutputLocationCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLocationCriterion * * *");
     }
     static function OutputLocationIntentCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputLocationIntentCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputLocationIntentCriterion * * *");
             self::OutputStatusMessage(sprintf("IntentOption: %s", $dataObject->IntentOption));
+            self::OutputStatusMessage("* * * End OutputLocationIntentCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputLocationIntentCriterion * * *");
     }
     static function OutputArrayOfLocationIntentCriterion($dataObjects)
     {
@@ -3989,20 +3893,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfLocationIntentCriterion * * *");
         foreach ($dataObjects->LocationIntentCriterion as $dataObject)
         {
             self::OutputLocationIntentCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfLocationIntentCriterion * * *");
     }
     static function OutputManualCpcBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputManualCpcBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputManualCpcBiddingScheme * * *");
+            self::OutputStatusMessage("* * * End OutputManualCpcBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputManualCpcBiddingScheme * * *");
     }
     static function OutputArrayOfManualCpcBiddingScheme($dataObjects)
     {
@@ -4010,21 +3912,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfManualCpcBiddingScheme * * *");
         foreach ($dataObjects->ManualCpcBiddingScheme as $dataObject)
         {
             self::OutputManualCpcBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfManualCpcBiddingScheme * * *");
     }
     static function OutputMaxClicksBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMaxClicksBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMaxClicksBiddingScheme * * *");
+            self::OutputStatusMessage("MaxCpc:");
             self::OutputBid($dataObject->MaxCpc);
+            self::OutputStatusMessage("* * * End OutputMaxClicksBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMaxClicksBiddingScheme * * *");
     }
     static function OutputArrayOfMaxClicksBiddingScheme($dataObjects)
     {
@@ -4032,21 +3933,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMaxClicksBiddingScheme * * *");
         foreach ($dataObjects->MaxClicksBiddingScheme as $dataObject)
         {
             self::OutputMaxClicksBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMaxClicksBiddingScheme * * *");
     }
     static function OutputMaxConversionsBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMaxConversionsBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMaxConversionsBiddingScheme * * *");
+            self::OutputStatusMessage("MaxCpc:");
             self::OutputBid($dataObject->MaxCpc);
+            self::OutputStatusMessage("* * * End OutputMaxConversionsBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMaxConversionsBiddingScheme * * *");
     }
     static function OutputArrayOfMaxConversionsBiddingScheme($dataObjects)
     {
@@ -4054,18 +3954,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMaxConversionsBiddingScheme * * *");
         foreach ($dataObjects->MaxConversionsBiddingScheme as $dataObject)
         {
             self::OutputMaxConversionsBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMaxConversionsBiddingScheme * * *");
     }
     static function OutputMedia($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMedia * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMedia * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MediaType: %s", $dataObject->MediaType));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
@@ -4073,8 +3971,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputImage($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputMedia * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMedia * * *");
     }
     static function OutputArrayOfMedia($dataObjects)
     {
@@ -4082,23 +3980,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMedia * * *");
         foreach ($dataObjects->Media as $dataObject)
         {
             self::OutputMedia($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMedia * * *");
     }
     static function OutputMediaAssociation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMediaAssociation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMediaAssociation * * *");
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
             self::OutputStatusMessage(sprintf("MediaEnabledEntity: %s", $dataObject->MediaEnabledEntity));
             self::OutputStatusMessage(sprintf("MediaId: %s", $dataObject->MediaId));
+            self::OutputStatusMessage("* * * End OutputMediaAssociation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMediaAssociation * * *");
     }
     static function OutputArrayOfMediaAssociation($dataObjects)
     {
@@ -4106,24 +4002,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMediaAssociation * * *");
         foreach ($dataObjects->MediaAssociation as $dataObject)
         {
             self::OutputMediaAssociation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMediaAssociation * * *");
     }
     static function OutputMediaMetaData($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMediaMetaData * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMediaMetaData * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MediaType: %s", $dataObject->MediaType));
+            self::OutputStatusMessage("Representations:");
             self::OutputArrayOfMediaRepresentation($dataObject->Representations);
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage("* * * End OutputMediaMetaData * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMediaMetaData * * *");
     }
     static function OutputArrayOfMediaMetaData($dataObjects)
     {
@@ -4131,18 +4026,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMediaMetaData * * *");
         foreach ($dataObjects->MediaMetaData as $dataObject)
         {
             self::OutputMediaMetaData($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMediaMetaData * * *");
     }
     static function OutputMediaRepresentation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMediaRepresentation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMediaRepresentation * * *");
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             self::OutputStatusMessage(sprintf("Url: %s", $dataObject->Url));
@@ -4150,8 +4043,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputImageMediaRepresentation($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputMediaRepresentation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMediaRepresentation * * *");
     }
     static function OutputArrayOfMediaRepresentation($dataObjects)
     {
@@ -4159,23 +4052,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMediaRepresentation * * *");
         foreach ($dataObjects->MediaRepresentation as $dataObject)
         {
             self::OutputMediaRepresentation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMediaRepresentation * * *");
     }
     static function OutputMigrationStatusInfo($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputMigrationStatusInfo * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputMigrationStatusInfo * * *");
             self::OutputStatusMessage(sprintf("MigrationType: %s", $dataObject->MigrationType));
             self::OutputStatusMessage(sprintf("StartTimeInUtc: %s", $dataObject->StartTimeInUtc));
             self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage("* * * End OutputMigrationStatusInfo * * *");
         }
-        self::OutputStatusMessage("* * * End OutputMigrationStatusInfo * * *");
     }
     static function OutputArrayOfMigrationStatusInfo($dataObjects)
     {
@@ -4183,20 +4074,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfMigrationStatusInfo * * *");
         foreach ($dataObjects->MigrationStatusInfo as $dataObject)
         {
             self::OutputMigrationStatusInfo($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfMigrationStatusInfo * * *");
     }
     static function OutputNegativeAdGroupCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNegativeAdGroupCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNegativeAdGroupCriterion * * *");
+            self::OutputStatusMessage("* * * End OutputNegativeAdGroupCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNegativeAdGroupCriterion * * *");
     }
     static function OutputArrayOfNegativeAdGroupCriterion($dataObjects)
     {
@@ -4204,20 +4093,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNegativeAdGroupCriterion * * *");
         foreach ($dataObjects->NegativeAdGroupCriterion as $dataObject)
         {
             self::OutputNegativeAdGroupCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNegativeAdGroupCriterion * * *");
     }
     static function OutputNegativeCampaignCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNegativeCampaignCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNegativeCampaignCriterion * * *");
+            self::OutputStatusMessage("* * * End OutputNegativeCampaignCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNegativeCampaignCriterion * * *");
     }
     static function OutputArrayOfNegativeCampaignCriterion($dataObjects)
     {
@@ -4225,23 +4112,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNegativeCampaignCriterion * * *");
         foreach ($dataObjects->NegativeCampaignCriterion as $dataObject)
         {
             self::OutputNegativeCampaignCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNegativeCampaignCriterion * * *");
     }
     static function OutputNegativeKeyword($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNegativeKeyword * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNegativeKeyword * * *");
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("MatchType: %s", $dataObject->MatchType));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputNegativeKeyword * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNegativeKeyword * * *");
     }
     static function OutputArrayOfNegativeKeyword($dataObjects)
     {
@@ -4249,20 +4134,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNegativeKeyword * * *");
         foreach ($dataObjects->NegativeKeyword as $dataObject)
         {
             self::OutputNegativeKeyword($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNegativeKeyword * * *");
     }
     static function OutputNegativeKeywordList($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputNegativeKeywordList * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputNegativeKeywordList * * *");
+            self::OutputStatusMessage("* * * End OutputNegativeKeywordList * * *");
         }
-        self::OutputStatusMessage("* * * End OutputNegativeKeywordList * * *");
     }
     static function OutputArrayOfNegativeKeywordList($dataObjects)
     {
@@ -4270,25 +4153,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfNegativeKeywordList * * *");
         foreach ($dataObjects->NegativeKeywordList as $dataObject)
         {
             self::OutputNegativeKeywordList($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfNegativeKeywordList * * *");
     }
     static function OutputOfflineConversion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOfflineConversion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOfflineConversion * * *");
             self::OutputStatusMessage(sprintf("ConversionCurrencyCode: %s", $dataObject->ConversionCurrencyCode));
             self::OutputStatusMessage(sprintf("ConversionName: %s", $dataObject->ConversionName));
             self::OutputStatusMessage(sprintf("ConversionTime: %s", $dataObject->ConversionTime));
             self::OutputStatusMessage(sprintf("ConversionValue: %s", $dataObject->ConversionValue));
             self::OutputStatusMessage(sprintf("MicrosoftClickId: %s", $dataObject->MicrosoftClickId));
+            self::OutputStatusMessage("* * * End OutputOfflineConversion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOfflineConversion * * *");
     }
     static function OutputArrayOfOfflineConversion($dataObjects)
     {
@@ -4296,20 +4177,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOfflineConversion * * *");
         foreach ($dataObjects->OfflineConversion as $dataObject)
         {
             self::OutputOfflineConversion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOfflineConversion * * *");
     }
     static function OutputOfflineConversionGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOfflineConversionGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOfflineConversionGoal * * *");
+            self::OutputStatusMessage("* * * End OutputOfflineConversionGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOfflineConversionGoal * * *");
     }
     static function OutputArrayOfOfflineConversionGoal($dataObjects)
     {
@@ -4317,24 +4196,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOfflineConversionGoal * * *");
         foreach ($dataObjects->OfflineConversionGoal as $dataObject)
         {
             self::OutputOfflineConversionGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOfflineConversionGoal * * *");
     }
     static function OutputOperationError($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
             self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
             self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
             self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
             self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage("* * * End OutputOperationError * * *");
         }
-        self::OutputStatusMessage("* * * End OutputOperationError * * *");
     }
     static function OutputArrayOfOperationError($dataObjects)
     {
@@ -4347,21 +4224,19 @@ final class CampaignManagementExampleHelper {
             self::OutputOperationError($dataObjects->OperationError);
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfOperationError * * *");
         foreach ($dataObjects->OperationError as $dataObject)
         {
             self::OutputOperationError($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfOperationError * * *");
     }
     static function OutputPagesViewedPerVisitGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPagesViewedPerVisitGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPagesViewedPerVisitGoal * * *");
             self::OutputStatusMessage(sprintf("MinimumPagesViewed: %s", $dataObject->MinimumPagesViewed));
+            self::OutputStatusMessage("* * * End OutputPagesViewedPerVisitGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPagesViewedPerVisitGoal * * *");
     }
     static function OutputArrayOfPagesViewedPerVisitGoal($dataObjects)
     {
@@ -4369,21 +4244,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPagesViewedPerVisitGoal * * *");
         foreach ($dataObjects->PagesViewedPerVisitGoal as $dataObject)
         {
             self::OutputPagesViewedPerVisitGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPagesViewedPerVisitGoal * * *");
     }
     static function OutputPageVisitorsRule($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPageVisitorsRule * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPageVisitorsRule * * *");
+            self::OutputStatusMessage("RuleItemGroups:");
             self::OutputArrayOfRuleItemGroup($dataObject->RuleItemGroups);
+            self::OutputStatusMessage("* * * End OutputPageVisitorsRule * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPageVisitorsRule * * *");
     }
     static function OutputArrayOfPageVisitorsRule($dataObjects)
     {
@@ -4391,22 +4265,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPageVisitorsRule * * *");
         foreach ($dataObjects->PageVisitorsRule as $dataObject)
         {
             self::OutputPageVisitorsRule($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPageVisitorsRule * * *");
     }
     static function OutputPageVisitorsWhoDidNotVisitAnotherPageRule($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPageVisitorsWhoDidNotVisitAnotherPageRule * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPageVisitorsWhoDidNotVisitAnotherPageRule * * *");
+            self::OutputStatusMessage("ExcludeRuleItemGroups:");
             self::OutputArrayOfRuleItemGroup($dataObject->ExcludeRuleItemGroups);
+            self::OutputStatusMessage("IncludeRuleItemGroups:");
             self::OutputArrayOfRuleItemGroup($dataObject->IncludeRuleItemGroups);
+            self::OutputStatusMessage("* * * End OutputPageVisitorsWhoDidNotVisitAnotherPageRule * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPageVisitorsWhoDidNotVisitAnotherPageRule * * *");
     }
     static function OutputArrayOfPageVisitorsWhoDidNotVisitAnotherPageRule($dataObjects)
     {
@@ -4414,22 +4288,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPageVisitorsWhoDidNotVisitAnotherPageRule * * *");
         foreach ($dataObjects->PageVisitorsWhoDidNotVisitAnotherPageRule as $dataObject)
         {
             self::OutputPageVisitorsWhoDidNotVisitAnotherPageRule($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPageVisitorsWhoDidNotVisitAnotherPageRule * * *");
     }
     static function OutputPageVisitorsWhoVisitedAnotherPageRule($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPageVisitorsWhoVisitedAnotherPageRule * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPageVisitorsWhoVisitedAnotherPageRule * * *");
+            self::OutputStatusMessage("AnotherRuleItemGroups:");
             self::OutputArrayOfRuleItemGroup($dataObject->AnotherRuleItemGroups);
+            self::OutputStatusMessage("RuleItemGroups:");
             self::OutputArrayOfRuleItemGroup($dataObject->RuleItemGroups);
+            self::OutputStatusMessage("* * * End OutputPageVisitorsWhoVisitedAnotherPageRule * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPageVisitorsWhoVisitedAnotherPageRule * * *");
     }
     static function OutputArrayOfPageVisitorsWhoVisitedAnotherPageRule($dataObjects)
     {
@@ -4437,22 +4311,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPageVisitorsWhoVisitedAnotherPageRule * * *");
         foreach ($dataObjects->PageVisitorsWhoVisitedAnotherPageRule as $dataObject)
         {
             self::OutputPageVisitorsWhoVisitedAnotherPageRule($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPageVisitorsWhoVisitedAnotherPageRule * * *");
     }
     static function OutputPaging($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPaging * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPaging * * *");
             self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
             self::OutputStatusMessage(sprintf("Size: %s", $dataObject->Size));
+            self::OutputStatusMessage("* * * End OutputPaging * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPaging * * *");
     }
     static function OutputArrayOfPaging($dataObjects)
     {
@@ -4460,25 +4332,25 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPaging * * *");
         foreach ($dataObjects->Paging as $dataObject)
         {
             self::OutputPaging($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPaging * * *");
     }
     static function OutputPriceAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPriceAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPriceAdExtension * * *");
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage(sprintf("PriceExtensionType: %s", $dataObject->PriceExtensionType));
+            self::OutputStatusMessage("TableRows:");
             self::OutputArrayOfPriceTableRow($dataObject->TableRows);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputPriceAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPriceAdExtension * * *");
     }
     static function OutputArrayOfPriceAdExtension($dataObjects)
     {
@@ -4486,21 +4358,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPriceAdExtension * * *");
         foreach ($dataObjects->PriceAdExtension as $dataObject)
         {
             self::OutputPriceAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPriceAdExtension * * *");
     }
     static function OutputPriceTableRow($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputPriceTableRow * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputPriceTableRow * * *");
             self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("Header: %s", $dataObject->Header));
             self::OutputStatusMessage(sprintf("Price: %s", $dataObject->Price));
@@ -4508,8 +4380,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("PriceUnit: %s", $dataObject->PriceUnit));
             self::OutputStatusMessage(sprintf("TermsAndConditions: %s", $dataObject->TermsAndConditions));
             self::OutputStatusMessage(sprintf("TermsAndConditionsUrl: %s", $dataObject->TermsAndConditionsUrl));
+            self::OutputStatusMessage("* * * End OutputPriceTableRow * * *");
         }
-        self::OutputStatusMessage("* * * End OutputPriceTableRow * * *");
     }
     static function OutputArrayOfPriceTableRow($dataObjects)
     {
@@ -4517,21 +4389,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfPriceTableRow * * *");
         foreach ($dataObjects->PriceTableRow as $dataObject)
         {
             self::OutputPriceTableRow($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfPriceTableRow * * *");
     }
     static function OutputProductAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputProductAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputProductAd * * *");
             self::OutputStatusMessage(sprintf("PromotionalText: %s", $dataObject->PromotionalText));
+            self::OutputStatusMessage("* * * End OutputProductAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputProductAd * * *");
     }
     static function OutputArrayOfProductAd($dataObjects)
     {
@@ -4539,22 +4409,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfProductAd * * *");
         foreach ($dataObjects->ProductAd as $dataObject)
         {
             self::OutputProductAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfProductAd * * *");
     }
     static function OutputProductAudience($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputProductAudience * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputProductAudience * * *");
             self::OutputStatusMessage(sprintf("ProductAudienceType: %s", $dataObject->ProductAudienceType));
             self::OutputStatusMessage(sprintf("TagId: %s", $dataObject->TagId));
+            self::OutputStatusMessage("* * * End OutputProductAudience * * *");
         }
-        self::OutputStatusMessage("* * * End OutputProductAudience * * *");
     }
     static function OutputArrayOfProductAudience($dataObjects)
     {
@@ -4562,22 +4430,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfProductAudience * * *");
         foreach ($dataObjects->ProductAudience as $dataObject)
         {
             self::OutputProductAudience($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfProductAudience * * *");
     }
     static function OutputProductCondition($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputProductCondition * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputProductCondition * * *");
             self::OutputStatusMessage(sprintf("Attribute: %s", $dataObject->Attribute));
             self::OutputStatusMessage(sprintf("Operand: %s", $dataObject->Operand));
+            self::OutputStatusMessage("* * * End OutputProductCondition * * *");
         }
-        self::OutputStatusMessage("* * * End OutputProductCondition * * *");
     }
     static function OutputArrayOfProductCondition($dataObjects)
     {
@@ -4585,23 +4451,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfProductCondition * * *");
         foreach ($dataObjects->ProductCondition as $dataObject)
         {
             self::OutputProductCondition($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfProductCondition * * *");
     }
     static function OutputProductPartition($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputProductPartition * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputProductPartition * * *");
+            self::OutputStatusMessage("Condition:");
             self::OutputProductCondition($dataObject->Condition);
             self::OutputStatusMessage(sprintf("ParentCriterionId: %s", $dataObject->ParentCriterionId));
             self::OutputStatusMessage(sprintf("PartitionType: %s", $dataObject->PartitionType));
+            self::OutputStatusMessage("* * * End OutputProductPartition * * *");
         }
-        self::OutputStatusMessage("* * * End OutputProductPartition * * *");
     }
     static function OutputArrayOfProductPartition($dataObjects)
     {
@@ -4609,21 +4474,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfProductPartition * * *");
         foreach ($dataObjects->ProductPartition as $dataObject)
         {
             self::OutputProductPartition($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfProductPartition * * *");
     }
     static function OutputProductScope($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputProductScope * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputProductScope * * *");
+            self::OutputStatusMessage("Conditions:");
             self::OutputArrayOfProductCondition($dataObject->Conditions);
+            self::OutputStatusMessage("* * * End OutputProductScope * * *");
         }
-        self::OutputStatusMessage("* * * End OutputProductScope * * *");
     }
     static function OutputArrayOfProductScope($dataObjects)
     {
@@ -4631,22 +4495,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfProductScope * * *");
         foreach ($dataObjects->ProductScope as $dataObject)
         {
             self::OutputProductScope($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfProductScope * * *");
     }
     static function OutputProfileCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputProfileCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputProfileCriterion * * *");
             self::OutputStatusMessage(sprintf("ProfileId: %s", $dataObject->ProfileId));
             self::OutputStatusMessage(sprintf("ProfileType: %s", $dataObject->ProfileType));
+            self::OutputStatusMessage("* * * End OutputProfileCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputProfileCriterion * * *");
     }
     static function OutputArrayOfProfileCriterion($dataObjects)
     {
@@ -4654,25 +4516,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfProfileCriterion * * *");
         foreach ($dataObjects->ProfileCriterion as $dataObject)
         {
             self::OutputProfileCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfProfileCriterion * * *");
     }
     static function OutputRadiusCriterion($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputRadiusCriterion * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputRadiusCriterion * * *");
             self::OutputStatusMessage(sprintf("LatitudeDegrees: %s", $dataObject->LatitudeDegrees));
             self::OutputStatusMessage(sprintf("LongitudeDegrees: %s", $dataObject->LongitudeDegrees));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("Radius: %s", $dataObject->Radius));
             self::OutputStatusMessage(sprintf("RadiusUnit: %s", $dataObject->RadiusUnit));
+            self::OutputStatusMessage("* * * End OutputRadiusCriterion * * *");
         }
-        self::OutputStatusMessage("* * * End OutputRadiusCriterion * * *");
     }
     static function OutputArrayOfRadiusCriterion($dataObjects)
     {
@@ -4680,22 +4540,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfRadiusCriterion * * *");
         foreach ($dataObjects->RadiusCriterion as $dataObject)
         {
             self::OutputRadiusCriterion($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfRadiusCriterion * * *");
     }
     static function OutputRemarketingList($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputRemarketingList * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputRemarketingList * * *");
+            self::OutputStatusMessage("Rule:");
             self::OutputRemarketingRule($dataObject->Rule);
             self::OutputStatusMessage(sprintf("TagId: %s", $dataObject->TagId));
+            self::OutputStatusMessage("* * * End OutputRemarketingList * * *");
         }
-        self::OutputStatusMessage("* * * End OutputRemarketingList * * *");
     }
     static function OutputArrayOfRemarketingList($dataObjects)
     {
@@ -4703,18 +4562,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfRemarketingList * * *");
         foreach ($dataObjects->RemarketingList as $dataObject)
         {
             self::OutputRemarketingList($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfRemarketingList * * *");
     }
     static function OutputRemarketingRule($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputRemarketingRule * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputRemarketingRule * * *");
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "CustomEventsRule")
             {
@@ -4732,8 +4589,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputPageVisitorsWhoVisitedAnotherPageRule($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputRemarketingRule * * *");
         }
-        self::OutputStatusMessage("* * * End OutputRemarketingRule * * *");
     }
     static function OutputArrayOfRemarketingRule($dataObjects)
     {
@@ -4741,21 +4598,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfRemarketingRule * * *");
         foreach ($dataObjects->RemarketingRule as $dataObject)
         {
             self::OutputRemarketingRule($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfRemarketingRule * * *");
     }
     static function OutputResponsiveAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputResponsiveAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputResponsiveAd * * *");
             self::OutputStatusMessage(sprintf("BusinessName: %s", $dataObject->BusinessName));
             self::OutputStatusMessage(sprintf("CallToAction: %s", $dataObject->CallToAction));
             self::OutputStatusMessage(sprintf("Headline: %s", $dataObject->Headline));
+            self::OutputStatusMessage("Images:");
             self::OutputArrayOfAssetLink($dataObject->Images);
             self::OutputStatusMessage(sprintf("LandscapeImageMediaId: %s", $dataObject->LandscapeImageMediaId));
             self::OutputStatusMessage(sprintf("LandscapeLogoMediaId: %s", $dataObject->LandscapeLogoMediaId));
@@ -4763,8 +4619,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("SquareImageMediaId: %s", $dataObject->SquareImageMediaId));
             self::OutputStatusMessage(sprintf("SquareLogoMediaId: %s", $dataObject->SquareLogoMediaId));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputResponsiveAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputResponsiveAd * * *");
     }
     static function OutputArrayOfResponsiveAd($dataObjects)
     {
@@ -4772,25 +4628,25 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfResponsiveAd * * *");
         foreach ($dataObjects->ResponsiveAd as $dataObject)
         {
             self::OutputResponsiveAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfResponsiveAd * * *");
     }
     static function OutputResponsiveSearchAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputResponsiveSearchAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputResponsiveSearchAd * * *");
+            self::OutputStatusMessage("Descriptions:");
             self::OutputArrayOfAssetLink($dataObject->Descriptions);
             self::OutputStatusMessage(sprintf("Domain: %s", $dataObject->Domain));
+            self::OutputStatusMessage("Headlines:");
             self::OutputArrayOfAssetLink($dataObject->Headlines);
             self::OutputStatusMessage(sprintf("Path1: %s", $dataObject->Path1));
             self::OutputStatusMessage(sprintf("Path2: %s", $dataObject->Path2));
+            self::OutputStatusMessage("* * * End OutputResponsiveSearchAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputResponsiveSearchAd * * *");
     }
     static function OutputArrayOfResponsiveSearchAd($dataObjects)
     {
@@ -4798,24 +4654,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfResponsiveSearchAd * * *");
         foreach ($dataObjects->ResponsiveSearchAd as $dataObject)
         {
             self::OutputResponsiveSearchAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfResponsiveSearchAd * * *");
     }
     static function OutputReviewAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputReviewAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputReviewAdExtension * * *");
             self::OutputStatusMessage(sprintf("IsExact: %s", $dataObject->IsExact));
             self::OutputStatusMessage(sprintf("Source: %s", $dataObject->Source));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
             self::OutputStatusMessage(sprintf("Url: %s", $dataObject->Url));
+            self::OutputStatusMessage("* * * End OutputReviewAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputReviewAdExtension * * *");
     }
     static function OutputArrayOfReviewAdExtension($dataObjects)
     {
@@ -4823,25 +4677,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfReviewAdExtension * * *");
         foreach ($dataObjects->ReviewAdExtension as $dataObject)
         {
             self::OutputReviewAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfReviewAdExtension * * *");
     }
     static function OutputRuleItem($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputRuleItem * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputRuleItem * * *");
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "StringRuleItem")
             {
                 self::OutputStringRuleItem($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputRuleItem * * *");
         }
-        self::OutputStatusMessage("* * * End OutputRuleItem * * *");
     }
     static function OutputArrayOfRuleItem($dataObjects)
     {
@@ -4849,21 +4701,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfRuleItem * * *");
         foreach ($dataObjects->RuleItem as $dataObject)
         {
             self::OutputRuleItem($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfRuleItem * * *");
     }
     static function OutputRuleItemGroup($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputRuleItemGroup * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputRuleItemGroup * * *");
+            self::OutputStatusMessage("Items:");
             self::OutputArrayOfRuleItem($dataObject->Items);
+            self::OutputStatusMessage("* * * End OutputRuleItemGroup * * *");
         }
-        self::OutputStatusMessage("* * * End OutputRuleItemGroup * * *");
     }
     static function OutputArrayOfRuleItemGroup($dataObjects)
     {
@@ -4871,24 +4722,25 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfRuleItemGroup * * *");
         foreach ($dataObjects->RuleItemGroup as $dataObject)
         {
             self::OutputRuleItemGroup($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfRuleItemGroup * * *");
     }
     static function OutputSchedule($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSchedule * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSchedule * * *");
+            self::OutputStatusMessage("DayTimeRanges:");
             self::OutputArrayOfDayTime($dataObject->DayTimeRanges);
+            self::OutputStatusMessage("EndDate:");
             self::OutputDate($dataObject->EndDate);
+            self::OutputStatusMessage("StartDate:");
             self::OutputDate($dataObject->StartDate);
             self::OutputStatusMessage(sprintf("UseSearcherTimeZone: %s", $dataObject->UseSearcherTimeZone));
+            self::OutputStatusMessage("* * * End OutputSchedule * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSchedule * * *");
     }
     static function OutputArrayOfSchedule($dataObjects)
     {
@@ -4896,18 +4748,16 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSchedule * * *");
         foreach ($dataObjects->Schedule as $dataObject)
         {
             self::OutputSchedule($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSchedule * * *");
     }
     static function OutputSetting($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSetting * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSetting * * *");
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "CoOpSetting")
             {
@@ -4925,8 +4775,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputTargetSetting($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputSetting * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSetting * * *");
     }
     static function OutputArrayOfSetting($dataObjects)
     {
@@ -4934,19 +4784,18 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSetting * * *");
         foreach ($dataObjects->Setting as $dataObject)
         {
             self::OutputSetting($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSetting * * *");
     }
     static function OutputSharedEntity($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSharedEntity * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSharedEntity * * *");
             self::OutputStatusMessage(sprintf("AssociationCount: %s", $dataObject->AssociationCount));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
@@ -4955,8 +4804,8 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputSharedList($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputSharedEntity * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSharedEntity * * *");
     }
     static function OutputArrayOfSharedEntity($dataObjects)
     {
@@ -4964,24 +4813,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSharedEntity * * *");
         foreach ($dataObjects->SharedEntity as $dataObject)
         {
             self::OutputSharedEntity($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSharedEntity * * *");
     }
     static function OutputSharedEntityAssociation($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSharedEntityAssociation * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSharedEntityAssociation * * *");
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
             self::OutputStatusMessage(sprintf("EntityType: %s", $dataObject->EntityType));
             self::OutputStatusMessage(sprintf("SharedEntityId: %s", $dataObject->SharedEntityId));
             self::OutputStatusMessage(sprintf("SharedEntityType: %s", $dataObject->SharedEntityType));
+            self::OutputStatusMessage("* * * End OutputSharedEntityAssociation * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSharedEntityAssociation * * *");
     }
     static function OutputArrayOfSharedEntityAssociation($dataObjects)
     {
@@ -4989,25 +4836,23 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSharedEntityAssociation * * *");
         foreach ($dataObjects->SharedEntityAssociation as $dataObject)
         {
             self::OutputSharedEntityAssociation($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSharedEntityAssociation * * *");
     }
     static function OutputSharedList($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSharedList * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSharedList * * *");
             self::OutputStatusMessage(sprintf("ItemCount: %s", $dataObject->ItemCount));
             if($dataObject->Type === "NegativeKeywordList")
             {
                 self::OutputNegativeKeywordList($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputSharedList * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSharedList * * *");
     }
     static function OutputArrayOfSharedList($dataObjects)
     {
@@ -5015,26 +4860,25 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSharedList * * *");
         foreach ($dataObjects->SharedList as $dataObject)
         {
             self::OutputSharedList($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSharedList * * *");
     }
     static function OutputSharedListItem($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSharedListItem * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSharedListItem * * *");
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "NegativeKeyword")
             {
                 self::OutputNegativeKeyword($dataObject);
             }
+            self::OutputStatusMessage("* * * End OutputSharedListItem * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSharedListItem * * *");
     }
     static function OutputArrayOfSharedListItem($dataObjects)
     {
@@ -5042,24 +4886,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSharedListItem * * *");
         foreach ($dataObjects->SharedListItem as $dataObject)
         {
             self::OutputSharedListItem($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSharedListItem * * *");
     }
     static function OutputShoppingSetting($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputShoppingSetting * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputShoppingSetting * * *");
             self::OutputStatusMessage(sprintf("LocalInventoryAdsEnabled: %s", $dataObject->LocalInventoryAdsEnabled));
             self::OutputStatusMessage(sprintf("Priority: %s", $dataObject->Priority));
             self::OutputStatusMessage(sprintf("SalesCountryCode: %s", $dataObject->SalesCountryCode));
             self::OutputStatusMessage(sprintf("StoreId: %s", $dataObject->StoreId));
+            self::OutputStatusMessage("* * * End OutputShoppingSetting * * *");
         }
-        self::OutputStatusMessage("* * * End OutputShoppingSetting * * *");
     }
     static function OutputArrayOfShoppingSetting($dataObjects)
     {
@@ -5067,21 +4909,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfShoppingSetting * * *");
         foreach ($dataObjects->ShoppingSetting as $dataObject)
         {
             self::OutputShoppingSetting($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfShoppingSetting * * *");
     }
     static function OutputSimilarRemarketingList($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSimilarRemarketingList * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSimilarRemarketingList * * *");
             self::OutputStatusMessage(sprintf("SourceId: %s", $dataObject->SourceId));
+            self::OutputStatusMessage("* * * End OutputSimilarRemarketingList * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSimilarRemarketingList * * *");
     }
     static function OutputArrayOfSimilarRemarketingList($dataObjects)
     {
@@ -5089,29 +4929,31 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSimilarRemarketingList * * *");
         foreach ($dataObjects->SimilarRemarketingList as $dataObject)
         {
             self::OutputSimilarRemarketingList($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSimilarRemarketingList * * *");
     }
     static function OutputSitelinkAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputSitelinkAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputSitelinkAdExtension * * *");
             self::OutputStatusMessage(sprintf("Description1: %s", $dataObject->Description1));
             self::OutputStatusMessage(sprintf("Description2: %s", $dataObject->Description2));
             self::OutputStatusMessage(sprintf("DestinationUrl: %s", $dataObject->DestinationUrl));
             self::OutputStatusMessage(sprintf("DisplayText: %s", $dataObject->DisplayText));
+            self::OutputStatusMessage("FinalAppUrls:");
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputSitelinkAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputSitelinkAdExtension * * *");
     }
     static function OutputArrayOfSitelinkAdExtension($dataObjects)
     {
@@ -5119,23 +4961,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfSitelinkAdExtension * * *");
         foreach ($dataObjects->SitelinkAdExtension as $dataObject)
         {
             self::OutputSitelinkAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfSitelinkAdExtension * * *");
     }
     static function OutputStringRuleItem($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputStringRuleItem * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputStringRuleItem * * *");
             self::OutputStatusMessage(sprintf("Operand: %s", $dataObject->Operand));
             self::OutputStatusMessage(sprintf("Operator: %s", $dataObject->Operator));
             self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
+            self::OutputStatusMessage("* * * End OutputStringRuleItem * * *");
         }
-        self::OutputStatusMessage("* * * End OutputStringRuleItem * * *");
     }
     static function OutputArrayOfStringRuleItem($dataObjects)
     {
@@ -5143,22 +4983,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfStringRuleItem * * *");
         foreach ($dataObjects->StringRuleItem as $dataObject)
         {
             self::OutputStringRuleItem($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfStringRuleItem * * *");
     }
     static function OutputStructuredSnippetAdExtension($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputStructuredSnippetAdExtension * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputStructuredSnippetAdExtension * * *");
             self::OutputStatusMessage(sprintf("Header: %s", $dataObject->Header));
+            self::OutputStatusMessage("Values:");
             self::OutputArrayOfString($dataObject->Values);
+            self::OutputStatusMessage("* * * End OutputStructuredSnippetAdExtension * * *");
         }
-        self::OutputStatusMessage("* * * End OutputStructuredSnippetAdExtension * * *");
     }
     static function OutputArrayOfStructuredSnippetAdExtension($dataObjects)
     {
@@ -5166,22 +5005,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfStructuredSnippetAdExtension * * *");
         foreach ($dataObjects->StructuredSnippetAdExtension as $dataObject)
         {
             self::OutputStructuredSnippetAdExtension($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfStructuredSnippetAdExtension * * *");
     }
     static function OutputTargetCpaBiddingScheme($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputTargetCpaBiddingScheme * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputTargetCpaBiddingScheme * * *");
+            self::OutputStatusMessage("MaxCpc:");
             self::OutputBid($dataObject->MaxCpc);
             self::OutputStatusMessage(sprintf("TargetCpa: %s", $dataObject->TargetCpa));
+            self::OutputStatusMessage("* * * End OutputTargetCpaBiddingScheme * * *");
         }
-        self::OutputStatusMessage("* * * End OutputTargetCpaBiddingScheme * * *");
     }
     static function OutputArrayOfTargetCpaBiddingScheme($dataObjects)
     {
@@ -5189,21 +5027,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfTargetCpaBiddingScheme * * *");
         foreach ($dataObjects->TargetCpaBiddingScheme as $dataObject)
         {
             self::OutputTargetCpaBiddingScheme($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfTargetCpaBiddingScheme * * *");
     }
     static function OutputTargetSetting($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputTargetSetting * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputTargetSetting * * *");
+            self::OutputStatusMessage("Details:");
             self::OutputArrayOfTargetSettingDetail($dataObject->Details);
+            self::OutputStatusMessage("* * * End OutputTargetSetting * * *");
         }
-        self::OutputStatusMessage("* * * End OutputTargetSetting * * *");
     }
     static function OutputArrayOfTargetSetting($dataObjects)
     {
@@ -5211,22 +5048,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfTargetSetting * * *");
         foreach ($dataObjects->TargetSetting as $dataObject)
         {
             self::OutputTargetSetting($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfTargetSetting * * *");
     }
     static function OutputTargetSettingDetail($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputTargetSettingDetail * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputTargetSettingDetail * * *");
             self::OutputStatusMessage(sprintf("CriterionTypeGroup: %s", $dataObject->CriterionTypeGroup));
             self::OutputStatusMessage(sprintf("TargetAndBid: %s", $dataObject->TargetAndBid));
+            self::OutputStatusMessage("* * * End OutputTargetSettingDetail * * *");
         }
-        self::OutputStatusMessage("* * * End OutputTargetSettingDetail * * *");
     }
     static function OutputArrayOfTargetSettingDetail($dataObjects)
     {
@@ -5234,24 +5069,22 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfTargetSettingDetail * * *");
         foreach ($dataObjects->TargetSettingDetail as $dataObject)
         {
             self::OutputTargetSettingDetail($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfTargetSettingDetail * * *");
     }
     static function OutputTextAd($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputTextAd * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputTextAd * * *");
             self::OutputStatusMessage(sprintf("DestinationUrl: %s", $dataObject->DestinationUrl));
             self::OutputStatusMessage(sprintf("DisplayUrl: %s", $dataObject->DisplayUrl));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
             self::OutputStatusMessage(sprintf("Title: %s", $dataObject->Title));
+            self::OutputStatusMessage("* * * End OutputTextAd * * *");
         }
-        self::OutputStatusMessage("* * * End OutputTextAd * * *");
     }
     static function OutputArrayOfTextAd($dataObjects)
     {
@@ -5259,21 +5092,19 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfTextAd * * *");
         foreach ($dataObjects->TextAd as $dataObject)
         {
             self::OutputTextAd($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfTextAd * * *");
     }
     static function OutputTextAsset($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputTextAsset * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputTextAsset * * *");
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage("* * * End OutputTextAsset * * *");
         }
-        self::OutputStatusMessage("* * * End OutputTextAsset * * *");
     }
     static function OutputArrayOfTextAsset($dataObjects)
     {
@@ -5281,26 +5112,24 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfTextAsset * * *");
         foreach ($dataObjects->TextAsset as $dataObject)
         {
             self::OutputTextAsset($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfTextAsset * * *");
     }
     static function OutputUetTag($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputUetTag * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputUetTag * * *");
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage(sprintf("TrackingNoScript: %s", $dataObject->TrackingNoScript));
             self::OutputStatusMessage(sprintf("TrackingScript: %s", $dataObject->TrackingScript));
             self::OutputStatusMessage(sprintf("TrackingStatus: %s", $dataObject->TrackingStatus));
+            self::OutputStatusMessage("* * * End OutputUetTag * * *");
         }
-        self::OutputStatusMessage("* * * End OutputUetTag * * *");
     }
     static function OutputArrayOfUetTag($dataObjects)
     {
@@ -5308,22 +5137,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfUetTag * * *");
         foreach ($dataObjects->UetTag as $dataObject)
         {
             self::OutputUetTag($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfUetTag * * *");
     }
     static function OutputUrlGoal($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputUrlGoal * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputUrlGoal * * *");
             self::OutputStatusMessage(sprintf("UrlExpression: %s", $dataObject->UrlExpression));
             self::OutputStatusMessage(sprintf("UrlOperator: %s", $dataObject->UrlOperator));
+            self::OutputStatusMessage("* * * End OutputUrlGoal * * *");
         }
-        self::OutputStatusMessage("* * * End OutputUrlGoal * * *");
     }
     static function OutputArrayOfUrlGoal($dataObjects)
     {
@@ -5331,21 +5158,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfUrlGoal * * *");
         foreach ($dataObjects->UrlGoal as $dataObject)
         {
             self::OutputUrlGoal($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfUrlGoal * * *");
     }
     static function OutputWebpage($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputWebpage * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputWebpage * * *");
+            self::OutputStatusMessage("Parameter:");
             self::OutputWebpageParameter($dataObject->Parameter);
+            self::OutputStatusMessage("* * * End OutputWebpage * * *");
         }
-        self::OutputStatusMessage("* * * End OutputWebpage * * *");
     }
     static function OutputArrayOfWebpage($dataObjects)
     {
@@ -5353,22 +5179,20 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfWebpage * * *");
         foreach ($dataObjects->Webpage as $dataObject)
         {
             self::OutputWebpage($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfWebpage * * *");
     }
     static function OutputWebpageCondition($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputWebpageCondition * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputWebpageCondition * * *");
             self::OutputStatusMessage(sprintf("Argument: %s", $dataObject->Argument));
             self::OutputStatusMessage(sprintf("Operand: %s", $dataObject->Operand));
+            self::OutputStatusMessage("* * * End OutputWebpageCondition * * *");
         }
-        self::OutputStatusMessage("* * * End OutputWebpageCondition * * *");
     }
     static function OutputArrayOfWebpageCondition($dataObjects)
     {
@@ -5376,22 +5200,21 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfWebpageCondition * * *");
         foreach ($dataObjects->WebpageCondition as $dataObject)
         {
             self::OutputWebpageCondition($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfWebpageCondition * * *");
     }
     static function OutputWebpageParameter($dataObject)
     {
-        self::OutputStatusMessage("* * * Begin OutputWebpageParameter * * *");
         if (!empty($dataObject))
         {
+            self::OutputStatusMessage("* * * Begin OutputWebpageParameter * * *");
+            self::OutputStatusMessage("Conditions:");
             self::OutputArrayOfWebpageCondition($dataObject->Conditions);
             self::OutputStatusMessage(sprintf("CriterionName: %s", $dataObject->CriterionName));
+            self::OutputStatusMessage("* * * End OutputWebpageParameter * * *");
         }
-        self::OutputStatusMessage("* * * End OutputWebpageParameter * * *");
     }
     static function OutputArrayOfWebpageParameter($dataObjects)
     {
@@ -5399,12 +5222,10 @@ final class CampaignManagementExampleHelper {
         {
             return;
         }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfWebpageParameter * * *");
         foreach ($dataObjects->WebpageParameter as $dataObject)
         {
             self::OutputWebpageParameter($dataObject);
         }
-        self::OutputStatusMessage("* * * End OutputArrayOfWebpageParameter * * *");
     }
     static function OutputAdEditorialStatus($valueSet)
     {
@@ -6868,7 +6689,7 @@ final class CampaignManagementExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfString * * *");
         foreach ($items->string as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the string: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfString * * *");
     }
@@ -6881,7 +6702,7 @@ final class CampaignManagementExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfLong * * *");
         foreach ($items->long as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the long: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLong * * *");
     }
@@ -6894,7 +6715,7 @@ final class CampaignManagementExampleHelper {
         self::OutputStatusMessage("* * * Begin OutputArrayOfInt * * *");
         foreach ($items->int as $item)
         {
-            self::OutputStatusMessage(sprintf("Value of the int: %s", $item));
+            self::OutputStatusMessage(sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfInt * * *");
     }

@@ -46,89 +46,109 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 $PartitionActions = array(); // AdGroupCriterionAction array
 $ReferenceId = -1;
 $ids = null;
 
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-		ServiceClientType::CampaignManagementVersion12, 
-		$GLOBALS['AuthorizationData'], 
-		AuthHelper::GetApiEnvironment());
+	// Get a list of all Bing Merchant Center stores associated with your CustomerId.
 
-    $stores= CampaignManagementExampleHelper::GetBMCStoresByCustomerId(false)->BMCStores->BMCStore;
+    $stores= CampaignManagementExampleHelper::GetBMCStoresByCustomerId(
+		false
+	)->BMCStores;
 	
-    if (!isset($stores))
+    if (!isset($stores->BMCStore))
     {
-        printf("CustomerId %d does not have any registered BMC stores.\n\n", $CustomerId);
+		printf(
+			"CustomerId %d does not have any registered BMC stores.\r\n", 
+			$GLOBALS['AuthorizationData']->CustomerId
+		);
         return;
-    }
+	}
 	
-    // Create a Bing Shopping campaign using the ID of the first store in the list.
+    print("BMCStores:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBMCStore($stores);
+	
+	// Create a Shopping campaign with product conditions.
+	
+	$campaigns = array();   
+	$campaign = new Campaign();
+	$campaign->CampaignType = CampaignType::Shopping;
+    $campaign->Description = "Red shoes line.";
+    $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
+    $campaign->DailyBudget = 50.00;
+	$campaign->Languages = array("All");
+	$campaign->Name = "Women's Shoes " . $_SERVER['REQUEST_TIME'];
     $settings = array();
-
     $shoppingSetting = new ShoppingSetting();
     $shoppingSetting->Priority = 0;
     $shoppingSetting->SalesCountryCode = "US";
-    $shoppingSetting->StoreId = $stores[0]->Id;
-	
+    $shoppingSetting->StoreId = $stores->BMCStore[0]->Id;	
     $encodedSetting = new SoapVar(
 		$shoppingSetting, 
 		SOAP_ENC_OBJECT, 
 		'ShoppingSetting', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
     $settings[] = $encodedSetting;
-
-    $campaigns = array();
-    $campaign = new Campaign();
-    $campaign->Name = "Bing Shopping Campaign " . $_SERVER['REQUEST_TIME'];
-    $campaign->Description = "Bing Shopping Campaign Example.";
-    $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
-    $campaign->DailyBudget = 50.00;
-    $campaign->Settings = $settings;
-    $campaign->CampaignType = CampaignType::Shopping;
+	$campaign->Settings = $settings;
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
     $campaigns[] = $campaign;
+    
+    print("-----\r\nAddCampaigns:\r\n");
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        $campaigns,
+        false
+    );
+    $campaignIds = $addCampaignsResponse->CampaignIds;
+    print("CampaignIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($campaignIds);
+    print("PartialErrors:\r\n");
+	CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
+	
+	// Optionally, you can create a ProductScope criterion that will be associated with your Bing Shopping campaign. 
+    // You'll also be able to add more specific product conditions for each ad group.
+	
+    AddCampaignCriterion($campaignIds->long[0]);
 
     // Create the ad group that will have the product partitions.
 
     $adGroups = array();
-
+    $adGroup = new AdGroup();
+    $adGroup->CpcBid = new Bid();
+    $adGroup->CpcBid->Amount = 0.09;
     date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
     $endDate->Year = date("Y");
-
-    $adGroup = new AdGroup();
-    $adGroup->Name = "Product Categories";
-    $adGroup->StartDate = null;
     $adGroup->EndDate = $endDate;
-    $adGroup->CpcBid = new Bid();
-    $adGroup->CpcBid->Amount = 0.07;
-    $adGroup->Language = "English";
-    
+    $adGroup->Name = "Women's Red Shoe Sale";    
+    $adGroup->StartDate = null;    
     $adGroups[] = $adGroup;
+ 
+    print("-----\r\nAddAdGroups:\r\n");
+    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups(
+        $campaignIds->long[0], 
+        $adGroups,
+        null
+    );
+    $adGroupIds = $addAdGroupsResponse->AdGroupIds;
+    print("AdGroupIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($adGroupIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
 		
-    //Create a product ad. You must add at least one product ad to the ad group. 
-    //The product ad identifier can be used for reporting analytics.
-    //Use Merchant Promotions if you want tags to appear at the bottom of your product ad 
-    //as "special offer" links, helping to increase customer engagement. For details
-    //on Merchant Promotions see https://help.bingads.microsoft.com/#apex/3/en/56805/0.
+    // Create a product ad. You must add at least one product ad to the ad group. 
+	// The product ad identifier can be used for reporting analytics.
+	// Use Merchant Promotions if you want tags to appear at the bottom of your product ad 
+	// as "special offer" links, helping to increase customer engagement. For details
+	// on Merchant Promotions see https://help.bingads.microsoft.com/#apex/3/en/56805/0.
 
     $ads = array();
     $ad = new ProductAd();
@@ -136,50 +156,31 @@ try
 		$ad, 
 		SOAP_ENC_OBJECT, 
 		'ProductAd', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
-    $ads[] = $encodedAd;
-    
-	print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
-        $GLOBALS['AuthorizationData']->AccountId, 
-        $campaigns,
-        false);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
-    if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
-    }
-
-    print "AddAdGroups\n";
-    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups($nillableCampaignIds->long[0], $adGroups);
-    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
-    if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
-    }
-
-	print "AddAds\n";
-    $addAdsResponse = CampaignManagementExampleHelper::AddAds($nillableAdGroupIds->long[0], $ads);
-    $nillableAdIds = $addAdsResponse->AdIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdIds);
-    if(isset($addAdsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors);
-    }
-
-    // Add criterion to the campaign. The criterion is used to limit the campaign to a subset of
-    // your product catalog.
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
+	$ads[] = $encodedAd;
 	
-    AddCampaignCriterion($nillableCampaignIds->long[0]);
+	print("-----\r\nAddAds:\r\n");
+    $addAdsResponse = CampaignManagementExampleHelper::AddAds(
+        $adGroupIds->long[0], 
+        $ads
+    );
+    print("AdIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($addAdsResponse->AdIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdsResponse->PartialErrors);
+    
+    // Add and update the ad group product groups. 
     
     AddAndUpdateAdGroupCriterion(
 		$GLOBALS['AuthorizationData']->AccountId, 
 		$PartitionActions, 
-		$nillableAdGroupIds->long[0]);
+		$adGroupIds->long[0]);
 	
     $applyPartitionActionsResponse = AddBranchAndLeafCriterion(
 		$GLOBALS['AuthorizationData']->AccountId, 
 		$PartitionActions, 
-		$nillableAdGroupIds->long[0]);
+		$adGroupIds->long[0]);
 	
     $rootId = $applyPartitionActionsResponse->AdGroupCriterionIds->long[1];
 	$electronicsCriterionId = $applyPartitionActionsResponse->AdGroupCriterionIds->long[8];
@@ -187,39 +188,27 @@ try
     UpdateBranchAndLeafCriterion(
 		$PartitionActions, 
 		$GLOBALS['AuthorizationData']->AccountId, 
-		$nillableAdGroupIds->long[0], 
+		$adGroupIds->long[0], 
 		$rootId, 
 		$electronicsCriterionId);
 	 
-    // Delete the campaign, ad group, product partitions, and ad that were previously added. 
-    // You should remove this line if you want to view the added entities in the 
-    // Bing Ads web application or another tool.
+    // Delete the campaign and everything it contains e.g., ad groups and ads.
 
-    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
-    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
-	
+    print("-----\r\nDeleteCampaigns:\r\n");
+    CampaignManagementExampleHelper::DeleteCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        array($campaignIds->long[0])
+    );
+    printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
-    elseif (isset($e->detail->EditorialApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -228,8 +217,8 @@ catch (Exception $e)
     { ; }
     else
     {
-        print $e->getCode()." ".$e->getMessage()."\n\n";
-        print $e->getTraceAsString()."\n\n";
+        print $e->getCode()." ".$e->getMessage()."\r\n";
+        print $e->getTraceAsString()."\r\n";
     }
 }
 
@@ -268,7 +257,8 @@ function AddCampaignCriterion($campaignId)
 		$scope, 
 		SOAP_ENC_OBJECT, 
 		'ProductScope', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 	
 	$criterion->Criterion = $encodedScope;
 
@@ -276,7 +266,8 @@ function AddCampaignCriterion($campaignId)
 		$criterion, 
 		SOAP_ENC_OBJECT, 
 		'BiddableCampaignCriterion', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 
 	$campaignCriterions[] = $encodedCriterion;
 
@@ -310,19 +301,20 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 		false,
 		$actions);
 
-	printf("Applying a biddable criterion as the root...\n\n");
-	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions($actions);
+	printf("Applying a biddable criterion as the root...\r\n");
+	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
+		$actions
+	);
 	CampaignManagementExampleHelper::OutputArrayOfLong($applyPartitionActionsResponse->AdGroupCriterionIds);
-    if(isset($applyPartitionActionsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($applyPartitionActionsResponse->PartialErrors);
-    }
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($applyPartitionActionsResponse->PartialErrors);
 
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
+		AdGroupCriterionType::ProductPartition
+	)->AdGroupCriterions;
 	 
-	printf("Outputing the ad group's product partition; contains only the tree root node\n\n");
+	printf("Outputing the ad group's product partition; contains only the tree root node\r\n");
 	OutputProductPartitions($adGroupCriterions);
 	 
 	// Update the bid of the root node that we just added.
@@ -336,22 +328,26 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 		$updatedRoot, 
 		SOAP_ENC_OBJECT, 
 		'BiddableAdGroupCriterion', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 	
 	$actions = array();  // clear
 	 
 	AddPartitionAction($encodedUpdateRoot, ItemAction::Update, $actions);
 	 
-	printf("Updating the bid for the tree root node...\n\n");
+	printf("Updating the bid for the tree root node...\r\n");
 	
-	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions($actions);
+	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
+		$actions
+	);
 	 
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
+		AdGroupCriterionType::ProductPartition
+	)->AdGroupCriterions;
 	 
-	printf("Updated the bid for the tree root node\n\n");
+	printf("Updated the bid for the tree root node\r\n");
 	OutputProductPartitions($adGroupCriterions);
 }
 
@@ -364,7 +360,8 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
+		AdGroupCriterionType::ProductPartition
+	)->AdGroupCriterions;
 	 
 	$existingRoot = GetRootNode($adGroupCriterions);
 
@@ -378,7 +375,8 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 			$nodeToDelete, 
 			SOAP_ENC_OBJECT, 
 			'BiddableAdGroupCriterion', 
-			$GLOBALS['CampaignManagementProxy']->GetNamespace());
+			$GLOBALS['CampaignManagementProxy']->GetNamespace()
+		);
 		
 		AddPartitionAction($encodedNodeToDelete, ItemAction::Delete, $actions);
 	}
@@ -500,15 +498,18 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 		false,
 		$actions);
 	
-	printf("Applying product partitions to the ad group...\n\n");
-	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions($actions);
+	printf("Applying product partitions to the ad group...\r\n");
+	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
+		$actions
+	);
 
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
+		AdGroupCriterionType::ProductPartition
+	)->AdGroupCriterions;
 
-	printf("The product partition group tree now has 9 nodes\n\n");
+	printf("The product partition group tree now has 9 nodes\r\n");
 	OutputProductPartitions($adGroupCriterions);
 
 	return $applyPartitionActionsResponse;
@@ -528,7 +529,8 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 		$electronics, 
 		SOAP_ENC_OBJECT, 
 		'BiddableAdGroupCriterion', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 	
 	AddPartitionAction($encodedNodeToDelete, ItemAction::Delete, $actions);
 	 
@@ -538,7 +540,8 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 		$parent, 
 		SOAP_ENC_OBJECT, 
 		'BiddableAdGroupCriterion', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 	
 	$condition = new ProductCondition();
 	$condition->Operand = "CategoryL1";
@@ -593,12 +596,15 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 		$actions);
 
 	printf("\nUpdating the electronics partition...\n");
-	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions($actions);
+	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
+		$actions
+	);
 	 
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition)->AdGroupCriterions;
+		AdGroupCriterionType::ProductPartition
+	)->AdGroupCriterions;
 	 
 	printf("\nThe product partition group tree now has 12 nodes\n");
 	OutputProductPartitions($adGroupCriterions);
@@ -634,7 +640,8 @@ function GetFixedBid($bidAmount)
 		$fixedBid, 
 		SOAP_ENC_OBJECT, 
 		'FixedBid', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 	
 	return $encodedFixedBid;
 }
@@ -697,7 +704,8 @@ function AddPartition(
 		$criterion, 
 		SOAP_ENC_OBJECT, 
 		'ProductPartition', 
-		$GLOBALS['CampaignManagementProxy']->GetNamespace());
+		$GLOBALS['CampaignManagementProxy']->GetNamespace()
+	);
 	
 	$adGroupCriterion->Criterion = $encodedCriterion;
 	
@@ -707,7 +715,8 @@ function AddPartition(
 			$adGroupCriterion, 
 			SOAP_ENC_OBJECT, 
 			'NegativeAdGroupCriterion', 
-			$GLOBALS['CampaignManagementProxy']->GetNamespace());
+			$GLOBALS['CampaignManagementProxy']->GetNamespace()
+		);
 	}
 	else
 	{
@@ -715,7 +724,8 @@ function AddPartition(
 			$adGroupCriterion, 
 			SOAP_ENC_OBJECT, 
 			'BiddableAdGroupCriterion', 
-			$GLOBALS['CampaignManagementProxy']->GetNamespace());
+			$GLOBALS['CampaignManagementProxy']->GetNamespace()
+		);
 	}	
 	
 	AddPartitionAction($encodedAdGroupCriterion, ItemAction::Add, $actions);
@@ -801,7 +811,7 @@ function OutputProductPartitionTree(
 			(empty($criterion->Condition->Attribute)) ?
 			$nullAttribute : $criterion->Condition->Attribute);
 
-	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n\n",
+	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\r\n",
 			"",
 			"Condition: ",
 			$criterion->Condition->Operand);

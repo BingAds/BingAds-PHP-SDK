@@ -17,18 +17,11 @@ use DateTime;
 use ZipArchive;
 
 // Specify the Microsoft\BingAds\V12\Bulk classes that will be used.
-use Microsoft\BingAds\V12\Bulk\DownloadCampaignsByAccountIdsRequest;
 use Microsoft\BingAds\V12\Bulk\DownloadEntity;
 use Microsoft\BingAds\V12\Bulk\DataScope;
-use Microsoft\BingAds\V12\Bulk\CampaignScope;
-use Microsoft\BingAds\V12\Bulk\GetBulkDownloadStatusRequest;
 use Microsoft\BingAds\V12\Bulk\DownloadFileType;
-use Microsoft\BingAds\V12\Bulk\CustomDateRangeEnd;
-use Microsoft\BingAds\V12\Bulk\CustomDateRangeStart;
 use Microsoft\BingAds\V12\Bulk\Date;
-use Microsoft\BingAds\V12\Bulk\GetBulkUploadUrlRequest;
 use Microsoft\BingAds\V12\Bulk\ResponseMode;
-use Microsoft\BingAds\V12\Bulk\GetBulkUploadStatusRequest;
 
 // Specify the Microsoft\BingAds\Auth classes that will be used.
 use Microsoft\BingAds\Auth\ServiceClient;
@@ -37,16 +30,6 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\BulkExampleHelper;
-
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['BulkProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 
 // The full path to the bulk file.
 
@@ -72,21 +55,15 @@ $folder = substr($BulkFilePath, 0, $length);
 
 if (!is_dir($folder))
 {
-    printf("The output folder, %s, does not exist.\nEnsure that the " .
+    printf("The output folder, %s, does not exist.\r\nEnsure that the " .
         "folder exists and try again.", $folder);
     return;
 }
 
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
-
-    $GLOBALS['BulkProxy'] = new ServiceClient(
-        ServiceClientType::BulkVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
 
     $accountIds = array();
     $accountIds[] = $GLOBALS['AuthorizationData']->AccountId;
@@ -96,11 +73,8 @@ try
     $downloadEntities = array (
     	DownloadEntity::Ads,
     	DownloadEntity::AdGroups,
-    	DownloadEntity::Campaigns,
-    	DownloadEntity::Keywords,
-        DownloadEntity::AdGroupProductPartitions,
-        DownloadEntity::CampaignProductScopes
-    	);
+    	DownloadEntity::Campaigns
+    );
 
     $formatVersion = "6.0";
     
@@ -108,6 +82,7 @@ try
     
     // The request ID will be used to poll for status before downloading the bulk file.
     
+    print("-----\r\nDownloadCampaignsByAccountIds:\r\n");
     $downloadRequestId = BulkExampleHelper::DownloadCampaignsByAccountIds(
         $accountIds,
         null, // By default the compression type is Zip
@@ -116,13 +91,14 @@ try
         $DownloadFileType,
         $formatVersion,
         $lastSyncTimeInUTC,
-        null)->DownloadRequestId;
+        null
+    )->DownloadRequestId;
     
     $waitTime = 5 * 1; 
         
     if ($downloadRequestId != null)
     {
-        printf("Download Request Id: %s\n", $downloadRequestId);
+        printf("Download Request Id: %s\r\n", $downloadRequestId);
 
         $downloadSuccess = false;
     
@@ -136,11 +112,19 @@ try
     		sleep($waitTime);
     
     		// GetDownloadRequestStatus helper method calls the corresponding Bing Ads service operation 
-                // to get the download status.
-            
-    		$downloadRequestStatus = BulkExampleHelper::GetBulkDownloadStatus($downloadRequestId)->RequestStatus;
+            // to get the download status.
+        
+            print("-----\r\nGetBulkDownloadStatus:\r\n");
+    		$getBulkDownloadStatusResponse = BulkExampleHelper::GetBulkDownloadStatus(
+                $downloadRequestId
+            );
+            $requestStatus = $getBulkDownloadStatusResponse->RequestStatus;
+            $resultFileUrl = $getBulkDownloadStatusResponse->ResultFileUrl;
+            printf("PercentComplete: %s\r\n", $getBulkDownloadStatusResponse->PercentComplete);
+            printf("RequestStatus: %s\r\n", $requestStatus);
+            printf("ResultFileUrl: %s\r\n", $resultFileUrl);
     
-        	if (($downloadRequestStatus != null) && ($downloadRequestStatus == "Completed"))
+        	if (($requestStatus != null) && ($requestStatus == "Completed"))
         	{
         		$downloadSuccess = true;
         		break;
@@ -149,16 +133,17 @@ try
 
         if ($downloadSuccess)
         {
-            $downloadUrl = BulkExampleHelper::GetBulkDownloadStatus($downloadRequestId)->ResultFileUrl;
-            printf("Downloading from %s.\n\n", $downloadUrl);
-            DownloadFile($downloadUrl, $BulkFilePath);
-            printf("The download file was written to %s.\n", $BulkFilePath);
+            // Download the file.
+            printf("-----\r\nDownloading from %s...\r\n", $resultFileUrl);
+            DownloadFile($resultFileUrl, $BulkFilePath);
+            printf("The download file was written to %s.\r\n", $BulkFilePath);
         }
         else // Pending
         {
-        	printf("The request is taking longer than expected.\n " .
-        			"Save the download request ID (%s) and try again later.\n",
-        			$downloadRequestId);
+        	printf("The request is taking longer than expected.\r\n " .
+                "Save the download request ID (%s) and try again later.\r\n",
+                $downloadRequestId
+            );
         }
     }
     
@@ -172,24 +157,30 @@ try
     
     $responseMode = ResponseMode::ErrorsAndResults;
     
+    print("-----\r\nGetBulkUploadUrl:\r\n");
     $uploadResponse = BulkExampleHelper::GetBulkUploadUrl(
         $responseMode,
-    	$GLOBALS['AuthorizationData']->AccountId);
+        $GLOBALS['AuthorizationData']->AccountId
+    );
     
     $uploadRequestId = $uploadResponse->RequestId;
     $uploadUrl = $uploadResponse->UploadUrl;
+    printf("RequestId: %s\r\n", $uploadRequestId);
+    printf("UploadUrl: %s\r\n", $uploadUrl);
     
-    printf("Uploading file from %s.\n", $BulkFilePath);
-    printf("Upload Request Id: %s\n", $uploadRequestId);
-    printf("Upload Url: %s\n", $uploadUrl);
-    
+    printf("-----\r\nUploading file from %s.\r\n", $BulkFilePath);  
     $uploadSuccess = UploadFile(
         $uploadUrl, 
-        $BulkFilePath);
+        $BulkFilePath
+    );
     
     // If the file was not uploaded, do not continue to poll for results.
     if($uploadSuccess == false){
+        print "Upload failed.\r\n";
         return;
+    }
+    else{
+        print "Upload succeeded.\r\n";
     }
     
     // This sample polls every 30 seconds up to 5 minutes.
@@ -201,11 +192,20 @@ try
     {
     	sleep($waitTime);
         
-    	// Get the upload request status.
-    	$uploadRequestStatus = BulkExampleHelper::GetBulkUploadStatus($uploadRequestId)->RequestStatus;
+        // Get the upload request status.
+        print("-----\r\nGetBulkUploadStatus:\r\n");
+    	$getBulkUploadStatusResponse = BulkExampleHelper::GetBulkUploadStatus(
+            $uploadRequestId
+        );
+
+        $requestStatus = $getBulkUploadStatusResponse->RequestStatus;
+        $resultFileUrl = $getBulkUploadStatusResponse->ResultFileUrl;
+        printf("PercentComplete: %s\r\n", $getBulkUploadStatusResponse->PercentComplete);
+        printf("RequestStatus: %s\r\n", $requestStatus);
+        printf("ResultFileUrl: %s\r\n", $resultFileUrl);
         
-    	if (($uploadRequestStatus != null) && (($uploadRequestStatus == "Completed")
-    		|| ($uploadRequestStatus == "CompletedWithErrors")))
+    	if (($requestStatus != null) && (($requestStatus == "Completed")
+    		|| ($requestStatus == "CompletedWithErrors")))
     	{
 	    	$uploadSuccess = true;
 	    	break;
@@ -214,35 +214,26 @@ try
     
     if ($uploadSuccess)
     {
-    	// Get the upload result file Url.
-    	$uploadResultFileUrl = BulkExampleHelper::GetBulkUploadStatus($uploadRequestId)->ResultFileUrl;
-    	DownloadFile($uploadResultFileUrl, $UploadResultFilePath);
-    	printf("The upload result file was written to %s.\n", $UploadResultFilePath);
+        // Get the upload result file.
+        printf("-----\r\nDownloading the upload result file from %s...\r\n", $resultFileUrl);
+    	DownloadFile($resultFileUrl, $UploadResultFilePath);
+    	printf("The upload result file was written to %s.\r\n", $UploadResultFilePath);
     }
     else // Pending
     {
-    	printf("The request is taking longer than expected.\n" +
+    	printf("The request is taking longer than expected.\r\n" +
     	"Save the upload ID (%s) and try again later.", $uploadRequestId);
     }
     
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        BulkExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        BulkExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -251,8 +242,8 @@ catch (Exception $e)
     { ; }
     else
     {
-        print $e->getCode()." ".$e->getMessage()."\n\n";
-        print $e->getTraceAsString()."\n\n";
+        print $e->getCode()." ".$e->getMessage()."\r\n";
+        print $e->getTraceAsString()."\r\n";
     }
 }
 
@@ -303,12 +294,12 @@ function UploadFile($uploadUrl, $filePath)
               
     if (curl_errno($ch))
     {
-        print "Curl Error: " . curl_error($ch) . "\n";
+        print "Curl Error: " . curl_error($ch) . "\r\n";
     }
     else
     {
-        print "Upload Result:\n" . $result . "\n";
-        print "HTTP Result Code:\n" . $http_code . "\n";
+        print "Upload Result:\n" . $result . "\r\n";
+        print "HTTP Result Code:\n" . $http_code . "\r\n";
         // Whether or not the curl execution failed, the response could include Bing Ads error codes  
         // if the bulk file upload failed, for example in the range of 3220-3227.
         // 

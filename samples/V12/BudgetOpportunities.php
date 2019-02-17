@@ -25,67 +25,42 @@ use Microsoft\BingAds\Samples\V12\AdInsightExampleHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
 // Specify the Microsoft\BingAds\V12\CampaignManagement classes that will be used.
-use Microsoft\BingAds\V12\CampaignManagement\CampaignType;
 use Microsoft\BingAds\V12\CampaignManagement\CampaignAdditionalField;
-
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['AdInsightProxy'] = null; 
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
 
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    $GLOBALS['AdInsightProxy'] = new ServiceClient(
-		ServiceClientType::AdInsightVersion12, 
-		$GLOBALS['AuthorizationData'], 
-		AuthHelper::GetApiEnvironment());
-
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-		ServiceClientType::CampaignManagementVersion12, 
-		$GLOBALS['AuthorizationData'], 
-		AuthHelper::GetApiEnvironment());
-
+    print("-----\r\nGetCampaignsByAccountId:\r\n");
     $getCampaignsByAccountIdResponse = CampaignManagementExampleHelper::GetCampaignsByAccountId(
     	$GLOBALS['AuthorizationData']->AccountId,
         AuthHelper::CampaignTypes,
         CampaignAdditionalField::ExperimentId
     );
+    $campaigns = $getCampaignsByAccountIdResponse->Campaigns;
+    print("Campaigns:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfCampaign($campaigns);
 
-    if(isset($getCampaignsByAccountIdResponse->Campaigns))
+    // Get the budget opportunities for each campaign in the current account.
+    
+    foreach ($campaigns->Campaign as $campaign)
     {
-        foreach ($getCampaignsByAccountIdResponse->Campaigns->Campaign as $campaign)
-        {
-            $opportunities = AdInsightExampleHelper::GetBudgetOpportunities($campaign->Id)->Opportunities;
-            AdInsightExampleHelper::OutputArrayOfBudgetOpportunity($opportunities, $campaign->Id);
-        }
+        print("-----\r\nGetBudgetOpportunities:\r\n");
+        $opportunities = AdInsightExampleHelper::GetBudgetOpportunities(
+            $campaign->Id
+        )->Opportunities;
+        AdInsightExampleHelper::OutputArrayOfBudgetOpportunity($opportunities);
     }
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        AdInsightExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-	}
-	elseif (isset($e->detail->ApiFaultDetail))
-    {
-        AdInsightExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {

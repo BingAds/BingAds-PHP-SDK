@@ -59,34 +59,18 @@ use Microsoft\BingAds\V12\AdInsight\KeywordEstimate;
 use Microsoft\BingAds\V12\AdInsight\CampaignEstimate;
 use Microsoft\BingAds\V12\AdInsight\NegativeKeyword;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
-
-    $GLOBALS['AdInsightProxy'] = new ServiceClient(
-        ServiceClientType::AdInsightVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
 
     $searchParametersNamespace = "http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.V12.Entity.SearchParameters";
     $criterionsNamespace = "http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.V12.Entity.Criterions";
         
+    print("-----\r\nGetKeywordIdeaCategories:\r\n");
     $getKeywordIdeaCategoriesResponse = AdInsightExampleHelper::GetKeywordIdeaCategories();
-    if(isset($getKeywordIdeaCategoriesResponse->KeywordIdeaCategories))
-    {
-        $categoryId = $getKeywordIdeaCategoriesResponse->KeywordIdeaCategories->KeywordIdeaCategory[0]->CategoryId;
-    }
+    $categoryId = $getKeywordIdeaCategoriesResponse->KeywordIdeaCategories->KeywordIdeaCategory[0]->CategoryId;
+    printf("CategoryId %s will be used in the CategorySearchParameter below\r\n", $categoryId);
     
     // You must specify the attributes that you want in each returned KeywordIdea.
 
@@ -107,6 +91,7 @@ try
     // Only one of each SearchParameter type can be specified per call. 
 
     $searchParameters = array();
+
     // Determines the start and end month for MonthlySearchCounts data returned with each KeywordIdea.
     // The date range search parameter is optional. If you do not include the DateRangeSearchParameter 
     // in the GetKeywordIdeas request, then you will not be able to confirm whether the first list item 
@@ -115,20 +100,21 @@ try
 
     $dateRangeSearchParameter = new DateRangeSearchParameter();
     $dateRangeSearchParameterEndDate = new DayMonthAndYear();
-    $dateRangeSearchParameterEndDate->Day = date_format($now,"d");
-    $dateRangeSearchParameterEndDate->Month = date_format($now,"m") - 2;
-    $dateRangeSearchParameterEndDate->Year =date_format($now,"Y");
+    $dateRangeSearchParameterEndDate->Day = 30;
+    $dateRangeSearchParameterEndDate->Month = 9;
+    $dateRangeSearchParameterEndDate->Year = 2018;
     $dateRangeSearchParameter->EndDate = $dateRangeSearchParameterEndDate;
     $dateRangeSearchParameterStartDate = new DayMonthAndYear();
-    $dateRangeSearchParameterStartDate->Day = date_format($now,"d");
-    $dateRangeSearchParameterStartDate->Month = date_format($now,"m") - 1;
-    $dateRangeSearchParameterStartDate->Year =date_format($now,"Y") - 1;
+    $dateRangeSearchParameterStartDate->Day = 1;
+    $dateRangeSearchParameterStartDate->Month = 9;
+    $dateRangeSearchParameterStartDate->Year = 2018;
     $dateRangeSearchParameter->StartDate = $dateRangeSearchParameterStartDate;
     $searchParameters[] = new SoapVar(
         $dateRangeSearchParameter, 
         SOAP_ENC_OBJECT, 
         'DateRangeSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
     
     // The CategorySearchParameter corresponds to filling in 'Your product category' under
     // 'Search for new keywords using a phrase, website, or category' in the 
@@ -141,7 +127,8 @@ try
         $categorySearchParameter, 
         SOAP_ENC_OBJECT, 
         'CategorySearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     // The QuerySearchParameter corresponds to filling in 'Product or service' under
     // 'Search for new keywords using a phrase, website, or category' in the 
@@ -155,7 +142,8 @@ try
         $querySearchParameter, 
         SOAP_ENC_OBJECT, 
         'QuerySearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     // The UrlSearchParameter corresponds to filling in 'Your landing page' under
     // 'Search for new keywords using a phrase, website, or category' in the 
@@ -168,7 +156,8 @@ try
         $urlSearchParameter, 
         SOAP_ENC_OBJECT, 
         'UrlSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
     
     // The LanguageSearchParameter, LocationSearchParameter, and NetworkSearchParameter
     // correspond to the 'Keyword Planner' -> 'Search for new keywords using a phrase, website, or category' ->
@@ -178,32 +167,38 @@ try
     $languageSearchParameter = new LanguageSearchParameter();
     $languageCriterion = new LanguageCriterion();
     $languageCriterion->Language = "English";
+    // You must specify exactly one language
     $languageSearchParameter->Languages[] = new SoapVar(
         $languageCriterion, 
         SOAP_ENC_OBJECT, 
         'LanguageCriterion', 
-        $criterionsNamespace);
+        $criterionsNamespace
+    );
     $searchParameters[] = new SoapVar(
         $languageSearchParameter, 
         SOAP_ENC_OBJECT, 
         'LanguageSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $locationSearchParameter = new LocationSearchParameter();
     $locationSearchParameter->Locations = array();
     $locationCriterion = new LocationCriterion();
     // United States
     $locationCriterion->LocationId = 190;
+    // You must specify between 1 and 100 locations
     $locationSearchParameter->Locations[] = new SoapVar(
         $locationCriterion, 
         SOAP_ENC_OBJECT, 
         'LocationCriterion', 
-        $criterionsNamespace);
+        $criterionsNamespace
+    );
     $searchParameters[] = new SoapVar(
         $locationSearchParameter, 
         SOAP_ENC_OBJECT, 
         'LocationSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $networkSearchParameter = new NetworkSearchParameter();
     $networkCriterion = new NetworkCriterion();
@@ -212,12 +207,14 @@ try
         $networkCriterion, 
         SOAP_ENC_OBJECT, 
         'NetworkCriterion', 
-        $criterionsNamespace);
+        $criterionsNamespace
+    );
     $searchParameters[] = new SoapVar(
         $networkSearchParameter, 
         SOAP_ENC_OBJECT, 
         'NetworkSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     // The CompetitionSearchParameter, ExcludeAccountKeywordsSearchParameter, IdeaTextSearchParameter, 
     // ImpressionShareSearchParameter, SearchVolumeSearchParameter, and SuggestedBidSearchParameter  
@@ -234,7 +231,8 @@ try
         $competitionSearchParameter, 
         SOAP_ENC_OBJECT, 
         'CompetitionSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $excludeAccountKeywordsSearchParameter = new ExcludeAccountKeywordsSearchParameter();
     $excludeAccountKeywordsSearchParameter->ExcludeAccountKeywords = false;
@@ -242,7 +240,8 @@ try
         $excludeAccountKeywordsSearchParameter, 
         SOAP_ENC_OBJECT, 
         'ExcludeAccountKeywordsSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $ideaTextSearchParameter = new IdeaTextSearchParameter();
     $excludedKeywords = array();
@@ -269,7 +268,8 @@ try
         $ideaTextSearchParameter, 
         SOAP_ENC_OBJECT, 
         'IdeaTextSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $impressionShareSearchParameter = new ImpressionShareSearchParameter();
     // Equivalent of '0 <= value <= 50'
@@ -279,7 +279,8 @@ try
         $impressionShareSearchParameter, 
         SOAP_ENC_OBJECT, 
         'ImpressionShareSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $searchVolumeSearchParameter = new SearchVolumeSearchParameter();
     // Equivalent of 'value >= 50'
@@ -289,7 +290,8 @@ try
         $searchVolumeSearchParameter, 
         SOAP_ENC_OBJECT, 
         'SearchVolumeSearchParameter', 
-        $searchParametersNamespace);
+        $searchParametersNamespace
+    );
 
     $suggestedBidSearchParameter = new SuggestedBidSearchParameter();
     // Equivalent of both 'value <= 50' and '0 <= value <= 50'
@@ -299,13 +301,15 @@ try
         $suggestedBidSearchParameter,
          SOAP_ENC_OBJECT, 
          'SuggestedBidSearchParameter', 
-         $searchParametersNamespace);
+         $searchParametersNamespace
+    );
 
     // Setting the device criterion is not available in the 
     // 'Keyword Planner' -> 'Search for new keywords using a phrase, website, or category'
     // workflow in the Bing Ads web application.
     // The DeviceSearchParameter is optional and by default the keyword ideas data
     // are aggregated for all devices.
+
     $deviceSearchParameter = new DeviceSearchParameter();
     $deviceCriterion = new DeviceCriterion();
     // Possible values are All, Computers, Tablets, Smartphones
@@ -322,23 +326,23 @@ try
 
     // If ExpandIdeas is false, the QuerySearchParameter is required.
     $expandIdeas = true;
+    print("-----\r\nGetKeywordIdeas:\r\n");
     $getKeywordIdeasResponse = AdInsightExampleHelper::GetKeywordIdeas(
         $expandIdeas,
         $ideaAttributes,
-        $searchParameters);
+        $searchParameters
+    );
         
     $keywordIdeas = $getKeywordIdeasResponse->KeywordIdeas;
 
     if(!isset($getKeywordIdeasResponse->KeywordIdeas) || count($keywordIdeas) < 1)
     {
-        printf("No keyword ideas are available for the specified search parameters.\n");
+        printf("No keyword ideas are available for the search parameters.\r\n");
         return;
     }
-    else
-    {
-        AdInsightExampleHelper::OutputArrayOfKeywordIdea($keywordIdeas);
-    }
-
+    
+    print("KeywordIdeas:\r\n");
+    AdInsightExampleHelper::OutputArrayOfKeywordIdea($keywordIdeas);
 
     // Let's get traffic estimates for each returned keyword idea.
 
@@ -438,7 +442,8 @@ try
         $locationCriterion, 
         SOAP_ENC_OBJECT, 
         'LocationCriterion', 
-        $criterionsNamespace);
+        $criterionsNamespace
+    );
 
     // You must specify exactly one language criterion
     $languageCriterion = new LanguageCriterion();
@@ -457,7 +462,8 @@ try
         $networkCriterion, 
         SOAP_ENC_OBJECT, 
         'NetworkCriterion', 
-        $criterionsNamespace);
+        $criterionsNamespace
+    );
 
     // Optionally you can specify exactly one device.
     // If you do not specify a device, the returned traffic estimates 
@@ -469,32 +475,27 @@ try
         $deviceCriterion, 
         SOAP_ENC_OBJECT, 
         'DeviceCriterion', 
-        $criterionsNamespace);
+        $criterionsNamespace
+    );
 
     $campaignEstimators[] = $campaignEstimator;
     
-    $getKeywordTrafficEstimatesResponse = AdInsightExampleHelper::GetKeywordTrafficEstimates($campaignEstimators);
-    
+    print("-----\r\nGetKeywordTrafficEstimates:\r\n");
+    $getKeywordTrafficEstimatesResponse = AdInsightExampleHelper::GetKeywordTrafficEstimates(
+        $campaignEstimators
+    );
+    print("CampaignEstimates:\r\n");
     AdInsightExampleHelper::OutputArrayOfCampaignEstimate($getKeywordTrafficEstimatesResponse->CampaignEstimates);
 
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        AdInsightExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        AdInsightExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {

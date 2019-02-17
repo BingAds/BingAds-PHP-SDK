@@ -29,27 +29,17 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CustomerManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CustomerManagementProxy'] = null; 
-
 // Specify the email address where the invitation should be sent. 
 // It is important to note that the recipient can accept the invitation 
 // and sign into Bing Ads with a Microsoft account different than the invitation email address.
 $userInviteRecipientEmail = "UserInviteRecipientEmailGoesHere";
 
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 try
 {
-    print("You must edit this example to provide the email address (userInviteRecipientEmail) for the user invitation.\n");
-    print("You must use Super Admin credentials to send a user invitation.\n\n");
+    print("You must edit this example to provide the email address (userInviteRecipientEmail) for the user invitation.\r\n");
+    print("You must use Super Admin credentials to send a user invitation.\r\n");
 
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
     $customerId = $GLOBALS['AuthorizationData']->CustomerId;
@@ -62,7 +52,7 @@ try
     $userInvitation->CustomerId = $customerId;
 
     // Users with account level roles such as Advertiser Campaign Manager can be restricted to specific accounts. 
-    // Users with customer level roles such as Super Admin can access all accounts within the user�s customer, 
+    // Users with customer level roles such as Super Admin can access all accounts within the user's customer, 
     // and their access cannot be restricted to specific accounts.
     $userInvitation->AccountIds = null;
 
@@ -81,12 +71,15 @@ try
 
     // The locale to use when sending correspondence to the user by email or postal mail. The default is EnglishUS.
     $userInvitation->Lcid = LCID::EnglishUS;
-    
-    
+        
     // Once you send a user invitation, there is no option to rescind the invitation using the API.
     // You can delete a pending invitation in the Accounts & Billing -> Users tab of the Bing Ads web application. 
-    $userInvitationId = CustomerManagementExampleHelper::SendUserInvitation($userInvitation)->UserInvitationId;
-    printf("Sent new user invitation to %s.\n", $userInviteRecipientEmail);
+
+    print("-----\r\nSendUserInvitation:\r\n");
+    $userInvitationId = CustomerManagementExampleHelper::SendUserInvitation(
+        $userInvitation
+    )->UserInvitationId;
+    printf("Sent new user invitation to %s.\r\n", $userInviteRecipientEmail);
 
     // It is possible to have multiple pending invitations sent to the same email address, 
     // which have not yet expired. It is also possible for those invitations to have specified 
@@ -97,17 +90,11 @@ try
     // is through the Bing Ads web application. You can find both pending and accepted invitations 
     // in the Users section of Accounts & Billing.
 
-    // Since a recipient can accept the invitation and sign into Bing Ads with a Microsoft account different 
-    // than the invitation email address, you cannot determine with certainty the mapping from UserInvitation 
-    // to accepted User. You can search by the invitation ID (returned by SendUserInvitations), 
-    // only to the extent of finding out whether or not the invitation has been accepted or has expired. 
+    // Since a recipient can accept the invitation with credentials that differ from 
+    // the invitation email address, you cannot determine with certainty the mapping from UserInvitation 
+    // to accepted User. You can only determine whether the invitation has been accepted or has expired. 
     // The SearchUserInvitations operation returns all pending invitations, whether or not they have expired. 
     // Accepted invitations are not included in the SearchUserInvitations response.  
-
-    // This example searches for all user invitations of the customer that you manage,
-    // and then filters the search results to find the invitation sent above.
-    // Note: In this example the invitation (sent above) should be active and not expired. You can set a breakpoint 
-    // and then either accept or delete the invitation in the Bing Ads web application to change the invitation status.
 
     $predicates = array();
     $predicate = new Predicate();
@@ -116,42 +103,48 @@ try
     $predicate->Value = $customerId;
     $predicates[] = $predicate;
     
-    $userInvitations = CustomerManagementExampleHelper::SearchUserInvitations($predicates)->UserInvitations;
-    print("Existing UserInvitation(s):\n");
+    print("-----\r\nSearchUserInvitations:\r\n");
+    $userInvitations = CustomerManagementExampleHelper::SearchUserInvitations(
+        $predicates
+    )->UserInvitations;
+    print("UserInvitations:\r\n");
     CustomerManagementExampleHelper::OutputArrayOfUserInvitation($userInvitations);
 
     // After the invitation has been accepted, you can call GetUsersInfo and GetUser to access the Bing Ads user details. 
-    // Once again though, since a recipient can accept the invitation and sign into Bing Ads with a Microsoft account 
-    // different than the invitation email address, you cannot determine with certainty the mapping from UserInvitation 
-    // to accepted User. With the user ID returned by GetUsersInfo or GetUser, you can call DeleteUser to remove the user.
+    // Once again though, since a recipient can accept the invitation with credentials that differ from 
+    // the invitation email address, you cannot determine with certainty the mapping from UserInvitation 
+    // to accepted User. 
 
-    $usersInfo = CustomerManagementExampleHelper::GetUsersInfo($customerId, null)->UsersInfo;
+    print("-----\r\nGetUsersInfo:\r\n");
+    $usersInfo = CustomerManagementExampleHelper::GetUsersInfo(
+        $customerId, 
+        null
+    )->UsersInfo;
+    print("UsersInfo:\r\n");
+    CustomerManagementExampleHelper::OutputArrayOfUserInfo($usersInfo);
     
     foreach ($usersInfo->UserInfo as $userInfo)
     {
-        $getUserResponse = CustomerManagementExampleHelper::GetUser($userInfo->Id, true);
-        CustomerManagementExampleHelper::OutputUser($getUserResponse->User);
+        print("-----\r\nGetUser:\r\n");
+        $getUserResponse = CustomerManagementExampleHelper::GetUser(
+            $userInfo->Id, 
+            true
+        );
+        $user = $getUserResponse->User;
+        print("User:\r\n");
+        CustomerManagementExampleHelper::OutputUser($user);
+        print("CustomerRoles:\r\n");
         CustomerManagementExampleHelper::OutputArrayOfCustomerRole($getUserResponse->CustomerRoles);
-    }
-    
+    }    
 }
 catch (SoapFault $e)
 {
-    print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-    print $GLOBALS['Proxy']->GetWsdl() . "\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CustomerManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFault))
-    {
-        CustomerManagementExampleHelper::OutputApiFault($e->detail->ApiFault);
-    }
+    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -160,7 +153,7 @@ catch (Exception $e)
     { ; }
     else
     {
-        print $e->getCode()." ".$e->getMessage()."\n\n";
-        print $e->getTraceAsString()."\n\n";
+        print $e->getCode()." ".$e->getMessage()."\r\n";
+        print $e->getTraceAsString()."\r\n";
     }
 }

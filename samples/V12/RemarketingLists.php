@@ -26,6 +26,12 @@ use Microsoft\BingAds\V12\CampaignManagement\AudienceCriterion;
 use Microsoft\BingAds\V12\CampaignManagement\BidMultiplier;
 use Microsoft\BingAds\V12\CampaignManagement\AudienceType;
 use Microsoft\BingAds\V12\CampaignManagement\RemarketingList;
+use Microsoft\BingAds\V12\CampaignManagement\CustomEventsRule;
+use Microsoft\BingAds\V12\CampaignManagement\PageVisitorsRule;
+use Microsoft\BingAds\V12\CampaignManagement\PageVisitorsWhoDidNotVisitAnotherPageRule;
+use Microsoft\BingAds\V12\CampaignManagement\PageVisitorsWhoVisitedAnotherPageRule;
+use Microsoft\BingAds\V12\CampaignManagement\RuleItemGroup;
+use Microsoft\BingAds\V12\CampaignManagement\StringRuleItem;
 use Microsoft\BingAds\V12\CampaignManagement\EntityScope;
 use Microsoft\BingAds\V12\CampaignManagement\BudgetLimitType;
 use Microsoft\BingAds\V12\CampaignManagement\Bid;
@@ -47,73 +53,467 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
+    // Before you can track conversions or target audiences using a remarketing list 
+    // you need to create a UET tag, and then add the UET tag tracking code to every page of your website.
+    // For more information, please see Universal Event Tracking at https://go.microsoft.com/fwlink/?linkid=829965.
 
-    // To discover all remarketing lists that the user can associate with ad groups 
-    // in the current account (per CustomerAccountId header), 
-    // set RemarketingListIds to null when calling the GetAudiencesByIds operation.
+    // First you should call the GetUetTagsByIds operation to check whether a tag has already been created. 
+    // You can leave the TagIds element null or empty to request all UET tags available for the customer.
 
-    $remarketingLists = CampaignManagementExampleHelper::GetAudiencesByIds(
-        null, 
-        array(AudienceType::RemarketingList))->Audiences;
+    print("-----\r\nGetUetTagsByIds:\r\n");
+    $uetTags = CampaignManagementExampleHelper::GetUetTagsByIds(
+        null
+    )->UetTags;
 
-    // You must already have at least one remarketing list for the remainder of this example. 
+    // If you do not already have a UET tag that can be used, or if you need another UET tag, 
+    // call the AddUetTags service operation to create a new UET tag. If the call is successful, 
+    // the tracking script that you should add to your website is included in a corresponding 
+    // UetTag within the response message. 
 
-    if (count($remarketingLists) < 1)
+    if (count($uetTags) < 1)
     {
+        $uetTag = new UetTag();
+        $uetTag->Description = "My First Uet Tag";
+        $uetTag->Name = "New Uet Tag";
+        print("-----\r\nAddUetTags:\r\n");
+        $uetTags = CampaignManagementExampleHelper::AddUetTags(
+            array($uetTag)
+        )->UetTags;
+    }
+
+    if (count($uetTags) < 1)
+    {
+        printf(
+            "You do not have any UET tags registered for CustomerId {0}.", 
+            $GLOBALS['AuthorizationData']->CustomerId
+        );
         return;
     }
+
+    print("List of all UET Tags:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfUetTag($uetTags);
+
+    // After you retreive the tracking script from the AddUetTags or GetUetTagsByIds operation, 
+    // the next step is to add the UET tag tracking code to your website. 
+
+    // We will use the same UET tag for the remainder of this example.
+    $tagId = $uetTags->UetTag[0]->Id;
+    
+    // Add remarketing lists that depend on the UET Tag Id retreived above.
+
+    $audiences = array();
+    $customEventsList = new RemarketingList();
+    $customEventsList->Description="New list with CustomEventsRule";
+    $customEventsList->MembershipDuration=30;
+    $customEventsList->Name="Remarketing List with CustomEventsRule " . $_SERVER['REQUEST_TIME'];
+    $customEventsList->ParentId = $GLOBALS['AuthorizationData']->AccountId;
+    // The rule definition is translated to the following logical expression: 
+    // (Category Equals video) and (Action Equals play) and (Label Equals trailer) 
+    // and (Value Equals 5)
+    $customEventsRule = new CustomEventsRule();
+    // The type of user interaction you want to track.
+    $customEventsRule->Action="play";
+    $customEventsRule->ActionOperator='Equals';
+    // The category of event you want to track. 
+    $customEventsRule->Category="video";
+    $customEventsRule->CategoryOperator='Equals';
+    // The name of the element that caused the action.
+    $customEventsRule->Label="trailer";
+    $customEventsRule->LabelOperator='Equals';
+    // A numerical value associated with that event. 
+    // Could be length of the video played etc.
+    $customEventsRule->Value=5.00;
+    $customEventsRule->ValueOperator='Equals';
+    $customEventsList->Rule = new SoapVar(
+        $customEventsRule, 
+        SOAP_ENC_OBJECT, 
+        'CustomEventsRule', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );  
+    $customEventsList->Scope='Account';
+    $customEventsList->TagId = $tagId;     
+    $audiences[] = new SoapVar(
+        $customEventsList, 
+        SOAP_ENC_OBJECT, 
+        'RemarketingList', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );       
+                
+    $pageVisitorsList = new RemarketingList();  
+    $pageVisitorsList->Description="New list with PageVisitorsRule";
+    $pageVisitorsList->MembershipDuration=30;
+    $pageVisitorsList->Name="Remarketing List with PageVisitorsRule " . $_SERVER['REQUEST_TIME'];
+    $pageVisitorsList->ParentId = $GLOBALS['AuthorizationData']->AccountId;
+    // The rule definition is translated to the following logical expression: 
+    // ((Url Contains X) and (ReferrerUrl DoesNotContain Z)) or ((Url DoesNotBeginWith Y)) 
+    // or ((ReferrerUrl Equals Z))
+    $pageVisitorsRule = new PageVisitorsRule();
+    $pageVisitorsRuleItemGroups = array();
+    $pageVisitorsRuleItemGroupA = new RuleItemGroup();
+    $pageVisitorsRuleItemsA = array();
+    $pageVisitorsRuleItemA = new StringRuleItem();
+    $pageVisitorsRuleItemA->Operand = "Url";
+    $pageVisitorsRuleItemA->Operator = 'Contains';
+    $pageVisitorsRuleItemA->Value = "X";
+    $pageVisitorsRuleItemsA[] = new SoapVar(
+        $pageVisitorsRuleItemA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );        
+    $pageVisitorsRuleItemAA = new StringRuleItem();
+    $pageVisitorsRuleItemAA->Operand = "ReferrerUrl";
+    $pageVisitorsRuleItemAA->Operator = 'DoesNotContain';
+    $pageVisitorsRuleItemAA->Value = "Z";
+    $pageVisitorsRuleItemsA[] = new SoapVar(
+        $pageVisitorsRuleItemAA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );    
+    $pageVisitorsRuleItemGroupA->Items = $pageVisitorsRuleItemsA;
+    $pageVisitorsRuleItemGroups[] = $pageVisitorsRuleItemGroupA;
+    $pageVisitorsRuleItemGroupB = new RuleItemGroup();
+    $pageVisitorsRuleItemsB = array();
+    $pageVisitorsRuleItemB = new StringRuleItem();
+    $pageVisitorsRuleItemB->Operand = "Url";
+    $pageVisitorsRuleItemB->Operator = 'DoesNotBeginWith';
+    $pageVisitorsRuleItemB->Value = "Y";
+    $pageVisitorsRuleItemsB[] = new SoapVar(
+        $pageVisitorsRuleItemB, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );          
+    $pageVisitorsRuleItemGroupB->Items = $pageVisitorsRuleItemsB;
+    $pageVisitorsRuleItemGroups[] = $pageVisitorsRuleItemGroupB;
+    $pageVisitorsRuleItemGroupC = new RuleItemGroup();
+    $pageVisitorsRuleItemsC = array();
+    $pageVisitorsRuleItemC = new StringRuleItem();
+    $pageVisitorsRuleItemC->Operand = "ReferrerUrl";
+    $pageVisitorsRuleItemC->Operator = 'Equals';
+    $pageVisitorsRuleItemC->Value = "Z";
+    $pageVisitorsRuleItemsC[] = new SoapVar(
+        $pageVisitorsRuleItemC, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );                   
+    $pageVisitorsRuleItemGroupC->Items = $pageVisitorsRuleItemsC;
+    $pageVisitorsRuleItemGroups[] = $pageVisitorsRuleItemGroupC;
+    $pageVisitorsRule->RuleItemGroups = $pageVisitorsRuleItemGroups;
+    $pageVisitorsList->Rule = new SoapVar(
+        $pageVisitorsRule, 
+        SOAP_ENC_OBJECT, 
+        'PageVisitorsRule', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );  
+    $pageVisitorsList->Scope='Account';
+    $pageVisitorsList->TagId = $tagId; 
+    $audiences[] = new SoapVar(
+        $pageVisitorsList, 
+        SOAP_ENC_OBJECT, 
+        'RemarketingList', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );  
+    
+    $pageVisitorsWhoDidNotVisitAnotherPageList = new RemarketingList();        
+    $pageVisitorsWhoDidNotVisitAnotherPageList->Description="New list with PageVisitorsWhoDidNotVisitAnotherPageRule";
+    $pageVisitorsWhoDidNotVisitAnotherPageList->MembershipDuration=30;
+    $pageVisitorsWhoDidNotVisitAnotherPageList->Name="Remarketing List with PageVisitorsWhoDidNotVisitAnotherPageRule " 
+        . $_SERVER['REQUEST_TIME'];
+    $pageVisitorsWhoDidNotVisitAnotherPageList->ParentId = $GLOBALS['AuthorizationData']->AccountId;
+    // The rule definition is translated to the following logical expression: 
+    // (((Url Contains X) and (ReferrerUrl DoesNotContain Z)) or ((Url DoesNotBeginWith Y)) 
+    // or ((ReferrerUrl Equals Z))) 
+    // and not (((Url BeginsWith A) and (ReferrerUrl BeginsWith B)) or ((Url Contains C)))
+    $pageVisitorsWhoDidNotVisitAnotherPageRule = new PageVisitorsWhoDidNotVisitAnotherPageRule();            
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroups = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroupA = new RuleItemGroup();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsA = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemA = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemA->Operand = "Url";
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemA->Operator = 'BeginsWith';
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemA->Value = "A";
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );   
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemAA = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemAA->Operand = "ReferrerUrl";
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemAA->Operator = 'BeginsWith';
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemAA->Value = "B";
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemAA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );   
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroupA->Items = $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsA;
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroups[] = $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroupA;
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroupB = new RuleItemGroup();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsB = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemB = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemB->Operand = "Url";
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemB->Operator = 'Contains';
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemB->Value = "C";
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsB[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemB, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );            
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroupB->Items = $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemsB;
+    $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroups[] = $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroupB;
+    $pageVisitorsWhoDidNotVisitAnotherPageRule->ExcludeRuleItemGroups = $pageVisitorsWhoDidNotVisitAnotherPageExcludeRuleItemGroups;            
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroups = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupA = new RuleItemGroup();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsA = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemA = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemA->Operand = "Url";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemA->Operator = 'Contains';
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemA->Value = "X";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );   
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemAA = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemAA->Operand = "ReferrerUrl";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemAA->Operator = 'DoesNotContain';
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemAA->Value = "Z";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemAA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );   
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupA->Items = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsA;
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroups[] = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupA;
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupB = new RuleItemGroup();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsB = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemB = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemB->Operand = "Url";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemB->Operator = 'DoesNotBeginWith';
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemB->Value = "Y";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsB[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemB, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );          
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupB->Items = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsB;
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroups[] = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupB;
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupC = new RuleItemGroup();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsC = array();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemC = new StringRuleItem();
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemC->Operand = "ReferrerUrl";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemC->Operator = 'Equals';
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemC->Value = "Z";
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsC[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemC, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );             
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupC->Items = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemsC;
+    $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroups[] = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroupC;
+    $pageVisitorsWhoDidNotVisitAnotherPageRule->IncludeRuleItemGroups = $pageVisitorsWhoDidNotVisitAnotherPageIncludeRuleItemGroups;
+    $pageVisitorsWhoDidNotVisitAnotherPageList->Rule = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageRule, 
+        SOAP_ENC_OBJECT, 
+        'PageVisitorsWhoDidNotVisitAnotherPageRule', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );  
+    $pageVisitorsWhoDidNotVisitAnotherPageList->Scope='Account';
+    $pageVisitorsWhoDidNotVisitAnotherPageList->TagId = $tagId;   
+    $audiences[] = new SoapVar(
+        $pageVisitorsWhoDidNotVisitAnotherPageList, 
+        SOAP_ENC_OBJECT, 
+        'RemarketingList', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    ); 
+
+    $pageVisitorsWhoVisitedAnotherPageList = new RemarketingList();  
+    $pageVisitorsWhoVisitedAnotherPageList->Description="New list with PageVisitorsWhoVisitedAnotherPageRule";
+    $pageVisitorsWhoVisitedAnotherPageList->MembershipDuration=30;
+    $pageVisitorsWhoVisitedAnotherPageList->Name="Remarketing List with PageVisitorsWhoVisitedAnotherPageRule " 
+        . $_SERVER['REQUEST_TIME'];
+    $pageVisitorsWhoVisitedAnotherPageList->ParentId = $GLOBALS['AuthorizationData']->AccountId;
+    // The rule definition is translated to the following logical expression: 
+    // (((Url Contains X) and (ReferrerUrl NotEquals Z)) or ((Url DoesNotBeginWith Y)) or 
+    // ((ReferrerUrl Equals Z))) 
+    // and (((Url BeginsWith A) and (ReferrerUrl BeginsWith B)) or ((Url Contains C)))
+    $pageVisitorsWhoVisitedAnotherPageRule = new PageVisitorsWhoVisitedAnotherPageRule();         
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroups = array();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroupA = new RuleItemGroup();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsA = array();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemA = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemA->Operand = "Url";
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemA->Operator = 'BeginsWith';
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemA->Value = "A";
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );   
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemAA = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemAA->Operand = "ReferrerUrl";
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemAA->Operator = 'BeginsWith';
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemAA->Value = "B";
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemAA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );    
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroupA->Items = $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsA;
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroups[] = $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroupA;
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroupB = new RuleItemGroup();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsB = array();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemB = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemB->Operand = "Url";
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemB->Operator = 'Contains';
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemB->Value = "C";
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsB[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemB, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );            
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroupB->Items = $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemsB;
+    $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroups[] = $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroupB;
+    $pageVisitorsWhoVisitedAnotherPageRule->AnotherRuleItemGroups = $pageVisitorsWhoVisitedAnotherPageAnotherRuleItemGroups;            
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroups = array();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroupA = new RuleItemGroup();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsA = array();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemA = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemA->Operand = "Url";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemA->Operator = 'Contains';
+    $pageVisitorsWhoVisitedAnotherPageRuleItemA->Value = "X";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageRuleItemA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );    
+    $pageVisitorsWhoVisitedAnotherPageRuleItemAA = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemAA->Operand = "ReferrerUrl";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemAA->Operator = 'DoesNotContain';
+    $pageVisitorsWhoVisitedAnotherPageRuleItemAA->Value = "Z";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsA[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageRuleItemAA, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );     
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroupA->Items = $pageVisitorsWhoVisitedAnotherPageRuleItemsA;
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroups[] = $pageVisitorsWhoVisitedAnotherPageRuleItemGroupA;
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroupB = new RuleItemGroup();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsB = array();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemB = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemB->Operand = "Url";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemB->Operator = 'DoesNotBeginWith';
+    $pageVisitorsWhoVisitedAnotherPageRuleItemB->Value = "Y";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsB[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageRuleItemB, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );            
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroupB->Items = $pageVisitorsWhoVisitedAnotherPageRuleItemsB;
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroups[] = $pageVisitorsWhoVisitedAnotherPageRuleItemGroupB;
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroupC = new RuleItemGroup();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsC = array();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemC = new StringRuleItem();
+    $pageVisitorsWhoVisitedAnotherPageRuleItemC->Operand = "ReferrerUrl";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemC->Operator = 'Equals';
+    $pageVisitorsWhoVisitedAnotherPageRuleItemC->Value = "Z";
+    $pageVisitorsWhoVisitedAnotherPageRuleItemsC[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageRuleItemC, 
+        SOAP_ENC_OBJECT, 
+        'StringRuleItem', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );             
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroupC->Items = $pageVisitorsWhoVisitedAnotherPageRuleItemsC;
+    $pageVisitorsWhoVisitedAnotherPageRuleItemGroups[] = $pageVisitorsWhoVisitedAnotherPageRuleItemGroupC;
+    $pageVisitorsWhoVisitedAnotherPageRule->RuleItemGroups = $pageVisitorsWhoVisitedAnotherPageRuleItemGroups;
+    $pageVisitorsWhoVisitedAnotherPageList->Rule = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageRule, 
+        SOAP_ENC_OBJECT, 
+        'PageVisitorsWhoVisitedAnotherPageRule', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );  
+    $pageVisitorsWhoVisitedAnotherPageList->Scope='Account';
+    $pageVisitorsWhoVisitedAnotherPageList->TagId = $tagId;   
+    $audiences[] = new SoapVar(
+        $pageVisitorsWhoVisitedAnotherPageList, 
+        SOAP_ENC_OBJECT, 
+        'RemarketingList', 
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    ); 
+
+    // RemarketingList extends the Audience base class. 
+    // We manage remarketing lists with Audience operations.
+
+    print("-----\r\nAddAudiences:\r\n");
+    $addAudiencesResponse = CampaignManagementExampleHelper::AddAudiences(
+        $audiences
+    );
+    $audienceIds = $addAudiencesResponse->AudienceIds;
+    print("AudienceIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($audienceIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addAudiencesResponse->PartialErrors);
                 
     // Add an ad group in a campaign. The ad group will later be associated with remarketing lists. 
     
-    $campaigns = array();
-   
+    $campaigns = array();   
     $campaign = new Campaign();
-    $campaign->Name = "Winter Clothing " . $_SERVER['REQUEST_TIME'];
-    $campaign->Description = "Winter clothing line.";
+    $campaign->Name = "Women's Shoes " . $_SERVER['REQUEST_TIME'];
+    $campaign->Description = "Red shoes line.";
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
     $campaign->DailyBudget = 50.00;
+    $campaign->Languages = array("All");
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
-
     $campaigns[] = $campaign;
     
+    print("-----\r\nAddCampaigns:\r\n");
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        $campaigns,
+        false
+    );
+    $campaignIds = $addCampaignsResponse->CampaignIds;
+    print("CampaignIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($campaignIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
+    
     $adGroups = array();
-
+    $adGroup = new AdGroup();
+    $adGroup->CpcBid = new Bid();
+    $adGroup->CpcBid->Amount = 0.09;
     date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
     $endDate->Year = date("Y");
-
-    $adGroup = new AdGroup();
-    $adGroup->Name = "Women's Heated Ski Glove Sale";
-    $adGroup->StartDate = null;
     $adGroup->EndDate = $endDate;
-    $adGroup->CpcBid = new Bid();
-    $adGroup->CpcBid->Amount = 0.07;
-    $adGroup->Language = "English";
-
-    // Applicable for all audiences that are associated with this ad group. Set TargetAndBid to True 
-    // if you want to show ads only to people included in the remarketing list, with the option to change
-    // the bid amount. 
+    $adGroup->Name = "Women's Red Shoe Sale";    
+    $adGroup->StartDate = null;    
+    // Applicable for all remarketing lists that are associated with this ad group. TargetAndBid indicates 
+    // that you want to show ads only to people included in the remarketing list, with the option to change
+    // the bid amount. Ads in this ad group will only show to people included in the remarketing list. 
     $adGroupSettings = array();
     $adGroupTargetSetting = new TargetSetting();
     $adGroupAudienceTargetSettingDetail = new TargetSettingDetail();
@@ -125,56 +525,43 @@ try
         $adGroupTargetSetting, 
         SOAP_ENC_OBJECT, 
         'TargetSetting', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
+        $GLOBALS['CampaignManagementProxy']->GetNamespace()
+    );
     $adGroupSettings[] = $encodedAdGroupTargetSetting;
     $adGroup->Settings=$adGroupSettings;
-    
     $adGroups[] = $adGroup;
+ 
+    print("-----\r\nAddAdGroups:\r\n");
+    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups(
+        $campaignIds->long[0], 
+        $adGroups,
+        null
+    );
+    $adGroupIds = $addAdGroupsResponse->AdGroupIds;
+    print("AdGroupIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($adGroupIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
 
-    print "AddCampaigns\n";
-    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
-        $GLOBALS['AuthorizationData']->AccountId, 
-        $campaigns,
-        false);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
-    if(isset($addCampaignsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
-    }
+    // Associate all of the remarketing lists created above with the new ad group.
 
-    print "AddAdGroups\n";
-    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups($nillableCampaignIds->long[0], $adGroups);
-    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
-    if(isset($addAdGroupsResponse->PartialErrors->BatchError)){
-        CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
-    }
+    $adGroupCriterions = array();
 
-    // If the campaign or ad group add operations failed then we cannot continue this example. 
-
-    if (empty($addAdGroupsResponse->AdGroupIds) || count($addAdGroupsResponse->AdGroupIds) < 1)
+    foreach ($audienceIds->long as $audienceId)
     {
-        return;
-    }
-
-   $adGroupCriterions = array();
-
-    // This example associates all of the remarketing lists with the new ad group.
-
-    foreach ($remarketingLists->Audience as $remarketingList)
-    {
-        if ($remarketingList->Id != null)
+        if ($audienceId != null)
         {
             $adGroupCriterion = new BiddableAdGroupCriterion();
             
             $criterion = new AudienceCriterion();
-            $criterion->AudienceId = $remarketingList->Id;
+            $criterion->AudienceId = $audienceId;
             $criterion->AudienceType = AudienceType::RemarketingList;
             $adGroupCriterion->Criterion = new SoapVar(
                 $criterion, 
                 SOAP_ENC_OBJECT, 
                 'AudienceCriterion', 
-                $GLOBALS['CampaignManagementProxy']->GetNamespace());
+                $GLOBALS['CampaignManagementProxy']->GetNamespace()
+            );
 
             $criterionBid = new BidMultiplier();
             $criterionBid->Multiplier = 20.00;
@@ -182,106 +569,50 @@ try
                 $criterionBid, 
                 SOAP_ENC_OBJECT, 
                 'BidMultiplier', 
-                $GLOBALS['CampaignManagementProxy']->GetNamespace());
+                $GLOBALS['CampaignManagementProxy']->GetNamespace()
+            );
 
-            $adGroupCriterion->AdGroupId = $nillableAdGroupIds->long[0];
+            $adGroupCriterion->AdGroupId = $adGroupIds->long[0];
             $adGroupCriterion->Status = AdGroupCriterionStatus::Active;
             
             $adGroupCriterions[] = new SoapVar(
                 $adGroupCriterion, 
                 SOAP_ENC_OBJECT, 
                 'BiddableAdGroupCriterion', 
-                $GLOBALS['CampaignManagementProxy']->GetNamespace());
+                $GLOBALS['CampaignManagementProxy']->GetNamespace()
+            );
         }
     }
 
-    print("\nAssociate remarketing lists with the ad group.\n\n");
-    $addAdGroupCriterionsResponse = CampaignManagementExampleHelper::AddAdGroupCriterions($adGroupCriterions, AdGroupCriterionType::Audience);
+    print("-----\r\nAddAdGroupCriterions:\r\n");
+    $addAdGroupCriterionsResponse = CampaignManagementExampleHelper::AddAdGroupCriterions(
+        $adGroupCriterions, 
+        AdGroupCriterionType::Audience
+    );
+    $adGroupCriterionIds = $addAdGroupCriterionsResponse->AdGroupCriterionIds;
+    print("AdGroupCriterionIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($adGroupCriterionIds);
+    $adGroupCriterionErrors = $addAdGroupCriterionsResponse->NestedPartialErrors;
+    print("NestedPartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchErrorCollection($adGroupCriterionErrors);
     
-    // You can store the association IDs which can be used to update or delete associations later. 
+    // Delete the campaign and everything it contains e.g., ad groups and ads.
 
-    $adGroupCriterionIds = $addAdGroupCriterionsResponse->AdGroupCriterionIds->long;
-
-    $getAdGroupCriterionsByIdsResponse = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
-        $adGroupCriterionIds,
-        $nillableAdGroupIds->long[0],          
-        AdGroupCriterionType::RemarketingList);
-    
-    print("Remarketing list associations for the ad group:\n\n");
-    CampaignManagementExampleHelper::OutputArrayOfAdGroupCriterion($getAdGroupCriterionsByIdsResponse->AdGroupCriterions); 
-    
-    // If the associations were added and retrieved successfully let's practice updating and deleting one of them.
-
-    if ($adGroupCriterionIds != null && count($adGroupCriterionIds) > 0)
-    {
-        $adGroupCriterions = array();
-        
-        $updateAdGroupCriterion = new BiddableAdGroupCriterion();
-
-        $criterion = new AudienceCriterion();
-        $criterion->AudienceType = AudienceType::RemarketingList;
-        $updateAdGroupCriterion->Criterion = new SoapVar(
-            $criterion, 
-            SOAP_ENC_OBJECT, 
-            'AudienceCriterion', 
-            $GLOBALS['CampaignManagementProxy']->GetNamespace());
-
-        $criterionBid = new BidMultiplier();
-        $criterionBid->Multiplier = 10.00;
-        $updateAdGroupCriterion->CriterionBid = new SoapVar(
-            $criterionBid, 
-            SOAP_ENC_OBJECT, 
-            'BidMultiplier', 
-            $GLOBALS['CampaignManagementProxy']->GetNamespace());
-
-        $updateAdGroupCriterion->AdGroupId = $nillableAdGroupIds->long[0];
-        $updateAdGroupCriterion->Id = $adGroupCriterionIds[0];
-        $updateAdGroupCriterion->Status = AdGroupCriterionStatus::Active;
-        
-        $adGroupCriterions[] = new SoapVar(
-            $updateAdGroupCriterion, 
-            SOAP_ENC_OBJECT, 
-            'BiddableAdGroupCriterion', 
-            $GLOBALS['CampaignManagementProxy']->GetNamespace());
-        
-        $updateAdGroupCriterionsResponse = CampaignManagementExampleHelper::UpdateAdGroupCriterions(
-            $adGroupCriterions, 
-            AdGroupCriterionType::Audience);
-        
-        $deleteAdGroupCriterionsResponse = CampaignManagementExampleHelper::DeleteAdGroupCriterions(
-            $adGroupCriterionIds, 
-            $nillableAdGroupIds->long[0], 
-            AdGroupCriterionType::Audience);
-    }
-
-    // Delete the campaign, ad group, and ad group remarketing list associations that were previously added. 
-    // You should remove this line if you want to view the added entities in the 
-    // Bing Ads web application or another tool.
-
-    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
-    printf("\nDeleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
+    print("-----\r\nDeleteCampaigns:\r\n");
+    CampaignManagementExampleHelper::DeleteCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        array($campaignIds->long[0])
+    );
+    printf("Deleted CampaignId %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
-    elseif (isset($e->detail->EditorialApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {

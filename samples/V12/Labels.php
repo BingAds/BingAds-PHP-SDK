@@ -37,15 +37,6 @@ use Microsoft\BingAds\Auth\ServiceClientType;
 use Microsoft\BingAds\Samples\V12\AuthHelper;
 use Microsoft\BingAds\Samples\V12\CampaignManagementExampleHelper;
 
-$GLOBALS['AuthorizationData'] = null;
-$GLOBALS['Proxy'] = null;
-$GLOBALS['CampaignManagementProxy'] = null; 
-
-// Disable WSDL caching.
-
-ini_set("soap.wsdl_cache_enabled", "0");
-ini_set("soap.wsdl_cache_ttl", "0");
-
 $GLOBALS['MaxGetLabelsByIds'] = 1000;
 $GLOBALS['MaxLabelIdsForGetLabelAssociations'] = 1;
 $GLOBALS['MaxEntityIdsForGetLabelAssociations'] = 100;
@@ -53,71 +44,65 @@ $GLOBALS['MaxPagingSize'] = 1000;
     
 try
 {
-    // Authenticate for Bing Ads services with a Microsoft Account.
-    
+    // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    $GLOBALS['CampaignManagementProxy'] = new ServiceClient(
-        ServiceClientType::CampaignManagementVersion12, 
-        $GLOBALS['AuthorizationData'], 
-        AuthHelper::GetApiEnvironment());
-
-    // Create a campaign, ad group, keyword, and expanded text ad.
+    // Add an ad group in a campaign. Later we will create labels for them. 
+    // Although not included in this example you can also create labels for ads and keywords. 
     
-    $campaigns = array();
+    $campaigns = array();   
     $campaign = new Campaign();
     $campaign->Name = "Women's Shoes " . $_SERVER['REQUEST_TIME'];
     $campaign->Description = "Red shoes line.";
-    $campaign->DailyBudget = 50;
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
+    $campaign->DailyBudget = 50.00;
+    $campaign->Languages = array("All");
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
     $campaigns[] = $campaign;
+    
+    print("-----\r\nAddCampaigns:\r\n");
+    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        $campaigns,
+        false
+    );
+    $campaignIds = $addCampaignsResponse->CampaignIds;
+    print("CampaignIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($campaignIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
 
     $adGroups = array();
+    $adGroup = new AdGroup();
+    $adGroup->CpcBid = new Bid();
+    $adGroup->CpcBid->Amount = 0.09;
     date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
     $endDate->Year = date("Y");
-    $adGroup = new AdGroup();
-    $adGroup->Name = "Women's Red Shoe Sale";
-    $adGroup->StartDate = null;
     $adGroup->EndDate = $endDate;
-    $adGroup->CpcBid = new Bid();
-    $adGroup->CpcBid->Amount = 0.09;
-    $adGroup->Language = "English";    
+    $adGroup->Name = "Women's Red Shoe Sale";    
+    $adGroup->StartDate = null;    
     $adGroups[] = $adGroup;
+ 
+    print("-----\r\nAddAdGroups:\r\n");
+    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups(
+        $campaignIds->long[0], 
+        $adGroups,
+        null
+    );
+    $adGroupIds = $addAdGroupsResponse->AdGroupIds;
+    print("AdGroupIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($adGroupIds);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($addAdGroupsResponse->PartialErrors);
 
-    $keywords = array();
-    $keyword = new Keyword();
-    $keyword->Bid = new Bid();
-    $keyword->Bid->Amount = 0.47;
-    $keyword->Param2 = "10% Off";
-    $keyword->MatchType = MatchType::Phrase;
-    $keyword->Text = "Brand-A Shoes";
-    $keywords[] = $keyword;
-
-    $ads = array();
-    $expandedTextAd = new ExpandedTextAd();
-    $expandedTextAd->TitlePart1 = "Contoso";
-    $expandedTextAd->TitlePart2 = "Fast & Easy Setup";
-    $expandedTextAd->Text = "Find New Customers & Increase Sales! Start Advertising on Contoso Today.";
-    $expandedTextAd->Path1 = "seattle";
-    $expandedTextAd->Path2 = "shoe sale";
-    $expandedTextAd->FinalUrls = array();
-    $expandedTextAd->FinalUrls[] = "http://www.contoso.com/womenshoesale";
-    $ads[] = new SoapVar(
-        $expandedTextAd, 
-        SOAP_ENC_OBJECT, 
-        'ExpandedTextAd', 
-        $GLOBALS['CampaignManagementProxy']->GetNamespace());
-
-    
-    // Create labels that can be applied later to campaigns, ad groups, keywords, and ads.
+    // Add labels and associate them with the campaign and ad group.
 
     $labels = array();
 
-    for ($labelIndex = 0; $labelIndex < 50; $labelIndex++)
+    for ($labelIndex = 0; $labelIndex < 5; $labelIndex++)
     {
         $color = "#".substr("000000".dechex(rand()),-6); 
         $label = new Label();
@@ -126,213 +111,115 @@ try
         $label->Name = "Label Name " . $color . " " . $_SERVER['REQUEST_TIME'];
         $labels[] = $label;
     }
-
-    // Add the campaign, ad group, keyword, ad, and labels.
     
-    $addLabelsResponse = CampaignManagementExampleHelper::AddLabels($labels);
-    $nillableLabelIds = $addLabelsResponse->LabelIds;
+    print("-----\r\nAddLabels:\r\n");
+    $addLabelsResponse = CampaignManagementExampleHelper::AddLabels(
+        $labels
+    );
+    $labelIds = $addLabelsResponse->LabelIds;
     $labelErrors = $addLabelsResponse->PartialErrors;
-    print("New Label Ids:\n");
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableLabelIds);
+    print("LabelIds:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfLong($labelIds);
+    print("PartialErrors:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfBatchError($labelErrors);
-
-    $addCampaignsResponse = CampaignManagementExampleHelper::AddCampaigns(
-        $GLOBALS['AuthorizationData']->AccountId, 
-        $campaigns,
-        false);
-    $nillableCampaignIds = $addCampaignsResponse->CampaignIds;
-    $campaignErrors = $addLabelsResponse->PartialErrors;
-    print("New Campaign Ids:\n");
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableCampaignIds);
-    CampaignManagementExampleHelper::OutputArrayOfBatchError($campaignErrors);
-
-    $addAdGroupsResponse = CampaignManagementExampleHelper::AddAdGroups(
-        $nillableCampaignIds->long[0], 
-        $adGroups,
-        null);
-    $nillableAdGroupIds = $addAdGroupsResponse->AdGroupIds;
-    $adGroupErrors = $addAdGroupsResponse->PartialErrors;
-    print("New AdGroup Ids:\n");
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdGroupIds);
-    CampaignManagementExampleHelper::OutputArrayOfBatchError($adGroupErrors);
-
-    $addKeywordsResponse = CampaignManagementExampleHelper::AddKeywords(
-        $nillableAdGroupIds->long[0], 
-        $keywords,
-        null);
-    $nillableKeywordIds = $addKeywordsResponse->KeywordIds;
-    $keywordErrors = $addKeywordsResponse->PartialErrors;
-    print("New Keyword Ids:\n");
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableKeywordIds);
-    CampaignManagementExampleHelper::OutputArrayOfBatchError($keywordErrors);
-
-    $addAdsResponse = CampaignManagementExampleHelper::AddAds($nillableAdGroupIds->long[0], $ads);
-    $nillableAdIds = $addAdsResponse->AdIds;
-    $adErrors = $addAdsResponse->PartialErrors;
-    print("New Ad Ids:\n");
-    CampaignManagementExampleHelper::OutputArrayOfLong($nillableAdIds);
-    CampaignManagementExampleHelper::OutputArrayOfBatchError($adErrors);
-          
-    $labelIds = $nillableLabelIds;
-
-    print("\nGet all the labels that we added above...\n");
 
     $labelsPaging = new Paging();
     $labelsPaging->Index = 0;
     $labelsPaging->Size = $GLOBALS['MaxGetLabelsByIds'];
+
+    print("-----\r\nGetLabelsByIds:\r\n");
     $getLabelsByIdsResponse = CampaignManagementExampleHelper::GetLabelsByIds(
         $labelIds,
         $labelsPaging
     );
+    print("Labels:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfLabel($getLabelsByIdsResponse->Labels);
+    print("PartialErrors:\r\n");
+    CampaignManagementExampleHelper::OutputArrayOfBatchError($getLabelsByIdsResponse->PartialErrors);
 
-    print("\nUpdate the label color and then retrieve the labels again to confirm the changes....\n");
-
-    $updateLabels = array();
-    foreach ($getLabelsByIdsResponse->Labels->Label as $label)
-    {
-        $label->ColorCode = "#".substr("000000".dechex(rand()),-6);
-        $updateLabels[] = $label;
-    }
-    $updateLabelsResponse = CampaignManagementExampleHelper::UpdateLabels($updateLabels);
-
-    $getLabelsByIdsResponse = CampaignManagementExampleHelper::GetLabelsByIds(
-        $labelIds,
-        $labelsPaging
-    );
-    CampaignManagementExampleHelper::OutputArrayOfLabel($getLabelsByIdsResponse->Labels);
-
-    $campaignLabelAssociations = CreateExampleLabelAssociationsByEntityId($nillableCampaignIds->long[0], $labelIds);
-    print("\nAssociating all of the labels with a campaign...\n");
+    $campaignLabelAssociations = CreateExampleLabelAssociationsByEntityId($campaignIds->long[0], $labelIds);
+    print("-----\nAssociating all of the labels with a campaign...\r\n");
     CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($campaignLabelAssociations);
     $setLabelAssociationsResponse = CampaignManagementExampleHelper::SetLabelAssociations(
         EntityType::Campaign, 
-        $campaignLabelAssociations);
+        $campaignLabelAssociations
+    );
 
-    $adGroupLabelAssociations = CreateExampleLabelAssociationsByEntityId($nillableAdGroupIds->long[0], $labelIds);
-    print("\nAssociating all of the labels with an ad group...\n");
+    $adGroupLabelAssociations = CreateExampleLabelAssociationsByEntityId($adGroupIds->long[0], $labelIds);
+    print("-----\nAssociating all of the labels with an ad group...\r\n");
     CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($adGroupLabelAssociations);
     $setLabelAssociationsResponse = CampaignManagementExampleHelper::SetLabelAssociations(
         EntityType::AdGroup, 
-        $adGroupLabelAssociations);
+        $adGroupLabelAssociations
+    );
 
-    $keywordLabelAssociations = CreateExampleLabelAssociationsByEntityId($nillableKeywordIds->long[0], $labelIds);
-    print("\nAssociating all of the labels with a keyword...\n");
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($keywordLabelAssociations);
-    $setLabelAssociationsResponse = CampaignManagementExampleHelper::SetLabelAssociations(
-        EntityType::Keyword, 
-        $keywordLabelAssociations);
-
-    $adLabelAssociations = CreateExampleLabelAssociationsByEntityId($nillableAdIds->long[0], $labelIds);
-    print("\nAssociating all of the labels with an ad...\n");
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($adLabelAssociations);
-    $setLabelAssociationsResponse = CampaignManagementExampleHelper::SetLabelAssociations(
-        EntityType::Ad, 
-        $adLabelAssociations);
-
-
-    print("\nUse paging to get all campaign label associations...\n");
+    print("-----\nUse paging to get all campaign label associations...\r\n");
     $getLabelAssociationsByLabelIds = GetLabelAssociationsByLabelIdsHelper(
         EntityType::Campaign,
-        $labelIds);
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByLabelIds);
+        $labelIds
+    );
 
-    print("\nUse paging to get all ad group label associations...\n");
+    print("-----\nUse paging to get all ad group label associations...\r\n");
     $getLabelAssociationsByLabelIds = GetLabelAssociationsByLabelIdsHelper(
         EntityType::AdGroup,
-        $labelIds);
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByLabelIds);
+        $labelIds
+    );
 
-    print("\nUse paging to get all keyword label associations...\n");
-    $getLabelAssociationsByLabelIds = GetLabelAssociationsByLabelIdsHelper(
-        EntityType::Keyword,
-        $labelIds);
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByLabelIds);
-
-    print("\nUse paging to get all ad label associations...\n");
-    $getLabelAssociationsByLabelIds = GetLabelAssociationsByLabelIdsHelper(
-        EntityType::Ad,
-        $labelIds);
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByLabelIds);
-
-    print("\nGet all label associations for all specified campaigns...\n");
+    print("-----\nGet all label associations for all specified campaigns...\r\n");
     $getLabelAssociationsByEntityIds = GetLabelAssociationsByEntityIdsHelper(
         EntityType::Campaign,
-        $nillableCampaignIds
+        $campaignIds
     );
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByEntityIds);
 
-    print("\nGet all label associations for all specified ad groups...\n");
+    print("-----\nGet all label associations for all specified ad groups...\r\n");
     $getLabelAssociationsByEntityIds = GetLabelAssociationsByEntityIdsHelper(
         EntityType::AdGroup,
-        $nillableAdGroupIds
+        $adGroupIds
     );
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByEntityIds);
 
-    print("\nGet all label associations for all specified keywords...\n");
-    $getLabelAssociationsByEntityIds = GetLabelAssociationsByEntityIdsHelper(
-        EntityType::Keyword,
-        $nillableKeywordIds
-    );
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByEntityIds);
+    print("-----\nDelete all label associations that we set above....\r\n");
 
-    print("\nGet all label associations for all specified ads...\n");
-    $getLabelAssociationsByEntityIds = GetLabelAssociationsByEntityIdsHelper(
-        EntityType::Ad,
-        $nillableAdIds
-    );
-    CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByEntityIds);
-
-    print("\nDelete all label associations that we set above....\n");
-
-    // This is not necessary if you are deleting the corresponding campaign(s), as the 
-    // contained ad groups, keywords, ads, and associations would also be deleted.
+    // Deleting the associations is not necessary if you are deleting the corresponding campaign(s), as the 
+    // contained ad groups, ads, and associations would also be deleted.
 
     $deleteLabelAssociationsResponse = CampaignManagementExampleHelper::DeleteLabelAssociations(
         EntityType::Campaign, 
-        $campaignLabelAssociations);
+        $campaignLabelAssociations
+    );
     $deleteLabelAssociationsResponse = CampaignManagementExampleHelper::DeleteLabelAssociations(
         EntityType::AdGroup, 
-        $adGroupLabelAssociations);
-    $deleteLabelAssociationsResponse = CampaignManagementExampleHelper::DeleteLabelAssociations(
-        EntityType::Keyword, 
-        $keywordLabelAssociations);
-    $deleteLabelAssociationsResponse = CampaignManagementExampleHelper::DeleteLabelAssociations(
-        EntityType::Ad, 
-        $adLabelAssociations);
+        $adGroupLabelAssociations
+    );
 
-    print("\nDelete all labels that we added above....\n");
+    // Delete the account's labels. 
 
-    // Deleting the campaign(s) removes the corresponding label associations but does not remove the labels.
+    print("-----\r\nDeleteLabels:\r\n");
+    $deleteLabelsResponse = CampaignManagementExampleHelper::DeleteLabels(
+        $labelIds
+    );
 
-    $deleteLabelsResponse = CampaignManagementExampleHelper::DeleteLabels($labelIds);
+    foreach ($labelIds->long as $id)
+    {
+        printf("Deleted Label Id %s\r\n", $id);
+    }
 
-    print("\nDelete the campaign, ad group, keyword, and ad that were added above....\n\n");
+    // Delete the campaign and everything it contains e.g., ad groups and ads.
 
-    CampaignManagementExampleHelper::DeleteCampaigns($GLOBALS['AuthorizationData']->AccountId, array($nillableCampaignIds->long[0]));
-    printf("Deleted CampaignId %d\n\n", $nillableCampaignIds->long[0]);
+    print("-----\r\nDeleteCampaigns:\r\n");
+    CampaignManagementExampleHelper::DeleteCampaigns(
+        $GLOBALS['AuthorizationData']->AccountId, 
+        array($campaignIds->long[0])
+    );
+    printf("Deleted CampaignId %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	print "\nLast SOAP request/response:\n";
-    printf("Fault Code: %s\nFault String: %s\n", $e->faultcode, $e->faultstring);
-	print $GLOBALS['Proxy']->GetWsdl() . "\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\n";
-	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\n";
-	
-    if (isset($e->detail->AdApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputAdApiFaultDetail($e->detail->AdApiFaultDetail);
-        
-    }
-    elseif (isset($e->detail->ApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputApiFaultDetail($e->detail->ApiFaultDetail);
-    }
-    elseif (isset($e->detail->EditorialApiFaultDetail))
-    {
-        CampaignManagementExampleHelper::OutputEditorialApiFaultDetail($e->detail->EditorialApiFaultDetail);
-    }
+	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    var_dump($e->detail);
+	print "-----\r\nLast SOAP request/response:\r\n";
+    print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
+	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
+    print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
 }
 catch (Exception $e)
 {
@@ -373,7 +260,8 @@ function GetLabelAssociationsByLabelIdsHelper(
         $getLabelIds = array_slice(
             $labelIds->long, 
             $labelIdsPageIndex++ * $GLOBALS['MaxLabelIdsForGetLabelAssociations'], 
-            $GLOBALS['MaxLabelIdsForGetLabelAssociations']);
+            $GLOBALS['MaxLabelIdsForGetLabelAssociations']
+        );
 
         $labelAssociationsPageIndex = 0;
         $foundLastPage = false;
@@ -389,10 +277,14 @@ function GetLabelAssociationsByLabelIdsHelper(
                 $getLabelIds,
                 $labelsPaging
             );
+            
+            CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByLabelIds->LabelAssociations);
 
             $labelAssociations = array_merge(
                 $labelAssociations, 
-                $getLabelAssociationsByLabelIds->LabelAssociations->LabelAssociation);
+                $getLabelAssociationsByLabelIds->LabelAssociations->LabelAssociation
+            );
+
             $foundLastPage = $GLOBALS['MaxPagingSize'] > count($getLabelAssociationsByLabelIds->LabelAssociations->LabelAssociation);
         }
     }
@@ -412,16 +304,20 @@ function GetLabelAssociationsByEntityIdsHelper(
         $getEntityIds = array_slice(
             $entityIds->long, 
             $entityIdsPageIndex++ * $GLOBALS['MaxEntityIdsForGetLabelAssociations'], 
-            $GLOBALS['MaxEntityIdsForGetLabelAssociations']);
+            $GLOBALS['MaxEntityIdsForGetLabelAssociations']
+        );
         
         $getLabelAssociationsByEntityIds = CampaignManagementExampleHelper::GetLabelAssociationsByEntityIds(
             $getEntityIds,
             $entityType
         );
 
+        CampaignManagementExampleHelper::OutputArrayOfLabelAssociation($getLabelAssociationsByEntityIds->LabelAssociations);        
+        
         $labelAssociations = array_merge(
             $labelAssociations, 
-            $getLabelAssociationsByEntityIds->LabelAssociations->LabelAssociation);
+            $getLabelAssociationsByEntityIds->LabelAssociations->LabelAssociation
+        );
     }
 
     return $labelAssociations;
