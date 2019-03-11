@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 
 {
     /**
-     * Defines a professional demographics audience report request for Audience campaigns.
+     * Defines a professional demographics audience report request.
      * @link https://docs.microsoft.com/en-us/bingads/reporting-service/professionaldemographicsaudiencereportrequest?view=bingads-12 ProfessionalDemographicsAudienceReportRequest Data Object
      * 
      * @uses ReportAggregation

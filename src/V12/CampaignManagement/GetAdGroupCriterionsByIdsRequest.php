@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadgroupcriterionsbyids?view=bingads-12 GetAdGroupCriterionsByIds Request Object
      * 
      * @uses AdGroupCriterionType
+     * @uses AdGroupCriterionAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAdGroupCriterionsByIds
      */
     final class GetAdGroupCriterionsByIdsRequest
@@ -29,5 +30,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var AdGroupCriterionType
          */
         public $CriterionType;
+
+        /**
+         * The list of additional properties that you want included within each returned ad group criterion.
+         * @var AdGroupCriterionAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

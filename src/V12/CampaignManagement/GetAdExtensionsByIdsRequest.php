@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadextensionsbyids?view=bingads-12 GetAdExtensionsByIds Request Object
      * 
      * @uses AdExtensionsTypeFilter
+     * @uses AdExtensionAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAdExtensionsByIds
      */
     final class GetAdExtensionsByIdsRequest
@@ -29,5 +30,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var AdExtensionsTypeFilter
          */
         public $AdExtensionType;
+
+        /**
+         * The list of additional properties that you want included within each returned ad extension.
+         * @var AdExtensionAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

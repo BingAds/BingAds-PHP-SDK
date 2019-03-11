@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Defines the possible age range values that you can use to target ads to People.
+     * Defines the possible age range values that you can use to target ads to people.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/agerange?view=bingads-12 AgeRange Value Set
      * 
      * @used-by AgeCriterion

@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V12\Reporting;
     final class AccountThroughCampaignReportScope
     {
         /**
-         * An array of account identifiers that identifies the account data to include in the report.
+         * A list of up to 1,000 account identifiers to include in the report.
          * @var integer[]
          */
         public $AccountIds;
 
         /**
-         * An array of CampaignReportScope objects that identifies the campaign data to include in the report.
+         * A list of up to 300 campaigns to include in the report.
          * @var CampaignReportScope[]
          */
         public $Campaigns;

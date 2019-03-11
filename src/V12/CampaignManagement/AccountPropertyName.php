@@ -23,6 +23,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** Used to get or set the property that determines whether you want to send customers directly to your final URL while click measurement runs in the background. */
         const AdClickParallelTracking = 'AdClickParallelTracking';
+
+        /** Used to get or set the account's Final URL Suffix. */
+        const FinalUrlSuffix = 'FinalUrlSuffix';
     }
 
 }

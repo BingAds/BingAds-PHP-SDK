@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 
 {
     /**
-     * Defines an insertion order.
+     * An insertion order is a contract that establishes the maximum amount you will spend on your account over a specified period of time.
      * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/insertionorder?view=bingads-12 InsertionOrder Data Object
      * 
      * @uses InsertionOrderStatus

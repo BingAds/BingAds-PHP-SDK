@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V12\Bulk;
         public $RequestId;
 
         /**
-         * The URL where you may submit your bulk upload file with  HTTP POST.
+         * The URL where you may submit your bulk upload file via HTTP POST.
          * @var string
          */
         public $UploadUrl;

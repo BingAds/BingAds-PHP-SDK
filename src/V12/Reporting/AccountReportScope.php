@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\Reporting;
     final class AccountReportScope
     {
         /**
-         * An array of a maximum of 1,000 account identifiers that identifies the account data to include in the report.
+         * A list of up to 1,000 account identifiers to include in the report.
          * @var integer[]
          */
         public $AccountIds;

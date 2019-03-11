@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $AdTypes;
 
         /**
-         * The list of additional properties that you want included within each returned Ad object.
+         * The list of additional properties that you want included within each returned ad.
          * @var AdAdditionalField
          */
         public $ReturnAdditionalFields;
