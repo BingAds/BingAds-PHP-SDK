@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
 {
     /**
-     * Defines a list of optional Ad properties that you can request when calling GetAdsByAdGroupId, GetAdsByEditorialStatus, and GetAdsByIds.
+     * Defines a list of optional ad properties that you can request when calling GetAdsByAdGroupId, GetAdsByEditorialStatus, and GetAdsByIds.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adadditionalfield?view=bingads-12 AdAdditionalField Value Set
      * 
      * @used-by GetAdsByAdGroupIdRequest
@@ -21,6 +21,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** Request that the Images element be included within each returned ResponsiveAd object. */
         const Images = 'Images';
+
+        /** Request that the FinalUrlSuffix element be included within each returned Ad object. */
+        const FinalUrlSuffix = 'FinalUrlSuffix';
     }
 
 }

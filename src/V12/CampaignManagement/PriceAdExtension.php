@@ -14,6 +14,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class PriceAdExtension extends AdExtension
     {
         /**
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
+         * @var string
+         */
+        public $FinalUrlSuffix;
+
+        /**
          * The language for the ad copy of your price ad extension.
          * @var string
          */

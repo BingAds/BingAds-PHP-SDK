@@ -187,6 +187,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The customer name. */
         const CustomerName = 'CustomerName';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
     }
 
 }

@@ -52,6 +52,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $FinalMobileUrls;
 
         /**
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
+         * @var string
+         */
+        public $FinalUrlSuffix;
+
+        /**
          * The last or final URL where a user is ultimately taken, whether or not the click to final URL path included any redirects.
          * @var string[]
          */

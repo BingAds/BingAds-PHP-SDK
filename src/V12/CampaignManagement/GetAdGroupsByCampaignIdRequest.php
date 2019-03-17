@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * Gets the ad groups within the specified campaign.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadgroupsbycampaignid?view=bingads-12 GetAdGroupsByCampaignId Request Object
      * 
+     * @uses AdGroupAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAdGroupsByCampaignId
      */
     final class GetAdGroupsByCampaignIdRequest
@@ -16,5 +17,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var integer
          */
         public $CampaignId;
+
+        /**
+         * The list of additional properties that you want included within each returned ad group.
+         * @var AdGroupAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

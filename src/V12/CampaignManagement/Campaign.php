@@ -58,6 +58,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $ExperimentId;
 
         /**
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
+         * @var string
+         */
+        public $FinalUrlSuffix;
+
+        /**
          * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */

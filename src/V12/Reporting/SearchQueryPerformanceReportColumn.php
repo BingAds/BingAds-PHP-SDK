@@ -137,7 +137,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The keyword status. */
         const KeywordStatus = 'KeywordStatus';
 
-        /** The type of campaign. */
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
 
         /** The Bing Ads assigned identifier of a customer. */

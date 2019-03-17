@@ -145,6 +145,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The customer name. */
         const CustomerName = 'CustomerName';
+
+        /** The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL. */
+        const FinalUrlSuffix = 'FinalUrlSuffix';
     }
 
 }

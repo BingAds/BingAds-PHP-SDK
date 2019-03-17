@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class ActionAdExtension extends AdExtension
     {
         /**
-         * The text you choose here is what is displayed on your call-to-action button.
+         * The action type that you choose here, as well as the Language that you set, determines the text that is displayed on your call-to-action button.
          * @var ActionAdExtensionActionType
          */
         public $ActionType;
@@ -23,6 +23,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var string[]
          */
         public $FinalMobileUrls;
+
+        /**
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
+         * @var string
+         */
+        public $FinalUrlSuffix;
 
         /**
          * This is the link to your specific web page or form that corresponds to the action text.

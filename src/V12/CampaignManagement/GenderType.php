@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** The gender is not known. */
         const Unknown = 'Unknown';
 
-        /** The gender is male. */
+        /** The gender is identified as male. */
         const Male = 'Male';
 
-        /** The gender is female. */
+        /** The gender is identified as female. */
         const Female = 'Female';
     }
 

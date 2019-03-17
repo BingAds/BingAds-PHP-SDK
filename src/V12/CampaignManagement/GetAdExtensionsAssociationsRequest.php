@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * 
      * @uses AdExtensionsTypeFilter
      * @uses AssociationType
+     * @uses AdExtensionAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAdExtensionsAssociations
      */
     final class GetAdExtensionsAssociationsRequest
@@ -36,5 +37,11 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
          * @var integer[]
          */
         public $EntityIds;
+
+        /**
+         * The list of additional properties that you want included within each returned ad extension.
+         * @var AdExtensionAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

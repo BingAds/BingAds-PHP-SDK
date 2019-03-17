@@ -44,6 +44,18 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         /** The campaign criterion is a location intent criterion. */
         const LocationIntent = 'LocationIntent';
 
+        /** The campaign criterion is an audience criterion. */
+        const Audience = 'Audience';
+
+        /** The campaign criterion is a custom audience association. */
+        const CustomAudience = 'CustomAudience';
+
+        /** The campaign criterion is an in-market audience association. */
+        const InMarketAudience = 'InMarketAudience';
+
+        /** The campaign criterion is a remarketing list association. */
+        const RemarketingList = 'RemarketingList';
+
         /** The campaign criterion is a company name profile criterion. */
         const CompanyName = 'CompanyName';
 
@@ -52,6 +64,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** The campaign criterion is an industry profile criterion. */
         const Industry = 'Industry';
+
+        /** The campaign criterion is product audience association. */
+        const ProductAudience = 'ProductAudience';
+
+        /** The campaign criterion is a similar remarketing list association. */
+        const SimilarRemarketingList = 'SimilarRemarketingList';
     }
 
 }

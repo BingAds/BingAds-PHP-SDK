@@ -50,6 +50,12 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /**
          * Reserved for future use.
+         * @var string
+         */
+        public $FinalUrlSuffix;
+
+        /**
+         * Reserved for future use.
          * @var string[]
          */
         public $FinalUrls;
