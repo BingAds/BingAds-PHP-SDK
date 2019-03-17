@@ -223,6 +223,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL. */
         const FinalUrlSuffix = 'FinalUrlSuffix';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
     }
 
 }
