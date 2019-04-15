@@ -672,7 +672,8 @@ final class CampaignManagementExampleHelper {
         $accountId,
         $adExtensionType,
         $associationType,
-        $entityIds)
+        $entityIds,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -683,13 +684,15 @@ final class CampaignManagementExampleHelper {
         $request->AdExtensionType = $adExtensionType;
         $request->AssociationType = $associationType;
         $request->EntityIds = $entityIds;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdExtensionsAssociations($request);
     }
     static function GetAdExtensionsByIds(
         $accountId,
         $adExtensionIds,
-        $adExtensionType)
+        $adExtensionType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -699,6 +702,7 @@ final class CampaignManagementExampleHelper {
         $request->AccountId = $accountId;
         $request->AdExtensionIds = $adExtensionIds;
         $request->AdExtensionType = $adExtensionType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdExtensionsByIds($request);
     }
@@ -721,7 +725,8 @@ final class CampaignManagementExampleHelper {
     static function GetAdGroupCriterionsByIds(
         $adGroupCriterionIds,
         $adGroupId,
-        $criterionType)
+        $criterionType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -731,11 +736,13 @@ final class CampaignManagementExampleHelper {
         $request->AdGroupCriterionIds = $adGroupCriterionIds;
         $request->AdGroupId = $adGroupId;
         $request->CriterionType = $criterionType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupCriterionsByIds($request);
     }
     static function GetAdGroupsByCampaignId(
-        $campaignId)
+        $campaignId,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -743,12 +750,14 @@ final class CampaignManagementExampleHelper {
         $request = new GetAdGroupsByCampaignIdRequest();
 
         $request->CampaignId = $campaignId;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByCampaignId($request);
     }
     static function GetAdGroupsByIds(
         $campaignId,
-        $adGroupIds)
+        $adGroupIds,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -757,6 +766,7 @@ final class CampaignManagementExampleHelper {
 
         $request->CampaignId = $campaignId;
         $request->AdGroupIds = $adGroupIds;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByIds($request);
     }
@@ -993,7 +1003,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetGeoLocationsFileUrl($request);
     }
     static function GetKeywordsByAdGroupId(
-        $adGroupId)
+        $adGroupId,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1001,12 +1012,14 @@ final class CampaignManagementExampleHelper {
         $request = new GetKeywordsByAdGroupIdRequest();
 
         $request->AdGroupId = $adGroupId;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByAdGroupId($request);
     }
     static function GetKeywordsByEditorialStatus(
         $adGroupId,
-        $editorialStatus)
+        $editorialStatus,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1015,12 +1028,14 @@ final class CampaignManagementExampleHelper {
 
         $request->AdGroupId = $adGroupId;
         $request->EditorialStatus = $editorialStatus;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByEditorialStatus($request);
     }
     static function GetKeywordsByIds(
         $adGroupId,
-        $keywordIds)
+        $keywordIds,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1029,6 +1044,7 @@ final class CampaignManagementExampleHelper {
 
         $request->AdGroupId = $adGroupId;
         $request->KeywordIds = $keywordIds;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetKeywordsByIds($request);
     }
@@ -1565,6 +1581,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("ActionType: %s", $dataObject->ActionType));
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
@@ -1597,6 +1614,7 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage("ForwardCompatibilityMap:");
@@ -1939,6 +1957,7 @@ final class CampaignManagementExampleHelper {
             self::OutputBid($dataObject->CpcBid);
             self::OutputStatusMessage("EndDate:");
             self::OutputDate($dataObject->EndDate);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
@@ -2123,6 +2142,7 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
@@ -2465,6 +2485,7 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
@@ -2674,6 +2695,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("DailyBudget: %s", $dataObject->DailyBudget));
             self::OutputStatusMessage(sprintf("Description: %s", $dataObject->Description));
             self::OutputStatusMessage(sprintf("ExperimentId: %s", $dataObject->ExperimentId));
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
@@ -3596,6 +3618,7 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage("ImageMediaIds:");
@@ -3756,6 +3779,7 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage("ForwardCompatibilityMap:");
@@ -4342,6 +4366,7 @@ final class CampaignManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputPriceAdExtension * * *");
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage(sprintf("PriceExtensionType: %s", $dataObject->PriceExtensionType));
             self::OutputStatusMessage("TableRows:");
@@ -4947,6 +4972,7 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
@@ -5595,6 +5621,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAdGroupStatus * * *");
     }
+    static function OutputAdGroupAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAdGroupAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAdGroupAdditionalField * * *");
+    }
+    static function OutputArrayOfAdGroupAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupAdditionalField * * *");
+        foreach ($valueSets->AdGroupAdditionalField as $valueSet)
+        {
+            self::OutputAdGroupAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupAdditionalField * * *");
+    }
     static function OutputAdAdditionalField($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdAdditionalField * * *");
@@ -5686,6 +5735,29 @@ final class CampaignManagementExampleHelper {
             self::OutputKeywordStatus($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfKeywordStatus * * *");
+    }
+    static function OutputKeywordAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputKeywordAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputKeywordAdditionalField * * *");
+    }
+    static function OutputArrayOfKeywordAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfKeywordAdditionalField * * *");
+        foreach ($valueSets->KeywordAdditionalField as $valueSet)
+        {
+            self::OutputKeywordAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfKeywordAdditionalField * * *");
     }
     static function OutputEntityType($valueSet)
     {
@@ -5986,6 +6058,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionsTypeFilter * * *");
     }
+    static function OutputAdExtensionAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAdExtensionAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAdExtensionAdditionalField * * *");
+    }
+    static function OutputArrayOfAdExtensionAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionAdditionalField * * *");
+        foreach ($valueSets->AdExtensionAdditionalField as $valueSet)
+        {
+            self::OutputAdExtensionAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionAdditionalField * * *");
+    }
     static function OutputAssociationType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAssociationType * * *");
@@ -6077,6 +6172,29 @@ final class CampaignManagementExampleHelper {
             self::OutputAdGroupCriterionType($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAdGroupCriterionType * * *");
+    }
+    static function OutputAdGroupCriterionAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAdGroupCriterionAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAdGroupCriterionAdditionalField * * *");
+    }
+    static function OutputArrayOfAdGroupCriterionAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupCriterionAdditionalField * * *");
+        foreach ($valueSets->AdGroupCriterionAdditionalField as $valueSet)
+        {
+            self::OutputAdGroupCriterionAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupCriterionAdditionalField * * *");
     }
     static function OutputProductPartitionType($valueSet)
     {
