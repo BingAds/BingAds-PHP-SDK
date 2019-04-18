@@ -2,6 +2,14 @@
 
 namespace Microsoft\BingAds\Auth;
 
+
+use Microsoft\BingAds\V13\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion13;
+use Microsoft\BingAds\V13\Bulk\BulkServiceSettings as BulkServiceSettingsVersion13;
+use Microsoft\BingAds\V13\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion13;
+use Microsoft\BingAds\V13\CustomerBilling\CustomerBillingServiceSettings as CustomerBillingServiceSettingsVersion13;
+use Microsoft\BingAds\V13\CustomerManagement\CustomerManagementServiceSettings as CustomerManagementServiceSettingsVersion13;
+use Microsoft\BingAds\V13\Reporting\ReportingServiceSettings as ReportingServiceSettingsVersion13;
+
 use Microsoft\BingAds\V12\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion12;
 use Microsoft\BingAds\V12\Bulk\BulkServiceSettings as BulkServiceSettingsVersion12;
 use Microsoft\BingAds\V12\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion12;
@@ -32,30 +40,51 @@ class ServiceClient
 	private $apiEnvironment;
 
 	private $sandboxServiceClientEndpoints = array(
+		ServiceClientType::AdInsightVersion13 => AdInsightServiceSettingsVersion13::SandboxEndpoint,
+		ServiceClientType::BulkVersion13 => BulkServiceSettingsVersion13::SandboxEndpoint,
+		ServiceClientType::CampaignManagementVersion13 => CampaignManagementServiceSettingsVersion13::SandboxEndpoint,
+		ServiceClientType::CustomerBillingVersion13 => CustomerBillingServiceSettingsVersion13::SandboxEndpoint,
+		ServiceClientType::CustomerManagementVersion13 => CustomerManagementServiceSettingsVersion13::SandboxEndpoint,
+		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::SandboxEndpoint,
+
 		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::SandboxEndpoint,
 		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::SandboxEndpoint,
 		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::SandboxEndpoint,
 		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::SandboxEndpoint,
 		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::SandboxEndpoint,
-		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::SandboxEndpoint,
+		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::SandboxEndpoint
 	);
 
 	private $productionServiceClientEndpoints = array(
+		ServiceClientType::AdInsightVersion13 => AdInsightServiceSettingsVersion13::ProductionEndpoint,
+		ServiceClientType::BulkVersion13 => BulkServiceSettingsVersion13::ProductionEndpoint,
+		ServiceClientType::CampaignManagementVersion13 => CampaignManagementServiceSettingsVersion13::ProductionEndpoint,
+		ServiceClientType::CustomerBillingVersion13 => CustomerBillingServiceSettingsVersion13::ProductionEndpoint,
+		ServiceClientType::CustomerManagementVersion13 => CustomerManagementServiceSettingsVersion13::ProductionEndpoint,
+		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::ProductionEndpoint,
+
 		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::ProductionEndpoint,
 		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::ProductionEndpoint,
 		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::ProductionEndpoint,
 		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ProductionEndpoint,
 		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ProductionEndpoint,
-		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ProductionEndpoint,
+		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ProductionEndpoint
 	);
 
 	private $serviceClientNamespaces = array(
+		ServiceClientType::AdInsightVersion13 => AdInsightServiceSettingsVersion13::ServiceNamespace,
+		ServiceClientType::BulkVersion13 => BulkServiceSettingsVersion13::ServiceNamespace,
+		ServiceClientType::CampaignManagementVersion13 => CampaignManagementServiceSettingsVersion13::ServiceNamespace,
+		ServiceClientType::CustomerBillingVersion13 => CustomerBillingServiceSettingsVersion13::ServiceNamespace,
+		ServiceClientType::CustomerManagementVersion13 => CustomerManagementServiceSettingsVersion13::ServiceNamespace,
+		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::ServiceNamespace,
+
 		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::ServiceNamespace,
 		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::ServiceNamespace,
 		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::ServiceNamespace,
 		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ServiceNamespace,
 		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ServiceNamespace,
-		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ServiceNamespace,
+		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ServiceNamespace
 	);
 	
 	/** 

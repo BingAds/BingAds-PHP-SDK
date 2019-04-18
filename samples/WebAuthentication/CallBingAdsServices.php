@@ -10,12 +10,12 @@ use Microsoft\BingAds\Auth\AuthorizationData;
 use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
-// Specify the Microsoft\BingAds\V12\CustomerManagement classes that will be used.
-use Microsoft\BingAds\V12\CustomerManagement\GetUserRequest;
-use Microsoft\BingAds\V12\CustomerManagement\SearchAccountsRequest;
-use Microsoft\BingAds\V12\CustomerManagement\Paging;
-use Microsoft\BingAds\V12\CustomerManagement\Predicate;
-use Microsoft\BingAds\V12\CustomerManagement\PredicateOperator;
+// Specify the Microsoft\BingAds\V13\CustomerManagement classes that will be used.
+use Microsoft\BingAds\V13\CustomerManagement\GetUserRequest;
+use Microsoft\BingAds\V13\CustomerManagement\SearchAccountsRequest;
+use Microsoft\BingAds\V13\CustomerManagement\Paging;
+use Microsoft\BingAds\V13\CustomerManagement\Predicate;
+use Microsoft\BingAds\V13\CustomerManagement\PredicateOperator;
 
 // Specify the Microsoft\BingAds\Samples classes that will be used.
 use Microsoft\BingAds\Samples\WebAuthHelper;
@@ -47,7 +47,7 @@ else {
     printf("Refresh token: %s<br/>", $_SESSION['AuthorizationData']->Authentication->OAuthTokens->RefreshToken);
 
     $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
-        ServiceClientType::CustomerManagementVersion12, 
+        ServiceClientType::CustomerManagementVersion13, 
         $_SESSION['AuthorizationData'], 
         WebAuthHelper::GetApiEnvironment());
 
