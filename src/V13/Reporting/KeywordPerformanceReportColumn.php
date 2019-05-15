@@ -15,10 +15,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -27,22 +27,22 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The keyword text. */
         const Keyword = 'Keyword';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
-        /** The Bing Ads assigned identifier of an ad. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
 
         /** The ad type. */
@@ -186,13 +186,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The labels applied to the keyword. */
         const KeywordLabels = 'KeywordLabels';
 
-        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates will place your ad at the top of search results. */
+        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Microsoft Advertising calculates will place your ad at the top of search results. */
         const Mainline1Bid = 'Mainline1Bid';
 
-        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates for your ad to be placed on the first page in the search results. */
+        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Microsoft Advertising calculates for your ad to be placed on the first page in the search results. */
         const MainlineBid = 'MainlineBid';
 
-        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Bing Ads calculates for your ad to be placed on the first page in the search results. */
+        /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Microsoft Advertising calculates for your ad to be placed on the first page in the search results. */
         const FirstPageBid = 'FirstPageBid';
 
         /** The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL. */

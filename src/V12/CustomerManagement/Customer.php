@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Defines a customer object that contains one or more Bing Ads accounts.
+     * Defines a customer object that contains one or more Microsoft Advertising accounts.
      * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/customer?view=bingads-12 Customer Data Object
      * 
      * @uses CustomerFinancialStatus
@@ -95,7 +95,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $TimeStamp;
 
         /**
-         * A system-generated customer number that is used in the Bing Ads web application.
+         * A system-generated customer number that is used in the Microsoft Advertising web application.
          * @var string
          */
         public $Number;

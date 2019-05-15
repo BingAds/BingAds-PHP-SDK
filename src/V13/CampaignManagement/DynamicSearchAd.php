@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Text;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var string
          */
         public $TextPart2;

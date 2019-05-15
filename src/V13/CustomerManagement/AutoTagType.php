@@ -11,13 +11,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      */
     final class AutoTagType
     {
-        /** Bing Ads will not append any UTM tracking codes to your ad or keyword final URL. */
+        /** Microsoft Advertising will not append any UTM tracking codes to your ad or keyword final URL. */
         const Inactive = 'Inactive';
 
-        /** Bing Ads will automatically append the supported UTM tracking codes, and preserve any existing UTM tracking codes that you added to your ad or keyword's final URL. */
+        /** Microsoft Advertising will automatically append the supported UTM tracking codes, and preserve any existing UTM tracking codes that you added to your ad or keyword's final URL. */
         const Preserve = 'Preserve';
 
-        /** Bing Ads will automatically append the supported UTM tracking codes, and replace any of the existing and supported UTM tracking codes that you added to your ad or keyword's final URL. */
+        /** Microsoft Advertising will automatically append the supported UTM tracking codes, and replace any of the existing and supported UTM tracking codes that you added to your ad or keyword's final URL. */
         const Replace = 'Replace';
     }
 

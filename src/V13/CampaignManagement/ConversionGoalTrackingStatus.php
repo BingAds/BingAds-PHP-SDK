@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ConversionGoalTrackingStatus
     {
-        /** The UetTagTrackingStatus is Unverified, and Bing Ads hasn't received any user activity data from the UET tag on your website. */
+        /** The UetTagTrackingStatus is Unverified, and Microsoft Advertising hasn't received any user activity data from the UET tag on your website. */
         const TagUnverified = 'TagUnverified';
 
         /** The UetTagTrackingStatus is Active, but we haven't recorded any conversions in the last 7 days. */
@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The UetTagTrackingStatus is Active, and we have recorded conversions within the last 7 days. */
         const RecordingConversions = 'RecordingConversions';
 
-        /** The UetTagTrackingStatus is Inactive, and Bing Ads has not received any user activity data from the UET tag in the last 24 hours. */
+        /** The UetTagTrackingStatus is Inactive, and Microsoft Advertising has not received any user activity data from the UET tag in the last 24 hours. */
         const TagInactive = 'TagInactive';
     }
 

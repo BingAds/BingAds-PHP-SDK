@@ -70,7 +70,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * The unique Bing Ads identifier for the ad.
+         * The unique Microsoft Advertising identifier for the ad.
          * @var integer
          */
         public $Id;

@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     class Media
     {
         /**
-         * The unique Bing Ads identifier of the media.
+         * The unique Microsoft Advertising identifier of the media.
          * @var integer
          */
         public $Id;

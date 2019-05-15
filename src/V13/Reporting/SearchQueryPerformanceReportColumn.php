@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -26,16 +26,16 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The Bing Ads assigned identifier of an ad. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
 
         /** The ad type. */
@@ -80,7 +80,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The keyword text. */
         const Keyword = 'Keyword';
 
-        /** The Bing Ads assigned identifier of an ad group criterion. */
+        /** The Microsoft Advertising assigned identifier of an ad group criterion. */
         const AdGroupCriterionId = 'AdGroupCriterionId';
 
         /** The number of conversions. */
@@ -95,7 +95,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language of the country the ad is served in. */
         const Language = 'Language';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
         /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
@@ -140,7 +140,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The type of campaign. */
         const CampaignType = 'CampaignType';
 
-        /** The Bing Ads assigned identifier of a customer. */
+        /** The Microsoft Advertising assigned identifier of a customer. */
         const CustomerId = 'CustomerId';
 
         /** The customer name. */

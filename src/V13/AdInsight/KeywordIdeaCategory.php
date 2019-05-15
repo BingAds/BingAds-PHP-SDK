@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class KeywordIdeaCategory
     {
         /**
-         * The Bing Ads identifier of the keyword idea category.
+         * The Microsoft Advertising identifier of the keyword idea category.
          * @var integer
          */
         public $CategoryId;

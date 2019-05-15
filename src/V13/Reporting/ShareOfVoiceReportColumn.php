@@ -35,19 +35,19 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language of the country the ad is served in. */
         const Language = 'Language';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The number of times an ad has been displayed on search results pages. */
@@ -74,7 +74,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The estimated percentage of impressions your ad did not receive due to issues with your daily or monthly budget. */
         const ImpressionLostToBudgetPercent = 'ImpressionLostToBudgetPercent';
 
-        /** Reserved. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your ad ranking. */
         const ImpressionLostToRankAggPercent = 'ImpressionLostToRankAggPercent';
 
         /** The maximum cost per click bid that was in effect at the time the report was generated. */

@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
     final class Keyword
     {
         /**
-         * The Bing Ads identifier of the keyword.
+         * The Microsoft Advertising identifier of the keyword.
          * @var integer
          */
         public $Id;

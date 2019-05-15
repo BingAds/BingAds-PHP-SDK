@@ -70,7 +70,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * The unique Bing Ads identifier of the campaign.
+         * The unique Microsoft Advertising identifier of the campaign.
          * @var integer
          */
         public $Id;
@@ -124,7 +124,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Settings;
 
         /**
-         * The unique Bing Ads identifier of the Budget that this campaign shares with other campaigns in the account.
+         * The unique Microsoft Advertising identifier of the Budget that this campaign shares with other campaigns in the account.
          * @var integer
          */
         public $BudgetId;

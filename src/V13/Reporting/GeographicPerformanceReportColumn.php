@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -26,13 +26,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The country where the user was physically located when they clicked the ad. */
@@ -146,7 +146,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The postal code where the user was physically located when they clicked the ad. */
         const PostalCode = 'PostalCode';
 
-        /** The Bing Ads identifier of the location where the user was physically located when they clicked the ad. */
+        /** The Microsoft Advertising identifier of the location where the user was physically located when they clicked the ad. */
         const LocationId = 'LocationId';
     }
 

@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The date and time of the change. */
         const DateTime = 'DateTime';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
         /** The username of the user that made the change to settings within the account. */
@@ -29,13 +29,13 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The ad title parts. */
@@ -68,7 +68,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The name of the entity that was updated. */
         const EntityName = 'EntityName';
 
-        /** The Bing Ads system identifier of the entity that was updated. */
+        /** The Microsoft Advertising system identifier of the entity that was updated. */
         const EntityId = 'EntityId';
     }
 

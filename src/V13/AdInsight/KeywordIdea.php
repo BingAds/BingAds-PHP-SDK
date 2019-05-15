@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $AdImpressionShare;
 
         /**
-         * Determined by the number of advertisers bidding on this keyword, relative to all other keywords across Bing Ads.
+         * Determined by the number of advertisers bidding on this keyword, relative to all other keywords across Microsoft Advertising.
          * @var CompetitionLevel
          */
         public $Competition;

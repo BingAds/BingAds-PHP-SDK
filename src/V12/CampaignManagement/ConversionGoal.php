@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $CountType;
 
         /**
-         * The unique Bing Ads identifier for the conversion goal.
+         * The unique Microsoft Advertising identifier for the conversion goal.
          * @var integer
          */
         public $Id;
@@ -63,7 +63,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Status;
 
         /**
-         * The unique Bing Ads identifier of the UET tag that you added to your website to allow Bing Ads to collect actions people take on your website.
+         * The unique Microsoft Advertising identifier of the UET tag that you added to your website to allow Microsoft Advertising to collect actions people take on your website.
          * @var integer
          */
         public $TagId;

@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * The unique Bing Ads identifier of the shared entity.
+         * The unique Microsoft Advertising identifier of the shared entity.
          * @var integer
          */
         public $Id;

@@ -34,7 +34,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $PhoneNumber;
 
         /**
-         * You can either use your own phone number or use a Bing Ads forwarding phone number.
+         * You can either use your own phone number or use a Microsoft Advertising forwarding phone number.
          * @var boolean
          */
         public $RequireTollFreeTrackingNumber;

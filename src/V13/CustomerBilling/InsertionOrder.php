@@ -106,7 +106,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $PendingChanges;
 
         /**
-         * The system generated account number that is used to identify the account in the Bing Ads web application.
+         * The system generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;

@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -26,34 +26,34 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The keyword text. */
         const Keyword = 'Keyword';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
         /** The name of your event tracking or campaign analytics goal. */
         const Goal = 'Goal';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const AllConversions = 'AllConversions';
 
         /** The number of conversions from other ads within the same account that were preceded by one or more clicks from this ad. */
         const Assists = 'Assists';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
         const AllRevenue = 'AllRevenue';
 
-        /** The Bing Ads assigned identifier of a goal. */
+        /** The Microsoft Advertising assigned identifier of a goal. */
         const GoalId = 'GoalId';
 
         /** The device name attribute of a device OS target bid. */

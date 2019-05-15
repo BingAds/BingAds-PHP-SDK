@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudienceCriterion extends Criterion
     {
         /**
-         * The Bing Ads identifier of the Audience.
+         * The Microsoft Advertising identifier of the Audience.
          * @var integer
          */
         public $AudienceId;

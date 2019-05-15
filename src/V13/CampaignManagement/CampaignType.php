@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The campaign is a Search campaign. */
         const Search = 'Search';
 
-        /** The campaign is a Bing Shopping campaign. */
+        /** The campaign is a Microsoft Shopping campaign. */
         const Shopping = 'Shopping';
 
         /** The campaign is a Dynamic Search Ads campaign. */

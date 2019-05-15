@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EnclosedLocationIds;
 
         /**
-         * The unique Bing Ads identifier for the location where you want to show your ads.
+         * The unique Microsoft Advertising identifier for the location where you want to show your ads.
          * @var integer
          */
         public $LocationId;

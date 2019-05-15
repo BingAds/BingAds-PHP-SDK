@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 
 {
     /**
-     * Competition levels are defined by the number of advertisers bidding on this keyword, relative to all other keywords across Bing Ads.
+     * Competition levels are defined by the number of advertisers bidding on this keyword, relative to all other keywords across Microsoft Advertising.
      * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/competitionlevel?view=bingads-12 CompetitionLevel Value Set
      * 
      * @used-by CompetitionSearchParameter

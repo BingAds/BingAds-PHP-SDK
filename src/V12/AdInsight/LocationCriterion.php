@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
     final class LocationCriterion extends Criterion
     {
         /**
-         * The Bing Ads identifier of the location that you want to target.
+         * The Microsoft Advertising identifier of the location that you want to target.
          * @var integer
          */
         public $LocationId;

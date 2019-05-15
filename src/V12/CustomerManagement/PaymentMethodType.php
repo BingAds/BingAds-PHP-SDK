@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Defines possible payment methods for a Bing Ads account.
+     * Defines possible payment methods for a Microsoft Advertising account.
      * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/paymentmethodtype?view=bingads-12 PaymentMethodType Value Set
      * 
      * @used-by AdvertiserAccount
@@ -23,7 +23,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         /** The payments are made with an electronic funds transfer. */
         const ElectronicFundsTransfer = 'ElectronicFundsTransfer';
 
-        /** A payment service that allows customers to pay for their Bing Ads transactions online. */
+        /** A payment service that allows customers to pay for their Microsoft Advertising transactions online. */
         const PayPal = 'PayPal';
 
         /** The ELV value represents the SEPA payment method. */

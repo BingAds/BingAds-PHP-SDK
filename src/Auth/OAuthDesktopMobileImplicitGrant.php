@@ -30,19 +30,6 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
         return $this;
     }
 
-
-    /** 
-     * Includes the environment. 
-     *
-     * @param string $environment
-     * @return OAuthDesktopMobileImplicitGrant this builder
-     */
-    public function withEnvironment($environment) {
-        $this->Environment = $environment;
-        $this->RedirectUri=LiveComOAuthService::GetRedirectUrl($environment);
-        return $this;
-    }
-
     /** 
      * Gets the Microsoft Account authorization endpoint where the user should be navigated to give their consent.
      */
@@ -54,7 +41,7 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
             ->withRedirectUri($this->RedirectUri)
             ->withState($this->State);
 
-        return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment);
+        return UriOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment, $this->RequireLiveConnect);
     }
 
     /** 

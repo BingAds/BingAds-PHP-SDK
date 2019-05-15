@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BudgetType;
 
         /**
-         * The unique Bing Ads identifier of the budget.
+         * The unique Microsoft Advertising identifier of the budget.
          * @var integer
          */
         public $Id;

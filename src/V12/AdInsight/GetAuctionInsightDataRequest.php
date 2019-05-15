@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
         public $EntityType;
 
         /**
-         * The Bing Ads identifiers for up to 200 campaigns, ad groups, or keywords.
+         * The Microsoft Advertising identifiers for up to 200 campaigns, ad groups, or keywords.
          * @var integer[]
          */
         public $EntityIds;

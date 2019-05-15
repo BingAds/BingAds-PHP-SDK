@@ -36,7 +36,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $LinkedAccountIds;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var string
          */
         public $CustomerLinkPermission;

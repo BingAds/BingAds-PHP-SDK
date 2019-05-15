@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Reserved for future use.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/customeraccountshare?view=bingads-13 CustomerAccountShare Data Object
      * 
      * @uses CustomerAccountShareAssociation
@@ -13,19 +13,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomerAccountShare
     {
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var CustomerAccountShareAssociation[]
          */
         public $Associations;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var integer
          */
         public $CustomerId;

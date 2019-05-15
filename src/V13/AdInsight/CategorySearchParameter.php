@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class CategorySearchParameter extends SearchParameter
     {
         /**
-         * The Bing Ads identifier for the keyword category.
+         * The Microsoft Advertising identifier for the keyword category.
          * @var integer
          */
         public $CategoryId;

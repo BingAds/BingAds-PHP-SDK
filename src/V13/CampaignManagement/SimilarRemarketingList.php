@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SimilarRemarketingList extends Audience
     {
         /**
-         * The Bing Ads identifier of the remarketing list that Bing Ads used to generate this similar audience.
+         * The Microsoft Advertising identifier of the remarketing list that Microsoft Advertising used to generate this similar audience.
          * @var integer
          */
         public $SourceId;

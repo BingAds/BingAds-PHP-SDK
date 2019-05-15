@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines a product audience that you can use to remarket products from your Bing Merchant Center store.
+     * Defines a product audience that you can use to remarket products from your Microsoft Merchant Center store.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/productaudience?view=bingads-13 ProductAudience Data Object
      * 
      * @uses ProductAudienceType
@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ProductAudienceType;
 
         /**
-         * The Bing Ads identifier of the Universal Event Tracking (UET) tag that is used with the remarketing list.
+         * The Microsoft Advertising identifier of the Universal Event Tracking (UET) tag that is used with the remarketing list.
          * @var integer
          */
         public $TagId;

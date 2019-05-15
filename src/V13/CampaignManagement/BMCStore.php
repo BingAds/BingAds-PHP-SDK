@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines a Bing Merchant Center store.
+     * Defines a Microsoft Merchant Center store.
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/bmcstore?view=bingads-13 BMCStore Data Object
      * 
      * @uses BMCStoreSubType
@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $HasCatalog;
 
         /**
-         * The unique identifier for the  Bing Merchant Center store.
+         * The unique identifier for the  Microsoft Merchant Center store.
          * @var integer
          */
         public $Id;
@@ -37,13 +37,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $IsProductAdsEnabled;
 
         /**
-         * Defines the name of the store as defined in the Bing Merchant Center.
+         * Defines the name of the store as defined in the Microsoft Merchant Center.
          * @var string
          */
         public $Name;
 
         /**
-         * The Bing Merchant Center store sub type.
+         * The Microsoft Merchant Center store sub type.
          * @var BMCStoreSubType
          */
         public $SubType;
