@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class AssetLink
     {
         /**
-         * The asset with a unique Bing Ads identifier that can be reused across multiple ads.
+         * The asset with a unique Microsoft Advertising identifier that can be reused across multiple ads.
          * @var Asset
          */
         public $Asset;

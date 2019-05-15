@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class Experiment
     {
         /**
-         * The Bing Ads identifier of the campaign used as the base for the experiment campaign.
+         * The Microsoft Advertising identifier of the campaign used as the base for the experiment campaign.
          * @var integer
          */
         public $BaseCampaignId;
@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $EndDate;
 
         /**
-         * The Bing Ads identifier of the campaign that is created as a copy of the base campaign.
+         * The Microsoft Advertising identifier of the campaign that is created as a copy of the base campaign.
          * @var integer
          */
         public $ExperimentCampaignId;
@@ -45,7 +45,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $ExperimentType;
 
         /**
-         * The unique Bing Ads identifier of the experiment.
+         * The unique Microsoft Advertising identifier of the experiment.
          * @var integer
          */
         public $Id;

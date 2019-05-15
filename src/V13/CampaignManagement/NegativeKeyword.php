@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class NegativeKeyword extends SharedListItem
     {
         /**
-         * The unique Bing Ads identifier of the negative keyword.
+         * The unique Microsoft Advertising identifier of the negative keyword.
          * @var integer
          */
         public $Id;

@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Criterion;
 
         /**
-         * The unique Bing Ads identifier for the ad group criterion.
+         * The unique Microsoft Advertising identifier for the ad group criterion.
          * @var integer
          */
         public $Id;

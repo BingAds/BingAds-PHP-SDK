@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class NegativeKeyword
     {
         /**
-         * The Bing Ads identifier of the negative keyword.
+         * The Microsoft Advertising identifier of the negative keyword.
          * @var integer
          */
         public $Id;

@@ -11,10 +11,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AdRotationType
     {
-        /** Bing Ads prioritizes the ad from the ad group that appears to have the best chance of performing well, based on auction characteristics or factors, such as keyword, search term, device or location. */
+        /** Microsoft Advertising prioritizes the ad from the ad group that appears to have the best chance of performing well, based on auction characteristics or factors, such as keyword, search term, device or location. */
         const OptimizeForClicks = 'OptimizeForClicks';
 
-        /** Bing Ads provides more balance in rotation between your ads. */
+        /** Microsoft Advertising provides more balance in rotation between your ads. */
         const RotateAdsEvenly = 'RotateAdsEvenly';
     }
 

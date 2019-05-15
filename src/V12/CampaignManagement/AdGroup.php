@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class AdGroup
     {
         /**
-         * Ad rotation sets how often Bing Ads selects which ads to serve, if you have multiple ads within an ad group.
+         * Ad rotation sets how often Microsoft Advertising selects which ads to serve, if you have multiple ads within an ad group.
          * @var AdRotation
          */
         public $AdRotation;

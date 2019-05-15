@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class CriterionTypeGroup
     {
-        /** Reserved. */
+        /** Reserved for future use. */
         const Unknown = 'Unknown';
 
         /** The gender criterion type group. */
@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The industry criterion type group. */
         const Industry = 'Industry';
 
-        /** Reserved. */
+        /** Reserved for future use. */
         const IncomeRange = 'IncomeRange';
     }
 

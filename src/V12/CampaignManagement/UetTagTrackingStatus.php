@@ -11,13 +11,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      */
     final class UetTagTrackingStatus
     {
-        /** Bing Ads hasn't received any user activity data from the UET tag on your website. */
+        /** Microsoft Advertising hasn't received any user activity data from the UET tag on your website. */
         const Unverified = 'Unverified';
 
-        /** Your UET tag is working and sending user activity data to Bing Ads. */
+        /** Your UET tag is working and sending user activity data to Microsoft Advertising. */
         const Active = 'Active';
 
-        /** Bing Ads has not received any user activity data from the UET tag in the last 24 hours. */
+        /** Microsoft Advertising has not received any user activity data from the UET tag in the last 24 hours. */
         const Inactive = 'Inactive';
     }
 

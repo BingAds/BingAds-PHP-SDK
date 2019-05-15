@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Rule;
 
         /**
-         * The Bing Ads identifier of the Universal Event Tracking (UET) tag that is used with the remarketing list.
+         * The Microsoft Advertising identifier of the Universal Event Tracking (UET) tag that is used with the remarketing list.
          * @var integer
          */
         public $TagId;

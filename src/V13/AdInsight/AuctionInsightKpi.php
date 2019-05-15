@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $Segments;
 
         /**
-         * The number of times an ad is shown on the Bing Network divided by the total available impressions.
+         * The number of times an ad is shown on the Microsoft Advertising Network divided by the total available impressions.
          * @var double
          */
         public $ImpressionShare;

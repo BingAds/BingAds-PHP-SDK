@@ -11,40 +11,40 @@ namespace Microsoft\BingAds\V12\Reporting;
      */
     final class ProductMatchCountReportColumn
     {
-        /** The Bing Ads assigned identifier of a customer. */
+        /** The Microsoft Advertising assigned identifier of a customer. */
         const CustomerId = 'CustomerId';
 
         /** The customer name. */
         const CustomerName = 'CustomerName';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The forward slash ('/') delimited list of product conditions, reported as Operand = Attribute. */
+        /** The forward slash ("/") delimited list of product conditions, reported as Operand = Attribute. */
         const ProductGroup = 'ProductGroup';
 
         /** The product partition type. */
         const PartitionType = 'PartitionType';
 
-        /** The Bing Ads assigned identifier of an ad group criterion. */
+        /** The Microsoft Advertising assigned identifier of an ad group criterion. */
         const AdGroupCriterionId = 'AdGroupCriterionId';
 
         /** The number of products per campaign that matched your product group targets. */

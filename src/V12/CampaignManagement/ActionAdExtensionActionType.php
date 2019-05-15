@@ -208,6 +208,18 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** Use the translated version of WatchNow in the action ad extension. */
         const WatchNow = 'WatchNow';
+
+        /** Use the translated version of Directions in the action ad extension. */
+        const Directions = 'Directions';
+
+        /** Use the translated version of FindStore in the action ad extension. */
+        const FindStore = 'FindStore';
+
+        /** Use the translated version of SwitchNow in the action ad extension. */
+        const SwitchNow = 'SwitchNow';
+
+        /** Use the translated version of VisitStore in the action ad extension. */
+        const VisitStore = 'VisitStore';
     }
 
 }

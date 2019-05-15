@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $MaxCpc;
 
         /**
-         * The target cost per acquisition (CPA) that you want used by Bing Ads to maximize conversions.
+         * The target cost per acquisition (CPA) that you want used by Microsoft Advertising to maximize conversions.
          * @var double
          */
         public $TargetCpa;

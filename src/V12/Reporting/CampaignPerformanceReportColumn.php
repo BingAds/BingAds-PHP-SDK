@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The account currency type. */
@@ -149,7 +149,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The average cost per phone call (CPP). */
         const AverageCpp = 'AverageCpp';
 
-        /** The current network setting of an ad group. */
+        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
         const Network = 'Network';
 
         /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -209,7 +209,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
 
-        /** The Bing Ads assigned identifier of a customer. */
+        /** The Microsoft Advertising assigned identifier of a customer. */
         const CustomerId = 'CustomerId';
 
         /** The customer name. */

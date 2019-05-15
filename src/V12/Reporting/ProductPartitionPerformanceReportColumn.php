@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -26,25 +26,25 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The forward slash ('/') delimited list of product conditions, reported as Operand = Attribute. */
+        /** The forward slash ("/") delimited list of product conditions, reported as Operand = Attribute. */
         const ProductGroup = 'ProductGroup';
 
-        /** The Bing Ads assigned identifier of an ad group criterion, or product group in the context of a Bing Shopping campaign. */
+        /** The Microsoft Advertising assigned identifier of an ad group criterion, or product group in the context of a Microsoft Shopping campaign. */
         const AdGroupCriterionId = 'AdGroupCriterionId';
 
         /** The product partition type. */
         const PartitionType = 'PartitionType';
 
-        /** The Bing Ads assigned identifier of an ad. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
 
         /** The maximum cost per click bid that was in effect at the time the report was generated. */
@@ -101,7 +101,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The destination URL attribute of the ad, keyword, or ad group criterion. */
         const DestinationUrl = 'DestinationUrl';
 
-        /** The current network setting of an ad group. */
+        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
         const Network = 'Network';
 
         /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -173,7 +173,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** An alphanumeric identifier defined by the merchant to uniquely identify each local store. */
         const LocalStoreCode = 'LocalStoreCode';
 
-        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Bing Network. */
+        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Microsoft Advertising Network. */
         const AssistedImpressions = 'AssistedImpressions';
 
         /** Clicks on your ads that have received co-bids from your manufacturer partners. */

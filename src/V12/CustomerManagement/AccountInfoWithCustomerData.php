@@ -37,7 +37,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $AccountName;
 
         /**
-         * The system generated account number that is used to identify the account in the Bing Ads web application.
+         * The system generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;

@@ -14,25 +14,25 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned identifier of an ad. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The campaign name. */
@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The search term used by your potential audience. */
         const SearchQuery = 'SearchQuery';
 
-        /** The current network setting of an ad group. */
+        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
         const Network = 'Network';
 
         /** The report will include a column that contains the unique identifier provided by a merchant for each product offer. */
@@ -71,10 +71,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** Click type refers to each component of an ad that a customer can click. */
         const ClickType = 'ClickType';
 
-        /** The Bing Ads assigned identifier of an ad group criterion. */
+        /** The Microsoft Advertising assigned identifier of an ad group criterion. */
         const AdGroupCriterionId = 'AdGroupCriterionId';
 
-        /** The forward slash ('/') delimited list of product conditions, reported as Operand = Attribute. */
+        /** The forward slash ("/") delimited list of product conditions, reported as Operand = Attribute. */
         const ProductGroup = 'ProductGroup';
 
         /** The product partition type. */
@@ -119,13 +119,13 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The revenue per assist. */
         const RevenuePerAssist = 'RevenuePerAssist';
 
-        /** The Bing Ads assigned identifier of a customer. */
+        /** The Microsoft Advertising assigned identifier of a customer. */
         const CustomerId = 'CustomerId';
 
         /** The customer name. */
         const CustomerName = 'CustomerName';
 
-        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Bing Network. */
+        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Microsoft Advertising Network. */
         const AssistedImpressions = 'AssistedImpressions';
 
         /** Clicks on your ads that have received co-bids from your manufacturer partners. */

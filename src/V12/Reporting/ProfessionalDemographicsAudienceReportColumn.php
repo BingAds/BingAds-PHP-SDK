@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -26,13 +26,13 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The name of the company (according to LinkedIn) of the person who viewed the ad. */
@@ -65,7 +65,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The number of times an entity (an account, campaign, ad group, or keyword, for example) contributed to a conversion that is associated with a different entity. */
         const Assists = 'Assists';
 
-        /** A value that you can collect using universal event tracking. */
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
         const Revenue = 'Revenue';
 
         /** The account status. */

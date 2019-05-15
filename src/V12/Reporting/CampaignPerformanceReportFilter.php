@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         public $DeviceType;
 
         /**
-         * The report will include data for only the specified ad group status values.
+         * The report will include data for only the specified campaign status values.
          * @var CampaignStatusReportFilter
          */
         public $Status;

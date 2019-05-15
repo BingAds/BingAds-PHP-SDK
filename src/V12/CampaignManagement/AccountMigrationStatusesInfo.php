@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class AccountMigrationStatusesInfo
     {
         /**
-         * The Bing Ads identifier of the account.
+         * The Microsoft Advertising identifier of the account.
          * @var integer
          */
         public $AccountId;

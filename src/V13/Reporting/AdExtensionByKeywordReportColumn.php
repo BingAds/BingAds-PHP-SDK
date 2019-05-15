@@ -20,19 +20,19 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The keyword text. */
         const Keyword = 'Keyword';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
         /** The type name that corresponds to the AdExtensionTypeId column. */
@@ -71,16 +71,16 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** The Bing Ads assigned identifier of an ad extension. */
+        /** The Microsoft Advertising assigned identifier of an ad extension. */
         const AdExtensionId = 'AdExtensionId';
 
         /** The version attribute of an ad extension. */
         const AdExtensionVersion = 'AdExtensionVersion';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The keyword bid match type. */

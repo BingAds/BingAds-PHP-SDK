@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -26,19 +26,19 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The keyword text. */
         const Keyword = 'Keyword';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
         /** The number of times an ad has been displayed on search results pages. */

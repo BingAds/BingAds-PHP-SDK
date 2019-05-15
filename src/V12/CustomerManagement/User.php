@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $CustomerId;
 
         /**
-         * The Bing Ads identifier of the user.
+         * The Microsoft Advertising identifier of the user.
          * @var integer
          */
         public $Id;

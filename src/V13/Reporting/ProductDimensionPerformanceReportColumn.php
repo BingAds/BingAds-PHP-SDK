@@ -17,13 +17,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The campaign status. */
@@ -38,10 +38,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
         const Network = 'Network';
 
-        /** The Bing Ads assigned identifier of an ad. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The campaign name. */
@@ -71,49 +71,49 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The different price for products in your catalog. */
         const Price = 'Price';
 
-        /** The value of the Custom_label_0 field in your Bing Merchant Center catalog. */
+        /** The value of the Custom_label_0 field in your Microsoft Merchant Center catalog. */
         const CustomLabel0 = 'CustomLabel0';
 
-        /** The value of the Custom_label_1 field in your Bing Merchant Center catalog. */
+        /** The value of the Custom_label_1 field in your Microsoft Merchant Center catalog. */
         const CustomLabel1 = 'CustomLabel1';
 
-        /** The value of the Custom_label_2 field in your Bing Merchant Center catalog. */
+        /** The value of the Custom_label_2 field in your Microsoft Merchant Center catalog. */
         const CustomLabel2 = 'CustomLabel2';
 
-        /** The value of the Custom_label_3 field in your Bing Merchant Center catalog. */
+        /** The value of the Custom_label_3 field in your Microsoft Merchant Center catalog. */
         const CustomLabel3 = 'CustomLabel3';
 
-        /** The value of the Custom_label_4 field in your Bing Merchant Center catalog. */
+        /** The value of the Custom_label_4 field in your Microsoft Merchant Center catalog. */
         const CustomLabel4 = 'CustomLabel4';
 
-        /** The first level value of the Product_type field in your Bing Merchant Center catalog. */
+        /** The first level value of the Product_type field in your Microsoft Merchant Center catalog. */
         const ProductType1 = 'ProductType1';
 
-        /** The second level value of the Product_type field in your Bing Merchant Center catalog. */
+        /** The second level value of the Product_type field in your Microsoft Merchant Center catalog. */
         const ProductType2 = 'ProductType2';
 
-        /** The third level value of the Product_type field in your Bing Merchant Center catalog. */
+        /** The third level value of the Product_type field in your Microsoft Merchant Center catalog. */
         const ProductType3 = 'ProductType3';
 
-        /** The fourth level value of the Product_type field in your Bing Merchant Center catalog. */
+        /** The fourth level value of the Product_type field in your Microsoft Merchant Center catalog. */
         const ProductType4 = 'ProductType4';
 
-        /** The fifth level value of the Product_type field in your Bing Merchant Center catalog. */
+        /** The fifth level value of the Product_type field in your Microsoft Merchant Center catalog. */
         const ProductType5 = 'ProductType5';
 
-        /** The first level value of the Product_category field in your Bing Merchant Center catalog. */
+        /** The first level value of the Product_category field in your Microsoft Merchant Center catalog. */
         const ProductCategory1 = 'ProductCategory1';
 
-        /** The second level value of the Product_category field in your Bing Merchant Center catalog. */
+        /** The second level value of the Product_category field in your Microsoft Merchant Center catalog. */
         const ProductCategory2 = 'ProductCategory2';
 
-        /** The third level value of the Product_category field in your Bing Merchant Center catalog. */
+        /** The third level value of the Product_category field in your Microsoft Merchant Center catalog. */
         const ProductCategory3 = 'ProductCategory3';
 
-        /** The fourth level value of the Product_category field in your Bing Merchant Center catalog. */
+        /** The fourth level value of the Product_category field in your Microsoft Merchant Center catalog. */
         const ProductCategory4 = 'ProductCategory4';
 
-        /** The fifth level value of the Product_category field in your Bing Merchant Center catalog. */
+        /** The fifth level value of the Product_category field in your Microsoft Merchant Center catalog. */
         const ProductCategory5 = 'ProductCategory5';
 
         /** The number of times an ad has been displayed on search results pages. */
@@ -194,10 +194,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** An alphanumeric identifier defined by the merchant to uniquely identify each local store. */
         const LocalStoreCode = 'LocalStoreCode';
 
-        /** The unique identifier for the Bing Merchant Center store. */
+        /** The unique identifier for the Microsoft Merchant Center store. */
         const StoreId = 'StoreId';
 
-        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Bing Network. */
+        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Microsoft Advertising Network. */
         const AssistedImpressions = 'AssistedImpressions';
 
         /** Clicks on your ads that have received co-bids from your manufacturer partners. */

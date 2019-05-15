@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Reserved.
+     * Reserved for future use.
      * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getlinkedaccountsandcustomersinfo?view=bingads-13 GetLinkedAccountsAndCustomersInfo Response Object
      * 
      * @uses AccountInfo
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class GetLinkedAccountsAndCustomersInfoResponse
     {
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var AccountInfo[]
          */
         public $AccountsInfo;
 
         /**
-         * Reserved.
+         * Reserved for future use.
          * @var CustomerInfo[]
          */
         public $CustomersInfo;

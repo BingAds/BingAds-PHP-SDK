@@ -14,28 +14,28 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** The Bing Ads assigned identifier of a campaign. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The Bing Ads assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
         /** The keyword text. */
         const Keyword = 'Keyword';
 
-        /** The Bing Ads assigned identifier of a keyword. */
+        /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
         /** The negative keyword text. */
@@ -47,13 +47,13 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The keyword bid match type. */
         const BidMatchType = 'BidMatchType';
 
-        /** The Bing Ads assigned identifier of a negative keyword list. */
+        /** The Microsoft Advertising assigned identifier of a negative keyword list. */
         const NegativeKeywordListId = 'NegativeKeywordListId';
 
         /** The name of the negative keyword list. */
         const NegativeKeywordList = 'NegativeKeywordList';
 
-        /** The Bing Ads assigned identifier of a negative keyword. */
+        /** The Microsoft Advertising assigned identifier of a negative keyword. */
         const NegativeKeywordId = 'NegativeKeywordId';
 
         /** The type of match to compare the negative keyword and the user's search term. */

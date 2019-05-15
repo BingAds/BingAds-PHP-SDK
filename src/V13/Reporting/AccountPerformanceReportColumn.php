@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account name. */
         const AccountName = 'AccountName';
 
-        /** The Bing Ads assigned number of an account. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** The Bing Ads assigned identifier of an account. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
         /** The time period of each report row. */
@@ -86,7 +86,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The estimated percentage of impressions your ad did not receive due to issues with your daily or monthly budget. */
         const ImpressionLostToBudgetPercent = 'ImpressionLostToBudgetPercent';
 
-        /** Reserved. */
+        /** The estimated percentage of impressions your ad did not receive due to issues with your ad ranking. */
         const ImpressionLostToRankAggPercent = 'ImpressionLostToRankAggPercent';
 
         /** The number of times your tracked number was shown on all devices. */
@@ -140,7 +140,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The estimated percentage of impressions that your account received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
 
-        /** The Bing Ads assigned identifier of a customer. */
+        /** The Microsoft Advertising assigned identifier of a customer. */
         const CustomerId = 'CustomerId';
 
         /** The customer name. */

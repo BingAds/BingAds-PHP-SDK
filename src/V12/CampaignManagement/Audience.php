@@ -35,13 +35,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * The Bing Ads identifier of the audience.
+         * The Microsoft Advertising identifier of the audience.
          * @var integer
          */
         public $Id;
 
         /**
-         * When you create an audience, you can specify how far back in time Bing Ads should look for actions that match your audience definition.
+         * When you create an audience, you can specify how far back in time Microsoft Advertising should look for actions that match your audience definition.
          * @var integer
          */
         public $MembershipDuration;
@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Name;
 
         /**
-         * The Bing Ads identifier of the account or customer.
+         * The Microsoft Advertising identifier of the account or customer.
          * @var integer
          */
         public $ParentId;

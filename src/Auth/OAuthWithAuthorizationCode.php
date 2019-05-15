@@ -20,7 +20,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     public function __construct() {
         parent::__construct();
         
-        $this->oauthService = new LiveComOAuthService(null);
+        $this->oauthService = new UriOAuthService(null);
     }    
     
     /** 
@@ -31,18 +31,6 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
      */
     public function withClientSecret($clientSecret) {
         $this->ClientSecret = $clientSecret;
-        return $this;
-    }
-
-    /** 
-     * Includes the environment. 
-     *
-     * @param string $environment
-     * @return OAuthWithAuthorizationCode this builder
-     */
-    public function withEnvironment($environment) {
-        $this->Environment = $environment;
-        $this->RedirectUri=LiveComOAuthService::GetRedirectUrl($environment);
         return $this;
     }
 
@@ -67,7 +55,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         $oauthUrlParameters->RedirectUri = $this->RedirectUri;
         $oauthUrlParameters->State = $this->State;
 
-        return LiveComOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment);
+        return UriOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment, $this->RequireLiveConnect);
     }
  
     /** 
@@ -109,7 +97,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantParamName("code")
             ->withGrantValue($code);
 
-        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment); 
+        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment, $this->RequireLiveConnect); 
         
         return $this->OAuthTokens; 
     }
@@ -128,12 +116,11 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         $oauthRequestParameters = (new OAuthRequestParameters())
             ->withClientId($this->ClientId)
             ->withClientSecret($this->ClientSecret)
-            ->withRedirectUri($this->RedirectUri)
             ->withGrantType("refresh_token")
             ->withGrantParamName("refresh_token")
             ->withGrantValue($refreshToken);
 
-        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment); 
+        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment, $this->RequireLiveConnect); 
         
         return $this->OAuthTokens; 
     }
