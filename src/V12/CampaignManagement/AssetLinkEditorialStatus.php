@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the editorial review status values of a linked asset.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/assetlinkeditorialstatus?view=bingads-12 AssetLinkEditorialStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/assetlinkeditorialstatus?view=bingads-12 AssetLinkEditorialStatus Value Set
      * 
      * @used-by AssetLink
      */

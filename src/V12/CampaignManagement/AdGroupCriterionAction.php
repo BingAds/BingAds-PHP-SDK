@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the action to apply to a BiddableAdGroupCriterion or NegativeAdGroupCriterion, specifically one that contains a ProductPartition.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroupcriterionaction?view=bingads-12 AdGroupCriterionAction Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroupcriterionaction?view=bingads-12 AdGroupCriterionAction Data Object
      * 
      * @uses ItemAction
      * @uses AdGroupCriterion

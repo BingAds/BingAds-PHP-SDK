@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Gets the list of keyword ideas.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getkeywordideas?view=bingads-12 GetKeywordIdeas Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getkeywordideas?view=bingads-12 GetKeywordIdeas Request Object
      * 
      * @uses KeywordIdeaAttribute
      * @uses SearchParameter

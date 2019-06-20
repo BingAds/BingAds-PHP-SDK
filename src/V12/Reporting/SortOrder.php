@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the ascending or descending sort order of values within the specified report column.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/sortorder?view=bingads-12 SortOrder Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/sortorder?view=bingads-12 SortOrder Value Set
      * 
      * @used-by KeywordPerformanceReportSort
      */

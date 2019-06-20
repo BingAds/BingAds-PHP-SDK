@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the ad type values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adtypereportfilter?view=bingads-12 AdTypeReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adtypereportfilter?view=bingads-12 AdTypeReportFilter Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportFilter
      * @used-by AdPerformanceReportFilter

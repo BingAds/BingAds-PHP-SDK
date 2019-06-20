@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/keyvaluepairofstringstring?view=bingads-13 KeyValuePairOfstringstring Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/keyvaluepairofstringstring?view=bingads-13 KeyValuePairOfstringstring Data Object
      * 
      * @used-by Ad
      * @used-by AdExtension

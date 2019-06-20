@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Creates a new customer and account that rolls up to your reseller payment method.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/signupcustomer?view=bingads-12 SignupCustomer Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/signupcustomer?view=bingads-12 SignupCustomer Request Object
      * 
      * @uses Customer
      * @uses AdvertiserAccount

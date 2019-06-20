@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the campaign level settings for a Dynamic Search Ads campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/dynamicsearchadssetting?view=bingads-12 DynamicSearchAdsSetting Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/dynamicsearchadssetting?view=bingads-12 DynamicSearchAdsSetting Data Object
      * 
      * @uses DynamicSearchAdsSource
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that specifies third-party reviews (exact or paraphrased) about your business, products, or services to include in an expanded text ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/reviewadextension?view=bingads-13 ReviewAdExtension Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/reviewadextension?view=bingads-13 ReviewAdExtension Data Object
      */
     final class ReviewAdExtension extends AdExtension
     {

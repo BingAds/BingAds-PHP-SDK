@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines a selection of currency values.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/currencycode?view=bingads-12 CurrencyCode Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/currencycode?view=bingads-12 CurrencyCode Value Set
      * 
      * @used-by BidLandscapePoint
      * @used-by EstimatedBidAndTraffic

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an error object that identifies one of potentially many reasons why an entity failed editorial review.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/editorialerror?view=bingads-12 EditorialError Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/editorialerror?view=bingads-12 EditorialError Data Object
      * 
      * @used-by EditorialApiFaultDetail
      */

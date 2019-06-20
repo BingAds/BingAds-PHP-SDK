@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 {
     /**
      * Defines a billing document.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/billingdocument?view=bingads-12 BillingDocument Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/billingdocument?view=bingads-12 BillingDocument Data Object
      * 
      * @uses DataType
      * @used-by GetBillingDocumentsResponse

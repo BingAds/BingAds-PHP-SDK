@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a text ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/textad?view=bingads-12 TextAd Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/textad?view=bingads-12 TextAd Data Object
      */
     final class TextAd extends Ad
     {

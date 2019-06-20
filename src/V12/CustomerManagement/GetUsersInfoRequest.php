@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Gets a list of objects that contains user identification information, for example the user name and identifier of the user.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getusersinfo?view=bingads-12 GetUsersInfo Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getusersinfo?view=bingads-12 GetUsersInfo Request Object
      * 
      * @uses UserLifeCycleStatus
      * @used-by BingAdsCustomerManagementService::GetUsersInfo

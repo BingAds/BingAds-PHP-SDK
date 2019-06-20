@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines the possible compression types for the file to download.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/compressiontype?view=bingads-13 CompressionType Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/compressiontype?view=bingads-13 CompressionType Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest

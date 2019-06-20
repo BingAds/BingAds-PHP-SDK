@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * A suggested keyword with minimum and maximum traffic estimates.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordestimate?view=bingads-12 KeywordEstimate Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordestimate?view=bingads-12 KeywordEstimate Data Object
      * 
      * @uses Keyword
      * @uses TrafficEstimate

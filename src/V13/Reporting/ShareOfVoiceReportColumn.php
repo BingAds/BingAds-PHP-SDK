@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ShareOfVoiceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/shareofvoicereportcolumn?view=bingads-13 ShareOfVoiceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/shareofvoicereportcolumn?view=bingads-13 ShareOfVoiceReportColumn Value Set
      * 
      * @used-by ShareOfVoiceReportRequest
      */
@@ -133,6 +133,30 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
+
+        /** A percentage estimate of how often poor ad rank kept your ad from showing in the mainline, the top ad placements above the search results. */
+        const TopImpressionShareLostToRankPercent = 'TopImpressionShareLostToRankPercent';
+
+        /** The estimated percentage of mainline impressions, where ads appear above the search results, that were lost due to insufficient budget. */
+        const TopImpressionShareLostToBudgetPercent = 'TopImpressionShareLostToBudgetPercent';
+
+        /** The estimated percentage of how often poor ad rank kept your ad from showing in the first ad position at the top of search results. */
+        const AbsoluteTopImpressionShareLostToRankPercent = 'AbsoluteTopImpressionShareLostToRankPercent';
+
+        /** The estimated percentage of how often your ad missed showing in the very top ad position, above search results, due to insufficient budget. */
+        const AbsoluteTopImpressionShareLostToBudgetPercent = 'AbsoluteTopImpressionShareLostToBudgetPercent';
+
+        /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
+        const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
+
+        /** The percentage of impressions for your ad in the mainline, the top ad placements above the search results, out of the estimated number of mainline impressions you were eligible to receive. */
+        const TopImpressionSharePercent = 'TopImpressionSharePercent';
+
+        /** The percentage of times your ad was in the first position of all returned ads, out of the total impressions available in your target market. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
+        const TopImpressionRatePercent = 'TopImpressionRatePercent';
     }
 
 }

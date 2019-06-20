@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductMatchCountReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productmatchcountreportcolumn?view=bingads-12 ProductMatchCountReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productmatchcountreportcolumn?view=bingads-12 ProductMatchCountReportColumn Value Set
      * 
      * @used-by ProductMatchCountReportRequest
      */

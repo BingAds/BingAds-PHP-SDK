@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the type of ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adtype?view=bingads-12 AdType Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adtype?view=bingads-12 AdType Value Set
      * 
      * @used-by Ad
      * @used-by GetAdsByAdGroupIdRequest

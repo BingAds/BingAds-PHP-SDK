@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the name of account level properties.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/accountpropertyname?view=bingads-12 AccountPropertyName Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/accountpropertyname?view=bingads-12 AccountPropertyName Value Set
      * 
      * @used-by AccountProperty
      * @used-by GetAccountPropertiesRequest

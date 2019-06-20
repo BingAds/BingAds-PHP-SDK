@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Searches for customers that match a specified criteria.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/searchcustomers?view=bingads-13 SearchCustomers Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/searchcustomers?view=bingads-13 SearchCustomers Response Object
      * 
      * @uses Customer
      * @used-by BingAdsCustomerManagementService::SearchCustomers

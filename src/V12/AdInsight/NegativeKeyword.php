@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines a negative keyword with match type.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/negativekeyword?view=bingads-12 NegativeKeyword Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/negativekeyword?view=bingads-12 NegativeKeyword Data Object
      * 
      * @uses MatchType
      * @used-by CampaignEstimator

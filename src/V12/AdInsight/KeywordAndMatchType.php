@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines an object that contains a keyword and corresponding match types.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordandmatchtype?view=bingads-12 KeywordAndMatchType Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordandmatchtype?view=bingads-12 KeywordAndMatchType Data Object
      * 
      * @uses MatchType
      * @used-by GetEstimatedBidByKeywordsRequest

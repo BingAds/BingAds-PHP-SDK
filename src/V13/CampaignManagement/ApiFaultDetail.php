@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a fault object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
      * 
      * @uses BatchError
      * @uses OperationError

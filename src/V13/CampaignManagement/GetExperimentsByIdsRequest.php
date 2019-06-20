@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets experiments by experiment identifiers.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getexperimentsbyids?view=bingads-13 GetExperimentsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getexperimentsbyids?view=bingads-13 GetExperimentsByIds Request Object
      * 
      * @uses Paging
      * @used-by BingAdsCampaignManagementService::GetExperimentsByIds

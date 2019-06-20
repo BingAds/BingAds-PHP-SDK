@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Defines an object that contains information that identifies an account and the customer that manages or owns the account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/accountinfowithcustomerdata?view=bingads-12 AccountInfoWithCustomerData Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/accountinfowithcustomerdata?view=bingads-12 AccountInfoWithCustomerData Data Object
      * 
      * @uses AccountLifeCycleStatus
      * @used-by FindAccountsOrCustomersInfoResponse

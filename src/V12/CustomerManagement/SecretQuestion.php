@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Defines the possible secret questions that users can choose from to help them recall their password.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/secretquestion?view=bingads-12 SecretQuestion Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/secretquestion?view=bingads-12 SecretQuestion Value Set
      * 
      * @used-by User
      */

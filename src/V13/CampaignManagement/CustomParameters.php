@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a collection of key and value custom parameters for URL tracking.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/customparameters?view=bingads-13 CustomParameters Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/customparameters?view=bingads-13 CustomParameters Data Object
      * 
      * @uses CustomParameter
      * @used-by ActionAdExtension

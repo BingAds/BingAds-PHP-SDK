@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the campaign status values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/campaignstatusreportfilter?view=bingads-12 CampaignStatusReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/campaignstatusreportfilter?view=bingads-12 CampaignStatusReportFilter Value Set
      * 
      * @used-by AdExtensionByAdReportFilter
      * @used-by AdExtensionByKeywordReportFilter

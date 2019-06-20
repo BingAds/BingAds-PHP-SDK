@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 {
     /**
      * Defines a fault object that operations return when generic errors occur, such as an authentication error.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/adapifaultdetail?view=bingads-12 AdApiFaultDetail Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/adapifaultdetail?view=bingads-12 AdApiFaultDetail Data Object
      * 
      * @uses AdApiError
      */

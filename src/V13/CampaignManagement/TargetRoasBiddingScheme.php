@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Reserved for future use.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/targetroasbiddingscheme?view=bingads-13 TargetRoasBiddingScheme Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/targetroasbiddingscheme?view=bingads-13 TargetRoasBiddingScheme Data Object
      * 
      * @uses Bid
      */

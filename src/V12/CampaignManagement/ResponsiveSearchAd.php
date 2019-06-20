@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * A responsive ad format for text ads in the Search network.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/responsivesearchad?view=bingads-12 ResponsiveSearchAd Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/responsivesearchad?view=bingads-12 ResponsiveSearchAd Data Object
      * 
      * @uses AssetLink
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines the field order of insertion orders returned using SearchInsertionOrders.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/orderbyfield?view=bingads-13 OrderByField Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/orderbyfield?view=bingads-13 OrderByField Value Set
      * 
      * @used-by OrderBy
      */

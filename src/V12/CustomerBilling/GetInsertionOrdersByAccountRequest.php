@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 {
     /**
      * Gets a list of insertion orders for the specified account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/getinsertionordersbyaccount?view=bingads-12 GetInsertionOrdersByAccount Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/getinsertionordersbyaccount?view=bingads-12 GetInsertionOrdersByAccount Request Object
      * 
      * @used-by BingAdsCustomerBillingService::GetInsertionOrdersByAccount
      */

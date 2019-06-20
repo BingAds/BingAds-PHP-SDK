@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible types of item actions, for example to add, delete, or update the product partition criterion.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/itemaction?view=bingads-13 ItemAction Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/itemaction?view=bingads-13 ItemAction Value Set
      * 
      * @used-by AdGroupCriterionAction
      */

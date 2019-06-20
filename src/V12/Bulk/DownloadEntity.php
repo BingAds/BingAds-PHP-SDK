@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Bulk;
 {
     /**
      * Defines the entities that may be downloaded and uploaded in bulk.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadentity?view=bingads-12 DownloadEntity Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/downloadentity?view=bingads-12 DownloadEntity Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest
@@ -338,6 +338,12 @@ namespace Microsoft\BingAds\V12\Bulk;
 
         /** Include Campaign Negative Similar Remarketing List Association records in the download that each represent the association relationship between a campaign and a similar remarketing list exclusion. */
         const CampaignNegativeSimilarRemarketingListAssociations = 'CampaignNegativeSimilarRemarketingListAssociations';
+
+        /** Reserved for future use. */
+        const Feeds = 'Feeds';
+
+        /** Reserved for future use. */
+        const FeedItems = 'FeedItems';
     }
 
 }

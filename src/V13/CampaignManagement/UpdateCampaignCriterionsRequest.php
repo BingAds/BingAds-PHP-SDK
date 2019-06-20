@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates one or more campaign criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatecampaigncriterions?view=bingads-13 UpdateCampaignCriterions Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatecampaigncriterions?view=bingads-13 UpdateCampaignCriterions Request Object
      * 
      * @uses CampaignCriterion
      * @uses CampaignCriterionType

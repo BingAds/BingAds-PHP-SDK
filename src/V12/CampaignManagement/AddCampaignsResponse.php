@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Adds one or more campaigns to the specified account.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addcampaigns?view=bingads-12 AddCampaigns Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addcampaigns?view=bingads-12 AddCampaigns Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddCampaigns

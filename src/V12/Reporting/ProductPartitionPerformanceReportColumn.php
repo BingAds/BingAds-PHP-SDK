@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductPartitionPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productpartitionperformancereportcolumn?view=bingads-12 ProductPartitionPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productpartitionperformancereportcolumn?view=bingads-12 ProductPartitionPerformanceReportColumn Value Set
      * 
      * @used-by ProductPartitionPerformanceReportRequest
      */

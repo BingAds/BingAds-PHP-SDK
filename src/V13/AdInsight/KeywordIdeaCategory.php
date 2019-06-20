@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains a keyword idea category.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordideacategory?view=bingads-13 KeywordIdeaCategory Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordideacategory?view=bingads-13 KeywordIdeaCategory Data Object
      * 
      * @used-by GetKeywordIdeaCategoriesResponse
      */

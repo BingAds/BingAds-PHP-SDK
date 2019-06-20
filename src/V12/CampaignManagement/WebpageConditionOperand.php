@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible operand values that can be applied to the argument of a webpage condition for dynamic search ads.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/webpageconditionoperand?view=bingads-12 WebpageConditionOperand Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/webpageconditionoperand?view=bingads-12 WebpageConditionOperand Value Set
      * 
      * @used-by WebpageCondition
      */

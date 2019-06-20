@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets the ad groups within the specified campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadgroupsbycampaignid?view=bingads-12 GetAdGroupsByCampaignId Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getadgroupsbycampaignid?view=bingads-12 GetAdGroupsByCampaignId Response Object
      * 
      * @uses AdGroup
      * @used-by BingAdsCampaignManagementService::GetAdGroupsByCampaignId

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Retrieves the specified keywords.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getkeywordsbyids?view=bingads-12 GetKeywordsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getkeywordsbyids?view=bingads-12 GetKeywordsByIds Response Object
      * 
      * @uses Keyword
      * @uses BatchError

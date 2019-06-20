@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * For internal use only.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/servicelevel?view=bingads-12 ServiceLevel Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/servicelevel?view=bingads-12 ServiceLevel Value Set
      * 
      * @used-by Customer
      */

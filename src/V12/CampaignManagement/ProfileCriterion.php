@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users in a specific company, industry, or job function.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/profilecriterion?view=bingads-12 ProfileCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/profilecriterion?view=bingads-12 ProfileCriterion Data Object
      * 
      * @uses ProfileType
      */

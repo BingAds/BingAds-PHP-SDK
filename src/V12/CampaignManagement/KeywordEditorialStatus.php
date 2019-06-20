@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the editorial review status values of a keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/keywordeditorialstatus?view=bingads-12 KeywordEditorialStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/keywordeditorialstatus?view=bingads-12 KeywordEditorialStatus Value Set
      * 
      * @used-by Keyword
      * @used-by GetKeywordsByEditorialStatusRequest

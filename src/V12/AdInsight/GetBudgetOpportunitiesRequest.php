@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Gets the campaign budget opportunities of the specified campaign.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/getbudgetopportunities?view=bingads-12 GetBudgetOpportunities Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getbudgetopportunities?view=bingads-12 GetBudgetOpportunities Request Object
      * 
      * @used-by BingAdsAdInsightService::GetBudgetOpportunities
      */

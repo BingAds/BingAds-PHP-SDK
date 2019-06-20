@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Bulk;
 {
     /**
      * Downloads settings and performance data for all of the account's campaigns.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/downloadcampaignsbyaccountids?view=bingads-12 DownloadCampaignsByAccountIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/downloadcampaignsbyaccountids?view=bingads-12 DownloadCampaignsByAccountIds Response Object
      * 
      * @used-by BingAdsBulkService::DownloadCampaignsByAccountIds
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Represents a date.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/date?view=bingads-12 Date Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/date?view=bingads-12 Date Data Object
      * 
      * @used-by AdGroup
      * @used-by Experiment

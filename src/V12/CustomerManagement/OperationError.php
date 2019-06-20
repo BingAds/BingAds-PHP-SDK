@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Defines an error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/operationerror?view=bingads-12 OperationError Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/operationerror?view=bingads-12 OperationError Data Object
      * 
      * @used-by ApiFault
      * @used-by AddClientLinksResponse

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the ad group level settings for feed-based cooperative bidding campaigns.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/coopsetting?view=bingads-13 CoOpSetting Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/coopsetting?view=bingads-13 CoOpSetting Data Object
      * 
      * @uses BidOption
      */

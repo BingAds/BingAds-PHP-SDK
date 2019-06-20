@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an object that you can use to determine the component of an ad or keyword that failed editorial review, and the reason for the failure.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/editorialreason?view=bingads-12 EditorialReason Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/editorialreason?view=bingads-12 EditorialReason Data Object
      * 
      * @used-by EditorialReasonCollection
      */

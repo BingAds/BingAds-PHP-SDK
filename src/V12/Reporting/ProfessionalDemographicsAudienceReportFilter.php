@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the criteria to use to filter the professional demographics audience report.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/professionaldemographicsaudiencereportfilter?view=bingads-12 ProfessionalDemographicsAudienceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/professionaldemographicsaudiencereportfilter?view=bingads-12 ProfessionalDemographicsAudienceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

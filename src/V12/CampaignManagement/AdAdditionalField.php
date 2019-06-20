@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a list of optional ad properties that you can request when calling GetAdsByAdGroupId, GetAdsByEditorialStatus, and GetAdsByIds.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adadditionalfield?view=bingads-12 AdAdditionalField Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adadditionalfield?view=bingads-12 AdAdditionalField Value Set
      * 
      * @used-by GetAdsByAdGroupIdRequest
      * @used-by GetAdsByEditorialStatusRequest
@@ -24,6 +24,9 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 
         /** Request that the FinalUrlSuffix element be included within each returned Ad object. */
         const FinalUrlSuffix = 'FinalUrlSuffix';
+
+        /** Request that the TextPart2 element be included within each returned DynamicSearchAd object. */
+        const TextPart2DSA = 'TextPart2DSA';
     }
 
 }

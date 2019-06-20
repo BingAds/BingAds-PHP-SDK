@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the date range values of a budget summary report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/budgetsummaryreporttime?view=bingads-12 BudgetSummaryReportTime Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/budgetsummaryreporttime?view=bingads-12 BudgetSummaryReportTime Data Object
      * 
      * @uses Date
      * @uses ReportTimePeriod

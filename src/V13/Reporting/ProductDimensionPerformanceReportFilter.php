@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the product dimension performance report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productdimensionperformancereportfilter?view=bingads-13 ProductDimensionPerformanceReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productdimensionperformancereportfilter?view=bingads-13 ProductDimensionPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates specified campaigns in a specified account.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatecampaigns?view=bingads-13 UpdateCampaigns Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatecampaigns?view=bingads-13 UpdateCampaigns Request Object
      * 
      * @uses Campaign
      * @used-by BingAdsCampaignManagementService::UpdateCampaigns

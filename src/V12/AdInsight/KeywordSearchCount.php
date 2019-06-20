@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines an object that contains a list of search counts for each device and network where the keyword was included in a search query.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordsearchcount?view=bingads-12 KeywordSearchCount Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordsearchcount?view=bingads-12 KeywordSearchCount Data Object
      * 
      * @uses SearchCountsByAttributes
      * @used-by GetHistoricalSearchCountResponse

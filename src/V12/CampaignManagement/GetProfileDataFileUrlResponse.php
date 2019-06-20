@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets a temporary URL that you can use to download company name, industry, or job function profile data.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getprofiledatafileurl?view=bingads-12 GetProfileDataFileUrl Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getprofiledatafileurl?view=bingads-12 GetProfileDataFileUrl Response Object
      * 
      * @used-by BingAdsCampaignManagementService::GetProfileDataFileUrl
      */

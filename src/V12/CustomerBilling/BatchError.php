@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 {
     /**
      * Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/batcherror?view=bingads-12 BatchError Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/batcherror?view=bingads-12 BatchError Data Object
      * 
      * @used-by ApiBatchFault
      */

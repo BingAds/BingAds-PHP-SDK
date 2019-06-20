@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the base object of an ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/ad?view=bingads-12 Ad Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/ad?view=bingads-12 Ad Data Object
      * 
      * @uses AdEditorialStatus
      * @uses AppUrl

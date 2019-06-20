@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets the specified campaign criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getcampaigncriterionsbyids?view=bingads-12 GetCampaignCriterionsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getcampaigncriterionsbyids?view=bingads-12 GetCampaignCriterionsByIds Request Object
      * 
      * @uses CampaignCriterionType
      * @used-by BingAdsCampaignManagementService::GetCampaignCriterionsByIds

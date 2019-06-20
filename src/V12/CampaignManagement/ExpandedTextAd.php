@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an expanded text ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/expandedtextad?view=bingads-12 ExpandedTextAd Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/expandedtextad?view=bingads-12 ExpandedTextAd Data Object
      */
     final class ExpandedTextAd extends Ad
     {

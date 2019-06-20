@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Reserved for future use.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/customeraccountshare?view=bingads-13 CustomerAccountShare Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/customeraccountshare?view=bingads-13 CustomerAccountShare Data Object
      * 
      * @uses CustomerAccountShareAssociation
      * @used-by CustomerShare

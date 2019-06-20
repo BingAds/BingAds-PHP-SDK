@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 {
     /**
      * Defines the base object from which all fault detail objects derive.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/applicationfault?view=bingads-12 ApplicationFault Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/applicationfault?view=bingads-12 ApplicationFault Data Object
      */
     class ApplicationFault
     {

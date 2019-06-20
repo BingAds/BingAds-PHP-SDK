@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Defines a client link object.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/clientlink?view=bingads-12 ClientLink Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/clientlink?view=bingads-12 ClientLink Data Object
      * 
      * @uses ClientLinkStatus
      * @uses KeyValuePairOfstringstring

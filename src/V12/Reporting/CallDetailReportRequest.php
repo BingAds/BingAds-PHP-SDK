@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines a call detail report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/calldetailreportrequest?view=bingads-12 CallDetailReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/calldetailreportrequest?view=bingads-12 CallDetailReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses CallDetailReportColumn

@@ -3188,6 +3188,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("Path1: %s", $dataObject->Path1));
             self::OutputStatusMessage(sprintf("Path2: %s", $dataObject->Path2));
             self::OutputStatusMessage(sprintf("Text: %s", $dataObject->Text));
+            self::OutputStatusMessage(sprintf("TextPart2: %s", $dataObject->TextPart2));
             self::OutputStatusMessage("* * * End OutputDynamicSearchAd * * *");
         }
     }

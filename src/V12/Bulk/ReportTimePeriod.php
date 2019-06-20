@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Bulk;
 {
     /**
      * This value set is not supported in Bing Ads API Version 12, and will be removed in a future version.
-     * @link https://docs.microsoft.com/en-us/bingads/bulk-service/reporttimeperiod?view=bingads-12 ReportTimePeriod Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/reporttimeperiod?view=bingads-12 ReportTimePeriod Value Set
      * 
      * @used-by PerformanceStatsDateRange
      */

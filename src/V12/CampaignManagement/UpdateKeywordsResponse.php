@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Updates the keywords within a specified ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updatekeywords?view=bingads-12 UpdateKeywords Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatekeywords?view=bingads-12 UpdateKeywords Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateKeywords

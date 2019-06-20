@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines an ad group to include in the report.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adgroupreportscope?view=bingads-12 AdGroupReportScope Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adgroupreportscope?view=bingads-12 AdGroupReportScope Data Object
      * 
      * @used-by AccountThroughAdGroupReportScope
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains the location, network, device, and the percentage of time that a user entered a search query.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordlocation?view=bingads-13 KeywordLocation Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordlocation?view=bingads-13 KeywordLocation Data Object
      * 
      * @used-by KeywordLocationResult
      */

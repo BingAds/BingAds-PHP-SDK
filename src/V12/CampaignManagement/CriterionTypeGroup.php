@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * The type used to group criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/criteriontypegroup?view=bingads-12 CriterionTypeGroup Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/criteriontypegroup?view=bingads-12 CriterionTypeGroup Value Set
      * 
      * @used-by TargetSettingDetail
      */

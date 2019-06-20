@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines an object that contains search query statistics of including broad match type keyword bids.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/broadmatchsearchquerykpi?view=bingads-12 BroadMatchSearchQueryKPI Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/broadmatchsearchquerykpi?view=bingads-12 BroadMatchSearchQueryKPI Data Object
      * 
      * @used-by BroadMatchKeywordOpportunity
      */

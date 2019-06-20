@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the PublisherUsagePerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/publisherusageperformancereportcolumn?view=bingads-12 PublisherUsagePerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/publisherusageperformancereportcolumn?view=bingads-12 PublisherUsagePerformanceReportColumn Value Set
      * 
      * @used-by PublisherUsagePerformanceReportRequest
      */

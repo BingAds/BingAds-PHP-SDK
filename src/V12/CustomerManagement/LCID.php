@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Defines a selection of locale values.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/lcid?view=bingads-12 LCID Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/lcid?view=bingads-12 LCID Value Set
      * 
      * @used-by User
      * @used-by UserInvitation
