@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines an object that contains a list of suggested keywords that may perform better than the specified keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/keywordsuggestion?view=bingads-12 KeywordSuggestion Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordsuggestion?view=bingads-12 KeywordSuggestion Data Object
      * 
      * @uses KeywordAndConfidence
      * @used-by SuggestKeywordsFromExistingKeywordsResponse

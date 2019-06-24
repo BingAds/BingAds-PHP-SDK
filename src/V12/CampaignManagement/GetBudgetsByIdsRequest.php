@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets the specified budgets from the account's shared budget library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getbudgetsbyids?view=bingads-12 GetBudgetsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getbudgetsbyids?view=bingads-12 GetBudgetsByIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetBudgetsByIds
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Adds a negative keyword list to the account's library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addsharedentity?view=bingads-12 AddSharedEntity Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addsharedentity?view=bingads-12 AddSharedEntity Request Object
      * 
      * @uses SharedEntity
      * @uses SharedListItem

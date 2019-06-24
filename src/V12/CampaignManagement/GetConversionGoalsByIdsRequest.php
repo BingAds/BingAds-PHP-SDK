@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets the specified conversion goals.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getconversiongoalsbyids?view=bingads-12 GetConversionGoalsByIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getconversiongoalsbyids?view=bingads-12 GetConversionGoalsByIds Request Object
      * 
      * @uses ConversionGoalType
      * @used-by BingAdsCampaignManagementService::GetConversionGoalsByIds

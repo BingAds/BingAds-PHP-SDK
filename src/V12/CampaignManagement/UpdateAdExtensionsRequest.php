@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Updates one or more ad extensions within an account's ad extension library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateadextensions?view=bingads-12 UpdateAdExtensions Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateadextensions?view=bingads-12 UpdateAdExtensions Request Object
      * 
      * @uses AdExtension
      * @used-by BingAdsCampaignManagementService::UpdateAdExtensions

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that represents the target CPA bid strategy type.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/targetcpabiddingscheme?view=bingads-13 TargetCpaBiddingScheme Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/targetcpabiddingscheme?view=bingads-13 TargetCpaBiddingScheme Data Object
      * 
      * @uses Bid
      */

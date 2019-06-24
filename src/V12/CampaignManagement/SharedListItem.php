@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the base class of a shared list item.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/sharedlistitem?view=bingads-12 SharedListItem Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/sharedlistitem?view=bingads-12 SharedListItem Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by AddListItemsToSharedListRequest

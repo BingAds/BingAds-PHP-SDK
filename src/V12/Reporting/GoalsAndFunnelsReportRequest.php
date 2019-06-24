@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines a goals and funnels report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/goalsandfunnelsreportrequest?view=bingads-12 GoalsAndFunnelsReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/goalsandfunnelsreportrequest?view=bingads-12 GoalsAndFunnelsReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses GoalsAndFunnelsReportColumn

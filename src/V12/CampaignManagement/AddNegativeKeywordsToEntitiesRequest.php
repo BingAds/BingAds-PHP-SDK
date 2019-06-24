@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Adds negative keywords to the specified campaign or ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addnegativekeywordstoentities?view=bingads-12 AddNegativeKeywordsToEntities Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addnegativekeywordstoentities?view=bingads-12 AddNegativeKeywordsToEntities Request Object
      * 
      * @uses EntityNegativeKeyword
      * @used-by BingAdsCampaignManagementService::AddNegativeKeywordsToEntities

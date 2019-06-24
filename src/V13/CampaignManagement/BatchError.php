@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/batcherror?view=bingads-13 BatchError Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/batcherror?view=bingads-13 BatchError Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by ApiFaultDetail

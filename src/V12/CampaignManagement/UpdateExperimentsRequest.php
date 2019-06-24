@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Updates the specified experiments.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/updateexperiments?view=bingads-12 UpdateExperiments Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateexperiments?view=bingads-12 UpdateExperiments Request Object
      * 
      * @uses Experiment
      * @used-by BingAdsCampaignManagementService::UpdateExperiments

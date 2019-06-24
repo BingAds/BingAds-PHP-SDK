@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a product audience that you can use to remarket products from your Microsoft Merchant Center store.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/productaudience?view=bingads-12 ProductAudience Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/productaudience?view=bingads-12 ProductAudience Data Object
      * 
      * @uses ProductAudienceType
      */

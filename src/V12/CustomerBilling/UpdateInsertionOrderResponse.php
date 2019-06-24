@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerBilling;
 {
     /**
      * Updates an insertion order within the specified account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/updateinsertionorder?view=bingads-12 UpdateInsertionOrder Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/updateinsertionorder?view=bingads-12 UpdateInsertionOrder Response Object
      * 
      * @used-by BingAdsCustomerBillingService::UpdateInsertionOrder
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines the possible status values of InsertionOrderPendingChanges that can be used to manage changes for an approved insertion order.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/insertionorderpendingchangesstatus?view=bingads-13 InsertionOrderPendingChangesStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/insertionorderpendingchangesstatus?view=bingads-13 InsertionOrderPendingChangesStatus Value Set
      * 
      * @used-by InsertionOrderPendingChanges
      */

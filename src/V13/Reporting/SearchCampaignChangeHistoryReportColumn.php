@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attribute columns that you can include in the SearchCampaignChangeHistoryReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchcampaignchangehistoryreportcolumn?view=bingads-13 SearchCampaignChangeHistoryReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/searchcampaignchangehistoryreportcolumn?view=bingads-13 SearchCampaignChangeHistoryReportColumn Value Set
      * 
      * @used-by SearchCampaignChangeHistoryReportRequest
      */
@@ -70,6 +70,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The Microsoft Advertising system identifier of the entity that was updated. */
         const EntityId = 'EntityId';
+
+        /** The Microsoft Advertising tool used to make changes. */
+        const Tool = 'Tool';
     }
 
 }

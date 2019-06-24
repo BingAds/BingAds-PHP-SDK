@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the criteria to use to filter the campaign change history report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/searchcampaignchangehistoryreportfilter?view=bingads-12 SearchCampaignChangeHistoryReportFilter Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/searchcampaignchangehistoryreportfilter?view=bingads-12 SearchCampaignChangeHistoryReportFilter Data Object
      * 
      * @uses AdDistributionReportFilter
      * @uses ChangeTypeReportFilter

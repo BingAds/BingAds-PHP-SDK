@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * Defines the possible auction segment values.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/auctionsegment?view=bingads-12 AuctionSegment Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/auctionsegment?view=bingads-12 AuctionSegment Value Set
      * 
      * @used-by AuctionInsightResult
      * @used-by AuctionSegmentSearchParameter

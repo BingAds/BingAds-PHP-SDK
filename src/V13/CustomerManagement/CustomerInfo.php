@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines a customer identification object that contains information that identifies a customer.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/customerinfo?view=bingads-13 CustomerInfo Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/customerinfo?view=bingads-13 CustomerInfo Data Object
      * 
      * @used-by AdvertiserAccount
      * @used-by GetCustomersInfoResponse

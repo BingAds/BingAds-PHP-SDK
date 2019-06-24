@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * The suggested bid search parameter filter that you can include when requesting keyword ideas.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/suggestedbidsearchparameter?view=bingads-12 SuggestedBidSearchParameter Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/suggestedbidsearchparameter?view=bingads-12 SuggestedBidSearchParameter Data Object
      */
     final class SuggestedBidSearchParameter extends SearchParameter
     {

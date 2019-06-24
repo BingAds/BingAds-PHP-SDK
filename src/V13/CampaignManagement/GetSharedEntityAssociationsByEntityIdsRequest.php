@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets negative keyword list associations for the specified campaigns.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getsharedentityassociationsbyentityids?view=bingads-13 GetSharedEntityAssociationsByEntityIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getsharedentityassociationsbyentityids?view=bingads-13 GetSharedEntityAssociationsByEntityIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetSharedEntityAssociationsByEntityIds
      */

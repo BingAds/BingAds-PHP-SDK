@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads on specific devices.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/devicecriterion?view=bingads-12 DeviceCriterion Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/devicecriterion?view=bingads-12 DeviceCriterion Data Object
      */
     final class DeviceCriterion extends Criterion
     {

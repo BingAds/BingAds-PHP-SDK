@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Adds one or more keywords to an ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addkeywords?view=bingads-12 AddKeywords Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addkeywords?view=bingads-12 AddKeywords Request Object
      * 
      * @uses Keyword
      * @used-by BingAdsCampaignManagementService::AddKeywords

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an object that specifies the type of ad rotation to apply to the ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adrotation?view=bingads-12 AdRotation Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adrotation?view=bingads-12 AdRotation Data Object
      * 
      * @uses AdRotationType
      * @used-by AdGroup

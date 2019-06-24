@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Adds the specified media to an account's media library.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addmedia?view=bingads-12 AddMedia Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addmedia?view=bingads-12 AddMedia Response Object
      * 
      * @used-by BingAdsCampaignManagementService::AddMedia
      */

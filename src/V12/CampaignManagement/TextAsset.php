@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * A text asset with a unique Microsoft Advertising identifier that can be reused across multiple ads.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/textasset?view=bingads-12 TextAsset Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/textasset?view=bingads-12 TextAsset Data Object
      */
     final class TextAsset extends Asset
     {

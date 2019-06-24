@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the relationship of an asset to an ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/assetlink?view=bingads-12 AssetLink Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/assetlink?view=bingads-12 AssetLink Data Object
      * 
      * @uses Asset
      * @uses AssetLinkEditorialStatus

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible status values of an ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adstatus?view=bingads-12 AdStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adstatus?view=bingads-12 AdStatus Value Set
      * 
      * @used-by Ad
      */

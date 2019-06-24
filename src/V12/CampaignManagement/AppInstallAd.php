@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an app install ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appinstallad?view=bingads-12 AppInstallAd Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/appinstallad?view=bingads-12 AppInstallAd Data Object
      */
     final class AppInstallAd extends Ad
     {

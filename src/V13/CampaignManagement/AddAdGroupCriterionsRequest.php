@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds one or more ad group criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addadgroupcriterions?view=bingads-13 AddAdGroupCriterions Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addadgroupcriterions?view=bingads-13 AddAdGroupCriterions Request Object
      * 
      * @uses AdGroupCriterion
      * @uses AdGroupCriterionType

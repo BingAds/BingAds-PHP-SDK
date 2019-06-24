@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible ad rotation types that you can apply to an ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adrotationtype?view=bingads-12 AdRotationType Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adrotationtype?view=bingads-12 AdRotationType Value Set
      * 
      * @used-by AdRotation
      */

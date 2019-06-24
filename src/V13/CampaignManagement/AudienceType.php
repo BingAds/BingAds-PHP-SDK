@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible audience types.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/audiencetype?view=bingads-13 AudienceType Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/audiencetype?view=bingads-13 AudienceType Value Set
      * 
      * @used-by Audience
      * @used-by AudienceCriterion

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a list of optional ad extension properties that you can request when calling GetAdExtensionsAssociations and GetAdExtensionsByIds.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adextensionadditionalfield?view=bingads-12 AdExtensionAdditionalField Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionadditionalfield?view=bingads-12 AdExtensionAdditionalField Value Set
      * 
      * @used-by GetAdExtensionsAssociationsRequest
      * @used-by GetAdExtensionsByIdsRequest

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible types of profile criterions.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/profiletype?view=bingads-12 ProfileType Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/profiletype?view=bingads-12 ProfileType Value Set
      * 
      * @used-by ProfileCriterion
      * @used-by GetProfileDataFileUrlRequest

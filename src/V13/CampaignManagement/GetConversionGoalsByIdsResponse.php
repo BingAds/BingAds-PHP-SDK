@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the specified conversion goals.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getconversiongoalsbyids?view=bingads-13 GetConversionGoalsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getconversiongoalsbyids?view=bingads-13 GetConversionGoalsByIds Response Object
      * 
      * @uses ConversionGoal
      * @uses BatchError

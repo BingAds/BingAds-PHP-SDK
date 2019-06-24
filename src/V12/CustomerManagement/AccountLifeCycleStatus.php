@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Defines the possible status values of an account.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/accountlifecyclestatus?view=bingads-12 AccountLifeCycleStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/accountlifecyclestatus?view=bingads-12 AccountLifeCycleStatus Value Set
      * 
      * @used-by AccountInfo
      * @used-by AccountInfoWithCustomerData

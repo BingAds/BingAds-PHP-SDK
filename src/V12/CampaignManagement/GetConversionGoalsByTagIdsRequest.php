@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets the conversion goals that use the specified UET tags.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getconversiongoalsbytagids?view=bingads-12 GetConversionGoalsByTagIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getconversiongoalsbytagids?view=bingads-12 GetConversionGoalsByTagIds Request Object
      * 
      * @uses ConversionGoalType
      * @used-by BingAdsCampaignManagementService::GetConversionGoalsByTagIds

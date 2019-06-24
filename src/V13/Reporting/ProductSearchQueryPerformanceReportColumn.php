@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductSearchQueryPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productsearchqueryperformancereportcolumn?view=bingads-13 ProductSearchQueryPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productsearchqueryperformancereportcolumn?view=bingads-13 ProductSearchQueryPerformanceReportColumn Value Set
      * 
      * @used-by ProductSearchQueryPerformanceReportRequest
      */
@@ -130,6 +130,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Clicks on your ads that have received co-bids from your manufacturer partners. */
         const AssistedClicks = 'AssistedClicks';
+
+        /** Conversions resulting from the clicks on your ads that have received co-bids from your manufacturer partners. */
+        const AssistedConversions = 'AssistedConversions';
     }
 
 }

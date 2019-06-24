@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an app install conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/appinstallgoal?view=bingads-12 AppInstallGoal Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/appinstallgoal?view=bingads-12 AppInstallGoal Data Object
      */
     final class AppInstallGoal extends ConversionGoal
     {

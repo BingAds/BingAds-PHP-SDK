@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a dynamic search ad.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/dynamicsearchad?view=bingads-12 DynamicSearchAd Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/dynamicsearchad?view=bingads-12 DynamicSearchAd Data Object
      */
     final class DynamicSearchAd extends Ad
     {
@@ -22,10 +22,16 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Path2;
 
         /**
-         * The ad copy.
+         * The first part of the ad description.
          * @var string
          */
         public $Text;
+
+        /**
+         * The second part of the ad description.
+         * @var string
+         */
+        public $TextPart2;
     }
 
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductPartitionPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/productpartitionperformancereportcolumn?view=bingads-13 ProductPartitionPerformanceReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productpartitionperformancereportcolumn?view=bingads-13 ProductPartitionPerformanceReportColumn Value Set
      * 
      * @used-by ProductPartitionPerformanceReportRequest
      */
@@ -184,6 +184,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of times your ad is shown in the top position as a percentage of the total available impressions in the market you were targeting. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
+
+        /** Conversions resulting from the clicks on your ads that have received co-bids from your manufacturer partners. */
+        const AssistedConversions = 'AssistedConversions';
     }
 
 }

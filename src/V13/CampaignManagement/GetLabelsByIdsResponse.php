@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets labels by label identifiers.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getlabelsbyids?view=bingads-13 GetLabelsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getlabelsbyids?view=bingads-13 GetLabelsByIds Response Object
      * 
      * @uses Label
      * @uses BatchError

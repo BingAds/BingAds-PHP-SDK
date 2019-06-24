@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines a keyword performance report column and corresponding sort order.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/keywordperformancereportsort?view=bingads-12 KeywordPerformanceReportSort Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/keywordperformancereportsort?view=bingads-12 KeywordPerformanceReportSort Data Object
      * 
      * @uses KeywordPerformanceReportColumn
      * @uses SortOrder

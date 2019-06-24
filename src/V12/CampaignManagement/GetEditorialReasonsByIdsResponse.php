@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets the reasons why the specified entities failed editorial review and whether the issue is appealable.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/geteditorialreasonsbyids?view=bingads-12 GetEditorialReasonsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/geteditorialreasonsbyids?view=bingads-12 GetEditorialReasonsByIds Response Object
      * 
      * @uses EditorialReasonCollection
      * @uses BatchError

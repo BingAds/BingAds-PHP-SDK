@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * A responsive ad format for Audience ads in the Microsoft Audience Network.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/responsivead?view=bingads-13 ResponsiveAd Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/responsivead?view=bingads-13 ResponsiveAd Data Object
      * 
      * @uses CallToAction
      * @uses AssetLink

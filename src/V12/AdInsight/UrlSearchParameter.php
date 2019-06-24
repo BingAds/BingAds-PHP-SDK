@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * The URL search parameter that you can use as a seed for new keyword ideas.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/urlsearchparameter?view=bingads-12 UrlSearchParameter Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/urlsearchparameter?view=bingads-12 UrlSearchParameter Data Object
      */
     final class UrlSearchParameter extends SearchParameter
     {

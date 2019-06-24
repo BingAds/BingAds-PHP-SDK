@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible values representing entities that are enabled for media such as images.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/mediaenabledentityfilter?view=bingads-12 MediaEnabledEntityFilter Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/mediaenabledentityfilter?view=bingads-12 MediaEnabledEntityFilter Value Set
      * 
      * @used-by MediaAssociation
      * @used-by GetMediaAssociationsRequest

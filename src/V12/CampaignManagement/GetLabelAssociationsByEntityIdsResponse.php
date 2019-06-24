@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Gets label associations by entity identifiers.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getlabelassociationsbyentityids?view=bingads-12 GetLabelAssociationsByEntityIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getlabelassociationsbyentityids?view=bingads-12 GetLabelAssociationsByEntityIds Response Object
      * 
      * @uses LabelAssociation
      * @uses BatchError

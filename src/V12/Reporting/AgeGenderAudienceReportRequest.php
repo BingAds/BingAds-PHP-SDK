@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines an age and gender audience report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/agegenderaudiencereportrequest?view=bingads-12 AgeGenderAudienceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/agegenderaudiencereportrequest?view=bingads-12 AgeGenderAudienceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AgeGenderAudienceReportColumn

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the BudgetSummaryReportRequest.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/budgetsummaryreportcolumn?view=bingads-12 BudgetSummaryReportColumn Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/budgetsummaryreportcolumn?view=bingads-12 BudgetSummaryReportColumn Value Set
      * 
      * @used-by BudgetSummaryReportRequest
      */

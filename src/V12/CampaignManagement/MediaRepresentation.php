@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a media representation base class that includes a  media download Url.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/mediarepresentation?view=bingads-12 MediaRepresentation Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/mediarepresentation?view=bingads-12 MediaRepresentation Data Object
      * 
      * @used-by MediaMetaData
      */

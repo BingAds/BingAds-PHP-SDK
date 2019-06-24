@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible system-determined status values of a UET tag.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/uettagtrackingstatus?view=bingads-12 UetTagTrackingStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/uettagtrackingstatus?view=bingads-12 UetTagTrackingStatus Value Set
      * 
      * @used-by UetTag
      */

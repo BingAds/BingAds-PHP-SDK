@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Labels let you organize campaigns, ad groups, ads, and keywords into groups based on whatever is important to you.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/label?view=bingads-12 Label Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/label?view=bingads-12 Label Data Object
      * 
      * @used-by AddLabelsRequest
      * @used-by GetLabelsByIdsResponse

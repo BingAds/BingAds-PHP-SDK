@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a keyword.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/keyword?view=bingads-12 Keyword Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/keyword?view=bingads-12 Keyword Data Object
      * 
      * @uses Bid
      * @uses BiddingScheme

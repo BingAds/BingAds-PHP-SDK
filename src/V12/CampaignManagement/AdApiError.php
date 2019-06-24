@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adapierror?view=bingads-12 AdApiError Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adapierror?view=bingads-12 AdApiError Data Object
      * 
      * @used-by AdApiFaultDetail
      */

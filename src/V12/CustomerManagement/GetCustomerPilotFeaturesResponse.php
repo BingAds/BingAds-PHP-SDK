@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 {
     /**
      * Gets a list of the pilot programs in which the specified customer participates.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/getcustomerpilotfeatures?view=bingads-12 GetCustomerPilotFeatures Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getcustomerpilotfeatures?view=bingads-12 GetCustomerPilotFeatures Response Object
      * 
      * @used-by BingAdsCustomerManagementService::GetCustomerPilotFeatures
      */

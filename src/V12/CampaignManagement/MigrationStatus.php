@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the possible migration status values.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/migrationstatus?view=bingads-12 MigrationStatus Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/migrationstatus?view=bingads-12 MigrationStatus Value Set
      * 
      * @used-by MigrationStatusInfo
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines the base object of a conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/conversiongoal?view=bingads-12 ConversionGoal Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoal?view=bingads-12 ConversionGoal Data Object
      * 
      * @uses ConversionGoalCountType
      * @uses ConversionGoalRevenue

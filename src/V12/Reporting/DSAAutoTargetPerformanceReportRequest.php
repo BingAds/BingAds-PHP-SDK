@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines a DSA auto target performance report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/dsaautotargetperformancereportrequest?view=bingads-12 DSAAutoTargetPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/dsaautotargetperformancereportrequest?view=bingads-12 DSAAutoTargetPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses DSAAutoTargetPerformanceReportColumn

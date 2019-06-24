@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines an ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/adgroup?view=bingads-12 AdGroup Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroup?view=bingads-12 AdGroup Data Object
      * 
      * @uses AdRotation
      * @uses BiddingScheme

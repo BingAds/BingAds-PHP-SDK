@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a page visitors who did not visit another page remarketing rule.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/pagevisitorswhodidnotvisitanotherpagerule?view=bingads-13 PageVisitorsWhoDidNotVisitAnotherPageRule Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/pagevisitorswhodidnotvisitanotherpagerule?view=bingads-13 PageVisitorsWhoDidNotVisitAnotherPageRule Data Object
      * 
      * @uses RuleItemGroup
      */

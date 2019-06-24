@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines a fault object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-billing-service/apibatchfault?view=bingads-13 ApiBatchFault Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/apibatchfault?view=bingads-13 ApiBatchFault Data Object
      * 
      * @uses BatchError
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Retrieves the specified ads from the specified ad group.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getadsbyids?view=bingads-12 GetAdsByIds Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getadsbyids?view=bingads-12 GetAdsByIds Response Object
      * 
      * @uses Ad
      * @uses BatchError

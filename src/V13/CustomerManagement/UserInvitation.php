@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines a user invitation.
-     * @link https://docs.microsoft.com/en-us/bingads/customer-management-service/userinvitation?view=bingads-13 UserInvitation Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/userinvitation?view=bingads-13 UserInvitation Data Object
      * 
      * @uses LCID
      * @used-by SearchUserInvitationsResponse

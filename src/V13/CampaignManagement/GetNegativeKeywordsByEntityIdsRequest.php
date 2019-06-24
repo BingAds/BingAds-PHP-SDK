@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the negative keywords that are only associated with the specified campaigns or ad groups.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/getnegativekeywordsbyentityids?view=bingads-13 GetNegativeKeywordsByEntityIds Request Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getnegativekeywordsbyentityids?view=bingads-13 GetNegativeKeywordsByEntityIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetNegativeKeywordsByEntityIds
      */

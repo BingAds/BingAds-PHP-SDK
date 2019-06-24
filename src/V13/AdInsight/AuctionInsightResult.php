@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the auction insight results from calling the GetAuctionInsightData operation.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/auctioninsightresult?view=bingads-13 AuctionInsightResult Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/auctioninsightresult?view=bingads-13 AuctionInsightResult Data Object
      * 
      * @uses AuctionSegment
      * @uses AuctionInsightEntry

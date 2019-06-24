@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines a conversion performance report request.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/conversionperformancereportrequest?view=bingads-12 ConversionPerformanceReportRequest Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/conversionperformancereportrequest?view=bingads-12 ConversionPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses ConversionPerformanceReportColumn

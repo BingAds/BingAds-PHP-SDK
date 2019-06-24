@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the ad group status values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/adgroupstatusreportfilter?view=bingads-12 AdGroupStatusReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adgroupstatusreportfilter?view=bingads-12 AdGroupStatusReportFilter Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportFilter
      * @used-by AdExtensionByAdReportFilter

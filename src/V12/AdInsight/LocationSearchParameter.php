@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\AdInsight;
 {
     /**
      * The location search parameter filter that you can include when requesting keyword ideas.
-     * @link https://docs.microsoft.com/en-us/bingads/ad-insight-service/locationsearchparameter?view=bingads-12 LocationSearchParameter Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/locationsearchparameter?view=bingads-12 LocationSearchParameter Data Object
      * 
      * @uses LocationCriterion
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
 {
     /**
      * Defines a duration conversion goal.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/durationgoal?view=bingads-12 DurationGoal Data Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/durationgoal?view=bingads-12 DurationGoal Data Object
      */
     final class DurationGoal extends ConversionGoal
     {

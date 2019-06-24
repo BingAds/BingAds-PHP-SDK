@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V12\Reporting;
 {
     /**
      * Defines the keyword status values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/bingads/reporting-service/keywordstatusreportfilter?view=bingads-12 KeywordStatusReportFilter Value Set
+     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/keywordstatusreportfilter?view=bingads-12 KeywordStatusReportFilter Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportFilter
      * @used-by AdExtensionByKeywordReportFilter

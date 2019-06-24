@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds negative keywords to the shared negative keyword list.
-     * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/addlistitemstosharedlist?view=bingads-13 AddListItemsToSharedList Response Object
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addlistitemstosharedlist?view=bingads-13 AddListItemsToSharedList Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddListItemsToSharedList
