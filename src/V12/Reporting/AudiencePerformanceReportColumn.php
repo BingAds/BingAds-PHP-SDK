@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V12\Reporting;
         /** The audience name. */
         const AudienceName = 'AudienceName';
 
-        /** The status of the association between the ad group and remarketing list, which indicates whether ads are eligible to display. */
+        /** The status of the association between the audience and either an ad group or campaign. */
         const AssociationStatus = 'AssociationStatus';
 
         /** This attribute reflects the current value of your ad group's audience bid adjustment, even if a different bid adjustment value was used when the ad was shown. */
@@ -97,6 +97,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The audience type. */
         const AudienceType = 'AudienceType';
+
+        /** The Microsoft Advertising assigned identifier of the association between the audience and either an ad group or campaign. */
+        const AssociationId = 'AssociationId';
     }
 
 }

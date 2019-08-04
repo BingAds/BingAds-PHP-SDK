@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** A conversion is a click that results in a sale or another measure of success. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
         /** The sum of your cost-per-click (CPC) charges for your ads and keywords. */
@@ -76,6 +76,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
+
+        /** The Microsoft Advertising assigned identifier of an experiment campaign. */
+        const BaseCampaignId = 'BaseCampaignId';
+
+        /** The number of conversions. */
+        const AllConversions = 'AllConversions';
+
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
+        const AllRevenue = 'AllRevenue';
     }
 
 }

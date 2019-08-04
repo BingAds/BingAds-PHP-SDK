@@ -68,10 +68,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The low-quality impressions as a percentage. */
         const LowQualityImpressionsPercent = 'LowQualityImpressionsPercent';
 
-        /** The number of conversions that originate from low-quality clicks. */
+        /** The number of conversions. */
         const LowQualityConversions = 'LowQualityConversions';
 
-        /** The low-quality conversion rate as a percentage. */
+        /** The conversion rate as a percentage. */
         const LowQualityConversionRate = 'LowQualityConversionRate';
 
         /** The device name attribute of a device OS target bid. */
@@ -172,6 +172,24 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
         const TopImpressionRatePercent = 'TopImpressionRatePercent';
+
+        /** The number of conversions. */
+        const AllConversions = 'AllConversions';
+
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
+        const AllRevenue = 'AllRevenue';
+
+        /** The conversion rate as a percentage. */
+        const AllConversionRate = 'AllConversionRate';
+
+        /** The cost per conversion. */
+        const AllCostPerConversion = 'AllCostPerConversion';
+
+        /** The return on ad spend (ROAS). */
+        const AllReturnOnAdSpend = 'AllReturnOnAdSpend';
+
+        /** The revenue per conversion. */
+        const AllRevenuePerConversion = 'AllRevenuePerConversion';
     }
 
 }

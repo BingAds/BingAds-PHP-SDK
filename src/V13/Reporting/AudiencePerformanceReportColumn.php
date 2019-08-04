@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The audience name. */
         const AudienceName = 'AudienceName';
 
-        /** The status of the association between the ad group and remarketing list, which indicates whether ads are eligible to display. */
+        /** The status of the association between the audience and either an ad group or campaign. */
         const AssociationStatus = 'AssociationStatus';
 
         /** This attribute reflects the current value of your ad group's audience bid adjustment, even if a different bid adjustment value was used when the ad was shown. */
@@ -97,6 +97,30 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The audience type. */
         const AudienceType = 'AudienceType';
+
+        /** The Microsoft Advertising assigned identifier of an experiment campaign. */
+        const BaseCampaignId = 'BaseCampaignId';
+
+        /** The number of conversions. */
+        const AllConversions = 'AllConversions';
+
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
+        const AllRevenue = 'AllRevenue';
+
+        /** The conversion rate as a percentage. */
+        const AllConversionRate = 'AllConversionRate';
+
+        /** The cost per conversion. */
+        const AllCostPerConversion = 'AllCostPerConversion';
+
+        /** The return on ad spend (ROAS). */
+        const AllReturnOnAdSpend = 'AllReturnOnAdSpend';
+
+        /** The revenue per conversion. */
+        const AllRevenuePerConversion = 'AllRevenuePerConversion';
+
+        /** The Microsoft Advertising assigned identifier of the association between the audience and either an ad group or campaign. */
+        const AssociationId = 'AssociationId';
     }
 
 }

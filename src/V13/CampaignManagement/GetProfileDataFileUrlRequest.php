@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Gets a temporary URL that you can use to download company name, industry, or job function profile data.
+     * Gets a temporary URL that you can use to download industry or job function profile data.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getprofiledatafileurl?view=bingads-13 GetProfileDataFileUrl Request Object
      * 
      * @uses ProfileType
@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $LanguageLocale;
 
         /**
-         * Determines whether you want company name, industry, or job function profile data.
+         * Determines whether you want industry or job function profile data.
          * @var ProfileType
          */
         public $ProfileType;

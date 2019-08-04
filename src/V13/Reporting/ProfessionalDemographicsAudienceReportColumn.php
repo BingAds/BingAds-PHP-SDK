@@ -56,7 +56,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The sum of your cost-per-click (CPC) charges for your ads and keywords. */
         const Spend = 'Spend';
 
-        /** A conversion is a click that results in a sale or another measure of success. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
         /** This is the language of the country the ad is served in. */
@@ -76,6 +76,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
+
+        /** The average position of the ad on a webpage. */
+        const AveragePosition = 'AveragePosition';
+
+        /** The number of conversions. */
+        const AllConversions = 'AllConversions';
+
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
+        const AllRevenue = 'AllRevenue';
     }
 
 }

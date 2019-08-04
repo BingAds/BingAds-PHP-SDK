@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class ReportRequestStatus
     {
         /**
-         * The URL from where the report can be downloaded.
+         * The encoded URL from where the report can be downloaded.
          * @var string
          */
         public $ReportDownloadUrl;
