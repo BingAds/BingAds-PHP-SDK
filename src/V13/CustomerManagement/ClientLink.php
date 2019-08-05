@@ -16,43 +16,43 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class ClientLink
     {
         /**
-         * Reserved for future use.
+         * Determines whether the link is to a client ad account or a client customer.
          * @var string
          */
         public $Type;
 
         /**
-         * The identifier of the client account or customer to manage.
+         * The identifier of the client ad account or client customer to manage.
          * @var integer
          */
         public $ClientEntityId;
 
         /**
-         * The number of the client account or customer to manage.
+         * The number of the client ad account or client customer to manage.
          * @var string
          */
         public $ClientEntityNumber;
 
         /**
-         * The name of the client account or customer to manage.
+         * The name of the client ad account or client customer to manage.
          * @var string
          */
         public $ClientEntityName;
 
         /**
-         * The identifier of the customer who manages or is requesting to manage the client account.
+         * The identifier of the customer who manages or is requesting to manage the client ad account.
          * @var integer
          */
         public $ManagingCustomerId;
 
         /**
-         * The number of the customer who manages or is requesting to manage the client account.
+         * The number of the customer who manages or is requesting to manage the client ad account.
          * @var string
          */
         public $ManagingCustomerNumber;
 
         /**
-         * The name of the customer who manages or is requesting to manage the client account.
+         * The name of the customer who manages or is requesting to manage the client ad account.
          * @var string
          */
         public $ManagingCustomerName;
@@ -76,7 +76,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $InviterEmail;
 
         /**
-         * The name of the parent customer of the user who  created the client link request.
+         * The name of the parent customer of the user who created the client link request.
          * @var string
          */
         public $InviterName;
@@ -88,7 +88,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $InviterPhone;
 
         /**
-         * Determines whether the owner of the client account or the managing customer is responsible for billing payments.
+         * Determines whether the owner of the client ad account or the managing customer is responsible for billing payments.
          * @var boolean
          */
         public $IsBillToClient;
@@ -106,7 +106,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Status;
 
         /**
-         * Determines whether or not to send email notification of the client link invitation to the primary user of the client account.
+         * Determines whether or not to send email notification of the client link invitation to the primary user of the client ad account.
          * @var boolean
          */
         public $SuppressNotification;
@@ -136,7 +136,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * Reserved for future use.
+         * Determines whether the user's access to the accounts is restricted by customer hierarchy i.e., customer level client linking.
          * @var string
          */
         public $CustomerLinkPermission;

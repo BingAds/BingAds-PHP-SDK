@@ -43,7 +43,7 @@ final class AuthHelper {
     const DeveloperToken = 'BBD37VB98'; // For sandbox use BBD37VB98
     const ApiEnvironment = ApiEnvironment::Sandbox;
     const OAuthRefreshTokenPath = 'refresh.txt';
-    const ClientId = 'ClientIdGoesHere'; 
+    const ClientId = 'db41b09d-6e50-4f4a-90ac-5a99caefb52f';  // For sandbox use db41b09d-6e50-4f4a-90ac-5a99caefb52f
 
     const CampaignTypes = 
         CampaignType::Audience . ' ' . 

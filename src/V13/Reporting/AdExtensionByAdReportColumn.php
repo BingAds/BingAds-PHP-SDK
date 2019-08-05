@@ -136,6 +136,24 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The title part 3 attribute of an ad. */
         const TitlePart3 = 'TitlePart3';
+
+        /** The number of conversions. */
+        const AllConversions = 'AllConversions';
+
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
+        const AllRevenue = 'AllRevenue';
+
+        /** The conversion rate as a percentage. */
+        const AllConversionRate = 'AllConversionRate';
+
+        /** The cost per conversion. */
+        const AllCostPerConversion = 'AllCostPerConversion';
+
+        /** The return on ad spend (ROAS). */
+        const AllReturnOnAdSpend = 'AllReturnOnAdSpend';
+
+        /** The revenue per conversion. */
+        const AllRevenuePerConversion = 'AllRevenuePerConversion';
     }
 
 }

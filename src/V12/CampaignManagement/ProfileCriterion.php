@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
     final class ProfileCriterion extends Criterion
     {
         /**
-         * The identifier of the audience profile that you want to target.
+         * The identifier of the company name, industry, or job function profile that you want to target.
          * @var integer
          */
         public $ProfileId;

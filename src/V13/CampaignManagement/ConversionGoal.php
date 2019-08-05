@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CountType;
 
         /**
-         * Reserved for future use.
+         * Determines whether or not to exclude data otherwise related to this conversion goal from a subset of performance report columns.
          * @var boolean
          */
         public $ExcludeFromBidding;

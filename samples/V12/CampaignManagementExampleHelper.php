@@ -90,6 +90,7 @@ use Microsoft\BingAds\V12\CampaignManagement\GetSharedEntitiesByAccountIdRequest
 use Microsoft\BingAds\V12\CampaignManagement\GetSharedEntityAssociationsByEntityIdsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetSharedEntityAssociationsBySharedEntityIdsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\GetUetTagsByIdsRequest;
+use Microsoft\BingAds\V12\CampaignManagement\SearchCompaniesRequest;
 use Microsoft\BingAds\V12\CampaignManagement\SetAccountPropertiesRequest;
 use Microsoft\BingAds\V12\CampaignManagement\SetAdExtensionsAssociationsRequest;
 use Microsoft\BingAds\V12\CampaignManagement\SetLabelAssociationsRequest;
@@ -1257,6 +1258,20 @@ final class CampaignManagementExampleHelper {
         $request->TagIds = $tagIds;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetUetTagsByIds($request);
+    }
+    static function SearchCompanies(
+        $companyNameFilter,
+        $languageLocale)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new SearchCompaniesRequest();
+
+        $request->CompanyNameFilter = $companyNameFilter;
+        $request->LanguageLocale = $languageLocale;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->SearchCompanies($request);
     }
     static function SetAccountProperties(
         $accountProperties)
@@ -2781,6 +2796,29 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->CampaignNegativeSites as $dataObject)
         {
             self::OutputCampaignNegativeSites($dataObject);
+        }
+    }
+    static function OutputCompany($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputCompany * * *");
+            self::OutputStatusMessage(sprintf("LogoUrl: %s", $dataObject->LogoUrl));
+            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(sprintf("ProfileId: %s", $dataObject->ProfileId));
+            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage("* * * End OutputCompany * * *");
+        }
+    }
+    static function OutputArrayOfCompany($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Company))
+        {
+            return;
+        }
+        foreach ($dataObjects->Company as $dataObject)
+        {
+            self::OutputCompany($dataObject);
         }
     }
     static function OutputConversionGoal($dataObject)
