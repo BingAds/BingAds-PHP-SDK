@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Reserved for future use.
+     * Gets the customer and account hierarchy under a specified customer.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getlinkedaccountsandcustomersinfo?view=bingads-13 GetLinkedAccountsAndCustomersInfo Request Object
      * 
      * @used-by BingAdsCustomerManagementService::GetLinkedAccountsAndCustomersInfo
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class GetLinkedAccountsAndCustomersInfoRequest
     {
         /**
-         * Reserved for future use.
+         * The identifier of the customer whose hierarchy you want to get.
          * @var integer
          */
         public $CustomerId;
 
         /**
-         * Reserved for future use.
+         * Determines whether to return only the ad accounts that belong to the customer or to also return linked customers and linked ad accounts under other customers.
          * @var boolean
          */
         public $OnlyParentAccounts;

@@ -17,6 +17,7 @@ use Microsoft\BingAds\V13\CustomerManagement\DeleteUserRequest;
 use Microsoft\BingAds\V13\CustomerManagement\FindAccountsRequest;
 use Microsoft\BingAds\V13\CustomerManagement\FindAccountsOrCustomersInfoRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetAccountRequest;
+use Microsoft\BingAds\V13\CustomerManagement\GetAccountPilotFeaturesRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetAccountsInfoRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetCustomerRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetCustomerPilotFeaturesRequest;
@@ -145,6 +146,18 @@ final class CustomerManagementExampleHelper {
         $request->AccountId = $accountId;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetAccount($request);
+    }
+    static function GetAccountPilotFeatures(
+        $accountId)
+    {
+        $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+
+        $request = new GetAccountPilotFeaturesRequest();
+
+        $request->AccountId = $accountId;
+
+        return $GLOBALS['CustomerManagementProxy']->GetService()->GetAccountPilotFeatures($request);
     }
     static function GetAccountsInfo(
         $customerId,

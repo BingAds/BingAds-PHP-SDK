@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Language;
 
         /**
-         * Reserved for future use.
+         * The page feed identifiers for dynamic search ads.
          * @var integer[]
          */
         public $PageFeedIds;

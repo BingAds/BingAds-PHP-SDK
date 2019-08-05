@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Gets a list of the pilot programs in which the specified customer participates.
+     * Gets a list of the pilot programs that are enabled for all of the customer's accounts.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getcustomerpilotfeatures?view=bingads-12 GetCustomerPilotFeatures Request Object
      * 
      * @used-by BingAdsCustomerManagementService::GetCustomerPilotFeatures
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
     final class GetCustomerPilotFeaturesRequest
     {
         /**
-         * The identifier of the customer whose list of pilot programs you want to get.
+         * The identifier of the customer used to get a list of pilot features.
          * @var integer
          */
         public $CustomerId;

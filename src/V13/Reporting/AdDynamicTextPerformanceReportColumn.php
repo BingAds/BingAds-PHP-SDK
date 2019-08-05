@@ -136,6 +136,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The labels applied to the ad. */
         const AdLabels = 'AdLabels';
+
+        /** The number of conversions. */
+        const AllConversions = 'AllConversions';
+
+        /** The conversion rate as a percentage. */
+        const AllConversionRate = 'AllConversionRate';
+
+        /** The cost per conversion. */
+        const AllCostPerConversion = 'AllCostPerConversion';
     }
 
 }

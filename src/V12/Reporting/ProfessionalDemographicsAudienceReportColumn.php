@@ -76,6 +76,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
+
+        /** The average position of the ad on a webpage. */
+        const AveragePosition = 'AveragePosition';
     }
 
 }
