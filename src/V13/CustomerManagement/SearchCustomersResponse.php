@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Searches for customers that match a specified criteria.
+     * Searches for customers that match the request criteria.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/searchcustomers?view=bingads-13 SearchCustomers Response Object
      * 
      * @uses Customer
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class SearchCustomersResponse
     {
         /**
-         * A  list of customers that meet the specified criteria.
+         * A  list of customers that meet the request criteria.
          * @var Customer[]
          */
         public $Customers;

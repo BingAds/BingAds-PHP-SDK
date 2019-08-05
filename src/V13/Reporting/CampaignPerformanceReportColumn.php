@@ -77,10 +77,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The low-quality impressions as a percentage. */
         const LowQualityImpressionsPercent = 'LowQualityImpressionsPercent';
 
-        /** The number of conversions. */
+        /** The number of conversions that originate from low-quality clicks. */
         const LowQualityConversions = 'LowQualityConversions';
 
-        /** The conversion rate as a percentage. */
+        /** The low-quality conversion rate as a percentage. */
         const LowQualityConversionRate = 'LowQualityConversionRate';
 
         /** The device name attribute of a device OS target bid. */
