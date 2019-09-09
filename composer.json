@@ -1,7 +1,7 @@
 {
     "name": "microsoft/bingads",
-    "description": "This project provides a set of PHP client libraries that make it easy to access Bing Ads service APIs.",
-    "keywords": [ "php", "bingads", "bing ads", "sdk" ],
+    "description": "This project provides the PHP client library for the SOAP-based Bing Ads API at Microsoft.",
+    "keywords": [ "php", "bingads", "bing ads", "microsoft advertising", "sdk" ],
     "license": "Apache-2.0",
     "type": "library",
     "homepage": "https://github.com/BingAds/BingAds-PHP-SDK",

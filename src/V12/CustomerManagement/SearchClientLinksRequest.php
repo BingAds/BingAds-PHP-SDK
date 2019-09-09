@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
     final class SearchClientLinksRequest
     {
         /**
-         * Determines the request conditions.
+         * Determines the conditions that must be met to return client links.
          * @var Predicate[]
          */
         public $Predicates;

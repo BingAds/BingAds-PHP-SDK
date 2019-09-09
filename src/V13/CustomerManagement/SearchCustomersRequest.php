@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class SearchCustomersRequest
     {
         /**
-         * Determines the request conditions.
+         * Determines the conditions that all must be met to return customers.
          * @var Predicate[]
          */
         public $Predicates;

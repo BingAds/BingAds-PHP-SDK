@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/imageadextension?view=bingads-13 ImageAdExtension Data Object
      * 
      * @uses AppUrl
+     * @uses AssetLink
      * @uses CustomParameters
      */
     final class ImageAdExtension extends AdExtension
@@ -29,6 +30,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $DestinationUrl;
+
+        /**
+         * Reserved for future use.
+         * @var string
+         */
+        public $DisplayText;
 
         /**
          * Not supported for image ad extensions.
@@ -59,6 +66,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $ImageMediaIds;
+
+        /**
+         * Reserved for future use.
+         * @var AssetLink[]
+         */
+        public $Images;
 
         /**
          * Not supported for image ad extensions.

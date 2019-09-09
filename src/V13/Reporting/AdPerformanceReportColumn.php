@@ -211,6 +211,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue per conversion. */
         const AllRevenuePerConversion = 'AllRevenuePerConversion';
+
+        /** A place in your final URL where you can add parameters that will be attached to the end of your landing page URL. */
+        const FinalUrlSuffix = 'FinalUrlSuffix';
     }
 
 }

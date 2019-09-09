@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class GetAccountsInfoResponse
     {
         /**
-         * The list of information about ad accounts that match the request criteria.
+         * The list of information about advertiser accounts that match the request criteria.
          * @var AccountInfo[]
          */
         public $AccountsInfo;

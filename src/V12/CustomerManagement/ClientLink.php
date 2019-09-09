@@ -58,7 +58,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $InviterEmail;
 
         /**
-         * The name of the parent customer of the user who  created the client link request.
+         * The name of the parent customer of the user who created the client link request.
          * @var string
          */
         public $InviterName;
@@ -70,7 +70,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
         public $InviterPhone;
 
         /**
-         * Determines whether the owner of the client account or the managing customer is responsible for billing payments.
+         * Determines whether the owner of the client advertiser account or the managing customer is responsible for billing payments.
          * @var boolean
          */
         public $IsBillToClient;

@@ -203,7 +203,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
 
-        /** The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL. */
+        /** A place in your final URL where you can add parameters that will be attached to the end of your landing page URL. */
         const FinalUrlSuffix = 'FinalUrlSuffix';
 
         /** The campaign type. */

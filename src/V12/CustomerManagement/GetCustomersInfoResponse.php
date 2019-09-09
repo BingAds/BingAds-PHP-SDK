@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Gets a list of objects that contain customer identification information, for example the name and identifier of the customer.
+     * Gets the identifiers and names of customers that are accessible to the current authenticated user
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getcustomersinfo?view=bingads-12 GetCustomersInfo Response Object
      * 
      * @uses CustomerInfo

@@ -28,6 +28,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by KeywordPerformanceReportFilter
      * @used-by NegativeKeywordConflictReportFilter
      * @used-by ProductDimensionPerformanceReportFilter
+     * @used-by ProductNegativeKeywordConflictReportFilter
      * @used-by ProductPartitionPerformanceReportFilter
      * @used-by ProductPartitionUnitPerformanceReportFilter
      * @used-by ProductSearchQueryPerformanceReportFilter

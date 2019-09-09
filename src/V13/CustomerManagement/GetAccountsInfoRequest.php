@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $CustomerId;
 
         /**
-         * Determines whether to return only the ad accounts that belong to the customer or to also return linked ad accounts under other customers.
+         * Determines whether to return only the advertiser accounts that belong to the customer or to also return linked advertiser accounts under other customers.
          * @var boolean
          */
         public $OnlyParentAccounts;

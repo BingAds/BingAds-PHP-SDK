@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account currency type. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** The average amount of campaign budget spent during a calendar month. */
+        /** The anticipated maximum monthly budget amount that was calculated on the date of the most recent budget change. */
         const MonthlyBudget = 'MonthlyBudget';
 
         /** The average amount of campaign budget spent per day. */

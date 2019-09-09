@@ -195,7 +195,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Based on your campaign performance and marketplace dynamics, this estimate is the bid amount that Microsoft Advertising calculates for your ad to be placed on the first page in the search results. */
         const FirstPageBid = 'FirstPageBid';
 
-        /** The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL. */
+        /** A place in your final URL where you can add parameters that will be attached to the end of your landing page URL. */
         const FinalUrlSuffix = 'FinalUrlSuffix';
 
         /** The Microsoft Advertising assigned identifier of an experiment campaign. */

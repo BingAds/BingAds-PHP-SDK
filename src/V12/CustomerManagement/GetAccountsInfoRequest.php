@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Gets a list of objects that contains account identification information, for example the name and identifier of the account, for the specified customer.
+     * Gets the identifiers, names, and numbers of accounts that are accessible from the specified customer.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getaccountsinfo?view=bingads-12 GetAccountsInfo Request Object
      * 
      * @used-by BingAdsCustomerManagementService::GetAccountsInfo
