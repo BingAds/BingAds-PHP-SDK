@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved for future use.
+     * Contains the association count for the corresponding usage type.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/customeraccountshareassociation?view=bingads-13 CustomerAccountShareAssociation Data Object
      * 
      * @used-by CustomerAccountShare
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomerAccountShareAssociation
     {
         /**
-         * Reserved for future use.
+         * The association count for the corresponding usage type.
          * @var integer
          */
         public $AssociationCount;
 
         /**
-         * Reserved for future use.
+         * Indicates how the customer account share is used e.g., via audience association.
          * @var string
          */
         public $UsageType;

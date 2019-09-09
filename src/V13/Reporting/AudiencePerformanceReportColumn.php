@@ -121,6 +121,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The Microsoft Advertising assigned identifier of the association between the audience and either an ad group or campaign. */
         const AssociationId = 'AssociationId';
+
+        /** The level of the audience's association. */
+        const AssociationLevel = 'AssociationLevel';
     }
 
 }

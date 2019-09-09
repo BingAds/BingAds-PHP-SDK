@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UetTag
     {
         /**
-         * Reserved for future use.
+         * Determines the list of customers that share the UET tag.
          * @var CustomerShare
          */
         public $CustomerShare;

@@ -190,6 +190,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The campaign type. */
         const CampaignType = 'CampaignType';
+
+        /** A place in your final URL where you can add parameters that will be attached to the end of your landing page URL. */
+        const FinalUrlSuffix = 'FinalUrlSuffix';
     }
 
 }

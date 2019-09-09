@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V12\CustomerManagement;
 
 {
     /**
-     * Initiates the client link process to manage the account of another customer.
+     * Initiates the client link process to manage the accounts of another customer.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/addclientlinks?view=bingads-12 AddClientLinks Response Object
      * 
      * @uses OperationError

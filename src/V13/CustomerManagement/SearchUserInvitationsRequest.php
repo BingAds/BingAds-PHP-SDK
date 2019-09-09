@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class SearchUserInvitationsRequest
     {
         /**
-         * Determines the request conditions.
+         * Determines the conditions that all must be met to return user invitations.
          * @var Predicate[]
          */
         public $Predicates;

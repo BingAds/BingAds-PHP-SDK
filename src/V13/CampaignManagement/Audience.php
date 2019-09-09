@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AudienceNetworkSize;
 
         /**
-         * Reserved for future use.
+         * Determines the list of customers and accounts that share the audience.
          * @var CustomerShare
          */
         public $CustomerShare;

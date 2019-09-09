@@ -1525,6 +1525,53 @@ final class ReportingExampleHelper {
             self::OutputProductMatchCountReportRequest($dataObject);
         }
     }
+    static function OutputProductNegativeKeywordConflictReportFilter($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputProductNegativeKeywordConflictReportFilter * * *");
+            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage("* * * End OutputProductNegativeKeywordConflictReportFilter * * *");
+        }
+    }
+    static function OutputArrayOfProductNegativeKeywordConflictReportFilter($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductNegativeKeywordConflictReportFilter))
+        {
+            return;
+        }
+        foreach ($dataObjects->ProductNegativeKeywordConflictReportFilter as $dataObject)
+        {
+            self::OutputProductNegativeKeywordConflictReportFilter($dataObject);
+        }
+    }
+    static function OutputProductNegativeKeywordConflictReportRequest($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputProductNegativeKeywordConflictReportRequest * * *");
+            self::OutputStatusMessage("Columns:");
+            self::OutputArrayOfProductNegativeKeywordConflictReportColumn($dataObject->Columns);
+            self::OutputStatusMessage("Filter:");
+            self::OutputProductNegativeKeywordConflictReportFilter($dataObject->Filter);
+            self::OutputStatusMessage("Scope:");
+            self::OutputAccountThroughAdGroupReportScope($dataObject->Scope);
+            self::OutputStatusMessage("* * * End OutputProductNegativeKeywordConflictReportRequest * * *");
+        }
+    }
+    static function OutputArrayOfProductNegativeKeywordConflictReportRequest($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductNegativeKeywordConflictReportRequest))
+        {
+            return;
+        }
+        foreach ($dataObjects->ProductNegativeKeywordConflictReportRequest as $dataObject)
+        {
+            self::OutputProductNegativeKeywordConflictReportRequest($dataObject);
+        }
+    }
     static function OutputProductPartitionPerformanceReportFilter($dataObject)
     {
         if (!empty($dataObject))
@@ -1893,6 +1940,10 @@ final class ReportingExampleHelper {
             if($dataObject->Type === "ProductMatchCountReportRequest")
             {
                 self::OutputProductMatchCountReportRequest($dataObject);
+            }
+            if($dataObject->Type === "ProductNegativeKeywordConflictReportRequest")
+            {
+                self::OutputProductNegativeKeywordConflictReportRequest($dataObject);
             }
             if($dataObject->Type === "ProductPartitionPerformanceReportRequest")
             {
@@ -3287,6 +3338,29 @@ final class ReportingExampleHelper {
             self::OutputProductMatchCountReportColumn($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfProductMatchCountReportColumn * * *");
+    }
+    static function OutputProductNegativeKeywordConflictReportColumn($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputProductNegativeKeywordConflictReportColumn * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputProductNegativeKeywordConflictReportColumn * * *");
+    }
+    static function OutputArrayOfProductNegativeKeywordConflictReportColumn($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfProductNegativeKeywordConflictReportColumn * * *");
+        foreach ($valueSets->ProductNegativeKeywordConflictReportColumn as $valueSet)
+        {
+            self::OutputProductNegativeKeywordConflictReportColumn($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfProductNegativeKeywordConflictReportColumn * * *");
     }
     static function OutputCallDetailReportColumn($valueSet)
     {

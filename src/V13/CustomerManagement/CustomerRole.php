@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class CustomerRole
     {
         /**
-         * The role that the user has for each customer or list of accounts.
+         * The role that the user has when accessing advertiser accounts through the CustomerId.
          * @var integer
          */
         public $RoleId;
 
         /**
-         * The identifier of the Customer that the user can access.
+         * The identifier of the customer where the user has either signed up or has some account hierarchy relationship.
          * @var integer
          */
         public $CustomerId;
@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $AccountIds;
 
         /**
-         * The list of linked accounts that the user can access as an agency on behalf of another customer.
+         * The list of linked accounts that the user can access through the CustomerId as an agency on behalf of another customer.
          * @var integer[]
          */
         public $LinkedAccountIds;
