@@ -124,6 +124,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The level of the audience's association. */
         const AssociationLevel = 'AssociationLevel';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversions = 'ViewThroughConversions';
     }
 
 }

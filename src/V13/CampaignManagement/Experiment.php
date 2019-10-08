@@ -39,7 +39,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ExperimentStatus;
 
         /**
-         * Reserved for future use.
+         * Determines whether to show individual customers ads from the experiment and the original campaign randomly, or only from one or the other.
          * @var string
          */
         public $ExperimentType;

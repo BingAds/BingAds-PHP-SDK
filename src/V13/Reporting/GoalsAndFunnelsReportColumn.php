@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
-        /** The name of your event tracking or campaign analytics goal. */
+        /** The name of the goal you set for the conversions you want, meaning actions customers take after clicking your ad. */
         const Goal = 'Goal';
 
         /** The number of conversions. */
@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of conversions. */
         const AllRevenue = 'AllRevenue';
 
-        /** The Microsoft Advertising assigned identifier of a goal. */
+        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
 
         /** The device name attribute of a device OS target bid. */
@@ -74,8 +74,11 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The keyword status. */
         const KeywordStatus = 'KeywordStatus';
 
-        /** The goal type. */
+        /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversions = 'ViewThroughConversions';
     }
 
 }
