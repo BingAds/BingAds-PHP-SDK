@@ -112,6 +112,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue per conversion. */
         const AllRevenuePerConversion = 'AllRevenuePerConversion';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversions = 'ViewThroughConversions';
     }
 
 }
