@@ -66,7 +66,7 @@ try
     // the tracking script that you should add to your website is included in a corresponding 
     // UetTag within the response message. 
 
-    if ($uetTags == null || count($uetTags) < 1)
+    if ($uetTags == null || count($uetTags->UetTag) < 1)
     {
         $addUetTags = array();
         $uetTag = new UetTag();
@@ -85,7 +85,7 @@ try
         CampaignManagementExampleHelper::OutputArrayOfBatchError($addUetTagsResponse->PartialErrors);
     }
 
-    if ($uetTags == null || count($uetTags) < 1)
+    if ($uetTags == null || count($uetTags->UetTag) < 1)
     {
         printf(
             "You do not have any UET tags registered for CustomerId %s.\r\n", 
@@ -262,7 +262,8 @@ try
     print("-----\r\nGetConversionGoalsByIds:\r\n");
     $getConversionGoalsByIdsResponse = CampaignManagementExampleHelper::GetConversionGoalsByIds(
         $conversionGoalIds, 
-        $conversionGoalTypes
+        $conversionGoalTypes,
+        null
     );
     $getConversionGoals = $getConversionGoalsByIdsResponse->ConversionGoals;
     print("ConversionGoals:\r\n");
@@ -385,7 +386,8 @@ try
     print("-----\r\nGetConversionGoalsByIds:\r\n");
     $getConversionGoalsByIdsResponse = CampaignManagementExampleHelper::GetConversionGoalsByIds(
         $conversionGoalIds, 
-        $conversionGoalTypes
+        $conversionGoalTypes,
+        null
     );
     $getConversionGoals = $getConversionGoalsByIdsResponse->ConversionGoals;
     print("ConversionGoals:\r\n");
