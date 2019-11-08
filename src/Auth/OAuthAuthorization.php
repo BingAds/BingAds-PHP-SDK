@@ -9,26 +9,31 @@ abstract class OAuthAuthorization extends Authentication
 {
     /** 
      * The client identifier corresponding to your registered application.
+     * @var string
      */
     public $ClientId;
  
     /** 
      * Contains information about OAuth access tokens received from the Microsoft Account authorization service.
+     * @var OAuthTokens
      */
     public $OAuthTokens;
 
     /** 
      * The URI to which the user of the app will be redirected after receiving user consent.
+     * @var string
      */
     public $RedirectUri;
 
     /** 
      * The ApiEnvironment used for the respective authorization URIs. The default is production.
+     * @var ApiEnvironment
      */
     public $Environment = ApiEnvironment::Production;
 
     /** 
      * Determines whether or not to require Live Connect instead of MS Identity in production.
+     * @var bool
      */
     public $RequireLiveConnect = false;
 

@@ -52,14 +52,14 @@ else {
         WebAuthHelper::GetApiEnvironment());
 
     // Set the GetUser request parameter to an empty user identifier to get the current 
-    // authenticated Bing Ads user, and then search for all accounts the user may access.
+    // authenticated Microsoft Advertising user, and then search for all accounts the user can access.
 
     $getUserRequest = new GetUserRequest();
     $getUserRequest->UserId = null;
 
     $user = $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($getUserRequest)->User;
 
-    // Search for the Bing Ads accounts that the user can access.
+    // Search for the Microsoft Advertising accounts that the user can access.
 
     $pageInfo = new Paging();
     $pageInfo->Index = 0;    // The first page

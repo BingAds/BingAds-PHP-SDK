@@ -85,6 +85,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var ConversionGoalType
          */
         public $Type;
+
+        /**
+         * The view-through conversion window is the length of time in minutes after a click that you want to track view-through conversions.
+         * @var integer
+         */
+        public $ViewThroughConversionWindowInMinutes;
     }
 
 }

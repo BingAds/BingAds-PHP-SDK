@@ -915,7 +915,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetConversionGoalsByIds(
         $conversionGoalIds,
-        $conversionGoalTypes)
+        $conversionGoalTypes,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -924,12 +925,14 @@ final class CampaignManagementExampleHelper {
 
         $request->ConversionGoalIds = $conversionGoalIds;
         $request->ConversionGoalTypes = $conversionGoalTypes;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetConversionGoalsByIds($request);
     }
     static function GetConversionGoalsByTagIds(
         $tagIds,
-        $conversionGoalTypes)
+        $conversionGoalTypes,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -938,6 +941,7 @@ final class CampaignManagementExampleHelper {
 
         $request->TagIds = $tagIds;
         $request->ConversionGoalTypes = $conversionGoalTypes;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetConversionGoalsByTagIds($request);
     }
@@ -2821,6 +2825,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("TagId: %s", $dataObject->TagId));
             self::OutputStatusMessage(sprintf("TrackingStatus: %s", $dataObject->TrackingStatus));
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage(sprintf("ViewThroughConversionWindowInMinutes: %s", $dataObject->ViewThroughConversionWindowInMinutes));
             if($dataObject->Type === "AppInstallGoal")
             {
                 self::OutputAppInstallGoal($dataObject);
@@ -6679,6 +6684,29 @@ final class CampaignManagementExampleHelper {
             self::OutputConversionGoalType($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfConversionGoalType * * *");
+    }
+    static function OutputConversionGoalAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputConversionGoalAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputConversionGoalAdditionalField * * *");
+    }
+    static function OutputArrayOfConversionGoalAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfConversionGoalAdditionalField * * *");
+        foreach ($valueSets->ConversionGoalAdditionalField as $valueSet)
+        {
+            self::OutputConversionGoalAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfConversionGoalAdditionalField * * *");
     }
     static function OutputConversionGoalCountType($valueSet)
     {

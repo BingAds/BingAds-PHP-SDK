@@ -16,7 +16,7 @@ the user to either log into your service or create a new account.
 -->
 <h2>Bing Ads OAuth Demo</h2>
 
-<p>This application would like to manage your Bing Ads data. Click below to login and authorize this application.</p>
+<p>This application would like to manage your Microsoft Advertising data. Click below to login and authorize this application.</p>
 
 <p>When you click OK below, you'll be redirected to the following URI:</p>
 <p><?php echo WebAuthHelper::RedirectUri ?></p>

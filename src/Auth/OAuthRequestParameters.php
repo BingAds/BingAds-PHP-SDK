@@ -9,29 +9,34 @@ class OAuthRequestParameters
 {
     /** 
      * Your application's registered client identifier.
+     * @var string
      */
     public $ClientId;
 
     /** 
      * Your application's registered client secret. 
      * This parameter is required with OAuthWebAuthCodeGrant requests. 
+     * @var string
      */
     public $ClientSecret;
 
     /** 
      * The URI where you want the authorization response to be redirected.
+     * @var string
      */
     public $RedirectUri;
 
     /**
      * The authorization grant param name. 
      * For example the grant param name could be 'refresh_token' or 'authorization_code'.
+     * @var string
      */
     public $GrantType;
 
     /**
      * The authorization grant param name. 
      * For example the grant param name could be 'refresh_token' or 'code'.
+     * @var string
      */
     public $GrantParamName;
 
@@ -39,6 +44,7 @@ class OAuthRequestParameters
      * The value depends on the $GrantType and $GrantParamName. 
      * For example if $GrantType and $GrantParamName are both set to 'refresh_token',
      * the value is equal to the last known and valid refresh token.
+     * @var string
      */
     public $GrantValue;
 

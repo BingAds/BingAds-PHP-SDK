@@ -17,6 +17,10 @@ class PasswordAuthentication extends Authentication
 
     /** 
      * Includes the user name.
+     *
+     * @param string $userName
+     *
+     * @return PasswordAuthentication this builder
      */
     public function withUserName($userName) {
         $this->UserName = $userName;
@@ -25,6 +29,10 @@ class PasswordAuthentication extends Authentication
 
     /** 
      * Includes the password.
+     *
+     * @param string $password
+     *
+     * @return PasswordAuthentication this builder
      */
     public function withPassword($password) {
         $this->Password = $password;

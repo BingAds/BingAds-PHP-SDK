@@ -16,6 +16,10 @@ class OAuthTokenRequestException extends Exception
 
     /** 
      * Includes the error.
+     * 
+     * @param string $error
+     *
+     * @return OAuthTokenRequestException
      */
     public function withError($error) {
         $this->Error = $error;
@@ -24,6 +28,10 @@ class OAuthTokenRequestException extends Exception
 
     /** 
      * Includes the error description.
+     * 
+     * @param string $description
+     *
+     * @return OAuthTokenRequestException
      */
     public function withDescription($description) {
         $this->Description = $description;

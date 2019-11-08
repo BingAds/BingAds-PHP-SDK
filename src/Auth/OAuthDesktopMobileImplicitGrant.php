@@ -32,6 +32,8 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
 
     /** 
      * Gets the Microsoft Account authorization endpoint where the user should be navigated to give their consent.
+     * 
+     * @return string
      */
     public function GetAuthorizationEndpoint(){
 
@@ -46,6 +48,11 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
 
     /** 
      * Extracts the access token from the specified Uri.
+     * 
+     * @param string $redirectUri
+     * 
+     * @return OAuthTokens
+     * @throws Exception
      */
     public function ExtractAccessTokenFromUri($redirectUri){
         $fragmentParts = parse_url($redirectUri)["fragment"];

@@ -40,7 +40,15 @@ class UriOAuthService extends IOAuthService
     }
     
     /** 
-     * Calls the authorization server with the oauthRequestParameters passed in, deserializes the response and returns back OAuth tokens.
+     * Calls the authorization server with $oauthRequestParameters,   
+     * deserializes the response, and returns OAuthTokens.
+     * 
+     * @param OAuthRequestParameters $oauthRequestParameters
+     * @param ApiEnvironment $environment
+     * @param bool $requireLiveConnect
+     * 
+     * @return OAuthTokens
+     * @throws Exception
      */
     public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $requireLiveConnect)
     {
@@ -110,7 +118,14 @@ class UriOAuthService extends IOAuthService
     }
     
     /** 
-     * Gets the Microsoft Account authorization endpoint, for example where the user should be navigated to give their consent.
+     * Gets the Microsoft Account authorization endpoint, for example where the user 
+     * should be navigated to give their consent.
+     * 
+     * @param OAuthUrlParameters $parameters
+     * @param ApiEnvironment $environment
+     * @param bool $requireLiveConnect
+     * 
+     * @return string
      */
     public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment, $requireLiveConnect)
     {

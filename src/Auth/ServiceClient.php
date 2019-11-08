@@ -10,13 +10,6 @@ use Microsoft\BingAds\V13\CustomerBilling\CustomerBillingServiceSettings as Cust
 use Microsoft\BingAds\V13\CustomerManagement\CustomerManagementServiceSettings as CustomerManagementServiceSettingsVersion13;
 use Microsoft\BingAds\V13\Reporting\ReportingServiceSettings as ReportingServiceSettingsVersion13;
 
-use Microsoft\BingAds\V12\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion12;
-use Microsoft\BingAds\V12\Bulk\BulkServiceSettings as BulkServiceSettingsVersion12;
-use Microsoft\BingAds\V12\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion12;
-use Microsoft\BingAds\V12\CustomerBilling\CustomerBillingServiceSettings as CustomerBillingServiceSettingsVersion12;
-use Microsoft\BingAds\V12\CustomerManagement\CustomerManagementServiceSettings as CustomerManagementServiceSettingsVersion12;
-use Microsoft\BingAds\V12\Reporting\ReportingServiceSettings as ReportingServiceSettingsVersion12;
-
 use \DOMDocument;
 use \DOMXPath;
 use \SoapHeader;
@@ -45,14 +38,7 @@ class ServiceClient
 		ServiceClientType::CampaignManagementVersion13 => CampaignManagementServiceSettingsVersion13::SandboxEndpoint,
 		ServiceClientType::CustomerBillingVersion13 => CustomerBillingServiceSettingsVersion13::SandboxEndpoint,
 		ServiceClientType::CustomerManagementVersion13 => CustomerManagementServiceSettingsVersion13::SandboxEndpoint,
-		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::SandboxEndpoint,
-
-		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::SandboxEndpoint,
-		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::SandboxEndpoint,
-		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::SandboxEndpoint,
-		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::SandboxEndpoint,
-		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::SandboxEndpoint,
-		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::SandboxEndpoint
+		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::SandboxEndpoint
 	);
 
 	private $productionServiceClientEndpoints = array(
@@ -61,14 +47,7 @@ class ServiceClient
 		ServiceClientType::CampaignManagementVersion13 => CampaignManagementServiceSettingsVersion13::ProductionEndpoint,
 		ServiceClientType::CustomerBillingVersion13 => CustomerBillingServiceSettingsVersion13::ProductionEndpoint,
 		ServiceClientType::CustomerManagementVersion13 => CustomerManagementServiceSettingsVersion13::ProductionEndpoint,
-		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::ProductionEndpoint,
-
-		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::ProductionEndpoint,
-		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::ProductionEndpoint,
-		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::ProductionEndpoint,
-		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ProductionEndpoint,
-		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ProductionEndpoint,
-		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ProductionEndpoint
+		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::ProductionEndpoint
 	);
 
 	private $serviceClientNamespaces = array(
@@ -77,18 +56,15 @@ class ServiceClient
 		ServiceClientType::CampaignManagementVersion13 => CampaignManagementServiceSettingsVersion13::ServiceNamespace,
 		ServiceClientType::CustomerBillingVersion13 => CustomerBillingServiceSettingsVersion13::ServiceNamespace,
 		ServiceClientType::CustomerManagementVersion13 => CustomerManagementServiceSettingsVersion13::ServiceNamespace,
-		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::ServiceNamespace,
-
-		ServiceClientType::AdInsightVersion12 => AdInsightServiceSettingsVersion12::ServiceNamespace,
-		ServiceClientType::BulkVersion12 => BulkServiceSettingsVersion12::ServiceNamespace,
-		ServiceClientType::CampaignManagementVersion12 => CampaignManagementServiceSettingsVersion12::ServiceNamespace,
-		ServiceClientType::CustomerBillingVersion12 => CustomerBillingServiceSettingsVersion12::ServiceNamespace,
-		ServiceClientType::CustomerManagementVersion12 => CustomerManagementServiceSettingsVersion12::ServiceNamespace,
-		ServiceClientType::ReportingVersion12 => ReportingServiceSettingsVersion12::ServiceNamespace
+		ServiceClientType::ReportingVersion13 => ReportingServiceSettingsVersion13::ServiceNamespace
 	);
 	
 	/** 
      * Converts long types found in SOAP responses to string types in PHP.
+	 * 
+	 * @param string $xmlFragmentString
+	 * 
+	 * @return string
      */  
 	private function from_long_xml($xmlFragmentString)
 	{
@@ -97,6 +73,10 @@ class ServiceClient
 	
 	/** 
      * Converts PHP string types to long types in SOAP requests.
+	 * 
+	 * @param string $longVal
+	 * 
+	 * @return string
      */ 
 	private function to_long_xml($longVal)
 	{
@@ -138,6 +118,10 @@ class ServiceClient
     /** 
      * This function gets the namespace from the WSDL, so you do
 	 * not have to hardcode it in the client.
+	 * 
+	 * @param string $url
+	 * 
+	 * @return string
      */ 
 	private function GetServiceNamespace($url)
 	{
@@ -162,6 +146,10 @@ class ServiceClient
 
     /** 
      * Set the authentication headers that should be used in calls to the Bing Ads web services. 
+	 * 
+	 * @param AuthorizationData $authorizationData
+	 * 
+	 * @throws Exception
      */ 
 	public function SetAuthorizationData($authorizationData) {
 		if(!isset($authorizationData))
@@ -252,7 +240,7 @@ class ServiceClient
 			'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
 			// Disable keep-alive to avoid 'Process open FD table is full'
 			'keep-alive' => FALSE, 
-			'user_agent' => 'BingAdsSDKPHP ' . '12.13.6 ' . PHP_VERSION, 
+			'user_agent' => 'BingAdsSDKPHP ' . '13.0.1 ' . PHP_VERSION, 
 
 			/** 
 			 * Map long type to string type. For details, see
