@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getconversiongoalsbytagids?view=bingads-13 GetConversionGoalsByTagIds Request Object
      * 
      * @uses ConversionGoalType
+     * @uses ConversionGoalAdditionalField
      * @used-by BingAdsCampaignManagementService::GetConversionGoalsByTagIds
      */
     final class GetConversionGoalsByTagIdsRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var ConversionGoalType
          */
         public $ConversionGoalTypes;
+
+        /**
+         * The list of additional properties that you want included within each returned conversion goal.
+         * @var ConversionGoalAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

@@ -8,22 +8,26 @@ namespace Microsoft\BingAds\Auth;
 class AuthorizationData
 {
     /** 
-     * An object representing the authentication headers that should be used in calls to the Bing Ads web services.
+     * An object representing the authentication headers that should be used in calls to the Bing Ads API.
+     * @var OAuthAuthorization
      */
     public $Authentication;
 
     /** 
-     * The identifier of the account that owns the entities in the request. Used as the CustomerAccountId header element in calls to the Bing Ads web services.
+     * The identifier of the account that owns the entities in the request. Used as the CustomerAccountId header element in calls to the Bing Ads API.
+     * @var string
      */
     public $AccountId;
 
     /** 
-     * The identifier of the customer that owns the account. Used as the CustomerId header element in calls to the Bing Ads web services.
+     * The identifier of the customer that owns the account. Used as the CustomerId header element in calls to the Bing Ads API.
+     * @var string
      */
     public $CustomerId;
 
     /** 
-     * The Bing Ads developer access token. Used as the DeveloperToken header element in calls to the Bing Ads web services.
+     * The Bing Ads developer access token. Used as the DeveloperToken header element in calls to the Bing Ads API.
+     * @var string
      */
     public $DeveloperToken;
 

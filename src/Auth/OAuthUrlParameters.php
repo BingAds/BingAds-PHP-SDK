@@ -9,6 +9,7 @@ class OAuthUrlParameters
 {
     /** 
      * Your application's registered client identifier.
+     * @var string
      */
     public $ClientId;
 
@@ -16,16 +17,19 @@ class OAuthUrlParameters
      * The authorization response type. 
      * For implicit grant flow, the response type is 'token'.
      * For authorization code grant flow, the response type is 'code'.
+     * @var string
      */
     public $ResponseType;
 
     /** 
      * The URI where you want the authorization response to be redirected.
+     * @var string
      */
     public $RedirectUri;
 
     /** 
      * An opaque value used by the client to maintain state between the request and callback.
+     * @var string
      */
     public $State;
 

@@ -21,6 +21,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The report will contain ads that were delivered using a broad match comparison. */
         const Broad = 'Broad';
+
+        /** The report will contain ads that were delivered by using a close variant exact match comparison. */
+        const ExactCloseVariant = 'ExactCloseVariant';
+
+        /** The report will contain ads that were delivered by using a close variant phrase match comparison. */
+        const PhraseCloseVariant = 'PhraseCloseVariant';
     }
 
 }

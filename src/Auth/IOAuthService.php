@@ -8,8 +8,12 @@ namespace Microsoft\BingAds\Auth;
 abstract class IOAuthService
 {
     /** 
-     * Implementations of this abstract method must call the authorization server with the oauthRequestParameters passed in, 
-     * deserialize the response, and return back OAuth tokens.
+     * Implementations of this abstract method must call the authorization server with the  
+     * $oauthRequestParameters, must deserialize the response, and must return OAuthTokens. 
+     * 
+     * @param OAuthRequestParameters $oauthRequestParameters
+     * @param ApiEnvironment $environment
+     * @param bool $requireLiveConnect
      */
-    abstract function GetAccessTokens(OAuthRequestParameters $oauthParameters, $environment, $requireLiveConnect);
+    abstract function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $requireLiveConnect);
 }

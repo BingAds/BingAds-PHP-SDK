@@ -38,7 +38,7 @@ try
 
         $_SESSION['state'] = $_SESSION['AuthorizationData']->Authentication->State;
         
-        // The user needs to provide consent for the application to access their Bing Ads accounts.
+        // The user needs to provide consent for the application to access their Microsoft Advertising accounts.
         header('Location: '. $_SESSION['AuthorizationData']->Authentication->GetAuthorizationEndpoint());
     }
     

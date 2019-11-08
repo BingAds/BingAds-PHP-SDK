@@ -197,10 +197,10 @@ final class AuthHelper {
 
     static function RequestUserConsent()
     {
-        print "You need to provide consent for the application to access your Bing Ads Bing Ads accounts. " .
+        print "You need to provide consent for the application to access your Microsoft Advertising accounts. " .
               "Copy and paste this authorization endpoint into a web browser and sign in with a Microsoft account " . 
-              "with access to a Bing Ads account: \n\n" . $GLOBALS['AuthorizationData']->Authentication->GetAuthorizationEndpoint() .
-              "\n\nAfter you have granted consent in the web browser for the application to access your Bing Ads accounts, " .
+              "with access to a Microsoft Advertising account: \n\n" . $GLOBALS['AuthorizationData']->Authentication->GetAuthorizationEndpoint() .
+              "\n\nAfter you have granted consent in the web browser for the application to access your Microsoft Advertising accounts, " .
               "please enter the response URI that includes the authorization 'code' parameter: \n\n";
         
         $responseUri = fgets(STDIN);

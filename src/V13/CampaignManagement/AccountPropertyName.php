@@ -26,6 +26,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Used to get or set the account's Final URL Suffix. */
         const FinalUrlSuffix = 'FinalUrlSuffix';
+
+        /** Used to get or set the property that determines whether you want to include view-through conversions for campaigns in the account. */
+        const IncludeViewThroughConversions = 'IncludeViewThroughConversions';
+
+        /** Used to get or set the property that determines whether LinkedIn profile targeting expansion is enabled for the account. */
+        const ProfileExpansionEnabled = 'ProfileExpansionEnabled';
     }
 
 }

@@ -380,7 +380,8 @@ try
     $adExtensions = CampaignManagementExampleHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIds,
-    	$adExtensionsTypeFilter
+        $adExtensionsTypeFilter,
+        null
     )->AdExtensions;
     print("AdExtensions:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfAdExtension($adExtensions);
@@ -426,7 +427,8 @@ try
     $adExtensions = CampaignManagementExampleHelper::GetAdExtensionsByIds(
     	$GLOBALS['AuthorizationData']->AccountId,
     	$adExtensionIds,
-    	$adExtensionsTypeFilter
+        $adExtensionsTypeFilter,
+        null
     )->AdExtensions;
     print("AdExtensions:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfAdExtension($adExtensions);

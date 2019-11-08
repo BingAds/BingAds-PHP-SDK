@@ -9,11 +9,13 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
 
     /** 
      * An opaque value used by the client to maintain state between the request and callback.
+     * @var string
      */
     public $State;
 
     /** 
      * Your application's registered client secret. 
+     * @var string
      */
     public $ClientSecret;
 
@@ -47,6 +49,8 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     
     /** 
      * Gets the Microsoft Account authorization endpoint where the user should be navigated to give their consent.
+     * 
+     * @return string
      */
     public function GetAuthorizationEndpoint(){
         $oauthUrlParameters = new OAuthUrlParameters();
@@ -61,6 +65,12 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     /** 
      * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service 
      * using the specified authorization response redirect Uri.
+     * 
+     * @param string $responseUri
+     * 
+     * @return OAuthTokens
+     * @throws Exception
+     * @throws OAuthTokenRequestException
      */
     public function RequestOAuthTokensByResponseUri($responseUri)
     {
@@ -105,6 +115,11 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
     /** 
      * Retrieves OAuth access and refresh tokens from the Microsoft Account authorization service 
      * using the specified refresh token.
+     * 
+     * @param string $refreshToken
+     * 
+     * @return OAuthTokens
+     * @throws Exception
      */
     public function RequestOAuthTokensByRefreshToken($refreshToken) 
     {
