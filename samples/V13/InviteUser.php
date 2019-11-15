@@ -79,7 +79,7 @@ try
     $userInvitationId = CustomerManagementExampleHelper::SendUserInvitation(
         $userInvitation
     )->UserInvitationId;
-    printf("Sent new user invitation to %s.\r\n", $userInviteRecipientEmail);
+    \printf("Sent new user invitation to %s.\r\n", $userInviteRecipientEmail);
 
     // It is possible to have multiple pending invitations sent to the same email address, 
     // which have not yet expired. It is also possible for those invitations to have specified 
@@ -139,8 +139,8 @@ try
 }
 catch (SoapFault $e)
 {
-    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+    \printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

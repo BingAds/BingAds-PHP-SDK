@@ -11,17 +11,17 @@ use Exception;
 class HttpService 
 {
     public function post($url, $postData) {
-        $ch = curl_init();
+        $ch = \curl_init();
 
         $query = "";
 
         foreach ($postData as $key => $val) {
-            if(strlen($query) > 0)
+            if(\strlen($query) > 0)
             {
                 $query = $query . '&';
             }
 
-            $query = $query . $key . '=' . rawurlencode($val);
+            $query = $query . $key . '=' . \rawurlencode($val);
         }
 
         $options = array(
@@ -33,20 +33,20 @@ class HttpService
             CURLOPT_POST => TRUE,
             CURLOPT_POSTFIELDS => $query);
 
-        curl_setopt_array($ch, $options);
+        \curl_setopt_array($ch, $options);
 
-        $response = curl_exec($ch);
+        $response = \curl_exec($ch);
 
         if(FALSE === $response)
         {
-            $curlErr = curl_error($ch);
-            $curlErrNum = curl_errno($ch);
+            $curlErr = \curl_error($ch);
+            $curlErrNum = \curl_errno($ch);
 
-            curl_close($ch);
+            \curl_close($ch);
             throw new Exception($curlErr, $curlErrNum);
         }
 
-        curl_close($ch);
+        \curl_close($ch);
 
         return $response;
     }

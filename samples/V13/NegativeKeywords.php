@@ -140,7 +140,7 @@ try
     );
     $sharedEntityId = $addSharedEntityResponse->SharedEntityId;
     $listItemIds = $addSharedEntityResponse->ListItemIds;
-    printf("NegativeKeywordList added to account library and assigned identifer %s\r\n", $sharedEntityId);
+    \printf("NegativeKeywordList added to account library and assigned identifer %s\r\n", $sharedEntityId);
            
     // Negative keywords were added to the negative keyword list above. You can associate the 
     // shared list of negative keywords with a campaign with or without negative keywords. 
@@ -159,7 +159,7 @@ try
     $partialErrors = CampaignManagementExampleHelper::SetSharedEntityAssociations(
         $associations
     );
-    printf(
+    \printf(
         "Associated CampaignId %s with Negative Keyword List Id %s.\r\n", 
         $campaignIds->long[0], $sharedEntityId
     );
@@ -171,7 +171,7 @@ try
         $GLOBALS['AuthorizationData']->AccountId, 
         array($campaignIds->long[0])
     );
-    printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);
+    \printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);
 
     // DeleteCampaigns does not delete the negative keyword list from the account's library. 
     // Call the DeleteSharedEntities operation to delete the shared entities.
@@ -180,12 +180,12 @@ try
     $partialErrors = CampaignManagementExampleHelper::DeleteSharedEntities(
         array($encodedNegativeKeywordList)
     );
-    printf("Deleted Negative Keyword List Id %s\r\n", $sharedEntityId);
+    \printf("Deleted Negative Keyword List Id %s\r\n", $sharedEntityId);
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

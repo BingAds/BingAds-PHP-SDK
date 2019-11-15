@@ -432,17 +432,17 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAccountInfo * * *");
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
-            self::OutputStatusMessage(sprintf("Number: %s", $dataObject->Number));
-            self::OutputStatusMessage(sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
-            self::OutputStatusMessage(sprintf("PauseReason: %s", $dataObject->PauseReason));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(\sprintf("Number: %s", $dataObject->Number));
+            self::OutputStatusMessage(\sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
+            self::OutputStatusMessage(\sprintf("PauseReason: %s", $dataObject->PauseReason));
             self::OutputStatusMessage("* * * End OutputAccountInfo * * *");
         }
     }
     static function OutputArrayOfAccountInfo($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountInfo))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountInfo))
         {
             return;
         }
@@ -456,19 +456,19 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAccountInfoWithCustomerData * * *");
-            self::OutputStatusMessage(sprintf("CustomerId: %s", $dataObject->CustomerId));
-            self::OutputStatusMessage(sprintf("CustomerName: %s", $dataObject->CustomerName));
-            self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
-            self::OutputStatusMessage(sprintf("AccountName: %s", $dataObject->AccountName));
-            self::OutputStatusMessage(sprintf("AccountNumber: %s", $dataObject->AccountNumber));
-            self::OutputStatusMessage(sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
-            self::OutputStatusMessage(sprintf("PauseReason: %s", $dataObject->PauseReason));
+            self::OutputStatusMessage(\sprintf("CustomerId: %s", $dataObject->CustomerId));
+            self::OutputStatusMessage(\sprintf("CustomerName: %s", $dataObject->CustomerName));
+            self::OutputStatusMessage(\sprintf("AccountId: %s", $dataObject->AccountId));
+            self::OutputStatusMessage(\sprintf("AccountName: %s", $dataObject->AccountName));
+            self::OutputStatusMessage(\sprintf("AccountNumber: %s", $dataObject->AccountNumber));
+            self::OutputStatusMessage(\sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
+            self::OutputStatusMessage(\sprintf("PauseReason: %s", $dataObject->PauseReason));
             self::OutputStatusMessage("* * * End OutputAccountInfoWithCustomerData * * *");
         }
     }
     static function OutputArrayOfAccountInfoWithCustomerData($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountInfoWithCustomerData))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountInfoWithCustomerData))
         {
             return;
         }
@@ -482,20 +482,20 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Detail: %s", $dataObject->Detail));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Detail: %s", $dataObject->Detail));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputAdApiError * * *");
         }
     }
     static function OutputArrayOfAdApiError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiError))
         {
             return;
         }
-        else if (!is_array($dataObjects->AdApiError))
+        else if (!\is_array($dataObjects->AdApiError))
         {
             self::OutputAdApiError($dataObjects->AdApiError);
             return;
@@ -517,7 +517,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfAdApiFaultDetail($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiFaultDetail))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiFaultDetail))
         {
             return;
         }
@@ -531,23 +531,23 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAddress * * *");
-            self::OutputStatusMessage(sprintf("City: %s", $dataObject->City));
-            self::OutputStatusMessage(sprintf("CountryCode: %s", $dataObject->CountryCode));
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("Line1: %s", $dataObject->Line1));
-            self::OutputStatusMessage(sprintf("Line2: %s", $dataObject->Line2));
-            self::OutputStatusMessage(sprintf("Line3: %s", $dataObject->Line3));
-            self::OutputStatusMessage(sprintf("Line4: %s", $dataObject->Line4));
-            self::OutputStatusMessage(sprintf("PostalCode: %s", $dataObject->PostalCode));
-            self::OutputStatusMessage(sprintf("StateOrProvince: %s", $dataObject->StateOrProvince));
-            self::OutputStatusMessage(sprintf("TimeStamp: %s", $dataObject->TimeStamp));
-            self::OutputStatusMessage(sprintf("BusinessName: %s", $dataObject->BusinessName));
+            self::OutputStatusMessage(\sprintf("City: %s", $dataObject->City));
+            self::OutputStatusMessage(\sprintf("CountryCode: %s", $dataObject->CountryCode));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("Line1: %s", $dataObject->Line1));
+            self::OutputStatusMessage(\sprintf("Line2: %s", $dataObject->Line2));
+            self::OutputStatusMessage(\sprintf("Line3: %s", $dataObject->Line3));
+            self::OutputStatusMessage(\sprintf("Line4: %s", $dataObject->Line4));
+            self::OutputStatusMessage(\sprintf("PostalCode: %s", $dataObject->PostalCode));
+            self::OutputStatusMessage(\sprintf("StateOrProvince: %s", $dataObject->StateOrProvince));
+            self::OutputStatusMessage(\sprintf("TimeStamp: %s", $dataObject->TimeStamp));
+            self::OutputStatusMessage(\sprintf("BusinessName: %s", $dataObject->BusinessName));
             self::OutputStatusMessage("* * * End OutputAddress * * *");
         }
     }
     static function OutputArrayOfAddress($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Address))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->Address))
         {
             return;
         }
@@ -561,42 +561,42 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdvertiserAccount * * *");
-            self::OutputStatusMessage(sprintf("BillToCustomerId: %s", $dataObject->BillToCustomerId));
-            self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
-            self::OutputStatusMessage(sprintf("AccountFinancialStatus: %s", $dataObject->AccountFinancialStatus));
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
-            self::OutputStatusMessage(sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
-            self::OutputStatusMessage(sprintf("LastModifiedTime: %s", $dataObject->LastModifiedTime));
-            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
-            self::OutputStatusMessage(sprintf("Number: %s", $dataObject->Number));
-            self::OutputStatusMessage(sprintf("ParentCustomerId: %s", $dataObject->ParentCustomerId));
-            self::OutputStatusMessage(sprintf("PaymentMethodId: %s", $dataObject->PaymentMethodId));
-            self::OutputStatusMessage(sprintf("PaymentMethodType: %s", $dataObject->PaymentMethodType));
-            self::OutputStatusMessage(sprintf("PrimaryUserId: %s", $dataObject->PrimaryUserId));
-            self::OutputStatusMessage(sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
-            self::OutputStatusMessage(sprintf("TimeStamp: %s", $dataObject->TimeStamp));
-            self::OutputStatusMessage(sprintf("TimeZone: %s", $dataObject->TimeZone));
-            self::OutputStatusMessage(sprintf("PauseReason: %s", $dataObject->PauseReason));
+            self::OutputStatusMessage(\sprintf("BillToCustomerId: %s", $dataObject->BillToCustomerId));
+            self::OutputStatusMessage(\sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
+            self::OutputStatusMessage(\sprintf("AccountFinancialStatus: %s", $dataObject->AccountFinancialStatus));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
+            self::OutputStatusMessage(\sprintf("LastModifiedTime: %s", $dataObject->LastModifiedTime));
+            self::OutputStatusMessage(\sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(\sprintf("Number: %s", $dataObject->Number));
+            self::OutputStatusMessage(\sprintf("ParentCustomerId: %s", $dataObject->ParentCustomerId));
+            self::OutputStatusMessage(\sprintf("PaymentMethodId: %s", $dataObject->PaymentMethodId));
+            self::OutputStatusMessage(\sprintf("PaymentMethodType: %s", $dataObject->PaymentMethodType));
+            self::OutputStatusMessage(\sprintf("PrimaryUserId: %s", $dataObject->PrimaryUserId));
+            self::OutputStatusMessage(\sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
+            self::OutputStatusMessage(\sprintf("TimeStamp: %s", $dataObject->TimeStamp));
+            self::OutputStatusMessage(\sprintf("TimeZone: %s", $dataObject->TimeZone));
+            self::OutputStatusMessage(\sprintf("PauseReason: %s", $dataObject->PauseReason));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage("LinkedAgencies:");
             self::OutputArrayOfCustomerInfo($dataObject->LinkedAgencies);
-            self::OutputStatusMessage(sprintf("SalesHouseCustomerId: %s", $dataObject->SalesHouseCustomerId));
+            self::OutputStatusMessage(\sprintf("SalesHouseCustomerId: %s", $dataObject->SalesHouseCustomerId));
             self::OutputStatusMessage("TaxInformation:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->TaxInformation);
-            self::OutputStatusMessage(sprintf("BackUpPaymentInstrumentId: %s", $dataObject->BackUpPaymentInstrumentId));
-            self::OutputStatusMessage(sprintf("BillingThresholdAmount: %s", $dataObject->BillingThresholdAmount));
+            self::OutputStatusMessage(\sprintf("BackUpPaymentInstrumentId: %s", $dataObject->BackUpPaymentInstrumentId));
+            self::OutputStatusMessage(\sprintf("BillingThresholdAmount: %s", $dataObject->BillingThresholdAmount));
             self::OutputStatusMessage("BusinessAddress:");
             self::OutputAddress($dataObject->BusinessAddress);
-            self::OutputStatusMessage(sprintf("AutoTagType: %s", $dataObject->AutoTagType));
-            self::OutputStatusMessage(sprintf("SoldToPaymentInstrumentId: %s", $dataObject->SoldToPaymentInstrumentId));
+            self::OutputStatusMessage(\sprintf("AutoTagType: %s", $dataObject->AutoTagType));
+            self::OutputStatusMessage(\sprintf("SoldToPaymentInstrumentId: %s", $dataObject->SoldToPaymentInstrumentId));
             self::OutputStatusMessage("* * * End OutputAdvertiserAccount * * *");
         }
     }
     static function OutputArrayOfAdvertiserAccount($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdvertiserAccount))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdvertiserAccount))
         {
             return;
         }
@@ -617,7 +617,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfApiFault($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ApiFault))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ApiFault))
         {
             return;
         }
@@ -631,7 +631,7 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
-            self::OutputStatusMessage(sprintf("TrackingId: %s", $dataObject->TrackingId));
+            self::OutputStatusMessage(\sprintf("TrackingId: %s", $dataObject->TrackingId));
             if($dataObject->Type === "AdApiFaultDetail")
             {
                 self::OutputAdApiFaultDetail($dataObject);
@@ -645,7 +645,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfApplicationFault($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ApplicationFault))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ApplicationFault))
         {
             return;
         }
@@ -659,34 +659,34 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputClientLink * * *");
-            self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
-            self::OutputStatusMessage(sprintf("ClientEntityId: %s", $dataObject->ClientEntityId));
-            self::OutputStatusMessage(sprintf("ClientEntityNumber: %s", $dataObject->ClientEntityNumber));
-            self::OutputStatusMessage(sprintf("ClientEntityName: %s", $dataObject->ClientEntityName));
-            self::OutputStatusMessage(sprintf("ManagingCustomerId: %s", $dataObject->ManagingCustomerId));
-            self::OutputStatusMessage(sprintf("ManagingCustomerNumber: %s", $dataObject->ManagingCustomerNumber));
-            self::OutputStatusMessage(sprintf("ManagingCustomerName: %s", $dataObject->ManagingCustomerName));
-            self::OutputStatusMessage(sprintf("Note: %s", $dataObject->Note));
-            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
-            self::OutputStatusMessage(sprintf("InviterEmail: %s", $dataObject->InviterEmail));
-            self::OutputStatusMessage(sprintf("InviterName: %s", $dataObject->InviterName));
-            self::OutputStatusMessage(sprintf("InviterPhone: %s", $dataObject->InviterPhone));
-            self::OutputStatusMessage(sprintf("IsBillToClient: %s", $dataObject->IsBillToClient));
-            self::OutputStatusMessage(sprintf("StartDate: %s", $dataObject->StartDate));
-            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
-            self::OutputStatusMessage(sprintf("SuppressNotification: %s", $dataObject->SuppressNotification));
-            self::OutputStatusMessage(sprintf("LastModifiedDateTime: %s", $dataObject->LastModifiedDateTime));
-            self::OutputStatusMessage(sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
-            self::OutputStatusMessage(sprintf("Timestamp: %s", $dataObject->Timestamp));
+            self::OutputStatusMessage(\sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage(\sprintf("ClientEntityId: %s", $dataObject->ClientEntityId));
+            self::OutputStatusMessage(\sprintf("ClientEntityNumber: %s", $dataObject->ClientEntityNumber));
+            self::OutputStatusMessage(\sprintf("ClientEntityName: %s", $dataObject->ClientEntityName));
+            self::OutputStatusMessage(\sprintf("ManagingCustomerId: %s", $dataObject->ManagingCustomerId));
+            self::OutputStatusMessage(\sprintf("ManagingCustomerNumber: %s", $dataObject->ManagingCustomerNumber));
+            self::OutputStatusMessage(\sprintf("ManagingCustomerName: %s", $dataObject->ManagingCustomerName));
+            self::OutputStatusMessage(\sprintf("Note: %s", $dataObject->Note));
+            self::OutputStatusMessage(\sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(\sprintf("InviterEmail: %s", $dataObject->InviterEmail));
+            self::OutputStatusMessage(\sprintf("InviterName: %s", $dataObject->InviterName));
+            self::OutputStatusMessage(\sprintf("InviterPhone: %s", $dataObject->InviterPhone));
+            self::OutputStatusMessage(\sprintf("IsBillToClient: %s", $dataObject->IsBillToClient));
+            self::OutputStatusMessage(\sprintf("StartDate: %s", $dataObject->StartDate));
+            self::OutputStatusMessage(\sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage(\sprintf("SuppressNotification: %s", $dataObject->SuppressNotification));
+            self::OutputStatusMessage(\sprintf("LastModifiedDateTime: %s", $dataObject->LastModifiedDateTime));
+            self::OutputStatusMessage(\sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
+            self::OutputStatusMessage(\sprintf("Timestamp: %s", $dataObject->Timestamp));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
-            self::OutputStatusMessage(sprintf("CustomerLinkPermission: %s", $dataObject->CustomerLinkPermission));
+            self::OutputStatusMessage(\sprintf("CustomerLinkPermission: %s", $dataObject->CustomerLinkPermission));
             self::OutputStatusMessage("* * * End OutputClientLink * * *");
         }
     }
     static function OutputArrayOfClientLink($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ClientLink))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ClientLink))
         {
             return;
         }
@@ -702,22 +702,22 @@ final class CustomerManagementExampleHelper {
             self::OutputStatusMessage("* * * Begin OutputContactInfo * * *");
             self::OutputStatusMessage("Address:");
             self::OutputAddress($dataObject->Address);
-            self::OutputStatusMessage(sprintf("ContactByPhone: %s", $dataObject->ContactByPhone));
-            self::OutputStatusMessage(sprintf("ContactByPostalMail: %s", $dataObject->ContactByPostalMail));
-            self::OutputStatusMessage(sprintf("Email: %s", $dataObject->Email));
-            self::OutputStatusMessage(sprintf("EmailFormat: %s", $dataObject->EmailFormat));
-            self::OutputStatusMessage(sprintf("Fax: %s", $dataObject->Fax));
-            self::OutputStatusMessage(sprintf("HomePhone: %s", $dataObject->HomePhone));
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("Mobile: %s", $dataObject->Mobile));
-            self::OutputStatusMessage(sprintf("Phone1: %s", $dataObject->Phone1));
-            self::OutputStatusMessage(sprintf("Phone2: %s", $dataObject->Phone2));
+            self::OutputStatusMessage(\sprintf("ContactByPhone: %s", $dataObject->ContactByPhone));
+            self::OutputStatusMessage(\sprintf("ContactByPostalMail: %s", $dataObject->ContactByPostalMail));
+            self::OutputStatusMessage(\sprintf("Email: %s", $dataObject->Email));
+            self::OutputStatusMessage(\sprintf("EmailFormat: %s", $dataObject->EmailFormat));
+            self::OutputStatusMessage(\sprintf("Fax: %s", $dataObject->Fax));
+            self::OutputStatusMessage(\sprintf("HomePhone: %s", $dataObject->HomePhone));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("Mobile: %s", $dataObject->Mobile));
+            self::OutputStatusMessage(\sprintf("Phone1: %s", $dataObject->Phone1));
+            self::OutputStatusMessage(\sprintf("Phone2: %s", $dataObject->Phone2));
             self::OutputStatusMessage("* * * End OutputContactInfo * * *");
         }
     }
     static function OutputArrayOfContactInfo($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ContactInfo))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ContactInfo))
         {
             return;
         }
@@ -731,20 +731,20 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCustomer * * *");
-            self::OutputStatusMessage(sprintf("CustomerFinancialStatus: %s", $dataObject->CustomerFinancialStatus));
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("Industry: %s", $dataObject->Industry));
-            self::OutputStatusMessage(sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
-            self::OutputStatusMessage(sprintf("LastModifiedTime: %s", $dataObject->LastModifiedTime));
-            self::OutputStatusMessage(sprintf("MarketCountry: %s", $dataObject->MarketCountry));
+            self::OutputStatusMessage(\sprintf("CustomerFinancialStatus: %s", $dataObject->CustomerFinancialStatus));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("Industry: %s", $dataObject->Industry));
+            self::OutputStatusMessage(\sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
+            self::OutputStatusMessage(\sprintf("LastModifiedTime: %s", $dataObject->LastModifiedTime));
+            self::OutputStatusMessage(\sprintf("MarketCountry: %s", $dataObject->MarketCountry));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
-            self::OutputStatusMessage(sprintf("MarketLanguage: %s", $dataObject->MarketLanguage));
-            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
-            self::OutputStatusMessage(sprintf("ServiceLevel: %s", $dataObject->ServiceLevel));
-            self::OutputStatusMessage(sprintf("CustomerLifeCycleStatus: %s", $dataObject->CustomerLifeCycleStatus));
-            self::OutputStatusMessage(sprintf("TimeStamp: %s", $dataObject->TimeStamp));
-            self::OutputStatusMessage(sprintf("Number: %s", $dataObject->Number));
+            self::OutputStatusMessage(\sprintf("MarketLanguage: %s", $dataObject->MarketLanguage));
+            self::OutputStatusMessage(\sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(\sprintf("ServiceLevel: %s", $dataObject->ServiceLevel));
+            self::OutputStatusMessage(\sprintf("CustomerLifeCycleStatus: %s", $dataObject->CustomerLifeCycleStatus));
+            self::OutputStatusMessage(\sprintf("TimeStamp: %s", $dataObject->TimeStamp));
+            self::OutputStatusMessage(\sprintf("Number: %s", $dataObject->Number));
             self::OutputStatusMessage("CustomerAddress:");
             self::OutputAddress($dataObject->CustomerAddress);
             self::OutputStatusMessage("* * * End OutputCustomer * * *");
@@ -752,7 +752,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfCustomer($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Customer))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->Customer))
         {
             return;
         }
@@ -766,14 +766,14 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCustomerInfo * * *");
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage("* * * End OutputCustomerInfo * * *");
         }
     }
     static function OutputArrayOfCustomerInfo($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CustomerInfo))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CustomerInfo))
         {
             return;
         }
@@ -787,19 +787,19 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCustomerRole * * *");
-            self::OutputStatusMessage(sprintf("RoleId: %s", $dataObject->RoleId));
-            self::OutputStatusMessage(sprintf("CustomerId: %s", $dataObject->CustomerId));
+            self::OutputStatusMessage(\sprintf("RoleId: %s", $dataObject->RoleId));
+            self::OutputStatusMessage(\sprintf("CustomerId: %s", $dataObject->CustomerId));
             self::OutputStatusMessage("AccountIds:");
             self::OutputArrayOfLong($dataObject->AccountIds);
             self::OutputStatusMessage("LinkedAccountIds:");
             self::OutputArrayOfLong($dataObject->LinkedAccountIds);
-            self::OutputStatusMessage(sprintf("CustomerLinkPermission: %s", $dataObject->CustomerLinkPermission));
+            self::OutputStatusMessage(\sprintf("CustomerLinkPermission: %s", $dataObject->CustomerLinkPermission));
             self::OutputStatusMessage("* * * End OutputCustomerRole * * *");
         }
     }
     static function OutputArrayOfCustomerRole($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CustomerRole))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CustomerRole))
         {
             return;
         }
@@ -813,14 +813,14 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDateRange * * *");
-            self::OutputStatusMessage(sprintf("MinDate: %s", $dataObject->MinDate));
-            self::OutputStatusMessage(sprintf("MaxDate: %s", $dataObject->MaxDate));
+            self::OutputStatusMessage(\sprintf("MinDate: %s", $dataObject->MinDate));
+            self::OutputStatusMessage(\sprintf("MaxDate: %s", $dataObject->MaxDate));
             self::OutputStatusMessage("* * * End OutputDateRange * * *");
         }
     }
     static function OutputArrayOfDateRange($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DateRange))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DateRange))
         {
             return;
         }
@@ -834,14 +834,14 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputKeyValuePairOfstringstring * * *");
-            self::OutputStatusMessage(sprintf("key: %s", $dataObject->key));
-            self::OutputStatusMessage(sprintf("value: %s", $dataObject->value));
+            self::OutputStatusMessage(\sprintf("key: %s", $dataObject->key));
+            self::OutputStatusMessage(\sprintf("value: %s", $dataObject->value));
             self::OutputStatusMessage("* * * End OutputKeyValuePairOfstringstring * * *");
         }
     }
     static function OutputArrayOfKeyValuePairOfstringstring($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->KeyValuePairOfstringstring))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->KeyValuePairOfstringstring))
         {
             return;
         }
@@ -855,19 +855,19 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Details: %s", $dataObject->Details));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputOperationError * * *");
         }
     }
     static function OutputArrayOfOperationError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->OperationError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->OperationError))
         {
             return;
         }
-        else if (!is_array($dataObjects->OperationError))
+        else if (!\is_array($dataObjects->OperationError))
         {
             self::OutputOperationError($dataObjects->OperationError);
             return;
@@ -882,14 +882,14 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputOrderBy * * *");
-            self::OutputStatusMessage(sprintf("Field: %s", $dataObject->Field));
-            self::OutputStatusMessage(sprintf("Order: %s", $dataObject->Order));
+            self::OutputStatusMessage(\sprintf("Field: %s", $dataObject->Field));
+            self::OutputStatusMessage(\sprintf("Order: %s", $dataObject->Order));
             self::OutputStatusMessage("* * * End OutputOrderBy * * *");
         }
     }
     static function OutputArrayOfOrderBy($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->OrderBy))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->OrderBy))
         {
             return;
         }
@@ -903,14 +903,14 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputPaging * * *");
-            self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
-            self::OutputStatusMessage(sprintf("Size: %s", $dataObject->Size));
+            self::OutputStatusMessage(\sprintf("Index: %s", $dataObject->Index));
+            self::OutputStatusMessage(\sprintf("Size: %s", $dataObject->Size));
             self::OutputStatusMessage("* * * End OutputPaging * * *");
         }
     }
     static function OutputArrayOfPaging($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Paging))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->Paging))
         {
             return;
         }
@@ -924,15 +924,15 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputPersonName * * *");
-            self::OutputStatusMessage(sprintf("FirstName: %s", $dataObject->FirstName));
-            self::OutputStatusMessage(sprintf("LastName: %s", $dataObject->LastName));
-            self::OutputStatusMessage(sprintf("MiddleInitial: %s", $dataObject->MiddleInitial));
+            self::OutputStatusMessage(\sprintf("FirstName: %s", $dataObject->FirstName));
+            self::OutputStatusMessage(\sprintf("LastName: %s", $dataObject->LastName));
+            self::OutputStatusMessage(\sprintf("MiddleInitial: %s", $dataObject->MiddleInitial));
             self::OutputStatusMessage("* * * End OutputPersonName * * *");
         }
     }
     static function OutputArrayOfPersonName($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->PersonName))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->PersonName))
         {
             return;
         }
@@ -946,15 +946,15 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputPredicate * * *");
-            self::OutputStatusMessage(sprintf("Field: %s", $dataObject->Field));
-            self::OutputStatusMessage(sprintf("Operator: %s", $dataObject->Operator));
-            self::OutputStatusMessage(sprintf("Value: %s", $dataObject->Value));
+            self::OutputStatusMessage(\sprintf("Field: %s", $dataObject->Field));
+            self::OutputStatusMessage(\sprintf("Operator: %s", $dataObject->Operator));
+            self::OutputStatusMessage(\sprintf("Value: %s", $dataObject->Value));
             self::OutputStatusMessage("* * * End OutputPredicate * * *");
         }
     }
     static function OutputArrayOfPredicate($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Predicate))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->Predicate))
         {
             return;
         }
@@ -970,20 +970,20 @@ final class CustomerManagementExampleHelper {
             self::OutputStatusMessage("* * * Begin OutputUser * * *");
             self::OutputStatusMessage("ContactInfo:");
             self::OutputContactInfo($dataObject->ContactInfo);
-            self::OutputStatusMessage(sprintf("CustomerId: %s", $dataObject->CustomerId));
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("JobTitle: %s", $dataObject->JobTitle));
-            self::OutputStatusMessage(sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
-            self::OutputStatusMessage(sprintf("LastModifiedTime: %s", $dataObject->LastModifiedTime));
-            self::OutputStatusMessage(sprintf("Lcid: %s", $dataObject->Lcid));
+            self::OutputStatusMessage(\sprintf("CustomerId: %s", $dataObject->CustomerId));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("JobTitle: %s", $dataObject->JobTitle));
+            self::OutputStatusMessage(\sprintf("LastModifiedByUserId: %s", $dataObject->LastModifiedByUserId));
+            self::OutputStatusMessage(\sprintf("LastModifiedTime: %s", $dataObject->LastModifiedTime));
+            self::OutputStatusMessage(\sprintf("Lcid: %s", $dataObject->Lcid));
             self::OutputStatusMessage("Name:");
             self::OutputPersonName($dataObject->Name);
-            self::OutputStatusMessage(sprintf("Password: %s", $dataObject->Password));
-            self::OutputStatusMessage(sprintf("SecretAnswer: %s", $dataObject->SecretAnswer));
-            self::OutputStatusMessage(sprintf("SecretQuestion: %s", $dataObject->SecretQuestion));
-            self::OutputStatusMessage(sprintf("UserLifeCycleStatus: %s", $dataObject->UserLifeCycleStatus));
-            self::OutputStatusMessage(sprintf("TimeStamp: %s", $dataObject->TimeStamp));
-            self::OutputStatusMessage(sprintf("UserName: %s", $dataObject->UserName));
+            self::OutputStatusMessage(\sprintf("Password: %s", $dataObject->Password));
+            self::OutputStatusMessage(\sprintf("SecretAnswer: %s", $dataObject->SecretAnswer));
+            self::OutputStatusMessage(\sprintf("SecretQuestion: %s", $dataObject->SecretQuestion));
+            self::OutputStatusMessage(\sprintf("UserLifeCycleStatus: %s", $dataObject->UserLifeCycleStatus));
+            self::OutputStatusMessage(\sprintf("TimeStamp: %s", $dataObject->TimeStamp));
+            self::OutputStatusMessage(\sprintf("UserName: %s", $dataObject->UserName));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
             self::OutputStatusMessage("* * * End OutputUser * * *");
@@ -991,7 +991,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfUser($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->User))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->User))
         {
             return;
         }
@@ -1005,14 +1005,14 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputUserInfo * * *");
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("UserName: %s", $dataObject->UserName));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("UserName: %s", $dataObject->UserName));
             self::OutputStatusMessage("* * * End OutputUserInfo * * *");
         }
     }
     static function OutputArrayOfUserInfo($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->UserInfo))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->UserInfo))
         {
             return;
         }
@@ -1026,22 +1026,22 @@ final class CustomerManagementExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputUserInvitation * * *");
-            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
-            self::OutputStatusMessage(sprintf("FirstName: %s", $dataObject->FirstName));
-            self::OutputStatusMessage(sprintf("LastName: %s", $dataObject->LastName));
-            self::OutputStatusMessage(sprintf("Email: %s", $dataObject->Email));
-            self::OutputStatusMessage(sprintf("CustomerId: %s", $dataObject->CustomerId));
-            self::OutputStatusMessage(sprintf("RoleId: %s", $dataObject->RoleId));
+            self::OutputStatusMessage(\sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(\sprintf("FirstName: %s", $dataObject->FirstName));
+            self::OutputStatusMessage(\sprintf("LastName: %s", $dataObject->LastName));
+            self::OutputStatusMessage(\sprintf("Email: %s", $dataObject->Email));
+            self::OutputStatusMessage(\sprintf("CustomerId: %s", $dataObject->CustomerId));
+            self::OutputStatusMessage(\sprintf("RoleId: %s", $dataObject->RoleId));
             self::OutputStatusMessage("AccountIds:");
             self::OutputArrayOfLong($dataObject->AccountIds);
-            self::OutputStatusMessage(sprintf("ExpirationDate: %s", $dataObject->ExpirationDate));
-            self::OutputStatusMessage(sprintf("Lcid: %s", $dataObject->Lcid));
+            self::OutputStatusMessage(\sprintf("ExpirationDate: %s", $dataObject->ExpirationDate));
+            self::OutputStatusMessage(\sprintf("Lcid: %s", $dataObject->Lcid));
             self::OutputStatusMessage("* * * End OutputUserInvitation * * *");
         }
     }
     static function OutputArrayOfUserInvitation($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->UserInvitation))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->UserInvitation))
         {
             return;
         }
@@ -1053,7 +1053,7 @@ final class CustomerManagementExampleHelper {
     static function OutputAccountLifeCycleStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAccountLifeCycleStatus * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1062,7 +1062,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfAccountLifeCycleStatus($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1076,7 +1076,7 @@ final class CustomerManagementExampleHelper {
     static function OutputCurrencyCode($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCurrencyCode * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1085,7 +1085,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfCurrencyCode($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1099,7 +1099,7 @@ final class CustomerManagementExampleHelper {
     static function OutputAccountFinancialStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAccountFinancialStatus * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1108,7 +1108,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfAccountFinancialStatus($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1122,7 +1122,7 @@ final class CustomerManagementExampleHelper {
     static function OutputLanguageType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputLanguageType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1131,7 +1131,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfLanguageType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1145,7 +1145,7 @@ final class CustomerManagementExampleHelper {
     static function OutputPaymentMethodType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputPaymentMethodType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1154,7 +1154,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfPaymentMethodType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1168,7 +1168,7 @@ final class CustomerManagementExampleHelper {
     static function OutputTimeZoneType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputTimeZoneType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1177,7 +1177,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfTimeZoneType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1191,7 +1191,7 @@ final class CustomerManagementExampleHelper {
     static function OutputAutoTagType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAutoTagType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1200,7 +1200,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfAutoTagType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1214,7 +1214,7 @@ final class CustomerManagementExampleHelper {
     static function OutputCustomerFinancialStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCustomerFinancialStatus * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1223,7 +1223,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfCustomerFinancialStatus($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1237,7 +1237,7 @@ final class CustomerManagementExampleHelper {
     static function OutputIndustry($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputIndustry * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1246,7 +1246,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfIndustry($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1260,7 +1260,7 @@ final class CustomerManagementExampleHelper {
     static function OutputServiceLevel($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputServiceLevel * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1269,7 +1269,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfServiceLevel($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1283,7 +1283,7 @@ final class CustomerManagementExampleHelper {
     static function OutputCustomerLifeCycleStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCustomerLifeCycleStatus * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1292,7 +1292,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfCustomerLifeCycleStatus($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1306,7 +1306,7 @@ final class CustomerManagementExampleHelper {
     static function OutputEmailFormat($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputEmailFormat * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1315,7 +1315,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfEmailFormat($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1329,7 +1329,7 @@ final class CustomerManagementExampleHelper {
     static function OutputLCID($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputLCID * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1338,7 +1338,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfLCID($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1352,7 +1352,7 @@ final class CustomerManagementExampleHelper {
     static function OutputSecretQuestion($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputSecretQuestion * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1361,7 +1361,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfSecretQuestion($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1375,7 +1375,7 @@ final class CustomerManagementExampleHelper {
     static function OutputUserLifeCycleStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputUserLifeCycleStatus * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1384,7 +1384,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfUserLifeCycleStatus($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1398,7 +1398,7 @@ final class CustomerManagementExampleHelper {
     static function OutputPredicateOperator($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputPredicateOperator * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1407,7 +1407,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfPredicateOperator($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1421,7 +1421,7 @@ final class CustomerManagementExampleHelper {
     static function OutputOrderByField($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputOrderByField * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1430,7 +1430,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfOrderByField($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1444,7 +1444,7 @@ final class CustomerManagementExampleHelper {
     static function OutputSortOrder($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputSortOrder * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1453,7 +1453,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfSortOrder($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1467,7 +1467,7 @@ final class CustomerManagementExampleHelper {
     static function OutputClientLinkStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputClientLinkStatus * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -1476,7 +1476,7 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputArrayOfClientLinkStatus($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -1489,44 +1489,44 @@ final class CustomerManagementExampleHelper {
     }
     static function OutputStatusMessage($message)
     {
-        printf(" % s\n", $message);
+        \printf(" % s\n", $message);
     }
     static function OutputArrayOfString($items)
     {
-        if(count((array)$items) == 0 || !isset($items->string))
+        if(\count((array)$items) == 0 || !isset($items->string))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfString * * *");
         foreach ($items->string as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfString * * *");
     }
     static function OutputArrayOfLong($items)
     {
-        if(count((array)$items) == 0 || !isset($items->long))
+        if(\count((array)$items) == 0 || !isset($items->long))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfLong * * *");
         foreach ($items->long as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLong * * *");
     }
     static function OutputArrayOfInt($items)
     {
-        if(count((array)$items) == 0 || !isset($items->int))
+        if(\count((array)$items) == 0 || !isset($items->int))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfInt * * *");
         foreach ($items->int as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfInt * * *");
     }

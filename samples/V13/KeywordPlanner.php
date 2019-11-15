@@ -67,7 +67,7 @@ try
     print("-----\r\nGetKeywordIdeaCategories:\r\n");
     $getKeywordIdeaCategoriesResponse = AdInsightExampleHelper::GetKeywordIdeaCategories();
     $categoryId = $getKeywordIdeaCategoriesResponse->KeywordIdeaCategories->KeywordIdeaCategory[0]->CategoryId;
-    printf("CategoryId %s will be used in the CategorySearchParameter below\r\n", $categoryId);
+    \printf("CategoryId %s will be used in the CategorySearchParameter below\r\n", $categoryId);
     
     // You must specify the attributes that you want in each returned KeywordIdea.
 
@@ -82,8 +82,8 @@ try
     $ideaAttributes[] = KeywordIdeaAttribute::Source;
     $ideaAttributes[] = KeywordIdeaAttribute::SuggestedBid;
 
-    date_default_timezone_set('UTC');
-    $now = new DateTime(gmdate('Y-m-d H:i:s', time()));
+    \date_default_timezone_set('UTC');
+    $now = new DateTime(\gmdate('Y-m-d H:i:s', \time()));
 
     // Only one of each SearchParameter type can be specified per call. 
 
@@ -332,9 +332,9 @@ try
         
     $keywordIdeas = $getKeywordIdeasResponse->KeywordIdeas;
 
-    if(!isset($getKeywordIdeasResponse->KeywordIdeas) || count($keywordIdeas) < 1)
+    if(!isset($getKeywordIdeasResponse->KeywordIdeas) || \count($keywordIdeas) < 1)
     {
-        printf("No keyword ideas are available for the search parameters.\r\n");
+        \printf("No keyword ideas are available for the search parameters.\r\n");
         return;
     }
     
@@ -356,15 +356,15 @@ try
     {
         $ideaAdGroupIds[] = $keywordIdea->AdGroupId;
     }
-    $adGroupIds = array_unique($ideaAdGroupIds, SORT_REGULAR);
-    $adGroupEstimatorCount = count($adGroupIds);
+    $adGroupIds = \array_unique($ideaAdGroupIds, SORT_REGULAR);
+    $adGroupEstimatorCount = \count($adGroupIds);
 
     // If any ad group IDs are null, traffic estimates for all of those keyword ideas
     // will be submitted via $adGroupEstimators[0]. If none of the ad group IDs are null,
     // then $adGroupEstimators[0] will correspond to keyword ideas where AdGroupId is -1.
     // Each KeywordIdea is assigned to an AdGroupEstimator below.
 
-    $seedOffset = in_array(null, $adGroupIds) ? 0 : 1;
+    $seedOffset = \in_array(null, $adGroupIds) ? 0 : 1;
     
     $adGroupEstimators = array();
     for($index = 0; $index < $adGroupEstimatorCount; $index++)
@@ -487,8 +487,8 @@ try
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

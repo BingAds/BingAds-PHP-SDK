@@ -63,7 +63,7 @@ try
 	
     if (!isset($stores->BMCStore))
     {
-		printf(
+		\printf(
 			"CustomerId %d does not have any registered BMC stores.\r\n", 
 			$GLOBALS['AuthorizationData']->CustomerId
 		);
@@ -120,11 +120,11 @@ try
     $adGroup = new AdGroup();
     $adGroup->CpcBid = new Bid();
     $adGroup->CpcBid->Amount = 0.09;
-    date_default_timezone_set('UTC');
+    \date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
-    $endDate->Year = date("Y");
+    $endDate->Year = \date("Y");
     $adGroup->EndDate = $endDate;
     $adGroup->Name = "Women's Red Shoe Sale";    
     $adGroup->StartDate = null;    
@@ -197,12 +197,12 @@ try
         $GLOBALS['AuthorizationData']->AccountId, 
         array($campaignIds->long[0])
     );
-    printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);
+    \printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
@@ -299,7 +299,7 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 		false,
 		$actions);
 
-	printf("Applying a biddable criterion as the root...\r\n");
+	\printf("Applying a biddable criterion as the root...\r\n");
 	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
 		$actions
 	);
@@ -312,7 +312,7 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 		AdGroupCriterionType::ProductPartition
 	)->AdGroupCriterions;
 	 
-	printf("Outputing the ad group's product partition; contains only the tree root node\r\n");
+	\printf("Outputing the ad group's product partition; contains only the tree root node\r\n");
 	OutputProductPartitions($adGroupCriterions);
 	 
 	// Update the bid of the root node that we just added.
@@ -333,7 +333,7 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 	 
 	AddPartitionAction($encodedUpdateRoot, ItemAction::Update, $actions);
 	 
-	printf("Updating the bid for the tree root node...\r\n");
+	\printf("Updating the bid for the tree root node...\r\n");
 	
 	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
 		$actions
@@ -345,7 +345,7 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 		AdGroupCriterionType::ProductPartition
 	)->AdGroupCriterions;
 	 
-	printf("Updated the bid for the tree root node\r\n");
+	\printf("Updated the bid for the tree root node\r\n");
 	OutputProductPartitions($adGroupCriterions);
 }
 
@@ -496,7 +496,7 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 		false,
 		$actions);
 	
-	printf("Applying product partitions to the ad group...\r\n");
+	\printf("Applying product partitions to the ad group...\r\n");
 	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
 		$actions
 	);
@@ -507,7 +507,7 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 		AdGroupCriterionType::ProductPartition
 	)->AdGroupCriterions;
 
-	printf("The product partition group tree now has 9 nodes\r\n");
+	\printf("The product partition group tree now has 9 nodes\r\n");
 	OutputProductPartitions($adGroupCriterions);
 
 	return $applyPartitionActionsResponse;
@@ -593,7 +593,7 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 		false,
 		$actions);
 
-	printf("\nUpdating the electronics partition...\n");
+	\printf("\nUpdating the electronics partition...\n");
 	$applyPartitionActionsResponse = CampaignManagementExampleHelper::ApplyProductPartitionActions(
 		$actions
 	);
@@ -604,7 +604,7 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 		AdGroupCriterionType::ProductPartition
 	)->AdGroupCriterions;
 	 
-	printf("\nThe product partition group tree now has 12 nodes\n");
+	\printf("\nThe product partition group tree now has 12 nodes\n");
 	OutputProductPartitions($adGroupCriterions);
 }
 
@@ -766,16 +766,16 @@ function OutputProductPartitionTree(
 {
 	$criterion = $node->Criterion;  // ProductPartition 
 
-	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s\n",
+	\printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s\n",
 			"",
 			$criterion->PartitionType);
 
-	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n",
+	\printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n",
 			"",
 			"ParentCriterionId: ",
 			$criterion->ParentCriterionId);
 
-	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n",
+	\printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n",
 			"",
 			"Id: ",
 			$node->Id);
@@ -784,7 +784,7 @@ function OutputProductPartitionTree(
 	{
 		if ($node->Type === "BiddableAdGroupCriterion") //instanceof BiddableAdGroupCriterion)
 		{
-			printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%.2f\n",
+			\printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%.2f\n",
 					"",
 					"Bid amount: ",
 					$node->CriterionBid->Amount);  // ((FixedBid)((BiddableAdGroupCriterion)
@@ -794,7 +794,7 @@ function OutputProductPartitionTree(
 		{
 			if ($node->Type === "NegativeAdGroupCriterion")  // node instanceof NegativeAdGroupCriterion
 			{
-				printf("%" . $treeLevel * 4 . "s%s\n",
+				\printf("%" . $treeLevel * 4 . "s%s\n",
 						"",
 						"Not bidding on this condition");
 			}
@@ -803,13 +803,13 @@ function OutputProductPartitionTree(
 
 	$nullAttribute = (!empty($criterion->ParentCriterionId)) ? "(All Others)" : "(Tree Root)";
 
-	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n",
+	\printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\n",
 			"",
 			"Attribute: ",
 			(empty($criterion->Condition->Attribute)) ?
 			$nullAttribute : $criterion->Condition->Attribute);
 
-	printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\r\n",
+	\printf("%" . (($treeLevel > 0) ? $treeLevel * 4 : "") . "s%s%s\r\n",
 			"",
 			"Condition: ",
 			$criterion->Condition->Operand);

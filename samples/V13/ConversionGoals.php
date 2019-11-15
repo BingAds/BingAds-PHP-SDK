@@ -66,7 +66,7 @@ try
     // the tracking script that you should add to your website is included in a corresponding 
     // UetTag within the response message. 
 
-    if ($uetTags == null || count($uetTags->UetTag) < 1)
+    if ($uetTags == null || \count($uetTags->UetTag) < 1)
     {
         $addUetTags = array();
         $uetTag = new UetTag();
@@ -85,9 +85,9 @@ try
         CampaignManagementExampleHelper::OutputArrayOfBatchError($addUetTagsResponse->PartialErrors);
     }
 
-    if ($uetTags == null || count($uetTags->UetTag) < 1)
+    if ($uetTags == null || \count($uetTags->UetTag) < 1)
     {
-        printf(
+        \printf(
             "You do not have any UET tags registered for CustomerId %s.\r\n", 
             $CustomerId
         );
@@ -397,8 +397,8 @@ try
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

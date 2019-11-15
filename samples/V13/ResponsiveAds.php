@@ -105,11 +105,11 @@ try
     $adGroup = new AdGroup();
     $adGroup->CpcBid = new Bid();
     $adGroup->CpcBid->Amount = 0.09;
-    date_default_timezone_set('UTC');
+    \date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
-    $endDate->Year = date("Y");
+    $endDate->Year = \date("Y");
     $adGroup->EndDate = $endDate;
     $adGroup->Name = "Women's Red Shoe Sale";    
     $adGroup->StartDate = null;    
@@ -187,7 +187,7 @@ try
     
     foreach ($mediaIds->long as $id)
     {
-        printf("Deleted Media Id %s\r\n", $id);
+        \printf("Deleted Media Id %s\r\n", $id);
     }
 
     // Delete the campaign and everything it contains e.g., ad groups and ads.
@@ -197,12 +197,12 @@ try
         $GLOBALS['AuthorizationData']->AccountId, 
         array($campaignIds->long[0])
     );
-    printf("Deleted CampaignId %s\r\n", $campaignIds->long[0]);
+    \printf("Deleted CampaignId %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
@@ -239,8 +239,8 @@ function GetImageMedia(
 }
 
 function GetBase64ImageData($imageFileName){
-    $imageData = file_get_contents($imageFileName);
-    $base64ImageData = base64_encode($imageData);
+    $imageData = \file_get_contents($imageFileName);
+    $base64ImageData = \base64_encode($imageData);
 
     return $base64ImageData;
 }

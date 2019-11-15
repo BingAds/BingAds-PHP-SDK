@@ -69,7 +69,7 @@ try
     // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    date_default_timezone_set('UTC');
+    \date_default_timezone_set('UTC');
 
     // Add a campaign to associate with ad extensions.
     
@@ -166,7 +166,7 @@ try
     $callSchedulingEndDate = new Date();
     $callSchedulingEndDate->Day = 31;
     $callSchedulingEndDate->Month = 12;
-    $callSchedulingEndDate->Year = date("Y");
+    $callSchedulingEndDate->Year = \date("Y");
     $callScheduling->EndDate = $callSchedulingEndDate;
     $extension->Scheduling = $callScheduling;
     $encodedExtension = new SoapVar(
@@ -214,7 +214,7 @@ try
     $locationSchedulingEndDate = new Date();
     $locationSchedulingEndDate->Day = 31;
     $locationSchedulingEndDate->Month = 12;
-    $locationSchedulingEndDate->Year = date("Y");
+    $locationSchedulingEndDate->Year = \date("Y");
     $locationScheduling->EndDate = $locationSchedulingEndDate;
     $extension->Scheduling = $locationScheduling;
     $encodedExtension = new SoapVar(
@@ -331,7 +331,7 @@ try
     
     $associations = array();
     
-    for ($index = 0; $index < count($adExtensionIdentities->AdExtensionIdentity); $index++)
+    for ($index = 0; $index < \count($adExtensionIdentities->AdExtensionIdentity); $index++)
     {
         if(!empty($adExtensionIdentities->AdExtensionIdentity[$index]) && isset($adExtensionIdentities->AdExtensionIdentity[$index]->Id))
         {
@@ -462,7 +462,7 @@ try
     
     foreach ($mediaIds->long as $id)
     {
-        printf("Deleted Media Id %s\r\n", $id);
+        \printf("Deleted Media Id %s\r\n", $id);
     }
 
     // Delete the campaign and everything it contains e.g., ad groups and ads.
@@ -472,12 +472,12 @@ try
         $GLOBALS['AuthorizationData']->AccountId, 
         array($campaignIds->long[0])
     );
-    printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);    
+    \printf("Deleted Campaign Id %s\r\n", $campaignIds->long[0]);    
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
@@ -514,8 +514,8 @@ function GetImageMedia(
 }
 
 function GetBase64ImageData($imageFileName){
-    $imageData = file_get_contents($imageFileName);
-    $base64ImageData = base64_encode($imageData);
+    $imageData = \file_get_contents($imageFileName);
+    $base64ImageData = \base64_encode($imageData);
 
     return $base64ImageData;
 }

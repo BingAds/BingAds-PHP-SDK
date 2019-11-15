@@ -79,11 +79,11 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             throw new Exception("The ResponseUri is not set. ");
         }
 
-        $parsed_url = parse_url($responseUri);
+        $parsed_url = \parse_url($responseUri);
         
-        parse_str($parsed_url["query"], $queryParts);
+        \parse_str($parsed_url["query"], $queryParts);
 
-        if (array_key_exists("error", $queryParts)) 
+        if (\array_key_exists("error", $queryParts)) 
         {
             $errorName = $queryParts['error'];
             $errorDesc = $queryParts['error_description'];
@@ -92,7 +92,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
                 ->withDescription($errorDesc);
         }
 
-        if (!array_key_exists("code", $queryParts)) 
+        if (!\array_key_exists("code", $queryParts)) 
         {
             throw new Exception("UriDoesntContainCode");
         }

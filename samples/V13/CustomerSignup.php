@@ -56,7 +56,7 @@ try
     {
         $roleIds[] = $customerRole->RoleId;
     }
-    if (!(in_array(33, $roleIds))){
+    if (!(\in_array(33, $roleIds))){
         print "Only a user with the aggregator role (33) can sign up new customers.";
         return;
     }
@@ -118,24 +118,24 @@ try
 
     // This is the identifier that you will use to set the CustomerId 
     // element in most of the Bing Ads API service operations.
-    printf("CustomerId: %s\r\n", $signupCustomerResponse->CustomerId);
+    \printf("CustomerId: %s\r\n", $signupCustomerResponse->CustomerId);
 
     // The read-only system-generated customer number that is used in the Bing Ads web application. 
     // The customer number is of the form, Cnnnnnnn, where nnnnnnn is a series of digits.
-    printf("CustomerNumber: %s\r\n", $signupCustomerResponse->CustomerNumber);
+    \printf("CustomerNumber: %s\r\n", $signupCustomerResponse->CustomerNumber);
 
     // This is the identifier that you will use to set the AccountId and CustomerAccountId 
     // elements in most of the Bing Ads API service operations.
-    printf("AccountId: %s\r\n", $signupCustomerResponse->AccountId);
+    \printf("AccountId: %s\r\n", $signupCustomerResponse->AccountId);
 
     // The read-only system generated account number that is used to identify the account in the Bing Ads web application. 
     // The account number has the form xxxxxxxx, where xxxxxxxx is a series of any eight alphanumeric characters.
-    printf("AccountNumber: %s\n\n", $signupCustomerResponse->AccountNumber);
+    \printf("AccountNumber: %s\n\n", $signupCustomerResponse->AccountNumber);
 }
 catch (SoapFault $e)
 {
-    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+    \printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

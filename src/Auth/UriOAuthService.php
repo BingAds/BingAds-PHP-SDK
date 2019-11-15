@@ -85,7 +85,7 @@ class UriOAuthService extends IOAuthService
         /** 
          * The response formatted in json.
          */
-        $responseArray = json_decode($responseJson, TRUE);
+        $responseArray = \json_decode($responseJson, TRUE);
 
         /** 
          * If the response contains an access_token element, it was successful.
@@ -131,7 +131,7 @@ class UriOAuthService extends IOAuthService
     {
         $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
 
-        return sprintf(
+        return \sprintf(
             "%s&client_id=%s&response_type=%s&redirect_uri=%s",
             UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'],
             $parameters->ClientId,

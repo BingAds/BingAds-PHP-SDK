@@ -50,12 +50,12 @@ $DownloadFileType = DownloadFileType::Csv;
 
 // Confirm that the download folder exist; otherwise, exit.
 
-$length = strrpos($BulkFilePath, '\\');
-$folder = substr($BulkFilePath, 0, $length);
+$length = \strrpos($BulkFilePath, '\\');
+$folder = \substr($BulkFilePath, 0, $length);
 
-if (!is_dir($folder))
+if (!\is_dir($folder))
 {
-    printf("The output folder, %s, does not exist.\r\nEnsure that the " .
+    \printf("The output folder, %s, does not exist.\r\nEnsure that the " .
         "folder exists and try again.", $folder);
     return;
 }
@@ -98,7 +98,7 @@ try
         
     if ($downloadRequestId != null)
     {
-        printf("Download Request Id: %s\r\n", $downloadRequestId);
+        \printf("Download Request Id: %s\r\n", $downloadRequestId);
 
         $downloadSuccess = false;
     
@@ -109,7 +109,7 @@ try
     
     	for ($i = 0; $i < 10; $i++)
     	{
-    		sleep($waitTime);
+    		\sleep($waitTime);
     
     		// GetDownloadRequestStatus helper method calls the corresponding Bing Ads service operation 
             // to get the download status.
@@ -120,9 +120,9 @@ try
             );
             $requestStatus = $getBulkDownloadStatusResponse->RequestStatus;
             $resultFileUrl = $getBulkDownloadStatusResponse->ResultFileUrl;
-            printf("PercentComplete: %s\r\n", $getBulkDownloadStatusResponse->PercentComplete);
-            printf("RequestStatus: %s\r\n", $requestStatus);
-            printf("ResultFileUrl: %s\r\n", $resultFileUrl);
+            \printf("PercentComplete: %s\r\n", $getBulkDownloadStatusResponse->PercentComplete);
+            \printf("RequestStatus: %s\r\n", $requestStatus);
+            \printf("ResultFileUrl: %s\r\n", $resultFileUrl);
     
         	if (($requestStatus != null) && ($requestStatus == "Completed"))
         	{
@@ -134,13 +134,13 @@ try
         if ($downloadSuccess)
         {
             // Download the file.
-            printf("-----\r\nDownloading from %s...\r\n", $resultFileUrl);
+            \printf("-----\r\nDownloading from %s...\r\n", $resultFileUrl);
             DownloadFile($resultFileUrl, $BulkFilePath);
-            printf("The download file was written to %s.\r\n", $BulkFilePath);
+            \printf("The download file was written to %s.\r\n", $BulkFilePath);
         }
         else // Pending
         {
-        	printf("The request is taking longer than expected.\r\n " .
+        	\printf("The request is taking longer than expected.\r\n " .
                 "Save the download request ID (%s) and try again later.\r\n",
                 $downloadRequestId
             );
@@ -165,10 +165,10 @@ try
     
     $uploadRequestId = $uploadResponse->RequestId;
     $uploadUrl = $uploadResponse->UploadUrl;
-    printf("RequestId: %s\r\n", $uploadRequestId);
-    printf("UploadUrl: %s\r\n", $uploadUrl);
+    \printf("RequestId: %s\r\n", $uploadRequestId);
+    \printf("UploadUrl: %s\r\n", $uploadUrl);
     
-    printf("-----\r\nUploading file from %s.\r\n", $BulkFilePath);  
+    \printf("-----\r\nUploading file from %s.\r\n", $BulkFilePath);  
     $uploadSuccess = UploadFile(
         $uploadUrl, 
         $BulkFilePath
@@ -190,7 +190,7 @@ try
     
     for ($i = 0; $i < 10; $i++)
     {
-    	sleep($waitTime);
+    	\sleep($waitTime);
         
         // Get the upload request status.
         print("-----\r\nGetBulkUploadStatus:\r\n");
@@ -200,9 +200,9 @@ try
 
         $requestStatus = $getBulkUploadStatusResponse->RequestStatus;
         $resultFileUrl = $getBulkUploadStatusResponse->ResultFileUrl;
-        printf("PercentComplete: %s\r\n", $getBulkUploadStatusResponse->PercentComplete);
-        printf("RequestStatus: %s\r\n", $requestStatus);
-        printf("ResultFileUrl: %s\r\n", $resultFileUrl);
+        \printf("PercentComplete: %s\r\n", $getBulkUploadStatusResponse->PercentComplete);
+        \printf("RequestStatus: %s\r\n", $requestStatus);
+        \printf("ResultFileUrl: %s\r\n", $resultFileUrl);
         
     	if (($requestStatus != null) && (($requestStatus == "Completed")
     		|| ($requestStatus == "CompletedWithErrors")))
@@ -215,21 +215,21 @@ try
     if ($uploadSuccess)
     {
         // Get the upload result file.
-        printf("-----\r\nDownloading the upload result file from %s...\r\n", $resultFileUrl);
+        \printf("-----\r\nDownloading the upload result file from %s...\r\n", $resultFileUrl);
     	DownloadFile($resultFileUrl, $UploadResultFilePath);
-    	printf("The upload result file was written to %s.\r\n", $UploadResultFilePath);
+    	\printf("The upload result file was written to %s.\r\n", $UploadResultFilePath);
     }
     else // Pending
     {
-    	printf("The request is taking longer than expected.\r\n" +
+    	\printf("The request is taking longer than expected.\r\n" +
     	"Save the upload ID (%s) and try again later.", $uploadRequestId);
     }
     
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
@@ -252,11 +252,11 @@ catch (Exception $e)
 
 function UploadFile($uploadUrl, $filePath)
 {
-    date_default_timezone_set("UTC");
-    $ch = curl_init($uploadUrl);
+    \date_default_timezone_set("UTC");
+    $ch = \curl_init($uploadUrl);
 
-    curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    \curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    \curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
     if(!isset($GLOBALS['AuthorizationData']))
     {
@@ -281,20 +281,20 @@ function UploadFile($uploadUrl, $filePath)
         throw new Exception("Invalid Authentication Type.");
     }
 
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $authorizationHeaders);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
+    \curl_setopt($ch, CURLOPT_HTTPHEADER, $authorizationHeaders);
+    \curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    \curl_setopt($ch, CURLOPT_POST, 1);
 
-    $file = curl_file_create($filePath, "application/zip", "payload.zip");
-    curl_setopt($ch, CURLOPT_POSTFIELDS, array("payload" => $file));
+    $file = \curl_file_create($filePath, "application/zip", "payload.zip");
+    \curl_setopt($ch, CURLOPT_POSTFIELDS, array("payload" => $file));
 
-    $result = curl_exec($ch);
-    $info = curl_getinfo($ch);
+    $result = \curl_exec($ch);
+    $info = \curl_getinfo($ch);
     $http_code = $info['http_code'];
               
-    if (curl_errno($ch))
+    if (\curl_errno($ch))
     {
-        print "Curl Error: " . curl_error($ch) . "\r\n";
+        print "Curl Error: " . \curl_error($ch) . "\r\n";
     }
     else
     {
@@ -312,7 +312,7 @@ function UploadFile($uploadUrl, $filePath)
         // }
     }
              
-    curl_close($ch);
+    \curl_close($ch);
     
     if($http_code == 200){
         return true;
@@ -328,39 +328,39 @@ function UploadFile($uploadUrl, $filePath)
 
 function DownloadFile($downloadUrl, $filePath)
 {
-    if (!$reader = fopen($downloadUrl, 'rb'))
+    if (!$reader = \fopen($downloadUrl, 'rb'))
     {
         throw new Exception("Failed to open URL " . $downloadUrl . ".");
     }
 
-    if (!$writer = fopen($filePath, 'wb'))
+    if (!$writer = \fopen($filePath, 'wb'))
     {
-        fclose($reader);
+        \fclose($reader);
         throw new Exception("Failed to create ZIP file " . $filePath . ".");
     }
 
     $bufferSize = 100 * 1024;
 
-    while (!feof($reader))
+    while (!\feof($reader))
     {
-        if (false === ($buffer = fread($reader, $bufferSize)))
+        if (false === ($buffer = \fread($reader, $bufferSize)))
         {
-            fclose($reader);
-            fclose($writer);
+            \fclose($reader);
+            \fclose($writer);
             throw new Exception("Read operation from URL failed.");
         }
 
-        if (fwrite($writer, $buffer) === false)
+        if (\fwrite($writer, $buffer) === false)
         {
-            fclose($reader);
-            fclose($writer);
+            \fclose($reader);
+            \fclose($writer);
             throw new Exception ("Write operation to ZIP file failed.");
         }
     }
 
-    fclose($reader);
-    fflush($writer);
-    fclose($writer);
+    \fclose($reader);
+    \fflush($writer);
+    \fclose($writer);
 }
 
 // Decompresses a ZIP Archive and writes the contents to the specified file path.
@@ -370,7 +370,7 @@ function DecompressFile($fromZipArchive, $toExtractedFile)
     $archive = new ZipArchive;
 
     if ($archive->open($fromZipArchive) === TRUE) {
-        $archive->extractTo(dirname($toExtractedFile));
+        $archive->extractTo(\dirname($toExtractedFile));
         $archive->close();
     }
     else {
@@ -385,7 +385,7 @@ function CompressFile($fromExtractedFile, $toZipArchive)
     $archive = new ZipArchive;
 
     if ($archive->open($toZipArchive, ZipArchive::OVERWRITE) === TRUE) {
-        $archive->addFile($fromExtractedFile, basename($fromExtractedFile));
+        $archive->addFile($fromExtractedFile, \basename($fromExtractedFile));
         $archive->close();
     }
     else {
@@ -400,26 +400,26 @@ function GetLastSyncTime($path)
 {
     $lastSyncTime = null;
 
-    if (is_file($path))
+    if (\is_file($path))
     {
-        $reader = @fopen($path, "r");
+        $reader = @\fopen($path, "r");
 
         try
         {
             $syncTimeColumn = 0;
 
             // The first record contains column header information, for example "Type" and "Sync Time".
-            $record = fgets($reader);
+            $record = \fgets($reader);
 
             if($record != null)
             {
-            	$fields = explode(",", $record, 100);
+            	$fields = \explode(",", $record, 100);
             	$column = 0;
             	
             	do
                 {
                     $syncTimeColumn = ($fields[$column] == "Sync Time") ? $column : $syncTimeColumn;
-                } while($syncTimeColumn == 0 && (++$column < count($fields)));
+                } while($syncTimeColumn == 0 && (++$column < \count($fields)));
             }
             
             // Look for the Account record after any other metadata.
@@ -428,18 +428,18 @@ function GetLastSyncTime($path)
 
             do
             {
-            	$record = fgets($reader);
-                $fields = explode(",", $record, 100);
+            	$record = \fgets($reader);
+                $fields = \explode(",", $record, 100);
                 if($fields[0] == "Account")
                 {
-                    date_default_timezone_set("UTC");
+                    \date_default_timezone_set("UTC");
             	    $date = (new DateTime($fields[$syncTimeColumn]))->format('Y-m-d\TH:i:s');
             	    $lastSyncTime = ($fields[$syncTimeColumn] != "") ? $date : null;
                     $isAccount = true;
                 }
             } while(!$isAccount);
             
-            fclose($reader);
+            \fclose($reader);
             $reader = null;
 
         }
@@ -447,7 +447,7 @@ function GetLastSyncTime($path)
         {
             if (isset($reader))
             {
-                fclose($reader);
+                \fclose($reader);
             }
             throw $e;
         }

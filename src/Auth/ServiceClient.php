@@ -68,7 +68,7 @@ class ServiceClient
      */  
 	private function from_long_xml($xmlFragmentString)
 	{
-		return (string)strip_tags($xmlFragmentString);
+		return (string)\strip_tags($xmlFragmentString);
 	}
 	
 	/** 
@@ -87,17 +87,17 @@ class ServiceClient
 	{
 		// The sandbox environment is used unless the Production environment is explicitly set.
         
-		if($apiEnvironment === ApiEnvironment::Production and array_key_exists($serviceClientType, $this->productionServiceClientEndpoints))
+		if($apiEnvironment === ApiEnvironment::Production and \array_key_exists($serviceClientType, $this->productionServiceClientEndpoints))
 		{
 			$this->wsdlUrl = $this->productionServiceClientEndpoints[$serviceClientType] . "?singleWsdl";
 		}
-		else if (array_key_exists($serviceClientType, $this->sandboxServiceClientEndpoints)) 
+		else if (\array_key_exists($serviceClientType, $this->sandboxServiceClientEndpoints)) 
 		{
             $this->wsdlUrl = $this->sandboxServiceClientEndpoints[$serviceClientType] . "?singleWsdl";
 		}
 		else 
         {
-            throw new Exception(sprintf("%s is not a valid service client type.", $serviceClientType));
+            throw new Exception(\sprintf("%s is not a valid service client type.", $serviceClientType));
         }
  
         $this->apiEnvironment = $apiEnvironment;

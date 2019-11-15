@@ -55,13 +55,13 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
      * @throws Exception
      */
     public function ExtractAccessTokenFromUri($redirectUri){
-        $fragmentParts = parse_url($redirectUri)["fragment"];
-        if (!array_key_exists("access_token", $fragmentParts)) 
+        $fragmentParts = \parse_url($redirectUri)["fragment"];
+        if (!\array_key_exists("access_token", $fragmentParts)) 
         {
             throw new Exception("UriDoesntContainAccessToken");
         }
 
-        if (!array_key_exists("expires_in", $fragmentParts)) 
+        if (!\array_key_exists("expires_in", $fragmentParts)) 
         {
             throw new Exception("UriDoesntContainExpiresIn");
         }

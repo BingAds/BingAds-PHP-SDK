@@ -17,7 +17,7 @@ use Exception;
 
 try 
 {
-    session_start();
+    \session_start();
 
     if(!isset($_SESSION['AuthorizationData']) || !isset($_SESSION['AuthorizationData']->Authentication))
     {
@@ -28,7 +28,7 @@ try
             ->withClientId(WebAuthHelper::ClientId)
             ->withClientSecret(WebAuthHelper::ClientSecret)
             ->withRedirectUri('https://' . $_SERVER['HTTP_HOST'] . WebAuthHelper::RedirectUri)
-            ->withState(rand(0,999999999)); 
+            ->withState(\rand(0,999999999)); 
 
         // Assign this authentication instance to the global authorization_data. 
 
@@ -39,7 +39,7 @@ try
         $_SESSION['state'] = $_SESSION['AuthorizationData']->Authentication->State;
         
         // The user needs to provide consent for the application to access their Microsoft Advertising accounts.
-        header('Location: '. $_SESSION['AuthorizationData']->Authentication->GetAuthorizationEndpoint());
+        \header('Location: '. $_SESSION['AuthorizationData']->Authentication->GetAuthorizationEndpoint());
     }
     
     // If the current HTTP request is a callback from the Microsoft Account authorization server,
@@ -50,7 +50,7 @@ try
         // when the authorization request was initiated.
         if ($_GET['state'] != $_SESSION['state'])
         {
-            throw new Exception(sprintf(
+            throw new Exception(\sprintf(
                 "The OAuth response state (%s) does not match the client request state (%s)", 
                 $_GET['state'], 
                 $_SESSION['state']));
@@ -59,7 +59,7 @@ try
         $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri(
             $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
                 
-        header('Location: '. '/CallBingAdsServices.php');
+        \header('Location: '. '/CallBingAdsServices.php');
     }
 }
 catch(OAuthTokenRequestException $e)

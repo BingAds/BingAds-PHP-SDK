@@ -75,25 +75,25 @@ try
     {
         $customerIds[] = $account->ParentCustomerId;
     }
-    $distinctCustomerIds = array_unique($customerIds, SORT_REGULAR);
+    $distinctCustomerIds = \array_unique($customerIds, SORT_REGULAR);
     
     foreach ($distinctCustomerIds as $customerId)
     {
         // You can find out which pilot features the customer is able to use. 
         // Each account could belong to a different customer, so use the customer ID in each account.
         print("-----\r\nGetCustomerPilotFeatures:\r\n");
-        printf("Requested by CustomerId: %s\r\n", $customerId);
+        \printf("Requested by CustomerId: %s\r\n", $customerId);
         $featurePilotFlags = CustomerManagementExampleHelper::GetCustomerPilotFeatures(
             $customerId
         )->FeaturePilotFlags;
         print("Customer Pilot Flags:\r\n");
-        print join('; ', $featurePilotFlags->int);
+        print \join('; ', $featurePilotFlags->int);
     }
 }
 catch (SoapFault $e)
 {
-    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+    \printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

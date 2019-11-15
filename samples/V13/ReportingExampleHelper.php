@@ -42,16 +42,16 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAccountPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
             self::OutputStatusMessage("* * * End OutputAccountPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfAccountPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountPerformanceReportFilter))
         {
             return;
         }
@@ -65,7 +65,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAccountPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAccountPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -79,7 +79,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAccountPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountPerformanceReportRequest))
         {
             return;
         }
@@ -100,7 +100,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAccountReportScope($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountReportScope))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountReportScope))
         {
             return;
         }
@@ -125,7 +125,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAccountThroughAdGroupReportScope($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountThroughAdGroupReportScope))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountThroughAdGroupReportScope))
         {
             return;
         }
@@ -148,7 +148,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAccountThroughCampaignReportScope($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountThroughCampaignReportScope))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AccountThroughCampaignReportScope))
         {
             return;
         }
@@ -162,20 +162,20 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Detail: %s", $dataObject->Detail));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Detail: %s", $dataObject->Detail));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputAdApiError * * *");
         }
     }
     static function OutputArrayOfAdApiError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiError))
         {
             return;
         }
-        else if (!is_array($dataObjects->AdApiError))
+        else if (!\is_array($dataObjects->AdApiError))
         {
             self::OutputAdApiError($dataObjects->AdApiError);
             return;
@@ -197,7 +197,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdApiFaultDetail($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiFaultDetail))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiFaultDetail))
         {
             return;
         }
@@ -211,20 +211,20 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdDynamicTextPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("AdType: %s", $dataObject->AdType));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("AdType: %s", $dataObject->AdType));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputAdDynamicTextPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfAdDynamicTextPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdDynamicTextPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdDynamicTextPerformanceReportFilter))
         {
             return;
         }
@@ -238,7 +238,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdDynamicTextPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAdDynamicTextPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -252,7 +252,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdDynamicTextPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdDynamicTextPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdDynamicTextPerformanceReportRequest))
         {
             return;
         }
@@ -266,18 +266,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdExtensionByAdReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
             self::OutputStatusMessage("* * * End OutputAdExtensionByAdReportFilter * * *");
         }
     }
     static function OutputArrayOfAdExtensionByAdReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByAdReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByAdReportFilter))
         {
             return;
         }
@@ -291,7 +291,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdExtensionByAdReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAdExtensionByAdReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -305,7 +305,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdExtensionByAdReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByAdReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByAdReportRequest))
         {
             return;
         }
@@ -319,18 +319,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdExtensionByKeywordReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
             self::OutputStatusMessage("* * * End OutputAdExtensionByKeywordReportFilter * * *");
         }
     }
     static function OutputArrayOfAdExtensionByKeywordReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByKeywordReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByKeywordReportFilter))
         {
             return;
         }
@@ -344,7 +344,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdExtensionByKeywordReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAdExtensionByKeywordReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -358,7 +358,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdExtensionByKeywordReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByKeywordReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionByKeywordReportRequest))
         {
             return;
         }
@@ -372,18 +372,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdExtensionDetailReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
             self::OutputStatusMessage("* * * End OutputAdExtensionDetailReportFilter * * *");
         }
     }
     static function OutputArrayOfAdExtensionDetailReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionDetailReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionDetailReportFilter))
         {
             return;
         }
@@ -397,7 +397,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdExtensionDetailReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAdExtensionDetailReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -411,7 +411,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdExtensionDetailReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionDetailReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdExtensionDetailReportRequest))
         {
             return;
         }
@@ -425,19 +425,19 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdGroupPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
-            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage("* * * End OutputAdGroupPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfAdGroupPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdGroupPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdGroupPerformanceReportFilter))
         {
             return;
         }
@@ -451,7 +451,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdGroupPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAdGroupPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -465,7 +465,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdGroupPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdGroupPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdGroupPerformanceReportRequest))
         {
             return;
         }
@@ -479,15 +479,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdGroupReportScope * * *");
-            self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
-            self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
-            self::OutputStatusMessage(sprintf("AdGroupId: %s", $dataObject->AdGroupId));
+            self::OutputStatusMessage(\sprintf("AccountId: %s", $dataObject->AccountId));
+            self::OutputStatusMessage(\sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage(\sprintf("AdGroupId: %s", $dataObject->AdGroupId));
             self::OutputStatusMessage("* * * End OutputAdGroupReportScope * * *");
         }
     }
     static function OutputArrayOfAdGroupReportScope($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdGroupReportScope))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdGroupReportScope))
         {
             return;
         }
@@ -501,20 +501,20 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("AdType: %s", $dataObject->AdType));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("AdType: %s", $dataObject->AdType));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputAdPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfAdPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdPerformanceReportFilter))
         {
             return;
         }
@@ -528,7 +528,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAdPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -542,7 +542,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdPerformanceReportRequest))
         {
             return;
         }
@@ -556,17 +556,17 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAgeGenderAudienceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputAgeGenderAudienceReportFilter * * *");
         }
     }
     static function OutputArrayOfAgeGenderAudienceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AgeGenderAudienceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AgeGenderAudienceReportFilter))
         {
             return;
         }
@@ -580,7 +580,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAgeGenderAudienceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAgeGenderAudienceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -594,7 +594,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAgeGenderAudienceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AgeGenderAudienceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AgeGenderAudienceReportRequest))
         {
             return;
         }
@@ -617,7 +617,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfApiFaultDetail($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ApiFaultDetail))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ApiFaultDetail))
         {
             return;
         }
@@ -631,7 +631,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
-            self::OutputStatusMessage(sprintf("TrackingId: %s", $dataObject->TrackingId));
+            self::OutputStatusMessage(\sprintf("TrackingId: %s", $dataObject->TrackingId));
             if($dataObject->Type === "AdApiFaultDetail")
             {
                 self::OutputAdApiFaultDetail($dataObject);
@@ -645,7 +645,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfApplicationFault($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ApplicationFault))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ApplicationFault))
         {
             return;
         }
@@ -659,15 +659,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAudiencePerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
             self::OutputStatusMessage("* * * End OutputAudiencePerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfAudiencePerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AudiencePerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AudiencePerformanceReportFilter))
         {
             return;
         }
@@ -681,7 +681,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAudiencePerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfAudiencePerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -695,7 +695,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAudiencePerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AudiencePerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AudiencePerformanceReportRequest))
         {
             return;
         }
@@ -709,17 +709,17 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Details: %s", $dataObject->Details));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("Index: %s", $dataObject->Index));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputBatchError * * *");
         }
     }
     static function OutputArrayOfBatchError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->BatchError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->BatchError))
         {
             return;
         }
@@ -744,7 +744,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfBudgetSummaryReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->BudgetSummaryReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->BudgetSummaryReportRequest))
         {
             return;
         }
@@ -758,15 +758,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCallDetailReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
             self::OutputStatusMessage("* * * End OutputCallDetailReportFilter * * *");
         }
     }
     static function OutputArrayOfCallDetailReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CallDetailReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CallDetailReportFilter))
         {
             return;
         }
@@ -780,7 +780,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCallDetailReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfCallDetailReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -794,7 +794,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfCallDetailReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CallDetailReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CallDetailReportRequest))
         {
             return;
         }
@@ -808,17 +808,17 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCampaignPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage("* * * End OutputCampaignPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfCampaignPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignPerformanceReportFilter))
         {
             return;
         }
@@ -832,7 +832,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCampaignPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfCampaignPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -846,7 +846,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfCampaignPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignPerformanceReportRequest))
         {
             return;
         }
@@ -860,14 +860,14 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCampaignReportScope * * *");
-            self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
-            self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage(\sprintf("AccountId: %s", $dataObject->AccountId));
+            self::OutputStatusMessage(\sprintf("CampaignId: %s", $dataObject->CampaignId));
             self::OutputStatusMessage("* * * End OutputCampaignReportScope * * *");
         }
     }
     static function OutputArrayOfCampaignReportScope($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignReportScope))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignReportScope))
         {
             return;
         }
@@ -881,12 +881,12 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputConversionPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
             self::OutputStatusMessage("Keywords:");
             self::OutputArrayOfString($dataObject->Keywords);
             self::OutputStatusMessage("* * * End OutputConversionPerformanceReportFilter * * *");
@@ -894,7 +894,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfConversionPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ConversionPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ConversionPerformanceReportFilter))
         {
             return;
         }
@@ -908,7 +908,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputConversionPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfConversionPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -922,7 +922,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfConversionPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ConversionPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ConversionPerformanceReportRequest))
         {
             return;
         }
@@ -936,15 +936,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDate * * *");
-            self::OutputStatusMessage(sprintf("Day: %s", $dataObject->Day));
-            self::OutputStatusMessage(sprintf("Month: %s", $dataObject->Month));
-            self::OutputStatusMessage(sprintf("Year: %s", $dataObject->Year));
+            self::OutputStatusMessage(\sprintf("Day: %s", $dataObject->Day));
+            self::OutputStatusMessage(\sprintf("Month: %s", $dataObject->Month));
+            self::OutputStatusMessage(\sprintf("Year: %s", $dataObject->Year));
             self::OutputStatusMessage("* * * End OutputDate * * *");
         }
     }
     static function OutputArrayOfDate($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Date))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->Date))
         {
             return;
         }
@@ -958,19 +958,19 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDestinationUrlPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputDestinationUrlPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfDestinationUrlPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DestinationUrlPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DestinationUrlPerformanceReportFilter))
         {
             return;
         }
@@ -984,7 +984,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDestinationUrlPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfDestinationUrlPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -998,7 +998,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDestinationUrlPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DestinationUrlPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DestinationUrlPerformanceReportRequest))
         {
             return;
         }
@@ -1012,18 +1012,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDSAAutoTargetPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("BidStrategyType: %s", $dataObject->BidStrategyType));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DynamicAdTargetStatus: %s", $dataObject->DynamicAdTargetStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("BidStrategyType: %s", $dataObject->BidStrategyType));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DynamicAdTargetStatus: %s", $dataObject->DynamicAdTargetStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputDSAAutoTargetPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfDSAAutoTargetPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DSAAutoTargetPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DSAAutoTargetPerformanceReportFilter))
         {
             return;
         }
@@ -1037,7 +1037,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDSAAutoTargetPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfDSAAutoTargetPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1051,7 +1051,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSAAutoTargetPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DSAAutoTargetPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DSAAutoTargetPerformanceReportRequest))
         {
             return;
         }
@@ -1065,17 +1065,17 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDSACategoryPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputDSACategoryPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfDSACategoryPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DSACategoryPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DSACategoryPerformanceReportFilter))
         {
             return;
         }
@@ -1089,7 +1089,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDSACategoryPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfDSACategoryPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1103,7 +1103,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSACategoryPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DSACategoryPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DSACategoryPerformanceReportRequest))
         {
             return;
         }
@@ -1117,13 +1117,13 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDSASearchQueryPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
-            self::OutputStatusMessage(sprintf("FeedUrl: %s", $dataObject->FeedUrl));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
+            self::OutputStatusMessage(\sprintf("FeedUrl: %s", $dataObject->FeedUrl));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("SearchQueries:");
             self::OutputArrayOfString($dataObject->SearchQueries);
             self::OutputStatusMessage("* * * End OutputDSASearchQueryPerformanceReportFilter * * *");
@@ -1131,7 +1131,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSASearchQueryPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DSASearchQueryPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DSASearchQueryPerformanceReportFilter))
         {
             return;
         }
@@ -1145,7 +1145,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputDSASearchQueryPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfDSASearchQueryPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1159,7 +1159,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSASearchQueryPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->DSASearchQueryPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->DSASearchQueryPerformanceReportRequest))
         {
             return;
         }
@@ -1173,19 +1173,19 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputGeographicPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
             self::OutputStatusMessage("CountryCode:");
             self::OutputArrayOfString($dataObject->CountryCode);
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputGeographicPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfGeographicPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->GeographicPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->GeographicPerformanceReportFilter))
         {
             return;
         }
@@ -1199,7 +1199,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputGeographicPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfGeographicPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1213,7 +1213,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfGeographicPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->GeographicPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->GeographicPerformanceReportRequest))
         {
             return;
         }
@@ -1227,21 +1227,21 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputGoalsAndFunnelsReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceOS: %s", $dataObject->DeviceOS));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceOS: %s", $dataObject->DeviceOS));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
             self::OutputStatusMessage("GoalIds:");
             self::OutputArrayOfLong($dataObject->GoalIds);
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
             self::OutputStatusMessage("* * * End OutputGoalsAndFunnelsReportFilter * * *");
         }
     }
     static function OutputArrayOfGoalsAndFunnelsReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->GoalsAndFunnelsReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->GoalsAndFunnelsReportFilter))
         {
             return;
         }
@@ -1255,7 +1255,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputGoalsAndFunnelsReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfGoalsAndFunnelsReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1269,7 +1269,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfGoalsAndFunnelsReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->GoalsAndFunnelsReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->GoalsAndFunnelsReportRequest))
         {
             return;
         }
@@ -1283,25 +1283,25 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputKeywordPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
             self::OutputStatusMessage("AdRelevance:");
             self::OutputArrayOfInt($dataObject->AdRelevance);
-            self::OutputStatusMessage(sprintf("AdType: %s", $dataObject->AdType));
-            self::OutputStatusMessage(sprintf("BidMatchType: %s", $dataObject->BidMatchType));
-            self::OutputStatusMessage(sprintf("BidStrategyType: %s", $dataObject->BidStrategyType));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeliveredMatchType: %s", $dataObject->DeliveredMatchType));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("AdType: %s", $dataObject->AdType));
+            self::OutputStatusMessage(\sprintf("BidMatchType: %s", $dataObject->BidMatchType));
+            self::OutputStatusMessage(\sprintf("BidStrategyType: %s", $dataObject->BidStrategyType));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeliveredMatchType: %s", $dataObject->DeliveredMatchType));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
             self::OutputStatusMessage("ExpectedCtr:");
             self::OutputArrayOfInt($dataObject->ExpectedCtr);
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
             self::OutputStatusMessage("Keywords:");
             self::OutputArrayOfString($dataObject->Keywords);
             self::OutputStatusMessage("LandingPageExperience:");
             self::OutputArrayOfInt($dataObject->LandingPageExperience);
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("QualityScore:");
             self::OutputArrayOfInt($dataObject->QualityScore);
             self::OutputStatusMessage("* * * End OutputKeywordPerformanceReportFilter * * *");
@@ -1309,7 +1309,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfKeywordPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->KeywordPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->KeywordPerformanceReportFilter))
         {
             return;
         }
@@ -1323,12 +1323,12 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputKeywordPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfKeywordPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
             self::OutputKeywordPerformanceReportFilter($dataObject->Filter);
-            self::OutputStatusMessage(sprintf("MaxRows: %s", $dataObject->MaxRows));
+            self::OutputStatusMessage(\sprintf("MaxRows: %s", $dataObject->MaxRows));
             self::OutputStatusMessage("Scope:");
             self::OutputAccountThroughAdGroupReportScope($dataObject->Scope);
             self::OutputStatusMessage("Sort:");
@@ -1340,7 +1340,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfKeywordPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->KeywordPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->KeywordPerformanceReportRequest))
         {
             return;
         }
@@ -1354,14 +1354,14 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputKeywordPerformanceReportSort * * *");
-            self::OutputStatusMessage(sprintf("SortColumn: %s", $dataObject->SortColumn));
-            self::OutputStatusMessage(sprintf("SortOrder: %s", $dataObject->SortOrder));
+            self::OutputStatusMessage(\sprintf("SortColumn: %s", $dataObject->SortColumn));
+            self::OutputStatusMessage(\sprintf("SortOrder: %s", $dataObject->SortOrder));
             self::OutputStatusMessage("* * * End OutputKeywordPerformanceReportSort * * *");
         }
     }
     static function OutputArrayOfKeywordPerformanceReportSort($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->KeywordPerformanceReportSort))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->KeywordPerformanceReportSort))
         {
             return;
         }
@@ -1375,16 +1375,16 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputNegativeKeywordConflictReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
             self::OutputStatusMessage("* * * End OutputNegativeKeywordConflictReportFilter * * *");
         }
     }
     static function OutputArrayOfNegativeKeywordConflictReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->NegativeKeywordConflictReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->NegativeKeywordConflictReportFilter))
         {
             return;
         }
@@ -1409,7 +1409,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfNegativeKeywordConflictReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->NegativeKeywordConflictReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->NegativeKeywordConflictReportRequest))
         {
             return;
         }
@@ -1423,20 +1423,20 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Details: %s", $dataObject->Details));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputOperationError * * *");
         }
     }
     static function OutputArrayOfOperationError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->OperationError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->OperationError))
         {
             return;
         }
-        else if (!is_array($dataObjects->OperationError))
+        else if (!\is_array($dataObjects->OperationError))
         {
             self::OutputOperationError($dataObjects->OperationError);
             return;
@@ -1451,18 +1451,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductDimensionPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputProductDimensionPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfProductDimensionPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductDimensionPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductDimensionPerformanceReportFilter))
         {
             return;
         }
@@ -1476,7 +1476,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductDimensionPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfProductDimensionPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1490,7 +1490,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductDimensionPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductDimensionPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductDimensionPerformanceReportRequest))
         {
             return;
         }
@@ -1504,7 +1504,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductMatchCountReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfProductMatchCountReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Scope:");
@@ -1516,7 +1516,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductMatchCountReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductMatchCountReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductMatchCountReportRequest))
         {
             return;
         }
@@ -1530,15 +1530,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductNegativeKeywordConflictReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
             self::OutputStatusMessage("* * * End OutputProductNegativeKeywordConflictReportFilter * * *");
         }
     }
     static function OutputArrayOfProductNegativeKeywordConflictReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductNegativeKeywordConflictReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductNegativeKeywordConflictReportFilter))
         {
             return;
         }
@@ -1563,7 +1563,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductNegativeKeywordConflictReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductNegativeKeywordConflictReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductNegativeKeywordConflictReportRequest))
         {
             return;
         }
@@ -1577,18 +1577,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductPartitionPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputProductPartitionPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfProductPartitionPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionPerformanceReportFilter))
         {
             return;
         }
@@ -1602,7 +1602,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductPartitionPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfProductPartitionPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1616,7 +1616,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductPartitionPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionPerformanceReportRequest))
         {
             return;
         }
@@ -1630,18 +1630,18 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductPartitionUnitPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputProductPartitionUnitPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfProductPartitionUnitPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionUnitPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionUnitPerformanceReportFilter))
         {
             return;
         }
@@ -1655,7 +1655,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductPartitionUnitPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfProductPartitionUnitPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1669,7 +1669,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductPartitionUnitPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionUnitPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductPartitionUnitPerformanceReportRequest))
         {
             return;
         }
@@ -1683,13 +1683,13 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductSearchQueryPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("AdType: %s", $dataObject->AdType));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("AdType: %s", $dataObject->AdType));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("SearchQueries:");
             self::OutputArrayOfString($dataObject->SearchQueries);
             self::OutputStatusMessage("* * * End OutputProductSearchQueryPerformanceReportFilter * * *");
@@ -1697,7 +1697,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductSearchQueryPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductSearchQueryPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductSearchQueryPerformanceReportFilter))
         {
             return;
         }
@@ -1711,7 +1711,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProductSearchQueryPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfProductSearchQueryPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1725,7 +1725,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductSearchQueryPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProductSearchQueryPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProductSearchQueryPerformanceReportRequest))
         {
             return;
         }
@@ -1739,17 +1739,17 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProfessionalDemographicsAudienceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputProfessionalDemographicsAudienceReportFilter * * *");
         }
     }
     static function OutputArrayOfProfessionalDemographicsAudienceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProfessionalDemographicsAudienceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProfessionalDemographicsAudienceReportFilter))
         {
             return;
         }
@@ -1763,7 +1763,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputProfessionalDemographicsAudienceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfProfessionalDemographicsAudienceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1777,7 +1777,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProfessionalDemographicsAudienceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ProfessionalDemographicsAudienceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ProfessionalDemographicsAudienceReportRequest))
         {
             return;
         }
@@ -1791,17 +1791,17 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputPublisherUsagePerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputPublisherUsagePerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfPublisherUsagePerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->PublisherUsagePerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->PublisherUsagePerformanceReportFilter))
         {
             return;
         }
@@ -1815,7 +1815,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputPublisherUsagePerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfPublisherUsagePerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -1829,7 +1829,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfPublisherUsagePerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->PublisherUsagePerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->PublisherUsagePerformanceReportRequest))
         {
             return;
         }
@@ -1843,12 +1843,12 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputReportRequest * * *");
-            self::OutputStatusMessage(sprintf("ExcludeColumnHeaders: %s", $dataObject->ExcludeColumnHeaders));
-            self::OutputStatusMessage(sprintf("ExcludeReportFooter: %s", $dataObject->ExcludeReportFooter));
-            self::OutputStatusMessage(sprintf("ExcludeReportHeader: %s", $dataObject->ExcludeReportHeader));
-            self::OutputStatusMessage(sprintf("Format: %s", $dataObject->Format));
-            self::OutputStatusMessage(sprintf("ReportName: %s", $dataObject->ReportName));
-            self::OutputStatusMessage(sprintf("ReturnOnlyCompleteData: %s", $dataObject->ReturnOnlyCompleteData));
+            self::OutputStatusMessage(\sprintf("ExcludeColumnHeaders: %s", $dataObject->ExcludeColumnHeaders));
+            self::OutputStatusMessage(\sprintf("ExcludeReportFooter: %s", $dataObject->ExcludeReportFooter));
+            self::OutputStatusMessage(\sprintf("ExcludeReportHeader: %s", $dataObject->ExcludeReportHeader));
+            self::OutputStatusMessage(\sprintf("Format: %s", $dataObject->Format));
+            self::OutputStatusMessage(\sprintf("ReportName: %s", $dataObject->ReportName));
+            self::OutputStatusMessage(\sprintf("ReturnOnlyCompleteData: %s", $dataObject->ReturnOnlyCompleteData));
             if($dataObject->Type === "AccountPerformanceReportRequest")
             {
                 self::OutputAccountPerformanceReportRequest($dataObject);
@@ -1986,7 +1986,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ReportRequest))
         {
             return;
         }
@@ -2000,14 +2000,14 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputReportRequestStatus * * *");
-            self::OutputStatusMessage(sprintf("ReportDownloadUrl: %s", $dataObject->ReportDownloadUrl));
-            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage(\sprintf("ReportDownloadUrl: %s", $dataObject->ReportDownloadUrl));
+            self::OutputStatusMessage(\sprintf("Status: %s", $dataObject->Status));
             self::OutputStatusMessage("* * * End OutputReportRequestStatus * * *");
         }
     }
     static function OutputArrayOfReportRequestStatus($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ReportRequestStatus))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ReportRequestStatus))
         {
             return;
         }
@@ -2025,14 +2025,14 @@ final class ReportingExampleHelper {
             self::OutputDate($dataObject->CustomDateRangeEnd);
             self::OutputStatusMessage("CustomDateRangeStart:");
             self::OutputDate($dataObject->CustomDateRangeStart);
-            self::OutputStatusMessage(sprintf("PredefinedTime: %s", $dataObject->PredefinedTime));
-            self::OutputStatusMessage(sprintf("ReportTimeZone: %s", $dataObject->ReportTimeZone));
+            self::OutputStatusMessage(\sprintf("PredefinedTime: %s", $dataObject->PredefinedTime));
+            self::OutputStatusMessage(\sprintf("ReportTimeZone: %s", $dataObject->ReportTimeZone));
             self::OutputStatusMessage("* * * End OutputReportTime * * *");
         }
     }
     static function OutputArrayOfReportTime($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ReportTime))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ReportTime))
         {
             return;
         }
@@ -2046,15 +2046,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputSearchCampaignChangeHistoryReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("HowChanged: %s", $dataObject->HowChanged));
-            self::OutputStatusMessage(sprintf("ItemChanged: %s", $dataObject->ItemChanged));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("HowChanged: %s", $dataObject->HowChanged));
+            self::OutputStatusMessage(\sprintf("ItemChanged: %s", $dataObject->ItemChanged));
             self::OutputStatusMessage("* * * End OutputSearchCampaignChangeHistoryReportFilter * * *");
         }
     }
     static function OutputArrayOfSearchCampaignChangeHistoryReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->SearchCampaignChangeHistoryReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->SearchCampaignChangeHistoryReportFilter))
         {
             return;
         }
@@ -2081,7 +2081,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfSearchCampaignChangeHistoryReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->SearchCampaignChangeHistoryReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->SearchCampaignChangeHistoryReportRequest))
         {
             return;
         }
@@ -2095,15 +2095,15 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputSearchQueryPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("AdStatus: %s", $dataObject->AdStatus));
-            self::OutputStatusMessage(sprintf("AdType: %s", $dataObject->AdType));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeliveredMatchType: %s", $dataObject->DeliveredMatchType));
-            self::OutputStatusMessage(sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("AdStatus: %s", $dataObject->AdStatus));
+            self::OutputStatusMessage(\sprintf("AdType: %s", $dataObject->AdType));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeliveredMatchType: %s", $dataObject->DeliveredMatchType));
+            self::OutputStatusMessage(\sprintf("ExcludeZeroClicks: %s", $dataObject->ExcludeZeroClicks));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("SearchQueries:");
             self::OutputArrayOfString($dataObject->SearchQueries);
             self::OutputStatusMessage("* * * End OutputSearchQueryPerformanceReportFilter * * *");
@@ -2111,7 +2111,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfSearchQueryPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->SearchQueryPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->SearchQueryPerformanceReportFilter))
         {
             return;
         }
@@ -2125,7 +2125,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputSearchQueryPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfSearchQueryPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -2139,7 +2139,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfSearchQueryPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->SearchQueryPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->SearchQueryPerformanceReportRequest))
         {
             return;
         }
@@ -2153,24 +2153,24 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputShareOfVoiceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AccountStatus: %s", $dataObject->AccountStatus));
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
-            self::OutputStatusMessage(sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
-            self::OutputStatusMessage(sprintf("BidMatchType: %s", $dataObject->BidMatchType));
-            self::OutputStatusMessage(sprintf("BidStrategyType: %s", $dataObject->BidStrategyType));
-            self::OutputStatusMessage(sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
-            self::OutputStatusMessage(sprintf("DeliveredMatchType: %s", $dataObject->DeliveredMatchType));
-            self::OutputStatusMessage(sprintf("DeviceType: %s", $dataObject->DeviceType));
-            self::OutputStatusMessage(sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
+            self::OutputStatusMessage(\sprintf("AccountStatus: %s", $dataObject->AccountStatus));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdGroupStatus: %s", $dataObject->AdGroupStatus));
+            self::OutputStatusMessage(\sprintf("BidMatchType: %s", $dataObject->BidMatchType));
+            self::OutputStatusMessage(\sprintf("BidStrategyType: %s", $dataObject->BidStrategyType));
+            self::OutputStatusMessage(\sprintf("CampaignStatus: %s", $dataObject->CampaignStatus));
+            self::OutputStatusMessage(\sprintf("DeliveredMatchType: %s", $dataObject->DeliveredMatchType));
+            self::OutputStatusMessage(\sprintf("DeviceType: %s", $dataObject->DeviceType));
+            self::OutputStatusMessage(\sprintf("KeywordStatus: %s", $dataObject->KeywordStatus));
             self::OutputStatusMessage("Keywords:");
             self::OutputArrayOfString($dataObject->Keywords);
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputShareOfVoiceReportFilter * * *");
         }
     }
     static function OutputArrayOfShareOfVoiceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ShareOfVoiceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ShareOfVoiceReportFilter))
         {
             return;
         }
@@ -2184,7 +2184,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputShareOfVoiceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfShareOfVoiceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -2198,7 +2198,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfShareOfVoiceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ShareOfVoiceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ShareOfVoiceReportRequest))
         {
             return;
         }
@@ -2212,16 +2212,16 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputUserLocationPerformanceReportFilter * * *");
-            self::OutputStatusMessage(sprintf("AdDistribution: %s", $dataObject->AdDistribution));
+            self::OutputStatusMessage(\sprintf("AdDistribution: %s", $dataObject->AdDistribution));
             self::OutputStatusMessage("CountryCode:");
             self::OutputArrayOfString($dataObject->CountryCode);
-            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(\sprintf("Language: %s", $dataObject->Language));
             self::OutputStatusMessage("* * * End OutputUserLocationPerformanceReportFilter * * *");
         }
     }
     static function OutputArrayOfUserLocationPerformanceReportFilter($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->UserLocationPerformanceReportFilter))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->UserLocationPerformanceReportFilter))
         {
             return;
         }
@@ -2235,7 +2235,7 @@ final class ReportingExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputUserLocationPerformanceReportRequest * * *");
-            self::OutputStatusMessage(sprintf("Aggregation: %s", $dataObject->Aggregation));
+            self::OutputStatusMessage(\sprintf("Aggregation: %s", $dataObject->Aggregation));
             self::OutputStatusMessage("Columns:");
             self::OutputArrayOfUserLocationPerformanceReportColumn($dataObject->Columns);
             self::OutputStatusMessage("Filter:");
@@ -2249,7 +2249,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfUserLocationPerformanceReportRequest($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->UserLocationPerformanceReportRequest))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->UserLocationPerformanceReportRequest))
         {
             return;
         }
@@ -2261,7 +2261,7 @@ final class ReportingExampleHelper {
     static function OutputReportFormat($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputReportFormat * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2270,7 +2270,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfReportFormat($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2284,7 +2284,7 @@ final class ReportingExampleHelper {
     static function OutputReportAggregation($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputReportAggregation * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2293,7 +2293,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfReportAggregation($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2307,7 +2307,7 @@ final class ReportingExampleHelper {
     static function OutputAccountPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAccountPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2316,7 +2316,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAccountPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2330,7 +2330,7 @@ final class ReportingExampleHelper {
     static function OutputAccountStatusReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAccountStatusReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2339,7 +2339,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAccountStatusReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2353,7 +2353,7 @@ final class ReportingExampleHelper {
     static function OutputAdDistributionReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdDistributionReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2362,7 +2362,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdDistributionReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2376,7 +2376,7 @@ final class ReportingExampleHelper {
     static function OutputDeviceOSReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDeviceOSReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2385,7 +2385,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDeviceOSReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2399,7 +2399,7 @@ final class ReportingExampleHelper {
     static function OutputDeviceTypeReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDeviceTypeReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2408,7 +2408,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDeviceTypeReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2422,7 +2422,7 @@ final class ReportingExampleHelper {
     static function OutputReportTimePeriod($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputReportTimePeriod * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2431,7 +2431,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfReportTimePeriod($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2445,7 +2445,7 @@ final class ReportingExampleHelper {
     static function OutputReportTimeZone($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputReportTimeZone * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2454,7 +2454,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfReportTimeZone($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2468,7 +2468,7 @@ final class ReportingExampleHelper {
     static function OutputCampaignPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCampaignPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2477,7 +2477,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfCampaignPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2491,7 +2491,7 @@ final class ReportingExampleHelper {
     static function OutputCampaignStatusReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCampaignStatusReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2500,7 +2500,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfCampaignStatusReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2514,7 +2514,7 @@ final class ReportingExampleHelper {
     static function OutputAdDynamicTextPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdDynamicTextPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2523,7 +2523,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdDynamicTextPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2537,7 +2537,7 @@ final class ReportingExampleHelper {
     static function OutputAdGroupStatusReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdGroupStatusReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2546,7 +2546,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdGroupStatusReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2560,7 +2560,7 @@ final class ReportingExampleHelper {
     static function OutputAdStatusReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdStatusReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2569,7 +2569,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdStatusReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2583,7 +2583,7 @@ final class ReportingExampleHelper {
     static function OutputAdTypeReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdTypeReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2592,7 +2592,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdTypeReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2606,7 +2606,7 @@ final class ReportingExampleHelper {
     static function OutputKeywordStatusReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputKeywordStatusReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2615,7 +2615,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfKeywordStatusReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2629,7 +2629,7 @@ final class ReportingExampleHelper {
     static function OutputLanguageReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputLanguageReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2638,7 +2638,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfLanguageReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2652,7 +2652,7 @@ final class ReportingExampleHelper {
     static function OutputAdGroupPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdGroupPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2661,7 +2661,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdGroupPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2675,7 +2675,7 @@ final class ReportingExampleHelper {
     static function OutputAdPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2684,7 +2684,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2698,7 +2698,7 @@ final class ReportingExampleHelper {
     static function OutputKeywordPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputKeywordPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2707,7 +2707,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfKeywordPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2721,7 +2721,7 @@ final class ReportingExampleHelper {
     static function OutputBidMatchTypeReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputBidMatchTypeReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2730,7 +2730,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfBidMatchTypeReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2744,7 +2744,7 @@ final class ReportingExampleHelper {
     static function OutputBidStrategyTypeReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputBidStrategyTypeReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2753,7 +2753,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfBidStrategyTypeReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2767,7 +2767,7 @@ final class ReportingExampleHelper {
     static function OutputDeliveredMatchTypeReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDeliveredMatchTypeReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2776,7 +2776,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDeliveredMatchTypeReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2790,7 +2790,7 @@ final class ReportingExampleHelper {
     static function OutputSortOrder($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputSortOrder * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2799,7 +2799,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfSortOrder($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2813,7 +2813,7 @@ final class ReportingExampleHelper {
     static function OutputDestinationUrlPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDestinationUrlPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2822,7 +2822,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDestinationUrlPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2836,7 +2836,7 @@ final class ReportingExampleHelper {
     static function OutputBudgetSummaryReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputBudgetSummaryReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2845,7 +2845,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfBudgetSummaryReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2859,7 +2859,7 @@ final class ReportingExampleHelper {
     static function OutputAgeGenderAudienceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAgeGenderAudienceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2868,7 +2868,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAgeGenderAudienceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2882,7 +2882,7 @@ final class ReportingExampleHelper {
     static function OutputProfessionalDemographicsAudienceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProfessionalDemographicsAudienceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2891,7 +2891,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProfessionalDemographicsAudienceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2905,7 +2905,7 @@ final class ReportingExampleHelper {
     static function OutputUserLocationPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputUserLocationPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2914,7 +2914,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfUserLocationPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2928,7 +2928,7 @@ final class ReportingExampleHelper {
     static function OutputPublisherUsagePerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputPublisherUsagePerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2937,7 +2937,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfPublisherUsagePerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2951,7 +2951,7 @@ final class ReportingExampleHelper {
     static function OutputSearchQueryPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputSearchQueryPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2960,7 +2960,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfSearchQueryPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2974,7 +2974,7 @@ final class ReportingExampleHelper {
     static function OutputConversionPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputConversionPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -2983,7 +2983,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfConversionPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -2997,7 +2997,7 @@ final class ReportingExampleHelper {
     static function OutputGoalsAndFunnelsReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputGoalsAndFunnelsReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3006,7 +3006,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfGoalsAndFunnelsReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3020,7 +3020,7 @@ final class ReportingExampleHelper {
     static function OutputNegativeKeywordConflictReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputNegativeKeywordConflictReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3029,7 +3029,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfNegativeKeywordConflictReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3043,7 +3043,7 @@ final class ReportingExampleHelper {
     static function OutputSearchCampaignChangeHistoryReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputSearchCampaignChangeHistoryReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3052,7 +3052,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfSearchCampaignChangeHistoryReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3066,7 +3066,7 @@ final class ReportingExampleHelper {
     static function OutputChangeTypeReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputChangeTypeReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3075,7 +3075,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfChangeTypeReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3089,7 +3089,7 @@ final class ReportingExampleHelper {
     static function OutputChangeEntityReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputChangeEntityReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3098,7 +3098,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfChangeEntityReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3112,7 +3112,7 @@ final class ReportingExampleHelper {
     static function OutputAdExtensionByAdReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdExtensionByAdReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3121,7 +3121,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdExtensionByAdReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3135,7 +3135,7 @@ final class ReportingExampleHelper {
     static function OutputAdExtensionByKeywordReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdExtensionByKeywordReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3144,7 +3144,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdExtensionByKeywordReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3158,7 +3158,7 @@ final class ReportingExampleHelper {
     static function OutputAudiencePerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAudiencePerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3167,7 +3167,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAudiencePerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3181,7 +3181,7 @@ final class ReportingExampleHelper {
     static function OutputAdExtensionDetailReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdExtensionDetailReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3190,7 +3190,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfAdExtensionDetailReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3204,7 +3204,7 @@ final class ReportingExampleHelper {
     static function OutputShareOfVoiceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputShareOfVoiceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3213,7 +3213,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfShareOfVoiceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3227,7 +3227,7 @@ final class ReportingExampleHelper {
     static function OutputProductDimensionPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProductDimensionPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3236,7 +3236,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductDimensionPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3250,7 +3250,7 @@ final class ReportingExampleHelper {
     static function OutputProductPartitionPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProductPartitionPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3259,7 +3259,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductPartitionPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3273,7 +3273,7 @@ final class ReportingExampleHelper {
     static function OutputProductPartitionUnitPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProductPartitionUnitPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3282,7 +3282,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductPartitionUnitPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3296,7 +3296,7 @@ final class ReportingExampleHelper {
     static function OutputProductSearchQueryPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProductSearchQueryPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3305,7 +3305,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductSearchQueryPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3319,7 +3319,7 @@ final class ReportingExampleHelper {
     static function OutputProductMatchCountReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProductMatchCountReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3328,7 +3328,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductMatchCountReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3342,7 +3342,7 @@ final class ReportingExampleHelper {
     static function OutputProductNegativeKeywordConflictReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputProductNegativeKeywordConflictReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3351,7 +3351,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfProductNegativeKeywordConflictReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3365,7 +3365,7 @@ final class ReportingExampleHelper {
     static function OutputCallDetailReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCallDetailReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3374,7 +3374,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfCallDetailReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3388,7 +3388,7 @@ final class ReportingExampleHelper {
     static function OutputGeographicPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputGeographicPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3397,7 +3397,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfGeographicPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3411,7 +3411,7 @@ final class ReportingExampleHelper {
     static function OutputDSASearchQueryPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDSASearchQueryPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3420,7 +3420,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSASearchQueryPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3434,7 +3434,7 @@ final class ReportingExampleHelper {
     static function OutputDSAAutoTargetPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDSAAutoTargetPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3443,7 +3443,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSAAutoTargetPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3457,7 +3457,7 @@ final class ReportingExampleHelper {
     static function OutputDynamicAdTargetStatusReportFilter($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDynamicAdTargetStatusReportFilter * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3466,7 +3466,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDynamicAdTargetStatusReportFilter($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3480,7 +3480,7 @@ final class ReportingExampleHelper {
     static function OutputDSACategoryPerformanceReportColumn($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDSACategoryPerformanceReportColumn * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3489,7 +3489,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfDSACategoryPerformanceReportColumn($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3503,7 +3503,7 @@ final class ReportingExampleHelper {
     static function OutputReportRequestStatusType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputReportRequestStatusType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -3512,7 +3512,7 @@ final class ReportingExampleHelper {
     }
     static function OutputArrayOfReportRequestStatusType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -3525,44 +3525,44 @@ final class ReportingExampleHelper {
     }
     static function OutputStatusMessage($message)
     {
-        printf(" % s\n", $message);
+        \printf(" % s\n", $message);
     }
     static function OutputArrayOfString($items)
     {
-        if(count((array)$items) == 0 || !isset($items->string))
+        if(\count((array)$items) == 0 || !isset($items->string))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfString * * *");
         foreach ($items->string as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfString * * *");
     }
     static function OutputArrayOfLong($items)
     {
-        if(count((array)$items) == 0 || !isset($items->long))
+        if(\count((array)$items) == 0 || !isset($items->long))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfLong * * *");
         foreach ($items->long as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLong * * *");
     }
     static function OutputArrayOfInt($items)
     {
-        if(count((array)$items) == 0 || !isset($items->int))
+        if(\count((array)$items) == 0 || !isset($items->int))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfInt * * *");
         foreach ($items->int as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfInt * * *");
     }

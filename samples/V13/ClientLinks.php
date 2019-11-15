@@ -81,7 +81,7 @@ try
     CustomerManagementExampleHelper::OutputArrayOfClientLink($clientLinks);
 
     print "-----\r\nLast SOAP request/response:\r\n";
-    printf("Fault Code: %s\r\nFault String: %s\r\n", $e->faultcode, $e->faultstring);
+    \printf("Fault Code: %s\r\nFault String: %s\r\n", $e->faultcode, $e->faultstring);
 	print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastResponse()."\r\n";
@@ -93,10 +93,10 @@ try
     $clientLink;
     $newLinkRequired = true;
 
-    if (isset($clientLinks->ClientLink) && count((array)$clientLinks->ClientLink) > 0)
+    if (isset($clientLinks->ClientLink) && \count((array)$clientLinks->ClientLink) > 0)
     {
         $clientLink = $clientLinks->ClientLink[0];
-        printf("Current ClientLink Status: %s.\r\n", $clientLink->Status);
+        \printf("Current ClientLink Status: %s.\r\n", $clientLink->Status);
 
         switch ($clientLink->Status)
         {
@@ -205,8 +205,8 @@ try
 }
 catch (SoapFault $e)
 {
-    printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+    \printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

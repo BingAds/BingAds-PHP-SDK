@@ -75,7 +75,7 @@ try
     // the tracking script that you should add to your website is included in a corresponding 
     // UetTag within the response message. 
 
-    if (count($uetTags) < 1)
+    if (\count($uetTags) < 1)
     {
         $uetTag = new UetTag();
         $uetTag->Description = "My First Uet Tag";
@@ -86,9 +86,9 @@ try
         )->UetTags;
     }
 
-    if (count($uetTags) < 1)
+    if (\count($uetTags) < 1)
     {
-        printf(
+        \printf(
             "You do not have any UET tags registered for CustomerId {0}.", 
             $GLOBALS['AuthorizationData']->CustomerId
         );
@@ -501,11 +501,11 @@ try
     $adGroup = new AdGroup();
     $adGroup->CpcBid = new Bid();
     $adGroup->CpcBid->Amount = 0.09;
-    date_default_timezone_set('UTC');
+    \date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
-    $endDate->Year = date("Y");
+    $endDate->Year = \date("Y");
     $adGroup->EndDate = $endDate;
     $adGroup->Name = "Women's Red Shoe Sale";    
     $adGroup->StartDate = null;    
@@ -601,12 +601,12 @@ try
         $GLOBALS['AuthorizationData']->AccountId, 
         array($campaignIds->long[0])
     );
-    printf("Deleted CampaignId %s\r\n", $campaignIds->long[0]);
+    \printf("Deleted CampaignId %s\r\n", $campaignIds->long[0]);
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

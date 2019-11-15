@@ -69,11 +69,11 @@ try
     $experiments = array();   
     $experiment = new Experiment();
     $experiment->BaseCampaignId = $baseCampaign->Id;
-    date_default_timezone_set('UTC');
+    \date_default_timezone_set('UTC');
     $endDate = new Date();
     $endDate->Day = 31;
     $endDate->Month = 12;
-    $endDate->Year = date("Y");
+    $endDate->Year = \date("Y");
     $experiment->EndDate = $endDate;
     $experiment->ExperimentCampaignId = null;
     $experiment->ExperimentStatus = "Active";
@@ -81,9 +81,9 @@ try
     $experiment->Id = null;
     $experiment->Name = $baseCampaign->Name . "-Experiment";
     $startDate = new Date();
-    $startDate->Day = date("d");
-    $startDate->Month = date("m");
-    $startDate->Year = date("Y");
+    $startDate->Day = \date("d");
+    $startDate->Month = \date("m");
+    $startDate->Year = \date("Y");
     $experiment->StartDate = $startDate;
     $experiment->TrafficSplitPercent = 50;
     $experiments[] = $experiment;
@@ -118,7 +118,7 @@ try
         $GLOBALS['AuthorizationData']->AccountId, 
         array($experiment->ExperimentCampaignId)
     );
-    printf("Deleted Experiment Campaign Id %s with Status '%s'\r\n",
+    \printf("Deleted Experiment Campaign Id %s with Status '%s'\r\n",
         $experiment->ExperimentCampaignId,
         $experiment->ExperimentStatus
     );
@@ -127,12 +127,12 @@ try
     CampaignManagementExampleHelper::DeleteExperiments(
         array($experiment->Id)
     );
-    printf("Deleted Experiment Id %s\r\n", $experiment->Id);   
+    \printf("Deleted Experiment Id %s\r\n", $experiment->Id);   
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";

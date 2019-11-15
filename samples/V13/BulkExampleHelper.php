@@ -107,20 +107,20 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputAdApiError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Detail: %s", $dataObject->Detail));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Detail: %s", $dataObject->Detail));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputAdApiError * * *");
         }
     }
     static function OutputArrayOfAdApiError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiError))
         {
             return;
         }
-        else if (!is_array($dataObjects->AdApiError))
+        else if (!\is_array($dataObjects->AdApiError))
         {
             self::OutputAdApiError($dataObjects->AdApiError);
             return;
@@ -142,7 +142,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfAdApiFaultDetail($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiFaultDetail))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->AdApiFaultDetail))
         {
             return;
         }
@@ -165,7 +165,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfApiFaultDetail($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ApiFaultDetail))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ApiFaultDetail))
         {
             return;
         }
@@ -179,7 +179,7 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputApplicationFault * * *");
-            self::OutputStatusMessage(sprintf("TrackingId: %s", $dataObject->TrackingId));
+            self::OutputStatusMessage(\sprintf("TrackingId: %s", $dataObject->TrackingId));
             if($dataObject->Type === "AdApiFaultDetail")
             {
                 self::OutputAdApiFaultDetail($dataObject);
@@ -193,7 +193,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfApplicationFault($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ApplicationFault))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->ApplicationFault))
         {
             return;
         }
@@ -207,15 +207,15 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputBatchError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("FieldPath: %s", $dataObject->FieldPath));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Details: %s", $dataObject->Details));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("FieldPath: %s", $dataObject->FieldPath));
             self::OutputStatusMessage("ForwardCompatibilityMap:");
             self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
-            self::OutputStatusMessage(sprintf("Index: %s", $dataObject->Index));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
-            self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage(\sprintf("Index: %s", $dataObject->Index));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Type: %s", $dataObject->Type));
             if($dataObject->Type === "EditorialError")
             {
                 self::OutputEditorialError($dataObject);
@@ -225,7 +225,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfBatchError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->BatchError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->BatchError))
         {
             return;
         }
@@ -239,14 +239,14 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputCampaignScope * * *");
-            self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
-            self::OutputStatusMessage(sprintf("ParentAccountId: %s", $dataObject->ParentAccountId));
+            self::OutputStatusMessage(\sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage(\sprintf("ParentAccountId: %s", $dataObject->ParentAccountId));
             self::OutputStatusMessage("* * * End OutputCampaignScope * * *");
         }
     }
     static function OutputArrayOfCampaignScope($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignScope))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignScope))
         {
             return;
         }
@@ -260,21 +260,21 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputEditorialError * * *");
-            self::OutputStatusMessage(sprintf("Appealable: %s", $dataObject->Appealable));
-            self::OutputStatusMessage(sprintf("DisapprovedText: %s", $dataObject->DisapprovedText));
-            self::OutputStatusMessage(sprintf("Location: %s", $dataObject->Location));
-            self::OutputStatusMessage(sprintf("PublisherCountry: %s", $dataObject->PublisherCountry));
-            self::OutputStatusMessage(sprintf("ReasonCode: %s", $dataObject->ReasonCode));
+            self::OutputStatusMessage(\sprintf("Appealable: %s", $dataObject->Appealable));
+            self::OutputStatusMessage(\sprintf("DisapprovedText: %s", $dataObject->DisapprovedText));
+            self::OutputStatusMessage(\sprintf("Location: %s", $dataObject->Location));
+            self::OutputStatusMessage(\sprintf("PublisherCountry: %s", $dataObject->PublisherCountry));
+            self::OutputStatusMessage(\sprintf("ReasonCode: %s", $dataObject->ReasonCode));
             self::OutputStatusMessage("* * * End OutputEditorialError * * *");
         }
     }
     static function OutputArrayOfEditorialError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->EditorialError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->EditorialError))
         {
             return;
         }
-        else if (!is_array($dataObjects->EditorialError))
+        else if (!\is_array($dataObjects->EditorialError))
         {
             self::OutputEditorialError($dataObjects->EditorialError);
             return;
@@ -289,14 +289,14 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputKeyValuePairOfstringstring * * *");
-            self::OutputStatusMessage(sprintf("key: %s", $dataObject->key));
-            self::OutputStatusMessage(sprintf("value: %s", $dataObject->value));
+            self::OutputStatusMessage(\sprintf("key: %s", $dataObject->key));
+            self::OutputStatusMessage(\sprintf("value: %s", $dataObject->value));
             self::OutputStatusMessage("* * * End OutputKeyValuePairOfstringstring * * *");
         }
     }
     static function OutputArrayOfKeyValuePairOfstringstring($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->KeyValuePairOfstringstring))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->KeyValuePairOfstringstring))
         {
             return;
         }
@@ -310,20 +310,20 @@ final class BulkExampleHelper {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputOperationError * * *");
-            self::OutputStatusMessage(sprintf("Code: %s", $dataObject->Code));
-            self::OutputStatusMessage(sprintf("Details: %s", $dataObject->Details));
-            self::OutputStatusMessage(sprintf("ErrorCode: %s", $dataObject->ErrorCode));
-            self::OutputStatusMessage(sprintf("Message: %s", $dataObject->Message));
+            self::OutputStatusMessage(\sprintf("Code: %s", $dataObject->Code));
+            self::OutputStatusMessage(\sprintf("Details: %s", $dataObject->Details));
+            self::OutputStatusMessage(\sprintf("ErrorCode: %s", $dataObject->ErrorCode));
+            self::OutputStatusMessage(\sprintf("Message: %s", $dataObject->Message));
             self::OutputStatusMessage("* * * End OutputOperationError * * *");
         }
     }
     static function OutputArrayOfOperationError($dataObjects)
     {
-        if(count((array)$dataObjects) == 0 || !isset($dataObjects->OperationError))
+        if(\count((array)$dataObjects) == 0 || !isset($dataObjects->OperationError))
         {
             return;
         }
-        else if (!is_array($dataObjects->OperationError))
+        else if (!\is_array($dataObjects->OperationError))
         {
             self::OutputOperationError($dataObjects->OperationError);
             return;
@@ -336,7 +336,7 @@ final class BulkExampleHelper {
     static function OutputCompressionType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCompressionType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -345,7 +345,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfCompressionType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -359,7 +359,7 @@ final class BulkExampleHelper {
     static function OutputDataScope($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDataScope * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -368,7 +368,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfDataScope($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -382,7 +382,7 @@ final class BulkExampleHelper {
     static function OutputDownloadEntity($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDownloadEntity * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -391,7 +391,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfDownloadEntity($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -405,7 +405,7 @@ final class BulkExampleHelper {
     static function OutputDownloadFileType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputDownloadFileType * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -414,7 +414,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfDownloadFileType($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -428,7 +428,7 @@ final class BulkExampleHelper {
     static function OutputResponseMode($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputResponseMode * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        self::OutputStatusMessage(\sprintf("Values in %s", $valueSet->type));
         foreach ($valueSet->string as $value)
         {
             self::OutputStatusMessage($value);
@@ -437,7 +437,7 @@ final class BulkExampleHelper {
     }
     static function OutputArrayOfResponseMode($valueSets)
     {
-        if(count((array)$valueSets) == 0)
+        if(\count((array)$valueSets) == 0)
         {
             return;
         }
@@ -450,44 +450,44 @@ final class BulkExampleHelper {
     }
     static function OutputStatusMessage($message)
     {
-        printf(" % s\n", $message);
+        \printf(" % s\n", $message);
     }
     static function OutputArrayOfString($items)
     {
-        if(count((array)$items) == 0 || !isset($items->string))
+        if(\count((array)$items) == 0 || !isset($items->string))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfString * * *");
         foreach ($items->string as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfString * * *");
     }
     static function OutputArrayOfLong($items)
     {
-        if(count((array)$items) == 0 || !isset($items->long))
+        if(\count((array)$items) == 0 || !isset($items->long))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfLong * * *");
         foreach ($items->long as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLong * * *");
     }
     static function OutputArrayOfInt($items)
     {
-        if(count((array)$items) == 0 || !isset($items->int))
+        if(\count((array)$items) == 0 || !isset($items->int))
         {
             return;
         }
         self::OutputStatusMessage("* * * Begin OutputArrayOfInt * * *");
         foreach ($items->int as $item)
         {
-            self::OutputStatusMessage(sprintf("%s", $item));
+            self::OutputStatusMessage(\sprintf("%s", $item));
         }
         self::OutputStatusMessage("* * * End OutputArrayOfInt * * *");
     }

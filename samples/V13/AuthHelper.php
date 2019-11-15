@@ -72,8 +72,8 @@ final class AuthHelper {
     static function Authenticate() 
     {   
         // Disable WSDL caching.
-        ini_set("soap.wsdl_cache_enabled", "0");
-        ini_set("soap.wsdl_cache_ttl", "0");
+        \ini_set("soap.wsdl_cache_enabled", "0");
+        \ini_set("soap.wsdl_cache_ttl", "0");
 
         // Authenticate with a Microsoft Account.
         AuthHelper::AuthenticateWithOAuth();
@@ -188,8 +188,8 @@ final class AuthHelper {
         }
         catch(OAuthTokenRequestException $e)
         {
-            printf("Error: %s\n", $e->Error);
-            printf("Description: %s\n", $e->Description);
+            \printf("Error: %s\n", $e->Error);
+            \printf("Description: %s\n", $e->Description);
 
             AuthHelper::RequestUserConsent();
         }
@@ -203,10 +203,10 @@ final class AuthHelper {
               "\n\nAfter you have granted consent in the web browser for the application to access your Microsoft Advertising accounts, " .
               "please enter the response URI that includes the authorization 'code' parameter: \n\n";
         
-        $responseUri = fgets(STDIN);
+        $responseUri = \fgets(STDIN);
         print "\n";
 
-        $GLOBALS['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri(trim($responseUri));
+        $GLOBALS['AuthorizationData']->Authentication->RequestOAuthTokensByResponseUri(\trim($responseUri));
         AuthHelper::WriteOAuthRefreshToken($GLOBALS['AuthorizationData']->Authentication->OAuthTokens->RefreshToken);
     }
     
@@ -219,11 +219,11 @@ final class AuthHelper {
     {
         $refreshToken = null;
         
-        if (file_exists(AuthHelper::OAuthRefreshTokenPath) && filesize(AuthHelper::OAuthRefreshTokenPath) > 0) 
+        if (\file_exists(AuthHelper::OAuthRefreshTokenPath) && \filesize(AuthHelper::OAuthRefreshTokenPath) > 0) 
         {
             $refreshTokenfile = @\fopen(AuthHelper::OAuthRefreshTokenPath,"r");
-            $refreshToken = fread($refreshTokenfile, filesize(AuthHelper::OAuthRefreshTokenPath));
-            fclose($refreshTokenfile);
+            $refreshToken = \fread($refreshTokenfile, \filesize(AuthHelper::OAuthRefreshTokenPath));
+            \fclose($refreshTokenfile);
         }
 
         return $refreshToken;
@@ -232,10 +232,10 @@ final class AuthHelper {
     static function WriteOAuthRefreshToken($refreshToken) 
     {        
         $refreshTokenfile = @\fopen(AuthHelper::OAuthRefreshTokenPath,"wb");
-        if (file_exists(AuthHelper::OAuthRefreshTokenPath))
+        if (\file_exists(AuthHelper::OAuthRefreshTokenPath))
         {
-            fwrite($refreshTokenfile, $refreshToken);
-            fclose($refreshTokenfile);
+            \fwrite($refreshTokenfile, $refreshToken);
+            \fclose($refreshTokenfile);
         }
 
         return;

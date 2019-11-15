@@ -51,12 +51,12 @@ $DownloadPath = "c:\\reports\\MyReport.zip";
 
 // Confirm that the download folder exist; otherwise, exit.
 
-$length = strrpos($DownloadPath, '\\');
-$folder = substr($DownloadPath, 0, $length);
+$length = \strrpos($DownloadPath, '\\');
+$folder = \substr($DownloadPath, 0, $length);
 
-if (!is_dir($folder))
+if (!\is_dir($folder))
 {
-    printf("The output folder, %s, does not exist.\nEnsure that the " .
+    \printf("The output folder, %s, does not exist.\nEnsure that the " .
         "folder exists and try again.", $folder);
     return;
 }
@@ -80,7 +80,7 @@ try
         $report
     )->ReportRequestId;
 
-    printf("Report Request ID: %s\r\n", $reportRequestId);
+    \printf("Report Request ID: %s\r\n", $reportRequestId);
     
     $waitTime = 10 * 1; 
     $requestStatus = null;
@@ -93,8 +93,8 @@ try
     
     for ($i = 0; $i < 30; $i++)
     {
-        printf("-----\r\nsleep(%s seconds)\r\n", $waitTime);
-        sleep($waitTime);
+        \printf("-----\r\nsleep(%s seconds)\r\n", $waitTime);
+        \sleep($waitTime);
         
         // Get the download request status.
         print("-----\r\nPollGenerateReport:\r\n");
@@ -104,8 +104,8 @@ try
 
         $requestStatus = $pollGenerateReportResponse->ReportRequestStatus->Status;
         $resultFileUrl = $pollGenerateReportResponse->ReportRequestStatus->ReportDownloadUrl;
-        printf("RequestStatus: %s\r\n", $requestStatus);
-        printf("ReportDownloadUrl: %s\r\n", $resultFileUrl);
+        \printf("RequestStatus: %s\r\n", $requestStatus);
+        \printf("ReportDownloadUrl: %s\r\n", $resultFileUrl);
     
     	if ($requestStatus == ReportRequestStatusType::Success ||
     		$requestStatus == ReportRequestStatusType::Error)
@@ -124,21 +124,21 @@ try
             }
             else
             {
-                printf("-----\r\nDownloading from %s.\r\n", $resultFileUrl);
+                \printf("-----\r\nDownloading from %s.\r\n", $resultFileUrl);
                 DownloadFile($resultFileUrl, $DownloadPath);
-                printf("The report was written to %s.\r\n", $DownloadPath);
+                \printf("The report was written to %s.\r\n", $DownloadPath);
             }
     		
     	}
     	else if ($requestStatus == ReportRequestStatusType::Error)
     	{
-    		printf("The request failed. Try requesting the report later.\r\n" .
+    		\printf("The request failed. Try requesting the report later.\r\n" .
                 "If the request continues to fail, contact support.\r\n"
             );
     	}
     	else  // Pending
     	{
-    		printf("The request is taking longer than expected.\r\n " .
+    		\printf("The request is taking longer than expected.\r\n " .
                 "Save the report ID (%s) and try again later.\r\n",
                 $reportRequestId
             );
@@ -147,8 +147,8 @@ try
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
@@ -172,39 +172,39 @@ catch (Exception $e)
 
 function DownloadFile($resultFileUrl, $downloadPath)
 {
-    if (!$reader = fopen($resultFileUrl, 'rb'))
+    if (!$reader = \fopen($resultFileUrl, 'rb'))
     {
         throw new Exception("Failed to open URL " . $resultFileUrl . ".");
     }
 
-    if (!$writer = fopen($downloadPath, 'wb'))
+    if (!$writer = \fopen($downloadPath, 'wb'))
     {
-        fclose($reader);
+        \fclose($reader);
         throw new Exception("Failed to create ZIP file " . $downloadPath . ".");
     }
 
     $bufferSize = 100 * 1024;
 
-    while (!feof($reader))
+    while (!\feof($reader))
     {
-        if (false === ($buffer = fread($reader, $bufferSize)))
+        if (false === ($buffer = \fread($reader, $bufferSize)))
         {
-             fclose($reader);
-             fclose($writer);
+             \fclose($reader);
+             \fclose($writer);
              throw new Exception("Read operation from URL failed.");
         }
 
-        if (fwrite($writer, $buffer) === false)
+        if (\fwrite($writer, $buffer) === false)
         {
-             fclose($reader);
-             fclose($writer);
+             \fclose($reader);
+             \fclose($writer);
              $exception = new Exception("Write operation to ZIP file failed.");
         }
     }
 
-    fclose($reader);
-    fflush($writer);
-    fclose($writer);
+    \fclose($reader);
+    \fflush($writer);
+    \fclose($writer);
 }
 
 function GetKeywordPerformanceReportRequest($accountId) 

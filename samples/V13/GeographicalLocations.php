@@ -46,7 +46,7 @@ try
     // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    date_default_timezone_set('UTC');
+    \date_default_timezone_set('UTC');
 
     // Going forward you should track the date and time of the previous download,  
     // and compare it with the last modified time provided by the service.
@@ -62,29 +62,29 @@ try
     $fileUrlExpiryTimeUtc = $getGeoLocationsFileUrlResponse->FileUrlExpiryTimeUtc;
     $lastModifiedTimeUtc = $getGeoLocationsFileUrlResponse->LastModifiedTimeUtc;
 
-    printf("FileUrl: %s\r\n", $fileUrl);
-    printf("FileUrlExpiryTimeUtc: %s\r\n", $fileUrlExpiryTimeUtc);
-    printf("LastModifiedTimeUtc: %s\r\n", $lastModifiedTimeUtc);
+    \printf("FileUrl: %s\r\n", $fileUrl);
+    \printf("FileUrlExpiryTimeUtc: %s\r\n", $fileUrlExpiryTimeUtc);
+    \printf("LastModifiedTimeUtc: %s\r\n", $lastModifiedTimeUtc);
     
     // Download the file if it was modified since the previous download.
     if($previousSyncTimeUtc < new DateTime($lastModifiedTimeUtc))
     {
-        printf("Downloading the file locally: %s\r\n", 
+        \printf("Downloading the file locally: %s\r\n", 
             $GLOBALS['LocalFile']
         );
         DownloadFile($fileUrl);
     }
     else
     {
-        printf("The file has not been modified since your previous sync time (%s).\r\n", 
+        \printf("The file has not been modified since your previous sync time (%s).\r\n", 
             $previousSyncTimeUtc->format('Y-m-d\TH:i:se')
         );
     }
 }
 catch (SoapFault $e)
 {
-	printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
-    var_dump($e->detail);
+	\printf("-----\r\nFault Code: %s\r\nFault String: %s\r\nFault Detail: \r\n", $e->faultcode, $e->faultstring);
+    \var_dump($e->detail);
 	print "-----\r\nLast SOAP request/response:\r\n";
     print $GLOBALS['Proxy']->GetWsdl() . "\r\n";
 	print $GLOBALS['Proxy']->GetService()->__getLastRequest()."\r\n";
@@ -103,31 +103,31 @@ catch (Exception $e)
 }
 
 function DownloadFile($fileUrl){
-    $ch = curl_init($fileUrl);
-    $fileHandle = fopen($GLOBALS['TempFile'], 'w+');
+    $ch = \curl_init($fileUrl);
+    $fileHandle = \fopen($GLOBALS['TempFile'], 'w+');
 
-    curl_setopt($ch, CURLOPT_FILETIME, true); 
-    curl_setopt($ch, CURLOPT_ENCODING, "gzip");
-    curl_setopt($ch, CURLOPT_FILE, $fileHandle); 
+    \curl_setopt($ch, CURLOPT_FILETIME, true); 
+    \curl_setopt($ch, CURLOPT_ENCODING, "gzip");
+    \curl_setopt($ch, CURLOPT_FILE, $fileHandle); 
     
-    curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    \curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    \curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-    $response = curl_exec($ch); 
+    $response = \curl_exec($ch); 
 
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);     
+    $httpCode = \curl_getinfo($ch, CURLINFO_HTTP_CODE);     
  
-    curl_close($ch);
-    fclose($fileHandle);
+    \curl_close($ch);
+    \fclose($fileHandle);
     
     if ($httpCode == 200)
     {
-        printf("Downloaded the geographical locations to %s.\r\n", $GLOBALS['LocalFile']);
-        rename($GLOBALS['TempFile'], $GLOBALS['LocalFile']);
+        \printf("Downloaded the geographical locations to %s.\r\n", $GLOBALS['LocalFile']);
+        \rename($GLOBALS['TempFile'], $GLOBALS['LocalFile']);
     }
     else
     {
-        printf("The geographical locations file was not successfully downloaded.\r\n");
-        unlink($GLOBALS['TempFile']);
+        \printf("The geographical locations file was not successfully downloaded.\r\n");
+        \unlink($GLOBALS['TempFile']);
     }
 }

@@ -22,7 +22,7 @@ use Microsoft\BingAds\Samples\WebAuthHelper;
 
 use Exception;
 
-session_start();
+\session_start();
 
 // If there is no user authenticated, go back to the site index.
 
@@ -31,7 +31,7 @@ if(!isset($_SESSION['AuthorizationData']) ||
 !isset($_SESSION['AuthorizationData']->Authentication->OAuthTokens)
 )
 {
-    header('Location: '. 'https://' . $_SERVER['HTTP_HOST']);
+    \header('Location: '. 'https://' . $_SERVER['HTTP_HOST']);
 }
 else {
     // If a refresh token is already present, use it to request new access and refresh tokens.
@@ -43,8 +43,8 @@ else {
         $_SESSION['AuthorizationData']->Authentication->RequestOAuthTokensByRefreshToken($refreshToken);
     }
 
-    printf("Access token: %s<br/>", $_SESSION['AuthorizationData']->Authentication->OAuthTokens->AccessToken);
-    printf("Refresh token: %s<br/>", $_SESSION['AuthorizationData']->Authentication->OAuthTokens->RefreshToken);
+    \printf("Access token: %s<br/>", $_SESSION['AuthorizationData']->Authentication->OAuthTokens->AccessToken);
+    \printf("Refresh token: %s<br/>", $_SESSION['AuthorizationData']->Authentication->OAuthTokens->RefreshToken);
 
     $GLOBALS['CustomerManagementProxy'] = new ServiceClient(
         ServiceClientType::CustomerManagementVersion13, 
@@ -79,10 +79,10 @@ else {
     print "-----<br/>Accounts the user can access:<br/>";
     foreach ($accounts->AdvertiserAccount as $account)
     {
-        printf("Account Name: %s<br/>", $account->Name);
+        \printf("Account Name: %s<br/>", $account->Name);
     }
 }
 
-session_unset();
+\session_unset();
 
 ?>
