@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\Bulk;
      * @used-by ApiFaultDetail
      * @used-by GetBulkDownloadStatusResponse
      * @used-by GetBulkUploadStatusResponse
+     * @used-by UploadEntityRecordsResponse
      */
     final class OperationError
     {
