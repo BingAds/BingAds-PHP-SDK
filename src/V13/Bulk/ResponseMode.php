@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\Bulk;
      * @link https://docs.microsoft.com/en-us/advertising/bulk-service/responsemode?view=bingads-13 ResponseMode Value Set
      * 
      * @used-by GetBulkUploadUrlRequest
+     * @used-by UploadEntityRecordsRequest
      */
     final class ResponseMode
     {
