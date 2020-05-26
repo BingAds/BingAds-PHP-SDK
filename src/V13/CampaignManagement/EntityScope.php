@@ -9,6 +9,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @used-by Audience
      * @used-by ConversionGoal
+     * @used-by AddListItemsToSharedListRequest
+     * @used-by AddSharedEntityRequest
+     * @used-by DeleteListItemsFromSharedListRequest
+     * @used-by DeleteSharedEntitiesRequest
+     * @used-by DeleteSharedEntityAssociationsRequest
+     * @used-by GetListItemsBySharedListRequest
+     * @used-by GetSharedEntitiesRequest
+     * @used-by GetSharedEntityAssociationsByEntityIdsRequest
+     * @used-by GetSharedEntityAssociationsBySharedEntityIdsRequest
+     * @used-by SetSharedEntityAssociationsRequest
+     * @used-by UpdateSharedEntitiesRequest
      */
     final class EntityScope
     {

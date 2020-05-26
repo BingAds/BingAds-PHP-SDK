@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ExperimentIds;
 
         /**
-         * Determines the index and size of experiment results per page.
+         * Reserved for future use.
          * @var Paging
          */
         public $PageInfo;

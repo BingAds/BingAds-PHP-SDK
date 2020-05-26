@@ -19,6 +19,7 @@ use Microsoft\BingAds\V13\CampaignManagement\AddCampaignCriterionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddCampaignsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddConversionGoalsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddExperimentsRequest;
+use Microsoft\BingAds\V13\CampaignManagement\AddImportJobsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddKeywordsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddLabelsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddListItemsToSharedListRequest;
@@ -39,6 +40,7 @@ use Microsoft\BingAds\V13\CampaignManagement\DeleteBudgetsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteCampaignCriterionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteCampaignsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteExperimentsRequest;
+use Microsoft\BingAds\V13\CampaignManagement\DeleteImportJobsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteKeywordsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteLabelAssociationsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteLabelsRequest;
@@ -71,7 +73,10 @@ use Microsoft\BingAds\V13\CampaignManagement\GetConversionGoalsByIdsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetConversionGoalsByTagIdsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetEditorialReasonsByIdsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetExperimentsByIdsRequest;
+use Microsoft\BingAds\V13\CampaignManagement\GetFileImportUploadUrlRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetGeoLocationsFileUrlRequest;
+use Microsoft\BingAds\V13\CampaignManagement\GetImportJobsByIdsRequest;
+use Microsoft\BingAds\V13\CampaignManagement\GetImportResultsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetKeywordsByAdGroupIdRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetKeywordsByEditorialStatusRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetKeywordsByIdsRequest;
@@ -86,6 +91,7 @@ use Microsoft\BingAds\V13\CampaignManagement\GetNegativeKeywordsByEntityIdsReque
 use Microsoft\BingAds\V13\CampaignManagement\GetNegativeSitesByAdGroupIdsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetNegativeSitesByCampaignIdsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetProfileDataFileUrlRequest;
+use Microsoft\BingAds\V13\CampaignManagement\GetSharedEntitiesRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetSharedEntitiesByAccountIdRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetSharedEntityAssociationsByEntityIdsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\GetSharedEntityAssociationsBySharedEntityIdsRequest;
@@ -247,6 +253,18 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->AddExperiments($request);
     }
+    static function AddImportJobs(
+        $importJobs)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new AddImportJobsRequest();
+
+        $request->ImportJobs = $importJobs;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->AddImportJobs($request);
+    }
     static function AddKeywords(
         $adGroupId,
         $keywords,
@@ -277,7 +295,8 @@ final class CampaignManagementExampleHelper {
     }
     static function AddListItemsToSharedList(
         $listItems,
-        $sharedList)
+        $sharedList,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -286,6 +305,7 @@ final class CampaignManagementExampleHelper {
 
         $request->ListItems = $listItems;
         $request->SharedList = $sharedList;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->AddListItemsToSharedList($request);
     }
@@ -317,7 +337,8 @@ final class CampaignManagementExampleHelper {
     }
     static function AddSharedEntity(
         $sharedEntity,
-        $listItems)
+        $listItems,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -326,6 +347,7 @@ final class CampaignManagementExampleHelper {
 
         $request->SharedEntity = $sharedEntity;
         $request->ListItems = $listItems;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->AddSharedEntity($request);
     }
@@ -521,6 +543,20 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteExperiments($request);
     }
+    static function DeleteImportJobs(
+        $importJobIds,
+        $importType)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new DeleteImportJobsRequest();
+
+        $request->ImportJobIds = $importJobIds;
+        $request->ImportType = $importType;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteImportJobs($request);
+    }
     static function DeleteKeywords(
         $adGroupId,
         $keywordIds)
@@ -563,7 +599,8 @@ final class CampaignManagementExampleHelper {
     }
     static function DeleteListItemsFromSharedList(
         $listItemIds,
-        $sharedList)
+        $sharedList,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -572,6 +609,7 @@ final class CampaignManagementExampleHelper {
 
         $request->ListItemIds = $listItemIds;
         $request->SharedList = $sharedList;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteListItemsFromSharedList($request);
     }
@@ -602,7 +640,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteNegativeKeywordsFromEntities($request);
     }
     static function DeleteSharedEntities(
-        $sharedEntities)
+        $sharedEntities,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -610,11 +649,13 @@ final class CampaignManagementExampleHelper {
         $request = new DeleteSharedEntitiesRequest();
 
         $request->SharedEntities = $sharedEntities;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteSharedEntities($request);
     }
     static function DeleteSharedEntityAssociations(
-        $associations)
+        $associations,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -622,6 +663,7 @@ final class CampaignManagementExampleHelper {
         $request = new DeleteSharedEntityAssociationsRequest();
 
         $request->Associations = $associations;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->DeleteSharedEntityAssociations($request);
     }
@@ -738,7 +780,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupCriterionsByIds($request);
     }
     static function GetAdGroupsByCampaignId(
-        $campaignId)
+        $campaignId,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -746,12 +789,14 @@ final class CampaignManagementExampleHelper {
         $request = new GetAdGroupsByCampaignIdRequest();
 
         $request->CampaignId = $campaignId;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByCampaignId($request);
     }
     static function GetAdGroupsByIds(
         $campaignId,
-        $adGroupIds)
+        $adGroupIds,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -760,6 +805,7 @@ final class CampaignManagementExampleHelper {
 
         $request->CampaignId = $campaignId;
         $request->AdGroupIds = $adGroupIds;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAdGroupsByIds($request);
     }
@@ -885,7 +931,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetCampaignsByAccountId(
         $accountId,
-        $campaignType)
+        $campaignType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -894,13 +941,15 @@ final class CampaignManagementExampleHelper {
 
         $request->AccountId = $accountId;
         $request->CampaignType = $campaignType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByAccountId($request);
     }
     static function GetCampaignsByIds(
         $accountId,
         $campaignIds,
-        $campaignType)
+        $campaignType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -910,6 +959,7 @@ final class CampaignManagementExampleHelper {
         $request->AccountId = $accountId;
         $request->CampaignIds = $campaignIds;
         $request->CampaignType = $campaignType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetCampaignsByIds($request);
     }
@@ -975,6 +1025,16 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetExperimentsByIds($request);
     }
+    static function GetFileImportUploadUrl()
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new GetFileImportUploadUrlRequest();
+
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->GetFileImportUploadUrl($request);
+    }
     static function GetGeoLocationsFileUrl(
         $version,
         $languageLocale)
@@ -988,6 +1048,34 @@ final class CampaignManagementExampleHelper {
         $request->LanguageLocale = $languageLocale;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetGeoLocationsFileUrl($request);
+    }
+    static function GetImportJobsByIds(
+        $importJobIds,
+        $importType)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new GetImportJobsByIdsRequest();
+
+        $request->ImportJobIds = $importJobIds;
+        $request->ImportType = $importType;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->GetImportJobsByIds($request);
+    }
+    static function GetImportResults(
+        $importType,
+        $pageInfo)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new GetImportResultsRequest();
+
+        $request->ImportType = $importType;
+        $request->PageInfo = $pageInfo;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->GetImportResults($request);
     }
     static function GetKeywordsByAdGroupId(
         $adGroupId)
@@ -1074,7 +1162,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetLabelsByIds($request);
     }
     static function GetListItemsBySharedList(
-        $sharedList)
+        $sharedList,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1082,6 +1171,7 @@ final class CampaignManagementExampleHelper {
         $request = new GetListItemsBySharedListRequest();
 
         $request->SharedList = $sharedList;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetListItemsBySharedList($request);
     }
@@ -1183,6 +1273,20 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetProfileDataFileUrl($request);
     }
+    static function GetSharedEntities(
+        $sharedEntityType,
+        $sharedEntityScope)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new GetSharedEntitiesRequest();
+
+        $request->SharedEntityType = $sharedEntityType;
+        $request->SharedEntityScope = $sharedEntityScope;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntities($request);
+    }
     static function GetSharedEntitiesByAccountId(
         $sharedEntityType)
     {
@@ -1198,7 +1302,8 @@ final class CampaignManagementExampleHelper {
     static function GetSharedEntityAssociationsByEntityIds(
         $entityIds,
         $entityType,
-        $sharedEntityType)
+        $sharedEntityType,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1208,13 +1313,15 @@ final class CampaignManagementExampleHelper {
         $request->EntityIds = $entityIds;
         $request->EntityType = $entityType;
         $request->SharedEntityType = $sharedEntityType;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntityAssociationsByEntityIds($request);
     }
     static function GetSharedEntityAssociationsBySharedEntityIds(
         $entityType,
         $sharedEntityIds,
-        $sharedEntityType)
+        $sharedEntityType,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1224,6 +1331,7 @@ final class CampaignManagementExampleHelper {
         $request->EntityType = $entityType;
         $request->SharedEntityIds = $sharedEntityIds;
         $request->SharedEntityType = $sharedEntityType;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetSharedEntityAssociationsBySharedEntityIds($request);
     }
@@ -1324,7 +1432,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->SetNegativeSitesToCampaigns($request);
     }
     static function SetSharedEntityAssociations(
-        $associations)
+        $associations,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1332,6 +1441,7 @@ final class CampaignManagementExampleHelper {
         $request = new SetSharedEntityAssociationsRequest();
 
         $request->Associations = $associations;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->SetSharedEntityAssociations($request);
     }
@@ -1500,7 +1610,8 @@ final class CampaignManagementExampleHelper {
         return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateLabels($request);
     }
     static function UpdateSharedEntities(
-        $sharedEntities)
+        $sharedEntities,
+        $sharedEntityScope)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1508,6 +1619,7 @@ final class CampaignManagementExampleHelper {
         $request = new UpdateSharedEntitiesRequest();
 
         $request->SharedEntities = $sharedEntities;
+        $request->SharedEntityScope = $sharedEntityScope;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->UpdateSharedEntities($request);
     }
@@ -1777,6 +1889,10 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputPriceAdExtension($dataObject);
             }
+            if($dataObject->Type === "PromotionAdExtension")
+            {
+                self::OutputPromotionAdExtension($dataObject);
+            }
             if($dataObject->Type === "ReviewAdExtension")
             {
                 self::OutputReviewAdExtension($dataObject);
@@ -1966,6 +2082,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
             self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage(sprintf("AdScheduleUseSearcherTimeZone: %s", $dataObject->AdScheduleUseSearcherTimeZone));
             self::OutputStatusMessage("* * * End OutputAdGroup * * *");
         }
     }
@@ -2326,6 +2443,10 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage("SupportedCampaignTypes:");
             self::OutputArrayOfString($dataObject->SupportedCampaignTypes);
             self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            if($dataObject->Type === "CombinedList")
+            {
+                self::OutputCombinedList($dataObject);
+            }
             if($dataObject->Type === "Custom")
             {
                 self::OutputCustomAudience($dataObject);
@@ -2547,6 +2668,10 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputMaxConversionsBiddingScheme($dataObject);
             }
+            if($dataObject->Type === "MaxConversionValueBiddingScheme")
+            {
+                self::OutputMaxConversionValueBiddingScheme($dataObject);
+            }
             if($dataObject->Type === "MaxRoasBiddingScheme")
             {
                 self::OutputMaxRoasBiddingScheme($dataObject);
@@ -2714,6 +2839,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("BudgetId: %s", $dataObject->BudgetId));
             self::OutputStatusMessage("Languages:");
             self::OutputArrayOfString($dataObject->Languages);
+            self::OutputStatusMessage(sprintf("AdScheduleUseSearcherTimeZone: %s", $dataObject->AdScheduleUseSearcherTimeZone));
             self::OutputStatusMessage("* * * End OutputCampaign * * *");
         }
     }
@@ -2726,6 +2852,28 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->Campaign as $dataObject)
         {
             self::OutputCampaign($dataObject);
+        }
+    }
+    static function OutputCampaignAdGroupIds($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputCampaignAdGroupIds * * *");
+            self::OutputStatusMessage("AdGroupIds:");
+            self::OutputArrayOfLong($dataObject->AdGroupIds);
+            self::OutputStatusMessage(sprintf("CampaignId: %s", $dataObject->CampaignId));
+            self::OutputStatusMessage("* * * End OutputCampaignAdGroupIds * * *");
+        }
+    }
+    static function OutputArrayOfCampaignAdGroupIds($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CampaignAdGroupIds))
+        {
+            return;
+        }
+        foreach ($dataObjects->CampaignAdGroupIds as $dataObject)
+        {
+            self::OutputCampaignAdGroupIds($dataObject);
         }
     }
     static function OutputCampaignCriterion($dataObject)
@@ -2783,6 +2931,49 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->CampaignNegativeSites as $dataObject)
         {
             self::OutputCampaignNegativeSites($dataObject);
+        }
+    }
+    static function OutputCombinationRule($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputCombinationRule * * *");
+            self::OutputStatusMessage("AudienceIds:");
+            self::OutputArrayOfLong($dataObject->AudienceIds);
+            self::OutputStatusMessage(sprintf("Operator: %s", $dataObject->Operator));
+            self::OutputStatusMessage("* * * End OutputCombinationRule * * *");
+        }
+    }
+    static function OutputArrayOfCombinationRule($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CombinationRule))
+        {
+            return;
+        }
+        foreach ($dataObjects->CombinationRule as $dataObject)
+        {
+            self::OutputCombinationRule($dataObject);
+        }
+    }
+    static function OutputCombinedList($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputCombinedList * * *");
+            self::OutputStatusMessage("CombinationRules:");
+            self::OutputArrayOfCombinationRule($dataObject->CombinationRules);
+            self::OutputStatusMessage("* * * End OutputCombinedList * * *");
+        }
+    }
+    static function OutputArrayOfCombinedList($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CombinedList))
+        {
+            return;
+        }
+        foreach ($dataObjects->CombinedList as $dataObject)
+        {
+            self::OutputCombinedList($dataObject);
         }
     }
     static function OutputCompany($dataObject)
@@ -2961,6 +3152,10 @@ final class CampaignManagementExampleHelper {
             if($dataObject->Type === "RadiusCriterion")
             {
                 self::OutputRadiusCriterion($dataObject);
+            }
+            if($dataObject->Type === "StoreCriterion")
+            {
+                self::OutputStoreCriterion($dataObject);
             }
             if($dataObject->Type === "Webpage")
             {
@@ -3598,6 +3793,46 @@ final class CampaignManagementExampleHelper {
             self::OutputExperiment($dataObject);
         }
     }
+    static function OutputFileImportJob($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputFileImportJob * * *");
+            self::OutputStatusMessage(sprintf("FileSource: %s", $dataObject->FileSource));
+            self::OutputStatusMessage(sprintf("FileUrl: %s", $dataObject->FileUrl));
+            self::OutputStatusMessage("* * * End OutputFileImportJob * * *");
+        }
+    }
+    static function OutputArrayOfFileImportJob($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->FileImportJob))
+        {
+            return;
+        }
+        foreach ($dataObjects->FileImportJob as $dataObject)
+        {
+            self::OutputFileImportJob($dataObject);
+        }
+    }
+    static function OutputFileImportOption($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputFileImportOption * * *");
+            self::OutputStatusMessage("* * * End OutputFileImportOption * * *");
+        }
+    }
+    static function OutputArrayOfFileImportOption($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->FileImportOption))
+        {
+            return;
+        }
+        foreach ($dataObjects->FileImportOption as $dataObject)
+        {
+            self::OutputFileImportOption($dataObject);
+        }
+    }
     static function OutputFixedBid($dataObject)
     {
         if (!empty($dataObject))
@@ -3616,6 +3851,28 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->FixedBid as $dataObject)
         {
             self::OutputFixedBid($dataObject);
+        }
+    }
+    static function OutputFrequency($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputFrequency * * *");
+            self::OutputStatusMessage(sprintf("Cron: %s", $dataObject->Cron));
+            self::OutputStatusMessage(sprintf("TimeZone: %s", $dataObject->TimeZone));
+            self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            self::OutputStatusMessage("* * * End OutputFrequency * * *");
+        }
+    }
+    static function OutputArrayOfFrequency($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Frequency))
+        {
+            return;
+        }
+        foreach ($dataObjects->Frequency as $dataObject)
+        {
+            self::OutputFrequency($dataObject);
         }
     }
     static function OutputGenderCriterion($dataObject)
@@ -3657,6 +3914,133 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->GeoPoint as $dataObject)
         {
             self::OutputGeoPoint($dataObject);
+        }
+    }
+    static function OutputGoogleImportJob($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputGoogleImportJob * * *");
+            self::OutputStatusMessage("CampaignAdGroupIds:");
+            self::OutputArrayOfCampaignAdGroupIds($dataObject->CampaignAdGroupIds);
+            self::OutputStatusMessage(sprintf("CredentialId: %s", $dataObject->CredentialId));
+            self::OutputStatusMessage(sprintf("GoogleAccountId: %s", $dataObject->GoogleAccountId));
+            self::OutputStatusMessage(sprintf("GoogleUserName: %s", $dataObject->GoogleUserName));
+            self::OutputStatusMessage("* * * End OutputGoogleImportJob * * *");
+        }
+    }
+    static function OutputArrayOfGoogleImportJob($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->GoogleImportJob))
+        {
+            return;
+        }
+        foreach ($dataObjects->GoogleImportJob as $dataObject)
+        {
+            self::OutputGoogleImportJob($dataObject);
+        }
+    }
+    static function OutputGoogleImportOption($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputGoogleImportOption * * *");
+            self::OutputStatusMessage(sprintf("AccountUrlOptions: %s", $dataObject->AccountUrlOptions));
+            self::OutputStatusMessage(sprintf("AdjustmentForBids: %s", $dataObject->AdjustmentForBids));
+            self::OutputStatusMessage(sprintf("AdjustmentForCampaignBudgets: %s", $dataObject->AdjustmentForCampaignBudgets));
+            self::OutputStatusMessage(sprintf("AssociatedStoreId: %s", $dataObject->AssociatedStoreId));
+            self::OutputStatusMessage(sprintf("AssociatedUetTagId: %s", $dataObject->AssociatedUetTagId));
+            self::OutputStatusMessage(sprintf("DeleteRemovedEntities: %s", $dataObject->DeleteRemovedEntities));
+            self::OutputStatusMessage(sprintf("EnableAutoCurrencyConversion: %s", $dataObject->EnableAutoCurrencyConversion));
+            self::OutputStatusMessage(sprintf("EnableParentLocationMapping: %s", $dataObject->EnableParentLocationMapping));
+            self::OutputStatusMessage(sprintf("NewActiveAdsForExistingAdGroups: %s", $dataObject->NewActiveAdsForExistingAdGroups));
+            self::OutputStatusMessage(sprintf("NewActiveCampaignsAndChildEntities: %s", $dataObject->NewActiveCampaignsAndChildEntities));
+            self::OutputStatusMessage(sprintf("NewAdCustomizerFeeds: %s", $dataObject->NewAdCustomizerFeeds));
+            self::OutputStatusMessage(sprintf("NewAdGroupsAndChildEntitiesForExistingCampaigns: %s", $dataObject->NewAdGroupsAndChildEntitiesForExistingCampaigns));
+            self::OutputStatusMessage(sprintf("NewAdSchedules: %s", $dataObject->NewAdSchedules));
+            self::OutputStatusMessage(sprintf("NewAppAdExtensions: %s", $dataObject->NewAppAdExtensions));
+            self::OutputStatusMessage(sprintf("NewAudienceTargets: %s", $dataObject->NewAudienceTargets));
+            self::OutputStatusMessage(sprintf("NewCallAdExtensions: %s", $dataObject->NewCallAdExtensions));
+            self::OutputStatusMessage(sprintf("NewCalloutAdExtensions: %s", $dataObject->NewCalloutAdExtensions));
+            self::OutputStatusMessage(sprintf("NewDemographicTargets: %s", $dataObject->NewDemographicTargets));
+            self::OutputStatusMessage(sprintf("NewDeviceTargets: %s", $dataObject->NewDeviceTargets));
+            self::OutputStatusMessage(sprintf("NewEntities: %s", $dataObject->NewEntities));
+            self::OutputStatusMessage(sprintf("NewKeywordUrls: %s", $dataObject->NewKeywordUrls));
+            self::OutputStatusMessage(sprintf("NewKeywordsForExistingAdGroups: %s", $dataObject->NewKeywordsForExistingAdGroups));
+            self::OutputStatusMessage(sprintf("NewLabels: %s", $dataObject->NewLabels));
+            self::OutputStatusMessage(sprintf("NewLocationAdExtensions: %s", $dataObject->NewLocationAdExtensions));
+            self::OutputStatusMessage(sprintf("NewLocationTargets: %s", $dataObject->NewLocationTargets));
+            self::OutputStatusMessage(sprintf("NewNegativeKeywordLists: %s", $dataObject->NewNegativeKeywordLists));
+            self::OutputStatusMessage(sprintf("NewNegativeKeywordsForExistingParents: %s", $dataObject->NewNegativeKeywordsForExistingParents));
+            self::OutputStatusMessage(sprintf("NewNegativeSites: %s", $dataObject->NewNegativeSites));
+            self::OutputStatusMessage(sprintf("NewPageFeeds: %s", $dataObject->NewPageFeeds));
+            self::OutputStatusMessage(sprintf("NewPausedAdsForExistingAdGroups: %s", $dataObject->NewPausedAdsForExistingAdGroups));
+            self::OutputStatusMessage(sprintf("NewPausedCampaignsAndChildEntities: %s", $dataObject->NewPausedCampaignsAndChildEntities));
+            self::OutputStatusMessage(sprintf("NewPriceAdExtensions: %s", $dataObject->NewPriceAdExtensions));
+            self::OutputStatusMessage(sprintf("NewProductFilters: %s", $dataObject->NewProductFilters));
+            self::OutputStatusMessage(sprintf("NewReviewAdExtensions: %s", $dataObject->NewReviewAdExtensions));
+            self::OutputStatusMessage(sprintf("NewSitelinkAdExtensions: %s", $dataObject->NewSitelinkAdExtensions));
+            self::OutputStatusMessage(sprintf("NewStructuredSnippetAdExtensions: %s", $dataObject->NewStructuredSnippetAdExtensions));
+            self::OutputStatusMessage(sprintf("NewUrlOptions: %s", $dataObject->NewUrlOptions));
+            self::OutputStatusMessage(sprintf("PauseCampaignsWithoutSupportedLocations: %s", $dataObject->PauseCampaignsWithoutSupportedLocations));
+            self::OutputStatusMessage(sprintf("PauseNewCampaigns: %s", $dataObject->PauseNewCampaigns));
+            self::OutputStatusMessage(sprintf("RaiseBidsToMinimum: %s", $dataObject->RaiseBidsToMinimum));
+            self::OutputStatusMessage(sprintf("RaiseCampaignBudgetsToMinimum: %s", $dataObject->RaiseCampaignBudgetsToMinimum));
+            self::OutputStatusMessage(sprintf("RaiseProductGroupBidsToMinimum: %s", $dataObject->RaiseProductGroupBidsToMinimum));
+            self::OutputStatusMessage(sprintf("SearchAndDsaMixedCampaignAsSearchCampaign: %s", $dataObject->SearchAndDsaMixedCampaignAsSearchCampaign));
+            self::OutputStatusMessage("SearchAndReplaceForCampaignNames:");
+            self::OutputImportSearchAndReplaceForStringProperty($dataObject->SearchAndReplaceForCampaignNames);
+            self::OutputStatusMessage("SearchAndReplaceForTrackingTemplates:");
+            self::OutputImportSearchAndReplaceForStringProperty($dataObject->SearchAndReplaceForTrackingTemplates);
+            self::OutputStatusMessage("SearchAndReplaceForUrls:");
+            self::OutputImportSearchAndReplaceForStringProperty($dataObject->SearchAndReplaceForUrls);
+            self::OutputStatusMessage(sprintf("SuffixForCampaignNames: %s", $dataObject->SuffixForCampaignNames));
+            self::OutputStatusMessage(sprintf("SuffixForTrackingTemplates: %s", $dataObject->SuffixForTrackingTemplates));
+            self::OutputStatusMessage(sprintf("SuffixForUrls: %s", $dataObject->SuffixForUrls));
+            self::OutputStatusMessage(sprintf("UpdateAdCustomizerFeeds: %s", $dataObject->UpdateAdCustomizerFeeds));
+            self::OutputStatusMessage(sprintf("UpdateAdGroupNetwork: %s", $dataObject->UpdateAdGroupNetwork));
+            self::OutputStatusMessage(sprintf("UpdateAdSchedules: %s", $dataObject->UpdateAdSchedules));
+            self::OutputStatusMessage(sprintf("UpdateAppAdExtensions: %s", $dataObject->UpdateAppAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateAudienceTargets: %s", $dataObject->UpdateAudienceTargets));
+            self::OutputStatusMessage(sprintf("UpdateBiddingStrategies: %s", $dataObject->UpdateBiddingStrategies));
+            self::OutputStatusMessage(sprintf("UpdateBids: %s", $dataObject->UpdateBids));
+            self::OutputStatusMessage(sprintf("UpdateCallAdExtensions: %s", $dataObject->UpdateCallAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateCalloutAdExtensions: %s", $dataObject->UpdateCalloutAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateCampaignAdGroupLanguages: %s", $dataObject->UpdateCampaignAdGroupLanguages));
+            self::OutputStatusMessage(sprintf("UpdateCampaignBudgets: %s", $dataObject->UpdateCampaignBudgets));
+            self::OutputStatusMessage(sprintf("UpdateCampaignNames: %s", $dataObject->UpdateCampaignNames));
+            self::OutputStatusMessage(sprintf("UpdateDemographicTargets: %s", $dataObject->UpdateDemographicTargets));
+            self::OutputStatusMessage(sprintf("UpdateDeviceTargets: %s", $dataObject->UpdateDeviceTargets));
+            self::OutputStatusMessage(sprintf("UpdateEntities: %s", $dataObject->UpdateEntities));
+            self::OutputStatusMessage(sprintf("UpdateKeywordUrls: %s", $dataObject->UpdateKeywordUrls));
+            self::OutputStatusMessage(sprintf("UpdateLabels: %s", $dataObject->UpdateLabels));
+            self::OutputStatusMessage(sprintf("UpdateLocationAdExtensions: %s", $dataObject->UpdateLocationAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateLocationTargets: %s", $dataObject->UpdateLocationTargets));
+            self::OutputStatusMessage(sprintf("UpdateNegativeKeywordLists: %s", $dataObject->UpdateNegativeKeywordLists));
+            self::OutputStatusMessage(sprintf("UpdateNegativeSites: %s", $dataObject->UpdateNegativeSites));
+            self::OutputStatusMessage(sprintf("UpdatePageFeeds: %s", $dataObject->UpdatePageFeeds));
+            self::OutputStatusMessage(sprintf("UpdatePriceAdExtensions: %s", $dataObject->UpdatePriceAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateProductFilters: %s", $dataObject->UpdateProductFilters));
+            self::OutputStatusMessage(sprintf("UpdateReviewAdExtensions: %s", $dataObject->UpdateReviewAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateSitelinkAdExtensions: %s", $dataObject->UpdateSitelinkAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateStatusForAdGroups: %s", $dataObject->UpdateStatusForAdGroups));
+            self::OutputStatusMessage(sprintf("UpdateStatusForAds: %s", $dataObject->UpdateStatusForAds));
+            self::OutputStatusMessage(sprintf("UpdateStatusForCampaigns: %s", $dataObject->UpdateStatusForCampaigns));
+            self::OutputStatusMessage(sprintf("UpdateStatusForKeywords: %s", $dataObject->UpdateStatusForKeywords));
+            self::OutputStatusMessage(sprintf("UpdateStructuredSnippetAdExtensions: %s", $dataObject->UpdateStructuredSnippetAdExtensions));
+            self::OutputStatusMessage(sprintf("UpdateUrlOptions: %s", $dataObject->UpdateUrlOptions));
+            self::OutputStatusMessage("* * * End OutputGoogleImportOption * * *");
+        }
+    }
+    static function OutputArrayOfGoogleImportOption($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->GoogleImportOption))
+        {
+            return;
+        }
+        foreach ($dataObjects->GoogleImportOption as $dataObject)
+        {
+            self::OutputGoogleImportOption($dataObject);
         }
     }
     static function OutputIdCollection($dataObject)
@@ -3720,6 +4104,8 @@ final class CampaignManagementExampleHelper {
             self::OutputArrayOfLong($dataObject->ImageMediaIds);
             self::OutputStatusMessage("Images:");
             self::OutputArrayOfAssetLink($dataObject->Images);
+            self::OutputStatusMessage("Layouts:");
+            self::OutputArrayOfString($dataObject->Layouts);
             self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
             self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
@@ -3780,6 +4166,151 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->ImageMediaRepresentation as $dataObject)
         {
             self::OutputImageMediaRepresentation($dataObject);
+        }
+    }
+    static function OutputImportEntityStatistics($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputImportEntityStatistics * * *");
+            self::OutputStatusMessage(sprintf("Additions: %s", $dataObject->Additions));
+            self::OutputStatusMessage(sprintf("Changes: %s", $dataObject->Changes));
+            self::OutputStatusMessage(sprintf("Deletions: %s", $dataObject->Deletions));
+            self::OutputStatusMessage(sprintf("EntityType: %s", $dataObject->EntityType));
+            self::OutputStatusMessage(sprintf("Errors: %s", $dataObject->Errors));
+            self::OutputStatusMessage(sprintf("Total: %s", $dataObject->Total));
+            self::OutputStatusMessage("* * * End OutputImportEntityStatistics * * *");
+        }
+    }
+    static function OutputArrayOfImportEntityStatistics($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ImportEntityStatistics))
+        {
+            return;
+        }
+        foreach ($dataObjects->ImportEntityStatistics as $dataObject)
+        {
+            self::OutputImportEntityStatistics($dataObject);
+        }
+    }
+    static function OutputImportJob($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputImportJob * * *");
+            self::OutputStatusMessage(sprintf("CreatedByUserId: %s", $dataObject->CreatedByUserId));
+            self::OutputStatusMessage(sprintf("CreatedByUserName: %s", $dataObject->CreatedByUserName));
+            self::OutputStatusMessage(sprintf("CreatedDateTimeInUTC: %s", $dataObject->CreatedDateTimeInUTC));
+            self::OutputStatusMessage("Frequency:");
+            self::OutputFrequency($dataObject->Frequency);
+            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage("ImportOption:");
+            self::OutputImportOption($dataObject->ImportOption);
+            self::OutputStatusMessage(sprintf("LastRunTimeInUTC: %s", $dataObject->LastRunTimeInUTC));
+            self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
+            self::OutputStatusMessage(sprintf("NotificationType: %s", $dataObject->NotificationType));
+            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            if($dataObject->Type === "FileImportJob")
+            {
+                self::OutputFileImportJob($dataObject);
+            }
+            if($dataObject->Type === "GoogleImportJob")
+            {
+                self::OutputGoogleImportJob($dataObject);
+            }
+            self::OutputStatusMessage("* * * End OutputImportJob * * *");
+        }
+    }
+    static function OutputArrayOfImportJob($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ImportJob))
+        {
+            return;
+        }
+        foreach ($dataObjects->ImportJob as $dataObject)
+        {
+            self::OutputImportJob($dataObject);
+        }
+    }
+    static function OutputImportOption($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputImportOption * * *");
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
+            self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
+            self::OutputStatusMessage(sprintf("Type: %s", $dataObject->Type));
+            if($dataObject->Type === "FileImportOption")
+            {
+                self::OutputFileImportOption($dataObject);
+            }
+            if($dataObject->Type === "GoogleImportOption")
+            {
+                self::OutputGoogleImportOption($dataObject);
+            }
+            self::OutputStatusMessage("* * * End OutputImportOption * * *");
+        }
+    }
+    static function OutputArrayOfImportOption($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ImportOption))
+        {
+            return;
+        }
+        foreach ($dataObjects->ImportOption as $dataObject)
+        {
+            self::OutputImportOption($dataObject);
+        }
+    }
+    static function OutputImportResult($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputImportResult * * *");
+            self::OutputStatusMessage("EntityStatistics:");
+            self::OutputArrayOfImportEntityStatistics($dataObject->EntityStatistics);
+            self::OutputStatusMessage(sprintf("ErrorLogUrl: %s", $dataObject->ErrorLogUrl));
+            self::OutputStatusMessage("ForwardCompatibilityMap:");
+            self::OutputArrayOfKeyValuePairOfstringstring($dataObject->ForwardCompatibilityMap);
+            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage("ImportJob:");
+            self::OutputImportJob($dataObject->ImportJob);
+            self::OutputStatusMessage(sprintf("StartTimeInUTC: %s", $dataObject->StartTimeInUTC));
+            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage("* * * End OutputImportResult * * *");
+        }
+    }
+    static function OutputArrayOfImportResult($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ImportResult))
+        {
+            return;
+        }
+        foreach ($dataObjects->ImportResult as $dataObject)
+        {
+            self::OutputImportResult($dataObject);
+        }
+    }
+    static function OutputImportSearchAndReplaceForStringProperty($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputImportSearchAndReplaceForStringProperty * * *");
+            self::OutputStatusMessage(sprintf("ReplaceString: %s", $dataObject->ReplaceString));
+            self::OutputStatusMessage(sprintf("SearchString: %s", $dataObject->SearchString));
+            self::OutputStatusMessage("* * * End OutputImportSearchAndReplaceForStringProperty * * *");
+        }
+    }
+    static function OutputArrayOfImportSearchAndReplaceForStringProperty($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->ImportSearchAndReplaceForStringProperty))
+        {
+            return;
+        }
+        foreach ($dataObjects->ImportSearchAndReplaceForStringProperty as $dataObject)
+        {
+            self::OutputImportSearchAndReplaceForStringProperty($dataObject);
         }
     }
     static function OutputInheritFromParentBiddingScheme($dataObject)
@@ -4080,6 +4611,26 @@ final class CampaignManagementExampleHelper {
             self::OutputMaxConversionsBiddingScheme($dataObject);
         }
     }
+    static function OutputMaxConversionValueBiddingScheme($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputMaxConversionValueBiddingScheme * * *");
+            self::OutputStatusMessage(sprintf("TargetRoas: %s", $dataObject->TargetRoas));
+            self::OutputStatusMessage("* * * End OutputMaxConversionValueBiddingScheme * * *");
+        }
+    }
+    static function OutputArrayOfMaxConversionValueBiddingScheme($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->MaxConversionValueBiddingScheme))
+        {
+            return;
+        }
+        foreach ($dataObjects->MaxConversionValueBiddingScheme as $dataObject)
+        {
+            self::OutputMaxConversionValueBiddingScheme($dataObject);
+        }
+    }
     static function OutputMaxRoasBiddingScheme($dataObject)
     {
         if (!empty($dataObject))
@@ -4300,6 +4851,27 @@ final class CampaignManagementExampleHelper {
             self::OutputNegativeKeywordList($dataObject);
         }
     }
+    static function OutputNegativeSite($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputNegativeSite * * *");
+            self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
+            self::OutputStatusMessage(sprintf("Url: %s", $dataObject->Url));
+            self::OutputStatusMessage("* * * End OutputNegativeSite * * *");
+        }
+    }
+    static function OutputArrayOfNegativeSite($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->NegativeSite))
+        {
+            return;
+        }
+        foreach ($dataObjects->NegativeSite as $dataObject)
+        {
+            self::OutputNegativeSite($dataObject);
+        }
+    }
     static function OutputOfflineConversion($dataObject)
     {
         if (!empty($dataObject))
@@ -4477,6 +5049,25 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->Paging as $dataObject)
         {
             self::OutputPaging($dataObject);
+        }
+    }
+    static function OutputPlacementExclusionList($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputPlacementExclusionList * * *");
+            self::OutputStatusMessage("* * * End OutputPlacementExclusionList * * *");
+        }
+    }
+    static function OutputArrayOfPlacementExclusionList($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->PlacementExclusionList))
+        {
+            return;
+        }
+        foreach ($dataObjects->PlacementExclusionList as $dataObject)
+        {
+            self::OutputPlacementExclusionList($dataObject);
         }
     }
     static function OutputPriceAdExtension($dataObject)
@@ -4662,6 +5253,48 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->ProfileCriterion as $dataObject)
         {
             self::OutputProfileCriterion($dataObject);
+        }
+    }
+    static function OutputPromotionAdExtension($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputPromotionAdExtension * * *");
+            self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
+            self::OutputStatusMessage(sprintf("DiscountModifier: %s", $dataObject->DiscountModifier));
+            self::OutputStatusMessage("FinalAppUrls:");
+            self::OutputArrayOfAppUrl($dataObject->FinalAppUrls);
+            self::OutputStatusMessage("FinalMobileUrls:");
+            self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
+            self::OutputStatusMessage("FinalUrls:");
+            self::OutputArrayOfString($dataObject->FinalUrls);
+            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage(sprintf("MoneyAmountOff: %s", $dataObject->MoneyAmountOff));
+            self::OutputStatusMessage(sprintf("OrdersOverAmount: %s", $dataObject->OrdersOverAmount));
+            self::OutputStatusMessage(sprintf("PercentOff: %s", $dataObject->PercentOff));
+            self::OutputStatusMessage(sprintf("PromotionCode: %s", $dataObject->PromotionCode));
+            self::OutputStatusMessage("PromotionEndDate:");
+            self::OutputDate($dataObject->PromotionEndDate);
+            self::OutputStatusMessage(sprintf("PromotionItem: %s", $dataObject->PromotionItem));
+            self::OutputStatusMessage(sprintf("PromotionOccasion: %s", $dataObject->PromotionOccasion));
+            self::OutputStatusMessage("PromotionStartDate:");
+            self::OutputDate($dataObject->PromotionStartDate);
+            self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
+            self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputPromotionAdExtension * * *");
+        }
+    }
+    static function OutputArrayOfPromotionAdExtension($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->PromotionAdExtension))
+        {
+            return;
+        }
+        foreach ($dataObjects->PromotionAdExtension as $dataObject)
+        {
+            self::OutputPromotionAdExtension($dataObject);
         }
     }
     static function OutputRadiusCriterion($dataObject)
@@ -4970,6 +5603,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage("* * * Begin OutputSharedEntityAssociation * * *");
             self::OutputStatusMessage(sprintf("EntityId: %s", $dataObject->EntityId));
             self::OutputStatusMessage(sprintf("EntityType: %s", $dataObject->EntityType));
+            self::OutputStatusMessage(sprintf("SharedEntityCustomerId: %s", $dataObject->SharedEntityCustomerId));
             self::OutputStatusMessage(sprintf("SharedEntityId: %s", $dataObject->SharedEntityId));
             self::OutputStatusMessage(sprintf("SharedEntityType: %s", $dataObject->SharedEntityType));
             self::OutputStatusMessage("* * * End OutputSharedEntityAssociation * * *");
@@ -4996,6 +5630,10 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputNegativeKeywordList($dataObject);
             }
+            if($dataObject->Type === "PlacementExclusionList")
+            {
+                self::OutputPlacementExclusionList($dataObject);
+            }
             self::OutputStatusMessage("* * * End OutputSharedList * * *");
         }
     }
@@ -5021,6 +5659,10 @@ final class CampaignManagementExampleHelper {
             if($dataObject->Type === "NegativeKeyword")
             {
                 self::OutputNegativeKeyword($dataObject);
+            }
+            if($dataObject->Type === "NegativeSite")
+            {
+                self::OutputNegativeSite($dataObject);
             }
             self::OutputStatusMessage("* * * End OutputSharedListItem * * *");
         }
@@ -5110,6 +5752,26 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->SitelinkAdExtension as $dataObject)
         {
             self::OutputSitelinkAdExtension($dataObject);
+        }
+    }
+    static function OutputStoreCriterion($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputStoreCriterion * * *");
+            self::OutputStatusMessage(sprintf("StoreId: %s", $dataObject->StoreId));
+            self::OutputStatusMessage("* * * End OutputStoreCriterion * * *");
+        }
+    }
+    static function OutputArrayOfStoreCriterion($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->StoreCriterion))
+        {
+            return;
+        }
+        foreach ($dataObjects->StoreCriterion as $dataObject)
+        {
+            self::OutputStoreCriterion($dataObject);
         }
     }
     static function OutputStringRuleItem($dataObject)
@@ -5650,6 +6312,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfBidOption * * *");
     }
+    static function OutputCampaignAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputCampaignAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputCampaignAdditionalField * * *");
+    }
+    static function OutputArrayOfCampaignAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfCampaignAdditionalField * * *");
+        foreach ($valueSets->CampaignAdditionalField as $valueSet)
+        {
+            self::OutputCampaignAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfCampaignAdditionalField * * *");
+    }
     static function OutputAdRotationType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputAdRotationType * * *");
@@ -5741,6 +6426,29 @@ final class CampaignManagementExampleHelper {
             self::OutputAdGroupStatus($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAdGroupStatus * * *");
+    }
+    static function OutputAdGroupAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAdGroupAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAdGroupAdditionalField * * *");
+    }
+    static function OutputArrayOfAdGroupAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAdGroupAdditionalField * * *");
+        foreach ($valueSets->AdGroupAdditionalField as $valueSet)
+        {
+            self::OutputAdGroupAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAdGroupAdditionalField * * *");
     }
     static function OutputKeywordEditorialStatus($valueSet)
     {
@@ -6086,6 +6794,52 @@ final class CampaignManagementExampleHelper {
             self::OutputPriceUnit($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfPriceUnit * * *");
+    }
+    static function OutputPromotionDiscountModifier($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputPromotionDiscountModifier * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputPromotionDiscountModifier * * *");
+    }
+    static function OutputArrayOfPromotionDiscountModifier($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfPromotionDiscountModifier * * *");
+        foreach ($valueSets->PromotionDiscountModifier as $valueSet)
+        {
+            self::OutputPromotionDiscountModifier($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfPromotionDiscountModifier * * *");
+    }
+    static function OutputPromotionOccasion($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputPromotionOccasion * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputPromotionOccasion * * *");
+    }
+    static function OutputArrayOfPromotionOccasion($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfPromotionOccasion * * *");
+        foreach ($valueSets->PromotionOccasion as $valueSet)
+        {
+            self::OutputPromotionOccasion($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfPromotionOccasion * * *");
     }
     static function OutputAdExtensionsTypeFilter($valueSet)
     {
@@ -6501,6 +7255,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfBMCStoreSubType * * *");
     }
+    static function OutputEntityScope($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputEntityScope * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputEntityScope * * *");
+    }
+    static function OutputArrayOfEntityScope($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfEntityScope * * *");
+        foreach ($valueSets->EntityScope as $valueSet)
+        {
+            self::OutputEntityScope($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfEntityScope * * *");
+    }
     static function OutputCampaignCriterionStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCampaignCriterionStatus * * *");
@@ -6546,29 +7323,6 @@ final class CampaignManagementExampleHelper {
             self::OutputCampaignCriterionType($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfCampaignCriterionType * * *");
-    }
-    static function OutputEntityScope($valueSet)
-    {
-        self::OutputStatusMessage("* * * Begin OutputEntityScope * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
-        foreach ($valueSet->string as $value)
-        {
-            self::OutputStatusMessage($value);
-        }
-        self::OutputStatusMessage("* * * End OutputEntityScope * * *");
-    }
-    static function OutputArrayOfEntityScope($valueSets)
-    {
-        if(count((array)$valueSets) == 0)
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEntityScope * * *");
-        foreach ($valueSets->EntityScope as $valueSet)
-        {
-            self::OutputEntityScope($valueSet);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfEntityScope * * *");
     }
     static function OutputStringOperator($valueSet)
     {
@@ -6638,6 +7392,29 @@ final class CampaignManagementExampleHelper {
             self::OutputProductAudienceType($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfProductAudienceType * * *");
+    }
+    static function OutputLogicalOperator($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputLogicalOperator * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputLogicalOperator * * *");
+    }
+    static function OutputArrayOfLogicalOperator($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfLogicalOperator * * *");
+        foreach ($valueSets->LogicalOperator as $valueSet)
+        {
+            self::OutputLogicalOperator($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfLogicalOperator * * *");
     }
     static function OutputUetTagTrackingStatus($valueSet)
     {

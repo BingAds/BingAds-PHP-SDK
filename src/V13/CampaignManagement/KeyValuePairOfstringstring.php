@@ -15,6 +15,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by BatchErrorCollection
      * @used-by Campaign
      * @used-by CampaignCriterion
+     * @used-by ImportOption
+     * @used-by ImportResult
      * @used-by Keyword
      * @used-by SharedEntity
      * @used-by SharedListItem

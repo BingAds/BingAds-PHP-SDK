@@ -70,6 +70,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The ad group criterion is a similar remarketing list association. */
         const SimilarRemarketingList = 'SimilarRemarketingList';
+
+        /** The ad group criterion is a combined list association. */
+        const CombinedList = 'CombinedList';
     }
 
 }

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Gets the negative keyword lists from the account's library.
+     * Gets negative keyword lists.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getsharedentitiesbyaccountid?view=bingads-13 GetSharedEntitiesByAccountId Response Object
      * 
      * @uses SharedEntity
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetSharedEntitiesByAccountIdResponse
     {
         /**
-         * The shared entities from the account's shared library, for example negative keyword lists.
+         * The negative keyword lists from the shared library.
          * @var SharedEntity[]
          */
         public $SharedEntities;

@@ -136,7 +136,8 @@ try
     print("-----\r\nAddSharedEntity:\r\n");
     $addSharedEntityResponse = CampaignManagementExampleHelper::AddSharedEntity(
         $encodedNegativeKeywordList, 
-        $negativeKeywords
+        $negativeKeywords,
+        null
     );
     $sharedEntityId = $addSharedEntityResponse->SharedEntityId;
     $listItemIds = $addSharedEntityResponse->ListItemIds;
@@ -157,7 +158,8 @@ try
 
     print("-----\r\nSetSharedEntityAssociations:\r\n");
     $partialErrors = CampaignManagementExampleHelper::SetSharedEntityAssociations(
-        $associations
+        $associations,
+        null
     );
     printf(
         "Associated CampaignId %s with Negative Keyword List Id %s.\r\n", 
@@ -178,7 +180,8 @@ try
 
     print("-----\r\nDeleteSharedEntities:\r\n");
     $partialErrors = CampaignManagementExampleHelper::DeleteSharedEntities(
-        array($encodedNegativeKeywordList)
+        array($encodedNegativeKeywordList),
+        null
     );
     printf("Deleted Negative Keyword List Id %s\r\n", $sharedEntityId);
 }

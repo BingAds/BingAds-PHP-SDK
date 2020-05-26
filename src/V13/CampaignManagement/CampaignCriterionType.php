@@ -70,6 +70,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The campaign criterion is a similar remarketing list association. */
         const SimilarRemarketingList = 'SimilarRemarketingList';
+
+        /** Reserved for future use. */
+        const Store = 'Store';
+
+        /** The campaign criterion is a combined list association. */
+        const CombinedList = 'CombinedList';
     }
 
 }

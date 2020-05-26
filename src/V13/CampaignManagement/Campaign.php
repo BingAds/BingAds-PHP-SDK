@@ -128,6 +128,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string[]
          */
         public $Languages;
+
+        /**
+         * Determines whether to use the account time zone or the time zone of the search user where the ads could be delivered.
+         * @var boolean
+         */
+        public $AdScheduleUseSearcherTimeZone;
     }
 
 }

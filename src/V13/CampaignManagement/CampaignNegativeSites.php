@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CampaignId;
 
         /**
-         * A list of URLs of the websites on which you do not want your ads displayed.
+         * A list of URLs of the websites where you do not want your ads displayed.
          * @var string[]
          */
         public $NegativeSites;

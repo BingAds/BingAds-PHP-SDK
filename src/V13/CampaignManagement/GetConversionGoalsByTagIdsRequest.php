@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $TagIds;
 
         /**
-         * One or more types of conversion goals to return.
+         * The type of conversion goals to return.
          * @var ConversionGoalType
          */
         public $ConversionGoalTypes;

@@ -18,6 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
      * @used-by AddExperimentsResponse
+     * @used-by AddImportJobsResponse
      * @used-by AddKeywordsResponse
      * @used-by AddLabelsResponse
      * @used-by AddListItemsToSharedListResponse
@@ -36,6 +37,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteCampaignCriterionsResponse
      * @used-by DeleteCampaignsResponse
      * @used-by DeleteExperimentsResponse
+     * @used-by DeleteImportJobsResponse
      * @used-by DeleteKeywordsResponse
      * @used-by DeleteLabelAssociationsResponse
      * @used-by DeleteLabelsResponse
@@ -58,6 +60,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetConversionGoalsByTagIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
      * @used-by GetExperimentsByIdsResponse
+     * @used-by GetImportJobsByIdsResponse
      * @used-by GetKeywordsByIdsResponse
      * @used-by GetLabelAssociationsByEntityIdsResponse
      * @used-by GetLabelAssociationsByLabelIdsResponse

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved for future use.
+     * Defines an object that represents the target ROAS bid strategy type.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/targetroasbiddingscheme?view=bingads-13 TargetRoasBiddingScheme Data Object
      * 
      * @uses Bid
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class TargetRoasBiddingScheme extends BiddingScheme
     {
         /**
-         * Reserved for future use.
+         * The maximum cost per click that you want to spend.
          * @var Bid
          */
         public $MaxCpc;
 
         /**
-         * Reserved for future use.
+         * The target return on ad spend (ROAS) that you want used by Microsoft Advertising to maximize conversions.
          * @var double
          */
         public $TargetRoas;

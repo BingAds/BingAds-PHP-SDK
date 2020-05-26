@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/paging?view=bingads-13 Paging Data Object
      * 
      * @used-by GetExperimentsByIdsRequest
+     * @used-by GetImportResultsRequest
      * @used-by GetLabelAssociationsByLabelIdsRequest
      * @used-by GetLabelsByIdsRequest
      * @used-by GetMediaMetaDataByAccountIdRequest

@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AudienceIds;
 
         /**
-         * One or more types of audiences to return.
+         * The type of audiences to return.
          * @var AudienceType
          */
         public $Type;

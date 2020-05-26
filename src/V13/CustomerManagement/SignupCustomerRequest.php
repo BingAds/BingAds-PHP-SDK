@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Creates a new customer and account that rolls up to your reseller payment method.
+     * Creates a new customer and account that rolls up to your aggregator payment method.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/signupcustomer?view=bingads-13 SignupCustomer Request Object
      * 
      * @uses Customer
@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Account;
 
         /**
-         * The customer identifier of the reseller that will manage this customer.
+         * The customer identifier of the aggregator that will manage this customer.
          * @var integer
          */
         public $ParentCustomerId;
