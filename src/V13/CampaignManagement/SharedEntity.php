@@ -10,13 +10,14 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses KeyValuePairOfstringstring
      * @used-by AddSharedEntityRequest
      * @used-by DeleteSharedEntitiesRequest
+     * @used-by GetSharedEntitiesResponse
      * @used-by GetSharedEntitiesByAccountIdResponse
      * @used-by UpdateSharedEntitiesRequest
      */
     class SharedEntity
     {
         /**
-         * The number of active associations between this object and an entity such as a campaign.
+         * The number of active associations between this shared entity and another entity such as campaign or ad account.
          * @var integer
          */
         public $AssociationCount;

@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Description;
 
         /**
-         * The mobile landing page URL.
+         * The landing page URL for mobile devices.
          * @var string[]
          */
         public $FinalMobileUrls;

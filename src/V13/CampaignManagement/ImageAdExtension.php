@@ -38,25 +38,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DisplayText;
 
         /**
-         * Not supported for image ad extensions.
+         * Reserved for future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;
 
         /**
-         * Not supported for image ad extensions.
+         * Reserved for future use.
          * @var string[]
          */
         public $FinalMobileUrls;
 
         /**
-         * Not supported for image ad extensions.
+         * Reserved for future use.
          * @var string
          */
         public $FinalUrlSuffix;
 
         /**
-         * Not supported for image ad extensions.
+         * Reserved for future use.
          * @var string[]
          */
         public $FinalUrls;
@@ -74,13 +74,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Images;
 
         /**
-         * Not supported for image ad extensions.
+         * Reserved for future use.
+         * @var string[]
+         */
+        public $Layouts;
+
+        /**
+         * Reserved for future use.
          * @var string
          */
         public $TrackingUrlTemplate;
 
         /**
-         * Not supported for image ad extensions.
+         * Reserved for future use.
          * @var CustomParameters
          */
         public $UrlCustomParameters;

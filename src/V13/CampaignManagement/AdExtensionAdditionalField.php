@@ -17,6 +17,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the DisplayText element be included within each returned ImageAdExtension object. */
         const DisplayText = 'DisplayText';
+
+        /** Request that the Layouts element be included within each returned ImageAdExtension object. */
+        const Layouts = 'Layouts';
+
+        /** Request that the latest ActionAdExtensionActionType values be included within each returned ActionAdExtension. */
+        const ActionTypesPhase3 = 'ActionTypesPhase3';
     }
 
 }

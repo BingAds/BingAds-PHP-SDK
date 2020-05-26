@@ -54,7 +54,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Type;
 
         /**
-         * The number of times the contents of the ad extension has been updated.
+         * Tracks the number of times the ad extension has been updated.
          * @var integer
          */
         public $Version;

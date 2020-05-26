@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $AccountId;
 
         /**
-         * A code that identifies the country/region in which the account operates.
+         * Reserved for internal use.
          * @var string
          */
         public $BookingCountryCode;

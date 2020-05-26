@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Removes the association between a negative keyword list and an entity such as a campaign.
+     * Deletes the negative keyword list to campaign associations, or website exclusion list to ad account associations.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletesharedentityassociations?view=bingads-13 DeleteSharedEntityAssociations Response Object
      * 
      * @uses BatchError

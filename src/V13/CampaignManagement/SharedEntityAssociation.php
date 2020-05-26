@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines an object that contains association information for a campaign and shared entity such as a negative keyword list.
+     * Defines an object that associates a campaign to negative keyword list, or an ad account to a website exclusion list.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/sharedentityassociation?view=bingads-13 SharedEntityAssociation Data Object
      * 
      * @used-by DeleteSharedEntityAssociationsRequest
@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SharedEntityAssociation
     {
         /**
-         * The system-generated identifier of the campaign that is associated with the shared entity.
+         * The identifier of the campaign or ad account (according to EntityType) that is associated with the shared entity.
          * @var integer
          */
         public $EntityId;
@@ -27,13 +27,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EntityType;
 
         /**
-         * The system-generated identifier of the shared entity.
+         * Determines the owner of a website exclusion list.
+         * @var integer
+         */
+        public $SharedEntityCustomerId;
+
+        /**
+         * The identifier of the shared entity.
          * @var integer
          */
         public $SharedEntityId;
 
         /**
-         * The type of the shared entity.
+         * The type of shared entity.
          * @var string
          */
         public $SharedEntityType;

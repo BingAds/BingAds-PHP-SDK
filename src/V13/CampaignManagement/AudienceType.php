@@ -27,6 +27,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The audience is a similar remarketing list. */
         const SimilarRemarketingList = 'SimilarRemarketingList';
+
+        /** The audience is a combined list. */
+        const CombinedList = 'CombinedList';
     }
 
 }

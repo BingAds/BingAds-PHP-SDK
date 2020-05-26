@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by BiddableAdGroupCriterion
      * @used-by ImageAdExtension
      * @used-by Keyword
+     * @used-by PromotionAdExtension
      * @used-by SitelinkAdExtension
      */
     final class AppUrl

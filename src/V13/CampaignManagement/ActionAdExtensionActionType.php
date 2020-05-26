@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ActionAdExtensionActionType
     {
-        /** Reserved for future use. */
+        /** The action type is either RenewNow or Reorder. */
         const Unknown = 'Unknown';
 
         /** Use the translated version of ActNow in the action ad extension. */
@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of BookNow in the action ad extension. */
         const BookNow = 'BookNow';
 
-        /** Use the translated version of Browse in the action ad extension. */
+        /** Use the translated version of LearnMore in the action ad extension. */
         const Browse = 'Browse';
 
         /** Use the translated version of BuyNow in the action ad extension. */
@@ -65,7 +65,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of EnrollNow in the action ad extension. */
         const EnrollNow = 'EnrollNow';
 
-        /** Use the translated version of Explore in the action ad extension. */
+        /** Use the translated version of LearnMore in the action ad extension. */
         const Explore = 'Explore';
 
         /** Use the translated version of FileNow in the action ad extension. */
@@ -104,10 +104,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of LogIn in the action ad extension. */
         const LogIn = 'LogIn';
 
-        /** Use the translated version of Message in the action ad extension. */
+        /** Use the translated version of ContactUs in the action ad extension. */
         const Message = 'Message';
 
-        /** Use the translated version of NewCars in the action ad extension. */
+        /** Use the translated version of ViewCars in the action ad extension. */
         const NewCars = 'NewCars';
 
         /** Use the translated version of OrderNow in the action ad extension. */
@@ -146,7 +146,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of SeeMenu in the action ad extension. */
         const SeeMenu = 'SeeMenu';
 
-        /** Use the translated version of SeeMore in the action ad extension. */
+        /** Use the translated version of LearnMore in the action ad extension. */
         const SeeMore = 'SeeMore';
 
         /** Use the translated version of SeeOffer in the action ad extension. */
@@ -167,7 +167,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of SignUp in the action ad extension. */
         const SignUp = 'SignUp';
 
-        /** Use the translated version of StartFree in the action ad extension. */
+        /** Use the translated version of FreeTrial in the action ad extension. */
         const StartFree = 'StartFree';
 
         /** Use the translated version of StartNow in the action ad extension. */
@@ -182,19 +182,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of TryNow in the action ad extension. */
         const TryNow = 'TryNow';
 
-        /** Use the translated version of UsedCars in the action ad extension. */
+        /** Use the translated version of ViewCars in the action ad extension. */
         const UsedCars = 'UsedCars';
 
         /** Use the translated version of ViewCars in the action ad extension. */
         const ViewCars = 'ViewCars';
 
-        /** Use the translated version of ViewNow in the action ad extension. */
+        /** Use the translated version of LearnMore in the action ad extension. */
         const ViewNow = 'ViewNow';
 
         /** Use the translated version of ViewPlans in the action ad extension. */
         const ViewPlans = 'ViewPlans';
 
-        /** Use the translated version of VisitSite in the action ad extension. */
+        /** Use the translated version of LearnMore in the action ad extension. */
         const VisitSite = 'VisitSite';
 
         /** Use the translated version of VoteNow in the action ad extension. */
@@ -220,6 +220,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Use the translated version of VisitStore in the action ad extension. */
         const VisitStore = 'VisitStore';
+
+        /** Use the translated version of RenewNow in the action ad extension. */
+        const RenewNow = 'RenewNow';
+
+        /** Use the translated version of Reorder in the action ad extension. */
+        const Reorder = 'Reorder';
     }
 
 }

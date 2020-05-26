@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Description2;
 
         /**
-         * Important: If you are currently using Destination URLs, you must eventually replace them with Final URLs.
+         * The URL of the webpage that users are taken to when they click the site link.
          * @var string
          */
         public $DestinationUrl;
@@ -43,7 +43,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalAppUrls;
 
         /**
-         * The mobile landing page URL.
+         * The landing page URL for mobile devices.
          * @var string[]
          */
         public $FinalMobileUrls;

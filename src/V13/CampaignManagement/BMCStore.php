@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $HasCatalog;
 
         /**
-         * The unique identifier for the  Microsoft Merchant Center store.
+         * The unique identifier for the Microsoft Merchant Center store.
          * @var integer
          */
         public $Id;

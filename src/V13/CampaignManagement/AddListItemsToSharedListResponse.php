@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Adds negative keywords to the shared negative keyword list.
+     * Adds negative keywords to a negative keyword list, or negative sites to a website exclusion list.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addlistitemstosharedlist?view=bingads-13 AddListItemsToSharedList Response Object
      * 
      * @uses BatchError

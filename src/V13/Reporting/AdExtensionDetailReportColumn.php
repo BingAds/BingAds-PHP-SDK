@@ -142,6 +142,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue per conversion. */
         const AllRevenuePerConversion = 'AllRevenuePerConversion';
+
+        /** The name of the goal you set for the conversions you want, meaning actions customers take after clicking your ad. */
+        const Goal = 'Goal';
+
+        /** The type of conversion goal. */
+        const GoalType = 'GoalType';
     }
 
 }

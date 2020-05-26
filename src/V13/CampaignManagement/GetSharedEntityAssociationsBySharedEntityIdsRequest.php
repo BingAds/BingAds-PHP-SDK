@@ -4,29 +4,36 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Gets shared entity associations for the specified negative keyword lists.
+     * Gets the negative keyword list to campaign associations by negative keyword list IDs, or website exclusion list to ad account associations by website exclusion list IDs.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getsharedentityassociationsbysharedentityids?view=bingads-13 GetSharedEntityAssociationsBySharedEntityIds Request Object
      * 
+     * @uses EntityScope
      * @used-by BingAdsCampaignManagementService::GetSharedEntityAssociationsBySharedEntityIds
      */
     final class GetSharedEntityAssociationsBySharedEntityIdsRequest
     {
         /**
-         * The type of entity corresponding to the specified EntityIds element.
+         * The type of entity corresponding to the specified SharedEntityIds element.
          * @var string
          */
         public $EntityType;
 
         /**
-         * The list of negative keyword list identifiers to return associations with campaigns.
+         * The list of either negative keyword list or website exclusion list identifiers.
          * @var integer[]
          */
         public $SharedEntityIds;
 
         /**
-         * The type of shared entity to get associations from the account's library.
+         * The type of shared entity to get associations.
          * @var string
          */
         public $SharedEntityType;
+
+        /**
+         * Indicates whether the shared entity is available at the ad account (Account) or manager account (Customer) level.
+         * @var EntityScope
+         */
+        public $SharedEntityScope;
     }
 }

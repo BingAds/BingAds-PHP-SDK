@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getcampaignsbyaccountid?view=bingads-13 GetCampaignsByAccountId Request Object
      * 
      * @uses CampaignType
+     * @uses CampaignAdditionalField
      * @used-by BingAdsCampaignManagementService::GetCampaignsByAccountId
      */
     final class GetCampaignsByAccountIdRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CampaignType
          */
         public $CampaignType;
+
+        /**
+         * The list of additional properties that you want included within each returned campaign.
+         * @var CampaignAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

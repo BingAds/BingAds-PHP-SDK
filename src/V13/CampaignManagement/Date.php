@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @used-by AdGroup
      * @used-by Experiment
+     * @used-by PromotionAdExtension
      * @used-by Schedule
      */
     final class Date

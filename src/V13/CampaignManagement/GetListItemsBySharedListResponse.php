@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Gets the negative keywords of a negative keyword list.
+     * Gets the negative keywords of a negative keyword list, or negative sites of a website exclusion list.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getlistitemsbysharedlist?view=bingads-13 GetListItemsBySharedList Response Object
      * 
      * @uses SharedListItem
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetListItemsBySharedListResponse
     {
         /**
-         * The list of negative keywords.
+         * The list of negative keywords or negative sites.
          * @var SharedListItem[]
          */
         public $ListItems;

@@ -253,6 +253,21 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversions = 'ViewThroughConversions';
+
+        /** The name of the goal you set for the conversions you want, meaning actions customers take after clicking your ad. */
+        const Goal = 'Goal';
+
+        /** The type of conversion goal. */
+        const GoalType = 'GoalType';
+
+        /** The estimated percentage of impressions, out of the total available impressions you could have received on the Microsoft Audience Network. */
+        const AudienceImpressionSharePercent = 'AudienceImpressionSharePercent';
+
+        /** The percentage of impression share you lost due to low rank on the Microsoft Audience Network. */
+        const AudienceImpressionLostToRankPercent = 'AudienceImpressionLostToRankPercent';
+
+        /** The percentage of impression share you lost due to insufficient budget on the Microsoft Audience Network. */
+        const AudienceImpressionLostToBudgetPercent = 'AudienceImpressionLostToBudgetPercent';
     }
 
 }

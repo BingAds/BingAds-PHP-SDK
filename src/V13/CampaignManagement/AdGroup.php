@@ -125,6 +125,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CustomParameters
          */
         public $UrlCustomParameters;
+
+        /**
+         * Determines whether to use the account time zone or the time zone of the search user where the ads could be delivered.
+         * @var boolean
+         */
+        public $AdScheduleUseSearcherTimeZone;
     }
 
 }
