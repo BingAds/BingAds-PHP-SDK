@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines a campaign level product scope with list of conditions that help determine whether a product from the Microsoft Merchant Center store gets served as a product ad.
+     * Defines a campaign level product scope with list of conditions that help determine which items from your catalog to include in the campaign e.g., filter by brand or condition.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/productscope?view=bingads-13 ProductScope Data Object
      * 
      * @uses ProductCondition

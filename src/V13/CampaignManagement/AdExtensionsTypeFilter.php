@@ -45,6 +45,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** An ad extension that highlights special sales and offers in your text ads. */
         const PromotionAdExtension = 'PromotionAdExtension';
+
+        /** Reserved. */
+        const FilterLinkAdExtension = 'FilterLinkAdExtension';
     }
 
 }

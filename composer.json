@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Microsoft\\BingAds\\": "/src/"
+            "Microsoft\\BingAds\\": "src/"
         }
     },
     "authors": [

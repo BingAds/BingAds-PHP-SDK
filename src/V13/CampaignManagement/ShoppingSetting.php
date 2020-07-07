@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $LocalInventoryAdsEnabled;
 
         /**
-         * Helps determine which Microsoft Shopping campaign  serves ads, in the event that two or more campaigns use the product catalog feed from the same Microsoft Merchant Center store.
+         * Helps determine which Microsoft Shopping campaign serves ads, in the event that two or more campaigns use the product catalog feed from the same Microsoft Merchant Center store.
          * @var integer
          */
         public $Priority;
