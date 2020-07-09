@@ -59,7 +59,11 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         $oauthUrlParameters->RedirectUri = $this->RedirectUri;
         $oauthUrlParameters->State = $this->State;
 
-        return UriOAuthService::GetAuthorizationEndpoint($oauthUrlParameters, $this->Environment, $this->RequireLiveConnect);
+        return UriOAuthService::GetAuthorizationEndpoint(
+            $oauthUrlParameters, 
+            $this->Environment, 
+            $this->RequireLiveConnect, 
+            $this->Tenant);
     }
  
     /** 
@@ -67,12 +71,13 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
      * using the specified authorization response redirect Uri.
      * 
      * @param string $responseUri
+     * @param array $additionalParams
      * 
      * @return OAuthTokens
      * @throws Exception
      * @throws OAuthTokenRequestException
      */
-    public function RequestOAuthTokensByResponseUri($responseUri)
+    public function RequestOAuthTokensByResponseUri($responseUri, $additionalParams=null)
     {
         if ($responseUri == null)
         {
@@ -107,7 +112,13 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantParamName("code")
             ->withGrantValue($code);
 
-        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment, $this->RequireLiveConnect); 
+        $this->OAuthTokens = $this->oauthService->GetAccessTokens(
+            $oauthRequestParameters, 
+            $this->Environment, 
+            $this->RequireLiveConnect,
+            $this->Tenant,
+            $additionalParams
+        ); 
         
         return $this->OAuthTokens; 
     }
@@ -117,11 +128,12 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
      * using the specified refresh token.
      * 
      * @param string $refreshToken
+     * @param array $additionalParams
      * 
      * @return OAuthTokens
      * @throws Exception
      */
-    public function RequestOAuthTokensByRefreshToken($refreshToken) 
+    public function RequestOAuthTokensByRefreshToken($refreshToken, $additionalParams=null) 
     {
         if ($refreshToken == null)
         {
@@ -135,7 +147,13 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
             ->withGrantParamName("refresh_token")
             ->withGrantValue($refreshToken);
 
-        $this->OAuthTokens = $this->oauthService->GetAccessTokens($oauthRequestParameters, $this->Environment, $this->RequireLiveConnect); 
+        $this->OAuthTokens = $this->oauthService->GetAccessTokens(
+            $oauthRequestParameters, 
+            $this->Environment, 
+            $this->RequireLiveConnect,
+            $this->Tenant,
+            $additionalParams
+        ); 
         
         return $this->OAuthTokens; 
     }

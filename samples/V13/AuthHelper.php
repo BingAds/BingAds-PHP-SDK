@@ -23,6 +23,7 @@ use Microsoft\BingAds\Samples\V13\CustomerManagementExampleHelper;
 use Microsoft\BingAds\V13\CampaignManagement\AdGroupCriterionType;
 use Microsoft\BingAds\V13\CampaignManagement\CampaignCriterionType;
 use Microsoft\BingAds\V13\CampaignManagement\CampaignType;
+use Microsoft\BingAds\V13\CampaignManagement\CampaignAdditionalField;
 
 // Specify the Microsoft\BingAds\V13\CustomerManagement classes that will be used.
 
@@ -50,6 +51,11 @@ final class AuthHelper {
         CampaignType::Search . ' ' . 
         CampaignType::Shopping . ' ' . 
         CampaignType::DynamicSearchAds;
+
+    const CampaignAdditionalFields = 
+        CampaignAdditionalField::AdScheduleUseSearcherTimeZone . ' ' . 
+        CampaignAdditionalField::MaxConversionValueBiddingScheme . ' ' . 
+        CampaignAdditionalField::TargetImpressionShareBiddingScheme;
 
     const AllTargetCampaignCriterionTypes = 
         CampaignCriterionType::Age . ' ' . 

@@ -37,6 +37,12 @@ abstract class OAuthAuthorization extends Authentication
      */
     public $RequireLiveConnect = false;
 
+    /** 
+     * Optional custom AAD tenant for MS Identity in production.
+     * @var bool
+     */
+    public $Tenant = "common";
+
     public function __construct() {}
 
     /** 
@@ -104,6 +110,17 @@ abstract class OAuthAuthorization extends Authentication
     public function withRequireLiveConnect($requireLiveConnect) {
         $this->RequireLiveConnect = $requireLiveConnect;
         $this->RedirectUri=UriOAuthService::GetRedirectUrl($this->Environment, $requireLiveConnect);
+        return $this;
+    }
+    
+    /** 
+     * Includes the Tenant flag. 
+     *
+     * @param string $tenant
+     * @return OAuthAuthorization this builder
+     */
+    public function withTenant($tenant) {
+        $this->Tenant = $tenant;
         return $this;
     }
 

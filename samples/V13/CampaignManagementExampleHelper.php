@@ -1877,6 +1877,10 @@ final class CampaignManagementExampleHelper {
             {
                 self::OutputCalloutAdExtension($dataObject);
             }
+            if($dataObject->Type === "FilterLinkAdExtension")
+            {
+                self::OutputFilterLinkAdExtension($dataObject);
+            }
             if($dataObject->Type === "ImageAdExtension")
             {
                 self::OutputImageAdExtension($dataObject);
@@ -2679,6 +2683,10 @@ final class CampaignManagementExampleHelper {
             if($dataObject->Type === "TargetCpaBiddingScheme")
             {
                 self::OutputTargetCpaBiddingScheme($dataObject);
+            }
+            if($dataObject->Type === "TargetImpressionShareBiddingScheme")
+            {
+                self::OutputTargetImpressionShareBiddingScheme($dataObject);
             }
             if($dataObject->Type === "TargetRoasBiddingScheme")
             {
@@ -3831,6 +3839,36 @@ final class CampaignManagementExampleHelper {
         foreach ($dataObjects->FileImportOption as $dataObject)
         {
             self::OutputFileImportOption($dataObject);
+        }
+    }
+    static function OutputFilterLinkAdExtension($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputFilterLinkAdExtension * * *");
+            self::OutputStatusMessage(sprintf("AdExtensionHeaderType: %s", $dataObject->AdExtensionHeaderType));
+            self::OutputStatusMessage("FinalMobileUrls:");
+            self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage("FinalUrls:");
+            self::OutputArrayOfString($dataObject->FinalUrls);
+            self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
+            self::OutputStatusMessage("Texts:");
+            self::OutputArrayOfString($dataObject->Texts);
+            self::OutputStatusMessage(sprintf("TrackingUrlTemplate: %s", $dataObject->TrackingUrlTemplate));
+            self::OutputStatusMessage("UrlCustomParameters:");
+            self::OutputCustomParameters($dataObject->UrlCustomParameters);
+            self::OutputStatusMessage("* * * End OutputFilterLinkAdExtension * * *");
+        }
+    }
+    static function OutputArrayOfFilterLinkAdExtension($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->FilterLinkAdExtension))
+        {
+            return;
+        }
+        foreach ($dataObjects->FilterLinkAdExtension as $dataObject)
+        {
+            self::OutputFilterLinkAdExtension($dataObject);
         }
     }
     static function OutputFixedBid($dataObject)
@@ -5840,6 +5878,29 @@ final class CampaignManagementExampleHelper {
             self::OutputTargetCpaBiddingScheme($dataObject);
         }
     }
+    static function OutputTargetImpressionShareBiddingScheme($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputTargetImpressionShareBiddingScheme * * *");
+            self::OutputStatusMessage("MaxCpc:");
+            self::OutputBid($dataObject->MaxCpc);
+            self::OutputStatusMessage(sprintf("TargetAdPosition: %s", $dataObject->TargetAdPosition));
+            self::OutputStatusMessage(sprintf("TargetImpressionShare: %s", $dataObject->TargetImpressionShare));
+            self::OutputStatusMessage("* * * End OutputTargetImpressionShareBiddingScheme * * *");
+        }
+    }
+    static function OutputArrayOfTargetImpressionShareBiddingScheme($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->TargetImpressionShareBiddingScheme))
+        {
+            return;
+        }
+        foreach ($dataObjects->TargetImpressionShareBiddingScheme as $dataObject)
+        {
+            self::OutputTargetImpressionShareBiddingScheme($dataObject);
+        }
+    }
     static function OutputTargetRoasBiddingScheme($dataObject)
     {
         if (!empty($dataObject))
@@ -6840,6 +6901,29 @@ final class CampaignManagementExampleHelper {
             self::OutputPromotionOccasion($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfPromotionOccasion * * *");
+    }
+    static function OutputAdExtensionHeaderType($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAdExtensionHeaderType * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAdExtensionHeaderType * * *");
+    }
+    static function OutputArrayOfAdExtensionHeaderType($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAdExtensionHeaderType * * *");
+        foreach ($valueSets->AdExtensionHeaderType as $valueSet)
+        {
+            self::OutputAdExtensionHeaderType($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAdExtensionHeaderType * * *");
     }
     static function OutputAdExtensionsTypeFilter($valueSet)
     {

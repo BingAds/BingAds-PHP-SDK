@@ -15,8 +15,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the AdScheduleUseSearcherTimeZone element be included within each returned Campaign object. */
         const AdScheduleUseSearcherTimeZone = 'AdScheduleUseSearcherTimeZone';
 
-        /** Reserved. */
+        /** Request that the MaxConversionValueBiddingScheme object be returned within the BiddingScheme element of each returned Campaign object. */
         const MaxConversionValueBiddingScheme = 'MaxConversionValueBiddingScheme';
+
+        /** Request that the TargetImpressionShareBiddingScheme object be returned within the BiddingScheme element of each returned Campaign object. */
+        const TargetImpressionShareBiddingScheme = 'TargetImpressionShareBiddingScheme';
     }
 
 }

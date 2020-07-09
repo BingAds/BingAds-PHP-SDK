@@ -24,9 +24,6 @@ use Microsoft\BingAds\Samples\V13\AuthHelper;
 use Microsoft\BingAds\Samples\V13\AdInsightExampleHelper;
 use Microsoft\BingAds\Samples\V13\CampaignManagementExampleHelper;
 
-// Specify the Microsoft\BingAds\V13\CampaignManagement classes that will be used.
-use Microsoft\BingAds\V13\CampaignManagement\CampaignAdditionalField;
-
 try
 {
     // Authenticate user credentials and set the account ID for the sample.  
@@ -35,7 +32,8 @@ try
     print("-----\r\nGetCampaignsByAccountId:\r\n");
     $getCampaignsByAccountIdResponse = CampaignManagementExampleHelper::GetCampaignsByAccountId(
     	$GLOBALS['AuthorizationData']->AccountId,
-        AuthHelper::CampaignTypes
+        AuthHelper::CampaignTypes,
+        AuthHelper::CampaignAdditionalFields
     );
     $campaigns = $getCampaignsByAccountIdResponse->Campaigns;
     print("Campaigns:\r\n");

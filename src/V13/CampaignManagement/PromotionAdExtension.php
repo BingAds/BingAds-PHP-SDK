@@ -70,7 +70,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $OrdersOverAmount;
 
         /**
-         * The percent off promotion value in micros.
+         * The percent off promotion value.
          * @var double
          */
         public $PercentOff;

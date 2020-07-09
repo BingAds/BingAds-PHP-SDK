@@ -14,6 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AppAdExtension
      * @used-by BiddableAdGroupCriterion
      * @used-by Campaign
+     * @used-by FilterLinkAdExtension
      * @used-by ImageAdExtension
      * @used-by Keyword
      * @used-by PriceAdExtension

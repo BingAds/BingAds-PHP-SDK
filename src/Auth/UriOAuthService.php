@@ -11,7 +11,7 @@ class UriOAuthService extends IOAuthService
         'ProductionMSIdentityV2' => array(
             'RedirectUrl' => 'https://login.microsoftonline.com/common/oauth2/nativeclient',
             'OAuthTokenUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
-            'AuthorizationEndpointUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=https://ads.microsoft.com/ads.manage offline_access',
+            'AuthorizationEndpointUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=https://ads.microsoft.com/ads.manage+offline_access',
             'Scope' => 'https://ads.microsoft.com/ads.manage offline_access'
         ),
         'ProductionLiveConnect' => array(
@@ -46,11 +46,13 @@ class UriOAuthService extends IOAuthService
      * @param OAuthRequestParameters $oauthRequestParameters
      * @param ApiEnvironment $environment
      * @param bool $requireLiveConnect
+     * @param string $tenant
+     * @param array $additionalParams
      * 
      * @return OAuthTokens
      * @throws Exception
      */
-    public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $requireLiveConnect)
+    public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $requireLiveConnect, $tenant, $additionalParams)
     {
         $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
 
@@ -70,7 +72,18 @@ class UriOAuthService extends IOAuthService
         {
             $accessTokenExchangeParams["client_secret"] = $oauthRequestParameters->ClientSecret;
         }
+        
+        $OAuthTokenUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'];
 
+        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        {
+            $OAuthTokenUrl = str_replace("common", $tenant, $OAuthTokenUrl);
+        }
+
+        if(is_array($additionalParams)){
+            $accessTokenExchangeParams = array_merge($accessTokenExchangeParams, $additionalParams);
+        }
+        
         /** 
          * Create an HTTP client and execute an HTTP POST request to
          * exchange the authorization token for an access token and
@@ -79,7 +92,7 @@ class UriOAuthService extends IOAuthService
         $this->httpService = new HttpService();
     
         $responseJson = $this->httpService->post(
-            UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'],
+            $OAuthTokenUrl,
             $accessTokenExchangeParams);
 
         /** 
@@ -127,16 +140,23 @@ class UriOAuthService extends IOAuthService
      * 
      * @return string
      */
-    public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment, $requireLiveConnect)
+    public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment, $requireLiveConnect, $tenant)
     {
         $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
 
+        $authorizationEndpointUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
+        
+        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        {
+            $authorizationEndpointUrl = str_replace("common", $tenant, $authorizationEndpointUrl);
+        }
+
         return sprintf(
             "%s&client_id=%s&response_type=%s&redirect_uri=%s",
-            UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'],
+            $authorizationEndpointUrl,
             $parameters->ClientId,
             $parameters->ResponseType,
-            $parameters->RedirectUri
+            rawurlencode($parameters->RedirectUri)
         ) . (($parameters->State == null) ? "" : ("&state=" . $parameters->State));
     }
 
@@ -159,13 +179,29 @@ class UriOAuthService extends IOAuthService
         return UriOAuthService::ENDPOINT_URLS[$endpointType]['RedirectUrl'];
     }
 
-    public static function GetAuthTokenUrl($environment, $requireLiveConnect) {
+    public static function GetAuthTokenUrl($environment, $requireLiveConnect, $tenant) {
         $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
-        return UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'];
+
+        $OAuthTokenUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'];
+
+        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        {
+            $OAuthTokenUrl = str_replace("common", $tenant, $OAuthTokenUrl);
+        }
+
+        return $OAuthTokenUrl;
     }
 
-    public static function GetAuthorizeUrl($environment, $requireLiveConnect) {
+    public static function GetAuthorizeUrl($environment, $requireLiveConnect, $tenant) {
         $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
-        return UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
+
+        $authorizationEndpointUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
+        
+        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        {
+            $authorizationEndpointUrl = str_replace("common", $tenant, $authorizationEndpointUrl);
+        }
+
+        return $authorizationEndpointUrl;
     }
 }
