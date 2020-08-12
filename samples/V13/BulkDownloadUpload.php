@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\Samples\V13;
 // For more information about installing and using the Bing Ads PHP SDK, 
 // see https://go.microsoft.com/fwlink/?linkid=838593.
 
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 
 include __DIR__ . "/AuthHelper.php";
 include __DIR__ . "/BulkExampleHelper.php";

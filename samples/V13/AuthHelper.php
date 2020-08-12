@@ -2,7 +2,7 @@
 
 namespace Microsoft\BingAds\Samples\V13;
 
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 
 require_once __DIR__ . "/CustomerManagementExampleHelper.php";
 
