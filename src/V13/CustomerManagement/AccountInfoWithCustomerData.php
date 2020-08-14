@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class AccountInfoWithCustomerData
     {
         /**
-         * The system generated identifier of the customer that manages or owns the account.
+         * The system-generated identifier of the customer that manages or owns the account.
          * @var integer
          */
         public $CustomerId;
@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $CustomerName;
 
         /**
-         * The system generated identifier of the account.
+         * The system-generated identifier of the account.
          * @var integer
          */
         public $AccountId;
@@ -37,7 +37,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $AccountName;
 
         /**
-         * The system generated account number that is used to identify the account in the Microsoft Advertising web application.
+         * The system-generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;

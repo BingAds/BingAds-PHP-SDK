@@ -40,7 +40,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $EndDate;
 
         /**
-         * A system generated identifier that identifies the insertion order.
+         * A system-generated identifier that identifies the insertion order.
          * @var integer
          */
         public $Id;
@@ -106,7 +106,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $PendingChanges;
 
         /**
-         * The system generated account number that is used to identify the account in the Microsoft Advertising web application.
+         * The system-generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;

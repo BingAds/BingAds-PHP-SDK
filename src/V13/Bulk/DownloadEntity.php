@@ -333,7 +333,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Feed Item records in the download data. */
         const FeedItems = 'FeedItems';
 
-        /** Reserved. */
+        /** Include Campaign Negative Store Criterion records in the download data. */
         const CampaignNegativeStoreCriterions = 'CampaignNegativeStoreCriterions';
 
         /** Include Promotion Ad Extension records in the download data. */
@@ -363,7 +363,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign Negative Combined List Association records in the download that each represent the association relationship between a campaign and a combined list exclusion. */
         const CampaignNegativeCombinedListAssociations = 'CampaignNegativeCombinedListAssociations';
 
-        /** Reserved. */
+        /** Include Image records in the download data. */
         const Images = 'Images';
 
         /** Include Customer List records in the download data. */

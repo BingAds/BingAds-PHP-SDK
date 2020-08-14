@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
         const Network = 'Network';
 
-        /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
+        /** Indicates whether the ad impression appeared in a top position or elsewhere. */
         const TopVsOther = 'TopVsOther';
 
         /** The device name attribute of a device OS target bid. */

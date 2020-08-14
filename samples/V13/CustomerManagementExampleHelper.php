@@ -328,7 +328,8 @@ final class CustomerManagementExampleHelper {
     static function SignupCustomer(
         $customer,
         $account,
-        $parentCustomerId)
+        $parentCustomerId,
+        $userInvitation)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -338,6 +339,7 @@ final class CustomerManagementExampleHelper {
         $request->Customer = $customer;
         $request->Account = $account;
         $request->ParentCustomerId = $parentCustomerId;
+        $request->UserInvitation = $userInvitation;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->SignupCustomer($request);
     }
@@ -1303,29 +1305,6 @@ final class CustomerManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfCustomerLifeCycleStatus * * *");
     }
-    static function OutputEmailFormat($valueSet)
-    {
-        self::OutputStatusMessage("* * * Begin OutputEmailFormat * * *");
-        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
-        foreach ($valueSet->string as $value)
-        {
-            self::OutputStatusMessage($value);
-        }
-        self::OutputStatusMessage("* * * End OutputEmailFormat * * *");
-    }
-    static function OutputArrayOfEmailFormat($valueSets)
-    {
-        if(count((array)$valueSets) == 0)
-        {
-            return;
-        }
-        self::OutputStatusMessage("* * * Begin OutputArrayOfEmailFormat * * *");
-        foreach ($valueSets->EmailFormat as $valueSet)
-        {
-            self::OutputEmailFormat($valueSet);
-        }
-        self::OutputStatusMessage("* * * End OutputArrayOfEmailFormat * * *");
-    }
     static function OutputLCID($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputLCID * * *");
@@ -1348,6 +1327,29 @@ final class CustomerManagementExampleHelper {
             self::OutputLCID($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLCID * * *");
+    }
+    static function OutputEmailFormat($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputEmailFormat * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputEmailFormat * * *");
+    }
+    static function OutputArrayOfEmailFormat($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfEmailFormat * * *");
+        foreach ($valueSets->EmailFormat as $valueSet)
+        {
+            self::OutputEmailFormat($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfEmailFormat * * *");
     }
     static function OutputSecretQuestion($valueSet)
     {

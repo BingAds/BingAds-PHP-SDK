@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Gets results for completed import jobs.
+     * Gets results for import jobs completed within the last 90 days.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getimportresults?view=bingads-13 GetImportResults Request Object
      * 
      * @uses Paging
@@ -23,5 +23,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * The identifiers of the import jobs to get results.
+         * @var integer[]
+         */
+        public $ImportJobIds;
     }
 }

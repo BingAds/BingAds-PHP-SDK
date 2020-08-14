@@ -56,7 +56,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language of the country the ad is served in. */
         const Language = 'Language';
 
-        /** The report will include a column that contains the unique identifier provided by a merchant for each product offer. */
+        /** The unique identifier provided by a merchant for each product offer. */
         const MerchantProductId = 'MerchantProductId';
 
         /** The product item name. */
@@ -143,13 +143,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue per conversion. */
         const RevenuePerConversion = 'RevenuePerConversion';
 
-        /** The report will include a column that contains the merchant or store name that offers the product. */
+        /** The merchant or store name that offers the product. */
         const SellerName = 'SellerName';
 
-        /** The report will include a column that contains the language for the product offer. */
+        /** The language for the product offer. */
         const OfferLanguage = 'OfferLanguage';
 
-        /** The report will include a column that contains the country of sale for the product catalog. */
+        /** The country of sale for the product catalog. */
         const CountryOfSale = 'CountryOfSale';
 
         /** The ad status. */
@@ -170,7 +170,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Shows you how other product ads for similar products are performing on average based on how often people who see the ad end up clicking on it. */
         const BenchmarkCtr = 'BenchmarkCtr';
 
-        /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
+        /** Indicates whether the ad impression appeared in a top position or elsewhere. */
         const TopVsOther = 'TopVsOther';
 
         /** The network where you want your ads to show. */
@@ -241,6 +241,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** The product purchased from your catalog or via your retail partner. */
+        const ProductBought = 'ProductBought';
+
+        /** The quantity of the product purchased (ProductBought) from your catalog or via your retail partner. */
+        const QuantityBought = 'QuantityBought';
     }
 
 }

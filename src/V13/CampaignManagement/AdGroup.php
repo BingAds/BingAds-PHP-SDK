@@ -67,7 +67,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * The system generated identifier of the ad group.
+         * The system-generated identifier of the ad group.
          * @var integer
          */
         public $Id;

@@ -15,7 +15,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class AccountInfo
     {
         /**
-         * The system generated identifier of the account.
+         * The system-generated identifier of the account.
          * @var integer
          */
         public $Id;

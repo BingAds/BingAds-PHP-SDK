@@ -21,10 +21,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const Brands = 'Brands';
 
         /** Reserved. */
+        const Classes = 'Classes';
+
+        /** Reserved. */
         const Courses = 'Courses';
 
         /** Reserved. */
+        const DailyRates = 'DailyRates';
+
+        /** Reserved. */
         const DegreePrograms = 'DegreePrograms';
+
+        /** Reserved. */
+        const Departments = 'Departments';
 
         /** Reserved. */
         const Destinations = 'Destinations';
@@ -36,16 +45,40 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const Goods = 'Goods';
 
         /** Reserved. */
+        const Grades = 'Grades';
+
+        /** Reserved. */
+        const Highlights = 'Highlights';
+
+        /** Reserved. */
         const InsuranceCoverage = 'InsuranceCoverage';
 
         /** Reserved. */
         const Items = 'Items';
 
         /** Reserved. */
+        const Languages = 'Languages';
+
+        /** Reserved. */
+        const Locations = 'Locations';
+
+        /** Reserved. */
         const Models = 'Models';
 
         /** Reserved. */
         const Neighborhoods = 'Neighborhoods';
+
+        /** Reserved. */
+        const Prices = 'Prices';
+
+        /** Reserved. */
+        const Rates = 'Rates';
+
+        /** Reserved. */
+        const Ratings = 'Ratings';
+
+        /** Reserved. */
+        const SchoolDistricts = 'SchoolDistricts';
 
         /** Reserved. */
         const Services = 'Services';
@@ -57,10 +90,34 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const Shows = 'Shows';
 
         /** Reserved. */
+        const Sizes = 'Sizes';
+
+        /** Reserved. */
         const Styles = 'Styles';
 
         /** Reserved. */
+        const Tools = 'Tools';
+
+        /** Reserved. */
+        const Topics = 'Topics';
+
+        /** Reserved. */
         const Types = 'Types';
+
+        /** Reserved. */
+        const Vacations = 'Vacations';
+
+        /** Reserved. */
+        const Vehicles = 'Vehicles';
+
+        /** Reserved. */
+        const What = 'What';
+
+        /** Reserved. */
+        const Who = 'Who';
+
+        /** Reserved. */
+        const Why = 'Why';
     }
 
 }

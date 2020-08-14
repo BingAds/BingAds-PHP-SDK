@@ -14,6 +14,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     {
         /** Request that the ViewThroughConversionWindowInMinutes element be included within each returned ConversionGoal object. */
         const ViewThroughConversionWindowInMinutes = 'ViewThroughConversionWindowInMinutes';
+
+        /** Request that the IsExternallyAttributed element be included within each returned OfflineConversionGoal object. */
+        const IsExternallyAttributed = 'IsExternallyAttributed';
     }
 
 }

@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DailyBudget;
 
         /**
-         * The system generated identifier of the Experiment.
+         * The system-generated identifier of the Experiment.
          * @var integer
          */
         public $ExperimentId;

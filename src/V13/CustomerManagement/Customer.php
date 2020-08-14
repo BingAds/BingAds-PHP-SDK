@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $CustomerFinancialStatus;
 
         /**
-         * The system generated customer identifier.
+         * The system-generated customer identifier.
          * @var integer
          */
         public $Id;

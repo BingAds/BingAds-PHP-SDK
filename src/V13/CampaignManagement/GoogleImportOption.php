@@ -210,6 +210,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewProductFilters;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewPromotionAdExtensions;
+
+        /**
          * Import review extensions that have not previously been imported.
          * @var boolean
          */
@@ -448,6 +454,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateProductFilters;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdatePromotionAdExtensions;
 
         /**
          * Import updates to existing review extensions.

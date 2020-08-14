@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class FilterLinkAdExtension extends AdExtension
     {
         /**
-         * Reserved.
+         * The header that is appended with a colon (:) and precedes the filter link values.
          * @var AdExtensionHeaderType
          */
         public $AdExtensionHeaderType;
@@ -37,7 +37,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Language;
 
         /**
-         * Reserved.
+         * The text values that follow after the Header: component.
          * @var string[]
          */
         public $Texts;

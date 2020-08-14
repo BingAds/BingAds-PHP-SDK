@@ -1847,6 +1847,7 @@ final class ReportingExampleHelper {
             self::OutputStatusMessage(sprintf("ExcludeReportFooter: %s", $dataObject->ExcludeReportFooter));
             self::OutputStatusMessage(sprintf("ExcludeReportHeader: %s", $dataObject->ExcludeReportHeader));
             self::OutputStatusMessage(sprintf("Format: %s", $dataObject->Format));
+            self::OutputStatusMessage(sprintf("FormatVersion: %s", $dataObject->FormatVersion));
             self::OutputStatusMessage(sprintf("ReportName: %s", $dataObject->ReportName));
             self::OutputStatusMessage(sprintf("ReturnOnlyCompleteData: %s", $dataObject->ReturnOnlyCompleteData));
             if($dataObject->Type === "AccountPerformanceReportRequest")

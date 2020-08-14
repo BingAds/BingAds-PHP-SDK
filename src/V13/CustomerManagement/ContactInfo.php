@@ -56,7 +56,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $HomePhone;
 
         /**
-         * The system generated identifier of the object.
+         * The system-generated identifier of the object.
          * @var integer
          */
         public $Id;

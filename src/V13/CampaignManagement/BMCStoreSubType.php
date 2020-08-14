@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class BMCStoreSubType
     {
-        /** The Microsoft Merchant Center store supports Cooperative campaigns. */
+        /** The Microsoft Merchant Center store supports Shopping Campaigns for Brands. */
         const CoOp = 'CoOp';
     }
 

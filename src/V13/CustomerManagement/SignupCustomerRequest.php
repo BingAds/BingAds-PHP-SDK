@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * 
      * @uses Customer
      * @uses AdvertiserAccount
+     * @uses UserInvitation
      * @used-by BingAdsCustomerManagementService::SignupCustomer
      */
     final class SignupCustomerRequest
@@ -30,5 +31,11 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var integer
          */
         public $ParentCustomerId;
+
+        /**
+         * Reserved.
+         * @var UserInvitation
+         */
+        public $UserInvitation;
     }
 }
