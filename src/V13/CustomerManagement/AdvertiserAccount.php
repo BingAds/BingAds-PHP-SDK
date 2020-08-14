@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $AccountFinancialStatus;
 
         /**
-         * The system generated identifier of the account.
+         * The system-generated identifier of the account.
          * @var integer
          */
         public $Id;
@@ -76,7 +76,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Name;
 
         /**
-         * The system generated account number that is used to identify the account in the Microsoft Advertising web application.
+         * The system-generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $Number;

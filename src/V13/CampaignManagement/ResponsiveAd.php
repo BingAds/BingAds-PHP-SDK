@@ -43,7 +43,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Headlines;
 
         /**
-         * Because audience ads are responsive, you can create multiple image assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.
+         * Image assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.
          * @var AssetLink[]
          */
         public $Images;

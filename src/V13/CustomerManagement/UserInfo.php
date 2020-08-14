@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class UserInfo
     {
         /**
-         * The system generated identifier of the user.
+         * The system-generated identifier of the user.
          * @var integer
          */
         public $Id;

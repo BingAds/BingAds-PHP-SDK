@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DestinationUrl;
 
         /**
-         * Reserved for future use.
+         * The display text of your image extension.
          * @var string
          */
         public $DisplayText;
@@ -44,19 +44,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalAppUrls;
 
         /**
-         * Reserved for future use.
+         * The landing page URL for mobile devices.
          * @var string[]
          */
         public $FinalMobileUrls;
 
         /**
-         * Reserved for future use.
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
          * @var string
          */
         public $FinalUrlSuffix;
 
         /**
-         * Reserved for future use.
+         * The landing page URL.
          * @var string[]
          */
         public $FinalUrls;
@@ -68,25 +68,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImageMediaIds;
 
         /**
-         * Reserved for future use.
+         * Image assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.
          * @var AssetLink[]
          */
         public $Images;
 
         /**
-         * Reserved for future use.
+         * The list of eligible image layouts.
          * @var string[]
          */
         public $Layouts;
 
         /**
-         * Reserved for future use.
+         * The tracking template to use as a default for all FinalUrls and FinalMobileUrls.
          * @var string
          */
         public $TrackingUrlTemplate;
 
         /**
-         * Reserved for future use.
+         * Your custom collection of key and value parameters for URL tracking.
          * @var CustomParameters
          */
         public $UrlCustomParameters;

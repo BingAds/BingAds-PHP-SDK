@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The current ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The report will include a column that contains the unique identifier provided by a merchant for each product offer. */
+        /** The unique identifier provided by a merchant for each product offer. */
         const MerchantProductId = 'MerchantProductId';
 
         /** The product item name. */

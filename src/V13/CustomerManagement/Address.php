@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $CountryCode;
 
         /**
-         * The system generated identifier of the address object.
+         * The system-generated identifier of the address object.
          * @var integer
          */
         public $Id;

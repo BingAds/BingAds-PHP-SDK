@@ -134,7 +134,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
         const Network = 'Network';
 
-        /** The report will include a column that indicates whether the ad impression appeared in a top position or elsewhere. */
+        /** Indicates whether the ad impression appeared in a top position or elsewhere. */
         const TopVsOther = 'TopVsOther';
 
         /** The keyword bid match type. */
@@ -179,7 +179,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Indicates whether or not the campaign is currently spending from the budget mentioned in the BudgetName column. */
         const BudgetAssociationStatus = 'BudgetAssociationStatus';
 
-        /** Clicks that are filtered by general methods, such as blacklists and activity-based detection, and that exhibit a low likelihood of commercial intent. */
+        /** Clicks that are filtered by general methods, such as deny lists and activity-based detection, and that exhibit a low likelihood of commercial intent. */
         const LowQualityGeneralClicks = 'LowQualityGeneralClicks';
 
         /** Invalid clicks that use sophisticated means to appear valid. */

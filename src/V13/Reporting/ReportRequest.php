@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         public $ExcludeColumnHeaders;
 
         /**
-         * Determines whether or not the downloaded report should contain footer metadata such as Microsoft copyright (@2019 Microsoft Corporation.
+         * Determines whether or not the downloaded report should contain footer metadata such as Microsoft copyright (@2020 Microsoft Corporation.
          * @var boolean
          */
         public $ExcludeReportFooter;
@@ -35,6 +35,12 @@ namespace Microsoft\BingAds\V13\Reporting;
          * @var ReportFormat
          */
         public $Format;
+
+        /**
+         * Determines the format for certain fields in the downloaded report file.
+         * @var string
+         */
+        public $FormatVersion;
 
         /**
          * The name of the report.

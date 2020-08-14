@@ -25,6 +25,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddSharedEntityResponse
      * @used-by AddUetTagsResponse
      * @used-by AppealEditorialRejectionsResponse
+     * @used-by ApplyOfflineConversionAdjustmentsResponse
      * @used-by ApplyOfflineConversionsResponse
      * @used-by ApplyProductPartitionActionsResponse
      * @used-by DeleteAdExtensionsResponse

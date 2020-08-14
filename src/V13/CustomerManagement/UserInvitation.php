@@ -10,11 +10,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses LCID
      * @used-by SearchUserInvitationsResponse
      * @used-by SendUserInvitationRequest
+     * @used-by SignupCustomerRequest
      */
     final class UserInvitation
     {
         /**
-         * A system generated unique identifier for the user invitation.
+         * A system-generated unique identifier for the user invitation.
          * @var integer
          */
         public $Id;

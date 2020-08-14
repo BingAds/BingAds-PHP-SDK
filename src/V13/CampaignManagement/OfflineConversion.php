@@ -36,6 +36,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ConversionValue;
 
         /**
+         * Reserved for future use.
+         * @var double
+         */
+        public $ExternalAttributionCredit;
+
+        /**
+         * Reserved for future use.
+         * @var string
+         */
+        public $ExternalAttributionModel;
+
+        /**
          * The MSCLKID for the offline conversion.
          * @var string
          */

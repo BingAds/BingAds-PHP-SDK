@@ -9,6 +9,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class OfflineConversionGoal extends ConversionGoal
     {
+        /**
+         * Reserved for future use.
+         * @var boolean
+         */
+        public $IsExternallyAttributed;
     }
 
 }

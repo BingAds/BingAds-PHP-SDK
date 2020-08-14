@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BidBoostValue;
 
         /**
-         * The flat amount of your Sponsored Products bid.
+         * The fixed bid maximum.
          * @var double
          */
         public $BidMaxValue;

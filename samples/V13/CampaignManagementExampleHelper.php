@@ -28,6 +28,7 @@ use Microsoft\BingAds\V13\CampaignManagement\AddNegativeKeywordsToEntitiesReques
 use Microsoft\BingAds\V13\CampaignManagement\AddSharedEntityRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AddUetTagsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\AppealEditorialRejectionsRequest;
+use Microsoft\BingAds\V13\CampaignManagement\ApplyOfflineConversionAdjustmentsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\ApplyOfflineConversionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\ApplyProductPartitionActionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteAdExtensionsRequest;
@@ -378,6 +379,18 @@ final class CampaignManagementExampleHelper {
         $request->JustificationText = $justificationText;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->AppealEditorialRejections($request);
+    }
+    static function ApplyOfflineConversionAdjustments(
+        $offlineConversionAdjustments)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new ApplyOfflineConversionAdjustmentsRequest();
+
+        $request->OfflineConversionAdjustments = $offlineConversionAdjustments;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->ApplyOfflineConversionAdjustments($request);
     }
     static function ApplyOfflineConversions(
         $offlineConversions)
@@ -1065,7 +1078,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetImportResults(
         $importType,
-        $pageInfo)
+        $pageInfo,
+        $importJobIds)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1074,6 +1088,7 @@ final class CampaignManagementExampleHelper {
 
         $request->ImportType = $importType;
         $request->PageInfo = $pageInfo;
+        $request->ImportJobIds = $importJobIds;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetImportResults($request);
     }
@@ -4016,6 +4031,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("NewPausedCampaignsAndChildEntities: %s", $dataObject->NewPausedCampaignsAndChildEntities));
             self::OutputStatusMessage(sprintf("NewPriceAdExtensions: %s", $dataObject->NewPriceAdExtensions));
             self::OutputStatusMessage(sprintf("NewProductFilters: %s", $dataObject->NewProductFilters));
+            self::OutputStatusMessage(sprintf("NewPromotionAdExtensions: %s", $dataObject->NewPromotionAdExtensions));
             self::OutputStatusMessage(sprintf("NewReviewAdExtensions: %s", $dataObject->NewReviewAdExtensions));
             self::OutputStatusMessage(sprintf("NewSitelinkAdExtensions: %s", $dataObject->NewSitelinkAdExtensions));
             self::OutputStatusMessage(sprintf("NewStructuredSnippetAdExtensions: %s", $dataObject->NewStructuredSnippetAdExtensions));
@@ -4059,6 +4075,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("UpdatePageFeeds: %s", $dataObject->UpdatePageFeeds));
             self::OutputStatusMessage(sprintf("UpdatePriceAdExtensions: %s", $dataObject->UpdatePriceAdExtensions));
             self::OutputStatusMessage(sprintf("UpdateProductFilters: %s", $dataObject->UpdateProductFilters));
+            self::OutputStatusMessage(sprintf("UpdatePromotionAdExtensions: %s", $dataObject->UpdatePromotionAdExtensions));
             self::OutputStatusMessage(sprintf("UpdateReviewAdExtensions: %s", $dataObject->UpdateReviewAdExtensions));
             self::OutputStatusMessage(sprintf("UpdateSitelinkAdExtensions: %s", $dataObject->UpdateSitelinkAdExtensions));
             self::OutputStatusMessage(sprintf("UpdateStatusForAdGroups: %s", $dataObject->UpdateStatusForAdGroups));
@@ -4919,6 +4936,8 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("ConversionName: %s", $dataObject->ConversionName));
             self::OutputStatusMessage(sprintf("ConversionTime: %s", $dataObject->ConversionTime));
             self::OutputStatusMessage(sprintf("ConversionValue: %s", $dataObject->ConversionValue));
+            self::OutputStatusMessage(sprintf("ExternalAttributionCredit: %s", $dataObject->ExternalAttributionCredit));
+            self::OutputStatusMessage(sprintf("ExternalAttributionModel: %s", $dataObject->ExternalAttributionModel));
             self::OutputStatusMessage(sprintf("MicrosoftClickId: %s", $dataObject->MicrosoftClickId));
             self::OutputStatusMessage("* * * End OutputOfflineConversion * * *");
         }
@@ -4934,11 +4953,38 @@ final class CampaignManagementExampleHelper {
             self::OutputOfflineConversion($dataObject);
         }
     }
+    static function OutputOfflineConversionAdjustment($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputOfflineConversionAdjustment * * *");
+            self::OutputStatusMessage(sprintf("AdjustmentCurrencyCode: %s", $dataObject->AdjustmentCurrencyCode));
+            self::OutputStatusMessage(sprintf("AdjustmentTime: %s", $dataObject->AdjustmentTime));
+            self::OutputStatusMessage(sprintf("AdjustmentType: %s", $dataObject->AdjustmentType));
+            self::OutputStatusMessage(sprintf("AdjustmentValue: %s", $dataObject->AdjustmentValue));
+            self::OutputStatusMessage(sprintf("ConversionName: %s", $dataObject->ConversionName));
+            self::OutputStatusMessage(sprintf("ConversionTime: %s", $dataObject->ConversionTime));
+            self::OutputStatusMessage(sprintf("MicrosoftClickId: %s", $dataObject->MicrosoftClickId));
+            self::OutputStatusMessage("* * * End OutputOfflineConversionAdjustment * * *");
+        }
+    }
+    static function OutputArrayOfOfflineConversionAdjustment($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->OfflineConversionAdjustment))
+        {
+            return;
+        }
+        foreach ($dataObjects->OfflineConversionAdjustment as $dataObject)
+        {
+            self::OutputOfflineConversionAdjustment($dataObject);
+        }
+    }
     static function OutputOfflineConversionGoal($dataObject)
     {
         if (!empty($dataObject))
         {
             self::OutputStatusMessage("* * * Begin OutputOfflineConversionGoal * * *");
+            self::OutputStatusMessage(sprintf("IsExternallyAttributed: %s", $dataObject->IsExternallyAttributed));
             self::OutputStatusMessage("* * * End OutputOfflineConversionGoal * * *");
         }
     }
