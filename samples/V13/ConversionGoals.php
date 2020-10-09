@@ -24,6 +24,7 @@ use Microsoft\BingAds\V13\CampaignManagement\UrlGoal;
 use Microsoft\BingAds\V13\CampaignManagement\ExpressionOperator;
 use Microsoft\BingAds\V13\CampaignManagement\ValueOperator;
 use Microsoft\BingAds\V13\CampaignManagement\UetTag;
+use Microsoft\BingAds\V13\CampaignManagement\ConversionGoalAdditionalField;
 use Microsoft\BingAds\V13\CampaignManagement\ConversionGoalRevenue;
 use Microsoft\BingAds\V13\CampaignManagement\ConversionGoalType;
 use Microsoft\BingAds\V13\CampaignManagement\ConversionGoalRevenueType;
@@ -66,7 +67,8 @@ try
     // the tracking script that you should add to your website is included in a corresponding 
     // UetTag within the response message. 
 
-    if ($uetTags == null || count($uetTags->UetTag) < 1)
+    if(count((array)$uetTags) == 0 || !isset($uetTags->UetTag))
+    //if ($uetTags == null || count($uetTags->UetTag) < 1)
     {
         $addUetTags = array();
         $uetTag = new UetTag();
@@ -259,11 +261,17 @@ try
         ConversionGoalType::Url
     );
     
+    $returnAdditionalFields = array(
+        ConversionGoalAdditionalField::ViewThroughConversionWindowInMinutes,
+    	ConversionGoalAdditionalField::IsExternallyAttributed,
+        ConversionGoalAdditionalField::GoalCategory
+    );
+
     print("-----\r\nGetConversionGoalsByIds:\r\n");
     $getConversionGoalsByIdsResponse = CampaignManagementExampleHelper::GetConversionGoalsByIds(
         $conversionGoalIds, 
         $conversionGoalTypes,
-        null
+        $returnAdditionalFields
     );
     $getConversionGoals = $getConversionGoalsByIdsResponse->ConversionGoals;
     print("ConversionGoals:\r\n");

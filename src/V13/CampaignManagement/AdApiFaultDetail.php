@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines a fault object that operations return when generic errors occur, such as an authentication error.
+     * Defines a Campaign Management Ad API fault detail object that operations return when generic errors occur, such as an authentication error.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adapifaultdetail?view=bingads-13 AdApiFaultDetail Data Object
      * 
      * @uses AdApiError

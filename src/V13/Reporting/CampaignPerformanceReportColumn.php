@@ -188,7 +188,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The labels applied to the campaign. */
         const CampaignLabels = 'CampaignLabels';
 
-        /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        /** The estimated percentage of impressions that your account received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
 
         /** The Microsoft Advertising assigned identifier of a customer. */
@@ -224,7 +224,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of impressions for your ad in the mainline, the top ad placements above the search results, out of the estimated number of mainline impressions you were eligible to receive. */
         const TopImpressionSharePercent = 'TopImpressionSharePercent';
 
-        /** The percentage of times your ad was in the first position of all returned ads, out of the total impressions available in your target market. */
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
         const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
 
         /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
@@ -268,6 +268,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The percentage of impression share you lost due to insufficient budget on the Microsoft Audience Network. */
         const AudienceImpressionLostToBudgetPercent = 'AudienceImpressionLostToBudgetPercent';
+
+        /** Your click-through rate divided by the average click-through rate of all ads that appear in the same sections of websites that show your ads. */
+        const RelativeCtr = 'RelativeCtr';
     }
 
 }

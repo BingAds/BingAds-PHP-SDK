@@ -24,7 +24,6 @@ use Microsoft\BingAds\Samples\V13\AuthHelper;
 use Microsoft\BingAds\Samples\V13\CampaignManagementExampleHelper;
 
 // Specify the Microsoft\BingAds\V13\CampaignManagement classes that will be used.
-use Microsoft\BingAds\V13\CampaignManagement\CampaignAdditionalField;
 use Microsoft\BingAds\V13\CampaignManagement\CampaignType;
 use Microsoft\BingAds\V13\CampaignManagement\Date;
 use Microsoft\BingAds\V13\CampaignManagement\Experiment;
@@ -39,7 +38,8 @@ try
     print("-----\r\nGetCampaignsByAccountId:\r\n");
     $getCampaignsByAccountIdResponse = CampaignManagementExampleHelper::GetCampaignsByAccountId(
     	$GLOBALS['AuthorizationData']->AccountId,
-        CampaignType::Search
+        AuthHelper::CampaignTypes,
+        AuthHelper::CampaignAdditionalFields
     );
     $campaigns = $getCampaignsByAccountIdResponse->Campaigns;
     print("Campaigns:\r\n");

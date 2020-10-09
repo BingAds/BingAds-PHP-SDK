@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Header;
 
         /**
-         * The snippet values that follow after the Header: component.
+         * The snippet values that follow after the Header component of the ad that is shown.
          * @var string[]
          */
         public $Values;

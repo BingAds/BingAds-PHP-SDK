@@ -14,6 +14,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     {
         /** Request that the AdScheduleUseSearcherTimeZone element be included within each returned AdGroup object. */
         const AdScheduleUseSearcherTimeZone = 'AdScheduleUseSearcherTimeZone';
+
+        /** Request that the AdGroupType element be included within each returned AdGroup object. */
+        const AdGroupType = 'AdGroupType';
     }
 
 }

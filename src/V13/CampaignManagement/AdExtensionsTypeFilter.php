@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** An ad extension that highlights special sales and offers in your text ads. */
         const PromotionAdExtension = 'PromotionAdExtension';
 
-        /** Reserved. */
+        /** An ad extension that pairs one header with between 3 and 10 clickable text values that tell customers more about your business. */
         const FilterLinkAdExtension = 'FilterLinkAdExtension';
     }
 

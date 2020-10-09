@@ -52,7 +52,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Id;
 
         /**
-         * The language used to render the invoice (if you use an invoice as your payment method).
+         * The language used to render the billing documents that you receive from Microsoft Advertising (if you use an invoice as your payment method).
          * @var LanguageType
          */
         public $Language;

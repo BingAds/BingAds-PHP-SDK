@@ -112,7 +112,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CampaignType;
 
         /**
-         * The settings will vary by campaign type.
+         * The supported settings that vary by campaign type.
          * @var Setting[]
          */
         public $Settings;

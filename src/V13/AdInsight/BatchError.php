@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Defines an error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
+     * Defines an Ad Insight batch error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/batcherror?view=bingads-13 BatchError Data Object
      * 
      * @used-by ApiFaultDetail

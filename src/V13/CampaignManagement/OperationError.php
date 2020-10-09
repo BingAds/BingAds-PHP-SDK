@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines an error object that contains the details that explain why the service operation failed.
+     * Defines a Campaign Management operation error that contains the details that explain why the service operation failed.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/operationerror?view=bingads-13 OperationError Data Object
      * 
      * @used-by ApiFaultDetail
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class OperationError
     {
         /**
-         * A numeric error code that identifies the error
+         * A numeric error code that identifies the error.
          * @var integer
          */
         public $Code;

@@ -17,6 +17,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the IsExternallyAttributed element be included within each returned OfflineConversionGoal object. */
         const IsExternallyAttributed = 'IsExternallyAttributed';
+
+        /** Request that the GoalCategory element be included within each returned ConversionGoal object. */
+        const GoalCategory = 'GoalCategory';
     }
 
 }

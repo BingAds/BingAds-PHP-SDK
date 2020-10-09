@@ -381,16 +381,16 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign Negative Customer List Association records in the download that each represent the association relationship between a campaign and a customer list exclusion. */
         const CampaignNegativeCustomerListAssociations = 'CampaignNegativeCustomerListAssociations';
 
-        /** Reserved. */
+        /** Include Filter Link Ad Extension records in the download data. */
         const FilterLinkAdExtensions = 'FilterLinkAdExtensions';
 
-        /** Reserved. */
+        /** Include Account Filter Link Ad Extension records in the download that represents the association relationship between an account and a filter link ad extension. */
         const AccountFilterLinkAdExtensions = 'AccountFilterLinkAdExtensions';
 
-        /** Reserved. */
+        /** Include Campaign Filter Link Ad Extension records in the download that represents the association relationship between a campaign and a filter link ad extension. */
         const CampaignFilterLinkAdExtensions = 'CampaignFilterLinkAdExtensions';
 
-        /** Reserved. */
+        /** Include Ad Group Filter Link Ad Extension records in the download that each represent the association relationship between an ad group and a filter link ad extension. */
         const AdGroupFilterLinkAdExtensions = 'AdGroupFilterLinkAdExtensions';
     }
 

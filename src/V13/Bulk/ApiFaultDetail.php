@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 
 {
     /**
-     * Defines a fault object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
+     * Defines a Bulk API fault detail object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
      * @link https://docs.microsoft.com/en-us/advertising/bulk-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
      * 
      * @uses BatchError
