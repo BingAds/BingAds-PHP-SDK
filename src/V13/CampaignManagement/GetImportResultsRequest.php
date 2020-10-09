@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getimportresults?view=bingads-13 GetImportResults Request Object
      * 
      * @uses Paging
+     * @uses ImportAdditionalField
      * @used-by BingAdsCampaignManagementService::GetImportResults
      */
     final class GetImportResultsRequest
@@ -29,5 +30,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $ImportJobIds;
+
+        /**
+         * Reserved for future use.
+         * @var ImportAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

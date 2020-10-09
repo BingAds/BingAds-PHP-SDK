@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoal?view=bingads-13 ConversionGoal Data Object
      * 
      * @uses ConversionGoalCountType
+     * @uses ConversionGoalCategory
      * @uses ConversionGoalRevenue
      * @uses EntityScope
      * @uses ConversionGoalStatus
@@ -37,6 +38,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $ExcludeFromBidding;
+
+        /**
+         * The category used to segment the conversion goal.
+         * @var ConversionGoalCategory
+         */
+        public $GoalCategory;
 
         /**
          * The unique Microsoft Advertising identifier for the conversion goal.

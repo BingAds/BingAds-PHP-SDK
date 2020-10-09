@@ -882,13 +882,15 @@ final class CampaignManagementExampleHelper {
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetAudiencesByIds($request);
     }
-    static function GetBMCStoresByCustomerId()
+    static function GetBMCStoresByCustomerId(
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
 
         $request = new GetBMCStoresByCustomerIdRequest();
 
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetBMCStoresByCustomerId($request);
     }
@@ -1064,7 +1066,8 @@ final class CampaignManagementExampleHelper {
     }
     static function GetImportJobsByIds(
         $importJobIds,
-        $importType)
+        $importType,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1073,13 +1076,15 @@ final class CampaignManagementExampleHelper {
 
         $request->ImportJobIds = $importJobIds;
         $request->ImportType = $importType;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetImportJobsByIds($request);
     }
     static function GetImportResults(
         $importType,
         $pageInfo,
-        $importJobIds)
+        $importJobIds,
+        $returnAdditionalFields)
     {
         $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
@@ -1089,6 +1094,7 @@ final class CampaignManagementExampleHelper {
         $request->ImportType = $importType;
         $request->PageInfo = $pageInfo;
         $request->ImportJobIds = $importJobIds;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->GetImportResults($request);
     }
@@ -2102,6 +2108,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage("UrlCustomParameters:");
             self::OutputCustomParameters($dataObject->UrlCustomParameters);
             self::OutputStatusMessage(sprintf("AdScheduleUseSearcherTimeZone: %s", $dataObject->AdScheduleUseSearcherTimeZone));
+            self::OutputStatusMessage(sprintf("AdGroupType: %s", $dataObject->AdGroupType));
             self::OutputStatusMessage("* * * End OutputAdGroup * * *");
         }
     }
@@ -3030,6 +3037,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("ConversionWindowInMinutes: %s", $dataObject->ConversionWindowInMinutes));
             self::OutputStatusMessage(sprintf("CountType: %s", $dataObject->CountType));
             self::OutputStatusMessage(sprintf("ExcludeFromBidding: %s", $dataObject->ExcludeFromBidding));
+            self::OutputStatusMessage(sprintf("GoalCategory: %s", $dataObject->GoalCategory));
             self::OutputStatusMessage(sprintf("Id: %s", $dataObject->Id));
             self::OutputStatusMessage(sprintf("Name: %s", $dataObject->Name));
             self::OutputStatusMessage("Revenue:");
@@ -3864,6 +3872,7 @@ final class CampaignManagementExampleHelper {
             self::OutputStatusMessage(sprintf("AdExtensionHeaderType: %s", $dataObject->AdExtensionHeaderType));
             self::OutputStatusMessage("FinalMobileUrls:");
             self::OutputArrayOfString($dataObject->FinalMobileUrls);
+            self::OutputStatusMessage(sprintf("FinalUrlSuffix: %s", $dataObject->FinalUrlSuffix));
             self::OutputStatusMessage("FinalUrls:");
             self::OutputArrayOfString($dataObject->FinalUrls);
             self::OutputStatusMessage(sprintf("Language: %s", $dataObject->Language));
@@ -7362,6 +7371,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfItemAction * * *");
     }
+    static function OutputBMCStoreAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputBMCStoreAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputBMCStoreAdditionalField * * *");
+    }
+    static function OutputArrayOfBMCStoreAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfBMCStoreAdditionalField * * *");
+        foreach ($valueSets->BMCStoreAdditionalField as $valueSet)
+        {
+            self::OutputBMCStoreAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfBMCStoreAdditionalField * * *");
+    }
     static function OutputBMCStoreSubType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputBMCStoreSubType * * *");
@@ -7638,6 +7670,29 @@ final class CampaignManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfConversionGoalCountType * * *");
     }
+    static function OutputConversionGoalCategory($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputConversionGoalCategory * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputConversionGoalCategory * * *");
+    }
+    static function OutputArrayOfConversionGoalCategory($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfConversionGoalCategory * * *");
+        foreach ($valueSets->ConversionGoalCategory as $valueSet)
+        {
+            self::OutputConversionGoalCategory($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfConversionGoalCategory * * *");
+    }
     static function OutputConversionGoalRevenueType($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputConversionGoalRevenueType * * *");
@@ -7752,6 +7807,29 @@ final class CampaignManagementExampleHelper {
             self::OutputValueOperator($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfValueOperator * * *");
+    }
+    static function OutputImportAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputImportAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputImportAdditionalField * * *");
+    }
+    static function OutputArrayOfImportAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfImportAdditionalField * * *");
+        foreach ($valueSets->ImportAdditionalField as $valueSet)
+        {
+            self::OutputImportAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfImportAdditionalField * * *");
     }
     static function OutputStatusMessage($message)
     {

@@ -20,6 +20,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the TargetImpressionShareBiddingScheme object be returned within the BiddingScheme element of each returned Campaign object. */
         const TargetImpressionShareBiddingScheme = 'TargetImpressionShareBiddingScheme';
+
+        /** Request that the TargetSetting object be returned within the Settings element of each returned Campaign object. */
+        const TargetSetting = 'TargetSetting';
     }
 
 }

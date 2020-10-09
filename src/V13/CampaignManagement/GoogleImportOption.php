@@ -210,7 +210,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewProductFilters;
 
         /**
-         * Reserved.
+         * Import promotion extensions that have not previously been imported.
          * @var boolean
          */
         public $NewPromotionAdExtensions;
@@ -270,7 +270,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $RaiseProductGroupBidsToMinimum;
 
         /**
-         * If you enable this option, the service will only fetch search ads from mixed mode campaigns and import them as search campaigns.
+         * If you enable this option, the service will only fetch search ads from mixed campaigns and import them as search campaigns.
          * @var boolean
          */
         public $SearchAndDsaMixedCampaignAsSearchCampaign;
@@ -456,7 +456,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateProductFilters;
 
         /**
-         * Reserved.
+         * Import updates to existing promotion extensions.
          * @var boolean
          */
         public $UpdatePromotionAdExtensions;

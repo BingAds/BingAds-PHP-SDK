@@ -41,6 +41,11 @@ try
 
     // Get the budget opportunities for each campaign in the current account.
     
+    if(count((array)$campaigns) == 0 || !isset($campaigns->Campaign))
+    {
+        return;
+    }
+
     foreach ($campaigns->Campaign as $campaign)
     {
         print("-----\r\nGetBudgetOpportunities:\r\n");

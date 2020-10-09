@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $PublisherCountry;
 
         /**
-         * A list of one or more of the following device types: Computers, NonSmartphones, Smartphones, Tablets.
+         * An array of devices for which you want to get demographics data.
          * @var string[]
          */
         public $Device;

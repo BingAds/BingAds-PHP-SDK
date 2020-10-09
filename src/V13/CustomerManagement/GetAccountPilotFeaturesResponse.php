@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Gets a list of the pilot programs that are enabled for the specified account.
+     * Gets a list of the feature pilot IDs that are enabled for an ad account.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getaccountpilotfeatures?view=bingads-13 GetAccountPilotFeatures Response Object
      * 
      * @used-by BingAdsCustomerManagementService::GetAccountPilotFeatures
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class GetAccountPilotFeaturesResponse
     {
         /**
-         * A list of integers that identifies the pilot features that are enabled for all of the customer's accounts.
+         * A list of integers that identify the feature pilots that are enabled for the ad account.
          * @var integer[]
          */
         public $FeaturePilotFlags;

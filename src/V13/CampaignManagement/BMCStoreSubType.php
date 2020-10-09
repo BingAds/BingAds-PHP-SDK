@@ -13,6 +13,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     {
         /** The Microsoft Merchant Center store supports Shopping Campaigns for Brands. */
         const CoOp = 'CoOp';
+
+        /** With Shopping Campaigns for Brands the global store encompasses all linked stores under the current manager account. */
+        const GlobalStore = 'GlobalStore';
     }
 
 }

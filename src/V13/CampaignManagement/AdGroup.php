@@ -131,6 +131,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $AdScheduleUseSearcherTimeZone;
+
+        /**
+         * The ad group type.
+         * @var string
+         */
+        public $AdGroupType;
     }
 
 }

@@ -131,7 +131,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The labels applied to the keyword. */
         const KeywordLabels = 'KeywordLabels';
 
-        /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        /** The estimated percentage of impressions that your account received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
 
         /** A percentage estimate of how often poor ad rank kept your ad from showing in the mainline, the top ad placements above the search results. */
@@ -152,7 +152,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of impressions for your ad in the mainline, the top ad placements above the search results, out of the estimated number of mainline impressions you were eligible to receive. */
         const TopImpressionSharePercent = 'TopImpressionSharePercent';
 
-        /** The percentage of times your ad was in the first position of all returned ads, out of the total impressions available in your target market. */
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
         const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
 
         /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */

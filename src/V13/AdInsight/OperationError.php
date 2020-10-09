@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Defines an error object that contains the details that explain why the service operation failed.
+     * Defines an Ad Insight operation error object that contains the details that explain why the service operation failed.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/operationerror?view=bingads-13 OperationError Data Object
      * 
      * @used-by ApiFaultDetail
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class OperationError
     {
         /**
-         * A numeric error code that identifies the error
+         * A numeric error code that identifies the error.
          * @var integer
          */
         public $Code;

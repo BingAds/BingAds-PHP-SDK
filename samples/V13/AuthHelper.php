@@ -55,7 +55,8 @@ final class AuthHelper {
     const CampaignAdditionalFields = 
         CampaignAdditionalField::AdScheduleUseSearcherTimeZone . ' ' . 
         CampaignAdditionalField::MaxConversionValueBiddingScheme . ' ' . 
-        CampaignAdditionalField::TargetImpressionShareBiddingScheme;
+        CampaignAdditionalField::TargetImpressionShareBiddingScheme . ' ' . 
+        CampaignAdditionalField::TargetSetting;
 
     const AllTargetCampaignCriterionTypes = 
         CampaignCriterionType::Age . ' ' . 
