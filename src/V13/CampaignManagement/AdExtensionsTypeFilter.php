@@ -48,6 +48,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** An ad extension that pairs one header with between 3 and 10 clickable text values that tell customers more about your business. */
         const FilterLinkAdExtension = 'FilterLinkAdExtension';
+
+        /** An ad extension that enables advertisers to distribute product or store catalogues (flyers) to potential customers. */
+        const FlyerAdExtension = 'FlyerAdExtension';
     }
 
 }

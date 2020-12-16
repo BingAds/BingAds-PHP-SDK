@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/idcollection?view=bingads-13 IdCollection Data Object
      * 
      * @used-by AddNegativeKeywordsToEntitiesResponse
+     * @used-by GetCampaignIdsByBidStrategyIdsResponse
      * @used-by GetCampaignIdsByBudgetIdsResponse
      */
     final class IdCollection

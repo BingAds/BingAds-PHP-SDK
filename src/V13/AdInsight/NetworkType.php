@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Defines the possible search networks on which an ad can display.
+     * Defines the possible networks used for keyword research.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/networktype?view=bingads-13 NetworkType Value Set
      * 
      * @used-by NetworkCriterion

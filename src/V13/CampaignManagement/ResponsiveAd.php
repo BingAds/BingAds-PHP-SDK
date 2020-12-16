@@ -49,6 +49,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Images;
 
         /**
+         * The URLs for 1x1 impression tracking pixels.
+         * @var string[]
+         */
+        public $ImpressionTrackingUrls;
+
+        /**
          * Reserved for future use.
          * @var AssetLink
          */

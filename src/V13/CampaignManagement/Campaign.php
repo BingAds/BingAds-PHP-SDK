@@ -134,6 +134,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $AdScheduleUseSearcherTimeZone;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $BidStrategyId;
     }
 
 }

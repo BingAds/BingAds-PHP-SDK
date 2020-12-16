@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/biddingscheme?view=bingads-13 BiddingScheme Data Object
      * 
      * @used-by AdGroup
+     * @used-by BidStrategy
      * @used-by Campaign
      * @used-by Keyword
      */

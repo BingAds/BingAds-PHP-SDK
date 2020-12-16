@@ -172,6 +172,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
     }
 
 }

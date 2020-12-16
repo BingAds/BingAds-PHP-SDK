@@ -64,6 +64,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Name;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $NotificationEmail;
+
+        /**
          * Determines whether and how often you want to receive email notifications about the import job results.
          * @var string
          */

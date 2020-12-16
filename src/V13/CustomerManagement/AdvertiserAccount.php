@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses CustomerInfo
      * @uses Address
      * @uses AutoTagType
+     * @uses AccountTaxCertificate
      * @used-by AddAccountRequest
      * @used-by AddPrepayAccountRequest
      * @used-by GetAccountResponse
@@ -182,6 +183,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var integer
          */
         public $SoldToPaymentInstrumentId;
+
+        /**
+         * Reserved.
+         * @var AccountTaxCertificate
+         */
+        public $TaxCertificate;
     }
 
 }

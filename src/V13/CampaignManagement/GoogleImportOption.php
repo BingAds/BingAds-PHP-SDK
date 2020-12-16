@@ -42,6 +42,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AssociatedUetTagId;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $AutoDeviceBidOptimization;
+
+        /**
          * Removed Google Ads items will be deleted along with their associated sub-items.
          * @var boolean
          */
