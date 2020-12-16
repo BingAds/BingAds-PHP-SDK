@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImportJobIds;
 
         /**
-         * Reserved for future use.
+         * The additional field values enable you to get the latest features using the current version of Campaign Management API, and in the next version the corresponding elements will be included by default.
          * @var ImportAdditionalField
          */
         public $ReturnAdditionalFields;

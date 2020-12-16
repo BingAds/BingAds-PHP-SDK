@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * Gets the details of an account.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getaccount?view=bingads-13 GetAccount Request Object
      * 
+     * @uses AccountAdditionalField
      * @used-by BingAdsCustomerManagementService::GetAccount
      */
     final class GetAccountRequest
@@ -16,5 +17,11 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var integer
          */
         public $AccountId;
+
+        /**
+         * The list of additional properties that you want included within each returned account.
+         * @var AccountAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

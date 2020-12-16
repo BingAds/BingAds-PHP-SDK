@@ -392,6 +392,21 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Include Ad Group Filter Link Ad Extension records in the download that each represent the association relationship between an ad group and a filter link ad extension. */
         const AdGroupFilterLinkAdExtensions = 'AdGroupFilterLinkAdExtensions';
+
+        /** Include Flyer Ad Extension records in the download data. */
+        const FlyerAdExtensions = 'FlyerAdExtensions';
+
+        /** Include Account Flyer Ad Extension records in the download that represents the association relationship between an account and a flyer ad extension. */
+        const AccountFlyerAdExtensions = 'AccountFlyerAdExtensions';
+
+        /** Include Campaign Flyer Ad Extension records in the download that represents the association relationship between a campaign and a flyer ad extension. */
+        const CampaignFlyerAdExtensions = 'CampaignFlyerAdExtensions';
+
+        /** Include Ad Group Flyer Ad Extension records in the download that each represent the association relationship between an ad group and a flyer ad extension. */
+        const AdGroupFlyerAdExtensions = 'AdGroupFlyerAdExtensions';
+
+        /** Reserved. */
+        const PortfolioBidStrategies = 'PortfolioBidStrategies';
     }
 
 }

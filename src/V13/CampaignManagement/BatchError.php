@@ -14,6 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddAdGroupsResponse
      * @used-by AddAdsResponse
      * @used-by AddAudiencesResponse
+     * @used-by AddBidStrategiesResponse
      * @used-by AddBudgetsResponse
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
@@ -34,6 +35,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteAdGroupsResponse
      * @used-by DeleteAdsResponse
      * @used-by DeleteAudiencesResponse
+     * @used-by DeleteBidStrategiesResponse
      * @used-by DeleteBudgetsResponse
      * @used-by DeleteCampaignCriterionsResponse
      * @used-by DeleteCampaignsResponse
@@ -53,14 +55,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetAdGroupsByIdsResponse
      * @used-by GetAdsByIdsResponse
      * @used-by GetAudiencesByIdsResponse
+     * @used-by GetBidStrategiesByIdsResponse
      * @used-by GetBudgetsByIdsResponse
      * @used-by GetCampaignCriterionsByIdsResponse
+     * @used-by GetCampaignIdsByBidStrategyIdsResponse
      * @used-by GetCampaignIdsByBudgetIdsResponse
      * @used-by GetCampaignsByIdsResponse
      * @used-by GetConversionGoalsByIdsResponse
      * @used-by GetConversionGoalsByTagIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
      * @used-by GetExperimentsByIdsResponse
+     * @used-by GetImportEntityIdsMappingResponse
      * @used-by GetImportJobsByIdsResponse
      * @used-by GetKeywordsByIdsResponse
      * @used-by GetLabelAssociationsByEntityIdsResponse
@@ -82,6 +87,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by UpdateAdGroupsResponse
      * @used-by UpdateAdsResponse
      * @used-by UpdateAudiencesResponse
+     * @used-by UpdateBidStrategiesResponse
      * @used-by UpdateBudgetsResponse
      * @used-by UpdateCampaignsResponse
      * @used-by UpdateConversionGoalsResponse

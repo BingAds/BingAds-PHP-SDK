@@ -23,6 +23,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the TargetSetting object be returned within the Settings element of each returned Campaign object. */
         const TargetSetting = 'TargetSetting';
+
+        /** Reserved. */
+        const BidStrategyId = 'BidStrategyId';
+
+        /** Reserved. */
+        const CpvCpmBiddingScheme = 'CpvCpmBiddingScheme';
     }
 
 }

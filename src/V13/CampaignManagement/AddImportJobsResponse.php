@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImportJobIds;
 
         /**
-         * An array of BatchError objects that contain details for any request items that were not successful.
+         * A list of BatchError objects that contain details for any list item requests that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

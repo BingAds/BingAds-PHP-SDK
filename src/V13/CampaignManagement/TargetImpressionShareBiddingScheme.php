@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved for future use.
+     * TargetImpressionShareBiddingScheme is reserved for future use.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/targetimpressionsharebiddingscheme?view=bingads-13 TargetImpressionShareBiddingScheme Data Object
      * 
      * @uses Bid

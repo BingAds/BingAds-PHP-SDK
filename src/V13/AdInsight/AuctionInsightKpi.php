@@ -52,6 +52,12 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var double
          */
         public $OutrankingShare;
+
+        /**
+         * The number of times an ad is shown as the very first ad above the organic search results, divided by the total number of impressions it actually received.
+         * @var double
+         */
+        public $AbsoluteTopOfPageRate;
     }
 
 }

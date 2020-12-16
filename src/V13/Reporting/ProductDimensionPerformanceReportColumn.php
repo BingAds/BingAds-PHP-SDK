@@ -247,6 +247,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The quantity of the product purchased (ProductBought) from your catalog or via your retail partner. */
         const QuantityBought = 'QuantityBought';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
     }
 
 }
