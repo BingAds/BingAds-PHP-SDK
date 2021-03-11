@@ -22,6 +22,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The UetTagTrackingStatus is Inactive, and Microsoft Advertising has not received any user activity data from the UET tag in the last 24 hours. */
         const TagInactive = 'TagInactive';
+
+        /** Reserved. */
+        const InactiveDueToTagUnavailable = 'InactiveDueToTagUnavailable';
     }
 
 }

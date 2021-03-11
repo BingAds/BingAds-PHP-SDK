@@ -179,7 +179,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of clicks that went to your ads. */
         const ClickSharePercent = 'ClickSharePercent';
 
-        /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
+        /** The estimated percentage of times your ad was in the first position of all results, out of the estimated number of first position impressions you were eligible to receive. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
 
         /** A place in your final URL where you can add parameters that will be attached to the end of your landing page URL. */
@@ -253,6 +253,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The ad group type. */
         const AdGroupType = 'AdGroupType';
+
+        /** Reserved. */
+        const AverageCpm = 'AverageCpm';
     }
 
 }

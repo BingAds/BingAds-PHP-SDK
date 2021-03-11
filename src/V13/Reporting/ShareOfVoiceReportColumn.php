@@ -146,7 +146,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The estimated percentage of how often your ad missed showing in the very top ad position, above search results, due to insufficient budget. */
         const AbsoluteTopImpressionShareLostToBudgetPercent = 'AbsoluteTopImpressionShareLostToBudgetPercent';
 
-        /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
+        /** The estimated percentage of times your ad was in the first position of all results, out of the estimated number of first position impressions you were eligible to receive. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
 
         /** The percentage of impressions for your ad in the mainline, the top ad placements above the search results, out of the estimated number of mainline impressions you were eligible to receive. */
@@ -178,6 +178,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** Reserved. */
+        const AverageCpm = 'AverageCpm';
     }
 
 }

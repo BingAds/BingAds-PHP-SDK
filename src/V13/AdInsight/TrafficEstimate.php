@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $AverageCpc;
 
         /**
-         * The estimated average CPC.
+         * The estimated average position on the web page for ads that were delivered.
          * @var double
          */
         public $AveragePosition;

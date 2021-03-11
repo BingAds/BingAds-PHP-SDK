@@ -149,7 +149,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of clicks that went to your ads. */
         const ClickSharePercent = 'ClickSharePercent';
 
-        /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
+        /** The estimated percentage of times your ad was in the first position of all results, out of the estimated number of first position impressions you were eligible to receive. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
 
         /** A percentage estimate of how often poor ad rank kept your ad from showing in the mainline, the top ad placements above the search results. */
@@ -208,6 +208,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The percentage of impression share you lost due to insufficient budget on the Microsoft Audience Network. */
         const AudienceImpressionLostToBudgetPercent = 'AudienceImpressionLostToBudgetPercent';
+
+        /** Reserved. */
+        const AverageCpm = 'AverageCpm';
     }
 
 }

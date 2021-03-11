@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the TaxCertificateStatus Value Set.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/taxcertificatestatus?view=bingads-13 TaxCertificateStatus Value Set
      * 
      * @used-by AccountTaxCertificate

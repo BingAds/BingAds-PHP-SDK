@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Identifies a campaign and the list of its ad groups to include within the operation scope.
+     * Identifies a campaign and the list of its ad groups to import.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaignadgroupids?view=bingads-13 CampaignAdGroupIds Data Object
      * 
      * @used-by GoogleImportJob
@@ -12,13 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CampaignAdGroupIds
     {
         /**
-         * Identifies the list a campaign's ad groups to include within the operation scope.
+         * Determines whether to include paused ad groups or only import active ad groups.
+         * @var boolean
+         */
+        public $ActiveAdGroupsOnly;
+
+        /**
+         * Identifies the list of specific ad groups to import within the campaign.
          * @var integer[]
          */
         public $AdGroupIds;
 
         /**
-         * Identifies a campaign to include within the operation scope.
+         * Identifies the campaign to import.
          * @var integer
          */
         public $CampaignId;

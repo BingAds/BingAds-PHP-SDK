@@ -151,6 +151,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** Reserved. */
+        const AverageCpm = 'AverageCpm';
     }
 
 }

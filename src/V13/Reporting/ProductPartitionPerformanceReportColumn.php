@@ -217,6 +217,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
         const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** Reserved. */
+        const AverageCpm = 'AverageCpm';
     }
 
 }

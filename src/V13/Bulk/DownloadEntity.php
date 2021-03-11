@@ -406,7 +406,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         const AdGroupFlyerAdExtensions = 'AdGroupFlyerAdExtensions';
 
         /** Reserved. */
-        const PortfolioBidStrategies = 'PortfolioBidStrategies';
+        const BidStrategies = 'BidStrategies';
     }
 
 }

@@ -20,6 +20,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the AutoDeviceBidOptimization element be included within each returned GoogleImportOption object. */
         const AutoDeviceBidOptimization = 'AutoDeviceBidOptimization';
+
+        /** Reserved. */
+        const ActiveAdGroupsOnly = 'ActiveAdGroupsOnly';
     }
 
 }

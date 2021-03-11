@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the possible campaign types.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaigntype?view=bingads-13 CampaignType Value Set
      * 
+     * @used-by BidStrategy
      * @used-by Campaign
      * @used-by GetCampaignsByAccountIdRequest
      * @used-by GetCampaignsByIdsRequest

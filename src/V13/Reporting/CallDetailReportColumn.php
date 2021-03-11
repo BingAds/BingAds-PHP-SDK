@@ -20,10 +20,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** The start time of the call. */
+        /** The start time of the call expressed in Coordinated Universal Time (UTC). */
         const StartTime = 'StartTime';
 
-        /** The end time of the call. */
+        /** The end time of the call expressed in Coordinated Universal Time (UTC). */
         const EndTime = 'EndTime';
 
         /** The duration of each forwarded call that originated from a call ad extension. */

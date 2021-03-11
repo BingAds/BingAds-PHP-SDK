@@ -25,6 +25,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddListItemsToSharedListResponse
      * @used-by AddSharedEntityResponse
      * @used-by AddUetTagsResponse
+     * @used-by AddVideosResponse
      * @used-by AppealEditorialRejectionsResponse
      * @used-by ApplyOfflineConversionAdjustmentsResponse
      * @used-by ApplyOfflineConversionsResponse
@@ -48,6 +49,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteMediaResponse
      * @used-by DeleteSharedEntitiesResponse
      * @used-by DeleteSharedEntityAssociationsResponse
+     * @used-by DeleteVideosResponse
      * @used-by GetAccountPropertiesResponse
      * @used-by GetAdExtensionsAssociationsResponse
      * @used-by GetAdExtensionsByIdsResponse
@@ -79,6 +81,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetSharedEntityAssociationsByEntityIdsResponse
      * @used-by GetSharedEntityAssociationsBySharedEntityIdsResponse
      * @used-by GetUetTagsByIdsResponse
+     * @used-by GetVideosByIdsResponse
      * @used-by SetAdExtensionsAssociationsResponse
      * @used-by SetLabelAssociationsResponse
      * @used-by SetNegativeSitesToAdGroupsResponse
@@ -96,6 +99,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by UpdateLabelsResponse
      * @used-by UpdateSharedEntitiesResponse
      * @used-by UpdateUetTagsResponse
+     * @used-by UpdateVideosResponse
      */
     class BatchError
     {

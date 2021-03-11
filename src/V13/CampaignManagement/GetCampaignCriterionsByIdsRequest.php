@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getcampaigncriterionsbyids?view=bingads-13 GetCampaignCriterionsByIds Request Object
      * 
      * @uses CampaignCriterionType
+     * @uses CriterionAdditionalField
      * @used-by BingAdsCampaignManagementService::GetCampaignCriterionsByIds
      */
     final class GetCampaignCriterionsByIdsRequest
@@ -29,5 +30,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CampaignCriterionType
          */
         public $CriterionType;
+
+        /**
+         * Reserved.
+         * @var CriterionAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

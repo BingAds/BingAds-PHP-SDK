@@ -29,6 +29,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CpvCpmBiddingScheme = 'CpvCpmBiddingScheme';
+
+        /** Reserved. */
+        const DynamicFeedSetting = 'DynamicFeedSetting';
     }
 
 }

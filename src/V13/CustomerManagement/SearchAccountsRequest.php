@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses Predicate
      * @uses OrderBy
      * @uses Paging
+     * @uses AccountAdditionalField
      * @used-by BingAdsCustomerManagementService::SearchAccounts
      */
     final class SearchAccountsRequest
@@ -31,5 +32,11 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * Reserved.
+         * @var AccountAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

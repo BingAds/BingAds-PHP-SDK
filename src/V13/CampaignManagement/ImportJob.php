@@ -64,7 +64,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Name;
 
         /**
-         * Reserved.
+         * The email address where import results should be sent.
          * @var string
          */
         public $NotificationEmail;

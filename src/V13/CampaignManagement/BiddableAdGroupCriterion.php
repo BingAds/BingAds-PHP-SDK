@@ -11,6 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses AdGroupCriterionEditorialStatus
      * @uses AppUrl
      * @uses CustomParameters
+     * @uses CriterionCashback
      */
     final class BiddableAdGroupCriterion extends AdGroupCriterion
     {
@@ -67,6 +68,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CustomParameters
          */
         public $UrlCustomParameters;
+
+        /**
+         * Reserved.
+         * @var CriterionCashback
+         */
+        public $CriterionCashback;
     }
 
 }

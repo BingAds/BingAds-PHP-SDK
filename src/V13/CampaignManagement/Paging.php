@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetLabelAssociationsByLabelIdsRequest
      * @used-by GetLabelsByIdsRequest
      * @used-by GetMediaMetaDataByAccountIdRequest
+     * @used-by GetVideosByIdsRequest
      */
     final class Paging
     {

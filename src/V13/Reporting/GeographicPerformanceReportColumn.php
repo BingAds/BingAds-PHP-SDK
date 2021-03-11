@@ -184,6 +184,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
         const TopImpressionRatePercent = 'TopImpressionRatePercent';
+
+        /** Reserved. */
+        const AverageCpm = 'AverageCpm';
     }
 
 }
