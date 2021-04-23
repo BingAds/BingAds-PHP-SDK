@@ -78,10 +78,6 @@ final class AuthHelper {
     
     static function Authenticate() 
     {   
-        // Disable WSDL caching.
-        ini_set("soap.wsdl_cache_enabled", "0");
-        ini_set("soap.wsdl_cache_ttl", "0");
-
         // Authenticate with a Microsoft Account.
         AuthHelper::AuthenticateWithOAuth();
 
@@ -105,7 +101,7 @@ final class AuthHelper {
             0, 
             100
         )->Accounts;
-    
+
         // We'll use the first account by default for the examples. 
 
         $GLOBALS['AuthorizationData']->AccountId = $accounts->AdvertiserAccount[0]->Id;
