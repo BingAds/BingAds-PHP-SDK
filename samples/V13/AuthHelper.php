@@ -101,7 +101,7 @@ final class AuthHelper {
             0, 
             100
         )->Accounts;
-
+    
         // We'll use the first account by default for the examples. 
 
         $GLOBALS['AuthorizationData']->AccountId = $accounts->AdvertiserAccount[0]->Id;
