@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the GetCampaignIdsByBidStrategyIds Service Operation.
+     * Gets the campaign identifiers that are associated with the specified portfolio bid strategies.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getcampaignidsbybidstrategyids?view=bingads-13 GetCampaignIdsByBidStrategyIds Response Object
      * 
      * @uses IdCollection
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetCampaignIdsByBidStrategyIdsResponse
     {
         /**
-         * Reserved.
+         * The list of campaign id collections that corresponds directly to the bid strategy identifiers that you specified in the request.
          * @var IdCollection[]
          */
         public $CampaignIdCollection;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

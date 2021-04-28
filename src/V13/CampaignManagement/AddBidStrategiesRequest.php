@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the AddBidStrategies Service Operation.
+     * Adds bid strategies to an account's portfolio bid strategy library.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addbidstrategies?view=bingads-13 AddBidStrategies Request Object
      * 
      * @uses BidStrategy
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddBidStrategiesRequest
     {
         /**
-         * Reserved.
+         * An array of BidStrategy objects to add to the account's portfolio bid strategy library.
          * @var BidStrategy[]
          */
         public $BidStrategies;

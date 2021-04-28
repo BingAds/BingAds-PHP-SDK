@@ -28,13 +28,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Path2;
 
         /**
-         * The first part of the ad description.
+         * The first part of the ad description that can show in your ad.
          * @var string
          */
         public $Text;
 
         /**
-         * The second part of the ad description.
+         * The second part of the ad description that can show in your ad.
          * @var string
          */
         public $TextPart2;

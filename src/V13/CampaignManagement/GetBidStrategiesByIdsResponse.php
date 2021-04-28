@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the GetBidStrategiesByIds Service Operation.
+     * Gets bid strategies in an account's portfolio bid strategy library.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getbidstrategiesbyids?view=bingads-13 GetBidStrategiesByIds Response Object
      * 
      * @uses BidStrategy
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetBidStrategiesByIdsResponse
     {
         /**
-         * Reserved.
+         * An array of BidStrategy objects that corresponds directly to the bid strategy identifiers that you specified in the request.
          * @var BidStrategy[]
          */
         public $BidStrategies;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

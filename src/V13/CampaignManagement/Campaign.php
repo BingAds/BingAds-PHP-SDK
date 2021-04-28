@@ -136,7 +136,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdScheduleUseSearcherTimeZone;
 
         /**
-         * Reserved.
+         * The system-generated identifier of the BidStrategy that this campaign shares with other campaigns in the account.
          * @var integer
          */
         public $BidStrategyId;

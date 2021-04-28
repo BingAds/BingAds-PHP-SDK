@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the possible budget types that you can specify for a campaign.
+     * Defines the possible budget limit types that you can specify for a campaign.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/budgetlimittype?view=bingads-13 BudgetLimitType Value Set
      * 
      * @used-by Budget

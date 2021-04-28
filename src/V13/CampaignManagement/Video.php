@@ -72,6 +72,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $ThumbnailUrl;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $Url;
     }
 
 }
