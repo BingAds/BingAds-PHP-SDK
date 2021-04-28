@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the AddBidStrategies Service Operation.
+     * Adds bid strategies to an account's portfolio bid strategy library.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addbidstrategies?view=bingads-13 AddBidStrategies Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddBidStrategiesResponse
     {
         /**
-         * Reserved.
+         * A list of unique system identifiers corresponding to the bid strategies that were added.
          * @var integer[]
          */
         public $BidStrategyIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

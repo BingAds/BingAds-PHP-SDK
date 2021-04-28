@@ -107,7 +107,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The report will contain data for ads that were viewed in Lithuanian. */
         const Lithuanian = 'Lithuanian';
 
-        /** The report will contain data for ads that were viewed in Slovakian. */
+        /** The report will contain data for ads that were viewed in Slovenian. */
         const Slovenian = 'Slovenian';
 
         /** The report will contain data for ads that were viewed in Estonian. */

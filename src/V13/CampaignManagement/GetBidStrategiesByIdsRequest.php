@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the GetBidStrategiesByIds Service Operation.
+     * Gets bid strategies in an account's portfolio bid strategy library.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getbidstrategiesbyids?view=bingads-13 GetBidStrategiesByIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetBidStrategiesByIds
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetBidStrategiesByIdsRequest
     {
         /**
-         * Reserved.
+         * A list of unique bid strategy identifiers that identify the bid strategies to get.
          * @var integer[]
          */
         public $BidStrategyIds;

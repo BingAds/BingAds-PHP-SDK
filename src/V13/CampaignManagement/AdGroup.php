@@ -137,6 +137,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $AdGroupType;
+
+        /**
+         * Reserved.
+         * @var Bid
+         */
+        public $CpvBid;
+
+        /**
+         * Reserved.
+         * @var Bid
+         */
+        public $CpmBid;
     }
 
 }

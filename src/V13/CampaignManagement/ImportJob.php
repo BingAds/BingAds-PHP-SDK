@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by ImportResult
      * @used-by AddImportJobsRequest
      * @used-by GetImportJobsByIdsResponse
+     * @used-by UpdateImportJobsRequest
      */
     class ImportJob
     {

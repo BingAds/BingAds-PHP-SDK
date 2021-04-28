@@ -272,7 +272,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Your click-through rate divided by the average click-through rate of all ads that appear in the same sections of websites that show your ads. */
         const RelativeCtr = 'RelativeCtr';
 
-        /** Reserved. */
+        /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
     }
 

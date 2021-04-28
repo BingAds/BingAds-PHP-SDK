@@ -71,6 +71,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Text;
+
+        /**
+         * Reserved.
+         * @var AssetLink[]
+         */
+        public $Videos;
     }
 
 }

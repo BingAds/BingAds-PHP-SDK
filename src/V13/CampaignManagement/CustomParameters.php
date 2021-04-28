@@ -21,6 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by PriceAdExtension
      * @used-by PromotionAdExtension
      * @used-by SitelinkAdExtension
+     * @used-by VideoAdExtension
      */
     final class CustomParameters
     {

@@ -405,8 +405,20 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Ad Group Flyer Ad Extension records in the download that each represent the association relationship between an ad group and a flyer ad extension. */
         const AdGroupFlyerAdExtensions = 'AdGroupFlyerAdExtensions';
 
-        /** Reserved. */
+        /** Include Bid Strategy records in the download data. */
         const BidStrategies = 'BidStrategies';
+
+        /** Reserved. */
+        const VideoAdExtensions = 'VideoAdExtensions';
+
+        /** Reserved. */
+        const AccountVideoAdExtensions = 'AccountVideoAdExtensions';
+
+        /** Reserved. */
+        const CampaignVideoAdExtensions = 'CampaignVideoAdExtensions';
+
+        /** Reserved. */
+        const AdGroupVideoAdExtensions = 'AdGroupVideoAdExtensions';
     }
 
 }

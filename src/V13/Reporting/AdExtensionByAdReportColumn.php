@@ -161,7 +161,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
 
-        /** Reserved. */
+        /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
     }
 

@@ -78,10 +78,6 @@ final class AuthHelper {
     
     static function Authenticate() 
     {   
-        // Disable WSDL caching.
-        ini_set("soap.wsdl_cache_enabled", "0");
-        ini_set("soap.wsdl_cache_ttl", "0");
-
         // Authenticate with a Microsoft Account.
         AuthHelper::AuthenticateWithOAuth();
 

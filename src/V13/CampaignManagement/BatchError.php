@@ -95,6 +95,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by UpdateCampaignsResponse
      * @used-by UpdateConversionGoalsResponse
      * @used-by UpdateExperimentsResponse
+     * @used-by UpdateImportJobsResponse
      * @used-by UpdateKeywordsResponse
      * @used-by UpdateLabelsResponse
      * @used-by UpdateSharedEntitiesResponse

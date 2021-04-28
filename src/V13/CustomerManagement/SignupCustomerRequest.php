@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Account;
 
         /**
-         * The customer identifier of the aggregator that will manage the new child customer.
+         * The customer identifier of the aggregator or agency that will manage the new child customer.
          * @var integer
          */
         public $ParentCustomerId;
@@ -37,5 +37,11 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var UserInvitation
          */
         public $UserInvitation;
+
+        /**
+         * The identifier of an existing user who will be added as Super Admin in the new customer.
+         * @var integer
+         */
+        public $UserId;
     }
 }

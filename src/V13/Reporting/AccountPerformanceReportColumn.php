@@ -209,7 +209,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of impression share you lost due to insufficient budget on the Microsoft Audience Network. */
         const AudienceImpressionLostToBudgetPercent = 'AudienceImpressionLostToBudgetPercent';
 
-        /** Reserved. */
+        /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
     }
 

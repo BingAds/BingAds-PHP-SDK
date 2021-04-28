@@ -254,7 +254,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group type. */
         const AdGroupType = 'AdGroupType';
 
-        /** Reserved. */
+        /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
     }
 

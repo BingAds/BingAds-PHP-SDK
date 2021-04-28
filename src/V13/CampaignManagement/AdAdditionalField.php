@@ -15,6 +15,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     {
         /** Request that the ImpressionTrackingUrls element be included within each returned ResponsiveAd object. */
         const ImpressionTrackingUrls = 'ImpressionTrackingUrls';
+
+        /** Reserved. */
+        const Videos = 'Videos';
     }
 
 }

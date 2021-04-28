@@ -32,6 +32,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Used to get or set the property that determines whether LinkedIn profile targeting expansion is enabled for the account. */
         const ProfileExpansionEnabled = 'ProfileExpansionEnabled';
+
+        /** Reserved. */
+        const AllowCrawlImagesFromLandingPage = 'AllowCrawlImagesFromLandingPage';
     }
 
 }

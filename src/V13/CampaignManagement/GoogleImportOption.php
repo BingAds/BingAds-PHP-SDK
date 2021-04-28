@@ -42,7 +42,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AssociatedUetTagId;
 
         /**
-         * Reserved.
+         * When enabled, we will not import negative bid modifiers for desktop targets except modifiers set to -100%.
          * @var boolean
          */
         public $AutoDeviceBidOptimization;
@@ -286,6 +286,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var ImportSearchAndReplaceForStringProperty
          */
         public $SearchAndReplaceForCampaignNames;
+
+        /**
+         * Reserved.
+         * @var ImportSearchAndReplaceForStringProperty
+         */
+        public $SearchAndReplaceForCustomParameters;
 
         /**
          * Set this option to find and replace a string within each tracking template during import.

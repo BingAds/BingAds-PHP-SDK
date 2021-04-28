@@ -21,7 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the GoalCategory element be included within each returned ConversionGoal object. */
         const GoalCategory = 'GoalCategory';
 
-        /** Reserved. */
+        /** Request that the InactiveDueToTagUnavailable value be included within each returned ConversionGoal object. */
         const InactiveDueToTagUnavailable = 'InactiveDueToTagUnavailable';
     }
 

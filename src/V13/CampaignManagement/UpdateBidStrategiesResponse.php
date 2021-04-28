@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the UpdateBidStrategies Service Operation.
+     * Updates bid strategies in an account's portfolio bid strategy library.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatebidstrategies?view=bingads-13 UpdateBidStrategies Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateBidStrategiesResponse
     {
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

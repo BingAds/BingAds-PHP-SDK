@@ -15,6 +15,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by Keyword
      * @used-by PromotionAdExtension
      * @used-by SitelinkAdExtension
+     * @used-by VideoAdExtension
      */
     final class AppUrl
     {

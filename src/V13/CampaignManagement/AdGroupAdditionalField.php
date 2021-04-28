@@ -17,6 +17,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the AdGroupType element be included within each returned AdGroup object. */
         const AdGroupType = 'AdGroupType';
+
+        /** Reserved. */
+        const CpvBid = 'CpvBid';
+
+        /** Reserved. */
+        const CpmBid = 'CpmBid';
     }
 
 }
