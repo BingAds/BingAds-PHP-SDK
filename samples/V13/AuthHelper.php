@@ -13,6 +13,7 @@ use Microsoft\BingAds\Auth\OAuthWebAuthCodeGrant;
 use Microsoft\BingAds\Auth\AuthorizationData;
 use Microsoft\BingAds\Auth\OAuthTokenRequestException;
 use Microsoft\BingAds\Auth\ApiEnvironment;
+use Microsoft\BingAds\Auth\OAuthScope;
 use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
@@ -43,6 +44,7 @@ final class AuthHelper {
 
     const DeveloperToken = 'BBD37VB98'; // For sandbox use BBD37VB98
     const ApiEnvironment = ApiEnvironment::Sandbox;
+    const OAuthScope = OAuthScope::MSADS_MANAGE;
     const OAuthRefreshTokenPath = 'refresh.txt';
     const ClientId = 'db41b09d-6e50-4f4a-90ac-5a99caefb52f';  // For sandbox use db41b09d-6e50-4f4a-90ac-5a99caefb52f
 
@@ -167,7 +169,8 @@ final class AuthHelper {
     {
         $authentication = (new OAuthDesktopMobileAuthCodeGrant())
             ->withEnvironment(AuthHelper::ApiEnvironment)
-            ->withClientId(AuthHelper::ClientId);
+            ->withClientId(AuthHelper::ClientId)
+            ->withOAuthScope(AuthHelper::OAuthScope);
             
         $GLOBALS['AuthorizationData'] = (new AuthorizationData())
             ->withAuthentication($authentication)

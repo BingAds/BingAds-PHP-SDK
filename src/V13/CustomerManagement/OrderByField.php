@@ -22,6 +22,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** The order is determined by a predicate life cycle status. */
         const LifeCycleStatus = 'LifeCycleStatus';
+
+        /** Reserved. */
+        const CouponClassName = 'CouponClassName';
+
+        /** Reserved. */
+        const CouponStartDate = 'CouponStartDate';
     }
 
 }

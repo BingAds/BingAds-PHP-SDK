@@ -79,6 +79,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Language;
 
         /**
+         * Reserved.
+         * @var integer
+         */
+        public $MultimediaAdsBidAdjustment;
+
+        /**
          * The name of the ad group.
          * @var string
          */

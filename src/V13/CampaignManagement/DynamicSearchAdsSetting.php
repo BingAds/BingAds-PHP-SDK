@@ -18,6 +18,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DomainName;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $DynamicDescriptionEnabled;
+
+        /**
          * The language of the website pages that you want to target for dynamic search ads.
          * @var string
          */
