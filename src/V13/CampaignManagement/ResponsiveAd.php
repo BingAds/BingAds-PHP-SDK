@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/responsivead?view=bingads-13 ResponsiveAd Data Object
      * 
      * @uses CallToAction
+     * @uses LanguageName
      * @uses AssetLink
      */
     final class ResponsiveAd extends Ad
@@ -23,6 +24,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CallToAction
          */
         public $CallToAction;
+
+        /**
+         * Reserved.
+         * @var LanguageName
+         */
+        public $CallToActionLanguage;
 
         /**
          * Reserved for future use.
@@ -65,6 +72,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $LongHeadlineString;
+
+        /**
+         * Reserved.
+         * @var AssetLink[]
+         */
+        public $LongHeadlines;
 
         /**
          * Depending on your audience ad's placement, this text will appear below or adjacent to your ad's long or short headline.

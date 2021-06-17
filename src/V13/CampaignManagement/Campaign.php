@@ -70,6 +70,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Id;
 
         /**
+         * Reserved.
+         * @var integer
+         */
+        public $MultimediaAdsBidAdjustment;
+
+        /**
          * The name of the campaign.
          * @var string
          */

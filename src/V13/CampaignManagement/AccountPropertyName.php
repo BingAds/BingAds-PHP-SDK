@@ -34,7 +34,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const ProfileExpansionEnabled = 'ProfileExpansionEnabled';
 
         /** Reserved. */
-        const AllowCrawlImagesFromLandingPage = 'AllowCrawlImagesFromLandingPage';
+        const AllowImageAutoRetrieve = 'AllowImageAutoRetrieve';
+
+        /** Reserved. */
+        const AutoApplyRecommendations = 'AutoApplyRecommendations';
     }
 
 }

@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getaudiencesbyids?view=bingads-13 GetAudiencesByIds Request Object
      * 
      * @uses AudienceType
+     * @uses AudienceAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAudiencesByIds
      */
     final class GetAudiencesByIdsRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var AudienceType
          */
         public $Type;
+
+        /**
+         * Reserved.
+         * @var AudienceAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

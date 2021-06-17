@@ -23,6 +23,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CpmBid = 'CpmBid';
+
+        /** Reserved. */
+        const MultimediaAdsBidAdjustment = 'MultimediaAdsBidAdjustment';
     }
 
 }

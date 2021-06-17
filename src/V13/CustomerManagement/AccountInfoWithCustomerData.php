@@ -53,6 +53,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var integer
          */
         public $PauseReason;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $AccountMode;
     }
 
 }

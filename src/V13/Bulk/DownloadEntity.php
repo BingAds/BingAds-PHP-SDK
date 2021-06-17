@@ -419,6 +419,9 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const AdGroupVideoAdExtensions = 'AdGroupVideoAdExtensions';
+
+        /** Reserved. */
+        const Videos = 'Videos';
     }
 
 }
