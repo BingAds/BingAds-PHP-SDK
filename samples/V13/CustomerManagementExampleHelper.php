@@ -24,6 +24,7 @@ use Microsoft\BingAds\V13\CustomerManagement\GetCustomerPilotFeaturesRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetCustomersInfoRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetLinkedAccountsAndCustomersInfoRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetUserRequest;
+use Microsoft\BingAds\V13\CustomerManagement\GetUserMFAStatusRequest;
 use Microsoft\BingAds\V13\CustomerManagement\GetUsersInfoRequest;
 use Microsoft\BingAds\V13\CustomerManagement\SearchAccountsRequest;
 use Microsoft\BingAds\V13\CustomerManagement\SearchClientLinksRequest;
@@ -123,7 +124,8 @@ final class CustomerManagementExampleHelper {
     }
     static function FindAccountsOrCustomersInfo(
         $filter,
-        $topN)
+        $topN,
+        $returnAdditionalFields)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -132,11 +134,13 @@ final class CustomerManagementExampleHelper {
 
         $request->Filter = $filter;
         $request->TopN = $topN;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->FindAccountsOrCustomersInfo($request);
     }
     static function GetAccount(
-        $accountId)
+        $accountId,
+        $returnAdditionalFields)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -144,6 +148,7 @@ final class CustomerManagementExampleHelper {
         $request = new GetAccountRequest();
 
         $request->AccountId = $accountId;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetAccount($request);
     }
@@ -237,6 +242,16 @@ final class CustomerManagementExampleHelper {
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->GetUser($request);
     }
+    static function GetUserMFAStatus()
+    {
+        $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
+
+        $request = new GetUserMFAStatusRequest();
+
+
+        return $GLOBALS['CustomerManagementProxy']->GetService()->GetUserMFAStatus($request);
+    }
     static function GetUsersInfo(
         $customerId,
         $statusFilter)
@@ -254,7 +269,8 @@ final class CustomerManagementExampleHelper {
     static function SearchAccounts(
         $predicates,
         $ordering,
-        $pageInfo)
+        $pageInfo,
+        $returnAdditionalFields)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -264,6 +280,7 @@ final class CustomerManagementExampleHelper {
         $request->Predicates = $predicates;
         $request->Ordering = $ordering;
         $request->PageInfo = $pageInfo;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->SearchAccounts($request);
     }
@@ -329,7 +346,8 @@ final class CustomerManagementExampleHelper {
         $customer,
         $account,
         $parentCustomerId,
-        $userInvitation)
+        $userInvitation,
+        $userId)
     {
         $GLOBALS['CustomerManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['CustomerManagementProxy'];
@@ -340,6 +358,7 @@ final class CustomerManagementExampleHelper {
         $request->Account = $account;
         $request->ParentCustomerId = $parentCustomerId;
         $request->UserInvitation = $userInvitation;
+        $request->UserId = $userId;
 
         return $GLOBALS['CustomerManagementProxy']->GetService()->SignupCustomer($request);
     }
@@ -465,6 +484,7 @@ final class CustomerManagementExampleHelper {
             self::OutputStatusMessage(sprintf("AccountNumber: %s", $dataObject->AccountNumber));
             self::OutputStatusMessage(sprintf("AccountLifeCycleStatus: %s", $dataObject->AccountLifeCycleStatus));
             self::OutputStatusMessage(sprintf("PauseReason: %s", $dataObject->PauseReason));
+            self::OutputStatusMessage(sprintf("AccountMode: %s", $dataObject->AccountMode));
             self::OutputStatusMessage("* * * End OutputAccountInfoWithCustomerData * * *");
         }
     }
@@ -477,6 +497,29 @@ final class CustomerManagementExampleHelper {
         foreach ($dataObjects->AccountInfoWithCustomerData as $dataObject)
         {
             self::OutputAccountInfoWithCustomerData($dataObject);
+        }
+    }
+    static function OutputAccountTaxCertificate($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputAccountTaxCertificate * * *");
+            self::OutputStatusMessage(sprintf("TaxCertificateBlobContainerName: %s", $dataObject->TaxCertificateBlobContainerName));
+            self::OutputStatusMessage("TaxCertificates:");
+            self::OutputArrayOfKeyValuePairOfstringbase64Binary($dataObject->TaxCertificates);
+            self::OutputStatusMessage(sprintf("Status: %s", $dataObject->Status));
+            self::OutputStatusMessage("* * * End OutputAccountTaxCertificate * * *");
+        }
+    }
+    static function OutputArrayOfAccountTaxCertificate($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->AccountTaxCertificate))
+        {
+            return;
+        }
+        foreach ($dataObjects->AccountTaxCertificate as $dataObject)
+        {
+            self::OutputAccountTaxCertificate($dataObject);
         }
     }
     static function OutputAdApiError($dataObject)
@@ -593,6 +636,9 @@ final class CustomerManagementExampleHelper {
             self::OutputAddress($dataObject->BusinessAddress);
             self::OutputStatusMessage(sprintf("AutoTagType: %s", $dataObject->AutoTagType));
             self::OutputStatusMessage(sprintf("SoldToPaymentInstrumentId: %s", $dataObject->SoldToPaymentInstrumentId));
+            self::OutputStatusMessage("TaxCertificate:");
+            self::OutputAccountTaxCertificate($dataObject->TaxCertificate);
+            self::OutputStatusMessage(sprintf("AccountMode: %s", $dataObject->AccountMode));
             self::OutputStatusMessage("* * * End OutputAdvertiserAccount * * *");
         }
     }
@@ -829,6 +875,27 @@ final class CustomerManagementExampleHelper {
         foreach ($dataObjects->DateRange as $dataObject)
         {
             self::OutputDateRange($dataObject);
+        }
+    }
+    static function OutputKeyValuePairOfstringbase64Binary($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputKeyValuePairOfstringbase64Binary * * *");
+            self::OutputStatusMessage(sprintf("key: %s", $dataObject->key));
+            self::OutputStatusMessage(sprintf("value: %s", $dataObject->value));
+            self::OutputStatusMessage("* * * End OutputKeyValuePairOfstringbase64Binary * * *");
+        }
+    }
+    static function OutputArrayOfKeyValuePairOfstringbase64Binary($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->KeyValuePairOfstringbase64Binary))
+        {
+            return;
+        }
+        foreach ($dataObjects->KeyValuePairOfstringbase64Binary as $dataObject)
+        {
+            self::OutputKeyValuePairOfstringbase64Binary($dataObject);
         }
     }
     static function OutputKeyValuePairOfstringstring($dataObject)
@@ -1213,6 +1280,29 @@ final class CustomerManagementExampleHelper {
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAutoTagType * * *");
     }
+    static function OutputTaxCertificateStatus($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputTaxCertificateStatus * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputTaxCertificateStatus * * *");
+    }
+    static function OutputArrayOfTaxCertificateStatus($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfTaxCertificateStatus * * *");
+        foreach ($valueSets->TaxCertificateStatus as $valueSet)
+        {
+            self::OutputTaxCertificateStatus($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfTaxCertificateStatus * * *");
+    }
     static function OutputCustomerFinancialStatus($valueSet)
     {
         self::OutputStatusMessage("* * * Begin OutputCustomerFinancialStatus * * *");
@@ -1327,6 +1417,29 @@ final class CustomerManagementExampleHelper {
             self::OutputLCID($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfLCID * * *");
+    }
+    static function OutputAccountAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAccountAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAccountAdditionalField * * *");
+    }
+    static function OutputArrayOfAccountAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAccountAdditionalField * * *");
+        foreach ($valueSets->AccountAdditionalField as $valueSet)
+        {
+            self::OutputAccountAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAccountAdditionalField * * *");
     }
     static function OutputEmailFormat($valueSet)
     {

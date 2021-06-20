@@ -61,15 +61,14 @@ try
     // Authenticate user credentials and set the account ID for the sample.  
     AuthHelper::Authenticate();
 
-    // To get started with dynamic search ads, first you'll need to add a new Campaign 
-    // with its type set to DynamicSearchAds. When you create the campaign, you'll need to 
-    // include a DynamicSearchAdsSetting that specifies the target website domain and language.
+    // To get started with dynamic search ads, first you'll need to add a new Search campaign 
+    // Include a DynamicSearchAdsSetting that specifies the target website domain and language.
         
     $campaigns = array();   
     $campaign = new Campaign();
     $campaign->Name = "Women's Shoes " . $_SERVER['REQUEST_TIME'];
     $campaign->BudgetType = BudgetLimitType::DailyBudgetStandard;
-    $campaign->CampaignType = CampaignType::DynamicSearchAds;
+    $campaign->CampaignType = CampaignType::Search;
     $campaign->DailyBudget = 50.00;
     $campaign->Languages = array("All");    
     $campaign->TimeZone = "PacificTimeUSCanadaTijuana";
@@ -98,10 +97,11 @@ try
     print("PartialErrors:\r\n");
     CampaignManagementExampleHelper::OutputArrayOfBatchError($addCampaignsResponse->PartialErrors);
     
-    // Create a new ad group within the dynamic search ads campaign. 
+    // Create a new ad group with type set to "SearchDynamic"
 
     $adGroups = array();
     $adGroup = new AdGroup();
+    $adGroup->AdGroupType = "SearchDynamic";    
     $adGroup->CpcBid = new Bid();
     $adGroup->CpcBid->Amount = 0.09;
     date_default_timezone_set('UTC');

@@ -35,7 +35,8 @@ final class AdInsightExampleHelper {
     static function GetAuctionInsightData(
         $entityType,
         $entityIds,
-        $searchParameters)
+        $searchParameters,
+        $returnAdditionalFields)
     {
         $GLOBALS['AdInsightProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
         $GLOBALS['Proxy'] = $GLOBALS['AdInsightProxy'];
@@ -45,6 +46,7 @@ final class AdInsightExampleHelper {
         $request->EntityType = $entityType;
         $request->EntityIds = $entityIds;
         $request->SearchParameters = $searchParameters;
+        $request->ReturnAdditionalFields = $returnAdditionalFields;
 
         return $GLOBALS['AdInsightProxy']->GetService()->GetAuctionInsightData($request);
     }
@@ -638,6 +640,7 @@ final class AdInsightExampleHelper {
             self::OutputStatusMessage(sprintf("AboveRate: %s", $dataObject->AboveRate));
             self::OutputStatusMessage(sprintf("TopOfPageRate: %s", $dataObject->TopOfPageRate));
             self::OutputStatusMessage(sprintf("OutrankingShare: %s", $dataObject->OutrankingShare));
+            self::OutputStatusMessage(sprintf("AbsoluteTopOfPageRate: %s", $dataObject->AbsoluteTopOfPageRate));
             self::OutputStatusMessage("* * * End OutputAuctionInsightKpi * * *");
         }
     }
@@ -2537,6 +2540,29 @@ final class AdInsightExampleHelper {
             self::OutputAuctionSegment($valueSet);
         }
         self::OutputStatusMessage("* * * End OutputArrayOfAuctionSegment * * *");
+    }
+    static function OutputAuctionInsightKpiAdditionalField($valueSet)
+    {
+        self::OutputStatusMessage("* * * Begin OutputAuctionInsightKpiAdditionalField * * *");
+        self::OutputStatusMessage(sprintf("Values in %s", $valueSet->type));
+        foreach ($valueSet->string as $value)
+        {
+            self::OutputStatusMessage($value);
+        }
+        self::OutputStatusMessage("* * * End OutputAuctionInsightKpiAdditionalField * * *");
+    }
+    static function OutputArrayOfAuctionInsightKpiAdditionalField($valueSets)
+    {
+        if(count((array)$valueSets) == 0)
+        {
+            return;
+        }
+        self::OutputStatusMessage("* * * Begin OutputArrayOfAuctionInsightKpiAdditionalField * * *");
+        foreach ($valueSets->AuctionInsightKpiAdditionalField as $valueSet)
+        {
+            self::OutputAuctionInsightKpiAdditionalField($valueSet);
+        }
+        self::OutputStatusMessage("* * * End OutputArrayOfAuctionInsightKpiAdditionalField * * *");
     }
     static function OutputKeywordIdeaAttribute($valueSet)
     {
