@@ -309,7 +309,8 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition
+		AdGroupCriterionType::ProductPartition,
+		null
 	)->AdGroupCriterions;
 	 
 	printf("Outputing the ad group's product partition; contains only the tree root node\r\n");
@@ -342,7 +343,8 @@ function AddAndUpdateAdGroupCriterion($accountId, &$actions, $adGroupId)
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition
+		AdGroupCriterionType::ProductPartition,
+		null
 	)->AdGroupCriterions;
 	 
 	printf("Updated the bid for the tree root node\r\n");
@@ -358,7 +360,8 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition
+		AdGroupCriterionType::ProductPartition,
+		null
 	)->AdGroupCriterions;
 	 
 	$existingRoot = GetRootNode($adGroupCriterions);
@@ -504,7 +507,8 @@ function AddBranchAndLeafCriterion($accountId, &$actions, $adGroupId)
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition
+		AdGroupCriterionType::ProductPartition,
+		null
 	)->AdGroupCriterions;
 
 	printf("The product partition group tree now has 9 nodes\r\n");
@@ -601,7 +605,8 @@ function UpdateBranchAndLeafCriterion(&$actions, $accountId, $adGroupId, $rootId
 	$adGroupCriterions = CampaignManagementExampleHelper::GetAdGroupCriterionsByIds(
 		null,
 		$adGroupId,
-		AdGroupCriterionType::ProductPartition
+		AdGroupCriterionType::ProductPartition,
+		null
 	)->AdGroupCriterions;
 	 
 	printf("\nThe product partition group tree now has 12 nodes\n");

@@ -46,13 +46,12 @@ final class AuthHelper {
     const ApiEnvironment = ApiEnvironment::Sandbox;
     const OAuthScope = OAuthScope::MSADS_MANAGE;
     const OAuthRefreshTokenPath = 'refresh.txt';
-    const ClientId = 'db41b09d-6e50-4f4a-90ac-5a99caefb52f';  // For sandbox use db41b09d-6e50-4f4a-90ac-5a99caefb52f
+    const ClientId = '4c0b021c-00c3-4508-838f-d3127e8167ff';  // For sandbox use 4c0b021c-00c3-4508-838f-d3127e8167ff
 
     const CampaignTypes = 
         CampaignType::Audience . ' ' . 
         CampaignType::Search . ' ' . 
-        CampaignType::Shopping . ' ' . 
-        CampaignType::DynamicSearchAds;
+        CampaignType::Shopping;
 
     const CampaignAdditionalFields = 
         CampaignAdditionalField::AdScheduleUseSearcherTimeZone . ' ' . 
