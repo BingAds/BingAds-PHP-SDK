@@ -55,7 +55,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $PauseReason;
 
         /**
-         * Reserved.
+         * The account mode distinguishes between smart and expert accounts.
          * @var string
          */
         public $AccountMode;

@@ -408,20 +408,26 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Bid Strategy records in the download data. */
         const BidStrategies = 'BidStrategies';
 
-        /** Reserved. */
+        /** Include Video Ad Extension records in the download data. */
         const VideoAdExtensions = 'VideoAdExtensions';
 
-        /** Reserved. */
+        /** Include Account Video Ad Extension records in the download that represents the association relationship between an account and a video ad extension. */
         const AccountVideoAdExtensions = 'AccountVideoAdExtensions';
 
-        /** Reserved. */
+        /** Include Campaign Video Ad Extension records in the download that represents the association relationship between a campaign and a video ad extension. */
         const CampaignVideoAdExtensions = 'CampaignVideoAdExtensions';
 
-        /** Reserved. */
+        /** Include Ad Group Video Ad Extension records in the download that each represent the association relationship between an ad group and a video ad extension. */
         const AdGroupVideoAdExtensions = 'AdGroupVideoAdExtensions';
 
-        /** Reserved. */
+        /** Include Video records in the download data. */
         const Videos = 'Videos';
+
+        /** Reserved. */
+        const DisclaimerAdExtensions = 'DisclaimerAdExtensions';
+
+        /** Reserved. */
+        const CampaignDisclaimerAdExtensions = 'CampaignDisclaimerAdExtensions';
     }
 
 }

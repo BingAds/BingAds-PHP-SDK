@@ -34,7 +34,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $PageInfo;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned account.
          * @var AccountAdditionalField
          */
         public $ReturnAdditionalFields;

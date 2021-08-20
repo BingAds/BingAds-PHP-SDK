@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * A responsive ad format for Audience ads in the Microsoft Audience Network.
+     * A responsive ad format for audience ads and multimedia ads.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/responsivead?view=bingads-13 ResponsiveAd Data Object
      * 
      * @uses CallToAction
@@ -26,25 +26,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CallToAction;
 
         /**
-         * Reserved.
+         * The language that the call to action will be served in.
          * @var LanguageName
          */
         public $CallToActionLanguage;
 
         /**
-         * Reserved for future use.
+         * The descriptions that are shown below the path in your ad.
          * @var AssetLink[]
          */
         public $Descriptions;
 
         /**
-         * This is one of two possible headlines that could appear in your audience ads.
+         * Headlines are the most prominent text that appears in your ad, so you should make the most out of the available characters.
          * @var string
          */
         public $Headline;
 
         /**
-         * Reserved for future use.
+         * Headlines are the most prominent text that appears in your ad, so you should make the most out of the available characters.
          * @var AssetLink[]
          */
         public $Headlines;
@@ -68,19 +68,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $LongHeadline;
 
         /**
-         * This is one of two possible headlines that could appear in your audience ads.
+         * Headlines are the most prominent text that appears in your ad, so you should make the most out of the available characters.
          * @var string
          */
         public $LongHeadlineString;
 
         /**
-         * Reserved.
+         * Headlines are the most prominent text that appears in your ad, so you should make the most out of the available characters.
          * @var AssetLink[]
          */
         public $LongHeadlines;
 
         /**
-         * Depending on your audience ad's placement, this text will appear below or adjacent to your ad's long or short headline.
+         * This text will appear below or adjacent to your ad's long or short headline, depending on the ad placement.
          * @var string
          */
         public $Text;

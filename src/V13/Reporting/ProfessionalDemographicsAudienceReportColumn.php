@@ -59,7 +59,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** This is the language of the country the ad is served in. */
+        /** This is The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The number of times an entity (an account, campaign, ad group, or keyword, for example) contributed to a conversion that is associated with a different entity. */

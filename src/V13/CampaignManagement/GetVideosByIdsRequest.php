@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the GetVideosByIds Service Operation.
+     * Gets videos by video identifiers.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getvideosbyids?view=bingads-13 GetVideosByIds Request Object
      * 
      * @uses Paging
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetVideosByIdsRequest
     {
         /**
-         * Reserved.
+         * The identifiers of the videos to get.
          * @var integer[]
          */
         public $VideoIds;
 
         /**
-         * Reserved.
+         * Determines the index and size of video results per page.
          * @var Paging
          */
         public $PageInfo;

@@ -77,7 +77,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The radius of a radius target bid. */
         const Radius = 'Radius';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The keyword bid match type. */

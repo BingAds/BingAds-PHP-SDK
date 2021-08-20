@@ -4,31 +4,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines an ad extension with a video and call-to-action button.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/videoadextension?view=bingads-13 VideoAdExtension Data Object
+     * Defines the DisclaimerAdExtension Data Object.
+     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/disclaimeradextension?view=bingads-13 DisclaimerAdExtension Data Object
      * 
      * @uses AppUrl
      * @uses CustomParameters
      */
-    final class VideoAdExtension extends AdExtension
+    final class DisclaimerAdExtension extends AdExtension
     {
         /**
          * Reserved.
          * @var string
          */
-        public $ActionText;
-
-        /**
-         * Reserved.
-         * @var string
-         */
-        public $AlternativeText;
-
-        /**
-         * Reserved.
-         * @var string
-         */
-        public $DisplayText;
+        public $DisclaimerLayout;
 
         /**
          * Reserved.
@@ -58,19 +46,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * Reserved.
          * @var string
          */
-        public $Name;
-
-        /**
-         * Reserved.
-         * @var integer
-         */
-        public $ThumbnailId;
+        public $LineText;
 
         /**
          * Reserved.
          * @var string
          */
-        public $ThumbnailUrl;
+        public $Name;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $PopupText;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $Title;
 
         /**
          * Reserved.
@@ -83,12 +77,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CustomParameters
          */
         public $UrlCustomParameters;
-
-        /**
-         * Reserved.
-         * @var integer
-         */
-        public $VideoId;
     }
 
 }

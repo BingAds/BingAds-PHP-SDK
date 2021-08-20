@@ -92,7 +92,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The cost per conversion. */
         const CostPerConversion = 'CostPerConversion';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The Microsoft Advertising assigned identifier of a keyword. */

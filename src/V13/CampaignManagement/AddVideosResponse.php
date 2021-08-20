@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the AddVideos Service Operation.
+     * Adds one or more videos to an account.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addvideos?view=bingads-13 AddVideos Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddVideosResponse
     {
         /**
-         * Reserved.
+         * A list of unique system identifiers corresponding to the videos that were added.
          * @var integer[]
          */
         public $VideoIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the UpdateImportJobs Service Operation.
+     * Replaces the specified import jobs with new import jobs.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateimportjobs?view=bingads-13 UpdateImportJobs Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateImportJobsResponse
     {
         /**
-         * Reserved.
+         * A list of unique system identifiers corresponding to the replacement import jobs.
          * @var integer[]
          */
         public $ImportJobIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

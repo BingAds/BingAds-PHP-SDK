@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the UpdateVideos Service Operation.
+     * Updates the videos within the account.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatevideos?view=bingads-13 UpdateVideos Request Object
      * 
      * @uses Video
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateVideosRequest
     {
         /**
-         * Reserved.
+         * The list of videos that you want to update.
          * @var Video[]
          */
         public $Videos;

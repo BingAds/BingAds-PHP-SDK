@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The keyword bid match type. */
         const BidMatchType = 'BidMatchType';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The Microsoft Advertising assigned number of an account. */

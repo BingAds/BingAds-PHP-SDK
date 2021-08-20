@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the UpdateImportJobs Service Operation.
+     * Replaces the specified import jobs with new import jobs.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateimportjobs?view=bingads-13 UpdateImportJobs Request Object
      * 
      * @uses ImportJob
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateImportJobsRequest
     {
         /**
-         * Reserved.
+         * The import jobs to update.
          * @var ImportJob[]
          */
         public $ImportJobs;

@@ -4,119 +4,119 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the set of supported ad languages.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/languagename?view=bingads-13 LanguageName Value Set
      * 
      * @used-by ResponsiveAd
      */
     final class LanguageName
     {
-        /** Reserved. */
+        /** The corresponding language name. */
         const None = 'None';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Arabic = 'Arabic';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Danish = 'Danish';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Dutch = 'Dutch';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const German = 'German';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const English = 'English';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Finnish = 'Finnish';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const French = 'French';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Italian = 'Italian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Norwegian = 'Norwegian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Portuguese = 'Portuguese';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Spanish = 'Spanish';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Swedish = 'Swedish';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const TraditionalChinese = 'TraditionalChinese';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const SimplifiedChinese = 'SimplifiedChinese';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Greek = 'Greek';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Polish = 'Polish';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Bulgarian = 'Bulgarian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Czech = 'Czech';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Estonian = 'Estonian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Croatian = 'Croatian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Hungarian = 'Hungarian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Lithuanian = 'Lithuanian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Latvian = 'Latvian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Maltese = 'Maltese';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Romanian = 'Romanian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Slovak = 'Slovak';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Slovenian = 'Slovenian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Turkish = 'Turkish';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Serbian = 'Serbian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Bosnian = 'Bosnian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Albanian = 'Albanian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Macedonian = 'Macedonian';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Icelandic = 'Icelandic';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Japanese = 'Japanese';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const All = 'All';
     }
 

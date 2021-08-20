@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CriterionType;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned campaign criterion.
          * @var CriterionAdditionalField
          */
         public $ReturnAdditionalFields;

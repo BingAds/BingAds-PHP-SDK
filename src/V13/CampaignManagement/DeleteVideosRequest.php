@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the DeleteVideos Service Operation.
+     * Deletes one or more videos from the account.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletevideos?view=bingads-13 DeleteVideos Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteVideos
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteVideosRequest
     {
         /**
-         * Reserved.
+         * The identifiers of videos to delete.
          * @var integer[]
          */
         public $VideoIds;

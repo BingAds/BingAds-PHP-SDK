@@ -24,7 +24,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the ActiveAdGroupsOnly element be returned within the CampaignAdGroupIds element of each returned GoogleImportJob object. */
         const ActiveAdGroupsOnly = 'ActiveAdGroupsOnly';
 
-        /** Reserved. */
+        /** Request that the SearchAndReplaceForCustomParameters element be included within each returned GoogleImportOption object. */
         const SearchAndReplaceForCustomParameters = 'SearchAndReplaceForCustomParameters';
     }
 

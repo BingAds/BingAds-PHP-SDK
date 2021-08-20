@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The device name attribute of a device OS target bid. */
         const DeviceType = 'DeviceType';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The unique identifier provided by a merchant for each product offer. */

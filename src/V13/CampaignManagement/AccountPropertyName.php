@@ -33,11 +33,23 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Used to get or set the property that determines whether LinkedIn profile targeting expansion is enabled for the account. */
         const ProfileExpansionEnabled = 'ProfileExpansionEnabled';
 
-        /** Reserved. */
+        /** Used to get or set the property that determines whether Microsoft Advertising is allowed to use images from your domain to enhance your ads on the Microsoft Audience Network. */
         const AllowImageAutoRetrieve = 'AllowImageAutoRetrieve';
 
-        /** Reserved. */
+        /** Used to get or set the property that determines whether Microsoft Advertising is allowed to automatically apply ad recommendations meant to help you boost ad performance. */
         const AutoApplyRecommendations = 'AutoApplyRecommendations';
+
+        /** Reserved. */
+        const IncludeAutoBiddingViewThroughConversions = 'IncludeAutoBiddingViewThroughConversions';
+
+        /** Reserved. */
+        const AutoBiddingViewThroughConversionsValueAttributionWeight = 'AutoBiddingViewThroughConversionsValueAttributionWeight';
+
+        /** Reserved. */
+        const LoopBackWindowForViewThroughConversions = 'LoopBackWindowForViewThroughConversions';
+
+        /** Reserved. */
+        const BusinessAttributes = 'BusinessAttributes';
     }
 
 }

@@ -52,8 +52,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** An ad extension that enables advertisers to distribute product or store catalogues (flyers) to potential customers. */
         const FlyerAdExtension = 'FlyerAdExtension';
 
-        /** Reserved. */
+        /** An ad extension with a video and call-to-action button. */
         const VideoAdExtension = 'VideoAdExtension';
+
+        /** Reserved. */
+        const DisclaimerAdExtension = 'DisclaimerAdExtension';
     }
 
 }

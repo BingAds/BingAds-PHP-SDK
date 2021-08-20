@@ -33,14 +33,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the DynamicFeedSetting object be returned within the Settings element of each returned Campaign object. */
         const DynamicFeedSetting = 'DynamicFeedSetting';
 
-        /** Reserved. */
+        /** Request that the MultimediaAdsBidAdjustment element be included within each returned Campaign object. */
         const MultimediaAdsBidAdjustment = 'MultimediaAdsBidAdjustment';
 
-        /** Reserved. */
+        /** Request that the VerifiedTrackingSetting object be returned within the Settings element of each returned Campaign object. */
         const VerifiedTrackingSetting = 'VerifiedTrackingSetting';
 
         /** Reserved. */
         const DynamicDescriptionSetting = 'DynamicDescriptionSetting';
+
+        /** Reserved. */
+        const DisclaimerSetting = 'DisclaimerSetting';
     }
 
 }

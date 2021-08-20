@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class PageVisitorsRule extends RemarketingRule
     {
         /**
-         * Reserved.
+         * Determines whether the rule item groups are evaluated based on conjunctive normal form (CNF) or disjunctive normal form (DNF).
          * @var NormalForm
          */
         public $NormalForm;

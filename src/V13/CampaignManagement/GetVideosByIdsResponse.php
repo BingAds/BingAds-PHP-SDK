@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the GetVideosByIds Service Operation.
+     * Gets videos by video identifiers.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getvideosbyids?view=bingads-13 GetVideosByIds Response Object
      * 
      * @uses Video
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetVideosByIdsResponse
     {
         /**
-         * Reserved.
+         * An array of Video objects that corresponds directly to the video identifiers that you specified in the request.
          * @var Video[]
          */
         public $Videos;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

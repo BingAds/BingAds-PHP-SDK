@@ -14,220 +14,220 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ActNow = 'ActNow';
 
         /** The corresponding call to action in the ad. */
         const ApplyNow = 'ApplyNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BetNow = 'BetNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BidNow = 'BidNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BookACar = 'BookACar';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BookHotel = 'BookHotel';
 
         /** The corresponding call to action in the ad. */
         const BookNow = 'BookNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Browse = 'Browse';
 
         /** The corresponding call to action in the ad. */
         const BuyNow = 'BuyNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ChatNow = 'ChatNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Compare = 'Compare';
 
         /** The corresponding call to action in the ad. */
         const ContactUs = 'ContactUs';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Coupon = 'Coupon';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Donate = 'Donate';
 
         /** The corresponding call to action in the ad. */
         const Download = 'Download';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const EmailNow = 'EmailNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const EnrollNow = 'EnrollNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Explore = 'Explore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const FileNow = 'FileNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const FindJob = 'FindJob';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const FreePlay = 'FreePlay';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const FreeQuote = 'FreeQuote';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const FreeTrial = 'FreeTrial';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const GetDeals = 'GetDeals';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const GetOffer = 'GetOffer';
 
         /** The corresponding call to action in the ad. */
         const GetQuote = 'GetQuote';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const JoinNow = 'JoinNow';
 
         /** The corresponding call to action in the ad. */
         const LearnMore = 'LearnMore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ListenNow = 'ListenNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const LogIn = 'LogIn';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Message = 'Message';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const NewCars = 'NewCars';
 
         /** The corresponding call to action in the ad. */
         const OrderNow = 'OrderNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const PlayGame = 'PlayGame';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const PlayNow = 'PlayNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const PostJob = 'PostJob';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Register = 'Register';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const RentACar = 'RentACar';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const RentNow = 'RentNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Reserve = 'Reserve';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Sale = 'Sale';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SaveNow = 'SaveNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Schedule = 'Schedule';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SeeMenu = 'SeeMenu';
 
         /** The corresponding call to action in the ad. */
         const SeeMore = 'SeeMore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SeeOffer = 'SeeOffer';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SellNow = 'SellNow';
 
         /** The corresponding call to action in the ad. */
         const ShopNow = 'ShopNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Showtimes = 'Showtimes';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SignIn = 'SignIn';
 
         /** The corresponding call to action in the ad. */
         const SignUp = 'SignUp';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const StartFree = 'StartFree';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const StartNow = 'StartNow';
 
         /** The corresponding call to action in the ad. */
         const Subscribe = 'Subscribe';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const TestDrive = 'TestDrive';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const TryNow = 'TryNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const UsedCars = 'UsedCars';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ViewCars = 'ViewCars';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ViewNow = 'ViewNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ViewPlans = 'ViewPlans';
 
         /** The corresponding call to action in the ad. */
         const VisitSite = 'VisitSite';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const VoteNow = 'VoteNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Watch = 'Watch';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const WatchMore = 'WatchMore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const WatchNow = 'WatchNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Directions = 'Directions';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const FindStore = 'FindStore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SwitchNow = 'SwitchNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const VisitStore = 'VisitStore';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const RenewNow = 'RenewNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Reorder = 'Reorder';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Default = 'Default';
 
         /** The corresponding call to action in the ad. */

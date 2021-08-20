@@ -22,7 +22,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Asset;
 
         /**
-         * Reserved for future use.
+         * This lets you know how well the asset is performing.
          * @var string
          */
         public $AssetPerformanceLabel;

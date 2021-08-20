@@ -62,7 +62,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */

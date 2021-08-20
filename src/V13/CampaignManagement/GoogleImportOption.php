@@ -288,7 +288,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SearchAndReplaceForCampaignNames;
 
         /**
-         * Reserved.
+         * Set this option to find and replace a string within each custom parameter during import.
          * @var ImportSearchAndReplaceForStringProperty
          */
         public $SearchAndReplaceForCustomParameters;

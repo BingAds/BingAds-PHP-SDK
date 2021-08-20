@@ -74,7 +74,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The device name attribute of a device OS target bid. */
         const DeviceType = 'DeviceType';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The operating system of the device reported in the DeviceType column. */

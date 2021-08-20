@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $TopN;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned account.
          * @var AccountAdditionalField
          */
         public $ReturnAdditionalFields;
