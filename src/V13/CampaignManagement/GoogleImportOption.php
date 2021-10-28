@@ -18,6 +18,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AccountUrlOptions;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $AdScheduleUseSearcherTimezone;
+
+        /**
          * The percentage amount that you want to increase or decrease the new or existing Microsoft Advertising bids relative to your Google Ads bids.
          * @var double
          */
@@ -244,6 +250,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewUrlOptions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $PauseAIMAdGroupIfAllAudienceCriterionNotImported;
 
         /**
          * When enabled this option will pause imported campaigns in case all of their location targets are unsupported by Microsoft Advertising.

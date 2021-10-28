@@ -121,6 +121,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** Reserved for future use. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
     }
 
 }

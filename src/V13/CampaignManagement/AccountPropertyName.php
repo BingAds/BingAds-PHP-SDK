@@ -48,7 +48,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const LoopBackWindowForViewThroughConversions = 'LoopBackWindowForViewThroughConversions';
 
-        /** Reserved. */
+        /** Used to get or set the property that determines the account's business attributes meant to help you boost ad performance. */
         const BusinessAttributes = 'BusinessAttributes';
     }
 

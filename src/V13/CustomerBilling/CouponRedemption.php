@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the CouponRedemption Data Object.
+     * Contains redemption and consuming details.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/couponredemption?view=bingads-13 CouponRedemption Data Object
      * 
      * @used-by Coupon
@@ -12,49 +12,49 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class CouponRedemption
     {
         /**
-         * Reserved.
+         * The identifier of the account to which the coupon was redeemed.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The account number.
          * @var string
          */
         public $AccountNumber;
 
         /**
-         * Reserved.
+         * The coupon can't be consumed until the account's spend reaches this threshold from the time coupon was redeemed.
          * @var double
          */
         public $SpendToThreshold;
 
         /**
-         * Reserved.
+         * The remaining amount of the coupon in account currency.
          * @var double
          */
         public $Balance;
 
         /**
-         * Reserved.
+         * The currency of the coupon balance and spend threshold.
          * @var string
          */
         public $CurrencyCode;
 
         /**
-         * Reserved.
+         * The date that coupon was redeemed to the account.
          * @var \DateTime
          */
         public $RedemptionDate;
 
         /**
-         * Reserved.
+         * The coupon expiration date.
          * @var \DateTime
          */
         public $ExpirationDate;
 
         /**
-         * Reserved.
+         * The date that the coupon is ready to be consumed.
          * @var \DateTime
          */
         public $ActivationDate;

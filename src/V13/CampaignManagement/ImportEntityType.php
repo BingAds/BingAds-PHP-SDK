@@ -17,13 +17,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The import entity is a campaign. */
         const Campaign = 'Campaign';
 
-        /** Reserved. */
+        /** The import entity is an ad group. */
         const AdGroup = 'AdGroup';
 
-        /** Reserved. */
+        /** The import entity is an ad. */
         const Ad = 'Ad';
 
-        /** Reserved. */
+        /** The import entity is a keyword. */
         const Keyword = 'Keyword';
     }
 

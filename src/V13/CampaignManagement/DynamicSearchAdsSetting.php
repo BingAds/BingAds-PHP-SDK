@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DomainName;
 
         /**
-         * Reserved.
+         * Determines whether to automatically generate dynamic search ad text in addition to the ad text you provide.
          * @var boolean
          */
         public $DynamicDescriptionEnabled;

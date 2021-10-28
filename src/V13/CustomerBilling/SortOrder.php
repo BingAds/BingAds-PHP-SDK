@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the ascending or descending sort order of results for SearchInsertionOrders.
+     * Defines the ascending or descending sort order of results using one of the search operations, for example SearchCoupons or SearchInsertionOrders.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/sortorder?view=bingads-13 SortOrder Value Set
      * 
      * @used-by OrderBy

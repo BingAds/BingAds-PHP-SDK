@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the SearchCoupons Service Operation.
+     * Searches for coupons that match a specified criteria.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/searchcoupons?view=bingads-13 SearchCoupons Request Object
      * 
      * @uses Predicate
@@ -15,19 +15,19 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class SearchCouponsRequest
     {
         /**
-         * Reserved.
+         * Determines the request conditions.
          * @var Predicate[]
          */
         public $Predicates;
 
         /**
-         * Reserved.
+         * Determines the order of results by the specified property of a coupon.
          * @var OrderBy[]
          */
         public $Ordering;
 
         /**
-         * Reserved.
+         * Determines the index and size of results per page.
          * @var Paging
          */
         public $PageInfo;

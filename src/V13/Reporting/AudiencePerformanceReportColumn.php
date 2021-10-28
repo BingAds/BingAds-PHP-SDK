@@ -142,6 +142,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** Reserved for future use. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
     }
 
 }

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the Coupon Data Object.
+     * Defines a coupon.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/coupon?view=bingads-13 Coupon Data Object
      * 
      * @uses CouponRedemption
@@ -13,91 +13,91 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class Coupon
     {
         /**
-         * Reserved.
+         * The code that can be used to redeem the coupon.
          * @var string
          */
         public $CouponCode;
 
         /**
-         * Reserved.
+         * The class name that the coupon was minted from.
          * @var string
          */
         public $ClassName;
 
         /**
-         * Reserved.
+         * The coupon's type.
          * @var string
          */
         public $CouponType;
 
         /**
-         * Reserved.
+         * The value amount of the coupon.
          * @var double
          */
         public $Amount;
 
         /**
-         * Reserved.
+         * The coupon can't be consumed until the account's spend reaches this threshold from the time coupon was redeemed.
          * @var double
          */
         public $SpendThreshold;
 
         /**
-         * Reserved.
+         * The currency of the coupon amount and spend threshold.
          * @var string
          */
         public $CurrencyCode;
 
         /**
-         * Reserved.
+         * The percent off coupon value.
          * @var double
          */
         public $PercentOff;
 
         /**
-         * Reserved.
+         * Active days since coupon has been redeemed.
          * @var integer
          */
         public $ActiveDuration;
 
         /**
-         * Reserved.
+         * The coupon expiration date.
          * @var \DateTime
          */
         public $ExpirationDate;
 
         /**
-         * Reserved.
+         * The coupon cannot be redeemed before the start date.
          * @var \DateTime
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The last date that the coupon can be redeemed.
          * @var \DateTime
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The email address the coupon has been emailed by the DispatchCoupons operation.
          * @var string
          */
         public $SendToEmail;
 
         /**
-         * Reserved.
+         * The date the coupon was emailed by the DispatchCoupons operation.
          * @var \DateTime
          */
         public $SendToDate;
 
         /**
-         * Reserved.
+         * Has the coupon been redeemed.
          * @var boolean
          */
         public $IsRedeemed;
 
         /**
-         * Reserved.
+         * Contains redemption and consuming details.
          * @var CouponRedemption
          */
         public $RedemptionInfo;

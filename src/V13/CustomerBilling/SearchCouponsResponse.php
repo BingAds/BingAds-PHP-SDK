@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the SearchCoupons Service Operation.
+     * Searches for coupons that match a specified criteria.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/searchcoupons?view=bingads-13 SearchCoupons Response Object
      * 
      * @uses Coupon
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class SearchCouponsResponse
     {
         /**
-         * Reserved.
+         * A list of coupons that meet the specified criteria.
          * @var Coupon[]
          */
         public $Coupons;

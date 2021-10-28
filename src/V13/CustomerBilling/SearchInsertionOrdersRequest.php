@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $Ordering;
 
         /**
-         * Determines the index and size of  results per page.
+         * Determines the index and size of results per page.
          * @var Paging
          */
         public $PageInfo;

@@ -79,6 +79,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversions = 'ViewThroughConversions';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** Reserved for future use. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
     }
 
 }

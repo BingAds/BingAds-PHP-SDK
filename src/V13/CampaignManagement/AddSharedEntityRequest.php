@@ -21,7 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SharedEntity;
 
         /**
-         * The negative keywords to include with the new negative keyword list, or negative sites to include with the new website exclusion list.
+         * The negative keywords (5,000 total maximum) to include with the new negative keyword list, or negative sites (10,000 total maximum) to include with the new website exclusion list.
          * @var SharedListItem[]
          */
         public $ListItems;

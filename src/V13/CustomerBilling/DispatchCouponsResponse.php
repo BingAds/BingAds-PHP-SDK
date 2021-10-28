@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the DispatchCoupons Service Operation.
+     * Dispatch coupons of the specified coupon class name owned by the specified customer.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/dispatchcoupons?view=bingads-13 DispatchCoupons Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class DispatchCouponsResponse
     {
         /**
-         * Reserved.
+         * An array of BatchError objects that correspond to any email addresses where the coupon code could not be sent to.
          * @var BatchError[]
          */
         public $PartialErrors;

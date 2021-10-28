@@ -253,6 +253,27 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** Reserved for future use. */
+        const AssistedConversionsQualified = 'AssistedConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** Reserved for future use. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The title associated with the purchased product. */
+        const ProductBoughtTitle = 'ProductBoughtTitle';
+
+        /** Global Trade Item Number (GTIN) is a unique numerical value for commercial products that usually appears printed under the barcode on retail products. */
+        const GTIN = 'GTIN';
+
+        /** Manufacturer Part Number (MPN) is a unique number that identifies the product to its manufacturer. */
+        const MPN = 'MPN';
     }
 
 }

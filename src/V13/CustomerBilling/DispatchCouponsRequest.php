@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines the DispatchCoupons Service Operation.
+     * Dispatch coupons of the specified coupon class name owned by the specified customer.
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/dispatchcoupons?view=bingads-13 DispatchCoupons Request Object
      * 
      * @used-by BingAdsCustomerBillingService::DispatchCoupons
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class DispatchCouponsRequest
     {
         /**
-         * Reserved.
+         * Email addresses to which the coupons are dispatched.
          * @var string[]
          */
         public $SendToEmails;
 
         /**
-         * Reserved.
+         * The identifier of the customer that the coupon class belongs to.
          * @var integer
          */
         public $CustomerId;
 
         /**
-         * Reserved.
+         * The name of coupon class whose available coupons are dispatched.
          * @var string
          */
         public $CouponClassName;
