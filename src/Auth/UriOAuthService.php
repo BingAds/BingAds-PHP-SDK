@@ -154,7 +154,7 @@ class UriOAuthService extends IOAuthService
         
         if (in_array($endpointType, [OAuthEndpointType::ProductionMSIdentityV2, OAuthEndpointType::ProductionMSIdentityV2_MSScope], true) && (isset($tenant)))
         {
-            $OAuthTokenUrl = str_replace("common", $tenant, $OAuthTokenUrl);
+            $authorizationEndpointUrl = str_replace("common", $tenant, $authorizationEndpointUrl);
         }
 
         return sprintf(
@@ -217,7 +217,7 @@ class UriOAuthService extends IOAuthService
         
         if (in_array($endpointType, [OAuthEndpointType::ProductionMSIdentityV2, OAuthEndpointType::ProductionMSIdentityV2_MSScope], true) && (isset($tenant)))
         {
-            $OAuthTokenUrl = str_replace("common", $tenant, $OAuthTokenUrl);
+            $authorizationEndpointUrl = str_replace("common", $tenant, $authorizationEndpointUrl);
         }
 
         return $authorizationEndpointUrl;
