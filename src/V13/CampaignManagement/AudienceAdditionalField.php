@@ -13,6 +13,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     {
         /** Request that the NormalForm element be included within each returned PageVisitorsRule object. */
         const NormalForm = 'NormalForm';
+
+        /** Reserved. */
+        const NumberRuleItem = 'NumberRuleItem';
     }
 
 }

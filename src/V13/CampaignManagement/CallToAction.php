@@ -250,6 +250,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The corresponding call to action in the ad. */
         const RegisterNow = 'RegisterNow';
+
+        /** Reserved. */
+        const Automated = 'Automated';
     }
 
 }
