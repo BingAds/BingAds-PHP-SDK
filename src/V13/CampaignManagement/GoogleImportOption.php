@@ -144,6 +144,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewEntities;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewImageAdExtensions;
+
+        /**
          * Import new keyword landing page URLs.
          * @var boolean
          */
@@ -424,6 +430,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateEntities;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateImageAdExtensions;
 
         /**
          * Import updates to existing keyword landing page URLs.

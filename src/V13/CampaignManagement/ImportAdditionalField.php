@@ -26,6 +26,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the SearchAndReplaceForCustomParameters element be included within each returned GoogleImportOption object. */
         const SearchAndReplaceForCustomParameters = 'SearchAndReplaceForCustomParameters';
+
+        /** Reserved. */
+        const AdScheduleUseSearcherTimezone = 'AdScheduleUseSearcherTimezone';
+
+        /** Reserved. */
+        const NewImageAdExtensions = 'NewImageAdExtensions';
+
+        /** Reserved. */
+        const UpdateImageAdExtensions = 'UpdateImageAdExtensions';
     }
 
 }

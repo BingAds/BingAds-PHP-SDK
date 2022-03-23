@@ -36,13 +36,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ConversionValue;
 
         /**
-         * Reserved for future use.
+         * This field can only be set for conversions actions which use external attribution.
          * @var double
          */
         public $ExternalAttributionCredit;
 
         /**
-         * Reserved for future use.
+         * This field can only be set for conversions actions which use external attribution.
          * @var string
          */
         public $ExternalAttributionModel;

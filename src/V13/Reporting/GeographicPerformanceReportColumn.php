@@ -196,6 +196,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved for future use. */
         const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The neighborhood where an ad was physically served, or the neighborhood that your customer had shown interest in through searches or content they had viewed. */
+        const Neighborhood = 'Neighborhood';
     }
 
 }
