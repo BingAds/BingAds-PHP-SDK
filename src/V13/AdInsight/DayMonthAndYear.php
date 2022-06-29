@@ -11,7 +11,9 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @used-by DateRangeSearchParameter
      * @used-by HistoricalSearchCountPeriodic
      * @used-by KeywordBidLandscape
+     * @used-by PerformanceInsightsDetail
      * @used-by GetHistoricalSearchCountRequest
+     * @used-by GetPerformanceInsightsDetailDataByAccountIdRequest
      */
     final class DayMonthAndYear
     {

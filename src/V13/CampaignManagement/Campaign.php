@@ -64,6 +64,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
+         * Reserved.
+         * @var integer[]
+         */
+        public $GoalIds;
+
+        /**
          * The unique Microsoft Advertising identifier of the campaign.
          * @var integer
          */
@@ -94,7 +100,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SubType;
 
         /**
-         * The time zone where the campaign operates.
+         * This column is deprecated.
          * @var string
          */
         public $TimeZone;

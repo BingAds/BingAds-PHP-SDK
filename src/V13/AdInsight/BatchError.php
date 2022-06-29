@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/batcherror?view=bingads-13 BatchError Data Object
      * 
      * @used-by ApiFaultDetail
+     * @used-by SetAutoApplyOptInStatusResponse
      */
     final class BatchError
     {

@@ -16,6 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddAudiencesResponse
      * @used-by AddBidStrategiesResponse
      * @used-by AddBudgetsResponse
+     * @used-by AddCampaignConversionGoalsResponse
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
      * @used-by AddExperimentsResponse
@@ -38,6 +39,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteAudiencesResponse
      * @used-by DeleteBidStrategiesResponse
      * @used-by DeleteBudgetsResponse
+     * @used-by DeleteCampaignConversionGoalsResponse
      * @used-by DeleteCampaignCriterionsResponse
      * @used-by DeleteCampaignsResponse
      * @used-by DeleteExperimentsResponse

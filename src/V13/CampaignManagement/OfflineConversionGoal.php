@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class OfflineConversionGoal extends ConversionGoal
     {
         /**
-         * Reserved for future use.
+         * This determines if your offline conversion goal uses your own attribution model and allows you to import fractional credit for each MSCLKID.
          * @var boolean
          */
         public $IsExternallyAttributed;

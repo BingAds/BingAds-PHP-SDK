@@ -11,10 +11,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class CompressionType
     {
-        /** Reserved. */
+        /** Reserved for future use. */
         const Zip = 'Zip';
 
-        /** The file should be GZIP compressed. */
+        /** The file should be GZip compressed. */
         const GZip = 'GZip';
     }
 

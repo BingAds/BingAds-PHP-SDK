@@ -252,6 +252,33 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const RegisterNow = 'RegisterNow';
 
         /** Reserved. */
+        const BuildNow = 'BuildNow';
+
+        /** Reserved. */
+        const Dealers = 'Dealers';
+
+        /** Reserved. */
+        const GetDemo = 'GetDemo';
+
+        /** Reserved. */
+        const GetNow = 'GetNow';
+
+        /** Reserved. */
+        const GoToDemo = 'GoToDemo';
+
+        /** Reserved. */
+        const SeeDemo = 'SeeDemo';
+
+        /** Reserved. */
+        const SeeModels = 'SeeModels';
+
+        /** Reserved. */
+        const SeeOffers = 'SeeOffers';
+
+        /** Reserved. */
+        const ViewDemo = 'ViewDemo';
+
+        /** Reserved. */
         const Automated = 'Automated';
     }
 

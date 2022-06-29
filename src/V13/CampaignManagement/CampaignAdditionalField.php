@@ -44,6 +44,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const DisclaimerSetting = 'DisclaimerSetting';
+
+        /** Reserved. */
+        const CampaignConversionGoal = 'CampaignConversionGoal';
     }
 
 }

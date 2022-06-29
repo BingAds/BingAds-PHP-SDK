@@ -428,6 +428,21 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const CampaignDisclaimerAdExtensions = 'CampaignDisclaimerAdExtensions';
+
+        /** Reserved. */
+        const AdcustomizerAttribute = 'AdcustomizerAttribute';
+
+        /** Reserved. */
+        const CampaignAdcustomizerAttribute = 'CampaignAdcustomizerAttribute';
+
+        /** Reserved. */
+        const AdGroupAdcustomizerAttribute = 'AdGroupAdcustomizerAttribute';
+
+        /** Reserved. */
+        const KeywordAdcustomizerAttribute = 'KeywordAdcustomizerAttribute';
+
+        /** Include Campaign level conversion goal records in the download data. */
+        const CampaignConversionGoal = 'CampaignConversionGoal';
     }
 
 }

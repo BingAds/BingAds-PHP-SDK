@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Operand;
 
         /**
-         * Reserved.
+         * The webpage condition operator.
          * @var WebpageConditionOperator
          */
         public $Operator;

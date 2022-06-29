@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the base object of a conversion goal.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoal?view=bingads-13 ConversionGoal Data Object
      * 
+     * @uses AttributionModelType
      * @uses ConversionGoalCountType
      * @uses ConversionGoalCategory
      * @uses ConversionGoalRevenue
@@ -21,6 +22,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     class ConversionGoal
     {
+        /**
+         * Determines which attribution model, _LastTouch_ or _LastClick_, is used with a conversion goal.
+         * @var AttributionModelType
+         */
+        public $AttributionModelType;
+
         /**
          * The conversion window is the length of time in minutes after a click that you want to track conversions.
          * @var integer

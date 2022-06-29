@@ -312,6 +312,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SearchAndReplaceForCustomParameters;
 
         /**
+         * Reserved.
+         * @var ImportSearchAndReplaceForStringProperty
+         */
+        public $SearchAndReplaceForFinalURLSuffix;
+
+        /**
          * Set this option to find and replace a string within each tracking template during import.
          * @var ImportSearchAndReplaceForStringProperty
          */

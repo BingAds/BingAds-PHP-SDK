@@ -23,6 +23,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the InactiveDueToTagUnavailable value be included within each returned ConversionGoal object. */
         const InactiveDueToTagUnavailable = 'InactiveDueToTagUnavailable';
+
+        /** Determines which attribution model, _LastTouch_ or _LastClick_, is used with a conversion goal. */
+        const AttributionModelType = 'AttributionModelType';
     }
 
 }

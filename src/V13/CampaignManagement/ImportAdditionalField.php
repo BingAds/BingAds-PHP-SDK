@@ -35,6 +35,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UpdateImageAdExtensions = 'UpdateImageAdExtensions';
+
+        /** Reserved. */
+        const SearchAndReplaceForFinalURLSuffix = 'SearchAndReplaceForFinalURLSuffix';
     }
 
 }

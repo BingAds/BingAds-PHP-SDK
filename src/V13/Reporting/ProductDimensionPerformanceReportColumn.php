@@ -263,7 +263,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
 
-        /** Reserved for future use. */
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
 
         /** The title associated with the purchased product. */
@@ -274,6 +274,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Manufacturer Part Number (MPN) is a unique number that identifies the product to its manufacturer. */
         const MPN = 'MPN';
+
+        /** Reserved. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }
