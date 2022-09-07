@@ -81,7 +81,7 @@ abstract class OAuthAuthorization extends Authentication
     /** 
      * Includes the OAuth tokens. 
      *
-     * @param string $oauthTokens
+     * @param OAuthTokens $oauthTokens
      * @return OAuthAuthorization this builder
      */
     public function withOAuthTokens($oauthTokens) {
