@@ -84,6 +84,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Italian (Italy) */
         const ItalianItaly = 'ItalianItaly';
 
+        /** Japanese (Japan) */
+        const JapaneseJapan = 'JapaneseJapan';
+
         /** Korean (Korea) */
         const KoreanKorea = 'KoreanKorea';
 

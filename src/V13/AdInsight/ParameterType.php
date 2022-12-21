@@ -4,20 +4,20 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the type of parameter: string, URL, or a list of demand entities.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/parametertype?view=bingads-13 ParameterType Value Set
      * 
      * @used-by PerformanceInsightsMessageParameter
      */
     final class ParameterType
     {
-        /** Reserved. */
+        /** Indicates the parameter is a string. */
         const Text = 'Text';
 
-        /** Reserved. */
+        /** Indicate the parameter is a URL. */
         const Url = 'Url';
 
-        /** Reserved. */
+        /** Indicates the parameter is a list of demand entities. */
         const Entities = 'Entities';
     }
 

@@ -25,6 +25,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The campaign is an Audience campaign. */
         const Audience = 'Audience';
+
+        /** Reserved. */
+        const Hotel = 'Hotel';
     }
 
 }

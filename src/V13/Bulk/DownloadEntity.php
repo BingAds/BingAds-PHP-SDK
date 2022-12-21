@@ -423,10 +423,10 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Video records in the download data. */
         const Videos = 'Videos';
 
-        /** Reserved. */
+        /** Include Disclaimer Ad Extension records in the download data. */
         const DisclaimerAdExtensions = 'DisclaimerAdExtensions';
 
-        /** Reserved. */
+        /** Include Campaign Disclaimer Ad Extension records in the download that represents the association relationship between a campaign and a disclaimer ad extension. */
         const CampaignDisclaimerAdExtensions = 'CampaignDisclaimerAdExtensions';
 
         /** Reserved. */
@@ -443,6 +443,9 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Include Campaign level conversion goal records in the download data. */
         const CampaignConversionGoal = 'CampaignConversionGoal';
+
+        /** Reserved. */
+        const AdGroupHotelListingGroups = 'AdGroupHotelListingGroups';
     }
 
 }

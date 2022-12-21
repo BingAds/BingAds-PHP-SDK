@@ -23,6 +23,8 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by DSASearchQueryPerformanceReportFilter
      * @used-by GeographicPerformanceReportFilter
      * @used-by GoalsAndFunnelsReportFilter
+     * @used-by HotelDimensionPerformanceReportFilter
+     * @used-by HotelGroupPerformanceReportFilter
      * @used-by KeywordPerformanceReportFilter
      * @used-by NegativeKeywordConflictReportFilter
      * @used-by ProductDimensionPerformanceReportFilter

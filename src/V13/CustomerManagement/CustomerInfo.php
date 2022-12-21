@@ -8,8 +8,6 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/customerinfo?view=bingads-13 CustomerInfo Data Object
      * 
      * @used-by AdvertiserAccount
-     * @used-by GetCustomersInfoResponse
-     * @used-by GetLinkedAccountsAndCustomersInfoResponse
      */
     final class CustomerInfo
     {

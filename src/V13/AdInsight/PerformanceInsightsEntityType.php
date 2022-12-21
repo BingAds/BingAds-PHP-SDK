@@ -4,32 +4,32 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the entity types for retrieving performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsentitytype?view=bingads-13 PerformanceInsightsEntityType Value Set
      * 
      * @used-by EntityParameter
      */
     final class PerformanceInsightsEntityType
     {
-        /** Reserved. */
+        /** Account level data. */
         const Account = 'Account';
 
-        /** Reserved. */
+        /** Campaign level data. */
         const Campaign = 'Campaign';
 
-        /** Reserved. */
+        /** Ad group level data. */
         const AdGroup = 'AdGroup';
 
-        /** Reserved. */
+        /** Keyword level data. */
         const Keyword = 'Keyword';
 
-        /** Reserved. */
+        /** Product group level data. */
         const ProductGroup = 'ProductGroup';
 
-        /** Reserved. */
+        /** Search term level data. */
         const SearchTerm = 'SearchTerm';
 
-        /** Reserved. */
+        /** Website level data. */
         const Website = 'Website';
     }
 

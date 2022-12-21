@@ -4,62 +4,62 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the URL ID for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsurlid?view=bingads-13 PerformanceInsightsUrlId Value Set
      * 
      * @used-by UrlParameter
      */
     final class PerformanceInsightsUrlId
     {
-        /** Reserved. */
+        /** Recommendation page. */
         const RecRecommendationPage = 'RecRecommendationPage';
 
-        /** Reserved. */
+        /** Competition recommendation page. */
         const RecCompetitionPage = 'RecCompetitionPage';
 
-        /** Reserved. */
+        /** Create order. */
         const SettingCreateOrder = 'SettingCreateOrder';
 
-        /** Reserved. */
+        /** Remove hold. */
         const SettingRemoveHold = 'SettingRemoveHold';
 
-        /** Reserved. */
+        /** Add funds. */
         const SettingAddFunds = 'SettingAddFunds';
 
-        /** Reserved. */
+        /** Search term report. */
         const ReportSearchTerm = 'ReportSearchTerm';
 
-        /** Reserved. */
+        /** Publisher report. */
         const ReportPublisherWebsite = 'ReportPublisherWebsite';
 
-        /** Reserved. */
+        /** Auction insights report. */
         const ReportAuctionInsights = 'ReportAuctionInsights';
 
-        /** Reserved. */
+        /** Learn more about network settings. */
         const HelpDocNetworkSetting = 'HelpDocNetworkSetting';
 
-        /** Reserved. */
+        /** Learn more about editorials. */
         const HelpDocEditorial = 'HelpDocEditorial';
 
-        /** Reserved. */
+        /** Learn more about website reports. */
         const HelpDocWebsiteReport = 'HelpDocWebsiteReport';
 
-        /** Reserved. */
+        /** Learn more about website exclusion. */
         const HelpDocWebsiteExclusion = 'HelpDocWebsiteExclusion';
 
-        /** Reserved. */
+        /** Learn more about creating an order. */
         const HelpDocCreateOrder = 'HelpDocCreateOrder';
 
-        /** Reserved. */
+        /** Learn more about removing a hold. */
         const HelpDocRemoveHold = 'HelpDocRemoveHold';
 
-        /** Reserved. */
+        /** Learn more about adding funds. */
         const HelpDocAddFunds = 'HelpDocAddFunds';
 
-        /** Reserved. */
+        /** Learn more about recommendations. */
         const HelpDocRecommendation = 'HelpDocRecommendation';
 
-        /** Reserved. */
+        /** Learn more about the Microsoft Audience Network. */
         const HelpDocAudienceNetwork = 'HelpDocAudienceNetwork';
     }
 

@@ -6,8 +6,6 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     /**
      * Defines account access rights for a person who acts on behalf of a specific customer.
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/customerrole?view=bingads-13 CustomerRole Data Object
-     * 
-     * @used-by GetUserResponse
      */
     final class CustomerRole
     {

@@ -28,8 +28,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddUetTagsResponse
      * @used-by AddVideosResponse
      * @used-by AppealEditorialRejectionsResponse
+     * @used-by ApplyHotelGroupActionsResponse
      * @used-by ApplyOfflineConversionAdjustmentsResponse
      * @used-by ApplyOfflineConversionsResponse
+     * @used-by ApplyOnlineConversionAdjustmentsResponse
      * @used-by ApplyProductPartitionActionsResponse
      * @used-by DeleteAdExtensionsResponse
      * @used-by DeleteAdExtensionsAssociationsResponse

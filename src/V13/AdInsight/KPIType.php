@@ -4,23 +4,23 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the type of key performance indicator.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/kpitype?view=bingads-13 KPIType Value Set
      * 
      * @used-by PerformanceInsightsDetail
      */
     final class KPIType
     {
-        /** Reserved. */
+        /** Impression metrics. */
         const Impression = 'Impression';
 
-        /** Reserved. */
+        /** Click metrics. */
         const Click = 'Click';
 
-        /** Reserved. */
+        /** Spend metrics. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** Conversion metrics. */
         const Conversion = 'Conversion';
     }
 

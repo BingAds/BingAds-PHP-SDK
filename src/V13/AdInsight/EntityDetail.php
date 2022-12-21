@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines an object that provides detail information for an entity for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/entitydetail?view=bingads-13 EntityDetail Data Object
      * 
      * @used-by EntityParameter
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class EntityDetail
     {
         /**
-         * Reserved.
+         * For account, this is AccountId.
          * @var integer
          */
         public $EntityId;
 
         /**
-         * Reserved.
+         * For account/campaign/ad group, this is the name information.
          * @var string
          */
         public $EntityName;

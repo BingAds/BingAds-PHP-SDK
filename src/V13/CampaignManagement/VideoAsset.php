@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class VideoAsset extends Asset
     {
         /**
-         * Reserved.
+         * Represents the aspect ratio for this Video asset.
          * @var string
          */
         public $SubType;

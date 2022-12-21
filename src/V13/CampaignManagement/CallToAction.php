@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const BookNow = 'BookNow';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the LearnMore call to action in the ad. */
         const Browse = 'Browse';
 
         /** The corresponding call to action in the ad. */
@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const ContactUs = 'ContactUs';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the GetCoupon call to action in the ad. */
         const Coupon = 'Coupon';
 
         /** The corresponding call to action in the ad. */
@@ -65,7 +65,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const EnrollNow = 'EnrollNow';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the LearnMore call to action in the ad. */
         const Explore = 'Explore';
 
         /** The corresponding call to action in the ad. */
@@ -104,10 +104,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const LogIn = 'LogIn';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the ContactUs call to action in the ad. */
         const Message = 'Message';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the ViewCars call to action in the ad. */
         const NewCars = 'NewCars';
 
         /** The corresponding call to action in the ad. */
@@ -134,7 +134,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const Reserve = 'Reserve';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the SeeSale call to action in the ad. */
         const Sale = 'Sale';
 
         /** The corresponding call to action in the ad. */
@@ -146,7 +146,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const SeeMenu = 'SeeMenu';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the LearnMore call to action in the ad. */
         const SeeMore = 'SeeMore';
 
         /** The corresponding call to action in the ad. */
@@ -167,7 +167,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const SignUp = 'SignUp';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the FreeTrial call to action in the ad. */
         const StartFree = 'StartFree';
 
         /** The corresponding call to action in the ad. */
@@ -182,7 +182,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const TryNow = 'TryNow';
 
-        /** The corresponding call to action in the ad. */
+        /** Use the ViewCars call to action in the ad. */
         const UsedCars = 'UsedCars';
 
         /** The corresponding call to action in the ad. */
@@ -251,34 +251,34 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const RegisterNow = 'RegisterNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const BuildNow = 'BuildNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Dealers = 'Dealers';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const GetDemo = 'GetDemo';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const GetNow = 'GetNow';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const GoToDemo = 'GoToDemo';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SeeDemo = 'SeeDemo';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SeeModels = 'SeeModels';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const SeeOffers = 'SeeOffers';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const ViewDemo = 'ViewDemo';
 
-        /** Reserved. */
+        /** The corresponding call to action in the ad. */
         const Automated = 'Automated';
     }
 

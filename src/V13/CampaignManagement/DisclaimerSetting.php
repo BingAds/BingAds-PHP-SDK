@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DisclaimerSetting extends Setting
     {
         /**
-         * Reserved.
+         * This is a disclaimer ad when set to true.
          * @var boolean
          */
         public $DisclaimerAdsEnabled;

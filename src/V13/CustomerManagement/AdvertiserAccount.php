@@ -18,13 +18,6 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses Address
      * @uses AutoTagType
      * @uses AccountTaxCertificate
-     * @used-by AddAccountRequest
-     * @used-by AddPrepayAccountRequest
-     * @used-by GetAccountResponse
-     * @used-by SearchAccountsResponse
-     * @used-by SignupCustomerRequest
-     * @used-by UpdateAccountRequest
-     * @used-by UpdatePrepayAccountRequest
      */
     final class AdvertiserAccount
     {

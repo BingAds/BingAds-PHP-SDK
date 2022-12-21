@@ -138,7 +138,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The keyword status. */
         const KeywordStatus = 'KeywordStatus';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -246,7 +246,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 

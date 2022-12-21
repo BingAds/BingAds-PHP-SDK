@@ -86,7 +86,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -200,7 +200,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The neighborhood where an ad was physically served, or the neighborhood that your customer had shown interest in through searches or content they had viewed. */
         const Neighborhood = 'Neighborhood';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 

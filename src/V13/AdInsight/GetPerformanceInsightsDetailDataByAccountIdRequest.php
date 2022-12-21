@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Gets the performance insights detail data for a single account.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getperformanceinsightsdetaildatabyaccountid?view=bingads-13 GetPerformanceInsightsDetailDataByAccountId Request Object
      * 
      * @uses EntityType
@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetPerformanceInsightsDetailDataByAccountIdRequest
     {
         /**
-         * Reserved.
+         * The entity level that you want to request performance insights summary data from.
          * @var EntityType
          */
         public $EntityType;
 
         /**
-         * Reserved.
+         * The start date range for performance insights.
          * @var DayMonthAndYear
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The end date range for performance insights.
          * @var DayMonthAndYear
          */
         public $EndDate;

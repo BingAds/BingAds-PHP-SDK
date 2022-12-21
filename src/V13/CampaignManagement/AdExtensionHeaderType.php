@@ -121,6 +121,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Use the translated version of Deals in the ad extension header. */
         const Deals = 'Deals';
+
+        /** Reserved. */
+        const BestSellers = 'BestSellers';
+
+        /** Reserved. */
+        const AgeGroups = 'AgeGroups';
+
+        /** Reserved. */
+        const Occasions = 'Occasions';
+
+        /** Reserved. */
+        const Flowers = 'Flowers';
     }
 
 }

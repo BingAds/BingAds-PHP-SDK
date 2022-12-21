@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the message for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsmessage?view=bingads-13 PerformanceInsightsMessage Data Object
      * 
      * @uses PerformanceInsightsMessageTemplateId
@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class PerformanceInsightsMessage
     {
         /**
-         * Reserved.
+         * The message template ID.
          * @var PerformanceInsightsMessageTemplateId
          */
         public $TemplateId;
 
         /**
-         * Reserved.
+         * Message parameters are used to fill in the template that renders the message string.
          * @var PerformanceInsightsMessageParameter[]
          */
         public $Parameters;
 
         /**
-         * Reserved.
+         * Indentation distance or depth when displaying the message.
          * @var integer
          */
         public $IndentationLevel;

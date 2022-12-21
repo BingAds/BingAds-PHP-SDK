@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the URL parameter for use with performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/urlparameter?view=bingads-13 UrlParameter Data Object
      * 
      * @uses PerformanceInsightsUrlCategory
@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class UrlParameter extends PerformanceInsightsMessageParameter
     {
         /**
-         * Reserved.
+         * The suggested string value to substitute for the message.
          * @var string
          */
         public $SuggestedText;
 
         /**
-         * Reserved.
+         * THe Suggested URL.
          * @var string
          */
         public $SuggestedUrl;
 
         /**
-         * Reserved.
+         * The main category of the URL.
          * @var PerformanceInsightsUrlCategory
          */
         public $UrlCategory;
 
         /**
-         * Reserved.
+         * The specified type of the URL.
          * @var PerformanceInsightsUrlId
          */
         public $UrlId;

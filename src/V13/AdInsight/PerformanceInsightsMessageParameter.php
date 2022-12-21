@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the message parameters for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsmessageparameter?view=bingads-13 PerformanceInsightsMessageParameter Data Object
      * 
      * @uses ParameterType
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     class PerformanceInsightsMessageParameter
     {
         /**
-         * Reserved.
+         * The supported types are: text, URL, and entities.
          * @var ParameterType
          */
         public $Type;
