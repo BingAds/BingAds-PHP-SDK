@@ -26,6 +26,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the latest ActionAdExtensionActionType values be included within each returned ActionAdExtension. */
         const ActionTypesPhase4 = 'ActionTypesPhase4';
+
+        /** Reserved. */
+        const NewFilterLinkHeaders = 'NewFilterLinkHeaders';
     }
 
 }

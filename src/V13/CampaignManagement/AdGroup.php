@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses AdRotation
      * @uses BiddingScheme
+     * @uses RateBid
      * @uses Bid
      * @uses Date
      * @uses KeyValuePairOfstringstring
@@ -41,6 +42,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var BiddingScheme
          */
         public $BiddingScheme;
+
+        /**
+         * Reserved.
+         * @var RateBid
+         */
+        public $CommissionRate;
 
         /**
          * The default bid to use when the user's query and the ad group's keywords match by using either a broad, exact, or phrase match comparison.
@@ -97,6 +104,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Network;
 
         /**
+         * Reserved.
+         * @var RateBid
+         */
+        public $PercentCpcBid;
+
+        /**
          * Indicates whether or not your ad group target criteria e.g., ProfileCriterion are too narrow for ad groups in Audience campaigns.
          * @var AdGroupPrivacyStatus
          */
@@ -131,6 +144,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CustomParameters
          */
         public $UrlCustomParameters;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UseOptimizedTargeting;
 
         /**
          * Determines whether to use the account time zone or the time zone of the search user where the ads could be delivered.

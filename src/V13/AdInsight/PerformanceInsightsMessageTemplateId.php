@@ -4,332 +4,332 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the message template ID for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsmessagetemplateid?view=bingads-13 PerformanceInsightsMessageTemplateId Value Set
      * 
      * @used-by PerformanceInsightsMessage
      */
     final class PerformanceInsightsMessageTemplateId
     {
-        /** Reserved. */
+        /** Your account's impressions increased {0}% compared to the past 7 day average. */
         const FluxImprIncreaseAcct = 'FluxImprIncreaseAcct';
 
-        /** Reserved. */
+        /** Your account's impressions decreased {0}% compared to the past 7 day average. */
         const FluxImprDecreaseAcct = 'FluxImprDecreaseAcct';
 
-        /** Reserved. */
+        /** Your account's impressions increased compared to the past 7 day average. */
         const FluxImprIncreaseInfinityAcct = 'FluxImprIncreaseInfinityAcct';
 
-        /** Reserved. */
+        /** Your account's impressions increased {0}% compared to the previous day. */
         const FluxImprIncreaseAcctPrevDay = 'FluxImprIncreaseAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's impressions decreased {0}% compared to the previous day. */
         const FluxImprDecreaseAcctPrevDay = 'FluxImprDecreaseAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's impressions increased compared to the previous day. */
         const FluxImprIncreaseInfinityAcctPrevDay = 'FluxImprIncreaseInfinityAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's clicks increased {0}% compared to the past 7 day average. */
         const FluxClickIncreaseAcct = 'FluxClickIncreaseAcct';
 
-        /** Reserved. */
+        /** Your account's clicks decreased {0}% compared to the past 7 day average. */
         const FluxClickDecreaseAcct = 'FluxClickDecreaseAcct';
 
-        /** Reserved. */
+        /** Your account's clicks increased compared to the past 7 day average. */
         const FluxClickIncreaseInfinityAcct = 'FluxClickIncreaseInfinityAcct';
 
-        /** Reserved. */
+        /** Your account's clicks increased {0}% compared to the previous day. */
         const FluxClickIncreaseAcctPrevDay = 'FluxClickIncreaseAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's clicks decreased {0}% compared to the previous day. */
         const FluxClickDecreaseAcctPrevDay = 'FluxClickDecreaseAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's clicks increased compared to the previous day. */
         const FluxClickIncreaseInfinityAcctPrevDay = 'FluxClickIncreaseInfinityAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's spend increased {0}% compared to the average of past 7 days. */
         const FluxCostIncreaseAcct = 'FluxCostIncreaseAcct';
 
-        /** Reserved. */
+        /** Your account's spend decreased {0}% compared to the average of past 7 days. */
         const FluxCostDecreaseAcct = 'FluxCostDecreaseAcct';
 
-        /** Reserved. */
+        /** Your account's spend increased compared to the average of past 7 days. */
         const FluxCostIncreaseInfinityAcct = 'FluxCostIncreaseInfinityAcct';
 
-        /** Reserved. */
+        /** Your account's spend increased {0}% compared to the previous day. */
         const FluxCostIncreaseAcctPrevDay = 'FluxCostIncreaseAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's spend decreased {0}% compared to the previous day. */
         const FluxCostDecreaseAcctPrevDay = 'FluxCostDecreaseAcctPrevDay';
 
-        /** Reserved. */
+        /** Your account's spend increased compared to the previous day. */
         const FluxCostIncreaseInfinityAcctPrevDay = 'FluxCostIncreaseInfinityAcctPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's impressions increased {0}% compared to the past 7 day average. */
         const FluxImprIncreaseCampaign = 'FluxImprIncreaseCampaign';
 
-        /** Reserved. */
+        /** Your campaign's impressions decreased {0}% compared to the past 7 day average. */
         const FluxImprDecreaseCampaign = 'FluxImprDecreaseCampaign';
 
-        /** Reserved. */
+        /** Your campaign's impressions increased compared to the past 7 day average. */
         const FluxImprIncreaseInfinityCampaign = 'FluxImprIncreaseInfinityCampaign';
 
-        /** Reserved. */
+        /** Your campaign's impressions increased {0}% compared to the previous day. */
         const FluxImprIncreaseCampaignPrevDay = 'FluxImprIncreaseCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's impressions decreased {0}% compared to the previous day. */
         const FluxImprDecreaseCampaignPrevDay = 'FluxImprDecreaseCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's impressions increased compared to the previous day. */
         const FluxImprIncreaseInfinityCampaignPrevDay = 'FluxImprIncreaseInfinityCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's clicks increased {0}% compared to the past 7 day average. */
         const FluxClickIncreaseCampaign = 'FluxClickIncreaseCampaign';
 
-        /** Reserved. */
+        /** Your campaign's clicks decreased {0}% compared to the past 7 day average. */
         const FluxClickDecreaseCampaign = 'FluxClickDecreaseCampaign';
 
-        /** Reserved. */
+        /** Your campaign's clicks increased compared to the past 7 day average. */
         const FluxClickIncreaseInfinityCampaign = 'FluxClickIncreaseInfinityCampaign';
 
-        /** Reserved. */
+        /** Your campaign's clicks increased {0}% compared to the previous day. */
         const FluxClickIncreaseCampaignPrevDay = 'FluxClickIncreaseCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's clicks decreased {0}% compared to the previous day. */
         const FluxClickDecreaseCampaignPrevDay = 'FluxClickDecreaseCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's clicks increased compared to the previous day. */
         const FluxClickIncreaseInfinityCampaignPrevDay = 'FluxClickIncreaseInfinityCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's spend increased {0}% compared to the average of past 7 days. */
         const FluxCostIncreaseCampaign = 'FluxCostIncreaseCampaign';
 
-        /** Reserved. */
+        /** Your campaign's spend decreased {0}% compared to the average of past 7 days. */
         const FluxCostDecreaseCampaign = 'FluxCostDecreaseCampaign';
 
-        /** Reserved. */
+        /** Your campaign's spend increased compared to the average of past 7 days. */
         const FluxCostIncreaseInfinityCampaign = 'FluxCostIncreaseInfinityCampaign';
 
-        /** Reserved. */
+        /** Your campaign's spend increased {0}% compared to the previous day. */
         const FluxCostIncreaseCampaignPrevDay = 'FluxCostIncreaseCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's spend decreased {0}% compared to the previous day. */
         const FluxCostDecreaseCampaignPrevDay = 'FluxCostDecreaseCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your campaign's spend increased compared to the previous day. */
         const FluxCostIncreaseInfinityCampaignPrevDay = 'FluxCostIncreaseInfinityCampaignPrevDay';
 
-        /** Reserved. */
+        /** Your conversions have decreased week-over-week due to a conversion issue. */
         const FluxConversionDecreaseAcct = 'FluxConversionDecreaseAcct';
 
-        /** Reserved. */
+        /** You have zero conversions over the past 14 days due to a conversion issue. */
         const FluxConversionZeroAcct = 'FluxConversionZeroAcct';
 
-        /** Reserved. */
+        /** Increased Microsoft Audience ads traffic. */
         const RCAudienceIncrease = 'RCAudienceIncrease';
 
-        /** Reserved. */
+        /** Decreased Microsoft Audience ads traffic. */
         const RCAudienceDecrease = 'RCAudienceDecrease';
 
-        /** Reserved. */
+        /** Your bids for {0} were increased. */
         const RCBidIncrease = 'RCBidIncrease';
 
-        /** Reserved. */
+        /** Your bids for {0} were decreased. */
         const RCBidDecrease = 'RCBidDecrease';
 
-        /** Reserved. */
+        /** {0} budgets were increased. */
         const RCBudgetIncrease = 'RCBudgetIncrease';
 
-        /** Reserved. */
+        /** {0} budgets were decreased. */
         const RCBudgetDecrease = 'RCBudgetDecrease';
 
-        /** Reserved. */
+        /** This resulted in clicks increasing by {0} during the same period. */
         const RCClickIncrease = 'RCClickIncrease';
 
-        /** Reserved. */
+        /** This resulted in clicks decreasing by {0} during the same period. */
         const RCClickDecrease = 'RCClickDecrease';
 
-        /** Reserved. */
+        /** Your conversion goal has a blocking issue. */
         const RCConversionGoalIssue = 'RCConversionGoalIssue';
 
-        /** Reserved. */
+        /** {0} device target bid adjustments were changed. */
         const RCDeviceTargetingBidChange = 'RCDeviceTargetingBidChange';
 
-        /** Reserved. */
+        /** {0} passed the Microsoft Advertising policy review. */
         const RCEditorialApproval = 'RCEditorialApproval';
 
-        /** Reserved. */
+        /** {0} were disapproved by Microsoft Advertising policy review. */
         const RCEditorialDisapproval = 'RCEditorialDisapproval';
 
-        /** Reserved. */
+        /** {0} were added. */
         const RCEntityAdditionWithCount = 'RCEntityAdditionWithCount';
 
-        /** Reserved. */
+        /** {0} were deleted. */
         const RCEntityDeletionWithCount = 'RCEntityDeletionWithCount';
 
-        /** Reserved. */
+        /** {0} were paused. */
         const RCEntityPauseWithCount = 'RCEntityPauseWithCount';
 
-        /** Reserved. */
+        /** {0} were enabled. */
         const RCEntityUnpauseWithCount = 'RCEntityUnpauseWithCount';
 
-        /** Reserved. */
+        /** Your ads were outcompeting your competitors' ads in terms of bid amounts and/or ad quality. */
         const RCMoreCompetitive = 'RCMoreCompetitive';
 
-        /** Reserved. */
+        /** {0} ad distribution settings became less restrictive. */
         const RCNetworkLessRestrict = 'RCNetworkLessRestrict';
 
-        /** Reserved. */
+        /** {0} ad distribution settings became more restrictive. */
         const RCNetworkMoreRestrict = 'RCNetworkMoreRestrict';
 
-        /** Reserved. */
+        /** Your account was paused due to lack of a valid insertion order. */
         const RCPaymentIssueInvoiceAccountPaused = 'RCPaymentIssueInvoiceAccountPaused';
 
-        /** Reserved. */
+        /** Your account was placed on hold because we haven?t received one or more of your invoiced payments. */
         const RCPaymentIssueInvoiceAccountOnHold = 'RCPaymentIssueInvoiceAccountOnHold';
 
-        /** Reserved. */
+        /** Your account was paused due to a zero balance. */
         const RCPaymentIssuePrepayAccountPaused = 'RCPaymentIssuePrepayAccountPaused';
 
-        /** Reserved. */
+        /** Your account was placed on hold because a payment failed to authorize. */
         const RCPaymentIssueThresholdAccountOnHold = 'RCPaymentIssueThresholdAccountOnHold';
 
-        /** Reserved. */
+        /** Your previous payment issue was resolved. */
         const RCPaymentIssueYesterday = 'RCPaymentIssueYesterday';
 
-        /** Reserved. */
+        /** {0} were searched more frequently. */
         const RCSearchTermIncrease = 'RCSearchTermIncrease';
 
-        /** Reserved. */
+        /** {0} related to your campaigns were searched more frequently. */
         const RCSearchTermIncreaseClick = 'RCSearchTermIncreaseClick';
 
-        /** Reserved. */
+        /** {0} were searched less frequently. */
         const RCSearchTermDecrease = 'RCSearchTermDecrease';
 
-        /** Reserved. */
+        /** {0} related to your campaigns were searched less frequently. */
         const RCSearchTermDecreaseClick = 'RCSearchTermDecreaseClick';
 
-        /** Reserved. */
+        /** {0} were searched more frequently. */
         const RCSearchTermCompetitionIncrease = 'RCSearchTermCompetitionIncrease';
 
-        /** Reserved. */
+        /** {0} related to your campaigns were searched more frequently. */
         const RCSearchTermCompetitionIncreaseClick = 'RCSearchTermCompetitionIncreaseClick';
 
-        /** Reserved. */
+        /** {0} were searched less frequently. */
         const RCSearchTermCompetitionDecrease = 'RCSearchTermCompetitionDecrease';
 
-        /** Reserved. */
+        /** {0} related to your campaigns were searched less frequently. */
         const RCSearchTermCompetitionDecreaseClick = 'RCSearchTermCompetitionDecreaseClick';
 
-        /** Reserved. */
+        /** Your campaign was added. */
         const RCSingleCampaignAddition = 'RCSingleCampaignAddition';
 
-        /** Reserved. */
+        /** Your campaign was paused. */
         const RCSingleCampaignPause = 'RCSingleCampaignPause';
 
-        /** Reserved. */
+        /** Your campaign was enabled. */
         const RCSingleCampaignUnpause = 'RCSingleCampaignUnpause';
 
-        /** Reserved. */
+        /** Your campaign budget was increased.. */
         const RCSingleCampaignBudgetIncrease = 'RCSingleCampaignBudgetIncrease';
 
-        /** Reserved. */
+        /** Your campaign budget was decreased. */
         const RCSingleCampaignBudgetDecrease = 'RCSingleCampaignBudgetDecrease';
 
-        /** Reserved. */
+        /** Your campaign's device target bid adjustment was changed. */
         const RCSingleCampaignDeviceTargetingBidChange = 'RCSingleCampaignDeviceTargetingBidChange';
 
-        /** Reserved. */
+        /** Your competitors' impression share increased due to improved quality scores. */
         const RCStrongerCompetitorAdQuality = 'RCStrongerCompetitorAdQuality';
 
-        /** Reserved. */
+        /** Your competitors' impression share increased due to increased bid amounts. */
         const RCStrongerCompetitorBid = 'RCStrongerCompetitorBid';
 
-        /** Reserved. */
+        /** Increased syndication partner traffic from {0}. */
         const RCSyndTrafficIncrease = 'RCSyndTrafficIncrease';
 
-        /** Reserved. */
+        /** Decreased syndication partner traffic from {0}. */
         const RCSyndTrafficDecrease = 'RCSyndTrafficDecrease';
 
-        /** Reserved. */
+        /** Adopting Expanded Text Ads that have been optimized just for you. */
         const ActAdsOppr = 'ActAdsOppr';
 
-        /** Reserved. */
+        /** View customized recommendations for your campaign. */
         const ActAllAvailableOppr = 'ActAllAvailableOppr';
 
-        /** Reserved. */
+        /** View a customized recommendation to increase visits to your website. */
         const ActBMAdoptionOppr = 'ActBMAdoptionOppr';
 
-        /** Reserved. */
+        /** View a customized recommendation to increase visits to your website. */
         const ActBMMKeywordOppr = 'ActBMMKeywordOppr';
 
-        /** Reserved. */
+        /** View a customized recommendation to increase visits to your website. */
         const ActCampaignContextKeywordOppr = 'ActCampaignContextKeywordOppr';
 
-        /** Reserved. */
+        /** Check the publisher report to review the performance of sites that show your ads. */
         const ActCheckPublisherWebsite = 'ActCheckPublisherWebsite';
 
-        /** Reserved. */
+        /** Check the auction insights report to review the performance of sites that show your ads. */
         const ActCompetitionAuctionInsight = 'ActCompetitionAuctionInsight';
 
-        /** Reserved. */
+        /** Boost your budgets to prevent competitors from gaining impression share. */
         const ActCompetitiveBudgetOppr = 'ActCompetitiveBudgetOppr';
 
-        /** Reserved. */
+        /** View a customized recommendation to increase visits to your website. */
         const ActCompetitiveKeywordOppr = 'ActCompetitiveKeywordOppr';
 
-        /** Reserved. */
+        /** View a customized recommendation to increase visits to your website. */
         const ActCompetitiveLocationTargetOppr = 'ActCompetitiveLocationTargetOppr';
 
-        /** Reserved. */
+        /** Improve the click-through rate of your ads by: */
         const ActCTRQualityBundle = 'ActCTRQualityBundle';
 
-        /** Reserved. */
+        /** Ensure your ad and keyword text comply with Microsoft Advertising policies. */
         const ActEditorialReviewProcess = 'ActEditorialReviewProcess';
 
-        /** Reserved. */
+        /** Fix your conversion goal setting to make sure you don?t miss any conversions. */
         const ActFixConversionGoalSettingOppr = 'ActFixConversionGoalSettingOppr';
 
-        /** Reserved. */
+        /** Make sure you don't miss any conversions by fixing your UET tag. */
         const ActFixConversionTrackingOppr = 'ActFixConversionTrackingOppr';
 
-        /** Reserved. */
+        /** Ensure budget issues don't prevent your ads from showing. */
         const ActGeneralBudgetOppr = 'ActGeneralBudgetOppr';
 
-        /** Reserved. */
+        /** Create conversion goals to track more conversions. */
         const ActNewConversionGoalOppr = 'ActNewConversionGoalOppr';
 
-        /** Reserved. */
+        /** You need an active insertion order before your ads can run. */
         const ActInvoiceAccountPaused = 'ActInvoiceAccountPaused';
 
-        /** Reserved. */
+        /** You need to remove the hold before your ads can run. */
         const ActInvoiceAccountOnHold = 'ActInvoiceAccountOnHold';
 
-        /** Reserved. */
+        /** You need to add funds to this prepay account before your ads can run. */
         const ActPrepayAccountPaused = 'ActPrepayAccountPaused';
 
-        /** Reserved. */
+        /** Get more traffic by moving unused budget to campaigns that need it. */
         const ActReallocateBudgetOppr = 'ActReallocateBudgetOppr';
 
-        /** Reserved. */
+        /** Get your ads running again by adding active keywords to your ad group. */
         const ActRepairKeywordsOppr = 'ActRepairKeywordsOppr';
 
-        /** Reserved. */
+        /** Adopt responsive search ads, which automatically optimize themselves. */
         const ActRSAOppr = 'ActRSAOppr';
 
-        /** Reserved. */
+        /** Check the search term report to review the queries that lead to clicks on your ads. */
         const ActSearchTerm = 'ActSearchTerm';
 
-        /** Reserved. */
+        /** Set up conversion tracking to convert more customers and use automated bidding. */
         const ActSetupConversionTrackingOppr = 'ActSetupConversionTrackingOppr';
 
-        /** Reserved. */
+        /** Add sitelink extensions to make your ads more appealing. */
         const ActSiteLinkOppr = 'ActSiteLinkOppr';
 
-        /** Reserved. */
+        /** You need to remove the hold before your ads can run. */
         const ActThresholdAccountOnHold = 'ActThresholdAccountOnHold';
 
-        /** Reserved. */
+        /** Utilize website exclusions to prevent specific websites from showing your ads. */
         const ActWebsiteExclusion = 'ActWebsiteExclusion';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the DisclaimerAdExtension Data Object.
+     * Defines an ad extension that specifies disclaimer text to include in an expanded text ad or responsive search ad.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/disclaimeradextension?view=bingads-13 DisclaimerAdExtension Data Object
      * 
      * @uses AppUrl
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DisclaimerAdExtension extends AdExtension
     {
         /**
-         * Reserved.
+         * The layout of the disclaimer.
          * @var string
          */
         public $DisclaimerLayout;
@@ -25,55 +25,55 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalAppUrls;
 
         /**
-         * Reserved.
+         * The landing page URL for mobile devices.
          * @var string[]
          */
         public $FinalMobileUrls;
 
         /**
-         * Reserved.
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
          * @var string
          */
         public $FinalUrlSuffix;
 
         /**
-         * Reserved.
+         * The landing page URL.
          * @var string[]
          */
         public $FinalUrls;
 
         /**
-         * Reserved.
+         * Required text if the disclaimer is in additionalLine layout.
          * @var string
          */
         public $LineText;
 
         /**
-         * Reserved.
+         * The name of the disclaimer.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * Required text if the disclaimer is in popup layout.
          * @var string
          */
         public $PopupText;
 
         /**
-         * Reserved.
+         * The title of the popup in popup layout.
          * @var string
          */
         public $Title;
 
         /**
-         * Reserved.
+         * The tracking template to use as a default for all FinalUrls and FinalMobileUrls.
          * @var string
          */
         public $TrackingUrlTemplate;
 
         /**
-         * Reserved.
+         * Your custom collection of key and value parameters for URL tracking.
          * @var CustomParameters
          */
         public $UrlCustomParameters;

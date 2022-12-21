@@ -47,6 +47,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CampaignConversionGoal = 'CampaignConversionGoal';
+
+        /** Reserved. */
+        const TargetCpaInMaxConversion = 'TargetCpaInMaxConversion';
+
+        /** Reserved. */
+        const ResponsiveSearchAdsSetting = 'ResponsiveSearchAdsSetting';
     }
 
 }

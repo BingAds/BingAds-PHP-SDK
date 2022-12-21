@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @used-by DayTime
      * @used-by DayTimeCriterion
+     * @used-by HotelCheckInDayCriterion
      */
     final class Day
     {

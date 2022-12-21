@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the details for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsdetail?view=bingads-13 PerformanceInsightsDetail Data Object
      * 
      * @uses EntityType
@@ -16,43 +16,43 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class PerformanceInsightsDetail
     {
         /**
-         * Reserved.
+         * For account level, this is AccountId.
          * @var integer
          */
         public $EntityId;
 
         /**
-         * Reserved.
+         * The supported types are account and campaign.
          * @var EntityType
          */
         public $EntityType;
 
         /**
-         * Reserved.
+         * Defines the type of key performance indicator.
          * @var KPIType
          */
         public $KPIType;
 
         /**
-         * Reserved.
+         * The date of the detected performance insights.
          * @var DayMonthAndYear
          */
         public $Date;
 
         /**
-         * Reserved.
+         * A message to describe the performance insights.
          * @var PerformanceInsightsMessage
          */
         public $Description;
 
         /**
-         * Reserved.
+         * Messages that describe the root causes in "What happened."
          * @var PerformanceInsightsMessage[]
          */
         public $RootCauses;
 
         /**
-         * Reserved.
+         * Messages that describe the actions in "What can I do."
          * @var PerformanceInsightsMessage[]
          */
         public $Actions;

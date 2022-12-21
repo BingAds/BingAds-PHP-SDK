@@ -8,9 +8,6 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/accountinfo?view=bingads-13 AccountInfo Data Object
      * 
      * @uses AccountLifeCycleStatus
-     * @used-by FindAccountsResponse
-     * @used-by GetAccountsInfoResponse
-     * @used-by GetLinkedAccountsAndCustomersInfoResponse
      */
     final class AccountInfo
     {

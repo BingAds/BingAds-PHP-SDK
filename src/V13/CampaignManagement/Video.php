@@ -26,13 +26,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CreatedDateTimeInUTC;
 
         /**
-         * Reserved.
+         * The description of the video asset.
          * @var string
          */
         public $Description;
 
         /**
-         * Reserved.
+         * The duration in milliseconds of the video asset.
          * @var integer
          */
         public $DurationInMilliseconds;
@@ -62,13 +62,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SourceUrl;
 
         /**
-         * Reserved.
+         * The status of the video asset.
          * @var string
          */
         public $Status;
 
         /**
-         * Reserved.
+         * The thumbnail URL of the video asset.
          * @var string
          */
         public $ThumbnailUrl;

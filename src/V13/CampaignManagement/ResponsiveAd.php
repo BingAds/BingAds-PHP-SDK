@@ -86,7 +86,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Text;
 
         /**
-         * Reserved.
+         * Video assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.
          * @var AssetLink[]
          */
         public $Videos;

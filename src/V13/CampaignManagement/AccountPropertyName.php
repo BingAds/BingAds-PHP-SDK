@@ -53,6 +53,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const EnableMMAUnderDSAAdgroups = 'EnableMMAUnderDSAAdgroups';
+
+        /** Reserved. */
+        const OptOutFromMCM = 'OptOutFromMCM';
     }
 
 }

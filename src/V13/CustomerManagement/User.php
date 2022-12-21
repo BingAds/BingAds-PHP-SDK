@@ -13,9 +13,6 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses SecretQuestion
      * @uses UserLifeCycleStatus
      * @uses KeyValuePairOfstringstring
-     * @used-by GetCurrentUserResponse
-     * @used-by GetUserResponse
-     * @used-by UpdateUserRequest
      */
     final class User
     {
@@ -108,6 +105,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $AuthenticationToken;
     }
 
 }

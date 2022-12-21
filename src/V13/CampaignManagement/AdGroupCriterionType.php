@@ -73,6 +73,24 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The ad group criterion is a combined list association. */
         const CombinedList = 'CombinedList';
+
+        /** Reserved. */
+        const HotelGroup = 'HotelGroup';
+
+        /** Reserved. */
+        const HotelAdvanceBookingWindow = 'HotelAdvanceBookingWindow';
+
+        /** Reserved. */
+        const HotelCheckInDay = 'HotelCheckInDay';
+
+        /** Reserved. */
+        const HotelLengthOfStay = 'HotelLengthOfStay';
+
+        /** Reserved. */
+        const HotelDateSelectionType = 'HotelDateSelectionType';
+
+        /** Reserved. */
+        const HotelCheckInDate = 'HotelCheckInDate';
     }
 
 }

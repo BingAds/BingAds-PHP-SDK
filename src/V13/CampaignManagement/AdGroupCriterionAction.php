@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses ItemAction
      * @uses AdGroupCriterion
+     * @used-by ApplyHotelGroupActionsRequest
      * @used-by ApplyProductPartitionActionsRequest
      */
     final class AdGroupCriterionAction

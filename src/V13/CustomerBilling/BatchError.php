@@ -8,7 +8,6 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/batcherror?view=bingads-13 BatchError Data Object
      * 
      * @used-by ApiBatchFault
-     * @used-by DispatchCouponsResponse
      */
     final class BatchError
     {

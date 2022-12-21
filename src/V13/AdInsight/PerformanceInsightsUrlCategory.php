@@ -4,23 +4,23 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the URL category for performance insights.
      * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsurlcategory?view=bingads-13 PerformanceInsightsUrlCategory Value Set
      * 
      * @used-by UrlParameter
      */
     final class PerformanceInsightsUrlCategory
     {
-        /** Reserved. */
+        /** The url is for recommendations. */
         const Recommendation = 'Recommendation';
 
-        /** Reserved. */
+        /** The url is for demand settings. */
         const Setting = 'Setting';
 
-        /** Reserved. */
+        /** The url is for reports. */
         const Report = 'Report';
 
-        /** Reserved. */
+        /** The URL is for help documents. */
         const HelpDoc = 'HelpDoc';
     }
 

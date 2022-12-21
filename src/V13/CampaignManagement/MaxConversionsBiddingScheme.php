@@ -16,6 +16,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Bid
          */
         public $MaxCpc;
+
+        /**
+         * Reserved.
+         * @var double
+         */
+        public $TargetCpa;
     }
 
 }

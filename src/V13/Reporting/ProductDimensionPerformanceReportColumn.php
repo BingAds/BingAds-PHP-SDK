@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** The Microsoft Advertising assigned identifier of an ad. */
@@ -275,8 +275,11 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Manufacturer Part Number (MPN) is a unique number that identifies the product to its manufacturer. */
         const MPN = 'MPN';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** Reserved. */
+        const GoalId = 'GoalId';
     }
 
 }

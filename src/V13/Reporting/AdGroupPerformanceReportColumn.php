@@ -122,7 +122,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The phone-through rate (Ptr). */
         const Ptr = 'Ptr';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -266,8 +266,41 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** The number of times the video was played and watched for at least two continuous seconds with more than 50% of the screen in view. */
+        const VideoViews = 'VideoViews';
+
+        /** The number of video views divided by the number of impressions. */
+        const ViewThroughRate = 'ViewThroughRate';
+
+        /** Average total spend divided by video views. */
+        const AverageCPV = 'AverageCPV';
+
+        /** The number of times a person completed at least 25% of a video. */
+        const VideoViewsAt25Percent = 'VideoViewsAt25Percent';
+
+        /** The number of times a person completed at least 50% of a video. */
+        const VideoViewsAt50Percent = 'VideoViewsAt50Percent';
+
+        /** The number of times a person completed at least 75% of a video. */
+        const VideoViewsAt75Percent = 'VideoViewsAt75Percent';
+
+        /** Number of times a person watched the entire video to completion. */
+        const CompletedVideoViews = 'CompletedVideoViews';
+
+        /** The number of completed video views divided by the number of total video views. */
+        const VideoCompletionRate = 'VideoCompletionRate';
+
+        /** Total amount of time a person spent watching the video in milliseconds. */
+        const TotalWatchTimeInMS = 'TotalWatchTimeInMS';
+
+        /** Total watch time divided by the number of video views. */
+        const AverageWatchTimePerVideoView = 'AverageWatchTimePerVideoView';
+
+        /** Total watch time, in milliseconds, divided by the number of impressions. */
+        const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
     }
 
 }

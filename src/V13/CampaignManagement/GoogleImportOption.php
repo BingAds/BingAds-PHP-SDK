@@ -294,6 +294,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $RaiseProductGroupBidsToMinimum;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $RenameCampaignNameWithSuffix;
+
+        /**
          * If you enable this option, the service will only fetch search ads from mixed campaigns and import them as search campaigns.
          * @var boolean
          */

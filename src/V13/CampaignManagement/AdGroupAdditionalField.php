@@ -26,6 +26,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the MultimediaAdsBidAdjustment element be included within each returned AdGroup object. */
         const MultimediaAdsBidAdjustment = 'MultimediaAdsBidAdjustment';
+
+        /** Reserved. */
+        const CommissionRate = 'CommissionRate';
+
+        /** Reserved. */
+        const PercentCpcBid = 'PercentCpcBid';
+
+        /** Reserved. */
+        const McpaBid = 'McpaBid';
+
+        /** Reserved. */
+        const UseOptimizedTargeting = 'UseOptimizedTargeting';
     }
 
 }
