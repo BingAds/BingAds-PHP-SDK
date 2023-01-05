@@ -8,6 +8,8 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/operationerror?view=bingads-13 OperationError Data Object
      * 
      * @used-by ApiFault
+     * @used-by AddClientLinksResponse
+     * @used-by UpdateClientLinksResponse
      */
     final class OperationError
     {

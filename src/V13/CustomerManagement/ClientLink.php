@@ -9,6 +9,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * 
      * @uses ClientLinkStatus
      * @uses KeyValuePairOfstringstring
+     * @used-by AddClientLinksRequest
+     * @used-by SearchClientLinksResponse
+     * @used-by UpdateClientLinksRequest
      */
     final class ClientLink
     {

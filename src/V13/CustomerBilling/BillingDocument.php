@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/billingdocument?view=bingads-13 BillingDocument Data Object
      * 
      * @uses DataType
+     * @used-by GetBillingDocumentsResponse
      */
     final class BillingDocument
     {

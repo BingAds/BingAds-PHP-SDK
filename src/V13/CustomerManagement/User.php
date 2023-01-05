@@ -13,6 +13,10 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses SecretQuestion
      * @uses UserLifeCycleStatus
      * @uses KeyValuePairOfstringstring
+     * @used-by GetCurrentUserResponse
+     * @used-by GetUserResponse
+     * @used-by SignupCustomerRequest
+     * @used-by UpdateUserRequest
      */
     final class User
     {
@@ -107,7 +111,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * Reserved.
+         * The OAuth access token that represents the credentials of the user who has permissions to Microsoft Advertising accounts.
          * @var string
          */
         public $AuthenticationToken;

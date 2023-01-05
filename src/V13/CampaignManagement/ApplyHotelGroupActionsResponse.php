@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Applies an add, update, or delete action to each of the specified BiddableAdGroupCriterion or NegativeAdGroupCriterion, which each contain a ProductPartition.
+     * Applies an add, update, or delete action to each of the specified BiddableAdGroupCriterion or NegativeAdGroupCriterion, which each contain a HotelGroup.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/applyhotelgroupactions?view=bingads-13 ApplyHotelGroupActions Response Object
      * 
      * @uses BatchError

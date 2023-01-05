@@ -9,6 +9,9 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * 
      * @uses InsertionOrderStatus
      * @uses InsertionOrderPendingChanges
+     * @used-by AddInsertionOrderRequest
+     * @used-by SearchInsertionOrdersResponse
+     * @used-by UpdateInsertionOrderRequest
      */
     final class InsertionOrder
     {

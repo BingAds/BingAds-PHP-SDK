@@ -9,6 +9,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * 
      * @uses OrderByField
      * @uses SortOrder
+     * @used-by SearchAccountsRequest
+     * @used-by SearchClientLinksRequest
+     * @used-by SearchCustomersRequest
      */
     final class OrderBy
     {

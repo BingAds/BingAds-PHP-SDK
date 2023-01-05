@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an object that represents the rate bid.
      * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/ratebid?view=bingads-13 RateBid Data Object
      * 
      * @uses RateAmount
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class RateBid extends CriterionBid
     {
         /**
-         * Reserved.
+         * Defines an object that represents the rate amount.
          * @var RateAmount
          */
         public $RateAmount;
