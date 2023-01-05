@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/datatype?view=bingads-13 DataType Value Set
      * 
      * @used-by BillingDocument
+     * @used-by GetBillingDocumentsRequest
      */
     final class DataType
     {

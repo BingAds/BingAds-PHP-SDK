@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/userlifecyclestatus?view=bingads-13 UserLifeCycleStatus Value Set
      * 
      * @used-by User
+     * @used-by GetUsersInfoRequest
      */
     final class UserLifeCycleStatus
     {

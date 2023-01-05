@@ -8,6 +8,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/userinvitation?view=bingads-13 UserInvitation Data Object
      * 
      * @uses LCID
+     * @used-by SearchUserInvitationsResponse
+     * @used-by SendUserInvitationRequest
+     * @used-by SignupCustomerRequest
      */
     final class UserInvitation
     {

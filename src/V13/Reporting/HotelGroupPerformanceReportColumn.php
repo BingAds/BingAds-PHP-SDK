@@ -116,7 +116,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The average advanced booking window for the hotel. */
         const AvgBookedABW = 'AvgBookedABW';
 
-        /** Avg booked nights */
+        /** The average nights booked for the hotel. */
         const AvgBookedNights = 'AvgBookedNights';
 
         /** The total advanced booking window days for the hotel. */
@@ -140,7 +140,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of impressions, out of the total available impressions in the market you were targeting. */
         const ImpressionShare = 'ImpressionShare';
 
-        /** MissedImpressionsInsufficientBid */
+        /** The number of impressions lost because there were no bids. */
         const MissedImpressionsNoBid = 'MissedImpressionsNoBid';
 
         /** The number of impressions lost because you reached your daily spending limit. */

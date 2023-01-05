@@ -14,6 +14,11 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses ServiceLevel
      * @uses CustomerLifeCycleStatus
      * @uses Address
+     * @used-by GetAccessibleCustomerResponse
+     * @used-by GetCustomerResponse
+     * @used-by SearchCustomersResponse
+     * @used-by SignupCustomerRequest
+     * @used-by UpdateCustomerRequest
      */
     final class Customer
     {

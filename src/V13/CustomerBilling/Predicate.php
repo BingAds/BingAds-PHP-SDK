@@ -8,6 +8,8 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/predicate?view=bingads-13 Predicate Data Object
      * 
      * @uses PredicateOperator
+     * @used-by SearchCouponsRequest
+     * @used-by SearchInsertionOrdersRequest
      */
     final class Predicate
     {
