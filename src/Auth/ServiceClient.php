@@ -1,4 +1,4 @@
-php
+<?php
 
 namespace Microsoft\BingAds\Auth;
 
