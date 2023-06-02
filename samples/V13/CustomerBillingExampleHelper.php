@@ -10,9 +10,12 @@ use Exception;
 
 // Specify the Microsoft\BingAds\V13\CustomerBilling classes that will be used.
 use Microsoft\BingAds\V13\CustomerBilling\AddInsertionOrderRequest;
+use Microsoft\BingAds\V13\CustomerBilling\DispatchCouponsRequest;
 use Microsoft\BingAds\V13\CustomerBilling\GetAccountMonthlySpendRequest;
 use Microsoft\BingAds\V13\CustomerBilling\GetBillingDocumentsRequest;
 use Microsoft\BingAds\V13\CustomerBilling\GetBillingDocumentsInfoRequest;
+use Microsoft\BingAds\V13\CustomerBilling\RedeemCouponRequest;
+use Microsoft\BingAds\V13\CustomerBilling\SearchCouponsRequest;
 use Microsoft\BingAds\V13\CustomerBilling\SearchInsertionOrdersRequest;
 use Microsoft\BingAds\V13\CustomerBilling\UpdateInsertionOrderRequest;
 
@@ -28,6 +31,22 @@ final class CustomerBillingExampleHelper {
         $request->InsertionOrder = $insertionOrder;
 
         return $GLOBALS['CustomerBillingProxy']->GetService()->AddInsertionOrder($request);
+    }
+    static function DispatchCoupons(
+        $sendToEmails,
+        $customerId,
+        $couponClassName)
+    {
+        $GLOBALS['CustomerBillingProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+
+        $request = new DispatchCouponsRequest();
+
+        $request->SendToEmails = $sendToEmails;
+        $request->CustomerId = $customerId;
+        $request->CouponClassName = $couponClassName;
+
+        return $GLOBALS['CustomerBillingProxy']->GetService()->DispatchCoupons($request);
     }
     static function GetAccountMonthlySpend(
         $accountId,
@@ -72,6 +91,36 @@ final class CustomerBillingExampleHelper {
         $request->EndDate = $endDate;
 
         return $GLOBALS['CustomerBillingProxy']->GetService()->GetBillingDocumentsInfo($request);
+    }
+    static function RedeemCoupon(
+        $accountId,
+        $couponCode)
+    {
+        $GLOBALS['CustomerBillingProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+
+        $request = new RedeemCouponRequest();
+
+        $request->AccountId = $accountId;
+        $request->CouponCode = $couponCode;
+
+        return $GLOBALS['CustomerBillingProxy']->GetService()->RedeemCoupon($request);
+    }
+    static function SearchCoupons(
+        $predicates,
+        $ordering,
+        $pageInfo)
+    {
+        $GLOBALS['CustomerBillingProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CustomerBillingProxy'];
+
+        $request = new SearchCouponsRequest();
+
+        $request->Predicates = $predicates;
+        $request->Ordering = $ordering;
+        $request->PageInfo = $pageInfo;
+
+        return $GLOBALS['CustomerBillingProxy']->GetService()->SearchCoupons($request);
     }
     static function SearchInsertionOrders(
         $predicates,
@@ -294,6 +343,68 @@ final class CustomerBillingExampleHelper {
         foreach ($dataObjects->BillingDocumentInfo as $dataObject)
         {
             self::OutputBillingDocumentInfo($dataObject);
+        }
+    }
+    static function OutputCoupon($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputCoupon * * *");
+            self::OutputStatusMessage(sprintf("CouponCode: %s", $dataObject->CouponCode));
+            self::OutputStatusMessage(sprintf("ClassName: %s", $dataObject->ClassName));
+            self::OutputStatusMessage(sprintf("CouponType: %s", $dataObject->CouponType));
+            self::OutputStatusMessage(sprintf("Amount: %s", $dataObject->Amount));
+            self::OutputStatusMessage(sprintf("SpendThreshold: %s", $dataObject->SpendThreshold));
+            self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
+            self::OutputStatusMessage(sprintf("PercentOff: %s", $dataObject->PercentOff));
+            self::OutputStatusMessage(sprintf("ActiveDuration: %s", $dataObject->ActiveDuration));
+            self::OutputStatusMessage(sprintf("ExpirationDate: %s", $dataObject->ExpirationDate));
+            self::OutputStatusMessage(sprintf("StartDate: %s", $dataObject->StartDate));
+            self::OutputStatusMessage(sprintf("EndDate: %s", $dataObject->EndDate));
+            self::OutputStatusMessage(sprintf("SendToEmail: %s", $dataObject->SendToEmail));
+            self::OutputStatusMessage(sprintf("SendToDate: %s", $dataObject->SendToDate));
+            self::OutputStatusMessage(sprintf("IsRedeemed: %s", $dataObject->IsRedeemed));
+            self::OutputStatusMessage("RedemptionInfo:");
+            self::OutputCouponRedemption($dataObject->RedemptionInfo);
+            self::OutputStatusMessage("* * * End OutputCoupon * * *");
+        }
+    }
+    static function OutputArrayOfCoupon($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->Coupon))
+        {
+            return;
+        }
+        foreach ($dataObjects->Coupon as $dataObject)
+        {
+            self::OutputCoupon($dataObject);
+        }
+    }
+    static function OutputCouponRedemption($dataObject)
+    {
+        if (!empty($dataObject))
+        {
+            self::OutputStatusMessage("* * * Begin OutputCouponRedemption * * *");
+            self::OutputStatusMessage(sprintf("AccountId: %s", $dataObject->AccountId));
+            self::OutputStatusMessage(sprintf("AccountNumber: %s", $dataObject->AccountNumber));
+            self::OutputStatusMessage(sprintf("SpendToThreshold: %s", $dataObject->SpendToThreshold));
+            self::OutputStatusMessage(sprintf("Balance: %s", $dataObject->Balance));
+            self::OutputStatusMessage(sprintf("CurrencyCode: %s", $dataObject->CurrencyCode));
+            self::OutputStatusMessage(sprintf("RedemptionDate: %s", $dataObject->RedemptionDate));
+            self::OutputStatusMessage(sprintf("ExpirationDate: %s", $dataObject->ExpirationDate));
+            self::OutputStatusMessage(sprintf("ActivationDate: %s", $dataObject->ActivationDate));
+            self::OutputStatusMessage("* * * End OutputCouponRedemption * * *");
+        }
+    }
+    static function OutputArrayOfCouponRedemption($dataObjects)
+    {
+        if(count((array)$dataObjects) == 0 || !isset($dataObjects->CouponRedemption))
+        {
+            return;
+        }
+        foreach ($dataObjects->CouponRedemption as $dataObject)
+        {
+            self::OutputCouponRedemption($dataObject);
         }
     }
     static function OutputInsertionOrder($dataObject)

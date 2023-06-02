@@ -13,6 +13,7 @@ use Microsoft\BingAds\Auth\OAuthWebAuthCodeGrant;
 use Microsoft\BingAds\Auth\AuthorizationData;
 use Microsoft\BingAds\Auth\OAuthTokenRequestException;
 use Microsoft\BingAds\Auth\ApiEnvironment;
+use Microsoft\BingAds\Auth\OAuthScope;
 use Microsoft\BingAds\Auth\ServiceClient;
 use Microsoft\BingAds\Auth\ServiceClientType;
 
@@ -43,19 +44,20 @@ final class AuthHelper {
 
     const DeveloperToken = 'BBD37VB98'; // For sandbox use BBD37VB98
     const ApiEnvironment = ApiEnvironment::Sandbox;
+    const OAuthScope = OAuthScope::MSADS_MANAGE;
     const OAuthRefreshTokenPath = 'refresh.txt';
-    const ClientId = 'db41b09d-6e50-4f4a-90ac-5a99caefb52f';  // For sandbox use db41b09d-6e50-4f4a-90ac-5a99caefb52f
+    const ClientId = '4c0b021c-00c3-4508-838f-d3127e8167ff';  // For sandbox use 4c0b021c-00c3-4508-838f-d3127e8167ff
 
     const CampaignTypes = 
         CampaignType::Audience . ' ' . 
         CampaignType::Search . ' ' . 
-        CampaignType::Shopping . ' ' . 
-        CampaignType::DynamicSearchAds;
+        CampaignType::Shopping;
 
     const CampaignAdditionalFields = 
         CampaignAdditionalField::AdScheduleUseSearcherTimeZone . ' ' . 
         CampaignAdditionalField::MaxConversionValueBiddingScheme . ' ' . 
-        CampaignAdditionalField::TargetImpressionShareBiddingScheme;
+        CampaignAdditionalField::TargetImpressionShareBiddingScheme . ' ' . 
+        CampaignAdditionalField::TargetSetting;
 
     const AllTargetCampaignCriterionTypes = 
         CampaignCriterionType::Age . ' ' . 
@@ -77,10 +79,6 @@ final class AuthHelper {
     
     static function Authenticate() 
     {   
-        // Disable WSDL caching.
-        ini_set("soap.wsdl_cache_enabled", "0");
-        ini_set("soap.wsdl_cache_ttl", "0");
-
         // Authenticate with a Microsoft Account.
         AuthHelper::AuthenticateWithOAuth();
 
@@ -170,7 +168,8 @@ final class AuthHelper {
     {
         $authentication = (new OAuthDesktopMobileAuthCodeGrant())
             ->withEnvironment(AuthHelper::ApiEnvironment)
-            ->withClientId(AuthHelper::ClientId);
+            ->withClientId(AuthHelper::ClientId)
+            ->withOAuthScope(AuthHelper::OAuthScope);
             
         $GLOBALS['AuthorizationData'] = (new AuthorizationData())
             ->withAuthentication($authentication)
