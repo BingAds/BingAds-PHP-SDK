@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Set the auto-apply recommendations opt-in status for a single account.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/setautoapplyoptinstatus?view=bingads-13 SetAutoApplyOptInStatus Request Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/setautoapplyoptinstatus?view=bingads-13 SetAutoApplyOptInStatus Request Object
      * 
      * @used-by BingAdsAdInsightService::SetAutoApplyOptInStatus
      */

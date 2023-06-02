@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines possible values for ad group privacy status in Audience campaigns.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroupprivacystatus?view=bingads-13 AdGroupPrivacyStatus Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adgroupprivacystatus?view=bingads-13 AdGroupPrivacyStatus Value Set
      * 
      * @used-by AdGroup
      */

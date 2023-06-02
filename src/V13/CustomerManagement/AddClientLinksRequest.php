@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Initiates the client link process to manage the accounts of another customer.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/addclientlinks?view=bingads-13 AddClientLinks Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/addclientlinks?view=bingads-13 AddClientLinks Request Object
      * 
      * @uses ClientLink
      * @used-by BingAdsCustomerManagementService::AddClientLinks

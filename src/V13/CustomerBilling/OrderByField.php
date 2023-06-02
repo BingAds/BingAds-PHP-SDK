@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines the field order of entities returned using one of the search operations, for example SearchCoupons or SearchInsertionOrders.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/orderbyfield?view=bingads-13 OrderByField Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/orderbyfield?view=bingads-13 OrderByField Value Set
      * 
      * @used-by OrderBy
      */

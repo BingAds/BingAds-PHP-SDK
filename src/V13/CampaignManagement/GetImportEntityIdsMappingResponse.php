@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets mappings of your source entity IDs to Microsoft Advertising entity IDs.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getimportentityidsmapping?view=bingads-13 GetImportEntityIdsMapping Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getimportentityidsmapping?view=bingads-13 GetImportEntityIdsMapping Response Object
      * 
      * @uses KeyValuePairOflonglong
      * @uses BatchError

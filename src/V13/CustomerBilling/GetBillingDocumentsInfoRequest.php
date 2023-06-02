@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Gets a list of objects that contains billing document identification information, for example the billing document identifier, amount, and account identifier.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/getbillingdocumentsinfo?view=bingads-13 GetBillingDocumentsInfo Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/getbillingdocumentsinfo?view=bingads-13 GetBillingDocumentsInfo Request Object
      * 
      * @used-by BingAdsCustomerBillingService::GetBillingDocumentsInfo
      */

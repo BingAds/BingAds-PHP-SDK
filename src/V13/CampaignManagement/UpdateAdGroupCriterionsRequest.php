@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates one or more ad group criterions.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateadgroupcriterions?view=bingads-13 UpdateAdGroupCriterions Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateadgroupcriterions?view=bingads-13 UpdateAdGroupCriterions Request Object
      * 
      * @uses AdGroupCriterion
      * @uses AdGroupCriterionType

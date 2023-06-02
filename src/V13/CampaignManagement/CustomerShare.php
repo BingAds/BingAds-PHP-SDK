@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a shareable audience or UET tag that a customer owns.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/customershare?view=bingads-13 CustomerShare Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/customershare?view=bingads-13 CustomerShare Data Object
      * 
      * @uses CustomerAccountShare
      * @used-by Audience

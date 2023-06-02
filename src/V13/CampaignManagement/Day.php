@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the day values that you can specify for day and time criterion.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/day?view=bingads-13 Day Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/day?view=bingads-13 Day Value Set
      * 
      * @used-by DayTime
      * @used-by DayTimeCriterion

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible types of ad extension headers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionheadertype?view=bingads-13 AdExtensionHeaderType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adextensionheadertype?view=bingads-13 AdExtensionHeaderType Value Set
      * 
      * @used-by FilterLinkAdExtension
      */

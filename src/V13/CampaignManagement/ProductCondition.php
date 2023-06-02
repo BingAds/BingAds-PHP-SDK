@@ -5,8 +5,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a condition that determines whether a product is selected from a customer's Microsoft Merchant Center catalog file.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/productcondition?view=bingads-13 ProductCondition Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/productcondition?view=bingads-13 ProductCondition Data Object
      * 
+     * @used-by AssetGroupListingGroup
      * @used-by ProductPartition
      * @used-by ProductScope
      */

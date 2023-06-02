@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a postal address for location ad extensions.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/address?view=bingads-13 Address Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/address?view=bingads-13 Address Data Object
      * 
      * @used-by LocationAdExtension
      */

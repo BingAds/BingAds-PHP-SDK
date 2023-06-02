@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates bid strategies in an account's portfolio bid strategy library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatebidstrategies?view=bingads-13 UpdateBidStrategies Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatebidstrategies?view=bingads-13 UpdateBidStrategies Request Object
      * 
      * @uses BidStrategy
      * @used-by BingAdsCampaignManagementService::UpdateBidStrategies

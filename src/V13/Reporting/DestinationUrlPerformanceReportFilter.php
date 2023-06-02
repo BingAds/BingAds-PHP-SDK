@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the destination URL performance report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/destinationurlperformancereportfilter?view=bingads-13 DestinationUrlPerformanceReportFilter Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/destinationurlperformancereportfilter?view=bingads-13 DestinationUrlPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

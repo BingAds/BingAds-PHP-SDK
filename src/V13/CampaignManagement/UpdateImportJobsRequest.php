@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Replaces the specified import jobs with new import jobs.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateimportjobs?view=bingads-13 UpdateImportJobs Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateimportjobs?view=bingads-13 UpdateImportJobs Request Object
      * 
      * @uses ImportJob
      * @used-by BingAdsCampaignManagementService::UpdateImportJobs

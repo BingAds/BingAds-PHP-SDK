@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an auction insight entry for a domain.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/auctioninsightentry?view=bingads-13 AuctionInsightEntry Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/auctioninsightentry?view=bingads-13 AuctionInsightEntry Data Object
      * 
      * @uses AuctionInsightKpi
      * @used-by AuctionInsightResult

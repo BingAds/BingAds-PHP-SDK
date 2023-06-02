@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines an object that identifies a campaign to download.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/campaignscope?view=bingads-13 CampaignScope Data Object
+     * @link https:/learn.microsoft.com/advertising/bulk-service/campaignscope?view=bingads-13 CampaignScope Data Object
      * 
      * @used-by DownloadCampaignsByCampaignIdsRequest
      */

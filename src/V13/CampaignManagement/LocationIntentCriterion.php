@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a criterion that determines the intent option for all location and radius criterions of the campaign or ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/locationintentcriterion?view=bingads-13 LocationIntentCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/locationintentcriterion?view=bingads-13 LocationIntentCriterion Data Object
      * 
      * @uses IntentOption
      */

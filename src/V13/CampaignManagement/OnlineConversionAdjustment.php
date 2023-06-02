@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object to retract or restate an online conversion.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/onlineconversionadjustment?view=bingads-13 OnlineConversionAdjustment Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/onlineconversionadjustment?view=bingads-13 OnlineConversionAdjustment Data Object
      * 
      * @used-by ApplyOnlineConversionAdjustmentsRequest
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds bid strategies to an account's portfolio bid strategy library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addbidstrategies?view=bingads-13 AddBidStrategies Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addbidstrategies?view=bingads-13 AddBidStrategies Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddBidStrategies

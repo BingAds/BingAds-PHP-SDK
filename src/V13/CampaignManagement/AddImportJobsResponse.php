@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Creates a new import job.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addimportjobs?view=bingads-13 AddImportJobs Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addimportjobs?view=bingads-13 AddImportJobs Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddImportJobs

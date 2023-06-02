@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines categories used to segment conversion goals.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoalcategory?view=bingads-13 ConversionGoalCategory Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversiongoalcategory?view=bingads-13 ConversionGoalCategory Value Set
      * 
      * @used-by ConversionGoal
      */

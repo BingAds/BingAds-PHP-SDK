@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines a list of optional account properties that you can request when calling GetAccount, FindAccountsOrCustomersInfo, and SearchAccounts.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/accountadditionalfield?view=bingads-13 AccountAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/accountadditionalfield?view=bingads-13 AccountAdditionalField Value Set
      * 
      * @used-by FindAccountsOrCustomersInfoRequest
      * @used-by GetAccountRequest

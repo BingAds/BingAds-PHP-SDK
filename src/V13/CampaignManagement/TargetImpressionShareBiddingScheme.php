@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * An automated bidding strategy to get the target impression share for the ad position where you want your ads to appear.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/targetimpressionsharebiddingscheme?view=bingads-13 TargetImpressionShareBiddingScheme Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/targetimpressionsharebiddingscheme?view=bingads-13 TargetImpressionShareBiddingScheme Data Object
      * 
      * @uses Bid
      */

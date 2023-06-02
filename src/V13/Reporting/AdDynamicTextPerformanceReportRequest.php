@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines an ad dynamic text performance report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/addynamictextperformancereportrequest?view=bingads-13 AdDynamicTextPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/addynamictextperformancereportrequest?view=bingads-13 AdDynamicTextPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AdDynamicTextPerformanceReportColumn

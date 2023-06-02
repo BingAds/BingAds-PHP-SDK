@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Provides traffic estimates for keywords e.g., average CPC, average position, clicks, CTR, impressions, and total cost.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getkeywordtrafficestimates?view=bingads-13 GetKeywordTrafficEstimates Request Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getkeywordtrafficestimates?view=bingads-13 GetKeywordTrafficEstimates Request Object
      * 
      * @uses CampaignEstimator
      * @used-by BingAdsAdInsightService::GetKeywordTrafficEstimates

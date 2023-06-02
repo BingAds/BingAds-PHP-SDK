@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines the AccountTaxCertificate Data Object.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/accounttaxcertificate?view=bingads-13 AccountTaxCertificate Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/accounttaxcertificate?view=bingads-13 AccountTaxCertificate Data Object
      * 
      * @uses KeyValuePairOfstringbase64Binary
      * @uses TaxCertificateStatus

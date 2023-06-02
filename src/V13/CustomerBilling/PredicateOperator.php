@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines the condition of results for insertion orders returned using one of the search operations, for example SearchCoupons or SearchInsertionOrders.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/predicateoperator?view=bingads-13 PredicateOperator Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/predicateoperator?view=bingads-13 PredicateOperator Value Set
      * 
      * @used-by Predicate
      */

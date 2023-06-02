@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets results for import jobs completed within the last 90 days.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getimportresults?view=bingads-13 GetImportResults Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getimportresults?view=bingads-13 GetImportResults Request Object
      * 
      * @uses Paging
      * @uses ImportAdditionalField

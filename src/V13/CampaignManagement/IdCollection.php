@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that contains a list of entity identifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/idcollection?view=bingads-13 IdCollection Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/idcollection?view=bingads-13 IdCollection Data Object
      * 
      * @used-by AddNegativeKeywordsToEntitiesResponse
      * @used-by GetCampaignIdsByBidStrategyIdsResponse

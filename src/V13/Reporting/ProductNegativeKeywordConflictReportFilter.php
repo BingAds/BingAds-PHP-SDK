@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the product negative keyword conflict report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productnegativekeywordconflictreportfilter?view=bingads-13 ProductNegativeKeywordConflictReportFilter Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/productnegativekeywordconflictreportfilter?view=bingads-13 ProductNegativeKeywordConflictReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

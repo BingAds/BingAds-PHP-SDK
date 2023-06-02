@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AgeGenderAudienceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/agegenderaudiencereportcolumn?view=bingads-13 AgeGenderAudienceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/agegenderaudiencereportcolumn?view=bingads-13 AgeGenderAudienceReportColumn Value Set
      * 
      * @used-by AgeGenderAudienceReportRequest
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Possible hotel date selection types.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/hoteldateselectiontype?view=bingads-13 HotelDateSelectionType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/hoteldateselectiontype?view=bingads-13 HotelDateSelectionType Value Set
      * 
      * @used-by HotelDateSelectionTypeCriterion
      */

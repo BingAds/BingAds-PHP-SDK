@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional ad group properties that you can request when calling GetAdGroupsByCampaignId and GetAdGroupsByIds.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroupadditionalfield?view=bingads-13 AdGroupAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adgroupadditionalfield?view=bingads-13 AdGroupAdditionalField Value Set
      * 
      * @used-by GetAdGroupsByCampaignIdRequest
      * @used-by GetAdGroupsByIdsRequest
@@ -38,6 +38,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UseOptimizedTargeting = 'UseOptimizedTargeting';
+
+        /** Reserved. */
+        const FrequencyCapSettings = 'FrequencyCapSettings';
     }
 
 }

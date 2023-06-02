@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes one or more keywords in a specified ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletekeywords?view=bingads-13 DeleteKeywords Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletekeywords?view=bingads-13 DeleteKeywords Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteKeywords
      */

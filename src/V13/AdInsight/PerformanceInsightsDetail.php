@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the details for performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsdetail?view=bingads-13 PerformanceInsightsDetail Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/performanceinsightsdetail?view=bingads-13 PerformanceInsightsDetail Data Object
      * 
      * @uses EntityType
      * @uses KPIType

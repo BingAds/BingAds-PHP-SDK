@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes the negative keyword list to campaign associations, or website exclusion list to ad account associations.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletesharedentityassociations?view=bingads-13 DeleteSharedEntityAssociations Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletesharedentityassociations?view=bingads-13 DeleteSharedEntityAssociations Request Object
      * 
      * @uses SharedEntityAssociation
      * @uses EntityScope

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the type of key performance indicator.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/kpitype?view=bingads-13 KPIType Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/kpitype?view=bingads-13 KPIType Value Set
      * 
      * @used-by PerformanceInsightsDetail
      */

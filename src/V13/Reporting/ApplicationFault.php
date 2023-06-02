@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the base object from which all Reporting fault detail objects derive.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/applicationfault?view=bingads-13 ApplicationFault Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/applicationfault?view=bingads-13 ApplicationFault Data Object
      */
     class ApplicationFault
     {

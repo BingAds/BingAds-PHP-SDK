@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/numberruleitem?view=bingads-13 NumberRuleItem Data Object
+     * Represents a number rule item.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/numberruleitem?view=bingads-13 NumberRuleItem Data Object
      * 
      * @uses NumberOperator
      */

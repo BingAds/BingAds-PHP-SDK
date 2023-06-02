@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that provides detail information for an entity for performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/entitydetail?view=bingads-13 EntityDetail Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/entitydetail?view=bingads-13 EntityDetail Data Object
      * 
      * @used-by EntityParameter
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the message template ID for performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsmessagetemplateid?view=bingads-13 PerformanceInsightsMessageTemplateId Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/performanceinsightsmessagetemplateid?view=bingads-13 PerformanceInsightsMessageTemplateId Value Set
      * 
      * @used-by PerformanceInsightsMessage
      */
@@ -185,7 +185,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         /** Your account was paused due to lack of a valid insertion order. */
         const RCPaymentIssueInvoiceAccountPaused = 'RCPaymentIssueInvoiceAccountPaused';
 
-        /** Your account was placed on hold because we haven?t received one or more of your invoiced payments. */
+        /** Your account was placed on hold because we haven't received one or more of your invoiced payments. */
         const RCPaymentIssueInvoiceAccountOnHold = 'RCPaymentIssueInvoiceAccountOnHold';
 
         /** Your account was paused due to a zero balance. */
@@ -230,7 +230,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         /** Your campaign was enabled. */
         const RCSingleCampaignUnpause = 'RCSingleCampaignUnpause';
 
-        /** Your campaign budget was increased.. */
+        /** Your campaign budget was increased. */
         const RCSingleCampaignBudgetIncrease = 'RCSingleCampaignBudgetIncrease';
 
         /** Your campaign budget was decreased. */
@@ -287,7 +287,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         /** Ensure your ad and keyword text comply with Microsoft Advertising policies. */
         const ActEditorialReviewProcess = 'ActEditorialReviewProcess';
 
-        /** Fix your conversion goal setting to make sure you don?t miss any conversions. */
+        /** Fix your conversion goal setting to make sure you don't miss any conversions. */
         const ActFixConversionGoalSettingOppr = 'ActFixConversionGoalSettingOppr';
 
         /** Make sure you don't miss any conversions by fixing your UET tag. */

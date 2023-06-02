@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Determines whether an import job should be run once or scheduled on a recurring basis.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/frequency?view=bingads-13 Frequency Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/frequency?view=bingads-13 Frequency Data Object
      * 
      * @used-by ImportJob
      */

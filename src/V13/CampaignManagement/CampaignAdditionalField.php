@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional campaign properties that you can request when calling GetCampaignsByAccountId and GetCampaignsByIds.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaignadditionalfield?view=bingads-13 CampaignAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaignadditionalfield?view=bingads-13 CampaignAdditionalField Value Set
      * 
      * @used-by GetCampaignsByAccountIdRequest
      * @used-by GetCampaignsByIdsRequest
@@ -53,6 +53,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const ResponsiveSearchAdsSetting = 'ResponsiveSearchAdsSetting';
+
+        /** Reserved. */
+        const CostPerSaleBiddingScheme = 'CostPerSaleBiddingScheme';
     }
 
 }

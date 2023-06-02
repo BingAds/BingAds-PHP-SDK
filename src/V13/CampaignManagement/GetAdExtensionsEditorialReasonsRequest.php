@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets reasons for ad extension editorial issues.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getadextensionseditorialreasons?view=bingads-13 GetAdExtensionsEditorialReasons Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getadextensionseditorialreasons?view=bingads-13 GetAdExtensionsEditorialReasons Request Object
      * 
      * @uses AdExtensionIdToEntityIdAssociation
      * @uses AssociationType

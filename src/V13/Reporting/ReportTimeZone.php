@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines possible values for the time zone that you want the Reporting service to use for the selected date range.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/reporttimezone?view=bingads-13 ReportTimeZone Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/reporttimezone?view=bingads-13 ReportTimeZone Value Set
      * 
      * @used-by ReportTime
      */

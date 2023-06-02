@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/responsivesearchadssetting?view=bingads-13 ResponsiveSearchAdsSetting Data Object
+     * Defines the ResponsiveSearchAdsSetting object.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/responsivesearchadssetting?view=bingads-13 ResponsiveSearchAdsSetting Data Object
      */
     final class ResponsiveSearchAdsSetting extends Setting
     {

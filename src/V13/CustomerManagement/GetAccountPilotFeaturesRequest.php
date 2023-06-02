@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Gets a list of the feature pilot IDs that are enabled for an ad account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getaccountpilotfeatures?view=bingads-13 GetAccountPilotFeatures Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/getaccountpilotfeatures?view=bingads-13 GetAccountPilotFeatures Request Object
      * 
      * @used-by BingAdsCustomerManagementService::GetAccountPilotFeatures
      */

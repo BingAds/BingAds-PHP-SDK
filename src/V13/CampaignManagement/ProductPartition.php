@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an ad group level product partition with one condition that helps determine whether a product from the Microsoft Merchant Center store gets served as a product ad.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/productpartition?view=bingads-13 ProductPartition Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/productpartition?view=bingads-13 ProductPartition Data Object
      * 
      * @uses ProductCondition
      * @uses ProductPartitionType

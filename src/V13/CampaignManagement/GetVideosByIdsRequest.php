@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets videos by video identifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getvideosbyids?view=bingads-13 GetVideosByIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getvideosbyids?view=bingads-13 GetVideosByIds Request Object
      * 
      * @uses Paging
      * @used-by BingAdsCampaignManagementService::GetVideosByIds

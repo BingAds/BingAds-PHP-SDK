@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an Ad Insight API fault detail object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
      * 
      * @uses BatchError
      * @uses OperationError

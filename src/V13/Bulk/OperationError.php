@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines a Bulk operation error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/operationerror?view=bingads-13 OperationError Data Object
+     * @link https:/learn.microsoft.com/advertising/bulk-service/operationerror?view=bingads-13 OperationError Data Object
      * 
      * @used-by ApiFaultDetail
      * @used-by GetBulkDownloadStatusResponse

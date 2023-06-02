@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users in a specific age range.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/agecriterion?view=bingads-13 AgeCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/agecriterion?view=bingads-13 AgeCriterion Data Object
      * 
      * @uses AgeRange
      */

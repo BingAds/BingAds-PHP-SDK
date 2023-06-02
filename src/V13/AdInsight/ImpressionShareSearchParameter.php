@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * The impression share search parameter filter that you can include when requesting keyword ideas.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/impressionsharesearchparameter?view=bingads-13 ImpressionShareSearchParameter Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/impressionsharesearchparameter?view=bingads-13 ImpressionShareSearchParameter Data Object
      */
     final class ImpressionShareSearchParameter extends SearchParameter
     {

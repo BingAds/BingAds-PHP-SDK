@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the base object of a conversion goal.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoal?view=bingads-13 ConversionGoal Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversiongoal?view=bingads-13 ConversionGoal Data Object
      * 
      * @uses AttributionModelType
      * @uses ConversionGoalCountType
@@ -57,6 +57,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IsEnhancedConversionsEnabled;
 
         /**
          * The conversion goal name.

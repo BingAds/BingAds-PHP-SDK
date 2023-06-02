@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the ad extension detail report.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adextensiondetailreportfilter?view=bingads-13 AdExtensionDetailReportFilter Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/adextensiondetailreportfilter?view=bingads-13 AdExtensionDetailReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

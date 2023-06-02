@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Contains redemption and consuming details.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/couponredemption?view=bingads-13 CouponRedemption Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/couponredemption?view=bingads-13 CouponRedemption Data Object
      * 
      * @used-by Coupon
      */

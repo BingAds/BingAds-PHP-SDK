@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Redeems a coupon to the specified account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/redeemcoupon?view=bingads-13 RedeemCoupon Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/redeemcoupon?view=bingads-13 RedeemCoupon Request Object
      * 
      * @used-by BingAdsCustomerBillingService::RedeemCoupon
      */

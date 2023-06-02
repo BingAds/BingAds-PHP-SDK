@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the entity types for retrieving performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsentitytype?view=bingads-13 PerformanceInsightsEntityType Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/performanceinsightsentitytype?view=bingads-13 PerformanceInsightsEntityType Value Set
      * 
      * @used-by EntityParameter
      */

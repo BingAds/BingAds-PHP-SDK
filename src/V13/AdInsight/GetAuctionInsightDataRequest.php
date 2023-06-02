@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets auction insight data for an account, campaigns, ad groups, or keywords.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getauctioninsightdata?view=bingads-13 GetAuctionInsightData Request Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getauctioninsightdata?view=bingads-13 GetAuctionInsightData Request Object
      * 
      * @uses EntityType
      * @uses SearchParameter

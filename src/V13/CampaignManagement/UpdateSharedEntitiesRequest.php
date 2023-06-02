@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates the negative keyword lists or website exclusion lists.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatesharedentities?view=bingads-13 UpdateSharedEntities Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatesharedentities?view=bingads-13 UpdateSharedEntities Request Object
      * 
      * @uses SharedEntity
      * @uses EntityScope

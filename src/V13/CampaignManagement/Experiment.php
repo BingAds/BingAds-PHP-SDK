@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an experiment where you split a campaign's budget and traffic, and then run an A/B test during a limited date range.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/experiment?view=bingads-13 Experiment Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/experiment?view=bingads-13 Experiment Data Object
      * 
      * @uses Date
      * @used-by AddExperimentsRequest

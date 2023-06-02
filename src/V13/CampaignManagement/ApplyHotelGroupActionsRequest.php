@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Applies an add, update, or delete action to each of the specified BiddableAdGroupCriterion or NegativeAdGroupCriterion, which each contain a HotelGroup.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/applyhotelgroupactions?view=bingads-13 ApplyHotelGroupActions Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/applyhotelgroupactions?view=bingads-13 ApplyHotelGroupActions Request Object
      * 
      * @uses AdGroupCriterionAction
      * @used-by BingAdsCampaignManagementService::ApplyHotelGroupActions

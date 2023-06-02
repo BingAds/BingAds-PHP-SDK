@@ -5,9 +5,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the genders that are available for gender criterion.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/gendertype?view=bingads-13 GenderType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/gendertype?view=bingads-13 GenderType Value Set
      * 
      * @used-by GenderCriterion
+     * @used-by GenderDimension
      */
     final class GenderType
     {

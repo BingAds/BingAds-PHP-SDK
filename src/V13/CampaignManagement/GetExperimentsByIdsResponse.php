@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets experiments by experiment identifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getexperimentsbyids?view=bingads-13 GetExperimentsByIds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getexperimentsbyids?view=bingads-13 GetExperimentsByIds Response Object
      * 
      * @uses Experiment
      * @uses BatchError

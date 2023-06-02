@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Searches for coupons that match a specified criteria.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/searchcoupons?view=bingads-13 SearchCoupons Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/searchcoupons?view=bingads-13 SearchCoupons Response Object
      * 
      * @uses Coupon
      * @used-by BingAdsCustomerBillingService::SearchCoupons

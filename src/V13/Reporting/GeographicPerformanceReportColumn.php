@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the GeographicPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/geographicperformancereportcolumn?view=bingads-13 GeographicPerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/geographicperformancereportcolumn?view=bingads-13 GeographicPerformanceReportColumn Value Set
      * 
      * @used-by GeographicPerformanceReportRequest
      */
@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area (Nielsen DMA? in the United States) where the user was physically located when they clicked the ad. */
+        /** The metro area (Nielsen DMA&reg; in the United States) where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
         /** The city where the user was physically located when they clicked the ad. */

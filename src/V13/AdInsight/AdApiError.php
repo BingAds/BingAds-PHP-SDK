@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an Ad Insight Ad API error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/adapierror?view=bingads-13 AdApiError Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/adapierror?view=bingads-13 AdApiError Data Object
      * 
      * @used-by AdApiFaultDetail
      */

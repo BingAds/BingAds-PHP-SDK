@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Determines whether or not the submitted address is valid for Microsoft Advertising accounts.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/validateaddress?view=bingads-13 ValidateAddress Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/validateaddress?view=bingads-13 ValidateAddress Response Object
      * 
      * @uses Address
      * @used-by BingAdsCustomerManagementService::ValidateAddress

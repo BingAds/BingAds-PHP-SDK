@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the GoalsAndFunnelsReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/goalsandfunnelsreportcolumn?view=bingads-13 GoalsAndFunnelsReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/goalsandfunnelsreportcolumn?view=bingads-13 GoalsAndFunnelsReportColumn Value Set
      * 
      * @used-by GoalsAndFunnelsReportRequest
      */

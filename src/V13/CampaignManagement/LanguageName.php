@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the set of supported ad languages.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/languagename?view=bingads-13 LanguageName Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/languagename?view=bingads-13 LanguageName Value Set
      * 
      * @used-by ResponsiveAd
      */

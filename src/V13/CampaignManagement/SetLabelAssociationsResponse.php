@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Sets label associations.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/setlabelassociations?view=bingads-13 SetLabelAssociations Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/setlabelassociations?view=bingads-13 SetLabelAssociations Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::SetLabelAssociations

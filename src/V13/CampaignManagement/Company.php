@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the profile data for a company.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/company?view=bingads-13 Company Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/company?view=bingads-13 Company Data Object
      * 
      * @used-by SearchCompaniesResponse
      */

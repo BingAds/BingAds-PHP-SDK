@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the base object of an asset with a unique Microsoft Advertising identifier that can be reused across multiple ads.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/asset?view=bingads-13 Asset Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/asset?view=bingads-13 Asset Data Object
      * 
      * @used-by AssetLink
      */

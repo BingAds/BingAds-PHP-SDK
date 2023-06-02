@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Identifies a campaign and the list of its ad groups to import.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaignadgroupids?view=bingads-13 CampaignAdGroupIds Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaignadgroupids?view=bingads-13 CampaignAdGroupIds Data Object
      * 
      * @used-by GoogleImportJob
      */

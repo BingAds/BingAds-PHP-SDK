@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines a selection of language values.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/languagetype?view=bingads-13 LanguageType Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/languagetype?view=bingads-13 LanguageType Value Set
      * 
      * @used-by AdvertiserAccount
      * @used-by Customer

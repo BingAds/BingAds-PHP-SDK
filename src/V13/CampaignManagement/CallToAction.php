@@ -5,8 +5,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible values for a brief, punchy reason for customers to click your ad right now.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/calltoaction?view=bingads-13 CallToAction Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/calltoaction?view=bingads-13 CallToAction Value Set
      * 
+     * @used-by AssetGroup
      * @used-by ResponsiveAd
      */
     final class CallToAction

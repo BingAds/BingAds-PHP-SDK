@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Criterion for length of hotel stay in nights.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/hotellengthofstaycriterion?view=bingads-13 HotelLengthOfStayCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/hotellengthofstaycriterion?view=bingads-13 HotelLengthOfStayCriterion Data Object
      */
     final class HotelLengthOfStayCriterion extends Criterion
     {

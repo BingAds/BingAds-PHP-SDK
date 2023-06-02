@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Determines which attribution model, _LastTouch_ or _LastClick_, is used with a conversion goal.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/attributionmodeltype?view=bingads-13 AttributionModelType Value Set
+     * Determines which attribution model is used with a conversion goal.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/attributionmodeltype?view=bingads-13 AttributionModelType Value Set
      * 
      * @used-by ConversionGoal
      */

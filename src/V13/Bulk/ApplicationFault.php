@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines the base object from which all Bulk fault detail objects derive.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/applicationfault?view=bingads-13 ApplicationFault Data Object
+     * @link https:/learn.microsoft.com/advertising/bulk-service/applicationfault?view=bingads-13 ApplicationFault Data Object
      */
     class ApplicationFault
     {

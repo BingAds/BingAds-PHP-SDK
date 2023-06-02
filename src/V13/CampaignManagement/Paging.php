@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a paging object to request Campaign Management objects in batches.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/paging?view=bingads-13 Paging Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/paging?view=bingads-13 Paging Data Object
      * 
      * @used-by GetExperimentsByIdsRequest
      * @used-by GetImportResultsRequest

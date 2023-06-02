@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a Reporting Ad API error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adapierror?view=bingads-13 AdApiError Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/adapierror?view=bingads-13 AdApiError Data Object
      * 
      * @used-by AdApiFaultDetail
      */

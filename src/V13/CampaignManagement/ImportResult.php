@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Contains the status, run time, and statistical results for an import job that has run.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/importresult?view=bingads-13 ImportResult Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/importresult?view=bingads-13 ImportResult Data Object
      * 
      * @uses ImportEntityStatistics
      * @uses KeyValuePairOfstringstring

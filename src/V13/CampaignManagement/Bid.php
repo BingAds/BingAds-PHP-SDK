@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * The highest price that you want to pay each time someone clicks your ad.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/bid?view=bingads-13 Bid Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/bid?view=bingads-13 Bid Data Object
      * 
      * @used-by AdGroup
      * @used-by Keyword

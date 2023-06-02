@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible types of promotion discount modifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/promotiondiscountmodifier?view=bingads-13 PromotionDiscountModifier Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/promotiondiscountmodifier?view=bingads-13 PromotionDiscountModifier Value Set
      * 
      * @used-by PromotionAdExtension
      */

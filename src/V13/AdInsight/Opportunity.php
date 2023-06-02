@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * This is the base class from which opportunity objects derive.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/opportunity?view=bingads-13 Opportunity Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/opportunity?view=bingads-13 Opportunity Data Object
      */
     class Opportunity
     {

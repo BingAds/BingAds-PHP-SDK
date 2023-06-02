@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the auto-apply opt-in status for specific recommendation type.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/autoapplyrecommendationsinfo?view=bingads-13 AutoApplyRecommendationsInfo Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/autoapplyrecommendationsinfo?view=bingads-13 AutoApplyRecommendationsInfo Data Object
      * 
      * @used-by GetAutoApplyOptInStatusResponse
      */

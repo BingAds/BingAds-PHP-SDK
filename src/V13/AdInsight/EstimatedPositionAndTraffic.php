@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains the estimated search results position and estimated keyword statistics such as clicks, average cost per click (CPC), impressions, click-through rate (CTR), and total cost for the specified keyword given the specified bid.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/estimatedpositionandtraffic?view=bingads-13 EstimatedPositionAndTraffic Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/estimatedpositionandtraffic?view=bingads-13 EstimatedPositionAndTraffic Data Object
      * 
      * @uses MatchType
      * @uses CurrencyCode

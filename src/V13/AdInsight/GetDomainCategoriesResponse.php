@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the list of categories available for the website domain and language.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getdomaincategories?view=bingads-13 GetDomainCategories Response Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getdomaincategories?view=bingads-13 GetDomainCategories Response Object
      * 
      * @uses DomainCategory
      * @used-by BingAdsAdInsightService::GetDomainCategories

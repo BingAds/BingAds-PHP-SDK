@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes one or more campaign criterions.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletecampaigncriterions?view=bingads-13 DeleteCampaignCriterions Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletecampaigncriterions?view=bingads-13 DeleteCampaignCriterions Request Object
      * 
      * @uses CampaignCriterionType
      * @used-by BingAdsCampaignManagementService::DeleteCampaignCriterions

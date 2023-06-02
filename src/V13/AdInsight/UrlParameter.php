@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the URL parameter for use with performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/urlparameter?view=bingads-13 UrlParameter Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/urlparameter?view=bingads-13 UrlParameter Data Object
      * 
      * @uses PerformanceInsightsUrlCategory
      * @uses PerformanceInsightsUrlId

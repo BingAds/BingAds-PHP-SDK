@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Deletes a user.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/deleteuser?view=bingads-13 DeleteUser Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/deleteuser?view=bingads-13 DeleteUser Request Object
      * 
      * @used-by BingAdsCustomerManagementService::DeleteUser
      */

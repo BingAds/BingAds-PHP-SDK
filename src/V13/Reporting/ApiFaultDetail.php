@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a Reporting API fault detail object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/apifaultdetail?view=bingads-13 ApiFaultDetail Data Object
      * 
      * @uses BatchError
      * @uses OperationError

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the operators that can be applied to remarketing list rule item string values.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/stringoperator?view=bingads-13 StringOperator Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/stringoperator?view=bingads-13 StringOperator Value Set
      * 
      * @used-by CustomEventsRule
      * @used-by StringRuleItem

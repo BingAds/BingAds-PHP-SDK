@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * The device criterion that you can include when requesting keyword ideas or traffic estimates.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/devicecriterion?view=bingads-13 DeviceCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/devicecriterion?view=bingads-13 DeviceCriterion Data Object
      * 
      * @used-by DeviceSearchParameter
      */

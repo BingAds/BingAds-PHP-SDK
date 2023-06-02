@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets a temporary URL that you can use to download a file that contains identifiers for the geographical locations that you can target or exclude.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getgeolocationsfileurl?view=bingads-13 GetGeoLocationsFileUrl Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getgeolocationsfileurl?view=bingads-13 GetGeoLocationsFileUrl Response Object
      * 
      * @used-by BingAdsCampaignManagementService::GetGeoLocationsFileUrl
      */

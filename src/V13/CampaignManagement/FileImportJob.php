@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * FileImportJob is reserved for future use.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/fileimportjob?view=bingads-13 FileImportJob Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/fileimportjob?view=bingads-13 FileImportJob Data Object
      */
     final class FileImportJob extends ImportJob
     {

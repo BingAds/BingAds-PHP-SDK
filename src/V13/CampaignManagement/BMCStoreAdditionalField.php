@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional store properties that you can request when calling GetBMCStoresByCustomerId.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/bmcstoreadditionalfield?view=bingads-13 BMCStoreAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/bmcstoreadditionalfield?view=bingads-13 BMCStoreAdditionalField Value Set
      * 
      * @used-by GetBMCStoresByCustomerIdRequest
      */
@@ -13,6 +13,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     {
         /** Request that the service return global stores with SubType set to GlobalStore. */
         const GlobalStore = 'GlobalStore';
+
+        /** Reserved. */
+        const StoreUrl = 'StoreUrl';
     }
 
 }

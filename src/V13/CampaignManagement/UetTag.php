@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a Universal Event Tracking (UET) tag that you can add to your website to allow Microsoft Advertising to collect actions people take on your website.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/uettag?view=bingads-13 UetTag Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/uettag?view=bingads-13 UetTag Data Object
      * 
      * @uses CustomerShare
      * @uses UetTagTrackingStatus

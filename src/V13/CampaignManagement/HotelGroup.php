@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that organizes your hotel ads.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/hotelgroup?view=bingads-13 HotelGroup Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/hotelgroup?view=bingads-13 HotelGroup Data Object
      * 
      * @uses HotelListing
      * @uses HotelListingType

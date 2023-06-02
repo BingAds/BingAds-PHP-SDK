@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Retrieves the specified ads from the specified ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getadsbyids?view=bingads-13 GetAdsByIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getadsbyids?view=bingads-13 GetAdsByIds Request Object
      * 
      * @uses AdType
      * @uses AdAdditionalField

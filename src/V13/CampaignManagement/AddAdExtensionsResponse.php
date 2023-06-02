@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds one or more ad extensions to an account's ad extension library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addadextensions?view=bingads-13 AddAdExtensions Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addadextensions?view=bingads-13 AddAdExtensions Response Object
      * 
      * @uses AdExtensionIdentity
      * @uses BatchErrorCollection

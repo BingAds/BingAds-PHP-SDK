@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object with one sitelink per ad extension.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/sitelinkadextension?view=bingads-13 SitelinkAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/sitelinkadextension?view=bingads-13 SitelinkAdExtension Data Object
      * 
      * @uses AppUrl
      * @uses CustomParameters

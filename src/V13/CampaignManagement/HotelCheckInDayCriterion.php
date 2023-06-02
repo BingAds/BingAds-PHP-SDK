@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Criterion for day of the week the booking is for.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/hotelcheckindaycriterion?view=bingads-13 HotelCheckInDayCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/hotelcheckindaycriterion?view=bingads-13 HotelCheckInDayCriterion Data Object
      * 
      * @uses Day
      */

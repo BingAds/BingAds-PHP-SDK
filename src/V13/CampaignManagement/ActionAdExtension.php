@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an action ad extension with a call-to-action button.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/actionadextension?view=bingads-13 ActionAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/actionadextension?view=bingads-13 ActionAdExtension Data Object
      * 
      * @uses ActionAdExtensionActionType
      * @uses CustomParameters

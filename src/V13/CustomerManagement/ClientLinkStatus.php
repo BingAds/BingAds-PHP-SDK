@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines the possible status values of a ClientLink.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/clientlinkstatus?view=bingads-13 ClientLinkStatus Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/clientlinkstatus?view=bingads-13 ClientLinkStatus Value Set
      * 
      * @used-by ClientLink
      */

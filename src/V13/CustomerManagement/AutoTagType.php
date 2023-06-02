@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines possible values for an account level setting that determines whether to append or replace the supported UTM tracking codes.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/autotagtype?view=bingads-13 AutoTagType Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/autotagtype?view=bingads-13 AutoTagType Value Set
      * 
      * @used-by AdvertiserAccount
      */

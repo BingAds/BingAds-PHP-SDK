@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the relationship between a label and campaign, ad group, ad, or keyword entity.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/labelassociation?view=bingads-13 LabelAssociation Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/labelassociation?view=bingads-13 LabelAssociation Data Object
      * 
      * @used-by DeleteLabelAssociationsRequest
      * @used-by GetLabelAssociationsByEntityIdsResponse

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the supported import entity types.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/importentitytype?view=bingads-13 ImportEntityType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/importentitytype?view=bingads-13 ImportEntityType Value Set
      * 
      * @used-by GetImportEntityIdsMappingRequest
      */

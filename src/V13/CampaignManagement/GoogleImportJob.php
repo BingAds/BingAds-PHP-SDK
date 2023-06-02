@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a Google import job that can be run once or scheduled on a recurring basis.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/googleimportjob?view=bingads-13 GoogleImportJob Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/googleimportjob?view=bingads-13 GoogleImportJob Data Object
      * 
      * @uses CampaignAdGroupIds
      */

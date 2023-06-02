@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes the import jobs.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deleteimportjobs?view=bingads-13 DeleteImportJobs Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deleteimportjobs?view=bingads-13 DeleteImportJobs Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteImportJobs
      */

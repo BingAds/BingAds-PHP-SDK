@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines an advertiser account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/advertiseraccount?view=bingads-13 AdvertiserAccount Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/advertiseraccount?view=bingads-13 AdvertiserAccount Data Object
      * 
      * @uses CurrencyCode
      * @uses AccountFinancialStatus

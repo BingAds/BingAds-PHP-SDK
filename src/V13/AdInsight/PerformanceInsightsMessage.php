@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the message for performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsmessage?view=bingads-13 PerformanceInsightsMessage Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/performanceinsightsmessage?view=bingads-13 PerformanceInsightsMessage Data Object
      * 
      * @uses PerformanceInsightsMessageTemplateId
      * @uses PerformanceInsightsMessageParameter

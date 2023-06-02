@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a product match count report request that aggregates the performance data by product group for a specified time period.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productmatchcountreportrequest?view=bingads-13 ProductMatchCountReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/productmatchcountreportrequest?view=bingads-13 ProductMatchCountReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses ProductMatchCountReportColumn

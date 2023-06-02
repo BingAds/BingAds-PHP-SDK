@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible campaign types.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaigntype?view=bingads-13 CampaignType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaigntype?view=bingads-13 CampaignType Value Set
      * 
      * @used-by BidStrategy
      * @used-by Campaign
@@ -26,8 +26,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The campaign is an Audience campaign. */
         const Audience = 'Audience';
 
-        /** Reserved. */
+        /** The campaign is a Hotel campaign. */
         const Hotel = 'Hotel';
+
+        /** Reserved. */
+        const PerformanceMax = 'PerformanceMax';
     }
 
 }

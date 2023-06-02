@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds experiments and creates experiment campaigns based on existing campaigns in an account.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addexperiments?view=bingads-13 AddExperiments Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addexperiments?view=bingads-13 AddExperiments Request Object
      * 
      * @uses Experiment
      * @used-by BingAdsCampaignManagementService::AddExperiments

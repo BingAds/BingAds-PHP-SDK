@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the specified budgets from the account's shared budget library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getbudgetsbyids?view=bingads-13 GetBudgetsByIds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getbudgetsbyids?view=bingads-13 GetBudgetsByIds Response Object
      * 
      * @uses Budget
      * @uses BatchError

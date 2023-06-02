@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Determines whether you want to use the "target and bid" option or the "bid only" target option for the criterion type group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/targetsettingdetail?view=bingads-13 TargetSettingDetail Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/targetsettingdetail?view=bingads-13 TargetSettingDetail Data Object
      * 
      * @uses CriterionTypeGroup
      * @used-by TargetSetting

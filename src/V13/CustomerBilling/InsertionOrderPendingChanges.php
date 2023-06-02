@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines an object that can be used to manage changes for an approved insertion order.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/insertionorderpendingchanges?view=bingads-13 InsertionOrderPendingChanges Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/insertionorderpendingchanges?view=bingads-13 InsertionOrderPendingChanges Data Object
      * 
      * @uses InsertionOrderPendingChangesStatus
      * @used-by InsertionOrder

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines the entities that may be downloaded and uploaded in bulk.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/downloadentity?view=bingads-13 DownloadEntity Value Set
+     * @link https:/learn.microsoft.com/advertising/bulk-service/downloadentity?view=bingads-13 DownloadEntity Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest
@@ -446,6 +446,21 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const AdGroupHotelListingGroups = 'AdGroupHotelListingGroups';
+
+        /** Reserved. */
+        const AssetGroups = 'AssetGroups';
+
+        /** Reserved. */
+        const AudienceGroups = 'AudienceGroups';
+
+        /** Reserved. */
+        const CampaignNegativeWebpages = 'CampaignNegativeWebpages';
+
+        /** Reserved. */
+        const AudienceGroupAssetGroupAssociations = 'AudienceGroupAssetGroupAssociations';
+
+        /** Reserved. */
+        const AssetGroupListingGroups = 'AssetGroupListingGroups';
     }
 
 }

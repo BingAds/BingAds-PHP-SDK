@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attribute columns that you can include in the SearchCampaignChangeHistoryReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/searchcampaignchangehistoryreportcolumn?view=bingads-13 SearchCampaignChangeHistoryReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/searchcampaignchangehistoryreportcolumn?view=bingads-13 SearchCampaignChangeHistoryReportColumn Value Set
      * 
      * @used-by SearchCampaignChangeHistoryReportRequest
      */

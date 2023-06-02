@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an ad group in an advertising campaign.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroup?view=bingads-13 AdGroup Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adgroup?view=bingads-13 AdGroup Data Object
      * 
      * @uses AdRotation
      * @uses BiddingScheme
@@ -13,6 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses Bid
      * @uses Date
      * @uses KeyValuePairOfstringstring
+     * @uses FrequencyCapSettings
      * @uses Network
      * @uses AdGroupPrivacyStatus
      * @uses Setting
@@ -72,6 +73,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;
+
+        /**
+         * Reserved.
+         * @var FrequencyCapSettings[]
+         */
+        public $FrequencyCapSettings;
 
         /**
          * The system-generated identifier of the ad group.
@@ -174,6 +181,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Bid
          */
         public $CpmBid;
+
+        /**
+         * Reserved.
+         * @var Bid
+         */
+        public $McpaBid;
     }
 
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Flyer Extensions enable advertisers to distribute product or store catalogues (flyers) to potential customers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/flyeradextension?view=bingads-13 FlyerAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/flyeradextension?view=bingads-13 FlyerAdExtension Data Object
      * 
      * @uses AppUrl
      * @uses CustomParameters

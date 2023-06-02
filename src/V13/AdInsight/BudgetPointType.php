@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the possible values of a campaign budget point.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/budgetpointtype?view=bingads-13 BudgetPointType Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/budgetpointtype?view=bingads-13 BudgetPointType Value Set
      * 
      * @used-by BudgetPoint
      */

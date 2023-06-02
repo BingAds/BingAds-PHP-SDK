@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * A combined list is an audience created from a combination of multiple existing audiences.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/combinedlist?view=bingads-13 CombinedList Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/combinedlist?view=bingads-13 CombinedList Data Object
      * 
      * @uses CombinationRule
      */

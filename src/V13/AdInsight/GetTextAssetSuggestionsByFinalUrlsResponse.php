@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/gettextassetsuggestionsbyfinalurls?view=bingads-13 GetTextAssetSuggestionsByFinalUrls Response Object
+     * Gets text asset suggestions by final URLs.
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/gettextassetsuggestionsbyfinalurls?view=bingads-13 GetTextAssetSuggestionsByFinalUrls Response Object
      * 
      * @uses TextAssetSuggestions
      * @uses BatchError
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetTextAssetSuggestionsByFinalUrlsResponse
     {
         /**
-         * Reserved.
+         * The suggested string value to use for the text asset.
          * @var TextAssetSuggestions[]
          */
         public $TextAssetSuggestions;
 
         /**
-         * Reserved.
+         * An array BatchError that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

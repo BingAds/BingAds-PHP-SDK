@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * The statistical import results for an entity type.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/importentitystatistics?view=bingads-13 ImportEntityStatistics Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/importentitystatistics?view=bingads-13 ImportEntityStatistics Data Object
      * 
      * @used-by ImportResult
      */

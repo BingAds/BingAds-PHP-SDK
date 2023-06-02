@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional import properties that you can request when calling GetImportJobsByIds and GetImportResults.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/importadditionalfield?view=bingads-13 ImportAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/importadditionalfield?view=bingads-13 ImportAdditionalField Value Set
      * 
      * @used-by GetImportJobsByIdsRequest
      * @used-by GetImportResultsRequest
@@ -41,6 +41,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const RenameCampaignNameWithSuffix = 'RenameCampaignNameWithSuffix';
+
+        /** Reserved. */
+        const UpdateAdUrls = 'UpdateAdUrls';
     }
 
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Dispatch coupons of the specified coupon class name owned by the specified customer.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/dispatchcoupons?view=bingads-13 DispatchCoupons Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/dispatchcoupons?view=bingads-13 DispatchCoupons Request Object
      * 
      * @used-by BingAdsCustomerBillingService::DispatchCoupons
      */

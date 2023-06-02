@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the estimated position in the search results if the specified bid value had been used for the keywords in the last 7 days.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getestimatedpositionbykeywordids?view=bingads-13 GetEstimatedPositionByKeywordIds Response Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getestimatedpositionbykeywordids?view=bingads-13 GetEstimatedPositionByKeywordIds Response Object
      * 
      * @uses KeywordIdEstimatedPosition
      * @used-by BingAdsAdInsightService::GetEstimatedPositionByKeywordIds

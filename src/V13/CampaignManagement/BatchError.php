@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a Campaign Management batch error object that identifies the item within the batch of items in the request message that caused the operation to fail, and describes the reason for the failure.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/batcherror?view=bingads-13 BatchError Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/batcherror?view=bingads-13 BatchError Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by ApiFaultDetail
@@ -13,6 +13,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by EditorialApiFaultDetail
      * @used-by AddAdGroupsResponse
      * @used-by AddAdsResponse
+     * @used-by AddAssetGroupsResponse
+     * @used-by AddAudienceGroupsResponse
      * @used-by AddAudiencesResponse
      * @used-by AddBidStrategiesResponse
      * @used-by AddBudgetsResponse
@@ -28,6 +30,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddUetTagsResponse
      * @used-by AddVideosResponse
      * @used-by AppealEditorialRejectionsResponse
+     * @used-by ApplyAssetGroupListingGroupActionsResponse
      * @used-by ApplyHotelGroupActionsResponse
      * @used-by ApplyOfflineConversionAdjustmentsResponse
      * @used-by ApplyOfflineConversionsResponse
@@ -38,6 +41,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteAdGroupCriterionsResponse
      * @used-by DeleteAdGroupsResponse
      * @used-by DeleteAdsResponse
+     * @used-by DeleteAssetGroupsResponse
+     * @used-by DeleteAudienceGroupAssetGroupAssociationsResponse
+     * @used-by DeleteAudienceGroupsResponse
      * @used-by DeleteAudiencesResponse
      * @used-by DeleteBidStrategiesResponse
      * @used-by DeleteBudgetsResponse
@@ -60,6 +66,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetAdExtensionsEditorialReasonsResponse
      * @used-by GetAdGroupsByIdsResponse
      * @used-by GetAdsByIdsResponse
+     * @used-by GetAssetGroupsByCampaignIdResponse
+     * @used-by GetAssetGroupsByIdsResponse
+     * @used-by GetAudienceGroupAssetGroupAssociationsByAssetGroupIdsResponse
+     * @used-by GetAudienceGroupAssetGroupAssociationsByAudienceGroupIdsResponse
+     * @used-by GetAudienceGroupsByIdsResponse
      * @used-by GetAudiencesByIdsResponse
      * @used-by GetBidStrategiesByIdsResponse
      * @used-by GetBudgetsByIdsResponse
@@ -87,12 +98,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetUetTagsByIdsResponse
      * @used-by GetVideosByIdsResponse
      * @used-by SetAdExtensionsAssociationsResponse
+     * @used-by SetAudienceGroupAssetGroupAssociationsResponse
      * @used-by SetLabelAssociationsResponse
      * @used-by SetNegativeSitesToAdGroupsResponse
      * @used-by SetNegativeSitesToCampaignsResponse
      * @used-by SetSharedEntityAssociationsResponse
      * @used-by UpdateAdGroupsResponse
      * @used-by UpdateAdsResponse
+     * @used-by UpdateAssetGroupsResponse
+     * @used-by UpdateAudienceGroupsResponse
      * @used-by UpdateAudiencesResponse
      * @used-by UpdateBidStrategiesResponse
      * @used-by UpdateBudgetsResponse

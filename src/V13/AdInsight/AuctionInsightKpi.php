@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an auction insight key performance indicator.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/auctioninsightkpi?view=bingads-13 AuctionInsightKpi Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/auctioninsightkpi?view=bingads-13 AuctionInsightKpi Data Object
      * 
      * @used-by AuctionInsightEntry
      */

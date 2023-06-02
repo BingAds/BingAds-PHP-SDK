@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes one or more campaigns in a specified account.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletecampaigns?view=bingads-13 DeleteCampaigns Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletecampaigns?view=bingads-13 DeleteCampaigns Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteCampaigns
      */

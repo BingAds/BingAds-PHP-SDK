@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines a customer object that contains one or more Microsoft Advertising accounts.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/customer?view=bingads-13 Customer Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/customer?view=bingads-13 Customer Data Object
      * 
      * @uses CustomerFinancialStatus
      * @uses Industry

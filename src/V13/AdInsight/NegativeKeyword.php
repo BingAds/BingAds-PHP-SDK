@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines a negative keyword with match type for traffic estimates.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/negativekeyword?view=bingads-13 NegativeKeyword Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/negativekeyword?view=bingads-13 NegativeKeyword Data Object
      * 
      * @uses MatchType
      * @used-by CampaignEstimator

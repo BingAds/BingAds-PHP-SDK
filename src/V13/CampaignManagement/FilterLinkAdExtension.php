@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Filter Link Extensions pair one header with between 3 and 10 clickable text values that tell customers more about your business.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/filterlinkadextension?view=bingads-13 FilterLinkAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/filterlinkadextension?view=bingads-13 FilterLinkAdExtension Data Object
      * 
      * @uses AdExtensionHeaderType
      * @uses CustomParameters

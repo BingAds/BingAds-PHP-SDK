@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the Video Data Object.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/video?view=bingads-13 Video Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/video?view=bingads-13 Video Data Object
      * 
      * @used-by AddVideosRequest
      * @used-by GetVideosByIdsResponse
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class Video
     {
         /**
-         * Reserved.
+         * The video's aspect ratio.
          * @var string
          */
         public $AspectRatio;
 
         /**
-         * Reserved.
+         * The date and time the video was created, in Coordinated Universal Time.
          * @var \DateTime
          */
         public $CreatedDateTimeInUTC;
@@ -38,25 +38,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DurationInMilliseconds;
 
         /**
-         * Reserved.
+         * Read the description for each possible error code below.
          * @var string
          */
         public $FailureCode;
 
         /**
-         * Reserved.
+         * The identifier of the video.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The date and time the video was last modified, in Coordinated Universal Time.
          * @var \DateTime
          */
         public $ModifiedDateTimeInUTC;
 
         /**
-         * Reserved.
+         * The original URL of the video.
          * @var string
          */
         public $SourceUrl;
@@ -74,7 +74,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ThumbnailUrl;
 
         /**
-         * Reserved.
+         * The URL where the video is hosted.
          * @var string
          */
         public $Url;

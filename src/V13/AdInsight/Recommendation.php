@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the base object of Recommendation.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/recommendation?view=bingads-13 Recommendation Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/recommendation?view=bingads-13 Recommendation Data Object
      * 
      * @used-by GetRecommendationsResponse
      */

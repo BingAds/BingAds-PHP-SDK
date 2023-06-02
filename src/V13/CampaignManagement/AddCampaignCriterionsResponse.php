@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds one or more campaign criterions that help determine whether ads in each campaign get served.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addcampaigncriterions?view=bingads-13 AddCampaignCriterions Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addcampaigncriterions?view=bingads-13 AddCampaignCriterions Response Object
      * 
      * @uses BatchErrorCollection
      * @used-by BingAdsCampaignManagementService::AddCampaignCriterions

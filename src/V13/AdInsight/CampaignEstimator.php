@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Contains campaign filter criteria and a nested list of ad group and keyword level filter criteria for traffic estimates.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/campaignestimator?view=bingads-13 CampaignEstimator Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/campaignestimator?view=bingads-13 CampaignEstimator Data Object
      * 
      * @uses AdGroupEstimator
      * @uses Criterion

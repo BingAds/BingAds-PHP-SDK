@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional audience properties that you can request when calling GetAudiencesByIds.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/audienceadditionalfield?view=bingads-13 AudienceAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/audienceadditionalfield?view=bingads-13 AudienceAdditionalField Value Set
      * 
      * @used-by GetAudiencesByIdsRequest
      */

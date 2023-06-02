@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Applies online conversion adjustments.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/applyonlineconversionadjustments?view=bingads-13 ApplyOnlineConversionAdjustments Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/applyonlineconversionadjustments?view=bingads-13 ApplyOnlineConversionAdjustments Request Object
      * 
      * @uses OnlineConversionAdjustment
      * @used-by BingAdsCampaignManagementService::ApplyOnlineConversionAdjustments

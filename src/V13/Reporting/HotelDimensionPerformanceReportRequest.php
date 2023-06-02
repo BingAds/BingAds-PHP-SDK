@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a hotel dimension performance report request that aggregates the performance data by product category, custom label, title, and type for a specified time period.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/hoteldimensionperformancereportrequest?view=bingads-13 HotelDimensionPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/hoteldimensionperformancereportrequest?view=bingads-13 HotelDimensionPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses HotelDimensionPerformanceReportColumn

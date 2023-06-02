@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * The language search parameter filter that you can include when requesting keyword ideas.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/languagesearchparameter?view=bingads-13 LanguageSearchParameter Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/languagesearchparameter?view=bingads-13 LanguageSearchParameter Data Object
      * 
      * @uses LanguageCriterion
      */

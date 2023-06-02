@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the predefined time and date range values for a report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/reporttimeperiod?view=bingads-13 ReportTimePeriod Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/reporttimeperiod?view=bingads-13 ReportTimePeriod Value Set
      * 
      * @used-by ReportTime
      */

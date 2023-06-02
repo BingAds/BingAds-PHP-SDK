@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional criterion properties that you can request when calling GetAdGroupCriterionsByIds and GetCampaignCriterionsByIds.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/criterionadditionalfield?view=bingads-13 CriterionAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/criterionadditionalfield?view=bingads-13 CriterionAdditionalField Value Set
      * 
      * @used-by GetAdGroupCriterionsByIdsRequest
      * @used-by GetCampaignCriterionsByIdsRequest

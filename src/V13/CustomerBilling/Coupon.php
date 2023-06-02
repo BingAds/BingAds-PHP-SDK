@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Defines a coupon.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/coupon?view=bingads-13 Coupon Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/coupon?view=bingads-13 Coupon Data Object
      * 
      * @uses CouponRedemption
      * @used-by SearchCouponsResponse

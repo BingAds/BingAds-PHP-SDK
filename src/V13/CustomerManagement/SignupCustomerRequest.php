@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Creates a new customer and account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/signupcustomer?view=bingads-13 SignupCustomer Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/signupcustomer?view=bingads-13 SignupCustomer Request Object
      * 
      * @uses Customer
      * @uses AdvertiserAccount
@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $UserId;
 
         /**
-         * The user to create if you want to sign up a new customer and create user simultaneously.
+         * The user to create.
          * @var User
          */
         public $User;

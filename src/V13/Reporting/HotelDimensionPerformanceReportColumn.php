@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the HotelDimensionPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/hoteldimensionperformancereportcolumn?view=bingads-13 HotelDimensionPerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/hoteldimensionperformancereportcolumn?view=bingads-13 HotelDimensionPerformanceReportColumn Value Set
      * 
      * @used-by HotelDimensionPerformanceReportRequest
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the hotel group performance report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/hotelgroupperformancereportfilter?view=bingads-13 HotelGroupPerformanceReportFilter Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/hotelgroupperformancereportfilter?view=bingads-13 HotelGroupPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter

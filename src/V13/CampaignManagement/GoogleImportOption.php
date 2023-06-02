@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the Google import options that are available via API.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/googleimportoption?view=bingads-13 GoogleImportOption Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/googleimportoption?view=bingads-13 GoogleImportOption Data Object
      * 
      * @uses ImportSearchAndReplaceForStringProperty
      */
@@ -370,6 +370,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateAdSchedules;
+
+        /**
+         * Import updates to existing ad landing page URLs.
+         * @var boolean
+         */
+        public $UpdateAdUrls;
 
         /**
          * Import updates to existing app extensions.

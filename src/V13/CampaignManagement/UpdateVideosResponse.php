@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates the videos within the account.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatevideos?view=bingads-13 UpdateVideos Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatevideos?view=bingads-13 UpdateVideos Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateVideos

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets videos by video identifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getvideosbyids?view=bingads-13 GetVideosByIds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getvideosbyids?view=bingads-13 GetVideosByIds Response Object
      * 
      * @uses Video
      * @uses BatchError

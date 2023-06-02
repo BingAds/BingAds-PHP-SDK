@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an ad extension that specifies disclaimer text to include in an expanded text ad or responsive search ad.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/disclaimeradextension?view=bingads-13 DisclaimerAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/disclaimeradextension?view=bingads-13 DisclaimerAdExtension Data Object
      * 
      * @uses AppUrl
      * @uses CustomParameters

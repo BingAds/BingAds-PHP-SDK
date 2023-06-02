@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * The key and value pair of long and long values defined by the Campaign Management service.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/keyvaluepairoflonglong?view=bingads-13 KeyValuePairOflonglong Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/keyvaluepairoflonglong?view=bingads-13 KeyValuePairOflonglong Data Object
      * 
      * @used-by GetImportEntityIdsMappingResponse
      */

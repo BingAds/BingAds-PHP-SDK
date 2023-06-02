@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the ad extensions from the account's ad extension library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getadextensionidsbyaccountid?view=bingads-13 GetAdExtensionIdsByAccountId Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getadextensionidsbyaccountid?view=bingads-13 GetAdExtensionIdsByAccountId Response Object
      * 
      * @used-by BingAdsCampaignManagementService::GetAdExtensionIdsByAccountId
      */

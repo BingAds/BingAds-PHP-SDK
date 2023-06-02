@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains the suggested budget with estimated clicks and impressions opportunities.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/budgetopportunity?view=bingads-13 BudgetOpportunity Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/budgetopportunity?view=bingads-13 BudgetOpportunity Data Object
      * 
      * @uses BudgetPoint
      * @uses BudgetLimitType

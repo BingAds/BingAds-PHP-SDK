@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible options for action text that can be displayed in an action ad extension.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/actionadextensionactiontype?view=bingads-13 ActionAdExtensionActionType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/actionadextensionactiontype?view=bingads-13 ActionAdExtensionActionType Value Set
      * 
      * @used-by ActionAdExtension
      */

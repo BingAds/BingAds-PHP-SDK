@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the entity types for retrieving auction insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/entitytype?view=bingads-13 EntityType Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/entitytype?view=bingads-13 EntityType Value Set
      * 
      * @used-by PerformanceInsightsDetail
      * @used-by GetAuctionInsightDataRequest

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * A portfolio bid strategy is an automated bidding feature that manages bidding across multiple campaigns that are all working toward the same goal.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/bidstrategy?view=bingads-13 BidStrategy Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/bidstrategy?view=bingads-13 BidStrategy Data Object
      * 
      * @uses CampaignType
      * @uses BiddingScheme

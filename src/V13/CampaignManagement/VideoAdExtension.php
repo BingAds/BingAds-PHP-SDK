@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an ad extension with a video and call-to-action button.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/videoadextension?view=bingads-13 VideoAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/videoadextension?view=bingads-13 VideoAdExtension Data Object
      * 
      * @uses AppUrl
      * @uses CustomParameters

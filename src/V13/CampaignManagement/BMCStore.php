@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a Microsoft Merchant Center store.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/bmcstore?view=bingads-13 BMCStore Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/bmcstore?view=bingads-13 BMCStore Data Object
      * 
      * @uses BMCStoreSubType
      * @used-by GetBMCStoresByCustomerIdResponse
@@ -41,6 +41,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Name;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $StoreUrl;
 
         /**
          * The Microsoft Merchant Center store sub type.

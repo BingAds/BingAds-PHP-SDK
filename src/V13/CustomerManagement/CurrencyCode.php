@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines a selection of currency values.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/currencycode?view=bingads-13 CurrencyCode Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/currencycode?view=bingads-13 CurrencyCode Value Set
      * 
      * @used-by AdvertiserAccount
      */

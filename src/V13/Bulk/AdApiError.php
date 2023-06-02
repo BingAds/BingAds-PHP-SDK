@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines a Bulk Ad API error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/adapierror?view=bingads-13 AdApiError Data Object
+     * @link https:/learn.microsoft.com/advertising/bulk-service/adapierror?view=bingads-13 AdApiError Data Object
      * 
      * @used-by AdApiFaultDetail
      */

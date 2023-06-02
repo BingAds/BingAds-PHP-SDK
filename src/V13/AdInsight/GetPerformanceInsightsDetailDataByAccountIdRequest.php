@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the performance insights detail data for a single account.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getperformanceinsightsdetaildatabyaccountid?view=bingads-13 GetPerformanceInsightsDetailDataByAccountId Request Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getperformanceinsightsdetaildatabyaccountid?view=bingads-13 GetPerformanceInsightsDetailDataByAccountId Request Object
      * 
      * @uses EntityType
      * @uses DayMonthAndYear

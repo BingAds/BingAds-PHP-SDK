@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible types of promotion occasions.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/promotionoccasion?view=bingads-13 PromotionOccasion Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/promotionoccasion?view=bingads-13 PromotionOccasion Value Set
      * 
      * @used-by PromotionAdExtension
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the negative sites URLs that are assigned directly to ad groups.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getnegativesitesbyadgroupids?view=bingads-13 GetNegativeSitesByAdGroupIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getnegativesitesbyadgroupids?view=bingads-13 GetNegativeSitesByAdGroupIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetNegativeSitesByAdGroupIds
      */

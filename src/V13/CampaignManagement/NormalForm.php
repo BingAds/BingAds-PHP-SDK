@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible normal form types.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/normalform?view=bingads-13 NormalForm Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/normalform?view=bingads-13 NormalForm Value Set
      * 
      * @used-by PageVisitorsRule
      */

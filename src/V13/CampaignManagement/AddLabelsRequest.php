@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds one or more labels to an account.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addlabels?view=bingads-13 AddLabels Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addlabels?view=bingads-13 AddLabels Request Object
      * 
      * @uses Label
      * @used-by BingAdsCampaignManagementService::AddLabels

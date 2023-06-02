@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the reasons why the specified entities failed editorial review and whether the issue is appealable.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/geteditorialreasonsbyids?view=bingads-13 GetEditorialReasonsByIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/geteditorialreasonsbyids?view=bingads-13 GetEditorialReasonsByIds Request Object
      * 
      * @uses EntityIdToParentIdAssociation
      * @uses EntityType

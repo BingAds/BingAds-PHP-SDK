@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the URL category for performance insights.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/performanceinsightsurlcategory?view=bingads-13 PerformanceInsightsUrlCategory Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/performanceinsightsurlcategory?view=bingads-13 PerformanceInsightsUrlCategory Value Set
      * 
      * @used-by UrlParameter
      */
