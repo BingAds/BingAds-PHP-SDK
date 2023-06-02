@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the estimated bid value of one or more keywords that could result in an ad appearing in the targeted position in the search results.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getestimatedbidbykeywords?view=bingads-13 GetEstimatedBidByKeywords Response Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getestimatedbidbykeywords?view=bingads-13 GetEstimatedBidByKeywords Response Object
      * 
      * @uses KeywordEstimatedBid
      * @uses EstimatedBidAndTraffic

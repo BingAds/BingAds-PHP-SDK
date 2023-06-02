@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Contains a nested list of suggested keywords for the campaign's ad groups with minimum and maximum traffic estimates.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/campaignestimate?view=bingads-13 CampaignEstimate Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/campaignestimate?view=bingads-13 CampaignEstimate Data Object
      * 
      * @uses AdGroupEstimate
      * @used-by GetKeywordTrafficEstimatesResponse

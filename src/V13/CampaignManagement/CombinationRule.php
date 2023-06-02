@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * A combination rule includes logical conditions used to determine who to add to your combined list.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/combinationrule?view=bingads-13 CombinationRule Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/combinationrule?view=bingads-13 CombinationRule Data Object
      * 
      * @uses LogicalOperator
      * @used-by CombinedList

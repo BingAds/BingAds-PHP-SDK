@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines the field order of entities returned using one of the search operations, for example SearchAccounts, SearchClientLinks, or SearchCustomers.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/orderbyfield?view=bingads-13 OrderByField Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/orderbyfield?view=bingads-13 OrderByField Value Set
      * 
      * @used-by OrderBy
      */
@@ -22,6 +22,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** The order is determined by a predicate life cycle status. */
         const LifeCycleStatus = 'LifeCycleStatus';
+
+        /** This value is not supported with the customer management service. */
+        const CouponClassName = 'CouponClassName';
+
+        /** This value is not supported with the customer management service. */
+        const CouponStartDate = 'CouponStartDate';
     }
 
 }

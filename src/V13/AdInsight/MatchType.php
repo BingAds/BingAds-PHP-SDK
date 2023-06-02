@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the possible keyword match type values.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/matchtype?view=bingads-13 MatchType Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/matchtype?view=bingads-13 MatchType Value Set
      * 
      * @used-by EstimatedBidAndTraffic
      * @used-by EstimatedPositionAndTraffic

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the supported set of logical operators for combined list audiences.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/logicaloperator?view=bingads-13 LogicalOperator Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/logicaloperator?view=bingads-13 LogicalOperator Value Set
      * 
      * @used-by CombinationRule
      */

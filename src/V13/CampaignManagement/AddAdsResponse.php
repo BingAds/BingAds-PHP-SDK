@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds one or more ads to an ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addads?view=bingads-13 AddAds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addads?view=bingads-13 AddAds Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddAds

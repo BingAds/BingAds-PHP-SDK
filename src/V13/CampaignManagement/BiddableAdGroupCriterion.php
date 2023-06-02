@@ -5,12 +5,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a biddable criterion that you want applied to the specified ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/biddableadgroupcriterion?view=bingads-13 BiddableAdGroupCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/biddableadgroupcriterion?view=bingads-13 BiddableAdGroupCriterion Data Object
      * 
      * @uses CriterionBid
      * @uses AdGroupCriterionEditorialStatus
      * @uses AppUrl
      * @uses CustomParameters
+     * @uses CriterionCashback
      */
     final class BiddableAdGroupCriterion extends AdGroupCriterion
     {
@@ -67,6 +68,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var CustomParameters
          */
         public $UrlCustomParameters;
+
+        /**
+         * Reserved.
+         * @var CriterionCashback
+         */
+        public $CriterionCashback;
     }
 
 }

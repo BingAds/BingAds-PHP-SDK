@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates conversion goals within the account's shared conversion goal library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updateconversiongoals?view=bingads-13 UpdateConversionGoals Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateconversiongoals?view=bingads-13 UpdateConversionGoals Request Object
      * 
      * @uses ConversionGoal
      * @used-by BingAdsCampaignManagementService::UpdateConversionGoals

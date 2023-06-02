@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the language values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/languagereportfilter?view=bingads-13 LanguageReportFilter Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/languagereportfilter?view=bingads-13 LanguageReportFilter Value Set
      * 
      * @used-by AdDynamicTextPerformanceReportFilter
      * @used-by AdGroupPerformanceReportFilter
@@ -79,6 +79,45 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The report will contain data for ads that were viewed in Traditional Chinese. */
         const TraditionalChinese = 'TraditionalChinese';
+
+        /** The report will contain data for ads that were viewed in Greek. */
+        const Greek = 'Greek';
+
+        /** The report will contain data for ads that were viewed in Polish. */
+        const Polish = 'Polish';
+
+        /** The report will contain data for ads that were viewed in Czech. */
+        const Czech = 'Czech';
+
+        /** The report will contain data for ads that were viewed in Romanian. */
+        const Romanian = 'Romanian';
+
+        /** The report will contain data for ads that were viewed in Hungarian. */
+        const Hungarian = 'Hungarian';
+
+        /** The report will contain data for ads that were viewed in Slovak. */
+        const Slovak = 'Slovak';
+
+        /** The report will contain data for ads that were viewed in Bulgarian. */
+        const Bulgarian = 'Bulgarian';
+
+        /** The report will contain data for ads that were viewed in Croatian. */
+        const Croatian = 'Croatian';
+
+        /** The report will contain data for ads that were viewed in Lithuanian. */
+        const Lithuanian = 'Lithuanian';
+
+        /** The report will contain data for ads that were viewed in Slovenian. */
+        const Slovenian = 'Slovenian';
+
+        /** The report will contain data for ads that were viewed in Estonian. */
+        const Estonian = 'Estonian';
+
+        /** The report will contain data for ads that were viewed in Latvian. */
+        const Latvian = 'Latvian';
+
+        /** The report will contain data for ads that were viewed in Maltese. */
+        const Maltese = 'Maltese';
     }
 
 }

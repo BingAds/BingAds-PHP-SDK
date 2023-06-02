@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a campaign.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/campaign?view=bingads-13 Campaign Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaign?view=bingads-13 Campaign Data Object
      * 
      * @uses BiddingScheme
      * @uses BudgetLimitType
@@ -64,10 +64,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
+         * Reserved.
+         * @var integer[]
+         */
+        public $GoalIds;
+
+        /**
          * The unique Microsoft Advertising identifier of the campaign.
          * @var integer
          */
         public $Id;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $MultimediaAdsBidAdjustment;
 
         /**
          * The name of the campaign.
@@ -88,7 +100,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SubType;
 
         /**
-         * The time zone where the campaign operates.
+         * This column is deprecated.
          * @var string
          */
         public $TimeZone;
@@ -112,7 +124,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CampaignType;
 
         /**
-         * The settings will vary by campaign type.
+         * The supported settings that vary by campaign type.
          * @var Setting[]
          */
         public $Settings;
@@ -134,6 +146,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $AdScheduleUseSearcherTimeZone;
+
+        /**
+         * The system-generated identifier of the BidStrategy that this campaign shares with other campaigns in the account.
+         * @var integer
+         */
+        public $BidStrategyId;
     }
 
 }

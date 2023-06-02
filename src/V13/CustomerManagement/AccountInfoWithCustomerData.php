@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines an object that contains information that identifies an account and the customer that manages or owns the account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/accountinfowithcustomerdata?view=bingads-13 AccountInfoWithCustomerData Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/accountinfowithcustomerdata?view=bingads-13 AccountInfoWithCustomerData Data Object
      * 
      * @uses AccountLifeCycleStatus
      * @used-by FindAccountsOrCustomersInfoResponse
@@ -53,6 +53,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var integer
          */
         public $PauseReason;
+
+        /**
+         * The account mode distinguishes between smart and expert accounts.
+         * @var string
+         */
+        public $AccountMode;
     }
 
 }

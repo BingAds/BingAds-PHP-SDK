@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes negative keyword lists from the ad account library, or deletes website exclusion lists from the manager account (customer) library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deletesharedentities?view=bingads-13 DeleteSharedEntities Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletesharedentities?view=bingads-13 DeleteSharedEntities Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteSharedEntities

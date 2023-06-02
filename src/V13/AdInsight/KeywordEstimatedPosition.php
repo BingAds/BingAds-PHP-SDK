@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains the keyword and the estimated position in the search results for each match type.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordestimatedposition?view=bingads-13 KeywordEstimatedPosition Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/keywordestimatedposition?view=bingads-13 KeywordEstimatedPosition Data Object
      * 
      * @uses EstimatedPositionAndTraffic
      * @used-by KeywordIdEstimatedPosition

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProductDimensionPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productdimensionperformancereportcolumn?view=bingads-13 ProductDimensionPerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/productdimensionperformancereportcolumn?view=bingads-13 ProductDimensionPerformanceReportColumn Value Set
      * 
      * @used-by ProductDimensionPerformanceReportRequest
      */
@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** The Microsoft Advertising assigned identifier of an ad. */
@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The device name attribute of a device OS target bid. */
         const DeviceType = 'DeviceType';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The unique identifier provided by a merchant for each product offer. */
@@ -247,6 +247,39 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The quantity of the product purchased (ProductBought) from your catalog or via your retail partner. */
         const QuantityBought = 'QuantityBought';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** Reserved for future use. */
+        const AssistedConversionsQualified = 'AssistedConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The title associated with the purchased product. */
+        const ProductBoughtTitle = 'ProductBoughtTitle';
+
+        /** Global Trade Item Number (GTIN) is a unique numerical value for commercial products that usually appears printed under the barcode on retail products. */
+        const GTIN = 'GTIN';
+
+        /** Manufacturer Part Number (MPN) is a unique number that identifies the product to its manufacturer. */
+        const MPN = 'MPN';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** Reserved. */
+        const GoalId = 'GoalId';
     }
 
 }

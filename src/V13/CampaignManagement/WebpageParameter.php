@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the conditions or criteria that determine whether you want to show dynamic search ads.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/webpageparameter?view=bingads-13 WebpageParameter Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/webpageparameter?view=bingads-13 WebpageParameter Data Object
      * 
      * @uses WebpageCondition
      * @used-by Webpage

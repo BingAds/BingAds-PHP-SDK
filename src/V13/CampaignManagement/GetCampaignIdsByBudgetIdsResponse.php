@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the campaign identifiers that share each specified budget.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getcampaignidsbybudgetids?view=bingads-13 GetCampaignIdsByBudgetIds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getcampaignidsbybudgetids?view=bingads-13 GetCampaignIdsByBudgetIds Response Object
      * 
      * @uses IdCollection
      * @uses BatchError

@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Defines a postal address.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/address?view=bingads-13 Address Data Object
+     * Defines a postal address for accounts and user contact information.
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/address?view=bingads-13 Address Data Object
      * 
      * @used-by AdvertiserAccount
      * @used-by ContactInfo

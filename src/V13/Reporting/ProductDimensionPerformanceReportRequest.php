@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a product dimension performance report request that aggregates the performance data by product category, custom label, title, and type for a specified time period.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productdimensionperformancereportrequest?view=bingads-13 ProductDimensionPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/productdimensionperformancereportrequest?view=bingads-13 ProductDimensionPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses ProductDimensionPerformanceReportColumn

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets label associations by label identifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getlabelassociationsbylabelids?view=bingads-13 GetLabelAssociationsByLabelIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getlabelassociationsbylabelids?view=bingads-13 GetLabelAssociationsByLabelIds Request Object
      * 
      * @uses EntityType
      * @uses Paging

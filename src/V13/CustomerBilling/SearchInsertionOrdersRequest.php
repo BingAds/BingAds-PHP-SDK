@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 {
     /**
      * Searches for insertion orders that match a specified criteria.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/searchinsertionorders?view=bingads-13 SearchInsertionOrders Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/searchinsertionorders?view=bingads-13 SearchInsertionOrders Request Object
      * 
      * @uses Predicate
      * @uses OrderBy
@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $Ordering;
 
         /**
-         * Determines the index and size of  results per page.
+         * Determines the index and size of results per page.
          * @var Paging
          */
         public $PageInfo;

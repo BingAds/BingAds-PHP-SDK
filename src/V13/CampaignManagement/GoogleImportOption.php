@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the Google import options that are available via API.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/googleimportoption?view=bingads-13 GoogleImportOption Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/googleimportoption?view=bingads-13 GoogleImportOption Data Object
      * 
      * @uses ImportSearchAndReplaceForStringProperty
      */
@@ -16,6 +16,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $AccountUrlOptions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $AdScheduleUseSearcherTimezone;
 
         /**
          * The percentage amount that you want to increase or decrease the new or existing Microsoft Advertising bids relative to your Google Ads bids.
@@ -40,6 +46,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $AssociatedUetTagId;
+
+        /**
+         * When enabled, we will not import negative bid modifiers for desktop targets except modifiers set to -100%.
+         * @var boolean
+         */
+        public $AutoDeviceBidOptimization;
 
         /**
          * Removed Google Ads items will be deleted along with their associated sub-items.
@@ -132,6 +144,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewEntities;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewImageAdExtensions;
+
+        /**
          * Import new keyword landing page URLs.
          * @var boolean
          */
@@ -210,7 +228,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewProductFilters;
 
         /**
-         * Reserved.
+         * Import promotion extensions that have not previously been imported.
          * @var boolean
          */
         public $NewPromotionAdExtensions;
@@ -238,6 +256,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewUrlOptions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $PauseAIMAdGroupIfAllAudienceCriterionNotImported;
 
         /**
          * When enabled this option will pause imported campaigns in case all of their location targets are unsupported by Microsoft Advertising.
@@ -270,7 +294,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $RaiseProductGroupBidsToMinimum;
 
         /**
-         * If you enable this option, the service will only fetch search ads from mixed mode campaigns and import them as search campaigns.
+         * Reserved.
+         * @var boolean
+         */
+        public $RenameCampaignNameWithSuffix;
+
+        /**
+         * If you enable this option, the service will only fetch search ads from mixed campaigns and import them as search campaigns.
          * @var boolean
          */
         public $SearchAndDsaMixedCampaignAsSearchCampaign;
@@ -280,6 +310,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var ImportSearchAndReplaceForStringProperty
          */
         public $SearchAndReplaceForCampaignNames;
+
+        /**
+         * Set this option to find and replace a string within each custom parameter during import.
+         * @var ImportSearchAndReplaceForStringProperty
+         */
+        public $SearchAndReplaceForCustomParameters;
+
+        /**
+         * Reserved.
+         * @var ImportSearchAndReplaceForStringProperty
+         */
+        public $SearchAndReplaceForFinalURLSuffix;
 
         /**
          * Set this option to find and replace a string within each tracking template during import.
@@ -328,6 +370,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateAdSchedules;
+
+        /**
+         * Import updates to existing ad landing page URLs.
+         * @var boolean
+         */
+        public $UpdateAdUrls;
 
         /**
          * Import updates to existing app extensions.
@@ -402,6 +450,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateEntities;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateImageAdExtensions;
+
+        /**
          * Import updates to existing keyword landing page URLs.
          * @var boolean
          */
@@ -456,7 +510,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateProductFilters;
 
         /**
-         * Reserved.
+         * Import updates to existing promotion extensions.
          * @var boolean
          */
         public $UpdatePromotionAdExtensions;

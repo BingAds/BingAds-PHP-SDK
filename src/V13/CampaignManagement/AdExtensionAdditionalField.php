@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a list of optional ad extension properties that you can request when calling GetAdExtensionsAssociations and GetAdExtensionsByIds.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionadditionalfield?view=bingads-13 AdExtensionAdditionalField Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adextensionadditionalfield?view=bingads-13 AdExtensionAdditionalField Value Set
      * 
      * @used-by GetAdExtensionsAssociationsRequest
      * @used-by GetAdExtensionsByIdsRequest
@@ -23,6 +23,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the latest ActionAdExtensionActionType values be included within each returned ActionAdExtension. */
         const ActionTypesPhase3 = 'ActionTypesPhase3';
+
+        /** Request that the latest ActionAdExtensionActionType values be included within each returned ActionAdExtension. */
+        const ActionTypesPhase4 = 'ActionTypesPhase4';
+
+        /** Reserved. */
+        const NewFilterLinkHeaders = 'NewFilterLinkHeaders';
     }
 
 }

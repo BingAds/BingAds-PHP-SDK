@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Sends an email invitation for a user to sign up for Microsoft Advertising.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/senduserinvitation?view=bingads-13 SendUserInvitation Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/senduserinvitation?view=bingads-13 SendUserInvitation Request Object
      * 
      * @uses UserInvitation
      * @used-by BingAdsCustomerManagementService::SendUserInvitation

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the specified Universal Event Tracking (UET) tags.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getuettagsbyids?view=bingads-13 GetUetTagsByIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getuettagsbyids?view=bingads-13 GetUetTagsByIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetUetTagsByIds
      */

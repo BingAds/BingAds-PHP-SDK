@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an offline conversion that you send to Microsoft Advertising.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/offlineconversion?view=bingads-13 OfflineConversion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/offlineconversion?view=bingads-13 OfflineConversion Data Object
      * 
      * @used-by ApplyOfflineConversionsRequest
      */
@@ -36,16 +36,28 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ConversionValue;
 
         /**
-         * Reserved for future use.
+         * This field can only be set for conversions actions which use external attribution.
          * @var double
          */
         public $ExternalAttributionCredit;
 
         /**
-         * Reserved for future use.
+         * This field can only be set for conversions actions which use external attribution.
          * @var string
          */
         public $ExternalAttributionModel;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $HashedEmailAddress;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $HashedPhoneNumber;
 
         /**
          * The MSCLKID for the offline conversion.

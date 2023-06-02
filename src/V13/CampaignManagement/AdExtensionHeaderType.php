@@ -4,120 +4,135 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionheadertype?view=bingads-13 AdExtensionHeaderType Value Set
+     * Defines the possible types of ad extension headers.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adextensionheadertype?view=bingads-13 AdExtensionHeaderType Value Set
      * 
      * @used-by FilterLinkAdExtension
      */
     final class AdExtensionHeaderType
     {
-        /** Reserved. */
+        /** Reserved for future use. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** Use the translated version of Amenities in the ad extension header. */
         const Amenities = 'Amenities';
 
-        /** Reserved. */
+        /** Use the translated version of Brands in the ad extension header. */
         const Brands = 'Brands';
 
-        /** Reserved. */
+        /** Use the translated version of Classes in the ad extension header. */
         const Classes = 'Classes';
 
-        /** Reserved. */
+        /** Use the translated version of Courses in the ad extension header. */
         const Courses = 'Courses';
 
-        /** Reserved. */
+        /** Use the translated version of DailyRates in the ad extension header. */
         const DailyRates = 'DailyRates';
 
-        /** Reserved. */
+        /** Use the translated version of DegreePrograms in the ad extension header. */
         const DegreePrograms = 'DegreePrograms';
 
-        /** Reserved. */
+        /** Use the translated version of Departments in the ad extension header. */
         const Departments = 'Departments';
 
-        /** Reserved. */
+        /** Use the translated version of Destinations in the ad extension header. */
         const Destinations = 'Destinations';
 
-        /** Reserved. */
+        /** Use the translated version of FeaturedHotels in the ad extension header. */
         const FeaturedHotels = 'FeaturedHotels';
 
-        /** Reserved. */
+        /** Use the translated version of Goods in the ad extension header. */
         const Goods = 'Goods';
 
-        /** Reserved. */
+        /** Use the translated version of Grades in the ad extension header. */
         const Grades = 'Grades';
 
-        /** Reserved. */
+        /** Use the translated version of Highlights in the ad extension header. */
         const Highlights = 'Highlights';
 
-        /** Reserved. */
+        /** Use the translated version of InsuranceCoverage in the ad extension header. */
         const InsuranceCoverage = 'InsuranceCoverage';
 
-        /** Reserved. */
+        /** Use the translated version of Items in the ad extension header. */
         const Items = 'Items';
 
-        /** Reserved. */
+        /** Use the translated version of Languages in the ad extension header. */
         const Languages = 'Languages';
 
-        /** Reserved. */
+        /** Use the translated version of Locations in the ad extension header. */
         const Locations = 'Locations';
 
-        /** Reserved. */
+        /** Use the translated version of Models in the ad extension header. */
         const Models = 'Models';
 
-        /** Reserved. */
+        /** Use the translated version of Neighborhoods in the ad extension header. */
         const Neighborhoods = 'Neighborhoods';
 
-        /** Reserved. */
+        /** Use the translated version of Prices in the ad extension header. */
         const Prices = 'Prices';
 
-        /** Reserved. */
+        /** Use the translated version of Rates in the ad extension header. */
         const Rates = 'Rates';
 
-        /** Reserved. */
+        /** Use the translated version of Ratings in the ad extension header. */
         const Ratings = 'Ratings';
 
-        /** Reserved. */
+        /** Use the translated version of SchoolDistricts in the ad extension header. */
         const SchoolDistricts = 'SchoolDistricts';
 
-        /** Reserved. */
+        /** Use the translated version of Services in the ad extension header. */
         const Services = 'Services';
 
-        /** Reserved. */
+        /** Use the translated version of ServiceCatalog in the ad extension header. */
         const ServiceCatalog = 'ServiceCatalog';
 
-        /** Reserved. */
+        /** Use the translated version of Shows in the ad extension header. */
         const Shows = 'Shows';
 
-        /** Reserved. */
+        /** Use the translated version of Sizes in the ad extension header. */
         const Sizes = 'Sizes';
 
-        /** Reserved. */
+        /** Use the translated version of Styles in the ad extension header. */
         const Styles = 'Styles';
 
-        /** Reserved. */
+        /** Use the translated version of Tools in the ad extension header. */
         const Tools = 'Tools';
 
-        /** Reserved. */
+        /** Use the translated version of Topics in the ad extension header. */
         const Topics = 'Topics';
 
-        /** Reserved. */
+        /** Use the translated version of Types in the ad extension header. */
         const Types = 'Types';
 
-        /** Reserved. */
+        /** Use the translated version of Vacations in the ad extension header. */
         const Vacations = 'Vacations';
 
-        /** Reserved. */
+        /** Use the translated version of Vehicles in the ad extension header. */
         const Vehicles = 'Vehicles';
 
-        /** Reserved. */
+        /** Use the translated version of What in the ad extension header. */
         const What = 'What';
 
-        /** Reserved. */
+        /** Use the translated version of Who in the ad extension header. */
         const Who = 'Who';
 
-        /** Reserved. */
+        /** Use the translated version of Why in the ad extension header. */
         const Why = 'Why';
+
+        /** Use the translated version of Deals in the ad extension header. */
+        const Deals = 'Deals';
+
+        /** Reserved. */
+        const BestSellers = 'BestSellers';
+
+        /** Reserved. */
+        const AgeGroups = 'AgeGroups';
+
+        /** Reserved. */
+        const Occasions = 'Occasions';
+
+        /** Reserved. */
+        const Flowers = 'Flowers';
     }
 
 }

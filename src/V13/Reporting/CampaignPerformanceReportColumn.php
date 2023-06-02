@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the CampaignPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/campaignperformancereportcolumn?view=bingads-13 CampaignPerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/campaignperformancereportcolumn?view=bingads-13 CampaignPerformanceReportColumn Value Set
      * 
      * @used-by CampaignPerformanceReportRequest
      */
@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account currency type. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** The network where you want your ads to show. */
+        /** The network where your ads are shown. */
         const AdDistribution = 'AdDistribution';
 
         /** The number of times an ad has been displayed on search results pages. */
@@ -131,7 +131,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The phone-through rate (Ptr). */
         const Ptr = 'Ptr';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -188,7 +188,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The labels applied to the campaign. */
         const CampaignLabels = 'CampaignLabels';
 
-        /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        /** The estimated percentage of impressions that your account received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
 
         /** The Microsoft Advertising assigned identifier of a customer. */
@@ -200,7 +200,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of clicks that went to your ads. */
         const ClickSharePercent = 'ClickSharePercent';
 
-        /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
+        /** The estimated percentage of times your ad was in the first position of all results, out of the estimated number of first position impressions you were eligible to receive. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
 
         /** A place in your final URL where you can add parameters that will be attached to the end of your landing page URL. */
@@ -224,7 +224,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The percentage of impressions for your ad in the mainline, the top ad placements above the search results, out of the estimated number of mainline impressions you were eligible to receive. */
         const TopImpressionSharePercent = 'TopImpressionSharePercent';
 
-        /** The percentage of times your ad was in the first position of all returned ads, out of the total impressions available in your target market. */
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
         const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
 
         /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
@@ -268,6 +268,60 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The percentage of impression share you lost due to insufficient budget on the Microsoft Audience Network. */
         const AudienceImpressionLostToBudgetPercent = 'AudienceImpressionLostToBudgetPercent';
+
+        /** Your click-through rate divided by the average click-through rate of all ads that appear in the same sections of websites that show your ads. */
+        const RelativeCtr = 'RelativeCtr';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions that originate from low-quality clicks. */
+        const LowQualityConversionsQualified = 'LowQualityConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** The number of times the video was played and watched for at least two continuous seconds with more than 50% of the screen in view. */
+        const VideoViews = 'VideoViews';
+
+        /** The number of video views divided by the number of impressions. */
+        const ViewThroughRate = 'ViewThroughRate';
+
+        /** Average total spend divided by video views. */
+        const AverageCPV = 'AverageCPV';
+
+        /** The number of times a person completed at least 25% of a video. */
+        const VideoViewsAt25Percent = 'VideoViewsAt25Percent';
+
+        /** The number of times a person completed at least 50% of a video. */
+        const VideoViewsAt50Percent = 'VideoViewsAt50Percent';
+
+        /** The number of times a person completed at least 75% of a video. */
+        const VideoViewsAt75Percent = 'VideoViewsAt75Percent';
+
+        /** Number of times a person watched the entire video to completion. */
+        const CompletedVideoViews = 'CompletedVideoViews';
+
+        /** The number of completed video views divided by the number of total video views. */
+        const VideoCompletionRate = 'VideoCompletionRate';
+
+        /** Total amount of time a person spent watching the video in milliseconds. */
+        const TotalWatchTimeInMS = 'TotalWatchTimeInMS';
+
+        /** Total watch time divided by the number of video views. */
+        const AverageWatchTimePerVideoView = 'AverageWatchTimePerVideoView';
+
+        /** Total watch time, in milliseconds, divided by the number of impressions. */
+        const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
     }
 
 }

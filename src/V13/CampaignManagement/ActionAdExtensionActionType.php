@@ -5,13 +5,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible options for action text that can be displayed in an action ad extension.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/actionadextensionactiontype?view=bingads-13 ActionAdExtensionActionType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/actionadextensionactiontype?view=bingads-13 ActionAdExtensionActionType Value Set
      * 
      * @used-by ActionAdExtension
      */
     final class ActionAdExtensionActionType
     {
-        /** The action type is either RenewNow or Reorder. */
+        /** The action type is BuildNow, Dealers, GetDemo, GetNow, GoToDemo, RenewNow, Reorder, SeeDemo, SeeModels, SeeOffers, or ViewDemo. */
         const Unknown = 'Unknown';
 
         /** Use the translated version of ActNow in the action ad extension. */
@@ -226,6 +226,33 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Use the translated version of Reorder in the action ad extension. */
         const Reorder = 'Reorder';
+
+        /** Use the translated version of BuildNow in the action ad extension. */
+        const BuildNow = 'BuildNow';
+
+        /** Use the translated version of Dealers in the action ad extension. */
+        const Dealers = 'Dealers';
+
+        /** Use the translated version of GetDemo in the action ad extension. */
+        const GetDemo = 'GetDemo';
+
+        /** Use the translated version of GetNow in the action ad extension. */
+        const GetNow = 'GetNow';
+
+        /** Use the translated version of GoToDemo in the action ad extension. */
+        const GoToDemo = 'GoToDemo';
+
+        /** Use the translated version of SeeDemo in the action ad extension. */
+        const SeeDemo = 'SeeDemo';
+
+        /** Use the translated version of SeeModels in the action ad extension. */
+        const SeeModels = 'SeeModels';
+
+        /** Use the translated version of SeeOffers in the action ad extension. */
+        const SeeOffers = 'SeeOffers';
+
+        /** Use the translated version of ViewDemo in the action ad extension. */
+        const ViewDemo = 'ViewDemo';
     }
 
 }

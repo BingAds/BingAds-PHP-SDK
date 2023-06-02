@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains estimates of clicks, cost, and impressions  given the suggested bid.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/bidlandscapepoint?view=bingads-13 BidLandscapePoint Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/bidlandscapepoint?view=bingads-13 BidLandscapePoint Data Object
      * 
      * @uses CurrencyCode
      * @used-by AdGroupBidLandscape

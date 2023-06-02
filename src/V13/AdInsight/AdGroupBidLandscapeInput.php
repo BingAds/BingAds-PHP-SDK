@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains the requested bid landscape type for the corresponding ad group identifier.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/adgroupbidlandscapeinput?view=bingads-13 AdGroupBidLandscapeInput Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/adgroupbidlandscapeinput?view=bingads-13 AdGroupBidLandscapeInput Data Object
      * 
      * @uses AdGroupBidLandscapeType
      * @used-by GetBidLandscapeByAdGroupIdsRequest

@@ -13,9 +13,9 @@ abstract class IOAuthService
      * 
      * @param OAuthRequestParameters $oauthRequestParameters
      * @param ApiEnvironment $environment
-     * @param bool $requireLiveConnect
+     * @param OAuthScope $oauthScope
      * @param string $tenant
      * @param array $additionalParams
      */
-    abstract function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $requireLiveConnect, $tenant, $additionalParams);
+    abstract function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $oauthScope, $tenant, $additionalParams);
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the set of accounts and campaigns to include in the report.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/accountthroughcampaignreportscope?view=bingads-13 AccountThroughCampaignReportScope Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/accountthroughcampaignreportscope?view=bingads-13 AccountThroughCampaignReportScope Data Object
      * 
      * @uses CampaignReportScope
      * @used-by BudgetSummaryReportRequest

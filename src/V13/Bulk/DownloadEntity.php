@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Defines the entities that may be downloaded and uploaded in bulk.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/downloadentity?view=bingads-13 DownloadEntity Value Set
+     * @link https:/learn.microsoft.com/advertising/bulk-service/downloadentity?view=bingads-13 DownloadEntity Value Set
      * 
      * @used-by DownloadCampaignsByAccountIdsRequest
      * @used-by DownloadCampaignsByCampaignIdsRequest
@@ -381,17 +381,86 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign Negative Customer List Association records in the download that each represent the association relationship between a campaign and a customer list exclusion. */
         const CampaignNegativeCustomerListAssociations = 'CampaignNegativeCustomerListAssociations';
 
-        /** Reserved. */
+        /** Include Filter Link Ad Extension records in the download data. */
         const FilterLinkAdExtensions = 'FilterLinkAdExtensions';
 
-        /** Reserved. */
+        /** Include Account Filter Link Ad Extension records in the download that represents the association relationship between an account and a filter link ad extension. */
         const AccountFilterLinkAdExtensions = 'AccountFilterLinkAdExtensions';
 
-        /** Reserved. */
+        /** Include Campaign Filter Link Ad Extension records in the download that represents the association relationship between a campaign and a filter link ad extension. */
         const CampaignFilterLinkAdExtensions = 'CampaignFilterLinkAdExtensions';
 
-        /** Reserved. */
+        /** Include Ad Group Filter Link Ad Extension records in the download that each represent the association relationship between an ad group and a filter link ad extension. */
         const AdGroupFilterLinkAdExtensions = 'AdGroupFilterLinkAdExtensions';
+
+        /** Include Flyer Ad Extension records in the download data. */
+        const FlyerAdExtensions = 'FlyerAdExtensions';
+
+        /** Include Account Flyer Ad Extension records in the download that represents the association relationship between an account and a flyer ad extension. */
+        const AccountFlyerAdExtensions = 'AccountFlyerAdExtensions';
+
+        /** Include Campaign Flyer Ad Extension records in the download that represents the association relationship between a campaign and a flyer ad extension. */
+        const CampaignFlyerAdExtensions = 'CampaignFlyerAdExtensions';
+
+        /** Include Ad Group Flyer Ad Extension records in the download that each represent the association relationship between an ad group and a flyer ad extension. */
+        const AdGroupFlyerAdExtensions = 'AdGroupFlyerAdExtensions';
+
+        /** Include Bid Strategy records in the download data. */
+        const BidStrategies = 'BidStrategies';
+
+        /** Include Video Ad Extension records in the download data. */
+        const VideoAdExtensions = 'VideoAdExtensions';
+
+        /** Include Account Video Ad Extension records in the download that represents the association relationship between an account and a video ad extension. */
+        const AccountVideoAdExtensions = 'AccountVideoAdExtensions';
+
+        /** Include Campaign Video Ad Extension records in the download that represents the association relationship between a campaign and a video ad extension. */
+        const CampaignVideoAdExtensions = 'CampaignVideoAdExtensions';
+
+        /** Include Ad Group Video Ad Extension records in the download that each represent the association relationship between an ad group and a video ad extension. */
+        const AdGroupVideoAdExtensions = 'AdGroupVideoAdExtensions';
+
+        /** Include Video records in the download data. */
+        const Videos = 'Videos';
+
+        /** Include Disclaimer Ad Extension records in the download data. */
+        const DisclaimerAdExtensions = 'DisclaimerAdExtensions';
+
+        /** Include Campaign Disclaimer Ad Extension records in the download that represents the association relationship between a campaign and a disclaimer ad extension. */
+        const CampaignDisclaimerAdExtensions = 'CampaignDisclaimerAdExtensions';
+
+        /** Reserved. */
+        const AdcustomizerAttribute = 'AdcustomizerAttribute';
+
+        /** Reserved. */
+        const CampaignAdcustomizerAttribute = 'CampaignAdcustomizerAttribute';
+
+        /** Reserved. */
+        const AdGroupAdcustomizerAttribute = 'AdGroupAdcustomizerAttribute';
+
+        /** Reserved. */
+        const KeywordAdcustomizerAttribute = 'KeywordAdcustomizerAttribute';
+
+        /** Include Campaign level conversion goal records in the download data. */
+        const CampaignConversionGoal = 'CampaignConversionGoal';
+
+        /** Reserved. */
+        const AdGroupHotelListingGroups = 'AdGroupHotelListingGroups';
+
+        /** Reserved. */
+        const AssetGroups = 'AssetGroups';
+
+        /** Reserved. */
+        const AudienceGroups = 'AudienceGroups';
+
+        /** Reserved. */
+        const CampaignNegativeWebpages = 'CampaignNegativeWebpages';
+
+        /** Reserved. */
+        const AudienceGroupAssetGroupAssociations = 'AudienceGroupAssetGroupAssociations';
+
+        /** Reserved. */
+        const AssetGroupListingGroups = 'AssetGroupListingGroups';
     }
 
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines the ascending or descending sort order of results for one of the search operations, for example SearchAccounts, SearchClientLinks, or SearchCustomers.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/sortorder?view=bingads-13 SortOrder Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/sortorder?view=bingads-13 SortOrder Value Set
      * 
      * @used-by OrderBy
      */

@@ -4,12 +4,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/keyvaluepairofstringstring?view=bingads-13 KeyValuePairOfstringstring Data Object
+     * The key and value pair of string and string values defined by the Campaign Management service.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/keyvaluepairofstringstring?view=bingads-13 KeyValuePairOfstringstring Data Object
      * 
      * @used-by Ad
      * @used-by AdExtension
      * @used-by AdGroup
+     * @used-by AssetGroup
      * @used-by Audience
      * @used-by BatchError
      * @used-by BatchErrorCollection
@@ -20,6 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by Keyword
      * @used-by SharedEntity
      * @used-by SharedListItem
+     * @used-by VerifiedTrackingSetting
      */
     final class KeyValuePairOfstringstring
     {

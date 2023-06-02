@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AdExtensionByAdReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adextensionbyadreportcolumn?view=bingads-13 AdExtensionByAdReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/adextensionbyadreportcolumn?view=bingads-13 AdExtensionByAdReportColumn Value Set
      * 
      * @used-by AdExtensionByAdReportRequest
      */
@@ -89,7 +89,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -160,6 +160,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
     }
 
 }

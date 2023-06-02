@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Gets the identifiers and names of customers that are accessible to the current authenticated user.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getcustomersinfo?view=bingads-13 GetCustomersInfo Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/getcustomersinfo?view=bingads-13 GetCustomersInfo Request Object
      * 
      * @used-by BingAdsCustomerManagementService::GetCustomersInfo
      */

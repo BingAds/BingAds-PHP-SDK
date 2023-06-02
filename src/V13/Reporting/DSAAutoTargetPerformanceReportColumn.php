@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the DSAAutoTargetPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/dsaautotargetperformancereportcolumn?view=bingads-13 DSAAutoTargetPerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/dsaautotargetperformancereportcolumn?view=bingads-13 DSAAutoTargetPerformanceReportColumn Value Set
      * 
      * @used-by DSAAutoTargetPerformanceReportRequest
      */
@@ -47,10 +47,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -154,6 +154,30 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
+        const TopImpressionRatePercent = 'TopImpressionRatePercent';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The Microsoft Advertising assigned identifier of an ad. */
+        const AdId = 'AdId';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines conversion goal revenue models that you can use to track how much each conversion is worth to your business.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoalrevenuetype?view=bingads-13 ConversionGoalRevenueType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversiongoalrevenuetype?view=bingads-13 ConversionGoalRevenueType Value Set
      * 
      * @used-by ConversionGoalRevenue
      */

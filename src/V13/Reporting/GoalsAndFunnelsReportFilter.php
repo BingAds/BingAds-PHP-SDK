@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the goals and funnels report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/goalsandfunnelsreportfilter?view=bingads-13 GoalsAndFunnelsReportFilter Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/goalsandfunnelsreportfilter?view=bingads-13 GoalsAndFunnelsReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

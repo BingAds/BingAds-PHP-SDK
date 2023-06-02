@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a DSA category performance report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/dsacategoryperformancereportrequest?view=bingads-13 DSACategoryPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/dsacategoryperformancereportrequest?view=bingads-13 DSACategoryPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses DSACategoryPerformanceReportColumn

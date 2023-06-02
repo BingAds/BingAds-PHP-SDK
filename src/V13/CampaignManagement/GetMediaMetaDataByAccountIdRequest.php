@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the media meta data of the specified entity type from an account's media library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getmediametadatabyaccountid?view=bingads-13 GetMediaMetaDataByAccountId Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getmediametadatabyaccountid?view=bingads-13 GetMediaMetaDataByAccountId Request Object
      * 
      * @uses MediaEnabledEntityFilter
      * @uses Paging

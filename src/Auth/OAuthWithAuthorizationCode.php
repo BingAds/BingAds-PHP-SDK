@@ -62,7 +62,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         return UriOAuthService::GetAuthorizationEndpoint(
             $oauthUrlParameters, 
             $this->Environment, 
-            $this->RequireLiveConnect, 
+            $this->OAuthScope, 
             $this->Tenant);
     }
  
@@ -115,7 +115,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         $this->OAuthTokens = $this->oauthService->GetAccessTokens(
             $oauthRequestParameters, 
             $this->Environment, 
-            $this->RequireLiveConnect,
+            $this->OAuthScope,
             $this->Tenant,
             $additionalParams
         ); 
@@ -150,7 +150,7 @@ abstract class OAuthWithAuthorizationCode extends OAuthAuthorization {
         $this->OAuthTokens = $this->oauthService->GetAccessTokens(
             $oauthRequestParameters, 
             $this->Environment, 
-            $this->RequireLiveConnect,
+            $this->OAuthScope,
             $this->Tenant,
             $additionalParams
         ); 

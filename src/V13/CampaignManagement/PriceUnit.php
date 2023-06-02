@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines price units for price ad extensions.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/priceunit?view=bingads-13 PriceUnit Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/priceunit?view=bingads-13 PriceUnit Value Set
      * 
      * @used-by PriceTableRow
      */

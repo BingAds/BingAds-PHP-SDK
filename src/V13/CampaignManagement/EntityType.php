@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the possible types of entities.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/entitytype?view=bingads-13 EntityType Value Set
+     * Defines entity types for association and editorial service operations.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/entitytype?view=bingads-13 EntityType Value Set
      * 
      * @used-by AppealEditorialRejectionsRequest
      * @used-by DeleteLabelAssociationsRequest
@@ -16,16 +16,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class EntityType
     {
-        /** Reserved for future use. */
+        /** The entity is a campaign. */
         const Campaign = 'Campaign';
 
-        /** Reserved for future use. */
+        /** The entity is an ad group. */
         const AdGroup = 'AdGroup';
 
-        /** Request editorial appeal or status for ads. */
+        /** The entity is an ad. */
         const Ad = 'Ad';
 
-        /** Request editorial appeal or status for keywords. */
+        /** The entity is a keyword. */
         const Keyword = 'Keyword';
     }
 

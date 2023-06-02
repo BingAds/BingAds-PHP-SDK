@@ -1,4 +1,4 @@
-<?php
+php
 
 namespace Microsoft\BingAds\Auth;
 
@@ -31,6 +31,7 @@ class ServiceClient
 	private $service;
 	private $namespace;
 	private $apiEnvironment;
+	private $options;
 
 	private $sandboxServiceClientEndpoints = array(
 		ServiceClientType::AdInsightVersion13 => AdInsightServiceSettingsVersion13::SandboxEndpoint,
@@ -83,7 +84,7 @@ class ServiceClient
 		return '<long>' . $longVal . '</long>';
 	}
 
-	public function __construct($serviceClientType, $authorizationData, $apiEnvironment)
+	public function __construct($serviceClientType, $authorizationData, $apiEnvironment, $options = array())
 	{
 		// The sandbox environment is used unless the Production environment is explicitly set.
         
@@ -102,6 +103,7 @@ class ServiceClient
  
         $this->apiEnvironment = $apiEnvironment;
 		$this->namespace = $this->serviceClientNamespaces[$serviceClientType];
+		$this->options = $options;
 
 		$this->SetAuthorizationData($authorizationData);
 		
@@ -234,13 +236,14 @@ class ServiceClient
 		 * To force PHP to always return an array for an array type in the
 		 * response, specify the SOAP_SINGLE_ELEMENT_ARRAYS feature.
          */ 
-		$options = array(
+		$default_options = array(
 			'trace' => TRUE,
 			'exceptions' => TRUE,
 			'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
-			// Disable keep-alive to avoid 'Process open FD table is full'
-			'keep-alive' => FALSE, 
-			'user_agent' => 'BingAdsSDKPHP ' . '13.0.1 ' . PHP_VERSION, 
+			// Disable keep_alive to avoid 'Process open FD table is full'
+			'keep_alive' => FALSE, 
+			'user_agent' => 'BingAdsSDKPHP ' . '13.0.16 ' . PHP_VERSION, 
+			'cache_wsdl' => 'WSDL_CACHE_NONE',
 
 			/** 
 			 * Map long type to string type. For details, see
@@ -256,7 +259,9 @@ class ServiceClient
 			)
 		);
 
-		$proxy = @new SOAPClient($this->wsdlUrl, $options);
+		$mergedOptions = array_merge($default_options, $this->options);
+
+		$proxy = @new SOAPClient($this->wsdlUrl, $mergedOptions);
 
 		$proxy->__setSoapHeaders($headers);
 

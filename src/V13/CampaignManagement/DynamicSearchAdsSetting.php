@@ -4,18 +4,24 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the campaign level settings for a Dynamic Search Ads campaign.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/dynamicsearchadssetting?view=bingads-13 DynamicSearchAdsSetting Data Object
+     * Defines the Dynamic Search Ads setting for a campaign.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/dynamicsearchadssetting?view=bingads-13 DynamicSearchAdsSetting Data Object
      * 
      * @uses DynamicSearchAdsSource
      */
     final class DynamicSearchAdsSetting extends Setting
     {
         /**
-         * The domain name of the website that you want to target for dynamic search ads.
+         * Reserved.
          * @var string
          */
         public $DomainName;
+
+        /**
+         * Determines whether to automatically generate dynamic search ad text in addition to the ad text you provide.
+         * @var boolean
+         */
+        public $DynamicDescriptionEnabled;
 
         /**
          * The language of the website pages that you want to target for dynamic search ads.

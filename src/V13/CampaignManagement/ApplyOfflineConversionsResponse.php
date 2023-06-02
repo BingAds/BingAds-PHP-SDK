@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Applies offline conversions for the account with Microsoft Click Id among other offline conversion data.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/applyofflineconversions?view=bingads-13 ApplyOfflineConversions Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/applyofflineconversions?view=bingads-13 ApplyOfflineConversions Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::ApplyOfflineConversions

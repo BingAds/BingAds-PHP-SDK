@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the relationship and editorial status of an ad extension with an account, campaign, or ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionassociation?view=bingads-13 AdExtensionAssociation Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adextensionassociation?view=bingads-13 AdExtensionAssociation Data Object
      * 
      * @uses AdExtension
      * @uses AssociationType

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a destination URL performance report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/destinationurlperformancereportrequest?view=bingads-13 DestinationUrlPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/destinationurlperformancereportrequest?view=bingads-13 DestinationUrlPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses DestinationUrlPerformanceReportColumn

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the specified campaigns within an account.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getcampaignsbyids?view=bingads-13 GetCampaignsByIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getcampaignsbyids?view=bingads-13 GetCampaignsByIds Request Object
      * 
      * @uses CampaignType
      * @uses CampaignAdditionalField

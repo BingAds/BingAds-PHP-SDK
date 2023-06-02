@@ -5,13 +5,14 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the base object of an import job.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/importjob?view=bingads-13 ImportJob Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/importjob?view=bingads-13 ImportJob Data Object
      * 
      * @uses Frequency
      * @uses ImportOption
      * @used-by ImportResult
      * @used-by AddImportJobsRequest
      * @used-by GetImportJobsByIdsResponse
+     * @used-by UpdateImportJobsRequest
      */
     class ImportJob
     {
@@ -62,6 +63,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Name;
+
+        /**
+         * The email address where import results should be sent.
+         * @var string
+         */
+        public $NotificationEmail;
 
         /**
          * Determines whether and how often you want to receive email notifications about the import job results.

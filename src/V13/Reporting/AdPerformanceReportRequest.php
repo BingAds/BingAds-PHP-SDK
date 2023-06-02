@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines an ad performance report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adperformancereportrequest?view=bingads-13 AdPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/adperformancereportrequest?view=bingads-13 AdPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AdPerformanceReportColumn

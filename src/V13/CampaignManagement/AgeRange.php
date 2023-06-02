@@ -5,9 +5,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible age range values that you can use to target ads to people.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/agerange?view=bingads-13 AgeRange Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/agerange?view=bingads-13 AgeRange Value Set
      * 
      * @used-by AgeCriterion
+     * @used-by AgeDimension
      */
     final class AgeRange
     {

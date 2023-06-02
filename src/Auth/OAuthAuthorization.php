@@ -32,10 +32,10 @@ abstract class OAuthAuthorization extends Authentication
     public $Environment = ApiEnvironment::Production;
 
     /** 
-     * Determines whether or not to require Live Connect instead of MS Identity in production.
-     * @var bool
+     * Determines the scope used for OAuth authorization .
+     * @var OAuthScope
      */
-    public $RequireLiveConnect = false;
+    public $OAuthScope = OAuthScope::MSADS_MANAGE;
 
     /** 
      * Optional custom AAD tenant for MS Identity in production.
@@ -97,19 +97,19 @@ abstract class OAuthAuthorization extends Authentication
      */
     public function withEnvironment($environment) {
         $this->Environment = $environment;
-        $this->RedirectUri=UriOAuthService::GetRedirectUrl($environment, $this->RequireLiveConnect);
+        $this->RedirectUri=UriOAuthService::GetRedirectUrl($environment, $this->OAuthScope);
         return $this;
     }
 
     /** 
-     * Includes the require Live Connect flag. 
+     * Includes the OAuthScope. 
      *
-     * @param string $requireLiveConnect
+     * @param OAuthScope $oauthScope
      * @return OAuthAuthorization this builder
      */
-    public function withRequireLiveConnect($requireLiveConnect) {
-        $this->RequireLiveConnect = $requireLiveConnect;
-        $this->RedirectUri=UriOAuthService::GetRedirectUrl($this->Environment, $requireLiveConnect);
+    public function withOAuthScope($oauthScope) {
+        $this->OAuthScope = $oauthScope;
+        $this->RedirectUri=UriOAuthService::GetRedirectUrl($this->Environment, $oauthScope);
         return $this;
     }
     

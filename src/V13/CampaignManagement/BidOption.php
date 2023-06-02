@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Determines whether or not to amplify your partner's bid.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/bidoption?view=bingads-13 BidOption Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/bidoption?view=bingads-13 BidOption Value Set
      * 
      * @used-by CoOpSetting
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the GeographicPerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/geographicperformancereportcolumn?view=bingads-13 GeographicPerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/geographicperformancereportcolumn?view=bingads-13 GeographicPerformanceReportColumn Value Set
      * 
      * @used-by GeographicPerformanceReportRequest
      */
@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area (Nielsen DMA? in the United States) where the user was physically located when they clicked the ad. */
+        /** The metro area (Nielsen DMA&reg; in the United States) where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
         /** The city where the user was physically located when they clicked the ad. */
@@ -77,7 +77,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The radius of a radius target bid. */
         const Radius = 'Radius';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The keyword bid match type. */
@@ -86,7 +86,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -178,6 +178,30 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
+        const TopImpressionRatePercent = 'TopImpressionRatePercent';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The neighborhood where an ad was physically served, or the neighborhood that your customer had shown interest in through searches or content they had viewed. */
+        const Neighborhood = 'Neighborhood';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the possible values that indicate whether all or a subset of an ad group's existing keywords are used to determine the bid landscape.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/adgroupbidlandscapetype?view=bingads-13 AdGroupBidLandscapeType Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/adgroupbidlandscapetype?view=bingads-13 AdGroupBidLandscapeType Value Set
      * 
      * @used-by AdGroupBidLandscape
      * @used-by AdGroupBidLandscapeInput

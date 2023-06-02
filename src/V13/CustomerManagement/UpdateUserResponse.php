@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Updates the personal and business contact information about a Microsoft Advertising user.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/updateuser?view=bingads-13 UpdateUser Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/updateuser?view=bingads-13 UpdateUser Response Object
      * 
      * @used-by BingAdsCustomerManagementService::UpdateUser
      */

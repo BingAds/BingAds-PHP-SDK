@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Creates a new account within an existing customer.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/addaccount?view=bingads-13 AddAccount Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/addaccount?view=bingads-13 AddAccount Response Object
      * 
      * @used-by BingAdsCustomerManagementService::AddAccount
      */
@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $AccountId;
 
         /**
-         * A system-generated account number that is used to identify the account in the Microsoft Advertising web application.
+         * The system-generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;

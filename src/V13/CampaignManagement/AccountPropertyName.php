@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the name of account level properties.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/accountpropertyname?view=bingads-13 AccountPropertyName Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/accountpropertyname?view=bingads-13 AccountPropertyName Value Set
      * 
      * @used-by AccountProperty
      * @used-by GetAccountPropertiesRequest
@@ -32,6 +32,30 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Used to get or set the property that determines whether LinkedIn profile targeting expansion is enabled for the account. */
         const ProfileExpansionEnabled = 'ProfileExpansionEnabled';
+
+        /** Used to get or set the property that determines whether Microsoft Advertising is allowed to use images from your domain to enhance your ads on the Microsoft Audience Network. */
+        const AllowImageAutoRetrieve = 'AllowImageAutoRetrieve';
+
+        /** Used to get or set the property that determines whether Microsoft Advertising is allowed to automatically apply ad recommendations meant to help you boost ad performance. */
+        const AutoApplyRecommendations = 'AutoApplyRecommendations';
+
+        /** Reserved. */
+        const IncludeAutoBiddingViewThroughConversions = 'IncludeAutoBiddingViewThroughConversions';
+
+        /** Reserved. */
+        const AutoBiddingViewThroughConversionsValueAttributionWeight = 'AutoBiddingViewThroughConversionsValueAttributionWeight';
+
+        /** Reserved. */
+        const LoopBackWindowForViewThroughConversions = 'LoopBackWindowForViewThroughConversions';
+
+        /** Used to get or set the property that determines the account's business attributes meant to help you boost ad performance. */
+        const BusinessAttributes = 'BusinessAttributes';
+
+        /** Reserved. */
+        const EnableMMAUnderDSAAdgroups = 'EnableMMAUnderDSAAdgroups';
+
+        /** Reserved. */
+        const OptOutFromMCM = 'OptOutFromMCM';
     }
 
 }

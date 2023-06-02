@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the historical performance of the normalized search term.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/gethistoricalkeywordperformance?view=bingads-13 GetHistoricalKeywordPerformance Response Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/gethistoricalkeywordperformance?view=bingads-13 GetHistoricalKeywordPerformance Response Object
      * 
      * @uses KeywordHistoricalPerformance
      * @used-by BingAdsAdInsightService::GetHistoricalKeywordPerformance

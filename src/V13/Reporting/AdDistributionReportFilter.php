@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the ad distribution medium values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/addistributionreportfilter?view=bingads-13 AdDistributionReportFilter Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/addistributionreportfilter?view=bingads-13 AdDistributionReportFilter Value Set
      * 
      * @used-by AccountPerformanceReportFilter
      * @used-by AdDynamicTextPerformanceReportFilter

@@ -8,6 +8,11 @@ namespace Microsoft\BingAds\Auth;
 final class OAuthEndpointType
 {
     /** 
+     * Production for MS Identity V2 with new MSADS scope
+     */
+    const ProductionMSIdentityV2_MSScope = 'ProductionMSIdentityV2_MSScope';
+
+    /** 
      * Production for MS Identity V2 
      */
     const ProductionMSIdentityV2 = 'ProductionMSIdentityV2';
@@ -20,5 +25,5 @@ final class OAuthEndpointType
     /** 
      * Sandbox for Live Connect
      */
-    const SandboxLiveConnect = 'SandboxLiveConnect';
+    const Sandbox = 'Sandbox';
 }

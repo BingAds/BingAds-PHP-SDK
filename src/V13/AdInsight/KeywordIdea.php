@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an object that contains a suggested keyword with historical statistics, like monthly search volume, competition, suggested minimum bid, and ad impression share.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordidea?view=bingads-13 KeywordIdea Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/keywordidea?view=bingads-13 KeywordIdea Data Object
      * 
      * @uses CompetitionLevel
      * @uses SourceType

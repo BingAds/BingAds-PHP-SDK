@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines an auction insight key performance indicator.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/auctioninsightkpi?view=bingads-13 AuctionInsightKpi Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/auctioninsightkpi?view=bingads-13 AuctionInsightKpi Data Object
      * 
      * @used-by AuctionInsightEntry
      */
@@ -52,6 +52,12 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var double
          */
         public $OutrankingShare;
+
+        /**
+         * The number of times an ad is shown as the very first ad above the organic search results, divided by the total number of impressions it actually received.
+         * @var double
+         */
+        public $AbsoluteTopOfPageRate;
     }
 
 }

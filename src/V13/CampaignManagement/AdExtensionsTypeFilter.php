@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible ad extension types.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionstypefilter?view=bingads-13 AdExtensionsTypeFilter Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adextensionstypefilter?view=bingads-13 AdExtensionsTypeFilter Value Set
      * 
      * @used-by GetAdExtensionIdsByAccountIdRequest
      * @used-by GetAdExtensionsAssociationsRequest
@@ -46,8 +46,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** An ad extension that highlights special sales and offers in your text ads. */
         const PromotionAdExtension = 'PromotionAdExtension';
 
-        /** Reserved. */
+        /** An ad extension that pairs one header with between 3 and 10 clickable text values that tell customers more about your business. */
         const FilterLinkAdExtension = 'FilterLinkAdExtension';
+
+        /** An ad extension that enables advertisers to distribute product or store catalogues (flyers) to potential customers. */
+        const FlyerAdExtension = 'FlyerAdExtension';
+
+        /** An ad extension with a video and call-to-action button. */
+        const VideoAdExtension = 'VideoAdExtension';
+
+        /** Reserved. */
+        const DisclaimerAdExtension = 'DisclaimerAdExtension';
     }
 
 }

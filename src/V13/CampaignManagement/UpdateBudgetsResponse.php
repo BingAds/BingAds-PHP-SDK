@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Updates the specified budgets in the account's shared budget library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/updatebudgets?view=bingads-13 UpdateBudgets Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatebudgets?view=bingads-13 UpdateBudgets Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::UpdateBudgets

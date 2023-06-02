@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the age and gender of users who have searched for the specified keywords.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getkeyworddemographics?view=bingads-13 GetKeywordDemographics Request Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getkeyworddemographics?view=bingads-13 GetKeywordDemographics Request Object
      * 
      * @used-by BingAdsAdInsightService::GetKeywordDemographics
      */
@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $PublisherCountry;
 
         /**
-         * A list of one or more of the following device types: Computers, NonSmartphones, Smartphones, Tablets.
+         * An array of devices for which you want to get demographics data.
          * @var string[]
          */
         public $Device;

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a nested list of error object that identifies one of potentially many reasons why an entity failed editorial review.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/editorialerrorcollection?view=bingads-13 EditorialErrorCollection Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/editorialerrorcollection?view=bingads-13 EditorialErrorCollection Data Object
      */
     final class EditorialErrorCollection extends BatchErrorCollection
     {

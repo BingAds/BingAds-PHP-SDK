@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the campaign status values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/campaignstatusreportfilter?view=bingads-13 CampaignStatusReportFilter Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/campaignstatusreportfilter?view=bingads-13 CampaignStatusReportFilter Value Set
      * 
      * @used-by AdExtensionByAdReportFilter
      * @used-by AdExtensionByKeywordReportFilter
@@ -23,6 +23,8 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by DSASearchQueryPerformanceReportFilter
      * @used-by GeographicPerformanceReportFilter
      * @used-by GoalsAndFunnelsReportFilter
+     * @used-by HotelDimensionPerformanceReportFilter
+     * @used-by HotelGroupPerformanceReportFilter
      * @used-by KeywordPerformanceReportFilter
      * @used-by NegativeKeywordConflictReportFilter
      * @used-by ProductDimensionPerformanceReportFilter

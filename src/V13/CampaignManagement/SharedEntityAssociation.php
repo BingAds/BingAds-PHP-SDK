@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that associates a campaign to negative keyword list, or an ad account to a website exclusion list.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/sharedentityassociation?view=bingads-13 SharedEntityAssociation Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/sharedentityassociation?view=bingads-13 SharedEntityAssociation Data Object
      * 
      * @used-by DeleteSharedEntityAssociationsRequest
      * @used-by GetSharedEntityAssociationsByEntityIdsResponse

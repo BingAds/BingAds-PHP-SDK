@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines the possible formats of the body of an email message.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/emailformat?view=bingads-13 EmailFormat Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/emailformat?view=bingads-13 EmailFormat Value Set
      * 
      * @used-by ContactInfo
      */

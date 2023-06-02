@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible ad group criterion status values.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroupcriterionstatus?view=bingads-13 AdGroupCriterionStatus Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adgroupcriterionstatus?view=bingads-13 AdGroupCriterionStatus Value Set
      * 
      * @used-by AdGroupCriterion
      */

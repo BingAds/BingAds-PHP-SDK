@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an ad extension that includes between 3 and 8 price table rows.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/priceadextension?view=bingads-13 PriceAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/priceadextension?view=bingads-13 PriceAdExtension Data Object
      * 
      * @uses PriceExtensionType
      * @uses PriceTableRow

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the device type values that you can use to filter the report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/devicetypereportfilter?view=bingads-13 DeviceTypeReportFilter Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/devicetypereportfilter?view=bingads-13 DeviceTypeReportFilter Value Set
      * 
      * @used-by AccountPerformanceReportFilter
      * @used-by AdDynamicTextPerformanceReportFilter
@@ -18,6 +18,8 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by ConversionPerformanceReportFilter
      * @used-by DestinationUrlPerformanceReportFilter
      * @used-by GoalsAndFunnelsReportFilter
+     * @used-by HotelDimensionPerformanceReportFilter
+     * @used-by HotelGroupPerformanceReportFilter
      * @used-by KeywordPerformanceReportFilter
      * @used-by ProductDimensionPerformanceReportFilter
      * @used-by ProductPartitionPerformanceReportFilter

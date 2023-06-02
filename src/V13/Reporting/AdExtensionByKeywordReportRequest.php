@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines an ad extension by keyword report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/adextensionbykeywordreportrequest?view=bingads-13 AdExtensionByKeywordReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/adextensionbykeywordreportrequest?view=bingads-13 AdExtensionByKeywordReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses AdExtensionByKeywordReportColumn

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets labels by label identifiers.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getlabelsbyids?view=bingads-13 GetLabelsByIds Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getlabelsbyids?view=bingads-13 GetLabelsByIds Request Object
      * 
      * @uses Paging
      * @used-by BingAdsCampaignManagementService::GetLabelsByIds

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that associates an ad extension to a supported entity, for example ad group or campaign.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adextensionidtoentityidassociation?view=bingads-13 AdExtensionIdToEntityIdAssociation Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adextensionidtoentityidassociation?view=bingads-13 AdExtensionIdToEntityIdAssociation Data Object
      * 
      * @used-by DeleteAdExtensionsAssociationsRequest
      * @used-by GetAdExtensionsEditorialReasonsRequest

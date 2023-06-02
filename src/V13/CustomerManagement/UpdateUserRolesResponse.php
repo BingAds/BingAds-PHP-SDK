@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Updates the roles of the specified user.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/updateuserroles?view=bingads-13 UpdateUserRoles Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/updateuserroles?view=bingads-13 UpdateUserRoles Response Object
      * 
      * @used-by BingAdsCustomerManagementService::UpdateUserRoles
      */

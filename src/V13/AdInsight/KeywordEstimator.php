@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Contains a keyword estimators with your keyword level filter criteria for traffic estimates.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keywordestimator?view=bingads-13 KeywordEstimator Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/keywordestimator?view=bingads-13 KeywordEstimator Data Object
      * 
      * @uses Keyword
      * @used-by AdGroupEstimator

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users within the radius of a specific geographical location.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/radiuscriterion?view=bingads-13 RadiusCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/radiuscriterion?view=bingads-13 RadiusCriterion Data Object
      * 
      * @uses DistanceUnit
      */

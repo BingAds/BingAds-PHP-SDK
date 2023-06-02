@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ProfessionalDemographicsAudienceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/professionaldemographicsaudiencereportcolumn?view=bingads-13 ProfessionalDemographicsAudienceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/professionaldemographicsaudiencereportcolumn?view=bingads-13 ProfessionalDemographicsAudienceReportColumn Value Set
      * 
      * @used-by ProfessionalDemographicsAudienceReportRequest
      */
@@ -59,7 +59,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** This is the language of the country the ad is served in. */
+        /** This is The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The number of times an entity (an account, campaign, ad group, or keyword, for example) contributed to a conversion that is associated with a different entity. */
@@ -94,6 +94,24 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
+        const TopImpressionRatePercent = 'TopImpressionRatePercent';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }

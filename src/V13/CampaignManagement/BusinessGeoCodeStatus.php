@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible status values that indicate the progress of determining the latitude and longitude values of a business.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/businessgeocodestatus?view=bingads-13 BusinessGeoCodeStatus Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/businessgeocodestatus?view=bingads-13 BusinessGeoCodeStatus Value Set
      * 
      * @used-by LocationAdExtension
      */

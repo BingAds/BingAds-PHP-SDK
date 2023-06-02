@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Defines a fault object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/apifault?view=bingads-13 ApiFault Data Object
+     * Defines a Customer Management API fault detail object that operations return when web service-specific errors occur, such as when the request message contains incomplete or invalid data.
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/apifault?view=bingads-13 ApiFault Data Object
      * 
      * @uses OperationError
      */

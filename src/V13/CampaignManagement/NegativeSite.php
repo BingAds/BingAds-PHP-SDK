@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a website URL where you do not want your ads displayed.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/negativesite?view=bingads-13 NegativeSite Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/negativesite?view=bingads-13 NegativeSite Data Object
      */
     final class NegativeSite extends SharedListItem
     {

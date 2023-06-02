@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible types of price ad extensions.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/priceextensiontype?view=bingads-13 PriceExtensionType Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/priceextensiontype?view=bingads-13 PriceExtensionType Value Set
      * 
      * @used-by PriceAdExtension
      */

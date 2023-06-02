@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a budget summary report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/budgetsummaryreportrequest?view=bingads-13 BudgetSummaryReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/budgetsummaryreportrequest?view=bingads-13 BudgetSummaryReportRequest Data Object
      * 
      * @uses BudgetSummaryReportColumn
      * @uses AccountThroughCampaignReportScope

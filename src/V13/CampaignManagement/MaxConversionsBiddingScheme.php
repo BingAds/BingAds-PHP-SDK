@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that represents the maximum conversions bid strategy type.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/maxconversionsbiddingscheme?view=bingads-13 MaxConversionsBiddingScheme Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/maxconversionsbiddingscheme?view=bingads-13 MaxConversionsBiddingScheme Data Object
      * 
      * @uses Bid
      */
@@ -16,6 +16,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Bid
          */
         public $MaxCpc;
+
+        /**
+         * Reserved.
+         * @var double
+         */
+        public $TargetCpa;
     }
 
 }

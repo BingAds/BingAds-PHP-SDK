@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines a user location performance report request.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/userlocationperformancereportrequest?view=bingads-13 UserLocationPerformanceReportRequest Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/userlocationperformancereportrequest?view=bingads-13 UserLocationPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
      * @uses UserLocationPerformanceReportColumn

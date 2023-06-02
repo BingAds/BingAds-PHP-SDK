@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Searches for customers that match the request criteria.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/searchcustomers?view=bingads-13 SearchCustomers Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/searchcustomers?view=bingads-13 SearchCustomers Request Object
      * 
      * @uses Predicate
      * @uses DateRange

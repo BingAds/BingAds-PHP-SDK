@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a fault object that operations such as AddAdGroupCriterions, UpdateAdGroupCriterions, SetAdExtensionsAssociations, and UpdateAdExtensions return when one or more criterion or ad extensions in your request message fail editorial review.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/editorialapifaultdetail?view=bingads-13 EditorialApiFaultDetail Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/editorialapifaultdetail?view=bingads-13 EditorialApiFaultDetail Data Object
      * 
      * @uses BatchError
      * @uses EditorialError

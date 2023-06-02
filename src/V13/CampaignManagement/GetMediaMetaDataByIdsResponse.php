@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the specified media meta data from an account's media library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getmediametadatabyids?view=bingads-13 GetMediaMetaDataByIds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getmediametadatabyids?view=bingads-13 GetMediaMetaDataByIds Response Object
      * 
      * @uses MediaMetaData
      * @uses BatchError

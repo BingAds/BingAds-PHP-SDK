@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets the list of keyword idea categories.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getkeywordideacategories?view=bingads-13 GetKeywordIdeaCategories Response Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getkeywordideacategories?view=bingads-13 GetKeywordIdeaCategories Response Object
      * 
      * @uses KeywordIdeaCategory
      * @used-by BingAdsAdInsightService::GetKeywordIdeaCategories

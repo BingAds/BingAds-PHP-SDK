@@ -4,14 +4,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines an ad group.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/adgroup?view=bingads-13 AdGroup Data Object
+     * Defines an ad group in an advertising campaign.
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/adgroup?view=bingads-13 AdGroup Data Object
      * 
      * @uses AdRotation
      * @uses BiddingScheme
+     * @uses RateBid
      * @uses Bid
      * @uses Date
      * @uses KeyValuePairOfstringstring
+     * @uses FrequencyCapSettings
      * @uses Network
      * @uses AdGroupPrivacyStatus
      * @uses Setting
@@ -43,6 +45,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BiddingScheme;
 
         /**
+         * Reserved.
+         * @var RateBid
+         */
+        public $CommissionRate;
+
+        /**
          * The default bid to use when the user's query and the ad group's keywords match by using either a broad, exact, or phrase match comparison.
          * @var Bid
          */
@@ -67,6 +75,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
+         * Reserved.
+         * @var FrequencyCapSettings[]
+         */
+        public $FrequencyCapSettings;
+
+        /**
          * The system-generated identifier of the ad group.
          * @var integer
          */
@@ -79,6 +93,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Language;
 
         /**
+         * Reserved.
+         * @var integer
+         */
+        public $MultimediaAdsBidAdjustment;
+
+        /**
          * The name of the ad group.
          * @var string
          */
@@ -89,6 +109,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Network
          */
         public $Network;
+
+        /**
+         * Reserved.
+         * @var RateBid
+         */
+        public $PercentCpcBid;
 
         /**
          * Indicates whether or not your ad group target criteria e.g., ProfileCriterion are too narrow for ad groups in Audience campaigns.
@@ -127,10 +153,40 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UseOptimizedTargeting;
+
+        /**
          * Determines whether to use the account time zone or the time zone of the search user where the ads could be delivered.
          * @var boolean
          */
         public $AdScheduleUseSearcherTimeZone;
+
+        /**
+         * The ad group type.
+         * @var string
+         */
+        public $AdGroupType;
+
+        /**
+         * Reserved.
+         * @var Bid
+         */
+        public $CpvBid;
+
+        /**
+         * Reserved.
+         * @var Bid
+         */
+        public $CpmBid;
+
+        /**
+         * Reserved.
+         * @var Bid
+         */
+        public $McpaBid;
     }
 
 }

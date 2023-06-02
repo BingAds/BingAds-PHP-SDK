@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines possible payment methods for a Microsoft Advertising account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/paymentmethodtype?view=bingads-13 PaymentMethodType Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/paymentmethodtype?view=bingads-13 PaymentMethodType Value Set
      * 
      * @used-by AdvertiserAccount
      */

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the GoalsAndFunnelsReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/goalsandfunnelsreportcolumn?view=bingads-13 GoalsAndFunnelsReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/goalsandfunnelsreportcolumn?view=bingads-13 GoalsAndFunnelsReportColumn Value Set
      * 
      * @used-by GoalsAndFunnelsReportRequest
      */
@@ -79,6 +79,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversions = 'ViewThroughConversions';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }

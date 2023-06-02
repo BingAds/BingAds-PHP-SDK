@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Searches for user invitations that match the request criteria.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/searchuserinvitations?view=bingads-13 SearchUserInvitations Request Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/searchuserinvitations?view=bingads-13 SearchUserInvitations Request Object
      * 
      * @uses Predicate
      * @used-by BingAdsCustomerManagementService::SearchUserInvitations

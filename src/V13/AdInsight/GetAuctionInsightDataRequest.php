@@ -5,10 +5,11 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Gets auction insight data for an account, campaigns, ad groups, or keywords.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/getauctioninsightdata?view=bingads-13 GetAuctionInsightData Request Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/getauctioninsightdata?view=bingads-13 GetAuctionInsightData Request Object
      * 
      * @uses EntityType
      * @uses SearchParameter
+     * @uses AuctionInsightKpiAdditionalField
      * @used-by BingAdsAdInsightService::GetAuctionInsightData
      */
     final class GetAuctionInsightDataRequest
@@ -30,5 +31,11 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var SearchParameter[]
          */
         public $SearchParameters;
+
+        /**
+         * The list of additional properties that you want included within each returned auction insight KPI.
+         * @var AuctionInsightKpiAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

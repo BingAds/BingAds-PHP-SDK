@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines an advertiser account.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/advertiseraccount?view=bingads-13 AdvertiserAccount Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/advertiseraccount?view=bingads-13 AdvertiserAccount Data Object
      * 
      * @uses CurrencyCode
      * @uses AccountFinancialStatus
@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses CustomerInfo
      * @uses Address
      * @uses AutoTagType
+     * @uses AccountTaxCertificate
      * @used-by AddAccountRequest
      * @used-by AddPrepayAccountRequest
      * @used-by GetAccountResponse
@@ -52,7 +53,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Id;
 
         /**
-         * The language used to render the invoice (if you use an invoice as your payment method).
+         * The language used to render the billing documents that you receive from Microsoft Advertising (if you use an invoice as your payment method).
          * @var LanguageType
          */
         public $Language;
@@ -182,6 +183,18 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var integer
          */
         public $SoldToPaymentInstrumentId;
+
+        /**
+         * Reserved.
+         * @var AccountTaxCertificate
+         */
+        public $TaxCertificate;
+
+        /**
+         * The account mode distinguishes between smart and expert accounts.
+         * @var string
+         */
+        public $AccountMode;
     }
 
 }

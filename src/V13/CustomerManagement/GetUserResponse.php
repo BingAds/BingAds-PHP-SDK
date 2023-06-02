@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Gets the details of a user.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getuser?view=bingads-13 GetUser Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/getuser?view=bingads-13 GetUser Response Object
      * 
      * @uses User
      * @uses CustomerRole

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Search for profile data by company name.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/searchcompanies?view=bingads-13 SearchCompanies Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/searchcompanies?view=bingads-13 SearchCompanies Response Object
      * 
      * @uses Company
      * @used-by BingAdsCampaignManagementService::SearchCompanies

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users during a specific day and time range.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/daytimecriterion?view=bingads-13 DayTimeCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/daytimecriterion?view=bingads-13 DayTimeCriterion Data Object
      * 
      * @uses Day
      * @uses Minute

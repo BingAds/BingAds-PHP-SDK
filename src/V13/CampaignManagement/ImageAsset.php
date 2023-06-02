@@ -5,7 +5,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Applies crop settings to stored image media for a specific aspect ratio.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/imageasset?view=bingads-13 ImageAsset Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/imageasset?view=bingads-13 ImageAsset Data Object
+     * 
+     * @used-by VideoAsset
      */
     final class ImageAsset extends Asset
     {

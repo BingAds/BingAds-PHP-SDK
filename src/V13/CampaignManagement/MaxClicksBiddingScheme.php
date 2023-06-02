@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that represents the maximum clicks bid strategy type.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/maxclicksbiddingscheme?view=bingads-13 MaxClicksBiddingScheme Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/maxclicksbiddingscheme?view=bingads-13 MaxClicksBiddingScheme Data Object
      * 
      * @uses Bid
      */

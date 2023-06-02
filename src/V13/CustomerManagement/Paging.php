@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Defines a paging object that you can use to request objects in batches.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/paging?view=bingads-13 Paging Data Object
+     * Defines a paging object to request Customer Management objects in batches.
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/paging?view=bingads-13 Paging Data Object
      * 
      * @used-by SearchAccountsRequest
      * @used-by SearchClientLinksRequest

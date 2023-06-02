@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Creates a new customer and account that rolls up to your aggregator payment method.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/signupcustomer?view=bingads-13 SignupCustomer Response Object
+     * Creates a new customer and account.
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/signupcustomer?view=bingads-13 SignupCustomer Response Object
      * 
      * @used-by BingAdsCustomerManagementService::SignupCustomer
      */
@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $AccountId;
 
         /**
-         * A system-generated account number that is used to identify the account in the Microsoft Advertising web application.
+         * The system-generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * The search volume search parameter filter that you can include when requesting keyword ideas.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/searchvolumesearchparameter?view=bingads-13 SearchVolumeSearchParameter Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/searchvolumesearchparameter?view=bingads-13 SearchVolumeSearchParameter Data Object
      */
     final class SearchVolumeSearchParameter extends SearchParameter
     {

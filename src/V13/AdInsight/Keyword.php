@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines a keyword with match type.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/keyword?view=bingads-13 Keyword Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/keyword?view=bingads-13 Keyword Data Object
      * 
      * @uses MatchType
      * @used-by IdeaTextSearchParameter

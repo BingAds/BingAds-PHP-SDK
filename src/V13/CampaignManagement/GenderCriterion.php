@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a criterion that can be used to show ads to users of a specific gender.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/gendercriterion?view=bingads-13 GenderCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/gendercriterion?view=bingads-13 GenderCriterion Data Object
      * 
      * @uses GenderType
      */

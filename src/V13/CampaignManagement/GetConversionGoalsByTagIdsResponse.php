@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the conversion goals that use the specified UET tags.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getconversiongoalsbytagids?view=bingads-13 GetConversionGoalsByTagIds Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getconversiongoalsbytagids?view=bingads-13 GetConversionGoalsByTagIds Response Object
      * 
      * @uses ConversionGoal
      * @uses BatchError

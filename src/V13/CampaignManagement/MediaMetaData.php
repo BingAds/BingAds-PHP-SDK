@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines a media meta data object.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/mediametadata?view=bingads-13 MediaMetaData Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/mediametadata?view=bingads-13 MediaMetaData Data Object
      * 
      * @uses MediaRepresentation
      * @used-by GetMediaMetaDataByAccountIdResponse

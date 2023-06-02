@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible targeting source values for dynamic search ads campaigns.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/dynamicsearchadssource?view=bingads-13 DynamicSearchAdsSource Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/dynamicsearchadssource?view=bingads-13 DynamicSearchAdsSource Value Set
      * 
      * @used-by DynamicSearchAdsSetting
      */

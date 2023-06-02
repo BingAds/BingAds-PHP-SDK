@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the criteria to use to filter the age and gender audience report data.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/agegenderaudiencereportfilter?view=bingads-13 AgeGenderAudienceReportFilter Data Object
+     * @link https:/learn.microsoft.com/advertising/reporting-service/agegenderaudiencereportfilter?view=bingads-13 AgeGenderAudienceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter

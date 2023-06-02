@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that pairs one header with between 3 and 10 snippet values that tell customers more about your business.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/structuredsnippetadextension?view=bingads-13 StructuredSnippetAdExtension Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/structuredsnippetadextension?view=bingads-13 StructuredSnippetAdExtension Data Object
      */
     final class StructuredSnippetAdExtension extends AdExtension
     {
@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Header;
 
         /**
-         * The snippet values that follow after the Header: component.
+         * The snippet values that follow after the Header component of the ad that is shown.
          * @var string[]
          */
         public $Values;

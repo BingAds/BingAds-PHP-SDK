@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/keyvaluepairofstringstring?view=bingads-13 KeyValuePairOfstringstring Data Object
+     * The key and value pair of string and string values.
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/keyvaluepairofstringstring?view=bingads-13 KeyValuePairOfstringstring Data Object
      * 
      * @used-by AdvertiserAccount
      * @used-by ClientLink

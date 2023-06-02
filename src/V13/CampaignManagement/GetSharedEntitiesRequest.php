@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets negative keyword lists or website exclusion lists.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/getsharedentities?view=bingads-13 GetSharedEntities Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getsharedentities?view=bingads-13 GetSharedEntities Request Object
      * 
      * @uses EntityScope
      * @used-by BingAdsCampaignManagementService::GetSharedEntities

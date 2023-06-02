@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Deletes one or more experiments.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/deleteexperiments?view=bingads-13 DeleteExperiments Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/deleteexperiments?view=bingads-13 DeleteExperiments Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::DeleteExperiments

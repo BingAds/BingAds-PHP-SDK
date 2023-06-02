@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Defines an error object that contains the details that explain why the service operation failed.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-billing-service/adapierror?view=bingads-13 AdApiError Data Object
+     * Defines a Customer Billing Ad API error object that contains the details that explain why the service operation failed.
+     * @link https:/learn.microsoft.com/advertising/customer-billing-service/adapierror?view=bingads-13 AdApiError Data Object
      * 
      * @used-by AdApiFaultDetail
      */

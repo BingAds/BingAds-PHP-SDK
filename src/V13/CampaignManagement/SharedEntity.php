@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the base class of a shared entity.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/sharedentity?view=bingads-13 SharedEntity Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/sharedentity?view=bingads-13 SharedEntity Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by AddSharedEntityRequest

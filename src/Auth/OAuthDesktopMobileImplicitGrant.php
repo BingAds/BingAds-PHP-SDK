@@ -46,7 +46,7 @@ class OAuthDesktopMobileImplicitGrant extends OAuthAuthorization
         return UriOAuthService::GetAuthorizationEndpoint(
             $oauthUrlParameters, 
             $this->Environment, 
-            $this->RequireLiveConnect, 
+            $this->OAuthScope, 
             $this->Tenant);
     }
 

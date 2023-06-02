@@ -8,6 +8,12 @@ namespace Microsoft\BingAds\Auth;
 class UriOAuthService extends IOAuthService
 {
     const ENDPOINT_URLS = array(
+        'ProductionMSIdentityV2_MSScope' => array(
+            'RedirectUrl' => 'https://login.microsoftonline.com/common/oauth2/nativeclient',
+            'OAuthTokenUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+            'AuthorizationEndpointUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=https://ads.microsoft.com%2Fmsads.manage+offline_access',
+            'Scope' => 'https://ads.microsoft.com/msads.manage offline_access'
+        ),
         'ProductionMSIdentityV2' => array(
             'RedirectUrl' => 'https://login.microsoftonline.com/common/oauth2/nativeclient',
             'OAuthTokenUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
@@ -20,11 +26,11 @@ class UriOAuthService extends IOAuthService
             'AuthorizationEndpointUrl' => 'https://login.live.com/oauth20_authorize.srf?scope=bingads.manage',
             'Scope' => 'bingads.manage'
         ),
-        'SandboxLiveConnect' => array(
-            'RedirectUrl' => 'https://login.live-int.com/oauth20_desktop.srf',
-            'OAuthTokenUrl' => 'https://login.live-int.com/oauth20_token.srf',
-            'AuthorizationEndpointUrl' => 'https://login.live-int.com/oauth20_authorize.srf?scope=bingads.manage&prompt=login',
-            'Scope' => 'bingads.manage'
+        'Sandbox' => array(
+            'RedirectUrl' => 'https://login.windows-ppe.net/common/oauth2/nativeclient',
+            'OAuthTokenUrl' => 'https://login.windows-ppe.net/consumers/oauth2/v2.0/token',
+            'AuthorizationEndpointUrl' => 'https://login.windows-ppe.net/consumers/oauth2/v2.0/authorize?scope=https://api.ads.microsoft.com/msads.manage+offline_access&prompt=login',
+            'Scope' => 'https://api.ads.microsoft.com/msads.manage offline_access'
         ),
     );
     
@@ -45,16 +51,16 @@ class UriOAuthService extends IOAuthService
      * 
      * @param OAuthRequestParameters $oauthRequestParameters
      * @param ApiEnvironment $environment
-     * @param bool $requireLiveConnect
+     * @param OAuthScope $oauthScope
      * @param string $tenant
      * @param array $additionalParams
      * 
      * @return OAuthTokens
      * @throws Exception
      */
-    public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $requireLiveConnect, $tenant, $additionalParams)
+    public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment, $oauthScope, $tenant, $additionalParams)
     {
-        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
+        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $oauthScope);
 
         $accessTokenExchangeParams = array(
             'client_id' => $oauthRequestParameters->ClientId,
@@ -136,13 +142,13 @@ class UriOAuthService extends IOAuthService
      * 
      * @param OAuthUrlParameters $parameters
      * @param ApiEnvironment $environment
-     * @param bool $requireLiveConnect
+     * @param OAuthScope $oauthScope
      * 
      * @return string
      */
-    public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment, $requireLiveConnect, $tenant)
+    public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment, $oauthScope, $tenant)
     {
-        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
+        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $oauthScope);
 
         $authorizationEndpointUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
         
@@ -160,27 +166,39 @@ class UriOAuthService extends IOAuthService
         ) . (($parameters->State == null) ? "" : ("&state=" . $parameters->State));
     }
 
-    private static function GetOAuthEndpointType($environment, $requireLiveConnect)
+    private static function GetOAuthEndpointType($environment, $oauthScope)
     {
         $endpointType;
         if ($environment == ApiEnvironment::Production)
         {
-            $endpointType = $requireLiveConnect ? OAuthEndpointType::ProductionLiveConnect : OAuthEndpointType::ProductionMSIdentityV2;
+            switch ($oauthScope) {
+                case OAuthScope::MSADS_MANAGE: 
+                    $endpointType = OAuthEndpointType::ProductionMSIdentityV2_MSScope; 
+                    break;
+                case OAuthScope::BINGADS_MANAGE:
+                    $endpointType = OAuthEndpointType::ProductionLiveConnect;
+                    break;
+                case OAuthScope::ADS_MANAGE:
+                    $endpointType = OAuthEndpointType::ProductionMSIdentityV2;
+                    break;
+                default:
+                    $endpointType = OAuthEndpointType::ProductionMSIdentityV2_MSScope; 
+            }
         }
         else
         {
-            $endpointType = OAuthEndpointType::SandboxLiveConnect;
+            $endpointType = OAuthEndpointType::Sandbox;
         }
         return $endpointType;
     }
 
-    public static function GetRedirectUrl($environment, $requireLiveConnect) {
-        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
+    public static function GetRedirectUrl($environment, $oauthScope) {
+        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $oauthScope);
         return UriOAuthService::ENDPOINT_URLS[$endpointType]['RedirectUrl'];
     }
 
-    public static function GetAuthTokenUrl($environment, $requireLiveConnect, $tenant) {
-        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
+    public static function GetAuthTokenUrl($environment, $oauthScope, $tenant) {
+        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $oauthScope);
 
         $OAuthTokenUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'];
 
@@ -192,8 +210,8 @@ class UriOAuthService extends IOAuthService
         return $OAuthTokenUrl;
     }
 
-    public static function GetAuthorizeUrl($environment, $requireLiveConnect, $tenant) {
-        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $requireLiveConnect);
+    public static function GetAuthorizeUrl($environment, $oauthScope, $tenant) {
+        $endpointType = UriOAuthService::GetOAuthEndpointType($environment, $oauthScope);
 
         $authorizationEndpointUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
         

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the possible system-determined status values of a conversion goal.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/conversiongoaltrackingstatus?view=bingads-13 ConversionGoalTrackingStatus Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversiongoaltrackingstatus?view=bingads-13 ConversionGoalTrackingStatus Value Set
      * 
      * @used-by ConversionGoal
      */
@@ -22,6 +22,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The UetTagTrackingStatus is Inactive, and Microsoft Advertising has not received any user activity data from the UET tag in the last 24 hours. */
         const TagInactive = 'TagInactive';
+
+        /** The account no longer has access to the UET tag. */
+        const InactiveDueToTagUnavailable = 'InactiveDueToTagUnavailable';
     }
 
 }

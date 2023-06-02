@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes columns that you can include in the ProductNegativeKeywordConflictReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/productnegativekeywordconflictreportcolumn?view=bingads-13 ProductNegativeKeywordConflictReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/productnegativekeywordconflictreportcolumn?view=bingads-13 ProductNegativeKeywordConflictReportColumn Value Set
      * 
      * @used-by ProductNegativeKeywordConflictReportRequest
      */

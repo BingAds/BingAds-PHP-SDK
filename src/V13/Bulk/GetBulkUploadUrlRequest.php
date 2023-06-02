@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Bulk;
 {
     /**
      * Submits a request for a URL where a bulk upload file may be posted.
-     * @link https://docs.microsoft.com/en-us/advertising/bulk-service/getbulkuploadurl?view=bingads-13 GetBulkUploadUrl Request Object
+     * @link https:/learn.microsoft.com/advertising/bulk-service/getbulkuploadurl?view=bingads-13 GetBulkUploadUrl Request Object
      * 
      * @uses ResponseMode
      * @used-by BingAdsBulkService::GetBulkUploadUrl

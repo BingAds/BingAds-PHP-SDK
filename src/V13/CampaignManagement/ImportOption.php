@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the base object of an import option.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/importoption?view=bingads-13 ImportOption Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/importoption?view=bingads-13 ImportOption Data Object
      * 
      * @uses KeyValuePairOfstringstring
      * @used-by ImportJob

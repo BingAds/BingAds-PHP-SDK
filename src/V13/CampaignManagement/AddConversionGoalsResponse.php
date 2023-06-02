@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Adds new conversion goals to the account's shared conversion goal library.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/addconversiongoals?view=bingads-13 AddConversionGoals Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/addconversiongoals?view=bingads-13 AddConversionGoals Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::AddConversionGoals

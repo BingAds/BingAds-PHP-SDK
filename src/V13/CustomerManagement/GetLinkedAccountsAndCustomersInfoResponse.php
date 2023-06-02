@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Gets the customer and account hierarchy under the specified customer.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/getlinkedaccountsandcustomersinfo?view=bingads-13 GetLinkedAccountsAndCustomersInfo Response Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/getlinkedaccountsandcustomersinfo?view=bingads-13 GetLinkedAccountsAndCustomersInfo Response Object
      * 
      * @uses AccountInfo
      * @uses CustomerInfo

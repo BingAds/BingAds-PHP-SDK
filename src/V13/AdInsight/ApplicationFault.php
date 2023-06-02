@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Defines the base object from which all fault detail objects derive.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/applicationfault?view=bingads-13 ApplicationFault Data Object
+     * Defines the base object from which all Ad Insight fault detail objects derive.
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/applicationfault?view=bingads-13 ApplicationFault Data Object
      */
     class ApplicationFault
     {

@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Sets the negative site URLs directly to ad groups.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/setnegativesitestoadgroups?view=bingads-13 SetNegativeSitesToAdGroups Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/setnegativesitestoadgroups?view=bingads-13 SetNegativeSitesToAdGroups Response Object
      * 
      * @uses BatchError
      * @used-by BingAdsCampaignManagementService::SetNegativeSitesToAdGroups

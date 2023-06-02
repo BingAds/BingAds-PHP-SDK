@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the AudiencePerformanceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/audienceperformancereportcolumn?view=bingads-13 AudiencePerformanceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/audienceperformancereportcolumn?view=bingads-13 AudiencePerformanceReportColumn Value Set
      * 
      * @used-by AudiencePerformanceReportRequest
      */
@@ -133,6 +133,27 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
+        const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
+
+        /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
+        const TopImpressionRatePercent = 'TopImpressionRatePercent';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }

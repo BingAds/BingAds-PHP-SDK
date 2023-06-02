@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines the possible industry segments in which a customer operates.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/industry?view=bingads-13 Industry Value Set
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/industry?view=bingads-13 Industry Value Set
      * 
      * @used-by Customer
      */

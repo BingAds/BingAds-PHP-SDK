@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 {
     /**
      * Defines personal and business contact information about a Microsoft Advertising user.
-     * @link https://docs.microsoft.com/en-us/advertising/customer-management-service/user?view=bingads-13 User Data Object
+     * @link https:/learn.microsoft.com/advertising/customer-management-service/user?view=bingads-13 User Data Object
      * 
      * @uses ContactInfo
      * @uses LCID
@@ -15,6 +15,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      * @uses KeyValuePairOfstringstring
      * @used-by GetCurrentUserResponse
      * @used-by GetUserResponse
+     * @used-by SignupCustomerRequest
      * @used-by UpdateUserRequest
      */
     final class User
@@ -108,6 +109,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;
+
+        /**
+         * The OAuth access token that represents the credentials of the user who has permissions to Microsoft Advertising accounts.
+         * @var string
+         */
+        public $AuthenticationToken;
     }
 
 }

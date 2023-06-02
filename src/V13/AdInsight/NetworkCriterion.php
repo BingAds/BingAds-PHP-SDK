@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * The network criterion that you can include when requesting keyword ideas or traffic estimates.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/networkcriterion?view=bingads-13 NetworkCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/networkcriterion?view=bingads-13 NetworkCriterion Data Object
      * 
      * @uses NetworkType
      * @used-by NetworkSearchParameter

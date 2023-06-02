@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 {
     /**
      * Defines the possible time periods that determine the pool of data that the service uses to get the performance statistics of a keyword.
-     * @link https://docs.microsoft.com/en-us/advertising/ad-insight-service/timeinterval?view=bingads-13 TimeInterval Value Set
+     * @link https:/learn.microsoft.com/advertising/ad-insight-service/timeinterval?view=bingads-13 TimeInterval Value Set
      * 
      * @used-by GetHistoricalKeywordPerformanceRequest
      */

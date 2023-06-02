@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 {
     /**
      * Defines the attributes and performance statistics columns that you can include in the ShareOfVoiceReportRequest.
-     * @link https://docs.microsoft.com/en-us/advertising/reporting-service/shareofvoicereportcolumn?view=bingads-13 ShareOfVoiceReportColumn Value Set
+     * @link https:/learn.microsoft.com/advertising/reporting-service/shareofvoicereportcolumn?view=bingads-13 ShareOfVoiceReportColumn Value Set
      * 
      * @used-by ShareOfVoiceReportRequest
      */
@@ -32,7 +32,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The keyword bid match type. */
         const BidMatchType = 'BidMatchType';
 
-        /** The language of the country the ad is served in. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
         /** The Microsoft Advertising assigned number of an account. */
@@ -110,7 +110,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The device name attribute of a device OS target bid. */
         const DeviceType = 'DeviceType';
 
-        /** The combined search advertising marketplace made up of Bing, AOL, Yahoo, and partner sites. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** The account status. */
@@ -131,7 +131,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The labels applied to the keyword. */
         const KeywordLabels = 'KeywordLabels';
 
-        /** The estimated percentage of impressions that your campaign received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
+        /** The estimated percentage of impressions that your account received for searches that exactly matched your keyword, out of the total available exact match impressions you were eligible to receive. */
         const ExactMatchImpressionSharePercent = 'ExactMatchImpressionSharePercent';
 
         /** A percentage estimate of how often poor ad rank kept your ad from showing in the mainline, the top ad placements above the search results. */
@@ -146,13 +146,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The estimated percentage of how often your ad missed showing in the very top ad position, above search results, due to insufficient budget. */
         const AbsoluteTopImpressionShareLostToBudgetPercent = 'AbsoluteTopImpressionShareLostToBudgetPercent';
 
-        /** The estimated percentage of times your ad was in the first position of all ads shown, out of the total impressions available in the market you were targeting. */
+        /** The estimated percentage of times your ad was in the first position of all results, out of the estimated number of first position impressions you were eligible to receive. */
         const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
 
         /** The percentage of impressions for your ad in the mainline, the top ad placements above the search results, out of the estimated number of mainline impressions you were eligible to receive. */
         const TopImpressionSharePercent = 'TopImpressionSharePercent';
 
-        /** The percentage of times your ad was in the first position of all returned ads, out of the total impressions available in your target market. */
+        /** How often your ad was in the first position of all results, as a percentage of your total impressions. */
         const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
 
         /** The percentage of times your ad showed in the mainline, the top placement where ads appear above the search results, out of your total impressions. */
@@ -178,6 +178,21 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of conversion goal. */
         const GoalType = 'GoalType';
+
+        /** The total advertising cost divided by the number of impressions (in thousands). */
+        const AverageCpm = 'AverageCpm';
+
+        /** The number of conversions. */
+        const ConversionsQualified = 'ConversionsQualified';
+
+        /** The number of conversions. */
+        const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
+        const ViewThroughConversionsQualified = 'ViewThroughConversionsQualified';
+
+        /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
+        const ViewThroughRevenue = 'ViewThroughRevenue';
     }
 
 }

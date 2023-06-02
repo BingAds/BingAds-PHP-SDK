@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines an object that contains the migration type and status for an account.
-     * @link https://docs.microsoft.com/en-us/advertising/campaign-management-service/migrationstatusinfo?view=bingads-13 MigrationStatusInfo Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/migrationstatusinfo?view=bingads-13 MigrationStatusInfo Data Object
      * 
      * @uses MigrationStatus
      * @used-by AccountMigrationStatusesInfo
