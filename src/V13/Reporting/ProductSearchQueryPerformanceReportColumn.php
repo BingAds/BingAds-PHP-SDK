@@ -169,6 +169,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
+        const AssetGroupName = 'AssetGroupName';
     }
 
 }

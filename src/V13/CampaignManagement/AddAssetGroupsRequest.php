@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds array of asset groups to a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addassetgroups?view=bingads-13 AddAssetGroups Request Object
      * 
      * @uses AssetGroup
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddAssetGroupsRequest
     {
         /**
-         * Reserved.
+         * Array of asset groups to add to the specified campaign.
          * @var AssetGroup[]
          */
         public $AssetGroups;
 
         /**
-         * Reserved.
+         * The ID of the Performace Max campaign.
          * @var integer
          */
         public $CampaignId;

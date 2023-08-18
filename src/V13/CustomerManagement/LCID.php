@@ -114,6 +114,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** English (Vietnam) */
         const EnglishVietnam = 'EnglishVietnam';
 
+        /** Chinese (China) */
+        const ChineseChina = 'ChineseChina';
+
         /** German (Switzerland) */
         const GermanSwitzerland = 'GermanSwitzerland';
 
@@ -123,7 +126,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Spanish (Mexico) */
         const SpanishMexico = 'SpanishMexico';
 
-        /** Chinese (Hong Kong) */
+        /** Chinese (Hong Kong SAR) */
         const ChineseHongKong = 'ChineseHongKong';
 
         /** German (Austria) */

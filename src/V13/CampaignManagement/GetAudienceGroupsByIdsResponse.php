@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves specified AudienceGroups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getaudiencegroupsbyids?view=bingads-13 GetAudienceGroupsByIds Response Object
      * 
      * @uses AudienceGroup
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetAudienceGroupsByIdsResponse
     {
         /**
-         * Reserved.
+         * Array of audience groups.
          * @var AudienceGroup[]
          */
         public $AudienceGroups;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

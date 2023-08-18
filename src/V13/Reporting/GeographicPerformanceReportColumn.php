@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The country where the user was physically located when they clicked the ad. */
+        /** The country or region where the user was physically located when they clicked the ad. */
         const Country = 'Country';
 
         /** The state where the user was physically located when they clicked the ad. */
@@ -202,6 +202,18 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
+        const AssetGroupName = 'AssetGroupName';
+
+        /** The asset group status. */
+        const AssetGroupStatus = 'AssetGroupStatus';
     }
 
 }

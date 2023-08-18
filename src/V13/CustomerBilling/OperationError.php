@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/operationerror?view=bingads-13 OperationError Data Object
      * 
      * @used-by ApiFault
+     * @used-by ClaimFeatureAdoptionCouponsResponse
      */
     final class OperationError
     {

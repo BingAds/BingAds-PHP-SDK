@@ -13,19 +13,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class FrequencyCapSettings
     {
         /**
-         * Reserved.
+         * A limit to the number of times an ad is shown.
          * @var integer
          */
         public $CapValue;
 
         /**
-         * Reserved.
+         * What unit to limit the ad serves.
          * @var string
          */
         public $FrequencyCapUnit;
 
         /**
-         * Reserved.
+         * The smallest time interval to limit ad serves.
          * @var FrequencyCapTimeGranularity
          */
         public $TimeGranularity;

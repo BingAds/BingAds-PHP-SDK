@@ -10,6 +10,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ShoppingSetting extends Setting
     {
         /**
+         * Reserved.
+         * @var string
+         */
+        public $FeedLabel;
+
+        /**
          * Determines whether local inventory ads are enabled for the Microsoft Merchant Center store.
          * @var boolean
          */
@@ -26,6 +32,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SalesCountryCode;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $ShoppableAdsEnabled;
 
         /**
          * The unique identifier for the Microsoft Merchant Center store that contains a product catalog feed that you want to use for the campaign.

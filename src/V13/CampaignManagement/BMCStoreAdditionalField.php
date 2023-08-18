@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the service return global stores with SubType set to GlobalStore. */
         const GlobalStore = 'GlobalStore';
 
-        /** Reserved. */
+        /** The store's destination URL. */
         const StoreUrl = 'StoreUrl';
     }
 

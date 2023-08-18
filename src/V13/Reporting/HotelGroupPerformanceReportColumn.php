@@ -151,6 +151,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of impressions lost for all other reasons. */
         const MissedImpressionsOther = 'MissedImpressionsOther';
+
+        /** Reserved. */
+        const ClickShare = 'ClickShare';
     }
 
 }

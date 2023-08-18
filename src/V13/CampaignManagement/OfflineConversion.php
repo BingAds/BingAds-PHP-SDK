@@ -48,13 +48,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ExternalAttributionModel;
 
         /**
-         * Reserved.
+         * The hashed email address using the SHA-256 algorithm for use with enhanced conversions.
          * @var string
          */
         public $HashedEmailAddress;
 
         /**
-         * Reserved.
+         * The hashed phone number according to the E.164 standard for use with enhanced conversions.
          * @var string
          */
         public $HashedPhoneNumber;

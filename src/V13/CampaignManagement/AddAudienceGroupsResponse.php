@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds array of audience groups to a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addaudiencegroups?view=bingads-13 AddAudienceGroups Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddAudienceGroupsResponse
     {
         /**
-         * Reserved.
+         * Array of audience group ids to be added.
          * @var integer[]
          */
         public $AudienceGroupIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that weren't successful.
          * @var BatchError[]
          */
         public $PartialErrors;

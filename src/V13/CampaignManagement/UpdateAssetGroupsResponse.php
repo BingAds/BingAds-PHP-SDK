@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified asset groups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateassetgroups?view=bingads-13 UpdateAssetGroups Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateAssetGroupsResponse
     {
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

@@ -4,20 +4,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an AudienceGroupDimensionType value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audiencegroupdimensiontype?view=bingads-13 AudienceGroupDimensionType Value Set
      * 
      * @used-by AudienceGroupDimension
      */
     final class AudienceGroupDimensionType
     {
-        /** Reserved. */
+        /** The age dimension type for an audience group. */
         const Age = 'Age';
 
-        /** Reserved. */
+        /** The gender dimension type for an audience group. */
         const Gender = 'Gender';
 
-        /** Reserved. */
+        /** The audience dimension type for an audience group. */
         const Audience = 'Audience';
     }
 

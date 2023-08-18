@@ -75,7 +75,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * Reserved.
+         * Settings for the frequency cap.
          * @var FrequencyCapSettings[]
          */
         public $FrequencyCapSettings;
@@ -153,7 +153,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * Reserved.
+         * Indicates if predictive targeting is enabled for an AdGroup.
          * @var boolean
          */
         public $UseOptimizedTargeting;

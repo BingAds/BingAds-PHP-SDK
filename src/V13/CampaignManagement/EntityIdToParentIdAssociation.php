@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/entityidtoparentidassociation?view=bingads-13 EntityIdToParentIdAssociation Data Object
      * 
      * @used-by AppealEditorialRejectionsRequest
+     * @used-by GetAssetGroupsEditorialReasonsRequest
      * @used-by GetEditorialReasonsByIdsRequest
      */
     final class EntityIdToParentIdAssociation

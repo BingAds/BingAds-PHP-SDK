@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * An object that inherits AudienceGroupDimension.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audiencedimension?view=bingads-13 AudienceDimension Data Object
      * 
      * @uses AudienceInfo
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudienceDimension extends AudienceGroupDimension
     {
         /**
-         * Reserved.
+         * A list of audiences.
          * @var AudienceInfo[]
          */
         public $Audiences;

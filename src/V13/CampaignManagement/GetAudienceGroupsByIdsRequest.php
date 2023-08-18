@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves specified AudienceGroups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getaudiencegroupsbyids?view=bingads-13 GetAudienceGroupsByIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetAudienceGroupsByIds
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetAudienceGroupsByIdsRequest
     {
         /**
-         * Reserved.
+         * Array of audience group ids to get.
          * @var integer[]
          */
         public $AudienceGroupIds;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an AudienceGroupAssetGroupAssociation data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audiencegroupassetgroupassociation?view=bingads-13 AudienceGroupAssetGroupAssociation Data Object
      * 
      * @used-by DeleteAudienceGroupAssetGroupAssociationsRequest
@@ -15,13 +15,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudienceGroupAssetGroupAssociation
     {
         /**
-         * Reserved.
+         * The ID of the asset group.
          * @var integer
          */
         public $AssetGroupId;
 
         /**
-         * Reserved.
+         * The ID of the audience group.
          * @var integer
          */
         public $AudienceGroupId;

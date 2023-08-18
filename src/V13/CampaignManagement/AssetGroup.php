@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an asset group in an advertising campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroup?view=bingads-13 AssetGroup Data Object
      * 
      * @uses CallToAction
@@ -21,103 +21,103 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AssetGroup
     {
         /**
-         * Reserved.
+         * The name of the business.
          * @var string
          */
         public $BusinessName;
 
         /**
-         * Reserved.
+         * A brief, punchy reason for customers to click your ad right now.
          * @var CallToAction
          */
         public $CallToAction;
 
         /**
-         * Reserved.
+         * The descriptions that are shown below the path in your ad.
          * @var AssetLink[]
          */
         public $Descriptions;
 
         /**
-         * Reserved.
+         * The editorial review status of the asset group, which indicates whether the asset group is pending review, has been approved, or has been disapproved.
          * @var AssetGroupEditorialStatus
          */
         public $EditorialStatus;
 
         /**
-         * Reserved.
+         * The date that the asset group will expire.
          * @var Date
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The mobile landing page URL.
          * @var string[]
          */
         public $FinalMobileUrls;
 
         /**
-         * Reserved.
+         * The landing page URL.
          * @var string[]
          */
         public $FinalUrls;
 
         /**
-         * Reserved.
+         * The list of key and value strings for forward compatibility to avoid otherwise breaking changes when new elements are added in the current API version.
          * @var KeyValuePairOfstringstring[]
          */
         public $ForwardCompatibilityMap;
 
         /**
-         * Reserved.
+         * Headlines are the most prominent text that appears in your ad, so you should make the most out of the available characters.
          * @var AssetLink[]
          */
         public $Headlines;
 
         /**
-         * Reserved.
+         * The system generated asset group ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * Image assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.
          * @var AssetLink[]
          */
         public $Images;
 
         /**
-         * Reserved.
+         * You must set between 1-5 long headlines.
          * @var AssetLink[]
          */
         public $LongHeadlines;
 
         /**
-         * Reserved.
+         * The name of the asset group.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The first part of the optional path that will be appended to the domain portion of your display URL.
          * @var string
          */
         public $Path1;
 
         /**
-         * Reserved.
+         * The second part of the optional path that will be appended to the domain portion of your display URL.
          * @var string
          */
         public $Path2;
 
         /**
-         * Reserved.
+         * The date that the asset group can begin serving; otherwise, the service can begin serving ads the day that the asset group becomes active.
          * @var Date
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The status of the Asset group.
          * @var AssetGroupStatus
          */
         public $Status;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Data object that specifies users by their age.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/agedimension?view=bingads-13 AgeDimension Data Object
      * 
      * @uses AgeRange
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AgeDimension extends AudienceGroupDimension
     {
         /**
-         * Reserved.
+         * A list of age ranges.
          * @var AgeRange[]
          */
         public $AgeRanges;

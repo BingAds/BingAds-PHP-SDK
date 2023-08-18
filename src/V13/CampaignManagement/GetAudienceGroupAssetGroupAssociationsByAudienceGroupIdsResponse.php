@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves the specified AudienceGroupAssetGroupAssociations by audience group IDs.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getaudiencegroupassetgroupassociationsbyaudiencegroupids?view=bingads-13 GetAudienceGroupAssetGroupAssociationsByAudienceGroupIds Response Object
      * 
      * @uses AudienceGroupAssetGroupAssociation
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetAudienceGroupAssetGroupAssociationsByAudienceGroupIdsResponse
     {
         /**
-         * Reserved.
+         * The list of Audience Group associations to get.
          * @var AudienceGroupAssetGroupAssociation[]
          */
         public $AudienceGroupAssetGroupAssociations;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

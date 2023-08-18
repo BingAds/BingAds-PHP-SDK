@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Sets AudienceGroupAssetGroupAssociations.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/setaudiencegroupassetgroupassociations?view=bingads-13 SetAudienceGroupAssetGroupAssociations Request Object
      * 
      * @uses AudienceGroupAssetGroupAssociation
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SetAudienceGroupAssetGroupAssociationsRequest
     {
         /**
-         * Reserved.
+         * The list of Audience Group associations to set.
          * @var AudienceGroupAssetGroupAssociation[]
          */
         public $AudienceGroupAssetGroupAssociations;
