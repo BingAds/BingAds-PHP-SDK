@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses CallToAction
      * @uses LanguageName
      * @uses AssetLink
+     * @uses VerifiedTrackingSetting
      */
     final class ResponsiveAd extends Ad
     {
@@ -84,6 +85,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Text;
+
+        /**
+         * Reserved.
+         * @var VerifiedTrackingSetting
+         */
+        public $VerifiedTrackingSettings;
 
         /**
          * Video assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.

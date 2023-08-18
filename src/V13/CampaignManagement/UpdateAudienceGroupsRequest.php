@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified audience groups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateaudiencegroups?view=bingads-13 UpdateAudienceGroups Request Object
      * 
      * @uses AudienceGroup
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateAudienceGroupsRequest
     {
         /**
-         * Reserved.
+         * Array of audience groups to update.
          * @var AudienceGroup[]
          */
         public $AudienceGroups;

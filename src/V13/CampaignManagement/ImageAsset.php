@@ -40,6 +40,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SubType;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $TargetHeight;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $TargetWidth;
     }
 
 }

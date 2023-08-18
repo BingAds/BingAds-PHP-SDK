@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @uses AccountStatusReportFilter
      * @uses AdGroupStatusReportFilter
      * @uses AdStatusReportFilter
+     * @uses AssetGroupStatusReportFilter
      * @uses CampaignStatusReportFilter
      * @uses DeviceTypeReportFilter
      * @uses LanguageReportFilter
@@ -34,6 +35,12 @@ namespace Microsoft\BingAds\V13\Reporting;
          * @var AdStatusReportFilter
          */
         public $AdStatus;
+
+        /**
+         * The report will include data for only the asset group status.
+         * @var AssetGroupStatusReportFilter
+         */
+        public $AssetGroupStatus;
 
         /**
          * The report will include data for only the campaign status.

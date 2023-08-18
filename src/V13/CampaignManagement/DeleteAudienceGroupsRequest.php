@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes one or more AudienceGroups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deleteaudiencegroups?view=bingads-13 DeleteAudienceGroups Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteAudienceGroups
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteAudienceGroupsRequest
     {
         /**
-         * Reserved.
+         * Array of audience group IDs to be deleted.
          * @var integer[]
          */
         public $AudienceGroupIds;

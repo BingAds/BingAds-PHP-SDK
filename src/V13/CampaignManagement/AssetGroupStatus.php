@@ -4,21 +4,24 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The status of the AssetGroup.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroupstatus?view=bingads-13 AssetGroupStatus Value Set
      * 
      * @used-by AssetGroup
      */
     final class AssetGroupStatus
     {
-        /** Reserved. */
+        /** The status of the AssetGroup is Active. */
         const Active = 'Active';
 
-        /** Reserved. */
+        /** The status of the AssetGroup is Paused. */
         const Paused = 'Paused';
 
-        /** Reserved. */
+        /** The status of the AssetGroup is Deleted. */
         const Deleted = 'Deleted';
+
+        /** Reserved. */
+        const Expired = 'Expired';
     }
 
 }

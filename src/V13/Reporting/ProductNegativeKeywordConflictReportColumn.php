@@ -67,6 +67,18 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The type of match to compare the negative keyword and the user's search term. */
         const NegativeKeywordMatchType = 'NegativeKeywordMatchType';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
+        const AssetGroupName = 'AssetGroupName';
+
+        /** The asset group status. */
+        const AssetGroupStatus = 'AssetGroupStatus';
     }
 
 }

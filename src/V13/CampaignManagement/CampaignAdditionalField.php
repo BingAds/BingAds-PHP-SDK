@@ -54,8 +54,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const ResponsiveSearchAdsSetting = 'ResponsiveSearchAdsSetting';
 
-        /** Reserved. */
+        /** Request that the CostPerSaleBiddingScheme object be returned within the BiddingScheme element of each returned Campaign object. */
         const CostPerSaleBiddingScheme = 'CostPerSaleBiddingScheme';
+
+        /** Reserved. */
+        const ShoppingSettingShoppableAdsEnabled = 'ShoppingSettingShoppableAdsEnabled';
+
+        /** Reserved. */
+        const ShoppingSettingFeedLabel = 'ShoppingSettingFeedLabel';
+
+        /** Reserved. */
+        const CallToActionSetting = 'CallToActionSetting';
     }
 
 }

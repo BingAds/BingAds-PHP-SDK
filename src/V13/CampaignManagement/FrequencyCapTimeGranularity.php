@@ -11,19 +11,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class FrequencyCapTimeGranularity
     {
-        /** Reserved. */
+        /** The number of hours to limit ad serves by. */
         const HOUR = 'HOUR';
 
-        /** Reserved. */
+        /** The number of days to limit ad serves by. */
         const DAY = 'DAY';
 
-        /** Reserved. */
+        /** The number of weeks to limit ad serves by.. */
         const WEEK = 'WEEK';
 
-        /** Reserved. */
+        /** The number of months to limit ad serves by. */
         const MONTH = 'MONTH';
 
-        /** Reserved. */
+        /** Limit ad serves by the lifetime of the ad. */
         const LIFETIME = 'LIFETIME';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * An object containing and ID an type for an audience.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audienceinfo?view=bingads-13 AudienceInfo Data Object
      * 
      * @uses AudienceType
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudienceInfo
     {
         /**
-         * Reserved.
+         * The ID of the audience.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The type of the audience.
          * @var AudienceType
          */
         public $Type;

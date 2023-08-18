@@ -125,7 +125,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language for the product offer. */
         const OfferLanguage = 'OfferLanguage';
 
-        /** The country of sale for the product catalog. */
+        /** The country/region of sale for the product catalog. */
         const CountryOfSale = 'CountryOfSale';
 
         /** The ad status. */
@@ -235,6 +235,18 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
+        const AssetGroupName = 'AssetGroupName';
+
+        /** The asset group status. */
+        const AssetGroupStatus = 'AssetGroupStatus';
     }
 
 }

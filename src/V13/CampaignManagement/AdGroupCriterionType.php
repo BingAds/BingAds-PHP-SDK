@@ -91,6 +91,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const HotelCheckInDate = 'HotelCheckInDate';
+
+        /** Reserved. */
+        const Genre = 'Genre';
     }
 
 }

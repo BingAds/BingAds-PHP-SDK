@@ -31,6 +31,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddVideosResponse
      * @used-by AppealEditorialRejectionsResponse
      * @used-by ApplyAssetGroupListingGroupActionsResponse
+     * @used-by ApplyCustomerListItemsResponse
      * @used-by ApplyHotelGroupActionsResponse
      * @used-by ApplyOfflineConversionAdjustmentsResponse
      * @used-by ApplyOfflineConversionsResponse
@@ -68,6 +69,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetAdsByIdsResponse
      * @used-by GetAssetGroupsByCampaignIdResponse
      * @used-by GetAssetGroupsByIdsResponse
+     * @used-by GetAssetGroupsEditorialReasonsResponse
      * @used-by GetAudienceGroupAssetGroupAssociationsByAssetGroupIdsResponse
      * @used-by GetAudienceGroupAssetGroupAssociationsByAudienceGroupIdsResponse
      * @used-by GetAudienceGroupsByIdsResponse

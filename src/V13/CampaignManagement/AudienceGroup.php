@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an AudienceGroup data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audiencegroup?view=bingads-13 AudienceGroup Data Object
      * 
      * @uses AudienceGroupDimension
@@ -15,31 +15,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudienceGroup
     {
         /**
-         * Reserved.
+         * The number of asset groups that associate with this audience group.
          * @var integer
          */
         public $AssociationCount;
 
         /**
-         * Reserved.
+         * The description of the audience.
          * @var string
          */
         public $Description;
 
         /**
-         * Reserved.
+         * Positive dimensions that specifying the audience composition.
          * @var AudienceGroupDimension[]
          */
         public $Dimensions;
 
         /**
-         * Reserved.
+         * The system-generated ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The name of the audience signal, the name must be unique among all audience groups within the account.
          * @var string
          */
         public $Name;

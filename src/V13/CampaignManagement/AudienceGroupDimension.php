@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an AudienceGroupDimension data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audiencegroupdimension?view=bingads-13 AudienceGroupDimension Data Object
      * 
      * @uses AudienceGroupDimensionType
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     class AudienceGroupDimension
     {
         /**
-         * Reserved.
+         * The type of audience dimensions, the following dimension types are supported as of now: Age, Gender, Audience.
          * @var AudienceGroupDimensionType
          */
         public $Type;

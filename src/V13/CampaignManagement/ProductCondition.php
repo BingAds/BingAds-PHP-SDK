@@ -24,6 +24,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Operand;
+
+        /**
+         * The rule item operator.
+         * @var string
+         */
+        public $Operator;
     }
 
 }

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves specified AssetGroups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getassetgroupsbyids?view=bingads-13 GetAssetGroupsByIds Response Object
      * 
      * @uses AssetGroup
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetAssetGroupsByIdsResponse
     {
         /**
-         * Reserved.
+         * Array of asset groups to update for the specified campaign.
          * @var AssetGroup[]
          */
         public $AssetGroups;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

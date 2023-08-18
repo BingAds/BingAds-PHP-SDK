@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified asset groups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateassetgroups?view=bingads-13 UpdateAssetGroups Request Object
      * 
      * @uses AssetGroup
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateAssetGroupsRequest
     {
         /**
-         * Reserved.
+         * The ID of the performance max campaign.
          * @var integer
          */
         public $CampaignId;
 
         /**
-         * Reserved.
+         * Array of asset groups to update for the specified campaign.
          * @var AssetGroup[]
          */
         public $AssetGroups;

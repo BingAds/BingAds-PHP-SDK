@@ -149,7 +149,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language for the product offer. */
         const OfferLanguage = 'OfferLanguage';
 
-        /** The country of sale for the product catalog. */
+        /** The country/region of sale for the product catalog. */
         const CountryOfSale = 'CountryOfSale';
 
         /** The ad status. */
@@ -280,6 +280,36 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const GoalId = 'GoalId';
+
+        /** Reserved. */
+        const Sales = 'Sales';
+
+        /** Reserved. */
+        const CostPerSale = 'CostPerSale';
+
+        /** Reserved. */
+        const RevenuePerSale = 'RevenuePerSale';
+
+        /** Reserved. */
+        const Installs = 'Installs';
+
+        /** Reserved. */
+        const CostPerInstall = 'CostPerInstall';
+
+        /** Reserved. */
+        const RevenuePerInstall = 'RevenuePerInstall';
+
+        /** The campaign type. */
+        const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
+        const AssetGroupName = 'AssetGroupName';
+
+        /** The asset group status. */
+        const AssetGroupStatus = 'AssetGroupStatus';
     }
 
 }

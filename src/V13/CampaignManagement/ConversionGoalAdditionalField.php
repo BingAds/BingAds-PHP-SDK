@@ -26,6 +26,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Determines which attribution model, _LastTouch_ or _LastClick_, is used with a conversion goal. */
         const AttributionModelType = 'AttributionModelType';
+
+        /** Determines whether enhanced conversions are enabled for a conversion goal. */
+        const IsEnhancedConversionsEnabled = 'IsEnhancedConversionsEnabled';
     }
 
 }

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves specified AssetGroups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getassetgroupsbyids?view=bingads-13 GetAssetGroupsByIds Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetAssetGroupsByIds
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetAssetGroupsByIdsRequest
     {
         /**
-         * Reserved.
+         * The ID of the performance max campaign.
          * @var integer
          */
         public $CampaignId;
 
         /**
-         * Reserved.
+         * Array of asset group ids to update for the specified campaign.
          * @var integer[]
          */
         public $AssetGroupIds;

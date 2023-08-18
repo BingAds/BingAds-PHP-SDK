@@ -80,19 +80,19 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The hotel's star rating. */
         const StarRating = 'StarRating';
 
-        /** The value of the Custom_label_0 field in your Microsoft Merchant Center catalog. */
+        /** The value of the Custom_0 field in your Microsoft Hotel Center feed. */
         const CustomLabel0 = 'CustomLabel0';
 
-        /** The value of the Custom_label_1 field in your Microsoft Merchant Center catalog. */
+        /** The value of the Custom_1 field in your Microsoft Hotel Center feed. */
         const CustomLabel1 = 'CustomLabel1';
 
-        /** The value of the Custom_label_2 field in your Microsoft Merchant Center catalog. */
+        /** The value of the Custom_2 field in your Microsoft Hotel Center feed. */
         const CustomLabel2 = 'CustomLabel2';
 
-        /** The value of the Custom_label_3 field in your Microsoft Merchant Center catalog. */
+        /** The value of the Custom_3 field in your Microsoft Hotel Center feed. */
         const CustomLabel3 = 'CustomLabel3';
 
-        /** The value of the Custom_label_4 field in your Microsoft Merchant Center catalog. */
+        /** The value of the Custom_4 field in your Microsoft Hotel Center feed. */
         const CustomLabel4 = 'CustomLabel4';
 
         /** The bid strategy type. */
@@ -196,6 +196,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of days before the check-in date that the user is asking to book the hotel room. */
         const AdvancedBookingWindow = 'AdvancedBookingWindow';
+
+        /** The Bing website that users used to search for hotels. */
+        const SiteType = 'SiteType';
+
+        /** The country of location for the user. */
+        const UserCountry = 'UserCountry';
+
+        /** Reserved. */
+        const ClickShare = 'ClickShare';
     }
 
 }

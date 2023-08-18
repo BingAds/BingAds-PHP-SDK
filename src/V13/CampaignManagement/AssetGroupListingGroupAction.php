@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * An object that contains an Action element and a ListingGroup element.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgrouplistinggroupaction?view=bingads-13 AssetGroupListingGroupAction Data Object
      * 
      * @uses ItemAction
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AssetGroupListingGroupAction
     {
         /**
-         * Reserved.
+         * The action to be applied for the AssetGroupListingGroup.
          * @var ItemAction
          */
         public $Action;
 
         /**
-         * Reserved.
+         * The AssetGroupListingGroup to apply action to.
          * @var AssetGroupListingGroup
          */
         public $ListingGroup;

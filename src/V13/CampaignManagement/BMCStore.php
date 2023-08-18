@@ -43,7 +43,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Name;
 
         /**
-         * Reserved.
+         * The store's destination URL.
          * @var string
          */
         public $StoreUrl;

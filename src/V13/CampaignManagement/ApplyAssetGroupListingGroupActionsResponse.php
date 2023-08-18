@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Applies an action to an asset group listing group.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/applyassetgrouplistinggroupactions?view=bingads-13 ApplyAssetGroupListingGroupActions Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ApplyAssetGroupListingGroupActionsResponse
     {
         /**
-         * Reserved.
+         * A list of IDs that for the listing groups that had the action applied.
          * @var integer[]
          */
         public $AssetGroupListingGroupIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that weren't successful.
          * @var BatchError[]
          */
         public $PartialErrors;

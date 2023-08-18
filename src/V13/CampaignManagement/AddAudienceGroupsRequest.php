@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds array of audience groups to a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addaudiencegroups?view=bingads-13 AddAudienceGroups Request Object
      * 
      * @uses AudienceGroup
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddAudienceGroupsRequest
     {
         /**
-         * Reserved.
+         * Array of audience groups.
          * @var AudienceGroup[]
          */
         public $AudienceGroups;

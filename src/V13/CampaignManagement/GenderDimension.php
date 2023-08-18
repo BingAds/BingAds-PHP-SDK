@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a GenderDimension data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/genderdimension?view=bingads-13 GenderDimension Data Object
      * 
      * @uses GenderType
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GenderDimension extends AudienceGroupDimension
     {
         /**
-         * Reserved.
+         * A list of gender types.
          * @var GenderType[]
          */
         public $GenderTypes;

@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/coupon?view=bingads-13 Coupon Data Object
      * 
      * @uses CouponRedemption
+     * @uses CouponClaimInfo
      * @used-by SearchCouponsResponse
      */
     final class Coupon
@@ -101,6 +102,12 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var CouponRedemption
          */
         public $RedemptionInfo;
+
+        /**
+         * Reserved.
+         * @var CouponClaimInfo
+         */
+        public $ClaimInfo;
     }
 
 }

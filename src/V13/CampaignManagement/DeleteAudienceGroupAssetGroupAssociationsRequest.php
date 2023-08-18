@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes one or more AudienceGroupAssetGroupAssociations.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deleteaudiencegroupassetgroupassociations?view=bingads-13 DeleteAudienceGroupAssetGroupAssociations Request Object
      * 
      * @uses AudienceGroupAssetGroupAssociation
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteAudienceGroupAssetGroupAssociationsRequest
     {
         /**
-         * Reserved.
+         * The list of Audience Group associations to be deleted.
          * @var AudienceGroupAssetGroupAssociation[]
          */
         public $AudienceGroupAssetGroupAssociations;

@@ -447,20 +447,32 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Reserved. */
         const AdGroupHotelListingGroups = 'AdGroupHotelListingGroups';
 
-        /** Reserved. */
+        /** Array of asset groups to add to the specified campaign. */
         const AssetGroups = 'AssetGroups';
 
-        /** Reserved. */
+        /** Array of audience groups. */
         const AudienceGroups = 'AudienceGroups';
 
-        /** Reserved. */
+        /** Defines a negative site assigned to an campaign that can be uploaded and downloaded in a bulk file. */
         const CampaignNegativeWebpages = 'CampaignNegativeWebpages';
 
-        /** Reserved. */
+        /** The list of Audience Group associations. */
         const AudienceGroupAssetGroupAssociations = 'AudienceGroupAssetGroupAssociations';
 
-        /** Reserved. */
+        /** The list of listing groups that correspond directly to the identifiers specified in the request. */
         const AssetGroupListingGroups = 'AssetGroupListingGroups';
+
+        /** Reserved. */
+        const LogoAdExtensions = 'LogoAdExtensions';
+
+        /** Reserved. */
+        const AccountLogoAdExtensions = 'AccountLogoAdExtensions';
+
+        /** Reserved. */
+        const CampaignLogoAdExtensions = 'CampaignLogoAdExtensions';
+
+        /** Reserved. */
+        const AdGroupLogoAdExtensions = 'AdGroupLogoAdExtensions';
     }
 
 }
