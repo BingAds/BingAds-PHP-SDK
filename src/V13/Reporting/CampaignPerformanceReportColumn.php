@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The account currency type. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** The network where your ads are shown. */
+        /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
         /** The number of times an ad has been displayed on search results pages. */
@@ -131,7 +131,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The phone-through rate (Ptr). */
         const Ptr = 'Ptr';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -323,22 +323,22 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
 
-        /** Reserved. */
+        /** The total number of sales. */
         const Sales = 'Sales';
 
-        /** Reserved. */
+        /** The cost per sale. */
         const CostPerSale = 'CostPerSale';
 
-        /** Reserved. */
+        /** The revenue per sale. */
         const RevenuePerSale = 'RevenuePerSale';
 
-        /** Reserved. */
+        /** The total number of installs. */
         const Installs = 'Installs';
 
-        /** Reserved. */
+        /** The cost per install. */
         const CostPerInstall = 'CostPerInstall';
 
-        /** Reserved. */
+        /** The revenue per install. */
         const RevenuePerInstall = 'RevenuePerInstall';
     }
 

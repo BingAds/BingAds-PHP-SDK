@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** The Microsoft Advertising assigned identifier of an ad. */
@@ -278,25 +278,25 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
 
-        /** Reserved. */
+        /** The total number of sales. */
         const Sales = 'Sales';
 
-        /** Reserved. */
+        /** The cost per sale. */
         const CostPerSale = 'CostPerSale';
 
-        /** Reserved. */
+        /** The revenue per sale. */
         const RevenuePerSale = 'RevenuePerSale';
 
-        /** Reserved. */
+        /** The total number of installs. */
         const Installs = 'Installs';
 
-        /** Reserved. */
+        /** The cost per install. */
         const CostPerInstall = 'CostPerInstall';
 
-        /** Reserved. */
+        /** The revenue per install. */
         const RevenuePerInstall = 'RevenuePerInstall';
 
         /** The campaign type. */

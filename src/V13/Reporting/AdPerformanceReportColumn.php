@@ -277,6 +277,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
+
+        /** Reserved. */
+        const AdStrength = 'AdStrength';
+
+        /** Reserved. */
+        const AdStrengthActionItems = 'AdStrengthActionItems';
     }
 
 }

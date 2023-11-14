@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ApplyAssetGroupListingGroupActionsRequest
     {
         /**
-         * A list of AssetGroupListingGroupAction objects that each contain an Action element and a ListingGroup element.All of the asset group listing group actions must be for the same asset group
+         * A list of AssetGroupListingGroupAction objects that each contain an Action element and a ListingGroup element.
          * @var AssetGroupListingGroupAction[]
          */
         public $ListingGroupActions;

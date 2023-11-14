@@ -92,7 +92,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const HotelCheckInDate = 'HotelCheckInDate';
 
-        /** Reserved. */
+        /** The ad group criterion is a genre criterion. */
         const Genre = 'Genre';
     }
 

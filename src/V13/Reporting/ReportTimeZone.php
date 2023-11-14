@@ -74,7 +74,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The corresponding report time zone. */
         const BangkokHanoiJakarta = 'BangkokHanoiJakarta';
 
-        /** The corresponding report time zone. */
+        /** Reserved. */
         const Rangoon = 'Rangoon';
 
         /** The corresponding report time zone. */
@@ -179,7 +179,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The corresponding report time zone. */
         const Greenland = 'Greenland';
 
-        /** The corresponding report time zone. */
+        /** Reserved. */
         const Newfoundland = 'Newfoundland';
 
         /** The corresponding report time zone. */

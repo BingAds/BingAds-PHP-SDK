@@ -59,6 +59,12 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var integer
          */
         public $CustomerId;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $CampaignId;
     }
 
 }

@@ -473,6 +473,15 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const AdGroupLogoAdExtensions = 'AdGroupLogoAdExtensions';
+
+        /** Reserved. */
+        const LeadFormAdExtensions = 'LeadFormAdExtensions';
+
+        /** Reserved. */
+        const AccountLeadFormAdExtensions = 'AccountLeadFormAdExtensions';
+
+        /** Reserved. */
+        const CampaignLeadFormAdExtensions = 'CampaignLeadFormAdExtensions';
     }
 
 }
