@@ -153,10 +153,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * Indicates if predictive targeting is enabled for an AdGroup.
+         * This will be deprecated.
          * @var boolean
          */
         public $UseOptimizedTargeting;
+
+        /**
+         * Indicates if predictive targeting is enabled for an AdGroup.
+         * @var boolean
+         */
+        public $UsePredictiveTargeting;
 
         /**
          * Determines whether to use the account time zone or the time zone of the search user where the ads could be delivered.

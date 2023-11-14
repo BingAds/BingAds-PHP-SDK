@@ -260,22 +260,22 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
 
-        /** Reserved. */
+        /** The total number of sales. */
         const Sales = 'Sales';
 
-        /** Reserved. */
+        /** The cost per sale. */
         const CostPerSale = 'CostPerSale';
 
-        /** Reserved. */
+        /** The revenue per sale. */
         const RevenuePerSale = 'RevenuePerSale';
 
-        /** Reserved. */
+        /** The total number of installs. */
         const Installs = 'Installs';
 
-        /** Reserved. */
+        /** The cost per install. */
         const CostPerInstall = 'CostPerInstall';
 
-        /** Reserved. */
+        /** The revenue per install. */
         const RevenuePerInstall = 'RevenuePerInstall';
     }
 

@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The campaign is a Hotel campaign. */
         const Hotel = 'Hotel';
 
-        /** Reserved. */
+        /** The campaign is a Performance max campaign. */
         const PerformanceMax = 'PerformanceMax';
     }
 

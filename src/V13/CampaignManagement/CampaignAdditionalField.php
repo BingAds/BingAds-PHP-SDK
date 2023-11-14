@@ -65,6 +65,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CallToActionSetting = 'CallToActionSetting';
+
+        /** Reserved. */
+        const PageFeedInPerformanceMaxSettings = 'PageFeedInPerformanceMaxSettings';
     }
 
 }

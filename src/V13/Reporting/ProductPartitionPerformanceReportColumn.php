@@ -101,7 +101,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The destination URL attribute of the ad, keyword, or ad group criterion. */
         const DestinationUrl = 'DestinationUrl';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */

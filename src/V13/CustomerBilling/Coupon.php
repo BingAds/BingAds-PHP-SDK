@@ -104,7 +104,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $RedemptionInfo;
 
         /**
-         * Reserved.
+         * The AccountId, AccountNumber, and ClaimDate of the claim.
          * @var CouponClaimInfo
          */
         public $ClaimInfo;

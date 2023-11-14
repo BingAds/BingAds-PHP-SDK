@@ -203,7 +203,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The country of location for the user. */
         const UserCountry = 'UserCountry';
 
-        /** Reserved. */
+        /** The estimated percentage of clicks, out of the total number of clicks available, in auctions your ad showed in or was competitive in. */
         const ClickShare = 'ClickShare';
     }
 

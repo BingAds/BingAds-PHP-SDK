@@ -98,7 +98,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */

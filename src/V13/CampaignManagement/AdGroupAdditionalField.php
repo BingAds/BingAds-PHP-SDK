@@ -36,11 +36,14 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const McpaBid = 'McpaBid';
 
-        /** Indicates if predictive targeting is enabled for an AdGroup. */
+        /** This will be deprecated. */
         const UseOptimizedTargeting = 'UseOptimizedTargeting';
 
         /** Settings for the frequency cap. */
         const FrequencyCapSettings = 'FrequencyCapSettings';
+
+        /** Indicates if predictive targeting is enabled for an AdGroup. */
+        const UsePredictiveTargeting = 'UsePredictiveTargeting';
     }
 
 }

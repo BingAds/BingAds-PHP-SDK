@@ -44,6 +44,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UpdateAdUrls = 'UpdateAdUrls';
+
+        /** Reserved. */
+        const NewLogoAdExtensions = 'NewLogoAdExtensions';
+
+        /** Reserved. */
+        const UpdateLogoAdExtensions = 'UpdateLogoAdExtensions';
+
+        /** Reserved. */
+        const UpdateSitelinkUrls = 'UpdateSitelinkUrls';
     }
 
 }

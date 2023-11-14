@@ -17,14 +17,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The number of days to limit ad serves by. */
         const DAY = 'DAY';
 
-        /** The number of weeks to limit ad serves by.. */
+        /** The number of weeks to limit ad serves by. */
         const WEEK = 'WEEK';
-
-        /** The number of months to limit ad serves by. */
-        const MONTH = 'MONTH';
-
-        /** Limit ad serves by the lifetime of the ad. */
-        const LIFETIME = 'LIFETIME';
     }
 
 }

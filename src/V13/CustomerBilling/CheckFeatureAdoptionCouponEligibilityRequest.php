@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Check the FAC eligibility of an account.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/checkfeatureadoptioncouponeligibility?view=bingads-13 CheckFeatureAdoptionCouponEligibility Request Object
      * 
      * @used-by BingAdsCustomerBillingService::CheckFeatureAdoptionCouponEligibility
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class CheckFeatureAdoptionCouponEligibilityRequest
     {
         /**
-         * Reserved.
+         * The identifier of the feature.
          * @var integer
          */
         public $FeatureId;
 
         /**
-         * Reserved.
+         * A list of account identifiers to check for eligibility.
          * @var integer[]
          */
         public $AccountIds;

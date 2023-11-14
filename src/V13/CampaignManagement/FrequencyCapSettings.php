@@ -19,12 +19,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CapValue;
 
         /**
-         * What unit to limit the ad serves.
-         * @var string
-         */
-        public $FrequencyCapUnit;
-
-        /**
          * The smallest time interval to limit ad serves.
          * @var FrequencyCapTimeGranularity
          */

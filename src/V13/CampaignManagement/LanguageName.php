@@ -122,6 +122,24 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const Russian = 'Russian';
 
+        /** Reserved. */
+        const Malay = 'Malay';
+
+        /** Reserved. */
+        const Thai = 'Thai';
+
+        /** Reserved. */
+        const Indonesian = 'Indonesian';
+
+        /** Reserved. */
+        const Tagalog = 'Tagalog';
+
+        /** Reserved. */
+        const Vietnamese = 'Vietnamese';
+
+        /** Reserved. */
+        const Hindi = 'Hindi';
+
         /** The corresponding language name. */
         const All = 'All';
     }

@@ -11,16 +11,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AssetGroupStatus
     {
-        /** The status of the AssetGroup is Active. */
+        /** The asset group is active, which indicates that the asset group can be served. */
         const Active = 'Active';
 
-        /** The status of the AssetGroup is Paused. */
+        /** The asset group is paused, which indicates that the asset group will not serve. */
         const Paused = 'Paused';
 
-        /** The status of the AssetGroup is Deleted. */
+        /** This status is for internal use only. */
         const Deleted = 'Deleted';
 
-        /** Reserved. */
+        /** The asset group is expired. */
         const Expired = 'Expired';
     }
 

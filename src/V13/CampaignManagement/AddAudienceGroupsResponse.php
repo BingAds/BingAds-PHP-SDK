@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Adds array of audience groups to a specified campaign.
+     * Adds array of audience groups to the account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addaudiencegroups?view=bingads-13 AddAudienceGroups Response Object
      * 
      * @uses BatchError

@@ -10,10 +10,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class PerformanceMaxSetting extends Setting
     {
         /**
-         * Reserved.
+         * If false, then the entire domain will be targeted, and ad assets will be dynamically generated to match landing page content.
          * @var boolean
          */
         public $FinalUrlExpansionOptOut;
+
+        /**
+         * Reserved.
+         * @var integer[]
+         */
+        public $PageFeedIds;
     }
 
 }

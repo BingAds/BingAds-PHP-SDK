@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The search term used by your potential audience. */
         const SearchQuery = 'SearchQuery';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** The unique identifier provided by a merchant for each product offer. */

@@ -36,7 +36,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdjustmentForCampaignBudgets;
 
         /**
-         * The identifier of the Microsoft Merchant Center store that you want to associate with imported product ads and product filters.
+         * Note: AssociatedStoreId is deprecated.
          * @var integer
          */
         public $AssociatedStoreId;
@@ -178,6 +178,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewLocationTargets;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewLogoAdExtensions;
 
         /**
          * Import negative keyword lists that have not previously been imported.
@@ -480,6 +486,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateLocationTargets;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateLogoAdExtensions;
+
+        /**
          * Import updates to existing negative keyword lists.
          * @var boolean
          */
@@ -526,6 +538,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateSitelinkAdExtensions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateSitelinkUrls;
 
         /**
          * Import updates to the status of existing ad groups.

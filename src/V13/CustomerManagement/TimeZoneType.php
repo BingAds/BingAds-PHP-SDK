@@ -188,7 +188,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** The corresponding time zone type. */
         const Nairobi = 'Nairobi';
 
-        /** The corresponding time zone type. */
+        /** Reserved. */
         const Newfoundland = 'Newfoundland';
 
         /** The corresponding time zone type. */
@@ -203,7 +203,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** The corresponding time zone type. */
         const Perth = 'Perth';
 
-        /** The corresponding time zone type. */
+        /** Reserved. */
         const Rangoon = 'Rangoon';
 
         /** The corresponding time zone type. */
