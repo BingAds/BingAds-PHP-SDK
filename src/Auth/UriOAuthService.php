@@ -81,7 +81,7 @@ class UriOAuthService extends IOAuthService
         
         $OAuthTokenUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'];
 
-        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        if (in_array($endpointType, [OAuthEndpointType::ProductionMSIdentityV2, OAuthEndpointType::ProductionMSIdentityV2_MSScope], true) && (isset($tenant)))
         {
             $OAuthTokenUrl = str_replace("common", $tenant, $OAuthTokenUrl);
         }
@@ -152,7 +152,7 @@ class UriOAuthService extends IOAuthService
 
         $authorizationEndpointUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
         
-        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        if (in_array($endpointType, [OAuthEndpointType::ProductionMSIdentityV2, OAuthEndpointType::ProductionMSIdentityV2_MSScope], true) && (isset($tenant)))
         {
             $authorizationEndpointUrl = str_replace("common", $tenant, $authorizationEndpointUrl);
         }
@@ -202,7 +202,7 @@ class UriOAuthService extends IOAuthService
 
         $OAuthTokenUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['OAuthTokenUrl'];
 
-        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        if (in_array($endpointType, [OAuthEndpointType::ProductionMSIdentityV2, OAuthEndpointType::ProductionMSIdentityV2_MSScope], true) && (isset($tenant)))
         {
             $OAuthTokenUrl = str_replace("common", $tenant, $OAuthTokenUrl);
         }
@@ -215,7 +215,7 @@ class UriOAuthService extends IOAuthService
 
         $authorizationEndpointUrl = UriOAuthService::ENDPOINT_URLS[$endpointType]['AuthorizationEndpointUrl'];
         
-        if ((strcmp($endpointType, OAuthEndpointType::ProductionMSIdentityV2) == 0) && (isset($tenant)))
+        if (in_array($endpointType, [OAuthEndpointType::ProductionMSIdentityV2, OAuthEndpointType::ProductionMSIdentityV2_MSScope], true) && (isset($tenant)))
         {
             $authorizationEndpointUrl = str_replace("common", $tenant, $authorizationEndpointUrl);
         }
