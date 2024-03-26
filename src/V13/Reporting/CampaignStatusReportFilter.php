@@ -13,6 +13,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by AdGroupPerformanceReportFilter
      * @used-by AdPerformanceReportFilter
      * @used-by AgeGenderAudienceReportFilter
+     * @used-by AssetGroupPerformanceReportFilter
      * @used-by AudiencePerformanceReportFilter
      * @used-by CallDetailReportFilter
      * @used-by CampaignPerformanceReportFilter

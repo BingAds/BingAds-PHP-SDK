@@ -72,6 +72,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EnableParentLocationMapping;
 
         /**
+         * Import account negative keywords that have not previously been imported.
+         * @var boolean
+         */
+        public $NewAccountNegativeKeywords;
+
+        /**
          * Import new active ads within existing ad groups.
          * @var boolean
          */
@@ -168,6 +174,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewLabels;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewLeadFormAdExtensions;
+
+        /**
          * Import location extensions that have not previously been imported.
          * @var boolean
          */
@@ -180,7 +192,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewLocationTargets;
 
         /**
-         * Reserved.
+         * Import logo ad extensions that have not previously been imported.
          * @var boolean
          */
         public $NewLogoAdExtensions;
@@ -360,6 +372,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SuffixForUrls;
 
         /**
+         * Import updates to existing account negative keywords.
+         * @var boolean
+         */
+        public $UpdateAccountNegativeKeywords;
+
+        /**
+         * Import updates to existing ad customizer feeds.
+         * @var boolean
+         */
+        public $UpdateAdCustomizerAttributes;
+
+        /**
          * Import updates to existing ad customizer feeds.
          * @var boolean
          */
@@ -474,6 +498,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateLabels;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateLeadFormAdExtensions;
+
+        /**
          * Import updates to existing location extensions.
          * @var boolean
          */
@@ -486,7 +516,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateLocationTargets;
 
         /**
-         * Reserved.
+         * Import updates to existing logo ad extensions.
          * @var boolean
          */
         public $UpdateLogoAdExtensions;
@@ -540,7 +570,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateSitelinkAdExtensions;
 
         /**
-         * Reserved.
+         * Import updates to existing Sitelink Extension URLs.
          * @var boolean
          */
         public $UpdateSitelinkUrls;

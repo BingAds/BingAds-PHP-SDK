@@ -8,6 +8,8 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/batcherror?view=bingads-13 BatchError Data Object
      * 
      * @used-by ApiFaultDetail
+     * @used-by ApplyRecommendationsResponse
+     * @used-by DismissRecommendationsResponse
      * @used-by GetTextAssetSuggestionsByFinalUrlsResponse
      * @used-by SetAutoApplyOptInStatusResponse
      * @used-by TagRecommendationsResponse

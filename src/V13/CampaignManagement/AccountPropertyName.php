@@ -56,6 +56,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const OptOutFromMCM = 'OptOutFromMCM';
+
+        /** Reserved. */
+        const NetflixTCAccepted = 'NetflixTCAccepted';
     }
 
 }

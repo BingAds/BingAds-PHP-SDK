@@ -310,6 +310,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
+
+        /** Reserved. */
+        const CollectionId = 'CollectionId';
     }
 
 }

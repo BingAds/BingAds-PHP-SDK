@@ -4,17 +4,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a CustomerListItemSubType value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/customerlistitemsubtype?view=bingads-13 CustomerListItemSubType Value Set
      * 
-     * @used-by CustomerListItem
+     * @used-by CustomerListUserData
      */
     final class CustomerListItemSubType
     {
-        /** Reserved. */
+        /** The user data type is email. */
         const Email = 'Email';
 
-        /** Reserved. */
+        /** The user data type is CRM. */
         const CRM = 'CRM';
     }
 

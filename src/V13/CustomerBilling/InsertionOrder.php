@@ -152,6 +152,18 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var string
          */
         public $SeriesFrequencyType;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IsUnlimited;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IsEndless;
     }
 
 }

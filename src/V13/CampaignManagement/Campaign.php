@@ -46,6 +46,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DailyBudget;
 
         /**
+         * A list of unique system identifiers corresponding to the deals that were added.
+         * @var integer[]
+         */
+        public $DealIds;
+
+        /**
          * The system-generated identifier of the Experiment.
          * @var integer
          */

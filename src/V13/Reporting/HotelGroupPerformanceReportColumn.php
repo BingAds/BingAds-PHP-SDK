@@ -154,6 +154,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const ClickShare = 'ClickShare';
+
+        /** Reserved. */
+        const MissedImpressionsInsufficientBid = 'MissedImpressionsInsufficientBid';
     }
 
 }

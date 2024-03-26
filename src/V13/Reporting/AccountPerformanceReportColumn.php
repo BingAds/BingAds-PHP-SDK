@@ -248,7 +248,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Number of times a person watched the entire video to completion. */
         const CompletedVideoViews = 'CompletedVideoViews';
 
-        /** The number of completed video views divided by the number of total video views. */
+        /** The number of completed video views divided by the total number of impressions, multiplied by 100. */
         const VideoCompletionRate = 'VideoCompletionRate';
 
         /** Total amount of time a person spent watching the video in milliseconds. */
