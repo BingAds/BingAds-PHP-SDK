@@ -4,23 +4,23 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a CustomerListActionType value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/customerlistactiontype?view=bingads-13 CustomerListActionType Value Set
      * 
-     * @used-by CustomerList
+     * @used-by CustomerListUserData
      */
     final class CustomerListActionType
     {
-        /** Reserved. */
+        /** The requested action is to take no action for the customer list item. */
         const None = 'None';
 
-        /** Reserved. */
+        /** The requested action is to add the customer list item. */
         const Add = 'Add';
 
-        /** Reserved. */
+        /** The requested action is to remove the customer list item. */
         const Remove = 'Remove';
 
-        /** Reserved. */
+        /** The requested action is to replace the customer list item. */
         const Replace = 'Replace';
     }
 

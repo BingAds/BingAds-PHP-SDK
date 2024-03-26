@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * 
      * @uses BudgetPointType
      * @used-by BudgetOpportunity
+     * @used-by CampaignBudgetRecommendation
      */
     final class BudgetPoint
     {

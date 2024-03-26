@@ -9,6 +9,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @used-by BidStrategy
      * @used-by Campaign
+     * @used-by DataExclusion
+     * @used-by SeasonalityAdjustment
      * @used-by GetCampaignsByAccountIdRequest
      * @used-by GetCampaignsByIdsRequest
      */
@@ -26,7 +28,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The campaign is an Audience campaign. */
         const Audience = 'Audience';
 
-        /** The campaign is a Hotel campaign. */
+        /** The campaign is a Lodging campaign (formerly hotel campaigns). */
         const Hotel = 'Hotel';
 
         /** The campaign is a Performance max campaign. */

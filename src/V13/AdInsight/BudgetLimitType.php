@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/budgetlimittype?view=bingads-13 BudgetLimitType Value Set
      * 
      * @used-by BudgetOpportunity
+     * @used-by CampaignBudgetRecommendation
      */
     final class BudgetLimitType
     {

@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @link https:/learn.microsoft.com/advertising/reporting-service/campaignreportscope?view=bingads-13 CampaignReportScope Data Object
      * 
      * @used-by AccountThroughAdGroupReportScope
+     * @used-by AccountThroughAssetGroupReportScope
      * @used-by AccountThroughCampaignReportScope
      */
     final class CampaignReportScope

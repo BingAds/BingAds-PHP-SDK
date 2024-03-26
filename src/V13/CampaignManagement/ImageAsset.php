@@ -42,13 +42,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SubType;
 
         /**
-         * Reserved.
+         * The target height dimension of an image asset.
          * @var integer
          */
         public $TargetHeight;
 
         /**
-         * Reserved.
+         * The target width dimension of an image asset.
          * @var integer
          */
         public $TargetWidth;

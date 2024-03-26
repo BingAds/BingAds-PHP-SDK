@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @uses Predicate
      * @uses OrderBy
      * @uses Paging
+     * @uses InsertionOrderAdditionalField
      * @used-by BingAdsCustomerBillingService::SearchInsertionOrders
      */
     final class SearchInsertionOrdersRequest
@@ -31,5 +32,11 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * Reserved.
+         * @var InsertionOrderAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

@@ -63,7 +63,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImpressionTrackingUrls;
 
         /**
-         * Reserved for future use.
+         * For Audience campaigns, LongHeadline is the longer of two possible responsive ad headlines.
          * @var AssetLink
          */
         public $LongHeadline;
@@ -75,7 +75,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $LongHeadlineString;
 
         /**
-         * Headlines are the most prominent text that appears in your ad, so you should make the most out of the available characters.
+         * You must set between 1-5 long headlines.
          * @var AssetLink[]
          */
         public $LongHeadlines;
@@ -87,7 +87,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Text;
 
         /**
-         * Reserved.
+         * VerifiedTrackingSetting relates third-party measurement settings.
          * @var VerifiedTrackingSetting
          */
         public $VerifiedTrackingSettings;

@@ -482,6 +482,57 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const CampaignLeadFormAdExtensions = 'CampaignLeadFormAdExtensions';
+
+        /** Include Account Negative Keyword List records in the download data. */
+        const AccountNegativeKeywordList = 'AccountNegativeKeywordList';
+
+        /** Include Account Negative Keyword List Association records in the download that represents the association relationship between an account and an account negative keyword list. */
+        const AccountNegativeKeywordListAssociation = 'AccountNegativeKeywordListAssociation';
+
+        /** Include Account Negative Keyword List records in the download data. */
+        const AccountNegativeKeyword = 'AccountNegativeKeyword';
+
+        /** Reserved. */
+        const ConversionGoal = 'ConversionGoal';
+
+        /** Reserved. */
+        const EventGoal = 'EventGoal';
+
+        /** Reserved. */
+        const AppInstallGoal = 'AppInstallGoal';
+
+        /** Reserved. */
+        const MultiStageGoal = 'MultiStageGoal';
+
+        /** Reserved. */
+        const DurationGoal = 'DurationGoal';
+
+        /** Reserved. */
+        const OfflineConversionGoal = 'OfflineConversionGoal';
+
+        /** Reserved. */
+        const UrlGoal = 'UrlGoal';
+
+        /** Reserved. */
+        const InStoreTransactionGoal = 'InStoreTransactionGoal';
+
+        /** Reserved. */
+        const PagesViewedPerVisitGoal = 'PagesViewedPerVisitGoal';
+
+        /** Reserved. */
+        const SmartGoal = 'SmartGoal';
+
+        /** Reserved. */
+        const InStoreVisitGoal = 'InStoreVisitGoal';
+
+        /** Reserved. */
+        const ProductGoal = 'ProductGoal';
+
+        /** Reserved. */
+        const SeasonalityAdjustments = 'SeasonalityAdjustments';
+
+        /** Reserved. */
+        const DataExclusions = 'DataExclusions';
     }
 
 }

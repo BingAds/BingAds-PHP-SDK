@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * @uses Predicate
      * @uses OrderBy
      * @uses Paging
+     * @uses AccountAdditionalField
      * @used-by BingAdsCustomerBillingService::SearchCoupons
      */
     final class SearchCouponsRequest
@@ -31,5 +32,11 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * If set to "CouponClaimInfo", return CouponClaimInfo in the response.
+         * @var AccountAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

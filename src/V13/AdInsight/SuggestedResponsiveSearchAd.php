@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * Defines an object that describes the suggested responsive search ads.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/suggestedresponsivesearchad?view=bingads-13 SuggestedResponsiveSearchAd Data Object
      * 
+     * @used-by ResponsiveSearchAdRecommendation
      * @used-by ResponsiveSearchAdsRecommendation
      */
     final class SuggestedResponsiveSearchAd

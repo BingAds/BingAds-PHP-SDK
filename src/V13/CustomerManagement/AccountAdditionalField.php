@@ -18,6 +18,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** Request that the AccountMode element be included within each returned AdvertiserAccount or AccountInfoWithCustomerData object. */
         const AccountMode = 'AccountMode';
+
+        /** Request that the CouponClaimInfo element be included within each returned AdvertiserAccount object. */
+        const CouponClaimInfo = 'CouponClaimInfo';
     }
 
 }

@@ -15,6 +15,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by AdGroupPerformanceReportRequest
      * @used-by AdPerformanceReportRequest
      * @used-by AgeGenderAudienceReportRequest
+     * @used-by AssetGroupPerformanceReportRequest
      * @used-by AudiencePerformanceReportRequest
      * @used-by CallDetailReportRequest
      * @used-by CampaignPerformanceReportRequest

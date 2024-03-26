@@ -242,7 +242,7 @@ class ServiceClient
 			'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
 			// Disable keep_alive to avoid 'Process open FD table is full'
 			'keep_alive' => FALSE, 
-			'user_agent' => 'BingAdsSDKPHP ' . '13.0.18 ' . PHP_VERSION, 
+			'user_agent' => 'BingAdsSDKPHP ' . '13.0.19 ' . PHP_VERSION, 
 			'cache_wsdl' => 'WSDL_CACHE_NONE',
 
 			/** 

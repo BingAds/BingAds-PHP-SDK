@@ -21,17 +21,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddCampaignConversionGoalsResponse
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
+     * @used-by AddDataExclusionsResponse
      * @used-by AddExperimentsResponse
      * @used-by AddImportJobsResponse
      * @used-by AddKeywordsResponse
      * @used-by AddLabelsResponse
      * @used-by AddListItemsToSharedListResponse
+     * @used-by AddSeasonalityAdjustmentsResponse
      * @used-by AddSharedEntityResponse
      * @used-by AddUetTagsResponse
      * @used-by AddVideosResponse
      * @used-by AppealEditorialRejectionsResponse
      * @used-by ApplyAssetGroupListingGroupActionsResponse
      * @used-by ApplyCustomerListItemsResponse
+     * @used-by ApplyCustomerListUserDataResponse
      * @used-by ApplyHotelGroupActionsResponse
      * @used-by ApplyOfflineConversionAdjustmentsResponse
      * @used-by ApplyOfflineConversionsResponse
@@ -51,6 +54,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteCampaignConversionGoalsResponse
      * @used-by DeleteCampaignCriterionsResponse
      * @used-by DeleteCampaignsResponse
+     * @used-by DeleteDataExclusionsResponse
      * @used-by DeleteExperimentsResponse
      * @used-by DeleteImportJobsResponse
      * @used-by DeleteKeywordsResponse
@@ -58,6 +62,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteLabelsResponse
      * @used-by DeleteListItemsFromSharedListResponse
      * @used-by DeleteMediaResponse
+     * @used-by DeleteSeasonalityAdjustmentsResponse
      * @used-by DeleteSharedEntitiesResponse
      * @used-by DeleteSharedEntityAssociationsResponse
      * @used-by DeleteVideosResponse
@@ -82,6 +87,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetCampaignsByIdsResponse
      * @used-by GetConversionGoalsByIdsResponse
      * @used-by GetConversionGoalsByTagIdsResponse
+     * @used-by GetDataExclusionsByAccountIdResponse
+     * @used-by GetDataExclusionsByIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
      * @used-by GetExperimentsByIdsResponse
      * @used-by GetImportEntityIdsMappingResponse
@@ -95,6 +102,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetNegativeKeywordsByEntityIdsResponse
      * @used-by GetNegativeSitesByAdGroupIdsResponse
      * @used-by GetNegativeSitesByCampaignIdsResponse
+     * @used-by GetSeasonalityAdjustmentsByAccountIdResponse
+     * @used-by GetSeasonalityAdjustmentsByIdsResponse
      * @used-by GetSharedEntityAssociationsByEntityIdsResponse
      * @used-by GetSharedEntityAssociationsBySharedEntityIdsResponse
      * @used-by GetUetTagsByIdsResponse
@@ -114,10 +123,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by UpdateBudgetsResponse
      * @used-by UpdateCampaignsResponse
      * @used-by UpdateConversionGoalsResponse
+     * @used-by UpdateDataExclusionsResponse
      * @used-by UpdateExperimentsResponse
      * @used-by UpdateImportJobsResponse
      * @used-by UpdateKeywordsResponse
      * @used-by UpdateLabelsResponse
+     * @used-by UpdateSeasonalityAdjustmentsResponse
      * @used-by UpdateSharedEntitiesResponse
      * @used-by UpdateUetTagsResponse
      * @used-by UpdateVideosResponse

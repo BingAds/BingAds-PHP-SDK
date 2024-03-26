@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The identifier of the source hotel. */
         const SourceHotelId = 'SourceHotelId';
 
-        /** The identifier of the hotel campaign. */
+        /** The identifier of the lodging campaign. */
         const CampaignHotelId = 'CampaignHotelId';
 
         /** The Microsoft Advertising assigned identifier of an advertiser hotel. */
@@ -205,6 +205,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The estimated percentage of clicks, out of the total number of clicks available, in auctions your ad showed in or was competitive in. */
         const ClickShare = 'ClickShare';
+
+        /** Reserved. */
+        const MissedImpressionsInsufficientBid = 'MissedImpressionsInsufficientBid';
     }
 
 }
