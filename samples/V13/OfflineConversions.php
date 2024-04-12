@@ -45,6 +45,7 @@ try
     
     $conversionGoals = array();
     $offlineConversionGoal = new OfflineConversionGoal();
+    $offlineConversionGoal->GoalCategory = ConversionGoalCategory::Purchase;
     // Determines how long after a click that you want to count offline conversions.
     $offlineConversionGoal->ConversionWindowInMinutes = 43200;
     // If the count type is 'Unique' then only the first offline conversion will be counted.

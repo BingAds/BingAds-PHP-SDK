@@ -130,6 +130,7 @@ try
     $addConversionGoals[] = $encodedDurationGoal;    
     
     $addEventGoal = new EventGoal();
+    $addEventGoal->GoalCategory = ConversionGoalCategory::Purchase;
     // The type of user interaction you want to track.
     $addEventGoal->ActionExpression = "play";
     $addEventGoal->ActionOperator = ExpressionOperator::Contains;
@@ -184,6 +185,7 @@ try
     $addConversionGoals[] = $encodedPagesViewedPerVisitGoal;
     
     $addUrlGoal = new UrlGoal();
+    $addUrlGoal->GoalCategory = ConversionGoalCategory::Purchase;
     $addUrlGoal->ConversionWindowInMinutes = 30;
     $addUrlGoal->CountType = ConversionGoalCountType::All;
     $addUrlGoal->Name = "My Url Goal";
