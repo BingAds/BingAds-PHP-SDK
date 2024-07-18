@@ -4,65 +4,65 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a value set for AssetGroupPerformanceReportColumn.
      * @link https:/learn.microsoft.com/advertising/reporting-service/assetgroupperformancereportcolumn?view=bingads-13 AssetGroupPerformanceReportColumn Value Set
      * 
      * @used-by AssetGroupPerformanceReportRequest
      */
     final class AssetGroupPerformanceReportColumn
     {
-        /** Reserved. */
+        /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
-        /** Reserved. */
+        /** The campaign status. */
         const CampaignStatus = 'CampaignStatus';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The ad group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The current asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
         const Ctr = 'Ctr';
 
-        /** Reserved. */
+        /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The average cost per click (CPC). */
         const AverageCpc = 'AverageCpc';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
         const Revenue = 'Revenue';
 
-        /** Reserved. */
+        /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
     }
 

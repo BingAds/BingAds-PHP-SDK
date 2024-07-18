@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Defines a value set for additional insertion order fields.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/insertionorderadditionalfield?view=bingads-13 InsertionOrderAdditionalField Value Set
      * 
      * @used-by SearchInsertionOrdersRequest
@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         /** Reserved. */
         const None = 'None';
 
-        /** Reserved. */
+        /** Return IsUnlimited and IsEndless in the response. */
         const UnlimitedAndEndlessFlags = 'UnlimitedAndEndlessFlags';
     }
 

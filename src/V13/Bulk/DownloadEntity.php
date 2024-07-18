@@ -528,11 +528,38 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Reserved. */
         const ProductGoal = 'ProductGoal';
 
-        /** Reserved. */
+        /** Include SeasonalityAdjustments records in the download data. */
         const SeasonalityAdjustments = 'SeasonalityAdjustments';
 
-        /** Reserved. */
+        /** Include DataExclusions records in the download data. */
         const DataExclusions = 'DataExclusions';
+
+        /** Reserved. */
+        const BrandList = 'BrandList';
+
+        /** Reserved. */
+        const BrandItem = 'BrandItem';
+
+        /** Reserved. */
+        const CampaignBrandListAssociation = 'CampaignBrandListAssociation';
+
+        /** Reserved. */
+        const AssetGroupSearchThemes = 'AssetGroupSearchThemes';
+
+        /** Reserved. */
+        const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
+
+        /** Reserved. */
+        const AdGroupImpressionBasedRemarketingListAssociations = 'AdGroupImpressionBasedRemarketingListAssociations';
+
+        /** Reserved. */
+        const AdGroupNegativeImpressionBasedRemarketingListAssociations = 'AdGroupNegativeImpressionBasedRemarketingListAssociations';
+
+        /** Reserved. */
+        const CampaignImpressionBasedRemarketingListAssociations = 'CampaignImpressionBasedRemarketingListAssociations';
+
+        /** Reserved. */
+        const CampaignNegativeImpressionBasedRemarketingListAssociations = 'CampaignNegativeImpressionBasedRemarketingListAssociations';
     }
 
 }

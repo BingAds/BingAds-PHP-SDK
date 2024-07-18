@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes the specified seasonality adjustments from the specified account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deleteseasonalityadjustments?view=bingads-13 DeleteSeasonalityAdjustments Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteSeasonalityAdjustments
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteSeasonalityAdjustmentsRequest
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The IDs of the seasonality adjustments to delete.
          * @var integer[]
          */
         public $SeasonalityAdjustmentIds;

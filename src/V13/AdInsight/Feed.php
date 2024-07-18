@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a Feed data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/feed?view=bingads-13 Feed Data Object
      * 
      * @used-by GetAudienceFullEstimationRequest
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class Feed
     {
         /**
-         * Reserved.
+         * Respect StoreId when CampaignSubType is set to FeedBasedAds.
          * @var integer
          */
         public $StoreId;
 
         /**
-         * Reserved.
+         * Respect FeedId when CampaignSubType is set to DynamicFeedBasedAds.
          * @var integer
          */
         public $FeedId;
 
         /**
-         * Reserved.
+         * The feed type.
          * @var integer
          */
         public $FeedType;

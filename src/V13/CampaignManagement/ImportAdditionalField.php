@@ -68,6 +68,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the UpdateAdCustomizerAttributes element be included within each returned GoogleImportOption object. */
         const UpdateAdCustomizerAttributes = 'UpdateAdCustomizerAttributes';
+
+        /** Request that the NewConversionGoals element be included within each returned GoogleImportOption object. */
+        const NewConversionGoals = 'NewConversionGoals';
+
+        /** Request that the UpdateConversionGoals element be included within each returned GoogleImportOption object. */
+        const UpdateConversionGoals = 'UpdateConversionGoals';
     }
 
 }

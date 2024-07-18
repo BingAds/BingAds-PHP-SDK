@@ -173,6 +173,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** English (Singapore) */
         const EnglishSingapore = 'EnglishSingapore';
+
+        /** Reserved. */
+        const TurkishTurkey = 'TurkishTurkey';
+
+        /** Reserved. */
+        const FilipinoPhilippines = 'FilipinoPhilippines';
     }
 
 }

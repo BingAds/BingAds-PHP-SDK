@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets the data exclusions associated with an account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getdataexclusionsbyaccountid?view=bingads-13 GetDataExclusionsByAccountId Request Object
      * 
      * @used-by BingAdsCampaignManagementService::GetDataExclusionsByAccountId
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetDataExclusionsByAccountIdRequest
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a RangeResultOfDecimalRoundedResult data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/rangeresultofdecimalroundedresult?view=bingads-13 RangeResultOfDecimalRoundedResult Data Object
      * 
      * @uses DecimalRoundedResult
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class RangeResultOfDecimalRoundedResult
     {
         /**
-         * Reserved.
+         * Indicates the upper bound of range result.
          * @var DecimalRoundedResult
          */
         public $High;
 
         /**
-         * Reserved.
+         * Indicates the lower bound of range result.
          * @var DecimalRoundedResult
          */
         public $Low;

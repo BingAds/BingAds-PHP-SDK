@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets the specified data exclusions associated with an account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getdataexclusionsbyids?view=bingads-13 GetDataExclusionsByIds Response Object
      * 
      * @uses DataExclusion
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetDataExclusionsByIdsResponse
     {
         /**
-         * Reserved.
+         * A list of the specified data exclusions associated with the specified account.
          * @var DataExclusion[]
          */
         public $DataExclusions;
 
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

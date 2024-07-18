@@ -4,17 +4,17 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a value set for the RadiusUnit.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/radiusunit?view=bingads-13 RadiusUnit Value Set
      * 
      * @used-by RadiusTarget
      */
     final class RadiusUnit
     {
-        /** Reserved. */
+        /** Measure the radius in miles. */
         const Miles = 'Miles';
 
-        /** Reserved. */
+        /** Measure the radius in kilometers. */
         const Kilometers = 'Kilometers';
     }
 

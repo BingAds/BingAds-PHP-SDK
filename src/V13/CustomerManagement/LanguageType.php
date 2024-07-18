@@ -65,6 +65,15 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** The corresponding language type. */
         const SimplifiedChinese = 'SimplifiedChinese';
+
+        /** Reserved. */
+        const Thai = 'Thai';
+
+        /** Reserved. */
+        const Turkish = 'Turkish';
+
+        /** Reserved. */
+        const Filipino = 'Filipino';
     }
 
 }

@@ -24,6 +24,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $MediaType;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $Text;
+
+        /**
          * The media type.
          * @var string
          */

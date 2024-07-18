@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Gets the audience full estimation.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/getaudiencefullestimation?view=bingads-13 GetAudienceFullEstimation Request Object
      * 
      * @uses SelectionOfAgeEnum
@@ -18,85 +18,85 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetAudienceFullEstimationRequest
     {
         /**
-         * Reserved.
+         * The selection of age targeting.
          * @var SelectionOfAgeEnum
          */
         public $Age;
 
         /**
-         * Reserved.
+         * The gender to target.
          * @var SelectionOfGenderEnum
          */
         public $Gender;
 
         /**
-         * Reserved.
+         * The selection of audience targeting.
          * @var SelectionOflong
          */
         public $Audience;
 
         /**
-         * Reserved.
+         * The company of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $Company;
 
         /**
-         * Reserved.
+         * The industry of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $Industry;
 
         /**
-         * Reserved.
+         * The job function The industry of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $JobFunction;
 
         /**
-         * Reserved.
+         * The selection of location targeting.
          * @var SelectionOflong
          */
         public $Location;
 
         /**
-         * Reserved.
+         * Represents the desired geographical area in terms of miles/kilometers.
          * @var RadiusTarget[]
          */
         public $RadiusTargets;
 
         /**
-         * Reserved.
+         * Indicates the desired bidding strategy for estimation response.
          * @var integer
          */
         public $CampaignBiddingStrategy;
 
         /**
-         * Reserved.
+         * Indicate the desired ad type for estimation response.
          * @var integer
          */
         public $CampaignSubType;
 
         /**
-         * Reserved.
+         * Respect this parameter only when CampaignSubType is FeedBasedAds or DynamicFeedBasedAds.
          * @var Feed
          */
         public $Feed;
 
         /**
-         * Reserved.
+         * The daily campaign budget value.
          * @var float
          */
         public $DailyBudget;
 
         /**
-         * Reserved.
+         * The desired bid setting value.
          * @var float
          */
         public $Bid;
 
         /**
-         * Reserved.
+         * The currency of DailyBudget and Bid.
          * @var Currency
          */
         public $Currency;

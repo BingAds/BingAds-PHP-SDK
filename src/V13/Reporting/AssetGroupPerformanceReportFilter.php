@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for AssetGroupPerformanceReportFilter.
      * @link https:/learn.microsoft.com/advertising/reporting-service/assetgroupperformancereportfilter?view=bingads-13 AssetGroupPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
@@ -15,19 +15,19 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class AssetGroupPerformanceReportFilter
     {
         /**
-         * Reserved.
+         * The account status.
          * @var AccountStatusReportFilter
          */
         public $AccountStatus;
 
         /**
-         * Reserved.
+         * The asset group status.
          * @var AssetGroupStatusReportFilter
          */
         public $AssetGroupStatus;
 
         /**
-         * Reserved.
+         * The campaign status.
          * @var CampaignStatusReportFilter
          */
         public $CampaignStatus;

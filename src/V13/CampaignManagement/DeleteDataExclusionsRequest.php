@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes the specified data exclusions from the specified account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletedataexclusions?view=bingads-13 DeleteDataExclusions Request Object
      * 
      * @used-by BingAdsCampaignManagementService::DeleteDataExclusions
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteDataExclusionsRequest
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The IDs of the data exclusions to delete.
          * @var integer[]
          */
         public $DataExclusionIds;

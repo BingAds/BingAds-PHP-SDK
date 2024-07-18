@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a DecimalRoundedResult data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/decimalroundedresult?view=bingads-13 DecimalRoundedResult Data Object
      * 
      * @uses ScaleUnit
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class DecimalRoundedResult
     {
         /**
-         * Reserved.
+         * The rounded value to the nearest scale unit.
          * @var double
          */
         public $Value;
 
         /**
-         * Reserved.
+         * The scale unit: Thousand, Million,Billion, None.
          * @var ScaleUnit
          */
         public $Unit;

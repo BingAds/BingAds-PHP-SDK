@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
 {
     /**
-     * Reserved.
+     * A service operation to dismiss notifications.
      * @link https:/learn.microsoft.com/advertising/customer-management-service/dismissnotifications?view=bingads-13 DismissNotifications Request Object
      * 
      * @uses KeyValueEntityOflongint
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class DismissNotificationsRequest
     {
         /**
-         * Reserved.
+         * The user's identification number.
          * @var integer
          */
         public $UserId;
 
         /**
-         * Reserved.
+         * The key and value of a notification entity.
          * @var KeyValueEntityOflongint[]
          */
         public $NotificationTypePairs;

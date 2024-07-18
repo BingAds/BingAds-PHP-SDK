@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes the specified data exclusions from the specified account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletedataexclusions?view=bingads-13 DeleteDataExclusions Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteDataExclusionsResponse
     {
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

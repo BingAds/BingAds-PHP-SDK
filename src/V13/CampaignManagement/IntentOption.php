@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Show ads to people in your targeted location. */
         const PeopleIn = 'PeopleIn';
 
-        /** Show ads to people searching for or viewing pages about your targeted location. */
+        /** PeopleSearchingForOrViewingPages is deprecated as of April 2024. */
         const PeopleSearchingForOrViewingPages = 'PeopleSearchingForOrViewingPages';
     }
 

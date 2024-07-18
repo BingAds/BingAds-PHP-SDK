@@ -34,6 +34,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CustomerList = 'CustomerList';
+
+        /** Reserved. */
+        const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 
 }

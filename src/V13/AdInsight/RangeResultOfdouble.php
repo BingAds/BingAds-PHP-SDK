@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a RangeResultOfDouble data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/rangeresultofdouble?view=bingads-13 RangeResultOfdouble Data Object
      * 
      * @used-by GetAudienceFullEstimationResponse
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class RangeResultOfdouble
     {
         /**
-         * Reserved.
+         * Indicates the upper bound of range result.
          * @var double
          */
         public $High;
 
         /**
-         * Reserved.
+         * Indicates the lower bound of range result.
          * @var double
          */
         public $Low;

@@ -79,6 +79,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** For internal use only. */
         const CustomerList = 'CustomerList';
+
+        /** Reserved. */
+        const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 
 }

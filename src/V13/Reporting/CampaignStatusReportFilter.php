@@ -35,6 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by ProductSearchQueryPerformanceReportFilter
      * @used-by ProfessionalDemographicsAudienceReportFilter
      * @used-by PublisherUsagePerformanceReportFilter
+     * @used-by SearchInsightPerformanceReportFilter
      * @used-by SearchQueryPerformanceReportFilter
      * @used-by ShareOfVoiceReportFilter
      */

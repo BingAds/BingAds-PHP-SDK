@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Gets the audience full estimation.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/getaudiencefullestimation?view=bingads-13 GetAudienceFullEstimation Response Object
      * 
      * @uses RangeResultOfDecimalRoundedResult
@@ -16,79 +16,79 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetAudienceFullEstimationResponse
     {
         /**
-         * Reserved.
+         * Monthly estimated impression with range result.
          * @var RangeResultOfDecimalRoundedResult
          */
         public $EstImpression;
 
         /**
-         * Reserved.
+         * Monthly estimated reach user count with rounded results.
          * @var RangeResultOfDecimalRoundedResult
          */
         public $EstAudienceSize;
 
         /**
-         * Reserved.
+         * Monthly estimated user count with range result.
          * @var RangeResultOfDecimalRoundedResult
          */
         public $EstClick;
 
         /**
-         * Reserved.
+         * Monthly estimated spend with range result.
          * @var RangeResultOfDecimalRoundedResult
          */
         public $EstSpend;
 
         /**
-         * Reserved.
+         * Indicates the estimated cost per event.
          * @var RangeResultOfDecimalRoundedResult
          */
         public $EstCostPerEvent;
 
         /**
-         * Reserved.
+         * Estimated click-through rate (CTR) with range result.
          * @var RangeResultOfdouble
          */
         public $EstCTR;
 
         /**
-         * Reserved.
+         * Suggested bid value under the current targeting.
          * @var float
          */
         public $SuggestedBid;
 
         /**
-         * Reserved.
+         * Suggested daily budget value under the current targeting and bid.
          * @var float
          */
         public $SuggestedBudget;
 
         /**
-         * Reserved.
+         * Indicates event lost count due to insufficient input bid.
          * @var integer
          */
         public $EventsLostToBid;
 
         /**
-         * Reserved.
+         * Indicates the event lost count due to insufficient input budget.
          * @var integer
          */
         public $EventsLostToBudget;
 
         /**
-         * Reserved.
+         * Monthly estimated user count with range result.
          * @var DecimalRoundedResult
          */
         public $EstReachAudienceSize;
 
         /**
-         * Reserved.
+         * Monthly estimated impression with range result.
          * @var DecimalRoundedResult
          */
         public $EstReachImpression;
 
         /**
-         * Reserved.
+         * The currency of DailyBudget and Bid.
          * @var Currency
          */
         public $Currency;
