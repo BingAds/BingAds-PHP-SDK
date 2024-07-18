@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a AccountThroughAssetGroupReportScope data object.
      * @link https:/learn.microsoft.com/advertising/reporting-service/accountthroughassetgroupreportscope?view=bingads-13 AccountThroughAssetGroupReportScope Data Object
      * 
      * @uses AssetGroupReportScope
@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class AccountThroughAssetGroupReportScope
     {
         /**
-         * Reserved.
+         * A list of up to 1,000 account identifiers to include in the report.
          * @var integer[]
          */
         public $AccountIds;
 
         /**
-         * Reserved.
+         * Array of asset groups to update for the specified campaign.
          * @var AssetGroupReportScope[]
          */
         public $AssetGroups;
 
         /**
-         * Reserved.
+         * list of up to 300 campaigns to include in the report.
          * @var CampaignReportScope[]
          */
         public $Campaigns;

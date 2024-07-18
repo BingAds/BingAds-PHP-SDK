@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses MediaEnabledEntityFilter
      * @uses Paging
+     * @uses MediaAdditionalField
      * @used-by BingAdsCampaignManagementService::GetMediaMetaDataByAccountId
      */
     final class GetMediaMetaDataByAccountIdRequest
@@ -24,5 +25,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * Reserved.
+         * @var MediaAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

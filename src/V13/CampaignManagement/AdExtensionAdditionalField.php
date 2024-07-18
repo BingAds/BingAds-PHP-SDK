@@ -29,6 +29,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const NewFilterLinkHeaders = 'NewFilterLinkHeaders';
+
+        /** Reserved. */
+        const SourceType = 'SourceType';
     }
 
 }

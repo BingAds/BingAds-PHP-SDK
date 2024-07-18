@@ -80,6 +80,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Layouts;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $SourceType;
+
+        /**
          * The tracking template to use as a default for all FinalUrls and FinalMobileUrls.
          * @var string
          */

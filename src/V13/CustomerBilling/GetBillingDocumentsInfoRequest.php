@@ -28,5 +28,11 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var \DateTime
          */
         public $EndDate;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $ReturnInvoiceNumber;
     }
 }

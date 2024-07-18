@@ -132,6 +132,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewCalloutAdExtensions;
 
         /**
+         * Import conversion goals that have not previously been imported.
+         * @var boolean
+         */
+        public $NewConversionGoals;
+
+        /**
          * Import demographic targets that have not previously been imported.
          * @var boolean
          */
@@ -460,6 +466,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateCampaignNames;
+
+        /**
+         * Import updates to existing conversion goals.
+         * @var boolean
+         */
+        public $UpdateConversionGoals;
 
         /**
          * Import updates to existing demographic targets.

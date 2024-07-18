@@ -320,7 +320,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue per install. */
         const RevenuePerInstall = 'RevenuePerInstall';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
     }
 

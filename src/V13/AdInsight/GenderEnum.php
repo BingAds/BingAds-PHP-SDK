@@ -4,20 +4,20 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a value set for gender.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/genderenum?view=bingads-13 GenderEnum Value Set
      * 
      * @used-by SelectionOfGenderEnum
      */
     final class GenderEnum
     {
-        /** Reserved. */
+        /** The gender is unknown. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** The gender is male. */
         const Male = 'Male';
 
-        /** Reserved. */
+        /** The gender is female. */
         const Female = 'Female';
     }
 

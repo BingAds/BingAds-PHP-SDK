@@ -170,7 +170,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
     }
 

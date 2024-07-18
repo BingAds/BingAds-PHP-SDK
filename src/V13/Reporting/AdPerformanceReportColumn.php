@@ -278,13 +278,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
 
-        /** Reserved. */
+        /** The ad strength score of responsive search ads. */
         const AdStrength = 'AdStrength';
 
-        /** Reserved. */
+        /** The suggestion based on ad strength of your responsive search ads. */
         const AdStrengthActionItems = 'AdStrengthActionItems';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Make updates to the specified data exclusions.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatedataexclusions?view=bingads-13 UpdateDataExclusions Request Object
      * 
      * @uses DataExclusion
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateDataExclusionsRequest
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The data exclusions to update.
          * @var DataExclusion[]
          */
         public $DataExclusions;

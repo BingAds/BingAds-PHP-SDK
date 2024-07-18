@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The device type for data exclusions and seasonality adjustments.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/devicetype?view=bingads-13 DeviceType Value Set
      * 
      * @used-by DataExclusion
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class DeviceType
     {
-        /** Reserved. */
+        /** No devices. */
         const None = 'None';
 
-        /** Reserved. */
+        /** The device type is Computers. */
         const Computers = 'Computers';
 
-        /** Reserved. */
+        /** The device type is Smartphones. */
         const Smartphones = 'Smartphones';
 
-        /** Reserved. */
+        /** The device type is Tablets. */
         const Tablets = 'Tablets';
 
-        /** Reserved. */
+        /** All devices. */
         const All = 'All';
     }
 

@@ -24,6 +24,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The target dimension of an image asset. */
         const ImageTargetDimension = 'ImageTargetDimension';
+
+        /** Reserved. */
+        const AdSubType = 'AdSubType';
     }
 
 }

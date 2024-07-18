@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Make updates to the specified seasonality adjustments.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateseasonalityadjustments?view=bingads-13 UpdateSeasonalityAdjustments Request Object
      * 
      * @uses SeasonalityAdjustment
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateSeasonalityAdjustmentsRequest
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The seasonality adjustments to update.
          * @var SeasonalityAdjustment[]
          */
         public $SeasonalityAdjustments;

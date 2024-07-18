@@ -9,6 +9,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ManualCpaBiddingScheme extends BiddingScheme
     {
+        /**
+         * Reserved.
+         * @var double
+         */
+        public $ManualCpi;
     }
 
 }

@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines an asset group in an advertising campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroup?view=bingads-13 AssetGroup Data Object
      * 
+     * @uses AssetGroupSearchTheme
      * @uses CallToAction
      * @uses AssetLink
      * @uses AssetGroupEditorialStatus
@@ -20,6 +21,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AssetGroup
     {
+        /**
+         * Reserved.
+         * @var AssetGroupSearchTheme[]
+         */
+        public $AssetGroupSearchThemes;
+
         /**
          * The name of the business.
          * @var string

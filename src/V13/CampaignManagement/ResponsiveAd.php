@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * A responsive ad format for audience ads and multimedia ads.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/responsivead?view=bingads-13 ResponsiveAd Data Object
      * 
+     * @uses AdSubType
      * @uses CallToAction
      * @uses LanguageName
      * @uses AssetLink
@@ -14,6 +15,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ResponsiveAd extends Ad
     {
+        /**
+         * Reserved.
+         * @var AdSubType
+         */
+        public $AdSubType;
+
         /**
          * The name of the business.
          * @var string

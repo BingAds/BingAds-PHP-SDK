@@ -4,35 +4,35 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a value set of age ranges.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/ageenum?view=bingads-13 AgeEnum Value Set
      * 
      * @used-by SelectionOfAgeEnum
      */
     final class AgeEnum
     {
-        /** Reserved. */
+        /** The age range is unknown. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** The age range is 0 to 12. */
         const ZeroToTwelve = 'ZeroToTwelve';
 
-        /** Reserved. */
+        /** The age range is 13 to 17. */
         const ThirteenToSevenTeen = 'ThirteenToSevenTeen';
 
-        /** Reserved. */
+        /** The age range is 18 to 24. */
         const EighteenToTwentyFour = 'EighteenToTwentyFour';
 
-        /** Reserved. */
+        /** The age range is 25 to 34. */
         const TwentyFiveToThirtyFour = 'TwentyFiveToThirtyFour';
 
-        /** Reserved. */
+        /** The age range is 35 to 49. */
         const ThirtyFiveToFourtyNine = 'ThirtyFiveToFourtyNine';
 
-        /** Reserved. */
+        /** The age range is 50 to 64. */
         const FiftyToSixtyFour = 'FiftyToSixtyFour';
 
-        /** Reserved. */
+        /** The age range is above 65. */
         const SixtyFiveAndAbove = 'SixtyFiveAndAbove';
     }
 

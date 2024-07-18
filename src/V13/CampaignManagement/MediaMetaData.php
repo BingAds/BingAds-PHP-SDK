@@ -32,6 +32,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Representations;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $Text;
+
+        /**
          * The type of media in the library.
          * @var string
          */

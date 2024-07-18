@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets the seasonality adjustments associated with an account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getseasonalityadjustmentsbyaccountid?view=bingads-13 GetSeasonalityAdjustmentsByAccountId Response Object
      * 
      * @uses SeasonalityAdjustment
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetSeasonalityAdjustmentsByAccountIdResponse
     {
         /**
-         * Reserved.
+         * A list of the seasaonality adjustments associated with the specified account.
          * @var SeasonalityAdjustment[]
          */
         public $SeasonalityAdjustments;
 
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

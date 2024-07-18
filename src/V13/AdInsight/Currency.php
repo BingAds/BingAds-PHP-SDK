@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a value set of currencies.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/currency?view=bingads-13 Currency Value Set
      * 
      * @used-by GetAudienceFullEstimationRequest
@@ -12,136 +12,136 @@ namespace Microsoft\BingAds\V13\AdInsight;
      */
     final class Currency
     {
-        /** Reserved. */
+        /** Unspecified currency. */
         const UnSpecify = 'UnSpecify';
 
-        /** Reserved. */
+        /** The Algerian Dinar (DZD). */
         const AlgerianDinar = 'AlgerianDinar';
 
-        /** Reserved. */
+        /** The Argentine Peso (ARS). */
         const ArgentinePeso = 'ArgentinePeso';
 
-        /** Reserved. */
+        /** The Australian Dollar (AUD). */
         const AustralianDollar = 'AustralianDollar';
 
-        /** Reserved. */
+        /** The Thai Baht (THB). */
         const Baht = 'Baht';
 
-        /** Reserved. */
+        /** The Venezuelan Bolivar Fuerte (VEF). */
         const Bolivar = 'Bolivar';
 
-        /** Reserved. */
+        /** The Brazilian Real (BRL). */
         const BrazilianReal = 'BrazilianReal';
 
-        /** Reserved. */
+        /** The Canadian Dollar (CAD). */
         const CanadianDollar = 'CanadianDollar';
 
-        /** Reserved. */
+        /** The Chilean Peso (CLP). */
         const ChileanPeso = 'ChileanPeso';
 
-        /** Reserved. */
+        /** The Colombian Peso (COP). */
         const ColombianPeso = 'ColombianPeso';
 
-        /** Reserved. */
+        /** The Czech Koruna (CZK). */
         const CzechKoruna = 'CzechKoruna';
 
-        /** Reserved. */
+        /** The Danish Krone (DKK). */
         const DanishKrone = 'DanishKrone';
 
-        /** Reserved. */
+        /** The Vietnamese Dong (VND). */
         const Dong = 'Dong';
 
-        /** Reserved. */
+        /** The Egyptian Pound (EGP). */
         const EgyptianPound = 'EgyptianPound';
 
-        /** Reserved. */
+        /** The Euro (EUR). */
         const EURO = 'EURO';
 
-        /** Reserved. */
+        /** The Hungarian Forint (HUF). */
         const Forint = 'Forint';
 
-        /** Reserved. */
+        /** The Hong Kong Dollar (HKD). */
         const HongKongDollar = 'HongKongDollar';
 
-        /** Reserved. */
+        /** The Indian Rupee (INR). */
         const IndianRupee = 'IndianRupee';
 
-        /** Reserved. */
+        /** The Japanese Yen (JPY). */
         const JapaneseYen = 'JapaneseYen';
 
-        /** Reserved. */
+        /** The Lebanese Pound (LBP). */
         const LebanesePound = 'LebanesePound';
 
-        /** Reserved. */
+        /** The Malaysian Ringgit (MYR). */
         const MalaysianRinggit = 'MalaysianRinggit';
 
-        /** Reserved. */
+        /** The Mexican Peso (MXN). */
         const MexicanPeso = 'MexicanPeso';
 
-        /** Reserved. */
+        /** The Moroccan Dirham (MAD). */
         const MoroccanDirham = 'MoroccanDirham';
 
-        /** Reserved. */
+        /** The New Taiwan Dollar (TWD). */
         const NewTaiwanDollar = 'NewTaiwanDollar';
 
-        /** Reserved. */
+        /** The New Zealand Dollar (NZD). */
         const NewZealandDollar = 'NewZealandDollar';
 
-        /** Reserved. */
+        /** The Norwegian Krone (NOK). */
         const NorwegianKrone = 'NorwegianKrone';
 
-        /** Reserved. */
+        /** The Peruvian Nuevo Sol (NOK). */
         const NuevoSol = 'NuevoSol';
 
-        /** Reserved. */
+        /** The Philippine Peso (PHP). */
         const PhilippinePeso = 'PhilippinePeso';
 
-        /** Reserved. */
+        /** The Qatari Rial (QAR). */
         const QatariRial = 'QatariRial';
 
-        /** Reserved. */
+        /** The Indonesian Rupiah (IDR). */
         const Rupiah = 'Rupiah';
 
-        /** Reserved. */
+        /** The Saudi Riyal (SAR). */
         const SaudiRiyal = 'SaudiRiyal';
 
-        /** Reserved. */
+        /** The Singapore Dollar (SGD). */
         const SingaporeDollar = 'SingaporeDollar';
 
-        /** Reserved. */
+        /** The South African Rand (ZAR). */
         const SouthAfricanRand = 'SouthAfricanRand';
 
-        /** Reserved. */
+        /** The Swedish Krona (SEK). */
         const SwedishKrona = 'SwedishKrona';
 
-        /** Reserved. */
+        /** The Swiss Franc (CHF). */
         const SwissFranc = 'SwissFranc';
 
-        /** Reserved. */
+        /** The Turkish Lira (TRY). */
         const TurkishLira = 'TurkishLira';
 
-        /** Reserved. */
+        /** The UK Pound (GBP). */
         const UKPound = 'UKPound';
 
-        /** Reserved. */
+        /** The US Dollar USD */
         const USDollar = 'USDollar';
 
-        /** Reserved. */
+        /** The South Korean Won (KRW). */
         const Won = 'Won';
 
-        /** Reserved. */
+        /** The Chinese Yuan (CNY). */
         const YuanRenminbi = 'YuanRenminbi';
 
-        /** Reserved. */
+        /** The Polish Zloty (PLN). */
         const PolishZloty = 'PolishZloty';
 
-        /** Reserved. */
+        /** The UAE Dirham (AED). */
         const UAEDirham = 'UAEDirham';
 
-        /** Reserved. */
+        /** The Israeli Sheqel (ILS). */
         const IsraeliSheqel = 'IsraeliSheqel';
 
-        /** Reserved. */
+        /** The Nigerian Naira (NGN). */
         const NigerianNaira = 'NigerianNaira';
     }
 

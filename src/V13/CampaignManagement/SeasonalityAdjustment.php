@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines  data object for the seasonality adjustment.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/seasonalityadjustment?view=bingads-13 SeasonalityAdjustment Data Object
      * 
      * @uses CampaignAssociation
@@ -18,55 +18,55 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SeasonalityAdjustment
     {
         /**
-         * Reserved.
+         * The percentage of the conversion rate adjustment.
          * @var double
          */
         public $AdjustmentPercentage;
 
         /**
-         * Reserved.
+         * Make the seasonality adjustment to these campaigns.
          * @var CampaignAssociation[]
          */
         public $CampaignAssociations;
 
         /**
-         * Reserved.
+         * Make the seasonality adjustment to these campaign types.
          * @var CampaignType
          */
         public $CampaignTypeFilter;
 
         /**
-         * Reserved.
+         * A description for the seasonality adjustment.
          * @var string
          */
         public $Description;
 
         /**
-         * Reserved.
+         * Make the seasonality adjustment to these device types.
          * @var DeviceType
          */
         public $DeviceTypeFilter;
 
         /**
-         * Reserved.
+         * The end date.
          * @var \DateTime
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The seasonality adjustment ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The name of the seasonality adjustment.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The start date.
          * @var \DateTime
          */
         public $StartDate;

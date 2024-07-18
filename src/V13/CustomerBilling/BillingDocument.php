@@ -29,6 +29,12 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var DataType
          */
         public $Type;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $Number;
     }
 
 }

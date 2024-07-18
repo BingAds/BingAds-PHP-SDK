@@ -15,6 +15,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by ProductPartitionUnitPerformanceReportFilter
      * @used-by ProductSearchQueryPerformanceReportFilter
      * @used-by PublisherUsagePerformanceReportFilter
+     * @used-by SearchInsightPerformanceReportFilter
      */
     final class AssetGroupStatusReportFilter
     {

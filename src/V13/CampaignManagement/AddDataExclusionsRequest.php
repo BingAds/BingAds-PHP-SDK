@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Add a data exclusion to the specified account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adddataexclusions?view=bingads-13 AddDataExclusions Request Object
      * 
      * @uses DataExclusion
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddDataExclusionsRequest
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The data exclusions to add.
          * @var DataExclusion[]
          */
         public $DataExclusions;

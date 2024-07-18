@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for the selection of age targeting.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/selectionofageenum?view=bingads-13 SelectionOfAgeEnum Data Object
      * 
      * @uses AgeEnum
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class SelectionOfAgeEnum
     {
         /**
-         * Reserved.
+         * The traffic matching any value of Includes array is included as an estimation.
          * @var AgeEnum[]
          */
         public $Includes;
 
         /**
-         * Reserved.
+         * The traffic matching any value of Excludes array is excluded as an estimation.
          * @var AgeEnum[]
          */
         public $Excludes;

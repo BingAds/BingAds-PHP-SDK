@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a RadiusTarget data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/radiustarget?view=bingads-13 RadiusTarget Data Object
      * 
      * @uses RadiusUnit
@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class RadiusTarget
     {
         /**
-         * Reserved.
+         * Indicates the desired amount of radius units.
          * @var integer
          */
         public $Radius;
 
         /**
-         * Reserved.
+         * Indicates the radius unit.
          * @var RadiusUnit
          */
         public $RadiusUnit;
 
         /**
-         * Reserved.
+         * Defines the center latitude.
          * @var double
          */
         public $CenterLatitude;
 
         /**
-         * Reserved.
+         * DEfines the center longitude.
          * @var double
          */
         public $CenterLongitude;

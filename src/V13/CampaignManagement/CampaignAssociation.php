@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for which campaigns to associate to data exclusions and seasonality adjustments.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaignassociation?view=bingads-13 CampaignAssociation Data Object
      * 
      * @used-by DataExclusion
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CampaignAssociation
     {
         /**
-         * Reserved.
+         * The campaign ID.
          * @var integer
          */
         public $CampaignId;

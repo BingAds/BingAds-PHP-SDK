@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for DataExclusion.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/dataexclusion?view=bingads-13 DataExclusion Data Object
      * 
      * @uses CampaignAssociation
@@ -18,49 +18,49 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DataExclusion
     {
         /**
-         * Reserved.
+         * Which campaigns to include for the data exclusion.
          * @var CampaignAssociation[]
          */
         public $CampaignAssociations;
 
         /**
-         * Reserved.
+         * Which campaign types to include for the data exclusion.
          * @var CampaignType
          */
         public $CampaignTypeFilter;
 
         /**
-         * Reserved.
+         * A description for the data exclusion.
          * @var string
          */
         public $Description;
 
         /**
-         * Reserved.
+         * Which devices types to include for the data exclusion.
          * @var DeviceType
          */
         public $DeviceTypeFilter;
 
         /**
-         * Reserved.
+         * The end date.
          * @var \DateTime
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The data exclusion ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The data exclusion name.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The start date.
          * @var \DateTime
          */
         public $StartDate;
