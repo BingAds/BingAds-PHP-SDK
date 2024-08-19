@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for SearchInsightPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/searchinsightperformancereportrequest?view=bingads-13 SearchInsightPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation

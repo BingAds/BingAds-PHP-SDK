@@ -83,6 +83,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const ManualCpi = 'ManualCpi';
+
+        /** Reserved. */
+        const IsDealCampaign = 'IsDealCampaign';
     }
 
 }

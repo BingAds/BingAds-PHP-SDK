@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the attributes and performance statistics columns that you can include in the SearcyhInsightPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/searchinsightperformancereportcolumn?view=bingads-13 SearchInsightPerformanceReportColumn Value Set
      * 
      * @used-by SearchInsightPerformanceReportRequest

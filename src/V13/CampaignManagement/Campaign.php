@@ -83,6 +83,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /**
          * Reserved.
+         * @var boolean
+         */
+        public $IsDealCampaign;
+
+        /**
+         * Reserved.
          * @var integer
          */
         public $MultimediaAdsBidAdjustment;

@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
         const Network = 'Network';
 
         /** The Microsoft Advertising assigned identifier of an ad. */

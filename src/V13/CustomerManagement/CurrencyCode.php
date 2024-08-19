@@ -287,7 +287,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** The corresponding currency type. */
         const ZWD = 'ZWD';
 
-        /** Reserved. */
+        /** The corresponding currency type. */
         const NGN = 'NGN';
     }
 

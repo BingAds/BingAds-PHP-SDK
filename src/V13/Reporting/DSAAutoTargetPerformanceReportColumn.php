@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic (this network type is deprecated as of July 2024). */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */

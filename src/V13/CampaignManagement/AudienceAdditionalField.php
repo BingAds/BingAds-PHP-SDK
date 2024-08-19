@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const NumberRuleItem = 'NumberRuleItem';
 
         /** Reserved. */
-        const ImpreesionBasedRemarketingList = 'ImpreesionBasedRemarketingList';
+        const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 
 }

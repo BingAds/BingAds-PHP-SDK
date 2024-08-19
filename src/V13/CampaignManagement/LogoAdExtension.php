@@ -4,31 +4,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an ad extension that specifies a business logo.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/logoadextension?view=bingads-13 LogoAdExtension Data Object
      */
     final class LogoAdExtension extends AdExtension
     {
         /**
-         * Reserved.
+         * The asset ID for the business logo.
          * @var integer
          */
         public $BusinessLogo;
 
         /**
-         * Reserved.
+         * The URL of the business logo.
          * @var string
          */
         public $BusinessLogoUrl;
 
         /**
-         * Reserved.
+         * The business name.
          * @var string
          */
         public $BusinessName;
 
         /**
-         * Reserved.
+         * The domain name.
          * @var string
          */
         public $DomainName;

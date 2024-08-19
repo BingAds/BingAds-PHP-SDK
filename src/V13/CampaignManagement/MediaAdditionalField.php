@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a value set for MediaAdditionalField.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/mediaadditionalfield?view=bingads-13 MediaAdditionalField Value Set
      * 
      * @used-by GetMediaMetaDataByAccountIdRequest

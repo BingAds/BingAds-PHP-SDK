@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ResponsiveAd extends Ad
     {
         /**
-         * Reserved.
+         * The possible ad sub types.
          * @var AdSubType
          */
         public $AdSubType;

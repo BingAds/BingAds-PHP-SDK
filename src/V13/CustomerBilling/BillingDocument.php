@@ -31,7 +31,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $Type;
 
         /**
-         * Reserved.
+         * The number of the billing document.
          * @var string
          */
         public $Number;

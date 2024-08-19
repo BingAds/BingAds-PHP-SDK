@@ -95,10 +95,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The ad group criterion is a genre criterion. */
         const Genre = 'Genre';
 
-        /** For internal use only. */
+        /** The ad group criterion is a customer list. */
         const CustomerList = 'CustomerList';
 
-        /** Reserved. */
+        /** The ad group criterion is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 

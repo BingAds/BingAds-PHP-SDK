@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for SearchInsightPerformanceReportFilter.
      * @link https:/learn.microsoft.com/advertising/reporting-service/searchinsightperformancereportfilter?view=bingads-13 SearchInsightPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter

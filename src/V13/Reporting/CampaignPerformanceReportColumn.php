@@ -131,7 +131,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The phone-through rate (Ptr). */
         const Ptr = 'Ptr';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -340,6 +340,42 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue per install. */
         const RevenuePerInstall = 'RevenuePerInstall';
+
+        /** Reserved. */
+        const Downloads = 'Downloads';
+
+        /** Reserved. */
+        const PostClickDownloadRate = 'PostClickDownloadRate';
+
+        /** Reserved. */
+        const CostPerDownload = 'CostPerDownload';
+
+        /** Reserved. */
+        const AppInstalls = 'AppInstalls';
+
+        /** Reserved. */
+        const PostClickInstallRate = 'PostClickInstallRate';
+
+        /** Reserved. */
+        const CPI = 'CPI';
+
+        /** Reserved. */
+        const Purchases = 'Purchases';
+
+        /** Reserved. */
+        const PostInstallPurchaseRate = 'PostInstallPurchaseRate';
+
+        /** Reserved. */
+        const CPP = 'CPP';
+
+        /** Reserved. */
+        const Subscriptions = 'Subscriptions';
+
+        /** Reserved. */
+        const PostInstallSubscriptionRate = 'PostInstallSubscriptionRate';
+
+        /** Reserved. */
+        const CPS = 'CPS';
     }
 
 }
