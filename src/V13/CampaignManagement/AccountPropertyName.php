@@ -59,6 +59,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const NetflixTCAccepted = 'NetflixTCAccepted';
+
+        /** Reserved. */
+        const BlockedContentSegments = 'BlockedContentSegments';
     }
 
 }

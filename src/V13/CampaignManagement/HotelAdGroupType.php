@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * The ad group type for lodging campaigns (formerly hotel campaigns).
+     * The ad group type for Lodging campaigns (formerly Hotel campaigns).
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/hoteladgrouptype?view=bingads-13 HotelAdGroupType Value Set
      * 
      * @used-by HotelSetting

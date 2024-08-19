@@ -546,19 +546,19 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Reserved. */
         const AssetGroupSearchThemes = 'AssetGroupSearchThemes';
 
-        /** Reserved. */
+        /** Include Impression Based Remarketing List records in the download data. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
 
-        /** Reserved. */
+        /** Include Ad Group Impression Based Remarketing List Association records in the download that each represent the association relationship between an ad group and an impression based remarketing list. */
         const AdGroupImpressionBasedRemarketingListAssociations = 'AdGroupImpressionBasedRemarketingListAssociations';
 
-        /** Reserved. */
+        /** Include Ad Group Negative Impression Based Remarketing List Association records in the download that each represent the association relationship between an ad group and an impression based remarketing list exclusion. */
         const AdGroupNegativeImpressionBasedRemarketingListAssociations = 'AdGroupNegativeImpressionBasedRemarketingListAssociations';
 
-        /** Reserved. */
+        /** Include Campaign Impression Based Remarketing List Association records in the download that each represent the association relationship between a campaign and an impression based remarketing list. */
         const CampaignImpressionBasedRemarketingListAssociations = 'CampaignImpressionBasedRemarketingListAssociations';
 
-        /** Reserved. */
+        /** Include Campaign Negative Impression Based Remarketing List Association records in the download that each represent the association relationship between a campaign and an impression based remarketing list exclusion. */
         const CampaignNegativeImpressionBasedRemarketingListAssociations = 'CampaignNegativeImpressionBasedRemarketingListAssociations';
     }
 

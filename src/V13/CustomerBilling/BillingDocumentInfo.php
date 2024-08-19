@@ -67,7 +67,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $CampaignId;
 
         /**
-         * Reserved.
+         * The number of the billing document.
          * @var string
          */
         public $DocumentNumber;

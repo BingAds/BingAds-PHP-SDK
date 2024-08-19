@@ -58,7 +58,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const DisclaimerAdExtension = 'DisclaimerAdExtension';
 
-        /** Reserved. */
+        /** An ad extension that contains the business logo. */
         const LogoAdExtension = 'LogoAdExtension';
     }
 

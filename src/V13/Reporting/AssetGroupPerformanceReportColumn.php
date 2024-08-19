@@ -32,10 +32,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The campaign status. */
         const CampaignStatus = 'CampaignStatus';
 
-        /** The Microsoft Advertising assigned identifier of an ad group. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** The ad group name. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
         /** The current asset group status. */

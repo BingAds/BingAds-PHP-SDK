@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for AssetPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/assetperformancereportrequest?view=bingads-13 AssetPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
@@ -15,25 +15,25 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class AssetPerformanceReportRequest extends ReportRequest
     {
         /**
-         * Reserved.
+         * The type of aggregation to use to aggregate the report data.
          * @var ReportAggregation
          */
         public $Aggregation;
 
         /**
-         * Reserved.
+         * The list of attributes and performance statistics to include in the report.
          * @var AssetPerformanceReportColumn[]
          */
         public $Columns;
 
         /**
-         * Reserved.
+         * The entity scope of the report.
          * @var AccountThroughAdGroupReportScope
          */
         public $Scope;
 
         /**
-         * Reserved.
+         * The time period to use for the report.
          * @var ReportTime
          */
         public $Time;

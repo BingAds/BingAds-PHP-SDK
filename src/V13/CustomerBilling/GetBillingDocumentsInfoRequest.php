@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $EndDate;
 
         /**
-         * Reserved.
+         * Include the invoice number with the request.
          * @var boolean
          */
         public $ReturnInvoiceNumber;

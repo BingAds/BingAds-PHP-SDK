@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible additional fields for an asset group.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroupadditionalfield?view=bingads-13 AssetGroupAdditionalField Value Set
      * 
      * @used-by GetAssetGroupsByCampaignIdRequest
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AssetGroupAdditionalField
     {
-        /** Reserved. */
+        /** Include the AssetGroupSearchThemes field. */
         const AssetGroupSearchThemes = 'AssetGroupSearchThemes';
     }
 

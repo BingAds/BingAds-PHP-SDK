@@ -66,13 +66,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** The corresponding language type. */
         const SimplifiedChinese = 'SimplifiedChinese';
 
-        /** Reserved. */
+        /** The corresponding language type. */
         const Thai = 'Thai';
 
-        /** Reserved. */
+        /** The corresponding language type. */
         const Turkish = 'Turkish';
 
-        /** Reserved. */
+        /** The corresponding language type. */
         const Filipino = 'Filipino';
     }
 

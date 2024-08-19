@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an AssetGroupSearchTheme data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroupsearchtheme?view=bingads-13 AssetGroupSearchTheme Data Object
      * 
      * @used-by AssetGroup
@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AssetGroupSearchTheme
     {
         /**
-         * Reserved.
+         * The identifier of the search theme.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The type of search theme.
          * @var string
          */
         public $SearchTheme;
