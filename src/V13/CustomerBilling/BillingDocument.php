@@ -29,11 +29,6 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var DataType
          */
         public $Type;
-
-        /**
-         * The number of the billing document.
-         * @var string
-         */
         public $Number;
     }
 

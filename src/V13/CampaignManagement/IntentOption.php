@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the possible intent options for location criterion, for example to target people in, searching for, or viewing pages about your targeted location.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/intentoption?view=bingads-13 IntentOption Value Set
      * 
+     * @used-by LocationCondition
      * @used-by LocationIntentCriterion
      */
     final class IntentOption
@@ -17,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Show ads to people in your targeted location. */
         const PeopleIn = 'PeopleIn';
 
-        /** PeopleSearchingForOrViewingPages is deprecated as of April 2024. */
+        /** Show ads to people searching for or viewing pages about your targeted location. */
         const PeopleSearchingForOrViewingPages = 'PeopleSearchingForOrViewingPages';
     }
 

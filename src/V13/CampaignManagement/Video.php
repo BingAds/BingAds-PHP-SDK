@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the Video Data Object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/video?view=bingads-13 Video Data Object
      * 
+     * @used-by AdRecommendationVideoSuggestion
      * @used-by AddVideosRequest
      * @used-by GetVideosByIdsResponse
      * @used-by UpdateVideosRequest

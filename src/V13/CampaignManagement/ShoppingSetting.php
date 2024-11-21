@@ -9,10 +9,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ShoppingSetting extends Setting
     {
-        /**
-         * Lets you advertise all products with the same feed label in a Shopping or Performance Max campaign.
-         * @var string
-         */
         public $FeedLabel;
 
         /**
@@ -32,11 +28,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SalesCountryCode;
-
-        /**
-         * Reserved.
-         * @var boolean
-         */
         public $ShoppableAdsEnabled;
 
         /**

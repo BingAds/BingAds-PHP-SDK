@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Display ads on only owned and operated networks. */
         const OwnedAndOperatedOnly = 'OwnedAndOperatedOnly';
 
-        /** Note: SyndicatedSearchOnly is deprecated as of July 2024. */
+        /** Display ads on only syndicated search networks. */
         const SyndicatedSearchOnly = 'SyndicatedSearchOnly';
 
         /** Display ads on the Retailer Network only. */

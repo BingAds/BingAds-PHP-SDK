@@ -20,6 +20,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by AudiencePerformanceReportRequest
      * @used-by CallDetailReportRequest
      * @used-by CampaignPerformanceReportRequest
+     * @used-by CombinationPerformanceReportRequest
      * @used-by ConversionPerformanceReportRequest
      * @used-by DestinationUrlPerformanceReportRequest
      * @used-by DSAAutoTargetPerformanceReportRequest

@@ -98,7 +98,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad status. */
         const AdStatus = 'AdStatus';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic (this network type is deprecated as of July 2024). */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -266,7 +266,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Number of times a person watched the entire video to completion. */
         const CompletedVideoViews = 'CompletedVideoViews';
 
-        /** The number of completed video views divided by the total number of impressions, multiplied by 100. */
+        /** The number of completed video views divided by the number of total video views. */
         const VideoCompletionRate = 'VideoCompletionRate';
 
         /** Total amount of time a person spent watching the video in milliseconds. */
@@ -277,14 +277,8 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
-
-        /** The ad strength score of responsive search ads. */
         const AdStrength = 'AdStrength';
-
-        /** The suggestion based on ad strength of your responsive search ads. */
         const AdStrengthActionItems = 'AdStrengthActionItems';
-
-        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
     }
 

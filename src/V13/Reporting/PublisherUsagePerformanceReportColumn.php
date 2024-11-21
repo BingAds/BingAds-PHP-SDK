@@ -80,7 +80,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -166,17 +166,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
-
-        /** The campaign type. */
         const CampaignType = 'CampaignType';
-
-        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
-
-        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
-
-        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
     }
 

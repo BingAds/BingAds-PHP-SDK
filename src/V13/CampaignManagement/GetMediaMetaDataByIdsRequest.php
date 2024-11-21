@@ -17,11 +17,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $MediaIds;
-
-        /**
-         * Reserved.
-         * @var MediaAdditionalField
-         */
         public $ReturnAdditionalFields;
     }
 }

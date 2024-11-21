@@ -27,8 +27,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The entity is a keyword. */
         const Keyword = 'Keyword';
-
-        /** The entity is an asset group. */
         const AssetGroup = 'AssetGroup';
     }
 

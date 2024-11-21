@@ -21,6 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by Keyword
      * @used-by SharedEntity
      * @used-by SharedListItem
+     * @used-by ThirdPartyMeasurementSetting
      * @used-by VerifiedTrackingSetting
      */
     final class KeyValuePairOfstringstring

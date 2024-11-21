@@ -138,7 +138,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The keyword status. */
         const KeywordStatus = 'KeywordStatus';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic (this network type is deprecated as of July 2024). */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -248,8 +248,6 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
-
-        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
     }
 

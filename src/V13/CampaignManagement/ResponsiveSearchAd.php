@@ -8,6 +8,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/responsivesearchad?view=bingads-13 ResponsiveSearchAd Data Object
      * 
      * @uses AssetLink
+     * @used-by CreateResponsiveSearchAdRecommendationResponse
+     * @used-by RefineResponsiveSearchAdRecommendationRequest
      */
     final class ResponsiveSearchAd extends Ad
     {

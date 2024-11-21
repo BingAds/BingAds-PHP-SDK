@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $MaxCpc;
 
         /**
-         * The target cost per action that you want to spend.
+         * Reserved.
          * @var double
          */
         public $TargetCpa;

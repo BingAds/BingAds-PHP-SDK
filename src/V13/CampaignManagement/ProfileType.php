@@ -20,6 +20,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Target people in a specific industry according to LinkedIn. */
         const Industry = 'Industry';
+        const JobSeniority = 'JobSeniority';
+        const JobTitle = 'JobTitle';
     }
 
 }

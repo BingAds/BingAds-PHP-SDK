@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CampaignConversionGoal
     {
         /**
-         * The Microsoft Advertising assigned identifier of a campaign.
+         * Reserved.
          * @var integer
          */
         public $CampaignId;
 
         /**
-         * The Microsoft Advertising assigned identifier of a conversion goal.
+         * Reserved.
          * @var integer
          */
         public $GoalId;

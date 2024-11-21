@@ -8,6 +8,8 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @link https:/learn.microsoft.com/advertising/reporting-service/accountreportscope?view=bingads-13 AccountReportScope Data Object
      * 
      * @used-by AccountPerformanceReportRequest
+     * @used-by CategoryClickCoverageReportRequest
+     * @used-by CategoryInsightsReportRequest
      */
     final class AccountReportScope
     {

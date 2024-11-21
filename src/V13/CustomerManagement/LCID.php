@@ -15,46 +15,46 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Arabic (Saudi Arabia) */
         const ArabicSaudiArabia = 'ArabicSaudiArabia';
 
-        /** Arabic (Algeria) */
+        /** The corresponding LCID type. */
         const ArabicAlgeria = 'ArabicAlgeria';
 
-        /** Arabic (Bahrain) */
+        /** The corresponding LCID type. */
         const ArabicBahrain = 'ArabicBahrain';
 
-        /** Arabic (Egypt) */
+        /** The corresponding LCID type. */
         const ArabicEgypt = 'ArabicEgypt';
 
-        /** Arabic (Iraq) */
+        /** The corresponding LCID type. */
         const ArabicIraq = 'ArabicIraq';
 
-        /** Arabic (Jordan) */
+        /** The corresponding LCID type. */
         const ArabicJordan = 'ArabicJordan';
 
-        /** Arabic (Kuwait) */
+        /** The corresponding LCID type. */
         const ArabicKuwait = 'ArabicKuwait';
 
-        /** Arabic (Lebanon) */
+        /** The corresponding LCID type. */
         const ArabicLebanon = 'ArabicLebanon';
 
-        /** Arabic (Libya) */
+        /** The corresponding LCID type. */
         const ArabicLibya = 'ArabicLibya';
 
-        /** Arabic (Morocco) */
+        /** The corresponding LCID type. */
         const ArabicMorocco = 'ArabicMorocco';
 
-        /** Arabic (Oman) */
+        /** The corresponding LCID type. */
         const ArabicOman = 'ArabicOman';
 
-        /** Arabic (Qatar) */
+        /** The corresponding LCID type. */
         const ArabicQatar = 'ArabicQatar';
 
-        /** Arabic (Tunisia) */
+        /** The corresponding LCID type. */
         const ArabicTunisia = 'ArabicTunisia';
 
-        /** Arabic (United Arab Emirates) */
+        /** The corresponding LCID type. */
         const ArabicUnitedArabEmirates = 'ArabicUnitedArabEmirates';
 
-        /** Arabic (Yemen) */
+        /** The corresponding LCID type. */
         const ArabicYemen = 'ArabicYemen';
 
         /** Chinese (Taiwan) */
@@ -96,7 +96,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Norwegian (Norway) */
         const NorwegianNorway = 'NorwegianNorway';
 
-        /** Portuguese (Brazil) */
+        /** The corresponding LCID type. */
         const PortugueseBrazil = 'PortugueseBrazil';
 
         /** Russian (Russia) */
@@ -113,8 +113,6 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** English (Vietnam) */
         const EnglishVietnam = 'EnglishVietnam';
-
-        /** Chinese (China) */
         const ChineseChina = 'ChineseChina';
 
         /** German (Switzerland) */
@@ -126,7 +124,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Spanish (Mexico) */
         const SpanishMexico = 'SpanishMexico';
 
-        /** Chinese (Hong Kong SAR) */
+        /** Chinese (Hong Kong) */
         const ChineseHongKong = 'ChineseHongKong';
 
         /** German (Austria) */
@@ -144,7 +142,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** English (New Zealand) */
         const EnglishNewZealand = 'EnglishNewZealand';
 
-        /** English (Ireland) */
+        /** The corresponding LCID type. */
         const EnglishIreland = 'EnglishIreland';
 
         /** Spanish (Venezuela) */
@@ -173,12 +171,16 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** English (Singapore) */
         const EnglishSingapore = 'EnglishSingapore';
-
-        /** Turkish (Turkey) */
         const TurkishTurkey = 'TurkishTurkey';
-
-        /** Filipino (Philippines) */
         const FilipinoPhilippines = 'FilipinoPhilippines';
+        const PolandPolish = 'PolandPolish';
+        const MalayMalaysia = 'MalayMalaysia';
+        const UkrainianUkraine = 'UkrainianUkraine';
+        const CzechRepublicCZ = 'CzechRepublicCZ';
+        const RomaniaRO = 'RomaniaRO';
+        const GreekGreece = 'GreekGreece';
+        const HungaryHU = 'HungaryHU';
+        const HindiIndia = 'HindiIndia';
     }
 
 }
