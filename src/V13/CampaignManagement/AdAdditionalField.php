@@ -21,11 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the LongHeadlines element be included within each returned ResponsiveAd object. */
         const LongHeadlines = 'LongHeadlines';
-
-        /** The target dimension of an image asset. */
         const ImageTargetDimension = 'ImageTargetDimension';
-
-        /** Defines the possible ad sub types. */
         const AdSubType = 'AdSubType';
     }
 

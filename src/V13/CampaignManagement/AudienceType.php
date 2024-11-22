@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audiencetype?view=bingads-13 AudienceType Value Set
      * 
      * @used-by Audience
+     * @used-by AudienceConditionItem
      * @used-by AudienceCriterion
      * @used-by AudienceInfo
      * @used-by GetAudiencesByIdsRequest
@@ -31,11 +32,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The audience is a combined list. */
         const CombinedList = 'CombinedList';
-
-        /** The audience is a customer list. */
         const CustomerList = 'CustomerList';
-
-        /** The audience is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 

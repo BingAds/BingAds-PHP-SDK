@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Defines the type of parameter such as string, URL, or a list of demand entities.
+     * Defines the type of parameter: string, URL, or a list of demand entities.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/parametertype?view=bingads-13 ParameterType Value Set
      * 
      * @used-by PerformanceInsightsMessageParameter

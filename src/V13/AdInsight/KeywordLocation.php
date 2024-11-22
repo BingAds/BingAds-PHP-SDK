@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $Device;
 
         /**
-         * The country/region, state, metropolitan area, or city where users entered the search query.
+         * The country, state, metropolitan area, or city where users entered the search query.
          * @var string
          */
         public $Location;

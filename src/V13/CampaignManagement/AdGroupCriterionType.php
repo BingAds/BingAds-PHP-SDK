@@ -74,32 +74,27 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The ad group criterion is a combined list association. */
         const CombinedList = 'CombinedList';
 
-        /** The criterion type for lodging campaigns. */
+        /** Reserved. */
         const HotelGroup = 'HotelGroup';
 
-        /** The ad group criterion is a hotel advance booking window criterion. */
+        /** Reserved. */
         const HotelAdvanceBookingWindow = 'HotelAdvanceBookingWindow';
 
-        /** The ad group criterion is a hotel check in day criterion. */
+        /** Reserved. */
         const HotelCheckInDay = 'HotelCheckInDay';
 
-        /** The ad group criterion is a hotel length of stay criterion. */
+        /** Reserved. */
         const HotelLengthOfStay = 'HotelLengthOfStay';
 
-        /** The ad group criterion is a hotel date selection type criterion. */
+        /** Reserved. */
         const HotelDateSelectionType = 'HotelDateSelectionType';
 
-        /** The ad group criterion is a hotel check in date criterion. */
+        /** Reserved. */
         const HotelCheckInDate = 'HotelCheckInDate';
-
-        /** The ad group criterion is a genre criterion. */
         const Genre = 'Genre';
-
-        /** The ad group criterion is a customer list. */
         const CustomerList = 'CustomerList';
-
-        /** The ad group criterion is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
+        const Placement = 'Placement';
     }
 
 }

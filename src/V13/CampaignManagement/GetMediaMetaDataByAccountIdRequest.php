@@ -25,11 +25,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Paging
          */
         public $PageInfo;
-
-        /**
-         * Reserved.
-         * @var MediaAdditionalField
-         */
         public $ReturnAdditionalFields;
     }
 }

@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class MaxConversionValueBiddingScheme extends BiddingScheme
     {
         /**
-         * The target return on ad spend.
+         * Reserved for future use.
          * @var double
          */
         public $TargetRoas;

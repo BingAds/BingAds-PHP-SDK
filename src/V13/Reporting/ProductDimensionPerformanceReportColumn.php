@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** The Microsoft Advertising assigned identifier of an ad. */
@@ -149,7 +149,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language for the product offer. */
         const OfferLanguage = 'OfferLanguage';
 
-        /** The country/region of sale for the product catalog. */
+        /** The country of sale for the product catalog. */
         const CountryOfSale = 'CountryOfSale';
 
         /** The ad status. */
@@ -278,40 +278,18 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
 
-        /** The Microsoft Advertising assigned identifier of a conversion goal. */
+        /** Reserved. */
         const GoalId = 'GoalId';
-
-        /** The total number of sales. */
         const Sales = 'Sales';
-
-        /** The cost per sale. */
         const CostPerSale = 'CostPerSale';
-
-        /** The revenue per sale. */
         const RevenuePerSale = 'RevenuePerSale';
-
-        /** The total number of installs. */
         const Installs = 'Installs';
-
-        /** The cost per install. */
         const CostPerInstall = 'CostPerInstall';
-
-        /** The revenue per install. */
         const RevenuePerInstall = 'RevenuePerInstall';
-
-        /** The campaign type. */
         const CampaignType = 'CampaignType';
-
-        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
-
-        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
-
-        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
-
-        /** The collection ID. */
         const CollectionId = 'CollectionId';
     }
 

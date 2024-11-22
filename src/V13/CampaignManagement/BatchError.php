@@ -21,6 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddCampaignConversionGoalsResponse
      * @used-by AddCampaignsResponse
      * @used-by AddConversionGoalsResponse
+     * @used-by AddConversionValueRulesResponse
      * @used-by AddDataExclusionsResponse
      * @used-by AddExperimentsResponse
      * @used-by AddImportJobsResponse

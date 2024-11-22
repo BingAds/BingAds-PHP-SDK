@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const Operator = 'Operator';
+        const Placement = 'Placement';
     }
 
 }

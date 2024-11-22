@@ -44,11 +44,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var double
          */
         public $DailyBudget;
-
-        /**
-         * A list of unique system identifiers corresponding to the deals that were added.
-         * @var integer[]
-         */
         public $DealIds;
 
         /**
@@ -80,11 +75,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
-
-        /**
-         * Reserved.
-         * @var boolean
-         */
         public $IsDealCampaign;
 
         /**
@@ -130,7 +120,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * The campaign type determines whether the campaign is an Audience, Dynamic Search Ads, Search, Shopping campaign, Hotel Ads, or Performance Max.
+         * The campaign type determines whether the campaign is an Audience, Dynamic Search Ads, Search, or Shopping campaign.
          * @var CampaignType
          */
         public $CampaignType;

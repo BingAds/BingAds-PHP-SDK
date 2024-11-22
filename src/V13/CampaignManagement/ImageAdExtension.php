@@ -78,11 +78,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string[]
          */
         public $Layouts;
-
-        /**
-         * Reserved.
-         * @var string
-         */
         public $SourceType;
 
         /**

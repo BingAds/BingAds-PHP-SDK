@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Location;
 
         /**
-         * The list of publisher countries or regions whose editorial guidelines do not allow the specified term.
+         * The list of publisher countries whose editorial guidelines do not allow the specified term.
          * @var string[]
          */
         public $PublisherCountries;

@@ -42,7 +42,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $Level;
 
         /**
-         * The country/region from which the search originated.
+         * The country from which the search originated.
          * @var string
          */
         public $ParentCountry;

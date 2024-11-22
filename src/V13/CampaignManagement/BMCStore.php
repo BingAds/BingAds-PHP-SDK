@@ -41,11 +41,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Name;
-
-        /**
-         * The store's destination URL.
-         * @var string
-         */
         public $StoreUrl;
 
         /**

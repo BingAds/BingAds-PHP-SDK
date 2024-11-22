@@ -98,7 +98,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The Microsoft Advertising assigned identifier of a keyword. */
         const KeywordId = 'KeywordId';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic (this network type is deprecated as of July 2024). */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */

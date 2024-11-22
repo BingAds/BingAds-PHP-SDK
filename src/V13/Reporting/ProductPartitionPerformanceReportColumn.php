@@ -101,7 +101,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The destination URL attribute of the ad, keyword, or ad group criterion. */
         const DestinationUrl = 'DestinationUrl';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -125,7 +125,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The language for the product offer. */
         const OfferLanguage = 'OfferLanguage';
 
-        /** The country/region of sale for the product catalog. */
+        /** The country of sale for the product catalog. */
         const CountryOfSale = 'CountryOfSale';
 
         /** The ad status. */
@@ -235,17 +235,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
-
-        /** The campaign type. */
         const CampaignType = 'CampaignType';
-
-        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
-
-        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
-
-        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
     }
 

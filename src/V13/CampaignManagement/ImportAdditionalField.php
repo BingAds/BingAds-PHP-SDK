@@ -27,53 +27,35 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the SearchAndReplaceForCustomParameters element be included within each returned GoogleImportOption object. */
         const SearchAndReplaceForCustomParameters = 'SearchAndReplaceForCustomParameters';
 
-        /** Request that the AdScheduleUseSearcherTimezone element be included within each returned GoogleImportOption object. */
+        /** Reserved. */
         const AdScheduleUseSearcherTimezone = 'AdScheduleUseSearcherTimezone';
 
-        /** Request that the NewImageAdExtensions element be included within each returned GoogleImportOption object. */
+        /** Reserved. */
         const NewImageAdExtensions = 'NewImageAdExtensions';
 
-        /** Request that the UpdateImageAdExtensions element be included within each returned GoogleImportOption object. */
+        /** Reserved. */
         const UpdateImageAdExtensions = 'UpdateImageAdExtensions';
 
-        /** Request that the SearchAndReplaceForFinalURLSuffix element be included within each returned GoogleImportOption object. */
+        /** Reserved. */
         const SearchAndReplaceForFinalURLSuffix = 'SearchAndReplaceForFinalURLSuffix';
 
-        /** Request that the RenameCampaignNameWithSuffix element be included within each returned GoogleImportOption object. */
+        /** Reserved. */
         const RenameCampaignNameWithSuffix = 'RenameCampaignNameWithSuffix';
 
-        /** Request that the UpdateAdUrls element be included within each returned GoogleImportOption object. */
+        /** Reserved. */
         const UpdateAdUrls = 'UpdateAdUrls';
-
-        /** Request that the NewLogoAdExtensions element be included within each returned GoogleImportOption object. */
         const NewLogoAdExtensions = 'NewLogoAdExtensions';
-
-        /** Request that the UpdateLogoAdExtensions element be included within each returned GoogleImportOption object. */
         const UpdateLogoAdExtensions = 'UpdateLogoAdExtensions';
-
-        /** Request that the UpdateSitelinkUrls element be included within each returned GoogleImportOption object. */
         const UpdateSitelinkUrls = 'UpdateSitelinkUrls';
-
-        /** Request that the NewLeadFormAdExtensions element be included within each returned GoogleImportOption object. */
         const NewLeadFormAdExtensions = 'NewLeadFormAdExtensions';
-
-        /** Request that the UpdateLeadFormAdExtensions element be included within each returned GoogleImportOption object. */
         const UpdateLeadFormAdExtensions = 'UpdateLeadFormAdExtensions';
-
-        /** Request that the NewAccountNegativeKeywords element be included within each returned GoogleImportOption object. */
         const NewAccountNegativeKeywords = 'NewAccountNegativeKeywords';
-
-        /** Request that the UpdateAccountNegativeKeywords element be included within each returned GoogleImportOption object. */
         const UpdateAccountNegativeKeywords = 'UpdateAccountNegativeKeywords';
-
-        /** Request that the UpdateAdCustomizerAttributes element be included within each returned GoogleImportOption object. */
         const UpdateAdCustomizerAttributes = 'UpdateAdCustomizerAttributes';
-
-        /** Request that the NewConversionGoals element be included within each returned GoogleImportOption object. */
         const NewConversionGoals = 'NewConversionGoals';
-
-        /** Request that the UpdateConversionGoals element be included within each returned GoogleImportOption object. */
         const UpdateConversionGoals = 'UpdateConversionGoals';
+        const NewBrandSuitability = 'NewBrandSuitability';
+        const UpdateBrandSuitability = 'UpdateBrandSuitability';
     }
 
 }

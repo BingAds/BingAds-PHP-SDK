@@ -36,7 +36,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdjustmentForCampaignBudgets;
 
         /**
-         * Note: AssociatedStoreId is deprecated.
+         * The identifier of the Microsoft Merchant Center store that you want to associate with imported product ads and product filters.
          * @var integer
          */
         public $AssociatedStoreId;
@@ -70,11 +70,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $EnableParentLocationMapping;
-
-        /**
-         * Import account negative keywords that have not previously been imported.
-         * @var boolean
-         */
         public $NewAccountNegativeKeywords;
 
         /**
@@ -118,6 +113,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewAudienceTargets;
+        public $NewBrandSuitability;
 
         /**
          * Import call extensions that have not previously been imported.
@@ -130,11 +126,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewCalloutAdExtensions;
-
-        /**
-         * Import conversion goals that have not previously been imported.
-         * @var boolean
-         */
         public $NewConversionGoals;
 
         /**
@@ -178,11 +169,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewLabels;
-
-        /**
-         * Reserved.
-         * @var boolean
-         */
         public $NewLeadFormAdExtensions;
 
         /**
@@ -196,11 +182,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewLocationTargets;
-
-        /**
-         * Import logo ad extensions that have not previously been imported.
-         * @var boolean
-         */
         public $NewLogoAdExtensions;
 
         /**
@@ -376,17 +357,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SuffixForUrls;
-
-        /**
-         * Import updates to existing account negative keywords.
-         * @var boolean
-         */
         public $UpdateAccountNegativeKeywords;
-
-        /**
-         * Import updates to existing ad customizer feeds.
-         * @var boolean
-         */
         public $UpdateAdCustomizerAttributes;
 
         /**
@@ -408,7 +379,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateAdSchedules;
 
         /**
-         * Import updates to existing ad landing page URLs.
+         * Note: Not everyone has this feature yet.
          * @var boolean
          */
         public $UpdateAdUrls;
@@ -436,6 +407,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateBids;
+        public $UpdateBrandSuitability;
 
         /**
          * Import updates to existing call extensions.
@@ -466,11 +438,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateCampaignNames;
-
-        /**
-         * Import updates to existing conversion goals.
-         * @var boolean
-         */
         public $UpdateConversionGoals;
 
         /**
@@ -508,11 +475,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateLabels;
-
-        /**
-         * Reserved.
-         * @var boolean
-         */
         public $UpdateLeadFormAdExtensions;
 
         /**
@@ -526,11 +488,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateLocationTargets;
-
-        /**
-         * Import updates to existing logo ad extensions.
-         * @var boolean
-         */
         public $UpdateLogoAdExtensions;
 
         /**
@@ -580,11 +537,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateSitelinkAdExtensions;
-
-        /**
-         * Import updates to existing Sitelink Extension URLs.
-         * @var boolean
-         */
         public $UpdateSitelinkUrls;
 
         /**

@@ -57,11 +57,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
-
-        /**
-         * Determines whether enhanced conversions are enabled for a conversion goal.
-         * @var boolean
-         */
         public $IsEnhancedConversionsEnabled;
 
         /**

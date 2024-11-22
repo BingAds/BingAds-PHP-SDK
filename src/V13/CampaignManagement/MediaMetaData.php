@@ -30,11 +30,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var MediaRepresentation[]
          */
         public $Representations;
-
-        /**
-         * Reserved.
-         * @var string
-         */
         public $Text;
 
         /**
