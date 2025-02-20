@@ -11,13 +11,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
      */
     final class TaxCertificateStatus
     {
-        /** Reserved. */
+        /** The status of the tax certificate is Valid. */
         const Valid = 'Valid';
 
-        /** Reserved. */
+        /** The status of the tax certificate is Invalid. */
         const Invalid = 'Invalid';
 
-        /** Reserved. */
+        /** The status of the tax certificate is Pending. */
         const Pending = 'Pending';
     }
 

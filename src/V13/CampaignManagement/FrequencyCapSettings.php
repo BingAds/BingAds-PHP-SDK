@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the FrequencyCapSettings object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/frequencycapsettings?view=bingads-13 FrequencyCapSettings Data Object
      * 
      * @uses FrequencyCapTimeGranularity
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class FrequencyCapSettings
     {
         /**
-         * Reserved.
+         * A limit to the number of times an ad is shown.
          * @var integer
          */
         public $CapValue;
 
         /**
-         * Reserved.
+         * The smallest time interval to limit ad serves.
          * @var FrequencyCapTimeGranularity
          */
         public $TimeGranularity;

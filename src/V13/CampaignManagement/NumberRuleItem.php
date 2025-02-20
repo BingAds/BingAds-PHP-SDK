@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a rule expression that depends on the operand, operator, and value.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/numberruleitem?view=bingads-13 NumberRuleItem Data Object
      * 
      * @uses NumberOperator
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class NumberRuleItem extends RuleItem
     {
         /**
-         * Reserved.
+         * The rule operand or key on the left hand side of the operator.
          * @var string
          */
         public $Operand;
 
         /**
-         * Reserved.
+         * The rule item operator.
          * @var NumberOperator
          */
         public $Operator;
 
         /**
-         * Reserved.
+         * The rule value on the right hand side of the operator.
          * @var string
          */
         public $Value;

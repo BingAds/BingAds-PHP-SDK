@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $UserId;
 
         /**
-         * The user to create if you want to sign up a new customer and create user simultaneously.
+         * The user to create.
          * @var User
          */
         public $User;

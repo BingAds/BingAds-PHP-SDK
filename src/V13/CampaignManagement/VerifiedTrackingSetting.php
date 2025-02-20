@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class VerifiedTrackingSetting extends Setting
     {
         /**
-         * Reserved.
+         * Key-value pairs for the VerifiedTrackingSetting object.
          * @var KeyValuePairOfstringstring[][]
          */
         public $Details;

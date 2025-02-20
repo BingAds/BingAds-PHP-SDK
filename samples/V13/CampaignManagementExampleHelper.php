@@ -2,7 +2,7 @@
 
 namespace Microsoft\BingAds\Samples\V13;
 
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 
 use SoapVar;
 use SoapFault;
@@ -33,6 +33,7 @@ use Microsoft\BingAds\V13\CampaignManagement\AppealEditorialRejectionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\ApplyOfflineConversionAdjustmentsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\ApplyOfflineConversionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\ApplyProductPartitionActionsRequest;
+use Microsoft\BingAds\V13\CampaignManagement\CreateResponsiveAdRecommendationRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteAdExtensionsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteAdExtensionsAssociationsRequest;
 use Microsoft\BingAds\V13\CampaignManagement\DeleteAdGroupCriterionsRequest;
@@ -450,6 +451,18 @@ final class CampaignManagementExampleHelper {
         $request->CriterionActions = $criterionActions;
 
         return $GLOBALS['CampaignManagementProxy']->GetService()->ApplyProductPartitionActions($request);
+    }
+    static function CreateResponsiveAdRecommendation(
+        $finalUrls)
+    {
+        $GLOBALS['CampaignManagementProxy']->SetAuthorizationData($GLOBALS['AuthorizationData']);
+        $GLOBALS['Proxy'] = $GLOBALS['CampaignManagementProxy'];
+
+        $request = new CreateResponsiveAdRecommendationRequest();
+
+        $request->FinalUrls = $finalUrls;
+
+        return $GLOBALS['CampaignManagementProxy']->GetService()->CreateResponsiveAdRecommendation($request);
     }
     static function DeleteAdExtensions(
         $accountId,

@@ -55,8 +55,14 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of products per product group that matched your product group targets. */
         const MatchedProductsAtProductGroup = 'MatchedProductsAtProductGroup';
+
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
     }
 

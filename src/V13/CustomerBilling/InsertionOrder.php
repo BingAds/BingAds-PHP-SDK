@@ -152,7 +152,17 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var string
          */
         public $SeriesFrequencyType;
+
+        /**
+         * Determines whether the insertion order has unlimited budget.
+         * @var boolean
+         */
         public $IsUnlimited;
+
+        /**
+         * Determines whether the insertion order has no end date.
+         * @var boolean
+         */
         public $IsEndless;
     }
 

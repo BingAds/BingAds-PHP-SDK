@@ -446,45 +446,138 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const AdGroupHotelListingGroups = 'AdGroupHotelListingGroups';
+
+        /** Array of asset groups to add to the specified campaign. */
         const AssetGroups = 'AssetGroups';
+
+        /** Array of audience groups. */
         const AudienceGroups = 'AudienceGroups';
+
+        /** Defines a negative site assigned to an campaign that can be uploaded and downloaded in a bulk file. */
         const CampaignNegativeWebpages = 'CampaignNegativeWebpages';
+
+        /** The list of Audience Group associations. */
         const AudienceGroupAssetGroupAssociations = 'AudienceGroupAssetGroupAssociations';
+
+        /** The list of listing groups that correspond directly to the identifiers specified in the request. */
         const AssetGroupListingGroups = 'AssetGroupListingGroups';
+
+        /** Reserved. */
         const LogoAdExtensions = 'LogoAdExtensions';
+
+        /** Reserved. */
         const AccountLogoAdExtensions = 'AccountLogoAdExtensions';
+
+        /** Reserved. */
         const CampaignLogoAdExtensions = 'CampaignLogoAdExtensions';
+
+        /** Reserved. */
         const AdGroupLogoAdExtensions = 'AdGroupLogoAdExtensions';
+
+        /** Reserved. */
         const LeadFormAdExtensions = 'LeadFormAdExtensions';
+
+        /** Reserved. */
         const AccountLeadFormAdExtensions = 'AccountLeadFormAdExtensions';
+
+        /** Reserved. */
         const CampaignLeadFormAdExtensions = 'CampaignLeadFormAdExtensions';
+
+        /** Include Account Negative Keyword List records in the download data. */
         const AccountNegativeKeywordList = 'AccountNegativeKeywordList';
+
+        /** Include Account Negative Keyword List Association records in the download that represents the association relationship between an account and an account negative keyword list. */
         const AccountNegativeKeywordListAssociation = 'AccountNegativeKeywordListAssociation';
+
+        /** Include Account Negative Keyword List records in the download data. */
         const AccountNegativeKeyword = 'AccountNegativeKeyword';
+
+        /** Reserved. */
         const ConversionGoal = 'ConversionGoal';
+
+        /** Reserved. */
         const EventGoal = 'EventGoal';
+
+        /** Reserved. */
         const AppInstallGoal = 'AppInstallGoal';
+
+        /** Reserved. */
         const MultiStageGoal = 'MultiStageGoal';
+
+        /** Reserved. */
         const DurationGoal = 'DurationGoal';
+
+        /** Reserved. */
         const OfflineConversionGoal = 'OfflineConversionGoal';
+
+        /** Reserved. */
         const UrlGoal = 'UrlGoal';
+
+        /** Reserved. */
         const InStoreTransactionGoal = 'InStoreTransactionGoal';
+
+        /** Reserved. */
         const PagesViewedPerVisitGoal = 'PagesViewedPerVisitGoal';
+
+        /** Reserved. */
         const SmartGoal = 'SmartGoal';
+
+        /** Reserved. */
         const InStoreVisitGoal = 'InStoreVisitGoal';
+
+        /** Reserved. */
         const ProductGoal = 'ProductGoal';
+
+        /** Include SeasonalityAdjustments records in the download data. */
         const SeasonalityAdjustments = 'SeasonalityAdjustments';
+
+        /** Include DataExclusions records in the download data. */
         const DataExclusions = 'DataExclusions';
+
+        /** Reserved. */
         const BrandList = 'BrandList';
+
+        /** Reserved. */
         const BrandItem = 'BrandItem';
+
+        /** Reserved. */
         const CampaignBrandListAssociation = 'CampaignBrandListAssociation';
+
+        /** Reserved. */
         const AssetGroupSearchThemes = 'AssetGroupSearchThemes';
+
+        /** Include Impression Based Remarketing List records in the download data. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
+
+        /** Include Ad Group Impression Based Remarketing List Association records in the download that each represent the association relationship between an ad group and an impression based remarketing list. */
         const AdGroupImpressionBasedRemarketingListAssociations = 'AdGroupImpressionBasedRemarketingListAssociations';
+
+        /** Include Ad Group Negative Impression Based Remarketing List Association records in the download that each represent the association relationship between an ad group and an impression based remarketing list exclusion. */
         const AdGroupNegativeImpressionBasedRemarketingListAssociations = 'AdGroupNegativeImpressionBasedRemarketingListAssociations';
+
+        /** Include Campaign Impression Based Remarketing List Association records in the download that each represent the association relationship between a campaign and an impression based remarketing list. */
         const CampaignImpressionBasedRemarketingListAssociations = 'CampaignImpressionBasedRemarketingListAssociations';
+
+        /** Include Campaign Negative Impression Based Remarketing List Association records in the download that each represent the association relationship between a campaign and an impression based remarketing list exclusion. */
         const CampaignNegativeImpressionBasedRemarketingListAssociations = 'CampaignNegativeImpressionBasedRemarketingListAssociations';
+
+        /** Reserved. */
         const AssetGroupUrlTargets = 'AssetGroupUrlTargets';
+
+        /** Reserved. */
+        const NewCustomerAcquisitionGoal = 'NewCustomerAcquisitionGoal';
+
+        /** Reserved. */
+        const ConversionValueRule = 'ConversionValueRule';
+
+        /** Reserved. */
+        const AccountPlacementExclusionList = 'AccountPlacementExclusionList';
+
+        /** Reserved. */
+        const AccountPlacementExclusionListItem = 'AccountPlacementExclusionListItem';
+
+        /** Reserved. */
+        const CampaignAccountPlacementExclusionListAssociation = 'CampaignAccountPlacementExclusionListAssociation';
     }
 
 }

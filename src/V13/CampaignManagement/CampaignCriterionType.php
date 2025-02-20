@@ -76,7 +76,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The campaign criterion is a combined list association. */
         const CombinedList = 'CombinedList';
+
+        /** The campaign criterion is a customer list. */
         const CustomerList = 'CustomerList';
+
+        /** The campaign criterion is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 

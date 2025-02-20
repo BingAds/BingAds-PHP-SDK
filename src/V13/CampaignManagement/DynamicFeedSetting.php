@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DynamicFeedSetting extends Setting
     {
         /**
-         * Reserved.
+         * The ID of the feed.
          * @var integer
          */
         public $FeedId;

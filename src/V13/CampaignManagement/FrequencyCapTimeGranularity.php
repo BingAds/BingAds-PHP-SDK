@@ -4,20 +4,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible values for FrequencyCapTimeGranularity.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/frequencycaptimegranularity?view=bingads-13 FrequencyCapTimeGranularity Value Set
      * 
      * @used-by FrequencyCapSettings
      */
     final class FrequencyCapTimeGranularity
     {
-        /** Reserved. */
+        /** The number of hours to limit ad serves by. */
         const HOUR = 'HOUR';
 
-        /** Reserved. */
+        /** The number of days to limit ad serves by. */
         const DAY = 'DAY';
 
-        /** Reserved. */
+        /** The number of weeks to limit ad serves by. */
         const WEEK = 'WEEK';
     }
 

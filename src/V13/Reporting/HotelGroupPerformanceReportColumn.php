@@ -151,7 +151,11 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of impressions lost for all other reasons. */
         const MissedImpressionsOther = 'MissedImpressionsOther';
+
+        /** The estimated percentage of clicks, out of the total number of clicks available, in auctions your ad showed in or was competitive in. */
         const ClickShare = 'ClickShare';
+
+        /** The number of impressions lost because there were insufficient bids. */
         const MissedImpressionsInsufficientBid = 'MissedImpressionsInsufficientBid';
     }
 

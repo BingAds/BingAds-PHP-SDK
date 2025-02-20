@@ -45,7 +45,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BiddingScheme;
 
         /**
-         * Reserved.
+         * The commission rate charged to the advertiser when someone books a hotel and stays there.
          * @var RateBid
          */
         public $CommissionRate;
@@ -75,7 +75,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * Reserved.
+         * Settings for the frequency cap.
          * @var FrequencyCapSettings[]
          */
         public $FrequencyCapSettings;
@@ -93,7 +93,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Language;
 
         /**
-         * Reserved.
+         * The percent amount by which to adjust your bid for multimedia ads above or below the base ad group or keyword bid.
          * @var integer
          */
         public $MultimediaAdsBidAdjustment;
@@ -111,7 +111,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Network;
 
         /**
-         * Reserved.
+         * The percent CPC bid strategy type (total hotel price per night, including taxes and fees).
          * @var RateBid
          */
         public $PercentCpcBid;
@@ -153,10 +153,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * Reserved.
+         * This will be deprecated.
          * @var boolean
          */
         public $UseOptimizedTargeting;
+
+        /**
+         * Indicates if predictive targeting is enabled for an AdGroup.
+         * @var boolean
+         */
         public $UsePredictiveTargeting;
 
         /**
@@ -172,16 +177,21 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdGroupType;
 
         /**
-         * Reserved.
+         * The manual CPV bid strategy type.
          * @var Bid
          */
         public $CpvBid;
 
         /**
-         * Reserved.
+         * The manual CPM bid strategy type.
          * @var Bid
          */
         public $CpmBid;
+
+        /**
+         * The manual CPA bid strategy type.
+         * @var Bid
+         */
         public $McpaBid;
     }
 

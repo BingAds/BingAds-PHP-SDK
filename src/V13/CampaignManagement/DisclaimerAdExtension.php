@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DisclaimerLayout;
 
         /**
-         * Reserved.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;

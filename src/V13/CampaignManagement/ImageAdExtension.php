@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DisplayText;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;
@@ -78,6 +78,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string[]
          */
         public $Layouts;
+
+        /**
+         * The source type.
+         * @var string
+         */
         public $SourceType;
 
         /**

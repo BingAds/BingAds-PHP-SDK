@@ -31,7 +31,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImportEntityType;
 
         /**
-         * Reserved.
+         * The ID of the source parent.
          * @var integer
          */
         public $SourceParentId;

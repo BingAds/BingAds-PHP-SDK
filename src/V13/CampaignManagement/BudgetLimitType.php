@@ -17,6 +17,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** A daily budget that is spread throughout the day. */
         const DailyBudgetStandard = 'DailyBudgetStandard';
+
+        /** Reserved. */
+        const LifetimeBudgetStandard = 'LifetimeBudgetStandard';
     }
 
 }

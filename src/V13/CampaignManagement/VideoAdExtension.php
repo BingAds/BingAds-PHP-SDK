@@ -13,79 +13,79 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class VideoAdExtension extends AdExtension
     {
         /**
-         * Reserved.
+         * The action text for the video asset.
          * @var string
          */
         public $ActionText;
 
         /**
-         * Reserved.
+         * The alt text for the video asset.
          * @var string
          */
         public $AlternativeText;
 
         /**
-         * Reserved.
+         * The display text for the video asset.
          * @var string
          */
         public $DisplayText;
 
         /**
-         * Reserved.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;
 
         /**
-         * Reserved.
+         * The landing page URL for mobile devices.
          * @var string[]
          */
         public $FinalMobileUrls;
 
         /**
-         * Reserved.
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
          * @var string
          */
         public $FinalUrlSuffix;
 
         /**
-         * Reserved.
+         * The landing page URL.
          * @var string[]
          */
         public $FinalUrls;
 
         /**
-         * Reserved.
+         * The name of the video asset.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The ID of the thumbnail asset.
          * @var integer
          */
         public $ThumbnailId;
 
         /**
-         * Reserved.
+         * The thumbnail URL of the video asset.
          * @var string
          */
         public $ThumbnailUrl;
 
         /**
-         * Reserved.
+         * The tracking template to use as a default for all FinalUrls and FinalMobileUrls.
          * @var string
          */
         public $TrackingUrlTemplate;
 
         /**
-         * Reserved.
+         * Your custom collection of key and value parameters for URL tracking.
          * @var CustomParameters
          */
         public $UrlCustomParameters;
 
         /**
-         * Reserved.
+         * The ID of the video.
          * @var integer
          */
         public $VideoId;

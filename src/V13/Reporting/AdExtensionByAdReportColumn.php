@@ -89,7 +89,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic (this network type is deprecated as of July 2024). */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -169,6 +169,8 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** The Microsoft Advertising assigned identifier of a conversion goal. */
         const GoalId = 'GoalId';
     }
 

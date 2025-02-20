@@ -37,7 +37,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DisplayText;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;

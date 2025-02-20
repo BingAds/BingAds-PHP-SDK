@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AdExtensionHeaderType
     {
-        /** Reserved for future use. */
+        /** For future use. */
         const Unknown = 'Unknown';
 
         /** Use the translated version of Amenities in the ad extension header. */
@@ -122,16 +122,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Use the translated version of Deals in the ad extension header. */
         const Deals = 'Deals';
 
-        /** Reserved. */
+        /** Use the translated version of BestSellers in the ad extension header. */
         const BestSellers = 'BestSellers';
 
-        /** Reserved. */
+        /** Use the translated version of AgeGroups in the ad extension header. */
         const AgeGroups = 'AgeGroups';
 
-        /** Reserved. */
+        /** Use the translated version of Occasions in the ad extension header. */
         const Occasions = 'Occasions';
 
-        /** Reserved. */
+        /** Use the translated version of Flowers in the ad extension header. */
         const Flowers = 'Flowers';
     }
 

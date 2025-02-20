@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddAudienceGroupsResponse
      * @used-by AddAudiencesResponse
      * @used-by AddBidStrategiesResponse
+     * @used-by AddBrandKitsResponse
      * @used-by AddBudgetsResponse
      * @used-by AddCampaignConversionGoalsResponse
      * @used-by AddCampaignsResponse
@@ -28,6 +29,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddKeywordsResponse
      * @used-by AddLabelsResponse
      * @used-by AddListItemsToSharedListResponse
+     * @used-by AddNewCustomerAcquisitionGoalsResponse
      * @used-by AddSeasonalityAdjustmentsResponse
      * @used-by AddSharedEntityResponse
      * @used-by AddUetTagsResponse
@@ -51,6 +53,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteAudienceGroupsResponse
      * @used-by DeleteAudiencesResponse
      * @used-by DeleteBidStrategiesResponse
+     * @used-by DeleteBrandKitsResponse
      * @used-by DeleteBudgetsResponse
      * @used-by DeleteCampaignConversionGoalsResponse
      * @used-by DeleteCampaignCriterionsResponse
@@ -88,6 +91,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetCampaignsByIdsResponse
      * @used-by GetConversionGoalsByIdsResponse
      * @used-by GetConversionGoalsByTagIdsResponse
+     * @used-by GetConversionValueRulesByIdsResponse
      * @used-by GetDataExclusionsByAccountIdResponse
      * @used-by GetDataExclusionsByIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
@@ -121,14 +125,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by UpdateAudienceGroupsResponse
      * @used-by UpdateAudiencesResponse
      * @used-by UpdateBidStrategiesResponse
+     * @used-by UpdateBrandKitsResponse
      * @used-by UpdateBudgetsResponse
      * @used-by UpdateCampaignsResponse
      * @used-by UpdateConversionGoalsResponse
+     * @used-by UpdateConversionValueRulesResponse
+     * @used-by UpdateConversionValueRulesStatusResponse
      * @used-by UpdateDataExclusionsResponse
      * @used-by UpdateExperimentsResponse
      * @used-by UpdateImportJobsResponse
      * @used-by UpdateKeywordsResponse
      * @used-by UpdateLabelsResponse
+     * @used-by UpdateNewCustomerAcquisitionGoalsResponse
      * @used-by UpdateSeasonalityAdjustmentsResponse
      * @used-by UpdateSharedEntitiesResponse
      * @used-by UpdateUetTagsResponse

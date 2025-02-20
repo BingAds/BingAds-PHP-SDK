@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DynamicSearchAdsSetting extends Setting
     {
         /**
-         * Reserved.
+         * The website name corresponding to the pages you want your ads to target.
          * @var string
          */
         public $DomainName;
