@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AccountPropertyName
     {
-        /** Reserved for internal use. */
+        /** For internal use only. */
         const None = 'None';
 
         /** Used to get or set the account's tracking template. */
@@ -39,25 +39,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Used to get or set the property that determines whether Microsoft Advertising is allowed to automatically apply ad recommendations meant to help you boost ad performance. */
         const AutoApplyRecommendations = 'AutoApplyRecommendations';
 
-        /** Reserved. */
+        /** Include auto bidding view through conversions. */
         const IncludeAutoBiddingViewThroughConversions = 'IncludeAutoBiddingViewThroughConversions';
 
-        /** Reserved. */
+        /** The weight of the auto bidding view through conversions value attribution. */
         const AutoBiddingViewThroughConversionsValueAttributionWeight = 'AutoBiddingViewThroughConversionsValueAttributionWeight';
 
-        /** Reserved. */
+        /** The loopback window for view through conversions. */
         const LoopBackWindowForViewThroughConversions = 'LoopBackWindowForViewThroughConversions';
 
         /** Used to get or set the property that determines the account's business attributes meant to help you boost ad performance. */
         const BusinessAttributes = 'BusinessAttributes';
 
-        /** Reserved. */
+        /** Enable Microsoft Monitring Agent under dynamic search ads ad groups. */
         const EnableMMAUnderDSAAdgroups = 'EnableMMAUnderDSAAdgroups';
 
-        /** Reserved. */
+        /** The output from Microsoft Configuration Manager. */
         const OptOutFromMCM = 'OptOutFromMCM';
+
+        /** The Netflix terms and conditions are accepted. */
         const NetflixTCAccepted = 'NetflixTCAccepted';
+
+        /** The segments that advertisers can block. */
         const BlockedContentSegments = 'BlockedContentSegments';
+
+        /** Reserved. */
         const AssetAIEnhancementOptout = 'AssetAIEnhancementOptout';
     }
 

@@ -29,7 +29,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** People 65 years of age and older. */
         const SixtyFiveAndAbove = 'SixtyFiveAndAbove';
+
+        /** Reserved. */
         const ThirtyFiveToFiftyFour = 'ThirtyFiveToFiftyFour';
+
+        /** Reserved. */
         const FiftyFiveAndAbove = 'FiftyFiveAndAbove';
     }
 

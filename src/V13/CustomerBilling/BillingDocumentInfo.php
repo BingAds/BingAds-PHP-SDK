@@ -59,7 +59,17 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var integer
          */
         public $CustomerId;
+
+        /**
+         * The campaign identifier.
+         * @var integer
+         */
         public $CampaignId;
+
+        /**
+         * The number of the billing document.
+         * @var string
+         */
         public $DocumentNumber;
     }
 

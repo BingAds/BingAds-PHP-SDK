@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class WebpageConditionOperator
     {
-        /** Reserved. */
+        /** For future use. */
         const Unknown = 'Unknown';
 
         /** The property should be equal to the corresponding argument value. */

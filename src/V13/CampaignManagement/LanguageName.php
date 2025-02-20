@@ -116,16 +116,28 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding language name. */
         const Japanese = 'Japanese';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Hebrew = 'Hebrew';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Russian = 'Russian';
+
+        /** The corresponding language name. */
         const Malay = 'Malay';
+
+        /** The corresponding language name. */
         const Thai = 'Thai';
+
+        /** The corresponding language name. */
         const Indonesian = 'Indonesian';
+
+        /** The corresponding language name. */
         const Tagalog = 'Tagalog';
+
+        /** The corresponding language name. */
         const Vietnamese = 'Vietnamese';
+
+        /** The corresponding language name. */
         const Hindi = 'Hindi';
 
         /** The corresponding language name. */

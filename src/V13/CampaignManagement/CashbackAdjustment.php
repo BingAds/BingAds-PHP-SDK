@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CashbackAdjustment extends CriterionCashback
     {
         /**
-         * Reserved.
+         * The percent to receive in cashback.
          * @var double
          */
         public $CashbackPercent;

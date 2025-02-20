@@ -55,8 +55,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** An ad extension with a video and call-to-action button. */
         const VideoAdExtension = 'VideoAdExtension';
 
-        /** Reserved. */
+        /** An ad extension that specifies disclaimer text to include in an expanded text ad or responsive search ad. */
         const DisclaimerAdExtension = 'DisclaimerAdExtension';
+
+        /** An ad extension that contains the business logo. */
         const LogoAdExtension = 'LogoAdExtension';
     }
 

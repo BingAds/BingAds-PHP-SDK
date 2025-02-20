@@ -14,8 +14,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the NormalForm element be included within each returned PageVisitorsRule object. */
         const NormalForm = 'NormalForm';
 
-        /** Reserved. */
+        /** Defines a rule expression that depends on the operand, operator, and value. */
         const NumberRuleItem = 'NumberRuleItem';
+
+        /** Request that the ImpressionBasedRemarketingList element be included when you call the GetAudiencesByIds service operation. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 

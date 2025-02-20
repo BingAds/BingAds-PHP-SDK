@@ -32,6 +32,11 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * The list of additional properties that you want included within each returned insertion order.
+         * @var InsertionOrderAdditionalField
+         */
         public $ReturnAdditionalFields;
     }
 }

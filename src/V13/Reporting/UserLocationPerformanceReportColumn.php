@@ -35,13 +35,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** The country where the user was physically located when they clicked the ad. */
+        /** The country or region where the user was physically located when they clicked the ad. */
         const Country = 'Country';
 
         /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** The metro area (Nielsen DMA???????????? in the United States) where the user was physically located when they clicked the ad. */
+        /** The metro area (Microsoft Market Area in the United States) where the user was physically located when they clicked the ad. */
         const MetroArea = 'MetroArea';
 
         /** The account currency type. */
@@ -80,7 +80,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The city where the user was physically located when they clicked the ad. */
         const City = 'City';
 
-        /** The name of a country if the user's geographical intent can be determined. */
+        /** The name of a country or region if the user's geographical intent can be determined. */
         const QueryIntentCountry = 'QueryIntentCountry';
 
         /** The name of a state if the user's geographical intent can be determined. */
@@ -89,7 +89,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The name of a city if the user's geographical intent can be determined. */
         const QueryIntentCity = 'QueryIntentCity';
 
-        /** The name of a metro area (Nielsen DMA? in the United States) if the user's geographical intent can be determined. */
+        /** The name of a metro area (Microsoft Market Area in the United States) if the user's geographical intent can be determined. */
         const QueryIntentDMA = 'QueryIntentDMA';
 
         /** The keyword bid match type. */
@@ -98,7 +98,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver an ad. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
         const Network = 'Network';
 
         /** Indicates whether the ad impression appeared in a top position or elsewhere. */
@@ -203,13 +203,19 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The neighborhood where an ad was physically served, or the neighborhood that your customer had shown interest in through searches or content they had viewed. */
         const Neighborhood = 'Neighborhood';
 
-        /** The name of a neighborhood if the user????????????s geographical intent can be determined. */
+        /** The name of a neighborhood if the user?s geographical intent can be determined. */
         const QueryIntentNeighborhood = 'QueryIntentNeighborhood';
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
     }
 

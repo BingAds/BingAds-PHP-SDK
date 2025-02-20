@@ -65,19 +65,60 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** The corresponding language type. */
         const SimplifiedChinese = 'SimplifiedChinese';
+
+        /** The corresponding language type. */
         const Thai = 'Thai';
+
+        /** The corresponding language type. */
         const Turkish = 'Turkish';
+
+        /** The corresponding language type. */
         const Filipino = 'Filipino';
+
+        /** Reserved. */
         const Indonesian = 'Indonesian';
+
+        /** Reserved. */
         const Polish = 'Polish';
+
+        /** Reserved. */
         const Vietnamese = 'Vietnamese';
+
+        /** Reserved. */
         const Malay = 'Malay';
+
+        /** Reserved. */
         const Ukrainian = 'Ukrainian';
+
+        /** Reserved. */
         const Czech = 'Czech';
+
+        /** Reserved. */
         const Romanian = 'Romanian';
+
+        /** Reserved. */
         const Greek = 'Greek';
+
+        /** Reserved. */
         const Hungarian = 'Hungarian';
+
+        /** Reserved. */
         const Hindi = 'Hindi';
+
+        /** Reserved. */
+        const Bulgarian = 'Bulgarian';
+
+        /** Reserved. */
+        const Lithuanian = 'Lithuanian';
+
+        /** Reserved. */
+        const Croatian = 'Croatian';
+
+        /** Reserved. */
+        const Latvian = 'Latvian';
+
+        /** Reserved. */
+        const Slovenian = 'Slovenian';
     }
 
 }

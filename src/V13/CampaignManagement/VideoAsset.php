@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SubType;
 
         /**
-         * Reserved.
+         * The image to use as a thumbnail.
          * @var ImageAsset
          */
         public $ThumbnailImage;

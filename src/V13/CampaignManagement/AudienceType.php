@@ -32,7 +32,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The audience is a combined list. */
         const CombinedList = 'CombinedList';
+
+        /** The audience is a customer list. */
         const CustomerList = 'CustomerList';
+
+        /** The audience is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
     }
 

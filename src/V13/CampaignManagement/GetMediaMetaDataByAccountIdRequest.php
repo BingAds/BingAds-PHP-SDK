@@ -25,6 +25,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * The list of additional properties that you want included within each returned auction insight KPI.
+         * @var MediaAdditionalField
+         */
         public $ReturnAdditionalFields;
     }
 }

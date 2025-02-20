@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
     final class AccountTaxCertificate
     {
         /**
-         * Reserved.
+         * The container name of the tax certificate.
          * @var string
          */
         public $TaxCertificateBlobContainerName;
 
         /**
-         * Reserved.
+         * A list of tax certificates.
          * @var KeyValuePairOfstringbase64Binary[]
          */
         public $TaxCertificates;
 
         /**
-         * Reserved.
+         * The status of the tax certificate: Valid, Invalid, or Pending.
          * @var TaxCertificateStatus
          */
         public $Status;

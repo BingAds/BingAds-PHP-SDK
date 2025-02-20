@@ -48,7 +48,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EditorialStatus;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;

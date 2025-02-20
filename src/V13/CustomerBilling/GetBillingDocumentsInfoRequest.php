@@ -28,6 +28,11 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var \DateTime
          */
         public $EndDate;
+
+        /**
+         * Include the invoice number with the request.
+         * @var boolean
+         */
         public $ReturnInvoiceNumber;
     }
 }

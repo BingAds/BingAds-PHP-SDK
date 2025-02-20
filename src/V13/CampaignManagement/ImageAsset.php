@@ -40,7 +40,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SubType;
+
+        /**
+         * The target height dimension of an image asset.
+         * @var integer
+         */
         public $TargetHeight;
+
+        /**
+         * The target width dimension of an image asset.
+         * @var integer
+         */
         public $TargetWidth;
     }
 

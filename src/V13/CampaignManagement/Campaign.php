@@ -44,7 +44,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var double
          */
         public $DailyBudget;
+
+        /**
+         * A list of unique system identifiers corresponding to the deals that were added.
+         * @var integer[]
+         */
         public $DealIds;
+
+        /**
+         * Reserved.
+         * @var \DateTime
+         */
+        public $EndDate;
 
         /**
          * The system-generated identifier of the Experiment.
@@ -65,7 +76,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ForwardCompatibilityMap;
 
         /**
-         * Reserved.
+         * A list of goal IDs.
          * @var integer[]
          */
         public $GoalIds;
@@ -75,10 +86,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
+
+        /**
+         * The campaign is a deal campaign if true.
+         * @var boolean
+         */
         public $IsDealCampaign;
 
         /**
-         * Reserved.
+         * The percent amount by which to adjust your bid for multimedia ads above or below the base ad group or keyword bid
          * @var integer
          */
         public $MultimediaAdsBidAdjustment;
@@ -88,6 +104,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Name;
+
+        /**
+         * Reserved.
+         * @var \DateTime
+         */
+        public $StartDate;
 
         /**
          * The status of the campaign.
@@ -120,7 +142,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * The campaign type determines whether the campaign is an Audience, Dynamic Search Ads, Search, or Shopping campaign.
+         * Reserved.
+         * @var boolean
+         */
+        public $UseCampaignLevelDates;
+
+        /**
+         * The campaign type determines whether the campaign is an Audience, Dynamic Search Ads, Search, Shopping campaign, Hotel Ads, or Performance Max.
          * @var CampaignType
          */
         public $CampaignType;

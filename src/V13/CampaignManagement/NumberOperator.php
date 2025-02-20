@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class NumberOperator
     {
-        /** Reserved for future use. */
+        /** For future use. */
         const None = 'None';
 
         /** Equals the corresponding number value. */
@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Less than or equal to the corresponding number value. */
         const LessThanEqualTo = 'LessThanEqualTo';
 
-        /** Reserved. */
+        /** The field must not equal the specified value. */
         const NotEquals = 'NotEquals';
     }
 

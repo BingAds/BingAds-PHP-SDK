@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CriterionBid;
 
         /**
-         * Reserved.
+         * Defines the CriterionCashback data object.
          * @var CriterionCashback
          */
         public $CriterionCashback;

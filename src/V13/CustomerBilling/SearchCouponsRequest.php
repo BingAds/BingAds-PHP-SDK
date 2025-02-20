@@ -32,6 +32,11 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * If set to "CouponClaimInfo", return CouponClaimInfo in the response.
+         * @var AccountAdditionalField
+         */
         public $ReturnAdditionalFields;
     }
 }

@@ -28,11 +28,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The campaign is an Audience campaign. */
         const Audience = 'Audience';
 
-        /** The campaign is a Hotel campaign. */
+        /** The campaign is a Lodging campaign (formerly Hotel campaigns). */
         const Hotel = 'Hotel';
 
-        /** Reserved. */
+        /** The campaign is a Performance max campaign. */
         const PerformanceMax = 'PerformanceMax';
+
+        /** The campaign is an App campaign. */
         const App = 'App';
     }
 

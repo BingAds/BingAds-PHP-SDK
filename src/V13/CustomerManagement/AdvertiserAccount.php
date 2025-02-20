@@ -185,7 +185,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $SoldToPaymentInstrumentId;
 
         /**
-         * Reserved.
+         * The account tax certificate data object.
          * @var AccountTaxCertificate
          */
         public $TaxCertificate;

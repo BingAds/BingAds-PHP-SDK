@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Location;
 
         /**
-         * A list of countries where the ad or keyword failed editorial review.
+         * A list of countries or regions where the ad or keyword failed editorial review.
          * @var string[]
          */
         public $PublisherCountries;

@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DiscountModifier;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;

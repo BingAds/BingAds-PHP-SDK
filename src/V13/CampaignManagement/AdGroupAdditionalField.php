@@ -27,20 +27,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the MultimediaAdsBidAdjustment element be included within each returned AdGroup object. */
         const MultimediaAdsBidAdjustment = 'MultimediaAdsBidAdjustment';
 
-        /** Reserved. */
+        /** The commission rate charged to the advertiser when someone books a hotel and stays there. */
         const CommissionRate = 'CommissionRate';
 
-        /** Reserved. */
+        /** Request that the PercentCpcBid element be included within each returned AdGroup object. */
         const PercentCpcBid = 'PercentCpcBid';
 
-        /** Reserved. */
+        /** Request that the McpaBid element be included within each returned AdGroup object. */
         const McpaBid = 'McpaBid';
 
-        /** Reserved. */
+        /** This will be deprecated. */
         const UseOptimizedTargeting = 'UseOptimizedTargeting';
 
-        /** Reserved. */
+        /** Settings for the frequency cap. */
         const FrequencyCapSettings = 'FrequencyCapSettings';
+
+        /** Indicates if predictive targeting is enabled for an AdGroup. */
         const UsePredictiveTargeting = 'UsePredictiveTargeting';
     }
 

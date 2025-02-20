@@ -41,6 +41,11 @@ namespace Microsoft\BingAds\V13\Reporting;
          * @var AdTypeReportFilter
          */
         public $AdType;
+
+        /**
+         * The report will include data for only the asset group status.
+         * @var AssetGroupStatusReportFilter
+         */
         public $AssetGroupStatus;
 
         /**

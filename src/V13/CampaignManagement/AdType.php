@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Refers to a ResponsiveSearchAd. */
         const ResponsiveSearch = 'ResponsiveSearch';
 
-        /** Reserved. */
+        /** Refers to a HotelAd. */
         const Hotel = 'Hotel';
     }
 

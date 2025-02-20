@@ -53,7 +53,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The search term used by your potential audience. */
         const SearchQuery = 'SearchQuery';
 
-        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, and only partner traffic. */
+        /** The entire Microsoft Advertising Network made up of Microsoft sites and select traffic, cross-network traffic, and only partner traffic (this network type is deprecated as of July 2024). */
         const Network = 'Network';
 
         /** The unique identifier provided by a merchant for each product offer. */
@@ -169,8 +169,14 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
+
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
+
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
     }
 

@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteCampaignConversionGoalsRequest
     {
         /**
-         * Reserved.
+         * An array of the base object of a campaign conversion goal.
          * @var CampaignConversionGoal[]
          */
         public $CampaignConversionGoal;

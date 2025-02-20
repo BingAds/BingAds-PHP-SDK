@@ -28,19 +28,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DestinationUrl;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var AdGroupCriterionEditorialStatus
          */
         public $EditorialStatus;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var AppUrl[]
          */
         public $FinalAppUrls;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var string[]
          */
         public $FinalMobileUrls;
@@ -52,7 +52,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalUrlSuffix;
 
         /**
-         * Reserved for future use.
+         * For future use.
          * @var string[]
          */
         public $FinalUrls;
@@ -70,7 +70,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * Reserved.
+         * Defines the CriterionCashback data object.
          * @var CriterionCashback
          */
         public $CriterionCashback;

@@ -15,8 +15,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the ```CriterionCashback``` element be included within each returned BiddableAdGroupCriterion or BiddableCampaignCriterion object. */
         const CriterionCashback = 'CriterionCashback';
 
-        /** Reserved. */
+        /** Defines the relationship between the field and the value. */
         const Operator = 'Operator';
+
+        /** Reserved. */
         const Placement = 'Placement';
     }
 

@@ -15,46 +15,46 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Arabic (Saudi Arabia) */
         const ArabicSaudiArabia = 'ArabicSaudiArabia';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Algeria) */
         const ArabicAlgeria = 'ArabicAlgeria';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Bahrain) */
         const ArabicBahrain = 'ArabicBahrain';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Egypt) */
         const ArabicEgypt = 'ArabicEgypt';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Iraq) */
         const ArabicIraq = 'ArabicIraq';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Jordan) */
         const ArabicJordan = 'ArabicJordan';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Kuwait) */
         const ArabicKuwait = 'ArabicKuwait';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Lebanon) */
         const ArabicLebanon = 'ArabicLebanon';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Libya) */
         const ArabicLibya = 'ArabicLibya';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Morocco) */
         const ArabicMorocco = 'ArabicMorocco';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Oman) */
         const ArabicOman = 'ArabicOman';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Qatar) */
         const ArabicQatar = 'ArabicQatar';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Tunisia) */
         const ArabicTunisia = 'ArabicTunisia';
 
-        /** The corresponding LCID type. */
+        /** Arabic (United Arab Emirates) */
         const ArabicUnitedArabEmirates = 'ArabicUnitedArabEmirates';
 
-        /** The corresponding LCID type. */
+        /** Arabic (Yemen) */
         const ArabicYemen = 'ArabicYemen';
 
         /** Chinese (Taiwan) */
@@ -96,7 +96,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Norwegian (Norway) */
         const NorwegianNorway = 'NorwegianNorway';
 
-        /** The corresponding LCID type. */
+        /** Portuguese (Brazil) */
         const PortugueseBrazil = 'PortugueseBrazil';
 
         /** Russian (Russia) */
@@ -111,8 +111,16 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** English (Indonesia) */
         const EnglishIndonesia = 'EnglishIndonesia';
 
+        /** Reserved. */
+        const Slovenian = 'Slovenian';
+
+        /** Reserved. */
+        const Latvian = 'Latvian';
+
         /** English (Vietnam) */
         const EnglishVietnam = 'EnglishVietnam';
+
+        /** Chinese (China) */
         const ChineseChina = 'ChineseChina';
 
         /** German (Switzerland) */
@@ -124,7 +132,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** Spanish (Mexico) */
         const SpanishMexico = 'SpanishMexico';
 
-        /** Chinese (Hong Kong) */
+        /** Chinese (Hong Kong SAR) */
         const ChineseHongKong = 'ChineseHongKong';
 
         /** German (Austria) */
@@ -142,7 +150,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         /** English (New Zealand) */
         const EnglishNewZealand = 'EnglishNewZealand';
 
-        /** The corresponding LCID type. */
+        /** English (Ireland) */
         const EnglishIreland = 'EnglishIreland';
 
         /** Spanish (Venezuela) */
@@ -171,16 +179,45 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** English (Singapore) */
         const EnglishSingapore = 'EnglishSingapore';
+
+        /** Turkish (Turkey) */
         const TurkishTurkey = 'TurkishTurkey';
+
+        /** Filipino (Philippines) */
         const FilipinoPhilippines = 'FilipinoPhilippines';
+
+        /** Reserved. */
         const PolandPolish = 'PolandPolish';
+
+        /** Reserved. */
         const MalayMalaysia = 'MalayMalaysia';
+
+        /** Reserved. */
         const UkrainianUkraine = 'UkrainianUkraine';
+
+        /** Reserved. */
         const CzechRepublicCZ = 'CzechRepublicCZ';
+
+        /** Reserved. */
         const RomaniaRO = 'RomaniaRO';
+
+        /** Reserved. */
         const GreekGreece = 'GreekGreece';
+
+        /** Reserved. */
         const HungaryHU = 'HungaryHU';
+
+        /** Reserved. */
         const HindiIndia = 'HindiIndia';
+
+        /** Reserved. */
+        const Bulgarian = 'Bulgarian';
+
+        /** Reserved. */
+        const Lithuanian = 'Lithuanian';
+
+        /** Reserved. */
+        const Croatian = 'Croatian';
     }
 
 }
