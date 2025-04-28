@@ -32,6 +32,12 @@ class UriOAuthService extends IOAuthService
             'AuthorizationEndpointUrl' => 'https://login.windows-ppe.net/consumers/oauth2/v2.0/authorize?scope=https://api.ads.microsoft.com/msads.manage+offline_access&prompt=login',
             'Scope' => 'https://api.ads.microsoft.com/msads.manage offline_access'
         ),
+        'MsaProd' => array(
+            'RedirectUrl' => 'https://login.microsoftonline.com/common/oauth2/nativeclient',
+            'OAuthTokenUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+            'AuthorizationEndpointUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=https://si.ads.microsoft.com/msads.manage+offline_access&prompt=login',
+            'Scope' => 'https://si.ads.microsoft.com/msads.manage offline_access'
+        ),
     );
     
     private $httpService;
@@ -185,9 +191,16 @@ class UriOAuthService extends IOAuthService
                     $endpointType = OAuthEndpointType::ProductionMSIdentityV2_MSScope; 
             }
         }
-        else
+        else if ($environment == ApiEnvironment::Sandbox)
         {
-            $endpointType = OAuthEndpointType::Sandbox;
+            if ($oauthScope == OAuthScope::MSA_PROD)
+            {
+                $endpointType = OAuthEndpointType::MsaProd;
+            }
+            else
+            {
+                $endpointType = OAuthEndpointType::Sandbox;
+            }
         }
         return $endpointType;
     }

@@ -33,7 +33,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * Reserved.
          * @var integer
          */
+        public $NumberOfLogos;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
         public $NumberOfText;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $TemplateDescription;
 
         /**
          * Reserved.

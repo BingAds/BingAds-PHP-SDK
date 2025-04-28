@@ -313,6 +313,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The collection ID. */
         const CollectionId = 'CollectionId';
+
+        /** Reserved. */
+        const FeedLabel = 'FeedLabel';
     }
 
 }

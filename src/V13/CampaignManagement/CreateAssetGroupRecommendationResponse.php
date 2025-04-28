@@ -24,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var AdRecommendationImageSuggestion[]
          */
         public $ImageSuggestions;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $PromptBrandWarning;
     }
 }

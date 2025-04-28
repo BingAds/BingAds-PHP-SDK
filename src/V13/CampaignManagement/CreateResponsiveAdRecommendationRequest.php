@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses AdSubType
      * @uses AdRecommendationTextTone
      * @uses AdRecommendationVideoType
+     * @uses AdRecommendationAdditionalField
      * @used-by BingAdsCampaignManagementService::CreateResponsiveAdRecommendation
      */
     final class CreateResponsiveAdRecommendationRequest
@@ -43,5 +44,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var AdRecommendationVideoType
          */
         public $VideoType;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $BrandKitId;
+
+        /**
+         * Reserved.
+         * @var AdRecommendationAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

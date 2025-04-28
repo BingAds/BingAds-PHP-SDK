@@ -29,5 +29,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var VideoTemplateFilter
          */
         public $TemplateFilter;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $Locale;
     }
 }

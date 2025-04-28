@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/refineassetgrouprecommendation?view=bingads-13 RefineAssetGroupRecommendation Response Object
      * 
      * @uses AdRecommendationTextRefineResult
+     * @uses AdRecommendationMediaRefineResult
      * @used-by BingAdsCampaignManagementService::RefineAssetGroupRecommendation
      */
     final class RefineAssetGroupRecommendationResponse
@@ -17,5 +18,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var AdRecommendationTextRefineResult[]
          */
         public $TextRefineResults;
+
+        /**
+         * Reserved.
+         * @var AdRecommendationMediaRefineResult[]
+         */
+        public $MediaRefineResults;
     }
 }

@@ -138,6 +138,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewCalloutAdExtensions;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewCarouselAd;
+
+        /**
          * Import conversion goals that have not previously been imported.
          * @var boolean
          */

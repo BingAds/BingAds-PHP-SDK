@@ -12,10 +12,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses BrandKitPalette
      * @used-by AddBrandKitsRequest
      * @used-by GetBrandKitsByAccountIdResponse
+     * @used-by GetBrandKitsByIdsResponse
      * @used-by UpdateBrandKitsRequest
      */
     final class BrandKit
     {
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $BusinessName;
+
         /**
          * Reserved.
          * @var BrandKitFont[]

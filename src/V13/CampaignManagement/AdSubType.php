@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @used-by ResponsiveAd
      * @used-by CreateResponsiveAdRecommendationRequest
+     * @used-by GetSupportedFontsRequest
      */
     final class AdSubType
     {

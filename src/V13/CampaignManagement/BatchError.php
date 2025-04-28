@@ -84,6 +84,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetAudienceGroupsByIdsResponse
      * @used-by GetAudiencesByIdsResponse
      * @used-by GetBidStrategiesByIdsResponse
+     * @used-by GetBrandKitsByIdsResponse
      * @used-by GetBudgetsByIdsResponse
      * @used-by GetCampaignCriterionsByIdsResponse
      * @used-by GetCampaignIdsByBidStrategyIdsResponse

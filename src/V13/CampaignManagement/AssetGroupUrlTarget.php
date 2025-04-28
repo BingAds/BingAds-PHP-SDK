@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Reserved.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroupurltarget?view=bingads-13 AssetGroupUrlTarget Data Object
      * 
+     * @uses GenericEntityStatus
      * @used-by AssetGroup
      */
     final class AssetGroupUrlTarget
@@ -16,6 +17,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
+
+        /**
+         * Reserved.
+         * @var GenericEntityStatus
+         */
+        public $Status;
 
         /**
          * Reserved.
