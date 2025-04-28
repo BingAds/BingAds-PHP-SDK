@@ -45,6 +45,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $IsExcluded;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $ListingGroupPath;
+
+        /**
          * The identifier of the parent listing group.
          * @var integer
          */

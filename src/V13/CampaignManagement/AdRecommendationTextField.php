@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Reserved.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationtextfield?view=bingads-13 AdRecommendationTextField Value Set
      * 
+     * @used-by AdRecommendationTextAssetProperty
      * @used-by AdRecommendationTextRefineOperation
      */
     final class AdRecommendationTextField
@@ -19,6 +20,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const Description = 'Description';
+
+        /** Reserved. */
+        const CallToAction = 'CallToAction';
     }
 
 }

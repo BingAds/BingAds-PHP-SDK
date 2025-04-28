@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * 
      * @uses AssetGroupReportScope
      * @uses CampaignReportScope
+     * @used-by AppsPerformanceReportRequest
      * @used-by AssetGroupPerformanceReportRequest
      */
     final class AccountThroughAssetGroupReportScope

@@ -9,6 +9,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses AssetGroup
      * @uses AdRecommendationTextRefineOperation
+     * @uses AdRecommendationImageSuggestion
+     * @uses AdRecommendationImageRefineOperation
+     * @uses AdRecommendationAdditionalField
      * @used-by BingAdsCampaignManagementService::RefineAssetGroupRecommendation
      */
     final class RefineAssetGroupRecommendationRequest
@@ -24,5 +27,23 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var AdRecommendationTextRefineOperation[]
          */
         public $TextRefineOperations;
+
+        /**
+         * Reserved.
+         * @var AdRecommendationImageSuggestion[]
+         */
+        public $ImageSuggestions;
+
+        /**
+         * Reserved.
+         * @var AdRecommendationImageRefineOperation[]
+         */
+        public $ImageRefineOperations;
+
+        /**
+         * Reserved.
+         * @var AdRecommendationAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

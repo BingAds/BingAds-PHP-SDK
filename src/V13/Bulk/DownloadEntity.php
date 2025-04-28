@@ -578,6 +578,15 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const CampaignAccountPlacementExclusionListAssociation = 'CampaignAccountPlacementExclusionListAssociation';
+
+        /** Reserved. */
+        const AccountPlacementInclusionList = 'AccountPlacementInclusionList';
+
+        /** Reserved. */
+        const AccountPlacementInclusionListItem = 'AccountPlacementInclusionListItem';
+
+        /** Reserved. */
+        const CampaignAccountPlacementInclusionListAssociation = 'CampaignAccountPlacementInclusionListAssociation';
     }
 
 }

@@ -9,8 +9,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses AssetLink
      * @uses Image
+     * @uses AdRecommendationImageSuggestionMetadata
      * @used-by CreateAssetGroupRecommendationResponse
      * @used-by CreateResponsiveAdRecommendationResponse
+     * @used-by RefineAssetGroupRecommendationRequest
+     * @used-by RefineResponsiveAdRecommendationRequest
      */
     final class AdRecommendationImageSuggestion
     {
@@ -25,6 +28,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Image
          */
         public $Image;
+
+        /**
+         * Reserved.
+         * @var AdRecommendationImageSuggestionMetadata
+         */
+        public $ImageMetadata;
 
         /**
          * Reserved.

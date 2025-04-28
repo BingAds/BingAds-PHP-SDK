@@ -43,6 +43,12 @@ abstract class OAuthAuthorization extends Authentication
      */
     public $Tenant = "common";
 
+    /**
+     * Determines if use msa production accounts on sandbox.
+     * @var bool
+     */
+    public $UseMsaProd = true;
+
     public function __construct() {}
 
     /** 
@@ -97,7 +103,8 @@ abstract class OAuthAuthorization extends Authentication
      */
     public function withEnvironment($environment) {
         $this->Environment = $environment;
-        $this->RedirectUri=UriOAuthService::GetRedirectUrl($environment, $this->OAuthScope);
+        $this->OAuthScope = ($environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $this->OAuthScope;
+        $this->RedirectUri=UriOAuthService::GetRedirectUrl($environment, ($environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $this->OAuthScope);
         return $this;
     }
 
@@ -108,8 +115,8 @@ abstract class OAuthAuthorization extends Authentication
      * @return OAuthAuthorization this builder
      */
     public function withOAuthScope($oauthScope) {
-        $this->OAuthScope = $oauthScope;
-        $this->RedirectUri=UriOAuthService::GetRedirectUrl($this->Environment, $oauthScope);
+        $this->OAuthScope = ($this->Environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $oauthScope;
+        $this->RedirectUri=UriOAuthService::GetRedirectUrl($this->Environment, ($this->Environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $oauthScope);
         return $this;
     }
     
@@ -121,6 +128,17 @@ abstract class OAuthAuthorization extends Authentication
      */
     public function withTenant($tenant) {
         $this->Tenant = $tenant;
+        return $this;
+    }
+
+    /**
+     * Includes the UseMsaProd flag.
+     *
+     * @param bool $useMsaProd
+     * @return OAuthAuthorization this builder
+     */
+    public function withUseMsaProd($useMsaProd) {
+        $this->UseMsaProd = $useMsaProd;
         return $this;
     }
 

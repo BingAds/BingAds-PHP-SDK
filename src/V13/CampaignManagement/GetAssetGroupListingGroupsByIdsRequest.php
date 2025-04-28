@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Retrieves the specified AssetGroupListingGroups.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getassetgrouplistinggroupsbyids?view=bingads-13 GetAssetGroupListingGroupsByIds Request Object
      * 
+     * @uses AssetGroupListingGroupAdditionalField
      * @used-by BingAdsCampaignManagementService::GetAssetGroupListingGroupsByIds
      */
     final class GetAssetGroupListingGroupsByIdsRequest
@@ -22,5 +23,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $AssetGroupListingGroupIds;
+
+        /**
+         * Reserved.
+         * @var AssetGroupListingGroupAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

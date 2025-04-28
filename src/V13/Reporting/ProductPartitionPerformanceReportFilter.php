@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @uses AdStatusReportFilter
      * @uses AssetGroupStatusReportFilter
      * @uses CampaignStatusReportFilter
+     * @uses CampaignTypeReportFilter
      * @uses DeviceTypeReportFilter
      * @uses LanguageReportFilter
      * @used-by ProductPartitionPerformanceReportRequest
@@ -47,6 +48,12 @@ namespace Microsoft\BingAds\V13\Reporting;
          * @var CampaignStatusReportFilter
          */
         public $CampaignStatus;
+
+        /**
+         * Reserved.
+         * @var CampaignTypeReportFilter
+         */
+        public $CampaignType;
 
         /**
          * The report will include data for only the specified types of devices on which the ad is displayed.

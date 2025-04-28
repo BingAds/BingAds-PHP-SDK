@@ -21,4 +21,9 @@ final class OAuthScope
      * Represents ads.manage OAuth scope
      */
     const ADS_MANAGE = 'ads.manage';
+
+    /**
+     * Represents msa.prod OAuth scope
+     */
+    const MSA_PROD = 'msa.prod';
 }

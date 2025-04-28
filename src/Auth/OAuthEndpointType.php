@@ -26,4 +26,9 @@ final class OAuthEndpointType
      * Sandbox for Live Connect
      */
     const Sandbox = 'Sandbox';
+
+    /**
+     * Sandbox for Msa Production
+     */
+    const MsaProd = 'MsaProd';
 }

@@ -279,6 +279,30 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding call to action in the ad. */
         const ViewDemo = 'ViewDemo';
 
+        /** Reserved. */
+        const CustomText = 'CustomText';
+
+        /** Reserved. */
+        const Discover = 'Discover';
+
+        /** Reserved. */
+        const Dismiss = 'Dismiss';
+
+        /** Reserved. */
+        const Apply = 'Apply';
+
+        /** Reserved. */
+        const ViewQuote = 'ViewQuote';
+
+        /** Reserved. */
+        const Join = 'Join';
+
+        /** Reserved. */
+        const Attend = 'Attend';
+
+        /** Reserved. */
+        const RequestDemo = 'RequestDemo';
+
         /** The corresponding call to action in the ad. */
         const Automated = 'Automated';
     }
