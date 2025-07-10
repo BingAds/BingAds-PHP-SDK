@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation customized property data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationcustomizedproperty?view=bingads-13 AdRecommendationCustomizedProperty Data Object
      * 
      * @used-by AdRecommendationImageSuggestionMetadata
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationCustomizedProperty
     {
         /**
-         * Reserved.
+         * The asset type name.
          * @var string
          */
         public $AssetTypeName;
 
         /**
-         * Reserved.
+         * The property name.
          * @var string
          */
         public $PropertyName;
 
         /**
-         * Reserved.
+         * The property value.
          * @var string
          */
         public $PropertyValue;

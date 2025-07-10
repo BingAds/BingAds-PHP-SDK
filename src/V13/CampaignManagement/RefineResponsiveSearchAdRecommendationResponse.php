@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Refine a responsive search ad recommendation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/refineresponsivesearchadrecommendation?view=bingads-13 RefineResponsiveSearchAdRecommendation Response Object
      * 
      * @uses AdRecommendationTextRefineResult
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class RefineResponsiveSearchAdRecommendationResponse
     {
         /**
-         * Reserved.
+         * A list of the text refine results.
          * @var AdRecommendationTextRefineResult[]
          */
         public $TextRefineResults;

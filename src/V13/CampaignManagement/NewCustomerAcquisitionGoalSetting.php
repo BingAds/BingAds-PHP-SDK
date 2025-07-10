@@ -4,25 +4,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the new customer acquisition goal setting data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/newcustomeracquisitiongoalsetting?view=bingads-13 NewCustomerAcquisitionGoalSetting Data Object
      */
     final class NewCustomerAcquisitionGoalSetting extends Setting
     {
         /**
-         * Reserved.
+         * The target amount you want to pay for a new customer's purchase of your product or service.
          * @var float
          */
         public $AdditionalConversionValue;
 
         /**
-         * Reserved.
+         * Enable new customer acqisition bid only mode.
          * @var boolean
          */
         public $NewCustomerAcquisitionBidOnlyMode;
 
         /**
-         * Reserved.
+         * The identifier for the new customer acquisition goal.
          * @var integer
          */
         public $NewCustomerAcquisitionGoalId;

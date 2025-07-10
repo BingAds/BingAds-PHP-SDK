@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * The device type for data exclusions and seasonality adjustments.
+     * Defines the device type value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/devicetype?view=bingads-13 DeviceType Value Set
      * 
      * @used-by DataExclusion

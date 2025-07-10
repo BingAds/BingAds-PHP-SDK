@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the ad recommendation text refine operation data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationtextrefineoperation?view=bingads-13 AdRecommendationTextRefineOperation Data Object
      * 
      * @uses AdRecommendationTextField

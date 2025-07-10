@@ -4,20 +4,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the health check data data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/healthcheckdata?view=bingads-13 HealthCheckData Data Object
      * 
      * @uses HealthCheckEntity
+     * @uses HealthCheckSubEntityData
+     * @used-by DiagnosticCardData
      * @used-by GetHealthCheckResponse
      */
     final class HealthCheckData
     {
-        /**
-         * Reserved.
-         * @var string[]
-         */
-        public $HealthCheckActionLinks;
-
         /**
          * Reserved.
          * @var string
@@ -41,6 +37,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $HealthCheckName;
+
+        /**
+         * Reserved.
+         * @var HealthCheckSubEntityData
+         */
+        public $HealthCheckSubEntityResults;
     }
 
 }

@@ -4,35 +4,35 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the campaign types by which you can filter the report data.
      * @link https:/learn.microsoft.com/advertising/reporting-service/campaigntypereportfilter?view=bingads-13 CampaignTypeReportFilter Value Set
      * 
      * @used-by ProductPartitionPerformanceReportFilter
      */
     final class CampaignTypeReportFilter
     {
-        /** Reserved. */
+        /** The report will contain Search and content campaigns. */
         const SearchAndContent = 'SearchAndContent';
 
-        /** Reserved. */
+        /** The report will contain Shopping campaigns. */
         const Shopping = 'Shopping';
 
-        /** Reserved. */
+        /** The report will contain Dynamic search campaigns. */
         const DynamicSearch = 'DynamicSearch';
 
-        /** Reserved. */
+        /** The report will contain Audience campaigns. */
         const Audience = 'Audience';
 
-        /** Reserved. */
+        /** The report will contain Smart campaigns. */
         const Smart = 'Smart';
 
-        /** Reserved. */
+        /** The report will contain Hotel campaigns. */
         const Hotel = 'Hotel';
 
-        /** Reserved. */
+        /** The report will contain Performance max campaigns. */
         const PerformanceMax = 'PerformanceMax';
 
-        /** Reserved. */
+        /** The report will contain App campaigns. */
         const App = 'App';
     }
 

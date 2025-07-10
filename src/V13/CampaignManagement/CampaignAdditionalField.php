@@ -99,11 +99,14 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const ManualCpc = 'ManualCpc';
 
-        /** Reserved. */
+        /** Request that the NewCustomerAcquisitionGoalSetting object be returned within the Settings element of each returned Campaign object. */
         const NewCustomerAcquisitionGoalSetting = 'NewCustomerAcquisitionGoalSetting';
 
-        /** Reserved. */
+        /** Request that the LifetimeBudgetStandard element be returned within the BudgetLimitType object of each returned Campaign object. */
         const LifetimeBudgetFields = 'LifetimeBudgetFields';
+
+        /** Reserved. */
+        const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
     }
 
 }

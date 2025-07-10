@@ -4,21 +4,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the health check metadata data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/healthcheckmetadata?view=bingads-13 HealthCheckMetadata Data Object
      * 
-     * @uses HealthCheckActionLinkMetadata
      * @uses HealthCheckColumnMetadata
+     * @used-by DiagnosticCardData
      * @used-by GetHealthCheckResponse
      */
     final class HealthCheckMetadata
     {
-        /**
-         * Reserved.
-         * @var HealthCheckActionLinkMetadata[]
-         */
-        public $HealthCheckActionLinksMetadata;
-
         /**
          * Reserved.
          * @var string
@@ -48,12 +42,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $HealthCheckDisplayName;
-
-        /**
-         * Reserved.
-         * @var string
-         */
-        public $HealthCheckHelpTooltip;
 
         /**
          * Reserved.

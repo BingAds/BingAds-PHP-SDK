@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AssetGroupSearchTheme
     {
         /**
-         * The identifier of the search theme.
+         * The system generated asset group ID.
          * @var integer
          */
         public $Id;

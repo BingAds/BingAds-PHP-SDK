@@ -11,88 +11,88 @@ namespace Microsoft\BingAds\V13\Reporting;
      */
     final class SearchInsightPerformanceReportColumn
     {
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** Reserved. */
+        /** The campaign status. */
         const CampaignStatus = 'CampaignStatus';
 
-        /** Reserved. */
+        /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
         const Ctr = 'Ctr';
 
-        /** Reserved. */
+        /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The search term used by your potential audience. */
         const SearchQuery = 'SearchQuery';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** Reserved. */
+        /** The conversion rate as a percentage. */
         const ConversionRate = 'ConversionRate';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
         const Revenue = 'Revenue';
 
-        /** Reserved. */
+        /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
 
-        /** Reserved. */
+        /** The revenue per conversion. */
         const RevenuePerConversion = 'RevenuePerConversion';
 
-        /** Reserved. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
-        /** Reserved. */
+        /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a customer. */
         const CustomerId = 'CustomerId';
 
-        /** Reserved. */
+        /** The customer name. */
         const CustomerName = 'CustomerName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The current asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** The search category used by your potential audience. */
         const SearchCategory = 'SearchCategory';
 
-        /** Reserved. */
+        /** The number of times a specific keyword or phrase is searched within a given timeframe. */
         const SearchVolume = 'SearchVolume';
     }
 

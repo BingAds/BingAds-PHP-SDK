@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves health check entities and types.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/gethealthcheck?view=bingads-13 GetHealthCheck Response Object
      * 
      * @uses HealthCheckMetadata
@@ -18,13 +18,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * Reserved.
          * @var HealthCheckMetadata[]
          */
-        public $HealthCheckMetadatas;
+        public $HealthCheckResultsMetadata;
 
         /**
          * Reserved.
          * @var HealthCheckData[]
          */
-        public $HealthCheckDatas;
+        public $HealthCheckResults;
 
         /**
          * Reserved.

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation text refine result data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationtextrefineresult?view=bingads-13 AdRecommendationTextRefineResult Data Object
      * 
      * @uses OperationError
@@ -16,13 +16,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationTextRefineResult
     {
         /**
-         * Reserved.
+         * An array of OperationError objects that contains the details that explain why the service operation failed.
          * @var OperationError[]
          */
         public $Errors;
 
         /**
-         * Reserved.
+         * List of text asset links.
          * @var AssetLink[]
          */
         public $TextAssetLinks;

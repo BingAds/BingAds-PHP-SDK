@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for ad recommendation image suggestion.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationimagesuggestion?view=bingads-13 AdRecommendationImageSuggestion Data Object
      * 
      * @uses AssetLink
@@ -12,31 +12,32 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses AdRecommendationImageSuggestionMetadata
      * @used-by CreateAssetGroupRecommendationResponse
      * @used-by CreateResponsiveAdRecommendationResponse
+     * @used-by GetResponsiveAdRecommendationJobResponse
      * @used-by RefineAssetGroupRecommendationRequest
      * @used-by RefineResponsiveAdRecommendationRequest
      */
     final class AdRecommendationImageSuggestion
     {
         /**
-         * Reserved.
+         * Defines the relationship of an asset to an ad.
          * @var AssetLink
          */
         public $AssetLink;
 
         /**
-         * Reserved.
+         * The suggsted image.
          * @var Image
          */
         public $Image;
 
         /**
-         * Reserved.
+         * The ad recommendation image suggestion metadata data object.
          * @var AdRecommendationImageSuggestionMetadata
          */
         public $ImageMetadata;
 
         /**
-         * Reserved.
+         * The URL of the suggested image.
          * @var string
          */
         public $ImageUrl;

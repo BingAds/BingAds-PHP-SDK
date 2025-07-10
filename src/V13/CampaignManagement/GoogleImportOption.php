@@ -432,6 +432,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateAppAdExtensions;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateAssetAutomationCampaignSetting;
+
+        /**
          * Import updates to existing audience targets.
          * @var boolean
          */

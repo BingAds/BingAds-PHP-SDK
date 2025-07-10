@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified BrandKits in the account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatebrandkits?view=bingads-13 UpdateBrandKits Request Object
      * 
      * @uses BrandKit
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateBrandKitsRequest
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the account.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * A list of BrandKits to be created for the specified account.
          * @var BrandKit[]
          */
         public $BrandKits;

@@ -4,17 +4,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommednation image field value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationimagefield?view=bingads-13 AdRecommendationImageField Value Set
      * 
      * @used-by AdRecommendationImageAssetProperty
      */
     final class AdRecommendationImageField
     {
-        /** Reserved. */
+        /** The suggested image. */
         const Image = 'Image';
 
-        /** Reserved. */
+        /** The suggested logo. */
         const Logo = 'Logo';
     }
 

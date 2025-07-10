@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Create an asset group recommendation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/createassetgrouprecommendation?view=bingads-13 CreateAssetGroupRecommendation Request Object
      * 
      * @uses AdRecommendationTextTone
@@ -14,25 +14,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CreateAssetGroupRecommendationRequest
     {
         /**
-         * Reserved.
+         * An array of URLs of the web pages used to create recommended ad assets.
          * @var string[]
          */
         public $FinalUrls;
 
         /**
-         * Reserved.
+         * Optional description of the product or service that you want to target with the specific campaign.
          * @var string
          */
         public $Prompt;
 
         /**
-         * Reserved.
+         * Optional tone for recommended text assets
          * @var AdRecommendationTextTone
          */
         public $TextTone;
 
         /**
-         * Reserved.
+         * Additional fields for the latest features of create asset group recommendation.
          * @var AdRecommendationAdditionalField
          */
         public $ReturnAdditionalFields;

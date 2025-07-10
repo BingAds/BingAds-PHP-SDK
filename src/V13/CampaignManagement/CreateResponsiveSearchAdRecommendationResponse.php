@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Create a responsive search ad recommendation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/createresponsivesearchadrecommendation?view=bingads-13 CreateResponsiveSearchAdRecommendation Response Object
      * 
      * @uses ResponsiveSearchAd
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CreateResponsiveSearchAdRecommendationResponse
     {
         /**
-         * Reserved.
+         * A responsive search ad object containing recommended text assets.
          * @var ResponsiveSearchAd
          */
         public $ResponsiveSearchAd;

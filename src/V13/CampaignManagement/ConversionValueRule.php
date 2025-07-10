@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defintes a conversion value rule data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversionvaluerule?view=bingads-13 ConversionValueRule Data Object
      * 
      * @uses AudienceCondition
@@ -20,55 +20,55 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ConversionValueRule
     {
         /**
-         * Reserved.
+         * The audience condition associated with the conversion value rule.
          * @var AudienceCondition
          */
         public $AudienceCondition;
 
         /**
-         * Reserved.
+         * The currency code for the conversion value rule.
          * @var string
          */
         public $CurrencyCode;
 
         /**
-         * Reserved.
+         * The device condition associated with the conversion value rule.
          * @var DeviceCondition
          */
         public $DeviceCondition;
 
         /**
-         * Reserved.
+         * The unique identifier of the conversion value rule.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The location condition associated with the conversion value rule.
          * @var LocationCondition
          */
         public $LocationCondition;
 
         /**
-         * Reserved.
+         * The name of the conversion value rule.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The operation type of the conversion value rule.
          * @var ConversionValueRuleOperator
          */
         public $Operation;
 
         /**
-         * Reserved.
+         * The status of the conversion value rule.
          * @var ConversionValueRuleStatus
          */
         public $Status;
 
         /**
-         * Reserved.
+         * The value of the conversion value rule.
          * @var float
          */
         public $Value;

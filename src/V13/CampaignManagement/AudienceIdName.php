@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the audience ID name data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/audienceidname?view=bingads-13 AudienceIdName Data Object
      * 
      * @used-by NewCustomerAcquisitionGoal

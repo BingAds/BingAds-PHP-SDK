@@ -45,7 +45,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $IsExcluded;
 
         /**
-         * Reserved.
+         * The path of a listing group node.
          * @var string
          */
         public $ListingGroupPath;

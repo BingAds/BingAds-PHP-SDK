@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Refine an asset group recommendation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/refineassetgrouprecommendation?view=bingads-13 RefineAssetGroupRecommendation Request Object
      * 
      * @uses AssetGroup
@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class RefineAssetGroupRecommendationRequest
     {
         /**
-         * Reserved.
+         * An asset group object containing recommended text assets.
          * @var AssetGroup
          */
         public $AssetGroup;
@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImageSuggestions;
 
         /**
-         * Reserved.
+         * Array of image refine operations.
          * @var AdRecommendationImageRefineOperation[]
          */
         public $ImageRefineOperations;

@@ -40,13 +40,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         public $CampaignStatus;
 
         /**
-         * Reserved.
+         * The report will only include data for campaigns with the specified search category.
          * @var string[]
          */
         public $SearchCategory;
 
         /**
-         * Reserved.
+         * The report will only include data for campaigns with the specified search queries.
          * @var string[]
          */
         public $SearchQueries;

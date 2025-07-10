@@ -18,6 +18,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The ad is a display ad. */
         const Display = 'Display';
+
+        /** The ad is an HTML5 ad. */
+        const HTML5 = 'HTML5';
     }
 
 }

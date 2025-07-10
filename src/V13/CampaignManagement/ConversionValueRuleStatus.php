@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the conversion value rule status value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversionvaluerulestatus?view=bingads-13 ConversionValueRuleStatus Value Set
      * 
      * @used-by ConversionValueRule
@@ -12,16 +12,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ConversionValueRuleStatus
     {
-        /** Reserved. */
+        /** The rule is active. */
         const Active = 'Active';
 
-        /** Reserved. */
+        /** The rule is paused. */
         const Paused = 'Paused';
 
-        /** Reserved. */
+        /** The rule is deleted. */
         const Deleted = 'Deleted';
 
-        /** Reserved. */
+        /** The rule is invalid. */
         const Invalid = 'Invalid';
     }
 

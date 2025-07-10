@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the asset group URL target data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/assetgroupurltarget?view=bingads-13 AssetGroupUrlTarget Data Object
      * 
      * @uses GenericEntityStatus

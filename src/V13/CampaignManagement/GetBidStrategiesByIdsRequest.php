@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Gets bid strategies in an account's portfolio bid strategy library.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getbidstrategiesbyids?view=bingads-13 GetBidStrategiesByIds Request Object
      * 
+     * @uses PortfolioBidStrategyAdditionalField
      * @used-by BingAdsCampaignManagementService::GetBidStrategiesByIds
      */
     final class GetBidStrategiesByIdsRequest
@@ -16,5 +17,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $BidStrategyIds;
+
+        /**
+         * Reserved.
+         * @var PortfolioBidStrategyAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

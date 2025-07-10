@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Update the status of the specified conversion value rules.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updateconversionvaluerulesstatus?view=bingads-13 UpdateConversionValueRulesStatus Request Object
      * 
      * @uses ConversionValueRuleStatus
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateConversionValueRulesStatusRequest
     {
         /**
-         * Reserved.
+         * Update the status of the conversion value rules with these IDs.
          * @var integer[]
          */
         public $RuleIds;
 
         /**
-         * Reserved.
+         * The new status to be applied to the specified conversion value rules.
          * @var ConversionValueRuleStatus
          */
         public $Status;

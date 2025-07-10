@@ -4,28 +4,27 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * A data object for the brand kit font.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/brandkitfont?view=bingads-13 BrandKitFont Data Object
      * 
-     * @uses FontTextAssetType
      * @used-by BrandKit
      */
     final class BrandKitFont
     {
         /**
-         * Reserved.
-         * @var FontTextAssetType
+         * The font text assset type.
+         * @var string
          */
         public $TextAssetType;
 
         /**
-         * Reserved.
+         * The font typeface.
          * @var string
          */
         public $Typeface;
 
         /**
-         * Reserved.
+         * The font weight.
          * @var string
          */
         public $Weight;

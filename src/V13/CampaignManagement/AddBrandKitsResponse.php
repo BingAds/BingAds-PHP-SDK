@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Create new brand kit.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addbrandkits?view=bingads-13 AddBrandKits Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddBrandKitsResponse
     {
         /**
-         * Reserved.
+         * A list of the created BrandKits.
          * @var integer[]
          */
         public $BrandKitIds;
 
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

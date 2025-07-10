@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines a combination performance report request.
      * @link https:/learn.microsoft.com/advertising/reporting-service/combinationperformancereportrequest?view=bingads-13 CombinationPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
@@ -16,31 +16,31 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class CombinationPerformanceReportRequest extends ReportRequest
     {
         /**
-         * Reserved.
+         * The type of aggregation to use to aggregate the report data.
          * @var ReportAggregation
          */
         public $Aggregation;
 
         /**
-         * Reserved.
+         * The list of attributes and performance statistics to include in the report.
          * @var CombinationPerformanceReportColumn[]
          */
         public $Columns;
 
         /**
-         * Reserved.
+         * The filter information to use to filter the report data.
          * @var CombinationPerformanceReportFilter
          */
         public $Filter;
 
         /**
-         * Reserved.
+         * The entity scope of the report.
          * @var AccountThroughCampaignReportScope
          */
         public $Scope;
 
         /**
-         * Reserved.
+         * The time period to use for the report.
          * @var ReportTime
          */
         public $Time;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Update the specificed new customer acquisition goals.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatenewcustomeracquisitiongoals?view=bingads-13 UpdateNewCustomerAcquisitionGoals Request Object
      * 
      * @uses NewCustomerAcquisitionGoal

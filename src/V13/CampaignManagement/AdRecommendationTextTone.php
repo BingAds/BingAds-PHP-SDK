@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * A value set for the optional tone for recommended text assets.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationtexttone?view=bingads-13 AdRecommendationTextTone Value Set
      * 
      * @used-by AdRecommendationTextRefineOperation
@@ -14,16 +14,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AdRecommendationTextTone
     {
-        /** Reserved. */
+        /** The text tone is friendly. */
         const Friendly = 'Friendly';
 
-        /** Reserved. */
+        /** The text tone is persuasive. */
         const Persuasive = 'Persuasive';
 
-        /** Reserved. */
+        /** The text tone is cute. */
         const Cute = 'Cute';
 
-        /** Reserved. */
+        /** The text tone is inspiring. */
         const Inspiring = 'Inspiring';
     }
 

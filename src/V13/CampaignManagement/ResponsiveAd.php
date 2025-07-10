@@ -13,6 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses AssetLink
      * @uses VerifiedTrackingSetting
      * @used-by CreateResponsiveAdRecommendationResponse
+     * @used-by GetResponsiveAdRecommendationJobResponse
      * @used-by RefineResponsiveAdRecommendationRequest
      */
     final class ResponsiveAd extends Ad

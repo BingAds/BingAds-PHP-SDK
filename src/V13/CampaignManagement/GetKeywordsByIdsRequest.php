@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Retrieves the specified keywords.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getkeywordsbyids?view=bingads-13 GetKeywordsByIds Request Object
      * 
+     * @uses KeywordAdditionalField
      * @used-by BingAdsCampaignManagementService::GetKeywordsByIds
      */
     final class GetKeywordsByIdsRequest
@@ -22,5 +23,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $KeywordIds;
+
+        /**
+         * Reserved.
+         * @var KeywordAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

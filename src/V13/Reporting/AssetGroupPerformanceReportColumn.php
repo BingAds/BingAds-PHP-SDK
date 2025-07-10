@@ -64,6 +64,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
+
+        /** Reserved. */
+        const CampaignType = 'CampaignType';
     }
 
 }

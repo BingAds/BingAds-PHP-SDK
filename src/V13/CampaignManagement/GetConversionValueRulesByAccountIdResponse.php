@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets conversion value rules by the account ID.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getconversionvaluerulesbyaccountid?view=bingads-13 GetConversionValueRulesByAccountId Response Object
      * 
      * @uses ConversionValueRule
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetConversionValueRulesByAccountIdResponse
     {
         /**
-         * Reserved.
+         * The conversion value rules associated with the specified account ID.
          * @var ConversionValueRule[]
          */
         public $ConversionValueRules;

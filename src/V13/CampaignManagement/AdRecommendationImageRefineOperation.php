@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation image refine operation data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationimagerefineoperation?view=bingads-13 AdRecommendationImageRefineOperation Data Object
      * 
      * @uses AdRecommendationImageRefineType
@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationImageRefineOperation
     {
         /**
-         * Reserved.
+         * The image refine type.
          * @var AdRecommendationImageRefineType
          */
         public $ImageRefineType;
 
         /**
-         * Reserved.
+         * Index of the image to be refined.
          * @var integer
          */
         public $ImageIndex;
 
         /**
-         * Reserved.
+         * Description of image background change.
          * @var string
          */
         public $Prompt;

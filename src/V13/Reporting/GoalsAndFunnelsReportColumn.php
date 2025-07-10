@@ -89,17 +89,20 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
 
-        /** Reserved. */
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
+
+        /** Reserved. */
+        const ConversionDelay = 'ConversionDelay';
     }
 
 }

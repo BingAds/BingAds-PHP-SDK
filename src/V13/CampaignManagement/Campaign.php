@@ -52,7 +52,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $DealIds;
 
         /**
-         * Reserved.
+         * The date when you want your campaign to stop serving.
          * @var \DateTime
          */
         public $EndDate;
@@ -106,7 +106,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Name;
 
         /**
-         * Reserved.
+         * The date when you want your campaign to begin serving.
          * @var \DateTime
          */
         public $StartDate;
@@ -142,7 +142,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * Reserved.
+         * Determines whether the dates should be managed at the campaign level or the ad group level.
          * @var boolean
          */
         public $UseCampaignLevelDates;
