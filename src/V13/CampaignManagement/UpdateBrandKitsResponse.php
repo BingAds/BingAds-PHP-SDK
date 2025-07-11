@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified BrandKits in the account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatebrandkits?view=bingads-13 UpdateBrandKits Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateBrandKitsResponse
     {
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

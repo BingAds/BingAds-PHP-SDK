@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign Age Criterion, Campaign Company Name Criterion, Campaign DayTime Criterion, Campaign DeviceOS Criterion, Campaign Gender Criterion, Campaign Industry Criterion, Campaign Job Function Criterion, Campaign Location Criterion, Campaign Location Intent Criterion, Campaign Negative Location Criterion, and Campaign Radius Criterion records in the download data. */
         const CampaignTargetCriterions = 'CampaignTargetCriterions';
 
-        /** Include Ad Group Age Criterion, Ad Group Company Name Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Industry Criterion, Ad Group Job Function Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Age Criterion, Ad Group Negative Company Name Criterion, Ad Group Negative Gender Criterion, Ad Group Negative Industry Criterion, Ad Group Negative Job Function Criterion, Ad Group Negative Location Criterion, and Ad Group Radius Criterion records in the download data. */
+        /** Include Ad Group Age Criterion, Ad Group Company Name Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Industry Criterion, Ad Group Job Function Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Age Criterion, Ad Group Negative Company Name Criterion, Ad Group Negative Gender Criterion, Ad Group Negative Industry Criterion, Ad Group Negative Job Function Criterion, Ad Group Negative Location Criterion, Ad Group Placement Criterion, and Ad Group Radius Criterion records in the download data. */
         const AdGroupTargetCriterions = 'AdGroupTargetCriterions';
 
         /** Include Campaign Negative Site records in the download data. */
@@ -444,7 +444,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign level conversion goal records in the download data. */
         const CampaignConversionGoal = 'CampaignConversionGoal';
 
-        /** Reserved. */
+        /** The list of hotel listing groups that correspond directly to the identifiers specified in the request. */
         const AdGroupHotelListingGroups = 'AdGroupHotelListingGroups';
 
         /** Array of asset groups to add to the specified campaign. */
@@ -459,19 +459,19 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** The list of Audience Group associations. */
         const AudienceGroupAssetGroupAssociations = 'AudienceGroupAssetGroupAssociations';
 
-        /** The list of listing groups that correspond directly to the identifiers specified in the request. */
+        /** The list of asset group listing groups that correspond directly to the identifiers specified in the request. */
         const AssetGroupListingGroups = 'AssetGroupListingGroups';
 
-        /** Reserved. */
+        /** Include Logo Ad Extension records in the download. */
         const LogoAdExtensions = 'LogoAdExtensions';
 
-        /** Reserved. */
+        /** Include Account Logo Ad Extension records in the download that represents the association relationship between an account and a logo ad extension. */
         const AccountLogoAdExtensions = 'AccountLogoAdExtensions';
 
-        /** Reserved. */
+        /** Include Campaign Logo Ad Extension records in the download that represents the association relationship between an campaign and a logo ad extension. */
         const CampaignLogoAdExtensions = 'CampaignLogoAdExtensions';
 
-        /** Reserved. */
+        /** Include Ad Group Logo Ad Extension records in the download that represents the association relationship between an ad group and a logo ad extension. */
         const AdGroupLogoAdExtensions = 'AdGroupLogoAdExtensions';
 
         /** Reserved. */
@@ -492,40 +492,40 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Account Negative Keyword List records in the download data. */
         const AccountNegativeKeyword = 'AccountNegativeKeyword';
 
-        /** Reserved. */
+        /** Include Conversion Goal records in the download data. */
         const ConversionGoal = 'ConversionGoal';
 
-        /** Reserved. */
+        /** Include Event Goal records in the download data. */
         const EventGoal = 'EventGoal';
 
-        /** Reserved. */
+        /** Include App Install Goal records in the download data. */
         const AppInstallGoal = 'AppInstallGoal';
 
         /** Reserved. */
         const MultiStageGoal = 'MultiStageGoal';
 
-        /** Reserved. */
+        /** Include Duration Goal records in the download data. */
         const DurationGoal = 'DurationGoal';
 
-        /** Reserved. */
+        /** Include Offline Conversion Goal records in the download data. */
         const OfflineConversionGoal = 'OfflineConversionGoal';
 
-        /** Reserved. */
+        /** Include Url Goal records in the download data. */
         const UrlGoal = 'UrlGoal';
 
-        /** Reserved. */
+        /** Include In Store Transaction Goal records in the download data. */
         const InStoreTransactionGoal = 'InStoreTransactionGoal';
 
-        /** Reserved. */
+        /** Include Pages Viewed Per Visit Goal records in the download data. */
         const PagesViewedPerVisitGoal = 'PagesViewedPerVisitGoal';
 
         /** Reserved. */
         const SmartGoal = 'SmartGoal';
 
-        /** Reserved. */
+        /** Include In Store Visit Goal records in the download data. */
         const InStoreVisitGoal = 'InStoreVisitGoal';
 
-        /** Reserved. */
+        /** Include Product Goal records in the download data. */
         const ProductGoal = 'ProductGoal';
 
         /** Include SeasonalityAdjustments records in the download data. */
@@ -567,7 +567,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Reserved. */
         const NewCustomerAcquisitionGoal = 'NewCustomerAcquisitionGoal';
 
-        /** Reserved. */
+        /** Include Conversion Value Rule records in the download data. */
         const ConversionValueRule = 'ConversionValueRule';
 
         /** Reserved. */
@@ -587,6 +587,15 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const CampaignAccountPlacementInclusionListAssociation = 'CampaignAccountPlacementInclusionListAssociation';
+
+        /** Reserved. */
+        const Topic = 'Topic';
+
+        /** Reserved. */
+        const ContentPlacement = 'ContentPlacement';
+
+        /** Reserved. */
+        const BrandKit = 'BrandKit';
     }
 
 }

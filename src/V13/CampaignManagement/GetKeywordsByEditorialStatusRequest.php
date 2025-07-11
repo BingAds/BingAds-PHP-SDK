@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getkeywordsbyeditorialstatus?view=bingads-13 GetKeywordsByEditorialStatus Request Object
      * 
      * @uses KeywordEditorialStatus
+     * @uses KeywordAdditionalField
      * @used-by BingAdsCampaignManagementService::GetKeywordsByEditorialStatus
      */
     final class GetKeywordsByEditorialStatusRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var KeywordEditorialStatus
          */
         public $EditorialStatus;
+
+        /**
+         * Reserved.
+         * @var KeywordAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

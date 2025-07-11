@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Create a responsive ad recommendation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/createresponsiveadrecommendation?view=bingads-13 CreateResponsiveAdRecommendation Request Object
      * 
      * @uses AdSubType
@@ -16,43 +16,43 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CreateResponsiveAdRecommendationRequest
     {
         /**
-         * Reserved.
+         * Optional ad sub type to create a recommendation for.
          * @var AdSubType
          */
         public $AdSubType;
 
         /**
-         * Reserved.
+         * An array of URLs of the web pages used to create recommended ad assets.
          * @var string[]
          */
         public $FinalUrls;
 
         /**
-         * Reserved.
+         * Optional description of the product or service that you want to target with the specific campaign.
          * @var string
          */
         public $Prompt;
 
         /**
-         * Reserved.
+         * Optional tone for recommended text assets
          * @var AdRecommendationTextTone
          */
         public $TextTone;
 
         /**
-         * Reserved.
+         * The video type, CTV or OLV.
          * @var AdRecommendationVideoType
          */
         public $VideoType;
 
         /**
-         * Reserved.
+         * The identifier of the brand kit.
          * @var integer
          */
         public $BrandKitId;
 
         /**
-         * Reserved.
+         * Additional fields for the latest features of create responsive ad recommendation.
          * @var AdRecommendationAdditionalField
          */
         public $ReturnAdditionalFields;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets the specified clip champ templates.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getclipchamptemplates?view=bingads-13 GetClipchampTemplates Request Object
      * 
      * @uses VideoTemplateFilter

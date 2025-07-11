@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AssetLinkEditorialStatus
     {
-        /** Reserved for future use. */
+        /** The editorial status of the asset is unknown. */
         const Unknown = 'Unknown';
 
         /** The asset passed editorial review. */

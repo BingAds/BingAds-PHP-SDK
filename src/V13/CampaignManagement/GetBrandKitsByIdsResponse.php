@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves the specified BrandKits from the specified account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getbrandkitsbyids?view=bingads-13 GetBrandKitsByIds Response Object
      * 
      * @uses BrandKit
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetBrandKitsByIdsResponse
     {
         /**
-         * Reserved.
+         * A list of BrandKits to be retrieved for the specified account.
          * @var BrandKit[]
          */
         public $BrandKits;
 
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

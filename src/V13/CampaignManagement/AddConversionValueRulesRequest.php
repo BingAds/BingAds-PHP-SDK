@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Create new conversion value rules.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addconversionvaluerules?view=bingads-13 AddConversionValueRules Request Object
      * 
      * @uses ConversionValueRule
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddConversionValueRulesRequest
     {
         /**
-         * Reserved.
+         * The conversion value rules to be created.
          * @var ConversionValueRule[]
          */
         public $ConversionValueRules;
 
         /**
-         * Reserved.
+         * The locale identifier (LCID) for the request.
          * @var integer
          */
         public $Lcid;

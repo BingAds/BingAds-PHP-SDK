@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets conversion value rules by their IDs.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getconversionvaluerulesbyids?view=bingads-13 GetConversionValueRulesByIds Response Object
      * 
      * @uses ConversionValueRule
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetConversionValueRulesByIdsResponse
     {
         /**
-         * Reserved.
+         * The conversion value rules that were succesfully fetched.
          * @var ConversionValueRule[]
          */
         public $ConversionValueRules;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

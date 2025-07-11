@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by AccountPerformanceReportRequest
      * @used-by CategoryClickCoverageReportRequest
      * @used-by CategoryInsightsReportRequest
+     * @used-by TravelQueryInsightReportRequest
      */
     final class AccountReportScope
     {

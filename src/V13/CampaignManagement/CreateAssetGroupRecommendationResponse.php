@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Create an asset group recommendation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/createassetgrouprecommendation?view=bingads-13 CreateAssetGroupRecommendation Response Object
      * 
      * @uses AssetGroup
@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CreateAssetGroupRecommendationResponse
     {
         /**
-         * Reserved.
+         * An asset group object containing recommended text assets.
          * @var AssetGroup
          */
         public $AssetGroup;
 
         /**
-         * Reserved.
+         * An array of images recommended to be included in the asset group.
          * @var AdRecommendationImageSuggestion[]
          */
         public $ImageSuggestions;
 
         /**
-         * Reserved.
+         * Whether the brand is detected in the request prompt.
          * @var string
          */
         public $PromptBrandWarning;

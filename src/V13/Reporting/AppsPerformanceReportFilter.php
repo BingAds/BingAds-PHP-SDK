@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the criteria to use to filter the apps performance report data.
      * @link https:/learn.microsoft.com/advertising/reporting-service/appsperformancereportfilter?view=bingads-13 AppsPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
@@ -15,19 +15,19 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class AppsPerformanceReportFilter
     {
         /**
-         * Reserved.
+         * The report will include data for only the account status.
          * @var AccountStatusReportFilter
          */
         public $AccountStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the asset group status.
          * @var AssetGroupStatusReportFilter
          */
         public $AssetGroupStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the campaign status.
          * @var CampaignStatusReportFilter
          */
         public $CampaignStatus;

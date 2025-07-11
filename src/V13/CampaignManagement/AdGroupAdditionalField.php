@@ -44,6 +44,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Indicates if predictive targeting is enabled for an AdGroup. */
         const UsePredictiveTargeting = 'UsePredictiveTargeting';
+
+        /** Reserved. */
+        const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
     }
 
 }

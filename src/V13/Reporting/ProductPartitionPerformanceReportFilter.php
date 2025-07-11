@@ -50,7 +50,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         public $CampaignStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the campaign type.
          * @var CampaignTypeReportFilter
          */
         public $CampaignType;

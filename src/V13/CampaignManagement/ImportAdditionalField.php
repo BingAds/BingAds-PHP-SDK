@@ -81,8 +81,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the UpdateBrandSuitability element be included within each returned GoogleImportOption object. */
         const UpdateBrandSuitability = 'UpdateBrandSuitability';
 
-        /** Reserved. */
+        /** Request that the NewCarouselAd element be included within each returned GoogleImportOption object. */
         const NewCarouselAd = 'NewCarouselAd';
+
+        /** Reserved. */
+        const UpdateAssetAutomationCampaignSetting = 'UpdateAssetAutomationCampaignSetting';
     }
 
 }

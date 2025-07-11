@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the clip champ template info data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/clipchamptemplateinfo?view=bingads-13 ClipchampTemplateInfo Data Object
      * 
      * @used-by GetClipchampTemplatesResponse

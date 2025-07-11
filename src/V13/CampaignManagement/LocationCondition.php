@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a condition to use conversion value rules in a specific location.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/locationcondition?view=bingads-13 LocationCondition Data Object
      * 
      * @uses IntentOption
@@ -14,31 +14,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class LocationCondition
     {
         /**
-         * Reserved.
+         * The intent option for excluded locations.
          * @var IntentOption
          */
         public $ExcludedLocationIntent;
 
         /**
-         * Reserved.
+         * The locations excluded from the condition.
          * @var LocationConditionItem[]
          */
         public $ExcludedLocations;
 
         /**
-         * Reserved.
+         * The intent option for included locations.
          * @var IntentOption
          */
         public $IncludedLocationIntent;
 
         /**
-         * Reserved.
+         * The locations included in the condition.
          * @var LocationConditionItem[]
          */
         public $IncludedLocations;
 
         /**
-         * Reserved.
+         * Indicates if this is the primary condition.
          * @var boolean
          */
         public $IsPrimary;

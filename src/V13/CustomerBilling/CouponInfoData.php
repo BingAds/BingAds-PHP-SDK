@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Defines an object containing coupon info.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/couponinfodata?view=bingads-13 CouponInfoData Data Object
      * 
      * @used-by GetCouponInfoResponse
@@ -12,58 +12,106 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class CouponInfoData
     {
         /**
-         * Reserved.
+         * The account ID.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The coupon ID.
          * @var integer
          */
         public $CouponId;
 
         /**
-         * Reserved.
+         * The coupon's claim date.
          * @var \DateTime
          */
         public $ClaimDate;
 
         /**
-         * Reserved.
+         * The coupon's status.
          * @var integer
          */
         public $Status;
 
         /**
-         * Reserved.
+         * The date the coupon was redeemed.
          * @var \DateTime
          */
         public $RedemptionDate;
 
         /**
-         * Reserved.
+         * The coupon's expiration date.
          * @var \DateTime
          */
         public $ExpirationDate;
 
         /**
-         * Reserved.
+         * The coupon's discount percentage.
          * @var double
          */
         public $PercentOff;
 
         /**
-         * Reserved.
+         * The coupon's value.
          * @var float
          */
         public $CouponValue;
 
         /**
-         * Reserved.
+         * The value of the upfront spending coupon.
          * @var float
          */
         public $UpfrontSpending;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $ActiveDuration;
+
+        /**
+         * Reserved.
+         * @var float
+         */
+        public $SpendToThreshold;
+
+        /**
+         * Reserved.
+         * @var \DateTime
+         */
+        public $StartDate;
+
+        /**
+         * Reserved.
+         * @var \DateTime
+         */
+        public $EndDate;
+
+        /**
+         * Reserved.
+         * @var float
+         */
+        public $Balance;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $CurrencyCode;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $FeatureId;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $CouponType;
     }
 
 }

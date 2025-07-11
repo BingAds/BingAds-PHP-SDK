@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The brand kit palette data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/brandkitpalette?view=bingads-13 BrandKitPalette Data Object
      * 
      * @uses BrandKitColor
@@ -13,16 +13,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class BrandKitPalette
     {
         /**
-         * Reserved.
+         * The color type.
          * @var string
          */
         public $ColorType;
 
         /**
-         * Reserved.
+         * The brand kit's color palettes.
          * @var BrandKitColor[]
          */
         public $Colors;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $Name;
     }
 
 }

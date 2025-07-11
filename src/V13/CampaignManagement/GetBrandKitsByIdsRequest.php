@@ -4,30 +4,23 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves the specified BrandKits from the specified account.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getbrandkitsbyids?view=bingads-13 GetBrandKitsByIds Request Object
      * 
-     * @uses BrandKitAdditionalField
      * @used-by BingAdsCampaignManagementService::GetBrandKitsByIds
      */
     final class GetBrandKitsByIdsRequest
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the account.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The identifiers of the BrandKits to retrieve.
          * @var integer[]
          */
         public $BrandKitIds;
-
-        /**
-         * Reserved.
-         * @var BrandKitAdditionalField
-         */
-        public $ReturnAdditionalFields;
     }
 }

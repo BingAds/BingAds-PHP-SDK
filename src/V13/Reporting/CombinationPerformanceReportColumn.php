@@ -4,59 +4,59 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the attributes and performance statistics columns that you can include in the CombinationPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/combinationperformancereportcolumn?view=bingads-13 CombinationPerformanceReportColumn Value Set
      * 
      * @used-by CombinationPerformanceReportRequest
      */
     final class CombinationPerformanceReportColumn
     {
-        /** Reserved. */
+        /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** Reserved. */
+        /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
 
-        /** Reserved. */
+        /** The ad type. */
         const AdType = 'AdType';
 
-        /** Reserved. */
+        /** The content of the headline 1 asset in a combination record. */
         const Headline1 = 'Headline1';
 
-        /** Reserved. */
+        /** The content of the headline 2 asset in a combination record. */
         const Headline2 = 'Headline2';
 
-        /** Reserved. */
+        /** The content of the headline 3 asset in a combination record */
         const Headline3 = 'Headline3';
 
-        /** Reserved. */
+        /** The content of the long headline asset in a combination record. */
         const CombinationLongHeadline = 'CombinationLongHeadline';
 
         /** Reserved. */
@@ -65,25 +65,25 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Reserved. */
         const Description2 = 'Description2';
 
-        /** Reserved. */
+        /** The image URL of the image asset in a combination record. */
         const Image = 'Image';
 
-        /** Reserved. */
+        /** The image URL of the logo asset in a combination record. */
         const Logo = 'Logo';
 
-        /** Reserved. */
+        /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
         const Ctr = 'Ctr';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
     }
 

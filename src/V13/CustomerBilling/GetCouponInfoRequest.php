@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Gets information about coupons associated with a customer ID.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/getcouponinfo?view=bingads-13 GetCouponInfo Request Object
      * 
      * @used-by BingAdsCustomerBillingService::GetCouponInfo
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class GetCouponInfoRequest
     {
         /**
-         * Reserved.
+         * The customer ID.
          * @var integer
          */
         public $CustomerId;

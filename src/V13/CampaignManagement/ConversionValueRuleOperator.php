@@ -4,17 +4,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the conversion value rule operator value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/conversionvalueruleoperator?view=bingads-13 ConversionValueRuleOperator Value Set
      * 
      * @used-by ConversionValueRule
      */
     final class ConversionValueRuleOperator
     {
-        /** Reserved. */
+        /** Adds the value. */
         const Add = 'Add';
 
-        /** Reserved. */
+        /** Multiplies the value. */
         const Multiply = 'Multiply';
     }
 

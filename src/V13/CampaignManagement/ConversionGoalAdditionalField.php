@@ -29,6 +29,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Determines whether enhanced conversions are enabled for a conversion goal. */
         const IsEnhancedConversionsEnabled = 'IsEnhancedConversionsEnabled';
+
+        /** Reserved. */
+        const IsAutoGoal = 'IsAutoGoal';
     }
 
 }

@@ -4,152 +4,152 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the attributes and performance statistics columns that you can include in the AppsPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/appsperformancereportcolumn?view=bingads-13 AppsPerformanceReportColumn Value Set
      * 
      * @used-by AppsPerformanceReportRequest
      */
     final class AppsPerformanceReportColumn
     {
-        /** Reserved. */
+        /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** Reserved. */
+        /** The account status. */
         const AccountStatus = 'AccountStatus';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The campaign status. */
         const CampaignStatus = 'CampaignStatus';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** The account currency type. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** Reserved. */
+        /** The language of the publisher where the ad was shown. */
         const Language = 'Language';
 
-        /** Reserved. */
+        /** The bid strategy type. */
         const BidStrategyType = 'BidStrategyType';
 
-        /** Reserved. */
+        /** The name of the goal you set for the conversions you want, meaning actions customers take after clicking your ad. */
         const Goal = 'Goal';
 
-        /** Reserved. */
+        /** The type of conversion goal. */
         const GoalType = 'GoalType';
 
-        /** Reserved. */
+        /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (Impressions). */
         const Ctr = 'Ctr';
 
-        /** Reserved. */
+        /** The average cost per click (CPC). */
         const AverageCpc = 'AverageCpc';
 
-        /** Reserved. */
+        /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The total advertising cost divided by the number of impressions (in thousands). */
         const AverageCpm = 'AverageCpm';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const AllConversions = 'AllConversions';
 
-        /** Reserved. */
+        /** The cost per conversion. */
         const AllCostPerConversion = 'AllCostPerConversion';
 
-        /** Reserved. */
+        /** The conversion rate as a percentage. */
         const AllConversionRate = 'AllConversionRate';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** Reserved. */
+        /** The conversion rate as a percentage. */
         const ConversionRate = 'ConversionRate';
 
-        /** Reserved. */
+        /** The cost per conversion. */
         const CostPerConversion = 'CostPerConversion';
 
-        /** Reserved. */
+        /** View-through conversions are conversions that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughConversions = 'ViewThroughConversions';
 
-        /** Reserved. */
+        /** The number of ad views, divided by the number of impressions. */
         const ViewThroughConversionRate = 'ViewThroughConversionRate';
 
-        /** Reserved. */
+        /** The cost per conversion that people make after they have seen your ad, even though they did not click the ad. */
         const ViewThroughCostPerConversion = 'ViewThroughCostPerConversion';
 
-        /** Reserved. */
+        /** The number of times customers download apps through your ads. */
         const Downloads = 'Downloads';
 
-        /** Reserved. */
+        /** The post-click download rate as a percentage. */
         const PostClickDownloadRate = 'PostClickDownloadRate';
 
-        /** Reserved. */
+        /** The average amount you're charged each time your ad is downloaded. */
         const CostPerDownload = 'CostPerDownload';
 
-        /** Reserved. */
+        /** The number of times customers install apps through your ads. */
         const AppInstalls = 'AppInstalls';
 
-        /** Reserved. */
+        /** The post-click install rate as a percentage. */
         const PostClickInstallRate = 'PostClickInstallRate';
 
-        /** Reserved. */
+        /** Cost per install. */
         const CPI = 'CPI';
 
-        /** Reserved. */
+        /** The number of times customers use your ads to make a purchase in your app. */
         const Purchases = 'Purchases';
 
-        /** Reserved. */
+        /** The post-install purchase rate as a percentage. */
         const PostInstallPurchaseRate = 'PostInstallPurchaseRate';
 
-        /** Reserved. */
+        /** Cost per in-app purchase. */
         const CPP = 'CPP';
 
-        /** Reserved. */
+        /** The number of times customers use your ads to purchase a subscription in your game. */
         const Subscriptions = 'Subscriptions';
 
-        /** Reserved. */
+        /** The post-install subscription rate as a percentage. */
         const PostInstallSubscriptionRate = 'PostInstallSubscriptionRate';
 
-        /** Reserved. */
+        /** Cost per in-app subscription. */
         const CPS = 'CPS';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
         const Revenue = 'Revenue';
 
-        /** Reserved. */
+        /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
 
-        /** Reserved. */
+        /** The average amount of revenue made for each download. */
         const RevenuePerDownload = 'RevenuePerDownload';
 
-        /** Reserved. */
+        /** The average amount of revenue made for each install. */
         const RevenuePerAppInstall = 'RevenuePerAppInstall';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation text asset property data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationtextassetproperty?view=bingads-13 AdRecommendationTextAssetProperty Data Object
      * 
      * @uses AdRecommendationTextField
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationTextAssetProperty
     {
         /**
-         * Reserved.
+         * The text.
          * @var string
          */
         public $Text;
 
         /**
-         * Reserved.
+         * The type of text.
          * @var AdRecommendationTextField
          */
         public $TextField;

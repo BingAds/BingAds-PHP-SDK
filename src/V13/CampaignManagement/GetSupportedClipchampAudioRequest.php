@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets the specified supported clip champ audio.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getsupportedclipchampaudio?view=bingads-13 GetSupportedClipchampAudio Request Object
      * 
      * @uses AudioFilter

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a location condition item data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/locationconditionitem?view=bingads-13 LocationConditionItem Data Object
      * 
      * @uses LocationType
@@ -13,19 +13,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class LocationConditionItem
     {
         /**
-         * Reserved.
+         * The unique identifier of the location condition item.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The name of the location condition item.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The type of the location condition item.
          * @var LocationType
          */
         public $Type;

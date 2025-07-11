@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation refined media data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationrefinedmedia?view=bingads-13 AdRecommendationRefinedMedia Data Object
      * 
      * @used-by AdRecommendationMediaRefineResult
@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationRefinedMedia
     {
         /**
-         * Reserved.
+         * The media URL.
          * @var string
          */
         public $MediaUrl;

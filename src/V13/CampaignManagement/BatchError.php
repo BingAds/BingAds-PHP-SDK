@@ -76,6 +76,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetAdExtensionsEditorialReasonsResponse
      * @used-by GetAdGroupsByIdsResponse
      * @used-by GetAdsByIdsResponse
+     * @used-by GetAnnotationOptOutResponse
      * @used-by GetAssetGroupsByCampaignIdResponse
      * @used-by GetAssetGroupsByIdsResponse
      * @used-by GetAssetGroupsEditorialReasonsResponse

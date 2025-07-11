@@ -4,11 +4,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the health check error data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/healthcheckerror?view=bingads-13 HealthCheckError Data Object
      * 
      * @uses OperationError
      * @uses HealthCheckEntity
+     * @used-by GetDiagnosticsResponse
      * @used-by GetHealthCheckResponse
      */
     final class HealthCheckError

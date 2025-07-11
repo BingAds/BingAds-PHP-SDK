@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the generic entity status value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/genericentitystatus?view=bingads-13 GenericEntityStatus Value Set
      * 
      * @used-by AssetGroupSearchTheme

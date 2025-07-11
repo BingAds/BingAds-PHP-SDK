@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the third party measurement setting data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/thirdpartymeasurementsetting?view=bingads-13 ThirdPartyMeasurementSetting Data Object
      * 
      * @uses KeyValuePairOfstringstring

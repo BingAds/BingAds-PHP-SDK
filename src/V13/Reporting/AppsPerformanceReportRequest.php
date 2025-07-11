@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines an app campaign performance report request.
      * @link https:/learn.microsoft.com/advertising/reporting-service/appsperformancereportrequest?view=bingads-13 AppsPerformanceReportRequest Data Object
      * 
      * @uses ReportAggregation
@@ -16,31 +16,31 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class AppsPerformanceReportRequest extends ReportRequest
     {
         /**
-         * Reserved.
+         * The type of aggregation to use to aggregate the report data.
          * @var ReportAggregation
          */
         public $Aggregation;
 
         /**
-         * Reserved.
+         * The list of attributes and performance statistics to include in the report.
          * @var AppsPerformanceReportColumn[]
          */
         public $Columns;
 
         /**
-         * Reserved.
+         * The filter information to use to filter the report data.
          * @var AppsPerformanceReportFilter
          */
         public $Filter;
 
         /**
-         * Reserved.
+         * The entity scope of the report.
          * @var AccountThroughAssetGroupReportScope
          */
         public $Scope;
 
         /**
-         * Reserved.
+         * The time period to use for the report.
          * @var ReportTime
          */
         public $Time;

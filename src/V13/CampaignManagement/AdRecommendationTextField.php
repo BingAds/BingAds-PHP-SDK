@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation text field value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationtextfield?view=bingads-13 AdRecommendationTextField Value Set
      * 
      * @used-by AdRecommendationTextAssetProperty

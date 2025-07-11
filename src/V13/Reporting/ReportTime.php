@@ -33,6 +33,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by DSAAutoTargetPerformanceReportRequest
      * @used-by DSACategoryPerformanceReportRequest
      * @used-by DSASearchQueryPerformanceReportRequest
+     * @used-by FeedItemPerformanceReportRequest
      * @used-by GeographicPerformanceReportRequest
      * @used-by GoalsAndFunnelsReportRequest
      * @used-by HotelDimensionPerformanceReportRequest
@@ -49,6 +50,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by SearchInsightPerformanceReportRequest
      * @used-by SearchQueryPerformanceReportRequest
      * @used-by ShareOfVoiceReportRequest
+     * @used-by TravelQueryInsightReportRequest
      * @used-by UserLocationPerformanceReportRequest
      */
     final class ReportTime

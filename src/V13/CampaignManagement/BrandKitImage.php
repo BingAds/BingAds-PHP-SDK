@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The brand kit image data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/brandkitimage?view=bingads-13 BrandKitImage Data Object
      * 
      * @used-by BrandKit
@@ -12,43 +12,43 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class BrandKitImage
     {
         /**
-         * Reserved.
+         * The crop height in pixels.
          * @var integer
          */
         public $CropHeight;
 
         /**
-         * Reserved.
+         * The crop wdith in pixels.
          * @var integer
          */
         public $CropWidth;
 
         /**
-         * Reserved.
+         * Where to crop along the x-axis in pixels.
          * @var integer
          */
         public $CropX;
 
         /**
-         * Reserved.
+         * Where to crop along the y-axis in pixels.
          * @var integer
          */
         public $CropY;
 
         /**
-         * Reserved.
+         * The identifier of the brand kit image.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The URL for the image thumbnail.
          * @var string
          */
         public $ThumbnailUrl;
 
         /**
-         * Reserved.
+         * The URL for the image.
          * @var string
          */
         public $Url;

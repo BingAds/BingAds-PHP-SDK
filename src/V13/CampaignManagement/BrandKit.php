@@ -4,13 +4,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the brand kit data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/brandkit?view=bingads-13 BrandKit Data Object
      * 
+     * @uses BrandVoice
      * @uses BrandKitFont
      * @uses BrandKitImage
      * @uses BrandKitPalette
      * @used-by AddBrandKitsRequest
+     * @used-by CreateBrandKitRecommendationResponse
      * @used-by GetBrandKitsByAccountIdResponse
      * @used-by GetBrandKitsByIdsResponse
      * @used-by UpdateBrandKitsRequest
@@ -18,49 +20,55 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class BrandKit
     {
         /**
-         * Reserved.
+         * The brand's personality and tone.
+         * @var BrandVoice
+         */
+        public $BrandVoice;
+
+        /**
+         * The name of the business.
          * @var string
          */
         public $BusinessName;
 
         /**
-         * Reserved.
+         * The brand kit's fonts.
          * @var BrandKitFont[]
          */
         public $Fonts;
 
         /**
-         * Reserved.
+         * The identifier of the brand kit.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The brand kit's images.
          * @var BrandKitImage[]
          */
         public $Images;
 
         /**
-         * Reserved.
+         * The brand kit's landscape logos.
          * @var BrandKitImage[]
          */
         public $LandscapeLogos;
 
         /**
-         * Reserved.
+         * The brand kit's name.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The brand kit's palettes.
          * @var BrandKitPalette[]
          */
         public $Palettes;
 
         /**
-         * Reserved.
+         * The brand kit's square logos.
          * @var BrandKitImage[]
          */
         public $SquareLogos;

@@ -18,10 +18,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdGroupId;
 
         /**
+         * Reserved.
+         * @var integer[]
+         */
+        public $AdGroupIds;
+
+        /**
          * The campaign identifier to associate with the impression-based remarketing list.
          * @var integer
          */
         public $CampaignId;
+
+        /**
+         * Reserved.
+         * @var integer[]
+         */
+        public $CampaignIds;
 
         /**
          * The entity type of an impression-based remarketing list.

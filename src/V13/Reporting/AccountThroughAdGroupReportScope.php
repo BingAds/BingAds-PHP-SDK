@@ -24,6 +24,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by DSAAutoTargetPerformanceReportRequest
      * @used-by DSACategoryPerformanceReportRequest
      * @used-by DSASearchQueryPerformanceReportRequest
+     * @used-by FeedItemPerformanceReportRequest
      * @used-by GeographicPerformanceReportRequest
      * @used-by GoalsAndFunnelsReportRequest
      * @used-by HotelDimensionPerformanceReportRequest

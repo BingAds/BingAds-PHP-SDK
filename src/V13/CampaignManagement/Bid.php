@@ -11,6 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by Keyword
      * @used-by MaxClicksBiddingScheme
      * @used-by MaxConversionsBiddingScheme
+     * @used-by MaxConversionValueBiddingScheme
      * @used-by MaxRoasBiddingScheme
      * @used-by TargetCpaBiddingScheme
      * @used-by TargetImpressionShareBiddingScheme

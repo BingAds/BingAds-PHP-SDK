@@ -140,7 +140,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The corresponding language name. */
         const Hindi = 'Hindi';
 
-        /** Reserved. */
+        /** The corresponding language name. */
         const Korean = 'Korean';
 
         /** The corresponding language name. */

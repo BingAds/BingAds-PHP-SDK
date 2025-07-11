@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * The ad recommendation additional field value set.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/adrecommendationadditionalfield?view=bingads-13 AdRecommendationAdditionalField Value Set
      * 
      * @used-by CreateAssetGroupRecommendationRequest
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AdRecommendationAdditionalField
     {
-        /** Reserved. */
+        /** The meta data for the suggested image. */
         const ImageSuggestionMetadata = 'ImageSuggestionMetadata';
 
-        /** Reserved. */
+        /** The media refine results. */
         const MediaRefineResults = 'MediaRefineResults';
 
-        /** Reserved. */
+        /** Whether the brand is detected in the request prompt. */
         const PromptBrandWarning = 'PromptBrandWarning';
     }
 

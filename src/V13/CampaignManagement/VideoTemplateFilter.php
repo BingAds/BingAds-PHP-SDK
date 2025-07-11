@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the video template filter data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/videotemplatefilter?view=bingads-13 VideoTemplateFilter Data Object
      * 
      * @used-by GetClipchampTemplatesRequest

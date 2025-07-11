@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * |Defines the attributes and performance statistics columns that you can include in the AssetPerformanceReportRequest.
+     * Defines the attributes and performance statistics columns that you can include in the AssetPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/assetperformancereportcolumn?view=bingads-13 AssetPerformanceReportColumn Value Set
      * 
      * @used-by AssetPerformanceReportRequest
@@ -74,10 +74,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Completed video views divided by total number of impressions. */
         const VideoCompletionRate = 'VideoCompletionRate';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** Reserved. */
+        /** The revenue optionally reported by the advertiser as a result of conversions. */
         const Revenue = 'Revenue';
     }
 
