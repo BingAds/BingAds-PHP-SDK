@@ -100,5 +100,29 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var Currency
          */
         public $Currency;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $MultiAdTypes;
+
+        /**
+         * Reserved.
+         * @var \DateTime
+         */
+        public $StartDate;
+
+        /**
+         * Reserved.
+         * @var \DateTime
+         */
+        public $EndDate;
+
+        /**
+         * Reserved.
+         * @var float
+         */
+        public $TotalBudget;
     }
 }

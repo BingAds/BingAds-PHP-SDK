@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/uettag?view=bingads-13 UetTag Data Object
      * 
      * @uses CustomerShare
+     * @uses UetTagIndustry
      * @uses UetTagTrackingStatus
      * @used-by AddUetTagsRequest
      * @used-by AddUetTagsResponse
@@ -33,6 +34,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
+
+        /**
+         * Reserved.
+         * @var UetTagIndustry
+         */
+        public $Industry;
 
         /**
          * The UET tag name.
