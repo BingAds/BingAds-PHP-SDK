@@ -217,6 +217,42 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
+
+        /** Reserved. */
+        const Downloads = 'Downloads';
+
+        /** Reserved. */
+        const PostClickDownloadRate = 'PostClickDownloadRate';
+
+        /** Reserved. */
+        const CostPerDownload = 'CostPerDownload';
+
+        /** Reserved. */
+        const AppInstalls = 'AppInstalls';
+
+        /** Reserved. */
+        const PostClickInstallRate = 'PostClickInstallRate';
+
+        /** Reserved. */
+        const CPI = 'CPI';
+
+        /** Reserved. */
+        const Purchases = 'Purchases';
+
+        /** Reserved. */
+        const PostInstallPurchaseRate = 'PostInstallPurchaseRate';
+
+        /** Reserved. */
+        const CPP = 'CPP';
+
+        /** Reserved. */
+        const Subscriptions = 'Subscriptions';
+
+        /** Reserved. */
+        const PostInstallSubscriptionRate = 'PostInstallSubscriptionRate';
+
+        /** Reserved. */
+        const CPS = 'CPS';
     }
 
 }
