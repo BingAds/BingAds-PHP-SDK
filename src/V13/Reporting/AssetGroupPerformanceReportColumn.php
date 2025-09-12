@@ -67,6 +67,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const CampaignType = 'CampaignType';
+
+        /** Reserved. */
+        const CostPerConversion = 'CostPerConversion';
     }
 
 }

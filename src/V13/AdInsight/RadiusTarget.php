@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/radiustarget?view=bingads-13 RadiusTarget Data Object
      * 
      * @uses RadiusUnit
+     * @used-by GetAudienceBreakdownRequest
      * @used-by GetAudienceFullEstimationRequest
      */
     final class RadiusTarget

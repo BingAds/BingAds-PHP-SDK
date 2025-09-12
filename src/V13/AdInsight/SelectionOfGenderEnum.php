@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/selectionofgenderenum?view=bingads-13 SelectionOfGenderEnum Data Object
      * 
      * @uses GenderEnum
+     * @used-by GetAudienceBreakdownRequest
      * @used-by GetAudienceFullEstimationRequest
      */
     final class SelectionOfGenderEnum

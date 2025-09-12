@@ -124,5 +124,11 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var float
          */
         public $TotalBudget;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IncludeImpressionsBreakdown;
     }
 }

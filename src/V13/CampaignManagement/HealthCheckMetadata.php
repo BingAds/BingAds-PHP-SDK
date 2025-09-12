@@ -8,7 +8,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/healthcheckmetadata?view=bingads-13 HealthCheckMetadata Data Object
      * 
      * @uses HealthCheckColumnMetadata
-     * @used-by DiagnosticCardData
      * @used-by GetHealthCheckResponse
      */
     final class HealthCheckMetadata

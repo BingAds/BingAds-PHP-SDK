@@ -7,7 +7,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the health check action link metadata data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/healthcheckactionlinkmetadata?view=bingads-13 HealthCheckActionLinkMetadata Data Object
      * 
-     * @used-by DiagnosticCategoryData
      * @used-by HealthCheckColumnMetadata
      */
     final class HealthCheckActionLinkMetadata

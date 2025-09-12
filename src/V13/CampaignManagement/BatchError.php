@@ -25,6 +25,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddConversionValueRulesResponse
      * @used-by AddDataExclusionsResponse
      * @used-by AddExperimentsResponse
+     * @used-by AddHTML5sResponse
      * @used-by AddImportJobsResponse
      * @used-by AddKeywordsResponse
      * @used-by AddLabelsResponse
@@ -60,6 +61,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteCampaignsResponse
      * @used-by DeleteDataExclusionsResponse
      * @used-by DeleteExperimentsResponse
+     * @used-by DeleteHTML5sResponse
      * @used-by DeleteImportJobsResponse
      * @used-by DeleteKeywordsResponse
      * @used-by DeleteLabelAssociationsResponse
@@ -98,6 +100,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetDataExclusionsByIdsResponse
      * @used-by GetEditorialReasonsByIdsResponse
      * @used-by GetExperimentsByIdsResponse
+     * @used-by GetHTML5sByIdsResponse
      * @used-by GetImportEntityIdsMappingResponse
      * @used-by GetImportJobsByIdsResponse
      * @used-by GetKeywordsByIdsResponse

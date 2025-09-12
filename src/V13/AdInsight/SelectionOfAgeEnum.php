@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/selectionofageenum?view=bingads-13 SelectionOfAgeEnum Data Object
      * 
      * @uses AgeEnum
+     * @used-by GetAudienceBreakdownRequest
      * @used-by GetAudienceFullEstimationRequest
      */
     final class SelectionOfAgeEnum

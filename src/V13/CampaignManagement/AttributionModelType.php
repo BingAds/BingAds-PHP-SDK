@@ -16,6 +16,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** View-through conversion are included in the "Conversions" column. */
         const LastTouch = 'LastTouch';
+
+        /** Reserved. */
+        const DataDriven = 'DataDriven';
     }
 
 }

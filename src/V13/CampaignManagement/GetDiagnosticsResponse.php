@@ -7,36 +7,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Reserved.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getdiagnostics?view=bingads-13 GetDiagnostics Response Object
      * 
-     * @uses DiagnosticTileData
-     * @uses DiagnosticCategoryData
-     * @uses DiagnosticCardData
-     * @uses HealthCheckError
+     * @uses DiagnosticsRequestStatus
+     * @uses EntityResult
      * @used-by BingAdsCampaignManagementService::GetDiagnostics
      */
     final class GetDiagnosticsResponse
     {
         /**
          * Reserved.
-         * @var DiagnosticTileData
+         * @var DiagnosticsRequestStatus
          */
-        public $DiagnosticTileData;
+        public $RequestStatus;
 
         /**
          * Reserved.
-         * @var DiagnosticCategoryData[]
+         * @var EntityResult[]
          */
-        public $DiagnosticCategoryData;
-
-        /**
-         * Reserved.
-         * @var DiagnosticCardData[]
-         */
-        public $DiagnosticCardData;
-
-        /**
-         * Reserved.
-         * @var HealthCheckError[]
-         */
-        public $DiagnosticErrors;
+        public $Entities;
     }
 }

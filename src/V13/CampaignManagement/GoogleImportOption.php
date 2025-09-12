@@ -66,6 +66,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EnableAutoCurrencyConversion;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $EnableCopilot;
+
+        /**
          * Google Ads location targets that are unsupported by Microsoft Advertising are expanded in scope and mapped to parent location targets that are supported.
          * @var boolean
          */

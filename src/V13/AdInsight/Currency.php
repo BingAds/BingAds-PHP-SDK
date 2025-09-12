@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * Defines a value set of currencies.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/currency?view=bingads-13 Currency Value Set
      * 
+     * @used-by GetAudienceBreakdownResponse
      * @used-by GetAudienceFullEstimationRequest
      * @used-by GetAudienceFullEstimationResponse
      */
