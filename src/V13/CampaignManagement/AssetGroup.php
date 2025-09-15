@@ -15,6 +15,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses Date
      * @uses KeyValuePairOfstringstring
      * @uses AssetGroupStatus
+     * @uses CustomParameters
      * @used-by AddAssetGroupsRequest
      * @used-by CreateAssetGroupRecommendationResponse
      * @used-by GetAssetGroupsByCampaignIdResponse
@@ -71,6 +72,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string[]
          */
         public $FinalMobileUrls;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $FinalUrlSuffix;
 
         /**
          * The landing page URL.
@@ -137,6 +144,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var AssetGroupStatus
          */
         public $Status;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $TrackingUrlTemplate;
+
+        /**
+         * Reserved.
+         * @var CustomParameters
+         */
+        public $UrlCustomParameters;
 
         /**
          * Reserved.

@@ -94,6 +94,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $IsDealCampaign;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IsPolitical;
+
+        /**
          * The percent amount by which to adjust your bid for multimedia ads above or below the base ad group or keyword bid
          * @var integer
          */

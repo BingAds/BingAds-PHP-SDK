@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * Defines a Feed data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/feed?view=bingads-13 Feed Data Object
      * 
+     * @used-by GetAudienceBreakdownRequest
      * @used-by GetAudienceFullEstimationRequest
      */
     final class Feed

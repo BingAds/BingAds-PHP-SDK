@@ -10,6 +10,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AdRecommendationMediaRefineResult
      * @used-by AdRecommendationTextRefineResult
      * @used-by ApiFaultDetail
+     * @used-by AuditPointResult
+     * @used-by DiagnosticsRequestStatus
      * @used-by EditorialApiFaultDetail
      * @used-by HealthCheckError
      */

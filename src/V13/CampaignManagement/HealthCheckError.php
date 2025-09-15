@@ -9,7 +9,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses OperationError
      * @uses HealthCheckEntity
-     * @used-by GetDiagnosticsResponse
      * @used-by GetHealthCheckResponse
      */
     final class HealthCheckError

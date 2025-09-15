@@ -17,6 +17,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const AssetGroupUrlTargets = 'AssetGroupUrlTargets';
+
+        /** Reserved. */
+        const TrackingUrlTemplate = 'TrackingUrlTemplate';
+
+        /** Reserved. */
+        const FinalUrlSuffix = 'FinalUrlSuffix';
+
+        /** Reserved. */
+        const UrlCustomParameters = 'UrlCustomParameters';
     }
 
 }

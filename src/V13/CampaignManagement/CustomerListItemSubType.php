@@ -16,6 +16,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The user data type is CRM. */
         const CRM = 'CRM';
+
+        /** Reserved. */
+        const Phone = 'Phone';
     }
 
 }

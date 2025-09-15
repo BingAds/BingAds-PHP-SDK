@@ -86,6 +86,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UpdateAssetAutomationCampaignSetting = 'UpdateAssetAutomationCampaignSetting';
+
+        /** Reserved. */
+        const EnableCopilot = 'EnableCopilot';
     }
 
 }

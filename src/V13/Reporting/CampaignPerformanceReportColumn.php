@@ -403,6 +403,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const NewCustomerCount = 'NewCustomerCount';
+
+        /** Reserved. */
+        const NewCustomerSpend = 'NewCustomerSpend';
     }
 
 }

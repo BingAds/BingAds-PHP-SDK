@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * Defines a data object for the selection segment IDs.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/selectionoflong?view=bingads-13 SelectionOflong Data Object
      * 
+     * @used-by GetAudienceBreakdownRequest
      * @used-by GetAudienceFullEstimationRequest
      */
     final class SelectionOflong

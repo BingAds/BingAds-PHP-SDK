@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * 
      * @uses ScaleUnit
      * @used-by RangeResultOfDecimalRoundedResult
+     * @used-by GetAudienceBreakdownResponse
      * @used-by GetAudienceFullEstimationResponse
      */
     final class DecimalRoundedResult

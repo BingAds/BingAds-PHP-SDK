@@ -11,6 +11,9 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @uses RangeResultOfdouble
      * @uses DecimalRoundedResult
      * @uses Currency
+     * @uses DecimalRoundedRangeResultByType
+     * @uses RangeResultByTypeOfdouble
+     * @uses DecimalRoundedByType
      * @used-by BingAdsAdInsightService::GetAudienceFullEstimation
      */
     final class GetAudienceFullEstimationResponse
@@ -92,5 +95,53 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var Currency
          */
         public $Currency;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedRangeResultByType[]
+         */
+        public $EstImpressionByType;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedRangeResultByType[]
+         */
+        public $EstClickByType;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedRangeResultByType[]
+         */
+        public $EstSpendByType;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedRangeResultByType[]
+         */
+        public $EstCostPerEventByType;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedRangeResultByType[]
+         */
+        public $EstCPCByType;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedRangeResultByType[]
+         */
+        public $EstViewByType;
+
+        /**
+         * Reserved.
+         * @var RangeResultByTypeOfdouble[]
+         */
+        public $EstCTRByType;
+
+        /**
+         * Reserved.
+         * @var DecimalRoundedByType[]
+         */
+        public $EstReachImpressionByType;
     }
 }

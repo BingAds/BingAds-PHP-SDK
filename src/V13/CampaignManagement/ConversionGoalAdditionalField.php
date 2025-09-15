@@ -32,6 +32,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const IsAutoGoal = 'IsAutoGoal';
+
+        /** Reserved. */
+        const DataDrivenAttribute = 'DataDrivenAttribute';
     }
 
 }

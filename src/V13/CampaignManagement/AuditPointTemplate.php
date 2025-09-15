@@ -5,11 +5,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Reserved.
-     * @link https:/learn.microsoft.com/advertising/campaign-management-service/diagnostictiledata?view=bingads-13 DiagnosticTileData Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/auditpointtemplate?view=bingads-13 AuditPointTemplate Data Object
      * 
-     * @used-by GetDiagnosticsResponse
+     * @uses AuditPointLink
+     * @used-by AuditPointResult
      */
-    final class DiagnosticTileData
+    final class AuditPointTemplate
     {
         /**
          * Reserved.
@@ -25,9 +26,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /**
          * Reserved.
-         * @var integer
+         * @var AuditPointLink[]
          */
-        public $ProgressPercent;
+        public $Links;
 
         /**
          * Reserved.
