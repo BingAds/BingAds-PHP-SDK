@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
      * 
      * @used-by ApiFault
      * @used-by ClaimFeatureAdoptionCouponsResponse
+     * @used-by DistributeCouponsResponse
      */
     final class OperationError
     {

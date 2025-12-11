@@ -258,6 +258,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewPausedCampaignsAndChildEntities;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewPortfolioBidStrategy;
+
+        /**
          * Import price extensions that have not previously been imported.
          * @var boolean
          */
@@ -292,6 +298,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewStructuredSnippetAdExtensions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewTopicTargets;
 
         /**
          * Import tracking templates, custom parameters, and final URL suffix URL options with entities that have not previously been imported.
@@ -646,6 +658,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateStructuredSnippetAdExtensions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateTopicTargets;
 
         /**
          * Import updates to the tracking templates, custom parameters, and final URL suffix of existing entities.

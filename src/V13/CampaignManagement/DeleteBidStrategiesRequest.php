@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Deletes bid strategies from an account's portfolio bid strategy library.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletebidstrategies?view=bingads-13 DeleteBidStrategies Request Object
      * 
+     * @uses EntityScope
      * @used-by BingAdsCampaignManagementService::DeleteBidStrategies
      */
     final class DeleteBidStrategiesRequest
@@ -16,5 +17,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $BidStrategyIds;
+
+        /**
+         * Reserved.
+         * @var EntityScope
+         */
+        public $Scope;
     }
 }

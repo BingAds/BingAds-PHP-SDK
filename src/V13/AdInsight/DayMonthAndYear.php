@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/daymonthandyear?view=bingads-13 DayMonthAndYear Data Object
      * 
      * @used-by AdGroupBidLandscape
+     * @used-by CampaignBidLandscape
      * @used-by DateRangeSearchParameter
      * @used-by HistoricalSearchCountPeriodic
      * @used-by KeywordBidLandscape

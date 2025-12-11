@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getbidstrategiesbyids?view=bingads-13 GetBidStrategiesByIds Request Object
      * 
      * @uses PortfolioBidStrategyAdditionalField
+     * @uses EntityScope
      * @used-by BingAdsCampaignManagementService::GetBidStrategiesByIds
      */
     final class GetBidStrategiesByIdsRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var PortfolioBidStrategyAdditionalField
          */
         public $ReturnAdditionalFields;
+
+        /**
+         * Reserved.
+         * @var EntityScope
+         */
+        public $Scope;
     }
 }

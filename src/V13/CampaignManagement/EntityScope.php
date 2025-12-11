@@ -8,12 +8,17 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/entityscope?view=bingads-13 EntityScope Value Set
      * 
      * @used-by Audience
+     * @used-by BidStrategy
+     * @used-by Campaign
      * @used-by ConversionGoal
      * @used-by AddListItemsToSharedListRequest
      * @used-by AddSharedEntityRequest
+     * @used-by DeleteBidStrategiesRequest
      * @used-by DeleteListItemsFromSharedListRequest
      * @used-by DeleteSharedEntitiesRequest
      * @used-by DeleteSharedEntityAssociationsRequest
+     * @used-by GetBidStrategiesByIdsRequest
+     * @used-by GetCampaignIdsByBidStrategyIdsRequest
      * @used-by GetListItemsBySharedListRequest
      * @used-by GetSharedEntitiesRequest
      * @used-by GetSharedEntityAssociationsByEntityIdsRequest
