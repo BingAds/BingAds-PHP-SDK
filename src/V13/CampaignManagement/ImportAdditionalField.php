@@ -89,6 +89,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const EnableCopilot = 'EnableCopilot';
+
+        /** Reserved. */
+        const NewTopicTargets = 'NewTopicTargets';
+
+        /** Reserved. */
+        const UpdateTopicTargets = 'UpdateTopicTargets';
+
+        /** Reserved. */
+        const NewPortfolioBidStrategy = 'NewPortfolioBidStrategy';
     }
 
 }

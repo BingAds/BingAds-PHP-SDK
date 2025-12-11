@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses CampaignType
      * @uses BiddingScheme
+     * @uses EntityScope
      * @used-by AddBidStrategiesRequest
      * @used-by GetBidStrategiesByIdsResponse
      * @used-by UpdateBidStrategiesRequest
@@ -34,6 +35,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BiddingScheme;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $CurrencyCode;
+
+        /**
          * The unique Microsoft Advertising identifier of the bid strategy.
          * @var integer
          */
@@ -44,6 +51,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Name;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $ReportingTimeZone;
+
+        /**
+         * Reserved.
+         * @var EntityScope
+         */
+        public $Scope;
     }
 
 }

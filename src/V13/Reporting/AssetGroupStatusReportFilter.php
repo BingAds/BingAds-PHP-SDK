@@ -16,6 +16,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by ProductPartitionPerformanceReportFilter
      * @used-by ProductPartitionUnitPerformanceReportFilter
      * @used-by ProductSearchQueryPerformanceReportFilter
+     * @used-by ProfessionalDemographicsAudienceReportFilter
      * @used-by PublisherUsagePerformanceReportFilter
      * @used-by SearchInsightPerformanceReportFilter
      */

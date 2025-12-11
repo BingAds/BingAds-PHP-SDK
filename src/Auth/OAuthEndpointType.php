@@ -31,4 +31,9 @@ final class OAuthEndpointType
      * Sandbox for Msa Production
      */
     const MsaProd = 'MsaProd';
+
+    /**
+     * Production for Google OAuth
+     */
+    const GoogleProduction = 'GoogleProduction';
 }

@@ -29,6 +29,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AddImportJobsResponse
      * @used-by AddKeywordsResponse
      * @used-by AddLabelsResponse
+     * @used-by AddLinkedInSegmentsResponse
      * @used-by AddListItemsToSharedListResponse
      * @used-by AddNewCustomerAcquisitionGoalsResponse
      * @used-by AddSeasonalityAdjustmentsResponse
@@ -66,6 +67,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by DeleteKeywordsResponse
      * @used-by DeleteLabelAssociationsResponse
      * @used-by DeleteLabelsResponse
+     * @used-by DeleteLinkedInSegmentsResponse
      * @used-by DeleteListItemsFromSharedListResponse
      * @used-by DeleteMediaResponse
      * @used-by DeleteSeasonalityAdjustmentsResponse
@@ -141,6 +143,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by UpdateImportJobsResponse
      * @used-by UpdateKeywordsResponse
      * @used-by UpdateLabelsResponse
+     * @used-by UpdateLinkedInSegmentsResponse
      * @used-by UpdateNewCustomerAcquisitionGoalsResponse
      * @used-by UpdateSeasonalityAdjustmentsResponse
      * @used-by UpdateSharedEntitiesResponse

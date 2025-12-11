@@ -49,6 +49,12 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $EstCostPerEvent;
 
         /**
+         * Reserved.
+         * @var RangeResultOfDecimalRoundedResult
+         */
+        public $EstCPC;
+
+        /**
          * Estimated click-through rate (CTR) with range result.
          * @var RangeResultOfdouble
          */

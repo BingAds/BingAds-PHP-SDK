@@ -10,6 +10,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @uses SelectionOfAgeEnum
      * @uses SelectionOfGenderEnum
      * @uses SelectionOflong
+     * @uses SelectionOfDeviceEnum
      * @uses RadiusTarget
      * @uses Feed
      * @uses Currency
@@ -58,6 +59,24 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var SelectionOflong
          */
         public $Location;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $Placement;
+
+        /**
+         * Reserved.
+         * @var SelectionOfDeviceEnum
+         */
+        public $Device;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $Topic;
 
         /**
          * Represents the desired geographical area in terms of miles/kilometers.
@@ -130,5 +149,11 @@ namespace Microsoft\BingAds\V13\AdInsight;
          * @var boolean
          */
         public $IncludeImpressionsBreakdown;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $AutoTargeting;
     }
 }

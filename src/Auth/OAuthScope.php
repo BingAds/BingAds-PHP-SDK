@@ -26,4 +26,9 @@ final class OAuthScope
      * Represents msa.prod OAuth scope
      */
     const MSA_PROD = 'msa.prod';
+
+    /**
+     * Represents google.openid OAuth scope
+     */
+    const GOOGLE_OPENID = 'google.openid';
 }

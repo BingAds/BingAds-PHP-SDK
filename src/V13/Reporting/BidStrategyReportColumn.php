@@ -72,7 +72,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         const Spend = 'Spend';
 
         /** Reserved. */
-        const Conversions = 'Conversions';
+        const ConversionsQualified = 'ConversionsQualified';
 
         /** Reserved. */
         const ConversionRate = 'ConversionRate';
@@ -84,7 +84,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         const ConversionDelay = 'ConversionDelay';
 
         /** Reserved. */
-        const CPA = 'CPA';
+        const CostPerConversionQualified = 'CostPerConversionQualified';
 
         /** Reserved. */
         const ROAS = 'ROAS';
@@ -100,6 +100,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const ImpressionSharePercent = 'ImpressionSharePercent';
+
+        /** Reserved. */
+        const Owner = 'Owner';
+
+        /** Reserved. */
+        const TimeZone = 'TimeZone';
+
+        /** Reserved. */
+        const Currency = 'Currency';
     }
 
 }

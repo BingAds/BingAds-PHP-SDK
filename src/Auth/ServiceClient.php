@@ -168,7 +168,9 @@ class ServiceClient
 			}
 			elseif($authorizationData->Authentication->Type == "OAuthWebAuthCodeGrant" ||
 				   $authorizationData->Authentication->Type == "OAuthDesktopMobileAuthCodeGrant" ||
-				   $authorizationData->Authentication->Type == "OAuthDesktopMobileImplicitGrant") 
+				   $authorizationData->Authentication->Type == "OAuthDesktopMobileImplicitGrant" ||
+				   $authorizationData->Authentication->Type == "GoogleOAuthWebAuthCodeGrant" ||
+				   $authorizationData->Authentication->Type == "GoogleOAuthDesktopMobileAuthCodeGrant")
 			{
 				if(isset($authorizationData->Authentication->OAuthTokens)){
 					$this->authenticationToken = $authorizationData->Authentication->OAuthTokens->AccessToken;
@@ -242,7 +244,7 @@ class ServiceClient
 			'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
 			// Disable keep_alive to avoid 'Process open FD table is full'
 			'keep_alive' => FALSE, 
-			'user_agent' => 'BingAdsSDKPHP ' . '13.0.25.2 ' . PHP_VERSION, 
+			'user_agent' => 'BingAdsSDKPHP ' . '13.0.26 ' . PHP_VERSION, 
 			'cache_wsdl' => 'WSDL_CACHE_NONE',
 
 			/** 

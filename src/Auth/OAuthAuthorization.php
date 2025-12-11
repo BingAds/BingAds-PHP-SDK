@@ -104,7 +104,7 @@ abstract class OAuthAuthorization extends Authentication
     public function withEnvironment($environment) {
         $this->Environment = $environment;
         $this->OAuthScope = ($environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $this->OAuthScope;
-        $this->RedirectUri=UriOAuthService::GetRedirectUrl($environment, ($environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $this->OAuthScope);
+        $this->RedirectUri= $this->RedirectUri !== null ? $this->RedirectUri : UriOAuthService::GetRedirectUrl($environment, ($environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $this->OAuthScope);
         return $this;
     }
 
@@ -116,7 +116,7 @@ abstract class OAuthAuthorization extends Authentication
      */
     public function withOAuthScope($oauthScope) {
         $this->OAuthScope = ($this->Environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $oauthScope;
-        $this->RedirectUri=UriOAuthService::GetRedirectUrl($this->Environment, ($this->Environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $oauthScope);
+        $this->RedirectUri= $this->RedirectUri !== null ? $this->RedirectUri : UriOAuthService::GetRedirectUrl($this->Environment, ($this->Environment == ApiEnvironment::Sandbox && $this->UseMsaProd) ? OAuthScope::MSA_PROD : $oauthScope);
         return $this;
     }
     

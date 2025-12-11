@@ -38,6 +38,12 @@ class UriOAuthService extends IOAuthService
             'AuthorizationEndpointUrl' => 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=https://si.ads.microsoft.com/msads.manage+offline_access&prompt=login',
             'Scope' => 'https://si.ads.microsoft.com/msads.manage offline_access'
         ),
+        'GoogleProduction' => array(
+            'RedirectUrl' => 'http://localhost',
+            'OAuthTokenUrl' => 'https://oauth2.googleapis.com/token',
+            'AuthorizationEndpointUrl' => 'https://accounts.google.com/o/oauth2/v2/auth?scope=openid+email+profile&access_type=offline&prompt=consent',
+            'Scope' => 'openid email profile'
+        ),
     );
     
     private $httpService;
@@ -120,7 +126,7 @@ class UriOAuthService extends IOAuthService
         {
             $accessToken = $responseArray['access_token'];
             $expiresIn = $responseArray['expires_in'];
-            $refreshToken = $responseArray['refresh_token'];
+            $refreshToken = $responseArray['refresh_token'] ?? null;
 
             return (new OAuthTokens())
                 ->withAccessToken($accessToken)
@@ -187,6 +193,9 @@ class UriOAuthService extends IOAuthService
                 case OAuthScope::ADS_MANAGE:
                     $endpointType = OAuthEndpointType::ProductionMSIdentityV2;
                     break;
+                case OAuthScope::GOOGLE_OPENID:
+                    $endpointType = OAuthEndpointType::GoogleProduction;
+                    break;
                 default:
                     $endpointType = OAuthEndpointType::ProductionMSIdentityV2_MSScope; 
             }
@@ -196,6 +205,10 @@ class UriOAuthService extends IOAuthService
             if ($oauthScope == OAuthScope::MSA_PROD)
             {
                 $endpointType = OAuthEndpointType::MsaProd;
+            }
+            else if ($oauthScope == OAuthScope::GOOGLE_OPENID)
+            {
+                $endpointType = OAuthEndpointType::GoogleProduction;
             }
             else
             {

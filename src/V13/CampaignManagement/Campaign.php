@@ -7,6 +7,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines a campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaign?view=bingads-13 Campaign Data Object
      * 
+     * @uses EntityScope
      * @uses BiddingScheme
      * @uses BudgetLimitType
      * @uses KeyValuePairOfstringstring
@@ -26,6 +27,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $AudienceAdsBidAdjustment;
+
+        /**
+         * Reserved.
+         * @var EntityScope
+         */
+        public $BidStrategyScope;
 
         /**
          * The bid strategy type for how you want to manage your bids.

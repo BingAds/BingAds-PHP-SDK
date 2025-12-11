@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/currencycode?view=bingads-13 CurrencyCode Value Set
      * 
      * @used-by BidLandscapePoint
+     * @used-by CampaignBidLandscapePoint
      * @used-by EstimatedBidAndTraffic
      * @used-by EstimatedPositionAndTraffic
      * @used-by GetEstimatedBidByKeywordsRequest
@@ -290,6 +291,9 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
         /** The corresponding currency type. */
         const ZWD = 'ZWD';
+
+        /** Reserved. */
+        const UNSPECIFY = 'UNSPECIFY';
     }
 
 }

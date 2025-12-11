@@ -107,6 +107,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
+
+        /** Reserved. */
+        const PmaxAppCampaign = 'PmaxAppCampaign';
+
+        /** Reserved. */
+        const CrossAccountBidStrategyFields = 'CrossAccountBidStrategyFields';
     }
 
 }

@@ -61,6 +61,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The country-specific Bing marketplace, such as Bing France or Bing India. */
         const Country = 'Country';
+
+        /** Reserved. */
+        const MarketplaceClickCoverage = 'MarketplaceClickCoverage';
+
+        /** Reserved. */
+        const ProportionOfSpend = 'ProportionOfSpend';
     }
 
 }
