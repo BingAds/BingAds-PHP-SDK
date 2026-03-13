@@ -26,6 +26,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UrlCustomParameters = 'UrlCustomParameters';
+
+        /** Reserved. */
+        const CroppingType = 'CroppingType';
     }
 
 }

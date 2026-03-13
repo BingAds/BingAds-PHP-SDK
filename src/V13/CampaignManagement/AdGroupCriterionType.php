@@ -106,6 +106,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const Topic = 'Topic';
+
+        /** Reserved. */
+        const CustomSegment = 'CustomSegment';
     }
 
 }

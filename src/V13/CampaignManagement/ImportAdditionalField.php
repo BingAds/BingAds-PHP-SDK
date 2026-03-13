@@ -98,6 +98,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const NewPortfolioBidStrategy = 'NewPortfolioBidStrategy';
+
+        /** Reserved. */
+        const NewAIMaxSettings = 'NewAIMaxSettings';
+
+        /** Reserved. */
+        const ImageAssetAutomationOptOut = 'ImageAssetAutomationOptOut';
+
+        /** Reserved. */
+        const UpdateAIMaxSettings = 'UpdateAIMaxSettings';
     }
 
 }

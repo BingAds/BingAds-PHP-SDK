@@ -114,6 +114,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetNegativeKeywordsByEntityIdsResponse
      * @used-by GetNegativeSitesByAdGroupIdsResponse
      * @used-by GetNegativeSitesByCampaignIdsResponse
+     * @used-by GetOfflineConversionReportByGoalIdsResponse
      * @used-by GetSeasonalityAdjustmentsByAccountIdResponse
      * @used-by GetSeasonalityAdjustmentsByIdsResponse
      * @used-by GetSharedEntityAssociationsByEntityIdsResponse

@@ -27,6 +27,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Defines the possible ad sub types. */
         const AdSubType = 'AdSubType';
+
+        /** Reserved. */
+        const CroppingType = 'CroppingType';
     }
 
 }

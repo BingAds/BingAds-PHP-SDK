@@ -56,6 +56,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $LandscapeLogos;
 
         /**
+         * Reserved.
+         * @var string[]
+         */
+        public $MessagingRestrictions;
+
+        /**
          * The brand kit's name.
          * @var string
          */
@@ -72,6 +78,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var BrandKitImage[]
          */
         public $SquareLogos;
+
+        /**
+         * Reserved.
+         * @var string[]
+         */
+        public $TermExclusions;
     }
 
 }

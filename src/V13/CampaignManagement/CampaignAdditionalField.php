@@ -113,6 +113,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CrossAccountBidStrategyFields = 'CrossAccountBidStrategyFields';
+
+        /** Reserved. */
+        const AISearchSetting = 'AISearchSetting';
     }
 
 }
