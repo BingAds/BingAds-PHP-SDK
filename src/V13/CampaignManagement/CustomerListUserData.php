@@ -14,6 +14,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomerListUserData
     {
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $AcceptCustomerMatchTerm;
+
+        /**
          * The action type when uploading user data.
          * @var CustomerListActionType
          */

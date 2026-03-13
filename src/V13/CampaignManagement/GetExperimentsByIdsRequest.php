@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getexperimentsbyids?view=bingads-13 GetExperimentsByIds Request Object
      * 
      * @uses Paging
+     * @uses ExperimentAdditionalField
      * @used-by BingAdsCampaignManagementService::GetExperimentsByIds
      */
     final class GetExperimentsByIdsRequest
@@ -23,5 +24,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var Paging
          */
         public $PageInfo;
+
+        /**
+         * Reserved.
+         * @var ExperimentAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

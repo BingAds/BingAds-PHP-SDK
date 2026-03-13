@@ -44,6 +44,12 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The name of the job function (according to LinkedIn) of the person who viewed the ad. */
         const JobFunctionName = 'JobFunctionName';
 
+        /** Reserved. */
+        const JobSeniorityName = 'JobSeniorityName';
+
+        /** Reserved. */
+        const CustomLinkedInName = 'CustomLinkedInName';
+
         /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 

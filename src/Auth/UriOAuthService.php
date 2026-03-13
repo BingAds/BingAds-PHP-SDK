@@ -128,6 +128,12 @@ class UriOAuthService extends IOAuthService
             $expiresIn = $responseArray['expires_in'];
             $refreshToken = $responseArray['refresh_token'] ?? null;
 
+            // Preserve the original refresh token if the response doesn't include a new one
+            // This is specific to Google OAuth which doesn't return refresh_token on refresh
+            if ($refreshToken === null && $oauthRequestParameters->GrantType === 'refresh_token' && $oauthScope === OAuthScope::GOOGLE_OPENID) {
+                $refreshToken = $oauthRequestParameters->GrantValue;
+            }
+
             return (new OAuthTokens())
                 ->withAccessToken($accessToken)
                 ->withAccessTokenExpiresInSeconds($expiresIn)

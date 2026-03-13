@@ -78,6 +78,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EnableParentLocationMapping;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $ImageAssetAutomationOptOut;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewAIMaxSettings;
+
+        /**
          * Import account negative keywords that have not previously been imported.
          * @var boolean
          */
@@ -406,6 +418,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SuffixForUrls;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateAIMaxSettings;
 
         /**
          * Import updates to existing account negative keywords.

@@ -8,7 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/linkedinsegment?view=bingads-13 LinkedInSegment Data Object
      * 
      * @uses LinkedInSegmentStatus
-     * @uses LinkedInSegmentType
+     * @uses ProfileType
      * @used-by AddLinkedInSegmentsRequest
      * @used-by UpdateLinkedInSegmentsRequest
      */
@@ -40,7 +40,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /**
          * Reserved.
-         * @var LinkedInSegmentType
+         * @var ProfileType
          */
         public $Type;
     }

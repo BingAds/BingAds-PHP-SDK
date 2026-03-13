@@ -65,6 +65,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const AssetAIEnhancementOptout = 'AssetAIEnhancementOptout';
+
+        /** Reserved. */
+        const AcceptNielsenTermsAndConditions = 'AcceptNielsenTermsAndConditions';
     }
 
 }

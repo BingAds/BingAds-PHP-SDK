@@ -596,6 +596,21 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const BrandKit = 'BrandKit';
+
+        /** Reserved. */
+        const CustomSegment = 'CustomSegment';
+
+        /** Reserved. */
+        const AdGroupCustomSegmentAssociations = 'AdGroupCustomSegmentAssociations';
+
+        /** Reserved. */
+        const AccountContentNegativeKeywordList = 'AccountContentNegativeKeywordList';
+
+        /** Reserved. */
+        const AccountContentNegativeKeywordListAssociation = 'AccountContentNegativeKeywordListAssociation';
+
+        /** Reserved. */
+        const AccountContentNegativeKeyword = 'AccountContentNegativeKeyword';
     }
 
 }

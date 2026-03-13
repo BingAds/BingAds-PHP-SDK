@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/experiment?view=bingads-13 Experiment Data Object
      * 
      * @uses Date
+     * @uses ExperimentArm
      * @used-by AddExperimentsRequest
      * @used-by GetExperimentsByIdsResponse
      * @used-by UpdateExperimentsRequest
@@ -27,6 +28,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EndDate;
 
         /**
+         * Reserved.
+         * @var ExperimentArm[]
+         */
+        public $ExperimentArms;
+
+        /**
          * The Microsoft Advertising identifier of the campaign that is created as a copy of the base campaign.
          * @var integer
          */
@@ -37,6 +44,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $ExperimentStatus;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $ExperimentSubType;
 
         /**
          * Determines whether to show individual customers ads from the experiment and the original campaign randomly, or only from one or the other.
