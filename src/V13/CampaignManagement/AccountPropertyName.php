@@ -68,6 +68,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const AcceptNielsenTermsAndConditions = 'AcceptNielsenTermsAndConditions';
+
+        /** Reserved. */
+        const ImageMissingWarningOptout = 'ImageMissingWarningOptout';
+
+        /** Reserved. */
+        const OptOutFromSystemSourcedImagesInSWF = 'OptOutFromSystemSourcedImagesInSWF';
     }
 
 }

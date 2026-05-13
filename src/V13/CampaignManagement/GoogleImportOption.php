@@ -87,6 +87,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * Reserved.
          * @var boolean
          */
+        public $ImportNCAGoalWithSystemGeneratedAudience;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
         public $NewAIMaxSettings;
 
         /**

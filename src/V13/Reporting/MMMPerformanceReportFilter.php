@@ -4,8 +4,8 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Defines the criteria to use to filter the age and gender audience report data.
-     * @link https:/learn.microsoft.com/advertising/reporting-service/agegenderaudiencereportfilter?view=bingads-13 AgeGenderAudienceReportFilter Data Object
+     * Reserved.
+     * @link https:/learn.microsoft.com/advertising/reporting-service/mmmperformancereportfilter?view=bingads-13 MMMPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
      * @uses AdDistributionReportFilter
@@ -13,24 +13,24 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @uses AssetGroupStatusReportFilter
      * @uses CampaignStatusReportFilter
      * @uses LanguageReportFilter
-     * @used-by AgeGenderAudienceReportRequest
+     * @used-by MMMPerformanceReportRequest
      */
-    final class AgeGenderAudienceReportFilter
+    final class MMMPerformanceReportFilter
     {
         /**
-         * The report will include data for only the account status.
+         * Reserved.
          * @var AccountStatusReportFilter
          */
         public $AccountStatus;
 
         /**
-         * The report will include data for only the specified distribution medium.
+         * Reserved.
          * @var AdDistributionReportFilter
          */
         public $AdDistribution;
 
         /**
-         * The report will include data for only the ad group status.
+         * Reserved.
          * @var AdGroupStatusReportFilter
          */
         public $AdGroupStatus;
@@ -42,13 +42,19 @@ namespace Microsoft\BingAds\V13\Reporting;
         public $AssetGroupStatus;
 
         /**
-         * The report will include data for only the campaign status.
+         * Reserved.
          * @var CampaignStatusReportFilter
          */
         public $CampaignStatus;
 
         /**
-         * The report will include data for only websites that used the specified languages.
+         * Reserved.
+         * @var string[]
+         */
+        public $CountryCode;
+
+        /**
+         * Reserved.
          * @var LanguageReportFilter
          */
         public $Language;

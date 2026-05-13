@@ -116,6 +116,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const AISearchSetting = 'AISearchSetting';
+
+        /** Reserved. */
+        const PmaxXboxCampaign = 'PmaxXboxCampaign';
+
+        /** Reserved. */
+        const NetworkDistributionSetting = 'NetworkDistributionSetting';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const ImpressionTrackingSetting = 'ImpressionTrackingSetting';
     }
 
 }

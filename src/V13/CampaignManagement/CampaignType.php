@@ -36,6 +36,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The campaign is an App campaign. */
         const App = 'App';
+
+        /** Reserved. */
+        const UnifiedCampaign = 'UnifiedCampaign';
     }
 
 }

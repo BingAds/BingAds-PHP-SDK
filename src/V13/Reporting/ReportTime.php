@@ -40,6 +40,8 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by HotelDimensionPerformanceReportRequest
      * @used-by HotelGroupPerformanceReportRequest
      * @used-by KeywordPerformanceReportRequest
+     * @used-by MMMPerformanceReportRequest
+     * @used-by MSClickIdPerformanceReportRequest
      * @used-by ProductDimensionPerformanceReportRequest
      * @used-by ProductMatchCountReportRequest
      * @used-by ProductPartitionPerformanceReportRequest

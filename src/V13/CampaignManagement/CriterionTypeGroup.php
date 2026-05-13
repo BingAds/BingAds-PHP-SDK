@@ -34,6 +34,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved for future use. */
         const IncomeRange = 'IncomeRange';
+
+        /** Reserved. */
+        const JobSeniority = 'JobSeniority';
+
+        /** Reserved. */
+        const CustomLinkedIn = 'CustomLinkedIn';
     }
 
 }

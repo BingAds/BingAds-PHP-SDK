@@ -18,6 +18,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by GeographicPerformanceReportFilter
      * @used-by GoalsAndFunnelsReportFilter
      * @used-by KeywordPerformanceReportFilter
+     * @used-by MMMPerformanceReportFilter
      * @used-by ProfessionalDemographicsAudienceReportFilter
      * @used-by PublisherUsagePerformanceReportFilter
      * @used-by SearchCampaignChangeHistoryReportFilter

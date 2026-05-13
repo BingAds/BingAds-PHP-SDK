@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getsharedentityassociationsbyentityids?view=bingads-13 GetSharedEntityAssociationsByEntityIds Request Object
      * 
      * @uses EntityScope
+     * @uses SharedEntityAssociationAdditionalField
      * @used-by BingAdsCampaignManagementService::GetSharedEntityAssociationsByEntityIds
      */
     final class GetSharedEntityAssociationsByEntityIdsRequest
@@ -35,5 +36,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var EntityScope
          */
         public $SharedEntityScope;
+
+        /**
+         * Reserved.
+         * @var SharedEntityAssociationAdditionalField
+         */
+        public $ReturnAdditionalFields;
     }
 }

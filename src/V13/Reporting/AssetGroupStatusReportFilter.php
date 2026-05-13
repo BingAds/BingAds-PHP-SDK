@@ -7,10 +7,12 @@ namespace Microsoft\BingAds\V13\Reporting;
      * Defines the asset group status values that you can use to filter the report data.
      * @link https:/learn.microsoft.com/advertising/reporting-service/assetgroupstatusreportfilter?view=bingads-13 AssetGroupStatusReportFilter Value Set
      * 
+     * @used-by AgeGenderAudienceReportFilter
      * @used-by AppsPerformanceReportFilter
      * @used-by AssetGroupPerformanceReportFilter
      * @used-by GeographicPerformanceReportFilter
      * @used-by GoalsAndFunnelsReportFilter
+     * @used-by MMMPerformanceReportFilter
      * @used-by ProductDimensionPerformanceReportFilter
      * @used-by ProductNegativeKeywordConflictReportFilter
      * @used-by ProductPartitionPerformanceReportFilter
@@ -19,6 +21,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by ProfessionalDemographicsAudienceReportFilter
      * @used-by PublisherUsagePerformanceReportFilter
      * @used-by SearchInsightPerformanceReportFilter
+     * @used-by SearchQueryPerformanceReportFilter
      */
     final class AssetGroupStatusReportFilter
     {

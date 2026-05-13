@@ -140,6 +140,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var string
          */
         public $CustomerLinkPermission;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $ClientEntityCustomerNumber;
     }
 
 }

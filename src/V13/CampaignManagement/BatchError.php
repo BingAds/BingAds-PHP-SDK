@@ -119,6 +119,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetSeasonalityAdjustmentsByIdsResponse
      * @used-by GetSharedEntityAssociationsByEntityIdsResponse
      * @used-by GetSharedEntityAssociationsBySharedEntityIdsResponse
+     * @used-by GetUetTagAuthKeyResponse
      * @used-by GetUetTagsByIdsResponse
      * @used-by GetVideosByIdsResponse
      * @used-by SetAdExtensionsAssociationsResponse

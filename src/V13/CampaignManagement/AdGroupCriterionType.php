@@ -109,6 +109,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const CustomSegment = 'CustomSegment';
+
+        /** Reserved. */
+        const JobSeniority = 'JobSeniority';
     }
 
 }
