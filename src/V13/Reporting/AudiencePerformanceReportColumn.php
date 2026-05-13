@@ -154,6 +154,39 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
+
+        /** Reserved. */
+        const VideoViews = 'VideoViews';
+
+        /** Reserved. */
+        const ViewThroughRate = 'ViewThroughRate';
+
+        /** Reserved. */
+        const AverageCPV = 'AverageCPV';
+
+        /** Reserved. */
+        const VideoViewsAt25Percent = 'VideoViewsAt25Percent';
+
+        /** Reserved. */
+        const VideoViewsAt50Percent = 'VideoViewsAt50Percent';
+
+        /** Reserved. */
+        const VideoViewsAt75Percent = 'VideoViewsAt75Percent';
+
+        /** Reserved. */
+        const CompletedVideoViews = 'CompletedVideoViews';
+
+        /** Reserved. */
+        const VideoCompletionRate = 'VideoCompletionRate';
+
+        /** Reserved. */
+        const TotalWatchTimeInMS = 'TotalWatchTimeInMS';
+
+        /** Reserved. */
+        const AverageWatchTimePerVideoView = 'AverageWatchTimePerVideoView';
+
+        /** Reserved. */
+        const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
     }
 
 }

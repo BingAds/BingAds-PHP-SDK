@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/network?view=bingads-13 Network Value Set
      * 
      * @used-by AdGroup
+     * @used-by NetworkDistributionSetting
      */
     final class Network
     {

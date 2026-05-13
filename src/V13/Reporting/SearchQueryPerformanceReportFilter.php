@@ -11,6 +11,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @uses AdGroupStatusReportFilter
      * @uses AdStatusReportFilter
      * @uses AdTypeReportFilter
+     * @uses AssetGroupStatusReportFilter
      * @uses CampaignStatusReportFilter
      * @uses DeliveredMatchTypeReportFilter
      * @uses KeywordStatusReportFilter
@@ -42,6 +43,12 @@ namespace Microsoft\BingAds\V13\Reporting;
          * @var AdTypeReportFilter
          */
         public $AdType;
+
+        /**
+         * Reserved.
+         * @var AssetGroupStatusReportFilter
+         */
+        public $AssetGroupStatus;
 
         /**
          * The report will include data for campaigns that have the specified status value.

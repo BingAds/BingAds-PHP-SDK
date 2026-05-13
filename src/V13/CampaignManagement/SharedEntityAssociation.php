@@ -27,6 +27,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EntityType;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $IsExclusion;
+
+        /**
          * Determines the owner of a website exclusion list.
          * @var integer
          */
@@ -43,6 +49,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $SharedEntityType;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $Status;
     }
 
 }

@@ -107,6 +107,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UpdateAIMaxSettings = 'UpdateAIMaxSettings';
+
+        /** Reserved. */
+        const ImportNCAGoalWithSystemGeneratedAudience = 'ImportNCAGoalWithSystemGeneratedAudience';
     }
 
 }

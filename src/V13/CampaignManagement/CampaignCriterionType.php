@@ -82,6 +82,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The campaign criterion is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
+
+        /** Reserved. */
+        const JobSeniority = 'JobSeniority';
     }
 
 }

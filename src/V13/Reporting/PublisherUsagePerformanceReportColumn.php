@@ -223,6 +223,24 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const CPS = 'CPS';
+
+        /** Reserved. */
+        const LowQualityClicks = 'LowQualityClicks';
+
+        /** Reserved. */
+        const LowQualityClicksPercent = 'LowQualityClicksPercent';
+
+        /** Reserved. */
+        const LowQualityImpressions = 'LowQualityImpressions';
+
+        /** Reserved. */
+        const LowQualityImpressionsPercent = 'LowQualityImpressionsPercent';
+
+        /** Reserved. */
+        const LowQualityGeneralClicks = 'LowQualityGeneralClicks';
+
+        /** Reserved. */
+        const LowQualitySophisticatedClicks = 'LowQualitySophisticatedClicks';
     }
 
 }

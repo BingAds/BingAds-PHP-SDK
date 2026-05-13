@@ -184,6 +184,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
+
+        /** Reserved. */
+        const AssetGroupName = 'AssetGroupName';
+
+        /** Reserved. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** Reserved. */
+        const AssetGroupStatus = 'AssetGroupStatus';
     }
 
 }

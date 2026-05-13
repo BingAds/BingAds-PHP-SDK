@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by BudgetSummaryReportRequest
      * @used-by CampaignPerformanceReportRequest
      * @used-by CombinationPerformanceReportRequest
+     * @used-by MSClickIdPerformanceReportRequest
      * @used-by SearchInsightPerformanceReportRequest
      */
     final class AccountThroughCampaignReportScope

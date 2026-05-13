@@ -50,6 +50,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const BaseDomain = 'BaseDomain';
+
+        /** Reserved. */
+        const TargetSettingForJobSeniority = 'TargetSettingForJobSeniority';
+
+        /** Reserved. */
+        const TargetSettingForCustomLinkedIn = 'TargetSettingForCustomLinkedIn';
     }
 
 }

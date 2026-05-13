@@ -30,6 +30,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by HotelDimensionPerformanceReportFilter
      * @used-by HotelGroupPerformanceReportFilter
      * @used-by KeywordPerformanceReportFilter
+     * @used-by MMMPerformanceReportFilter
      * @used-by NegativeKeywordConflictReportFilter
      * @used-by ProductDimensionPerformanceReportFilter
      * @used-by ProductNegativeKeywordConflictReportFilter

@@ -19,6 +19,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The app is distributed in the Microsoft app store. */
         const MicrosoftAppStore = 'MicrosoftAppStore';
+
+        /** Reserved. */
+        const XboxStore = 'XboxStore';
     }
 
 }
