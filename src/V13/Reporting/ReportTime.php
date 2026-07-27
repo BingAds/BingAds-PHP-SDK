@@ -52,6 +52,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by SearchCampaignChangeHistoryReportRequest
      * @used-by SearchInsightPerformanceReportRequest
      * @used-by SearchQueryPerformanceReportRequest
+     * @used-by SearchTermLandingPageReportRequest
      * @used-by ShareOfVoiceReportRequest
      * @used-by TravelQueryInsightReportRequest
      * @used-by UserLocationPerformanceReportRequest

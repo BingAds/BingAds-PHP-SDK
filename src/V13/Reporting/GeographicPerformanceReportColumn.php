@@ -215,41 +215,50 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** The number of times customers download apps through your ads. */
         const Downloads = 'Downloads';
 
-        /** Reserved. */
+        /** The post-click download rate as a percentage. */
         const PostClickDownloadRate = 'PostClickDownloadRate';
 
-        /** Reserved. */
+        /** The average amount you're charged each time your ad is downloaded. */
         const CostPerDownload = 'CostPerDownload';
 
-        /** Reserved. */
+        /** The number of times customers install apps through your ads. */
         const AppInstalls = 'AppInstalls';
 
-        /** Reserved. */
+        /** The post-click install rate as a percentage. */
         const PostClickInstallRate = 'PostClickInstallRate';
 
-        /** Reserved. */
+        /** The average amount of money you're charged for each app install. */
         const CPI = 'CPI';
 
-        /** Reserved. */
+        /** The number of times customers use your ads to make a purchase in your app. */
         const Purchases = 'Purchases';
 
-        /** Reserved. */
+        /** The post-install purchase rate as a percentage. */
         const PostInstallPurchaseRate = 'PostInstallPurchaseRate';
 
-        /** Reserved. */
+        /** The average amount of money you're charged for each in-app purchase. */
         const CPP = 'CPP';
 
-        /** Reserved. */
+        /** The number of times customers use your ads to purchase a subscription in your game. */
         const Subscriptions = 'Subscriptions';
 
-        /** Reserved. */
+        /** The post-install subscription rate as a percentage. */
         const PostInstallSubscriptionRate = 'PostInstallSubscriptionRate';
 
-        /** Reserved. */
+        /** The average amount of money you're charged for each app subscription. */
         const CPS = 'CPS';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

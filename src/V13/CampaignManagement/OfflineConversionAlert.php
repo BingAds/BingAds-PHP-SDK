@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for detailed information about unattributed conversions.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/offlineconversionalert?view=bingads-13 OfflineConversionAlert Data Object
      * 
      * @uses OfflineConversionUnattributedReason
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class OfflineConversionAlert
     {
         /**
-         * Reserved.
+         * The specific reason for the failure.
          * @var OfflineConversionUnattributedReason
          */
         public $UnattributedReason;
 
         /**
-         * Reserved.
+         * The number of times this specific error occurred.
          * @var integer
          */
         public $Count;

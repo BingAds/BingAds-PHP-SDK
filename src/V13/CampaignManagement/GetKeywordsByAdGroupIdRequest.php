@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdGroupId;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned keyword.
          * @var KeywordAdditionalField
          */
         public $ReturnAdditionalFields;

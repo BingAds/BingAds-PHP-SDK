@@ -81,7 +81,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const VanityPharmaSetting = 'VanityPharmaSetting';
 
-        /** Reserved. */
+        /** Request that the ManualCpi element be included within each returned ManualCpaBiddingScheme object. */
         const ManualCpi = 'ManualCpi';
 
         /** Reserved. */
@@ -96,7 +96,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const ThirdPartyMeasurementSetting = 'ThirdPartyMeasurementSetting';
 
-        /** Reserved. */
+        /** Request that the ManualCpc element be included within each returned ManualCpcBiddingScheme object. */
         const ManualCpc = 'ManualCpc';
 
         /** Request that the NewCustomerAcquisitionGoalSetting object be returned within the Settings element of each returned Campaign object. */
@@ -105,7 +105,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the LifetimeBudgetStandard element be returned within the BudgetLimitType object of each returned Campaign object. */
         const LifetimeBudgetFields = 'LifetimeBudgetFields';
 
-        /** Reserved. */
+        /** Request that the MaxCpc element be included within each returned MaxConversionValueBiddingScheme object. */
         const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
 
         /** Reserved. */
@@ -114,7 +114,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const CrossAccountBidStrategyFields = 'CrossAccountBidStrategyFields';
 
-        /** Reserved. */
+        /** Request that the AISearchSetting opbject is used. */
         const AISearchSetting = 'AISearchSetting';
 
         /** Reserved. */
@@ -124,10 +124,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         const NetworkDistributionSetting = 'NetworkDistributionSetting';
 
         /** Reserved. */
-        const MarketingObjective = 'MarketingObjective';
-
-        /** Reserved. */
-        const ImpressionTrackingSetting = 'ImpressionTrackingSetting';
+        const PageFeedInAISearchSettings = 'PageFeedInAISearchSettings';
     }
 
 }

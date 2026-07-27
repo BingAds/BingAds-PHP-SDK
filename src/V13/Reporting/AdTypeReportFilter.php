@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * @used-by KeywordPerformanceReportFilter
      * @used-by ProductSearchQueryPerformanceReportFilter
      * @used-by SearchQueryPerformanceReportFilter
+     * @used-by SearchTermLandingPageReportFilter
      */
     final class AdTypeReportFilter
     {

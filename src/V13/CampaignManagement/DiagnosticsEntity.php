@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the DiagnosticsEntity data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/diagnosticsentity?view=bingads-13 DiagnosticsEntity Data Object
      * 
      * @used-by GetDiagnosticsRequest
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DiagnosticsEntity
     {
         /**
-         * Reserved.
+         * The diagnostic entity ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The diagnostic entity sub type.
          * @var string
          */
         public $SubType;
 
         /**
-         * Reserved.
+         * The diagnostic entity type.
          * @var string
          */
         public $Type;

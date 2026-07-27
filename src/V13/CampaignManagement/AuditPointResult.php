@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the AuditPointResult data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/auditpointresult?view=bingads-13 AuditPointResult Data Object
      * 
      * @used-by CategoryResult

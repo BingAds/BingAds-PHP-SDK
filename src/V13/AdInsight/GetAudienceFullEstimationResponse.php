@@ -49,7 +49,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $EstCostPerEvent;
 
         /**
-         * Reserved.
+         * Indicates the estimated cost per click.
          * @var RangeResultOfDecimalRoundedResult
          */
         public $EstCPC;
@@ -103,49 +103,49 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $Currency;
 
         /**
-         * Reserved.
+         * The estimated impressions by type.
          * @var DecimalRoundedRangeResultByType[]
          */
         public $EstImpressionByType;
 
         /**
-         * Reserved.
+         * The estimated user count by type.
          * @var DecimalRoundedRangeResultByType[]
          */
         public $EstClickByType;
 
         /**
-         * Reserved.
+         * The estimated spend by type.
          * @var DecimalRoundedRangeResultByType[]
          */
         public $EstSpendByType;
 
         /**
-         * Reserved.
+         * The estimated cost per event by type.
          * @var DecimalRoundedRangeResultByType[]
          */
         public $EstCostPerEventByType;
 
         /**
-         * Reserved.
+         * The estimated cost per click by type.
          * @var DecimalRoundedRangeResultByType[]
          */
         public $EstCPCByType;
 
         /**
-         * Reserved.
+         * The estimated views by type.
          * @var DecimalRoundedRangeResultByType[]
          */
         public $EstViewByType;
 
         /**
-         * Reserved.
+         * The estimated click-through rate by type.
          * @var RangeResultByTypeOfdouble[]
          */
         public $EstCTRByType;
 
         /**
-         * Reserved.
+         * The estimated reach of impressions by type.
          * @var DecimalRoundedByType[]
          */
         public $EstReachImpressionByType;

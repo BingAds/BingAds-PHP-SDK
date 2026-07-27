@@ -90,7 +90,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImportNCAGoalWithSystemGeneratedAudience;
 
         /**
-         * Reserved.
+         * Import AI Max settings that haven not previously been imported.
          * @var boolean
          */
         public $NewAIMaxSettings;
@@ -142,6 +142,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $NewAudienceTargets;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewBrandListAssociations;
 
         /**
          * Import brand suitability that has not previously been imported.
@@ -306,6 +312,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewReviewAdExtensions;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $NewSearchThemesForExistingAssetGroups;
+
+        /**
          * Import sitelink extensions that have not previously been imported.
          * @var boolean
          */
@@ -318,7 +330,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewStructuredSnippetAdExtensions;
 
         /**
-         * Reserved.
+         * Import topic targets that haven't previously been imported.
          * @var boolean
          */
         public $NewTopicTargets;
@@ -426,7 +438,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SuffixForUrls;
 
         /**
-         * Reserved.
+         * Import updates to AI Max settings.
          * @var boolean
          */
         public $UpdateAIMaxSettings;
@@ -480,6 +492,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateAssetAutomationCampaignSetting;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateAssetGroups;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateAssetGroupsAsset;
+
+        /**
          * Import updates to existing audience targets.
          * @var boolean
          */
@@ -496,6 +520,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateBids;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateBrandListAssociations;
 
         /**
          * Import updates to brand suitablity.
@@ -684,7 +714,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateStructuredSnippetAdExtensions;
 
         /**
-         * Reserved.
+         * Import updates to existing topic targets.
          * @var boolean
          */
         public $UpdateTopicTargets;

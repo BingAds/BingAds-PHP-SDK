@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Retrieves offline conversion statistics and diagnostics for your accounts.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getofflineconversionreportbygoalids?view=bingads-13 GetOfflineConversionReportByGoalIds Request Object
      * 
      * @uses OfflineConversionUploadChannel
@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetOfflineConversionReportByGoalIdsRequest
     {
         /**
-         * Reserved.
+         * The start date of the report range in Coordinated Universal Time (UTC).
          * @var \DateTime
          */
         public $StartDateUtc;
 
         /**
-         * Reserved.
+         * The end date of the report range in Coordinated Universal Time (UTC).
          * @var \DateTime
          */
         public $EndDateUtc;
 
         /**
-         * Reserved.
+         * An array of conversion goal IDs used to filter the report.
          * @var integer[]
          */
         public $GoalIds;
 
         /**
-         * Reserved.
+         * A bitwise combination of upload channel flags.
          * @var OfflineConversionUploadChannel
          */
         public $UploadChannelFilter;

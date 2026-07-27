@@ -14,19 +14,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckError
     {
         /**
-         * Reserved.
+         * An array of OperationError objects corresponding to errors encountered during the system processing of the bulk file after your download request was submitted.
          * @var OperationError[]
          */
         public $Errors;
 
         /**
-         * Reserved.
+         * The health check entity.
          * @var HealthCheckEntity
          */
         public $HealthCheckEntity;
 
         /**
-         * Reserved.
+         * The health check name.
          * @var string
          */
         public $HealthCheckName;

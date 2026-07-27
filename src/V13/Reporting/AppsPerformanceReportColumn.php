@@ -151,6 +151,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The average amount of revenue made for each install. */
         const RevenuePerAppInstall = 'RevenuePerAppInstall';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

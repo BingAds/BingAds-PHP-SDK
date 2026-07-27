@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for the total estimated performance from StartDate to EndDate by the bid or target.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/campaignbidlandscapepoint?view=bingads-13 CampaignBidLandscapePoint Data Object
      * 
      * @uses CurrencyCode
@@ -13,67 +13,67 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class CampaignBidLandscapePoint
     {
         /**
-         * Reserved.
+         * The suggested bid value.
          * @var double
          */
         public $Bid;
 
         /**
-         * Reserved.
+         * The CampaignBidLandscapeType is TargetCpa.
          * @var double
          */
         public $TargetCpa;
 
         /**
-         * Reserved.
+         * The CampaignBidLandscapeType is TargetRoas.
          * @var double
          */
         public $TargetRoas;
 
         /**
-         * Reserved.
+         * The estimated number of clicks.
          * @var double
          */
         public $Clicks;
 
         /**
-         * Reserved.
+         * The estimated number of impressions.
          * @var integer
          */
         public $Impressions;
 
         /**
-         * Reserved.
+         * The estimated number of impressions in the top or mainline ad results.
          * @var integer
          */
         public $TopImpressions;
 
         /**
-         * Reserved.
+         * The ISO code for the monetary unit of the suggested bid value and estimated performance statistics.
          * @var CurrencyCode
          */
         public $CurrencyCode;
 
         /**
-         * Reserved.
+         * The estimated cost.
          * @var double
          */
         public $Cost;
 
         /**
-         * Reserved.
+         * The estimated number of conversions.
          * @var double
          */
         public $Conversions;
 
         /**
-         * Reserved.
+         * The estimated conversion values.
          * @var double
          */
         public $ConversionValues;
 
         /**
-         * Reserved.
+         * The CampaignBidLandscapeType is MarginalCpc.
          * @var double
          */
         public $MarginalCPC;

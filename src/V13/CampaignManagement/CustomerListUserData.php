@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomerListUserData
     {
         /**
-         * Reserved.
+         * Optional flag to accept Customer Match terms for this request.
          * @var boolean
          */
         public $AcceptCustomerMatchTerm;
@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CustomerListItemSubType;
 
         /**
-         * Take an action for a customer list item within this array.
+         * An array of customer list items.
          * @var string[]
          */
         public $CustomerListItems;

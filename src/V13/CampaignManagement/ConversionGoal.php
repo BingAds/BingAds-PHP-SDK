@@ -23,7 +23,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     class ConversionGoal
     {
         /**
-         * Determines which attribution model, _LastTouch_ or _LastClick_, is used with a conversion goal.
+         * Determines which attribution model, _DataDriven_, _LastTouch_ or _LastClick_, is used with a conversion goal.
          * @var AttributionModelType
          */
         public $AttributionModelType;
@@ -59,7 +59,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Id;
 
         /**
-         * Reserved.
+         * Determines whether a conversion goal is a simplified conversion goal.
          * @var boolean
          */
         public $IsAutoGoal;

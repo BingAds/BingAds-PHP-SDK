@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BiddingScheme;
 
         /**
-         * Reserved.
+         * The currency for the cross-account poortfolio.
          * @var string
          */
         public $CurrencyCode;
@@ -53,13 +53,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Name;
 
         /**
-         * Reserved.
+         * Specifies the reporting timezone for the campaign.
          * @var string
          */
         public $ReportingTimeZone;
 
         /**
-         * Reserved.
+         * A nullable field that indicates whether the bid strategy is created at the customer level or the account level.
          * @var EntityScope
          */
         public $Scope;

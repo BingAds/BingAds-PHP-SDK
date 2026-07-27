@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified LinkedIn segments.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatelinkedinsegments?view=bingads-13 UpdateLinkedInSegments Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateLinkedInSegmentsResponse
     {
         /**
-         * Reserved.
+         * n array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

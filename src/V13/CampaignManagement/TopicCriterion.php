@@ -4,19 +4,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a criterion that can be used to show ads to users by a specific topic.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/topiccriterion?view=bingads-13 TopicCriterion Data Object
      */
     final class TopicCriterion extends Criterion
     {
         /**
-         * Reserved.
+         * The ID of the topic.
          * @var integer
          */
         public $TopicId;
 
         /**
-         * Reserved.
+         * The name of the topic.
          * @var string
          */
         public $TopicName;

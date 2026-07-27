@@ -316,6 +316,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Group products from multiple feeds based on shared attributes such as language, product category, or brand. */
         const FeedLabel = 'FeedLabel';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

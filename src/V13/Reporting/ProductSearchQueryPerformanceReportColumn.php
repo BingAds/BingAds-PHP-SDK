@@ -178,6 +178,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

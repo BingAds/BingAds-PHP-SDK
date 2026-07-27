@@ -314,34 +314,34 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Cost per in-app subscription. */
         const CPS = 'CPS';
 
-        /** Reserved. */
+        /** The total number of new customers who completed a desired action, such as making a purchase, after clicking on your ad. */
         const NewCustomerConversions = 'NewCustomerConversions';
 
-        /** Reserved. */
+        /** The total value of new customer conversions, calculated by summing the value of each new customer conversion. */
         const NewCustomerRevenue = 'NewCustomerRevenue';
 
-        /** Reserved. */
+        /** The percentage of new customer sessions that result in a conversion. */
         const NewCustomerConversionRate = 'NewCustomerConversionRate';
 
-        /** Reserved. */
+        /** The cost of acquiring a new customer, calculated by dividing the total cost of your ads by the number of new customer conversions. */
         const NewCustomerCPA = 'NewCustomerCPA';
 
-        /** Reserved. */
+        /** The amount of revenue you generate from new customers for every dollar you spend on advertising, calculated by dividing the total revenue from new customers by the total cost of your ads. */
         const NewCustomerReturnOnAdSpend = 'NewCustomerReturnOnAdSpend';
 
-        /** Reserved. */
+        /** The time gap between when a user clicks on an ad and when they complete a desired action, such as making a purchase, signing up, or downloading an app. */
         const ConversionDelay = 'ConversionDelay';
 
-        /** Reserved. */
+        /** A customer conversion that doesn't have enough data to determine if the customer is a new or existing customer. */
         const UnknownCustomerConversions = 'UnknownCustomerConversions';
 
-        /** Reserved. */
+        /** The revenue from unknown customer conversions. */
         const UnknownCustomerRevenue = 'UnknownCustomerRevenue';
 
-        /** Reserved. */
+        /** The number of new customers who complete an action, such as making a purchase, after clicking your ad. */
         const NewCustomerCount = 'NewCustomerCount';
 
-        /** Reserved. */
+        /** The total spend of new customers, calculated by summing the spend of each new customer. */
         const NewCustomerSpend = 'NewCustomerSpend';
     }
 

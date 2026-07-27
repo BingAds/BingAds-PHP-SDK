@@ -50,6 +50,15 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Reserved. */
         const CustomLinkedInName = 'CustomLinkedInName';
 
+        /** Reserved. */
+        const LinkedInSegmentName = 'LinkedInSegmentName';
+
+        /** Reserved. */
+        const LinkedInSegmentId = 'LinkedInSegmentId';
+
+        /** Reserved. */
+        const LinkedInSegmentType = 'LinkedInSegmentType';
+
         /** The network where you want your ads to show. */
         const AdDistribution = 'AdDistribution';
 
@@ -119,17 +128,26 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
 
-        /** Reserved. */
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

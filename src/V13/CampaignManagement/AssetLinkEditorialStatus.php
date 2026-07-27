@@ -11,19 +11,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AssetLinkEditorialStatus
     {
-        /** The editorial status of the asset is unknown. */
+        /** Unknown. */
         const Unknown = 'Unknown';
 
-        /** The asset passed editorial review. */
+        /** Approved. */
         const Active = 'Active';
 
-        /** The asset failed editorial review. */
+        /** Rejected. */
         const Disapproved = 'Disapproved';
 
-        /** One or more elements of the asset is undergoing editorial review. */
+        /** Pending. */
         const Inactive = 'Inactive';
 
-        /** The asset passed editorial review in one or more markets, and one or more elements of the asset is undergoing editorial review in another market. */
+        /** ApprovedLimited. */
         const ActiveLimited = 'ActiveLimited';
     }
 

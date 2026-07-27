@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CreateResponsiveAdRecommendationRequest
     {
         /**
-         * Optional ad sub type to create a recommendation for.
+         * Optional: The ad sub type used to create a recommendation.
          * @var AdSubType
          */
         public $AdSubType;
@@ -28,13 +28,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalUrls;
 
         /**
-         * Optional description of the product or service that you want to target with the specific campaign.
+         * Optional: Description of the product or service that you want to target with the specific campaign.
          * @var string
          */
         public $Prompt;
 
         /**
-         * Optional tone for recommended text assets
+         * Optional: Tone for recommended text assets.
          * @var AdRecommendationTextTone
          */
         public $TextTone;
@@ -46,7 +46,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $VideoType;
 
         /**
-         * The identifier of the brand kit.
+         * Optional: The identifier of the brand kit.
          * @var integer
          */
         public $BrandKitId;

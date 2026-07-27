@@ -193,6 +193,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const AssetGroupStatus = 'AssetGroupStatus';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

@@ -29,5 +29,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $ReturnInheritedBidStrategyTypes;
+
+        /**
+         * Reserved.
+         * @var integer
+         */
+        public $AssetGroupId;
     }
 }

@@ -35,6 +35,12 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
+        /** Reserved. */
+        const AssetGroupName = 'AssetGroupName';
+
+        /** Reserved. */
+        const AssetGroupId = 'AssetGroupId';
+
         /** The Microsoft Advertising assigned identifier of the audience, for example the remarketing list ID. */
         const AudienceId = 'AudienceId';
 
@@ -155,38 +161,47 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of view-through conversions. */
         const ViewThroughRevenue = 'ViewThroughRevenue';
 
-        /** Reserved. */
+        /** The number of times the video was played and watched for at least two continuous seconds with more than 50% of the screen in view. */
         const VideoViews = 'VideoViews';
 
-        /** Reserved. */
+        /** The number of video views divided by the number of impressions. */
         const ViewThroughRate = 'ViewThroughRate';
 
-        /** Reserved. */
+        /** Average total spend divided by video views. */
         const AverageCPV = 'AverageCPV';
 
-        /** Reserved. */
+        /** The number of times a person completed at least 25% of a video. */
         const VideoViewsAt25Percent = 'VideoViewsAt25Percent';
 
-        /** Reserved. */
+        /** The number of times a person completed at least 50% of a video. */
         const VideoViewsAt50Percent = 'VideoViewsAt50Percent';
 
-        /** Reserved. */
+        /** The number of times a person completed at least 75% of a video. */
         const VideoViewsAt75Percent = 'VideoViewsAt75Percent';
 
-        /** Reserved. */
+        /** Number of times a person watched the entire video to completion. */
         const CompletedVideoViews = 'CompletedVideoViews';
 
-        /** Reserved. */
+        /** The number of completed video views divided by the total number of impressions, multiplied by 100. */
         const VideoCompletionRate = 'VideoCompletionRate';
 
-        /** Reserved. */
+        /** Total amount of time a person spent watching the video in milliseconds. */
         const TotalWatchTimeInMS = 'TotalWatchTimeInMS';
 
-        /** Reserved. */
+        /** Total watch time divided by the number of video views. */
         const AverageWatchTimePerVideoView = 'AverageWatchTimePerVideoView';
 
-        /** Reserved. */
+        /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

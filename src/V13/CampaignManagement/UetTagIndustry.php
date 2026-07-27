@@ -4,68 +4,68 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the industry of the website associated with your UET tag.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/uettagindustry?view=bingads-13 UetTagIndustry Value Set
      * 
      * @used-by UetTag
      */
     final class UetTagIndustry
     {
-        /** Reserved. */
+        /** The industry is AdultGambling. */
         const AdultGambling = 'AdultGambling';
 
-        /** Reserved. */
+        /** The industry is Autos. */
         const Autos = 'Autos';
 
-        /** Reserved. */
+        /** The industry is B2BServices. */
         const B2BServices = 'B2BServices';
 
-        /** Reserved. */
+        /** The industry is B2CServices. */
         const B2CServices = 'B2CServices';
 
-        /** Reserved. */
+        /** The industry is CPG (consumer packaged goods). */
         const CPG = 'CPG';
 
-        /** Reserved. */
+        /** The industry is Careers/Education. */
         const CareersEducation = 'CareersEducation';
 
-        /** Reserved. */
+        /** The industry is CommunitySocialCharitableGroups. */
         const CommunitySocialCharitableGroups = 'CommunitySocialCharitableGroups';
 
-        /** Reserved. */
+        /** The industry is Entertainment. */
         const Entertainment = 'Entertainment';
 
-        /** Reserved. */
+        /** The industry is FinancialServicesInsurance. */
         const FinancialServicesInsurance = 'FinancialServicesInsurance';
 
-        /** Reserved. */
+        /** The industry is Government. */
         const Government = 'Government';
 
-        /** Reserved. */
+        /** The industry is HealthWellness. */
         const HealthWellness = 'HealthWellness';
 
-        /** Reserved. */
+        /** The industry is RealEstate. */
         const RealEstate = 'RealEstate';
 
-        /** Reserved. */
+        /** The industry is RestaurantsFood. */
         const RestaurantsFood = 'RestaurantsFood';
 
-        /** Reserved. */
+        /** The industry is Retail. */
         const Retail = 'Retail';
 
-        /** Reserved. */
+        /** The industry is ScienceSocialScienceOthers. */
         const ScienceSocialScienceOthers = 'ScienceSocialScienceOthers';
 
-        /** Reserved. */
+        /** The industry is TechnologyTelecommunications. */
         const TechnologyTelecommunications = 'TechnologyTelecommunications';
 
-        /** Reserved. */
+        /** The industry is TravelTransportation. */
         const TravelTransportation = 'TravelTransportation';
 
-        /** Reserved. */
+        /** The industry is Other. */
         const Other = 'Other';
 
-        /** Reserved. */
+        /** The industry is Unknown. */
         const Unknown = 'Unknown';
     }
 

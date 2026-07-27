@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the location breakdown data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/locationbreakdown?view=bingads-13 LocationBreakdown Data Object
      * 
      * @uses LocationInfo
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class LocationBreakdown extends Breakdown
     {
         /**
-         * Reserved.
+         * The location information about a location breakdown.
          * @var LocationInfo[]
          */
         public $Info;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines an object for a specific audience breakdown category.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/breakdown?view=bingads-13 Breakdown Data Object
      * 
      * @used-by Breakdowns
@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\AdInsight;
     class Breakdown
     {
         /**
-         * Reserved.
+         * The audience breakdown keys.
          * @var string[]
          */
         public $Keys;
 
         /**
-         * Reserved.
+         * The audience breakdown values.
          * @var integer[]
          */
         public $Values;
 
         /**
-         * Reserved.
+         * The audiance breakdown global values.
          * @var integer[]
          */
         public $GlobalValues;

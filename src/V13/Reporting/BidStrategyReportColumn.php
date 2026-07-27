@@ -4,111 +4,120 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the attributes and performance statistics columns that you can include in the BidStrategyReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/bidstrategyreportcolumn?view=bingads-13 BidStrategyReportColumn Value Set
      * 
      * @used-by BidStrategyReportRequest
      */
     final class BidStrategyReportColumn
     {
-        /** Reserved. */
+        /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The current account status */
         const AccountStatus = 'AccountStatus';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The current campaign status. */
         const CampaignStatus = 'CampaignStatus';
 
-        /** Reserved. */
+        /** The bid strategy name. */
         const PortfolioBidStrategyName = 'PortfolioBidStrategyName';
 
-        /** Reserved. */
+        /** The current bid strategy status. */
         const PortfolioBidStrategyStatus = 'PortfolioBidStrategyStatus';
 
-        /** Reserved. */
+        /** In the account/campaign scope, the bid strategy type the campaign is using. */
         const BidStrategyType = 'BidStrategyType';
 
-        /** Reserved. */
+        /** In the account/portfolio scope, the current target CPA belonging to the account/portfolio. */
         const TargetCPA = 'TargetCPA';
 
-        /** Reserved. */
+        /** In the account/portfolio scope, the current target ROAS belonging to the account/portfolio. */
         const TargetRoas = 'TargetRoas';
 
-        /** Reserved. */
+        /** In the account/portfolio scope, the current target impression share belonging to the account/portfolio. */
         const TargetImpressionShare = 'TargetImpressionShare';
 
-        /** Reserved. */
+        /** In the account/portfolio scope, the number of campaigns belonging to the account/portfolio. */
         const NumOfCampaigns = 'NumOfCampaigns';
 
-        /** Reserved. */
+        /** In the account/portfolio scope, the maximum cost per click bid that was in effect at the time the report was generated. */
         const CurrentMaxCpc = 'CurrentMaxCpc';
 
-        /** Reserved. */
+        /** In the account/campaign scope,the target ad position type the campaign is using. */
         const TargetAdPositionType = 'TargetAdPositionType';
 
-        /** Reserved. */
+        /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The click-through rate (CTR) is the number of times an ad was clicked, divided by the number of times the ad was shown (impressions). */
         const Ctr = 'Ctr';
 
-        /** Reserved. */
+        /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const ConversionsQualified = 'ConversionsQualified';
 
-        /** Reserved. */
+        /** The conversion rate as a percentage. */
         const ConversionRate = 'ConversionRate';
 
-        /** Reserved. */
+        /** The average cost per click (CPC). */
         const AverageCpc = 'AverageCpc';
 
-        /** Reserved. */
+        /** The time gap between when a user clicks on an ad and when they complete a desired action, such as making a purchase, signing up, or downloading an app. */
         const ConversionDelay = 'ConversionDelay';
 
-        /** Reserved. */
+        /** The actual cost per conversion (CPC). */
         const CostPerConversionQualified = 'CostPerConversionQualified';
 
-        /** Reserved. */
+        /** The return on ad spend (ROAS). */
         const ROAS = 'ROAS';
 
-        /** Reserved. */
+        /** In the campaign/portfolio scope, calculate the historical daily target CPA as result. */
         const AvgTargetCPA = 'AvgTargetCPA';
 
-        /** Reserved. */
+        /** In the campaign/portfolio scope, calculate the historical daily target ROAS as result. */
         const AvgTargetRoas = 'AvgTargetRoas';
 
-        /** Reserved. */
+        /** In the campaign/portfolio scope, calculate the historical daily target impression share as result. */
         const AvgTargetImpressionShare = 'AvgTargetImpressionShare';
 
-        /** Reserved. */
+        /** The estimated percentage of impressions, out of the total available impressions in the market you were targeting. */
         const ImpressionSharePercent = 'ImpressionSharePercent';
 
-        /** Reserved. */
+        /** The bid strategy owner. */
         const Owner = 'Owner';
 
-        /** Reserved. */
+        /** Determines the time zone that is used to establish today's date. */
         const TimeZone = 'TimeZone';
 
-        /** Reserved. */
+        /** The currency of the bid strategy. */
         const Currency = 'Currency';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

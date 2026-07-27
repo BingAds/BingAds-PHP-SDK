@@ -37,7 +37,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CropY;
 
         /**
-         * Reserved.
+         * Defines the possible cropping types.
          * @var CropType
          */
         public $CroppingType;

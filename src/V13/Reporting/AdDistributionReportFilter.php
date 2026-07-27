@@ -33,7 +33,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The report will contain audience ads. */
         const Audience = 'Audience';
 
-        /** Reserved. */
+        /** The report will contain audience and search ads. */
         const CrossNetwork = 'CrossNetwork';
     }
 

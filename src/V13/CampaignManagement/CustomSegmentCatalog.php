@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the CustomSegmentCatalog data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/customsegmentcatalog?view=bingads-13 CustomSegmentCatalog Data Object
      * 
      * @uses EffectiveEditorialStatus
@@ -13,19 +13,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomSegmentCatalog
     {
         /**
-         * Reserved.
+         * The catalog ID.
          * @var integer
          */
         public $CatalogId;
 
         /**
-         * Reserved.
+         * The catalog name.
          * @var string
          */
         public $CatalogName;
 
         /**
-         * Reserved.
+         * The effective editorial status.
          * @var EffectiveEditorialStatus
          */
         public $EffectiveEditorialStatus;

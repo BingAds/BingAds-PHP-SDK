@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the criteria to use to filter the MMM performance report data.
      * @link https:/learn.microsoft.com/advertising/reporting-service/mmmperformancereportfilter?view=bingads-13 MMMPerformanceReportFilter Data Object
      * 
      * @uses AccountStatusReportFilter
@@ -18,43 +18,43 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class MMMPerformanceReportFilter
     {
         /**
-         * Reserved.
+         * The report will include data for only the account status.
          * @var AccountStatusReportFilter
          */
         public $AccountStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the specified distribution medium.
          * @var AdDistributionReportFilter
          */
         public $AdDistribution;
 
         /**
-         * Reserved.
+         * The report will include data for only the ad group status.
          * @var AdGroupStatusReportFilter
          */
         public $AdGroupStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the asset group status.
          * @var AssetGroupStatusReportFilter
          */
         public $AssetGroupStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the campaign status.
          * @var CampaignStatusReportFilter
          */
         public $CampaignStatus;
 
         /**
-         * Reserved.
+         * The report will include data for only the specified countries/regions where the user that clicked the ad is located.
          * @var string[]
          */
         public $CountryCode;
 
         /**
-         * Reserved.
+         * The report will include data for only websites that used the specified languages.
          * @var LanguageReportFilter
          */
         public $Language;

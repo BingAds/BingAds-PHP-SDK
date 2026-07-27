@@ -20,13 +20,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BidStrategyIds;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned bid strategy.
          * @var PortfolioBidStrategyAdditionalField
          */
         public $ReturnAdditionalFields;
 
         /**
-         * Reserved.
+         * A nullable field used to retrieve bid strategy IDs in the request for the specified scope.
          * @var EntityScope
          */
         public $Scope;

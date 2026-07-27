@@ -292,7 +292,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         /** The corresponding currency type. */
         const ZWD = 'ZWD';
 
-        /** Reserved. */
+        /** The currency type is unspecified. */
         const UNSPECIFY = 'UNSPECIFY';
     }
 

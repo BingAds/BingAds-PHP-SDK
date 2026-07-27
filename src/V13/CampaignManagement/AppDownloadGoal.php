@@ -4,19 +4,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines an app download conversion goal.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/appdownloadgoal?view=bingads-13 AppDownloadGoal Data Object
      */
     final class AppDownloadGoal extends ConversionGoal
     {
         /**
-         * Reserved.
+         * The application platform.
          * @var string
          */
         public $AppPlatform;
 
         /**
-         * Reserved.
+         * The application identifier provided by the app store.
          * @var string
          */
         public $AppStoreId;

@@ -179,49 +179,49 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** The app name. */
         const AppName = 'AppName';
 
-        /** Reserved. */
+        /** The app bundle. */
         const AppBundle = 'AppBundle';
 
-        /** Reserved. */
+        /** The app store URL. */
         const AppStoreUrl = 'AppStoreUrl';
 
-        /** Reserved. */
+        /** The number of times customers download apps through your ads. */
         const Downloads = 'Downloads';
 
-        /** Reserved. */
+        /** The download rate after an ad click. */
         const PostClickDownloadRate = 'PostClickDownloadRate';
 
-        /** Reserved. */
+        /** The average amount you're charged each time your ad is downloaded. */
         const CostPerDownload = 'CostPerDownload';
 
-        /** Reserved. */
+        /** The number of app installs. */
         const AppInstalls = 'AppInstalls';
 
-        /** Reserved. */
+        /** The install rate after an ad click. */
         const PostClickInstallRate = 'PostClickInstallRate';
 
-        /** Reserved. */
+        /** Cost per install. */
         const CPI = 'CPI';
 
-        /** Reserved. */
+        /** The number of times customers use your ads to make a purchase in your app. */
         const Purchases = 'Purchases';
 
-        /** Reserved. */
+        /** The purchase rate after an install. */
         const PostInstallPurchaseRate = 'PostInstallPurchaseRate';
 
-        /** Reserved. */
+        /** Cost per in-app purchase. */
         const CPP = 'CPP';
 
-        /** Reserved. */
+        /** The number of times customers use your ads to purchase a subscription in your app. */
         const Subscriptions = 'Subscriptions';
 
-        /** Reserved. */
+        /** The subscription rate after an install. */
         const PostInstallSubscriptionRate = 'PostInstallSubscriptionRate';
 
-        /** Reserved. */
+        /** Cost per in-app subscription. */
         const CPS = 'CPS';
 
         /** Reserved. */
@@ -241,6 +241,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** Reserved. */
         const LowQualitySophisticatedClicks = 'LowQualitySophisticatedClicks';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

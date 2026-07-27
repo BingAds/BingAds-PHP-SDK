@@ -4,60 +4,63 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Reserved.
+     * Defines the attributes and performance statistics columns that you can include in the MMMPerformanceReportRequest.
      * @link https:/learn.microsoft.com/advertising/reporting-service/mmmperformancereportcolumn?view=bingads-13 MMMPerformanceReportColumn Value Set
      * 
      * @used-by MMMPerformanceReportRequest
      */
     final class MMMPerformanceReportColumn
     {
-        /** Reserved. */
+        /** The time period of each report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** Reserved. */
+        /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group name */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned number of an account. */
         const AccountNumber = 'AccountNumber';
 
-        /** Reserved. */
+        /** The country or region where the user was physically located when they clicked the ad. */
         const Country = 'Country';
 
-        /** Reserved. */
+        /** The state where the user was physically located when they clicked the ad. */
         const State = 'State';
 
-        /** Reserved. */
+        /** The number of times an ad has been displayed on search results pages. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The cost per click (CPC) summed for each click. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const ConversionsQualified = 'ConversionsQualified';
+
+        /** The metro area (Microsoft Market Area in the United States) where the user was physically located when they clicked the ad. */
+        const MetroArea = 'MetroArea';
     }
 
 }

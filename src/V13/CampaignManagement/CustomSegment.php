@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the CustomSegment data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/customsegment?view=bingads-13 CustomSegment Data Object
      * 
      * @uses CustomSegmentCatalog
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomSegment extends Audience
     {
         /**
-         * Reserved.
+         * A list of custom segment catalogs.
          * @var CustomSegmentCatalog[]
          */
         public $CustomSegmentCatalogList;
 
         /**
-         * Reserved.
+         * The custom segment editorial status.
          * @var CustomSegmentEditorialStatus
          */
         public $EditorialStatus;

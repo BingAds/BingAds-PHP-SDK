@@ -45,10 +45,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Indicates if predictive targeting is enabled for an AdGroup. */
         const UsePredictiveTargeting = 'UsePredictiveTargeting';
 
-        /** Reserved. */
+        /** Request that the MaxCpc element be included within each returned MaxConversionValueBiddingScheme object. */
         const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
 
-        /** Reserved. */
+        /** The fundamental part of the URL (e.g., contoso.com). */
         const BaseDomain = 'BaseDomain';
 
         /** Reserved. */

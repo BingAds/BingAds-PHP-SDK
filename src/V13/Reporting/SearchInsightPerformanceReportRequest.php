@@ -16,31 +16,31 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class SearchInsightPerformanceReportRequest extends ReportRequest
     {
         /**
-         * Reserved.
+         * The type of aggregation to use to aggregate the report data.
          * @var ReportAggregation
          */
         public $Aggregation;
 
         /**
-         * Reserved.
+         * The list of attributes and performance statistics to include in the report.
          * @var SearchInsightPerformanceReportColumn[]
          */
         public $Columns;
 
         /**
-         * Reserved.
+         * The filter information to use to filter the report data.
          * @var SearchInsightPerformanceReportFilter
          */
         public $Filter;
 
         /**
-         * Reserved.
+         * The entity scope of the report.
          * @var AccountThroughCampaignReportScope
          */
         public $Scope;
 
         /**
-         * Reserved.
+         * The time period to use for the report.
          * @var ReportTime
          */
         public $Time;

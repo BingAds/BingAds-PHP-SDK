@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Gets the audience breakdown.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/getaudiencebreakdown?view=bingads-13 GetAudienceBreakdown Request Object
      * 
      * @uses SelectionOfAgeEnum
@@ -19,105 +19,135 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetAudienceBreakdownRequest
     {
         /**
-         * Reserved.
+         * The selection of age targeting.
          * @var SelectionOfAgeEnum
          */
         public $Age;
 
         /**
-         * Reserved.
+         * The gender to target.
          * @var SelectionOfGenderEnum
          */
         public $Gender;
 
         /**
-         * Reserved.
+         * The selection of audience targeting.
          * @var SelectionOflong
          */
         public $Audience;
 
         /**
-         * Reserved.
+         * The company of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $Company;
 
         /**
-         * Reserved.
+         * The industry of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $Industry;
 
         /**
-         * Reserved.
+         * The job function The industry of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $JobFunction;
 
         /**
-         * Reserved.
+         * The selection of location targeting.
          * @var SelectionOflong
          */
         public $Location;
 
         /**
-         * Reserved.
+         * The selection of placement targeting.
          * @var SelectionOflong
          */
         public $Placement;
 
         /**
-         * Reserved.
+         * The type of device.
          * @var SelectionOfDeviceEnum
          */
         public $Device;
 
         /**
-         * Reserved.
+         * The selection of topic targeting.
          * @var SelectionOflong
          */
         public $Topic;
 
         /**
-         * Reserved.
+         * Represents the desired geographical area in terms of miles/kilometers.
          * @var RadiusTarget[]
          */
         public $RadiusTargets;
 
         /**
-         * Reserved.
+         * Indicates the desired bidding strategy for estimation response.
          * @var integer
          */
         public $CampaignBiddingStrategy;
 
         /**
-         * Reserved.
+         * Indicate the desired ad type for estimation response.
          * @var integer
          */
         public $CampaignSubType;
 
         /**
-         * Reserved.
+         * Respect this parameter only when CampaignSubType is FeedBasedAds or DynamicFeedBasedAds.
          * @var Feed
          */
         public $Feed;
 
         /**
-         * Reserved.
+         * The locale identifier.
          * @var integer
          */
         public $Lcid;
 
         /**
-         * Reserved.
+         * The category of audience breakdown.
          * @var BreakdownCategory
          */
         public $BreakdownReturnCategory;
 
         /**
-         * Reserved.
+         * The audience breakdown ad type.
          * @var integer
          */
         public $MultiAdTypes;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $JobSeniority;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $Genre;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $Channel;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $ChannelPlacement;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $SubChannel;
     }
 }

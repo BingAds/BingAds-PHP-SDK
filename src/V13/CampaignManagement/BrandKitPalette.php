@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Colors;
 
         /**
-         * Reserved.
+         * The name of the brand kit palette.
          * @var string
          */
         public $Name;

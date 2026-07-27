@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines a data object for a container that stores offline conversion metrics for a specific goal.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/offlinegoalconversionsummary?view=bingads-13 OfflineGoalConversionSummary Data Object
      * 
      * @uses OfflineConversionAlert
@@ -14,43 +14,43 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class OfflineGoalConversionSummary
     {
         /**
-         * Reserved.
+         * The unique identifier for the conversion goal.
          * @var integer
          */
         public $GoalId;
 
         /**
-         * Reserved.
+         * The user-defined name of the conversion goal.
          * @var string
          */
         public $ConversionName;
 
         /**
-         * Reserved.
+         * The total number of successful conversions attributed during the requested period.
          * @var integer
          */
         public $OverallSuccessCount;
 
         /**
-         * Reserved.
+         * The total number of conversions that couldn't be attributed to a click or valid goal.
          * @var integer
          */
         public $OverallUnattributedCount;
 
         /**
-         * Reserved.
+         * The ratio of successful conversions to total uploads (Success / Total), represented with up to 6 decimal places.
          * @var float
          */
         public $OverallSuccessRate;
 
         /**
-         * Reserved.
+         * A collection of aggregated error reasons explaining why conversions were unattributed.
          * @var OfflineConversionAlert[]
          */
         public $OverallAlerts;
 
         /**
-         * Reserved.
+         * A breakdown of performance metrics for each individual day within the requested range.
          * @var OfflineGoalDailySummary[]
          */
         public $DailySummaries;

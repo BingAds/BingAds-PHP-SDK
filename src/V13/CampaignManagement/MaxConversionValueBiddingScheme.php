@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class MaxConversionValueBiddingScheme extends BiddingScheme
     {
         /**
-         * Reserved.
+         * The maximum cost per click filter criteria for all keyword estimates in the ad group.
          * @var Bid
          */
         public $MaxCpc;

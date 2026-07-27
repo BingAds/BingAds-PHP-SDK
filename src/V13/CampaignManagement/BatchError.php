@@ -109,6 +109,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by GetLabelAssociationsByEntityIdsResponse
      * @used-by GetLabelAssociationsByLabelIdsResponse
      * @used-by GetLabelsByIdsResponse
+     * @used-by GetLinkedInSegmentsResponse
      * @used-by GetMediaAssociationsResponse
      * @used-by GetMediaMetaDataByIdsResponse
      * @used-by GetNegativeKeywordsByEntityIdsResponse

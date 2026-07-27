@@ -4,20 +4,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible LinkedIn segment status values.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/linkedinsegmentstatus?view=bingads-13 LinkedInSegmentStatus Value Set
      * 
      * @used-by LinkedInSegment
      */
     final class LinkedInSegmentStatus
     {
-        /** Reserved. */
+        /** The status is Building. */
         const Building = 'Building';
 
-        /** Reserved. */
+        /** The status is Ready. */
         const Ready = 'Ready';
 
-        /** Reserved. */
+        /** The status is ReachTooSmall. */
         const ReachTooSmall = 'ReachTooSmall';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes array of LinkedIn segments from a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletelinkedinsegments?view=bingads-13 DeleteLinkedInSegments Response Object
      * 
      * @uses BatchError
