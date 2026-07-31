@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the decimal rounded by type data object.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/decimalroundedbytype?view=bingads-13 DecimalRoundedByType Data Object
      * 
      * @used-by GetAudienceFullEstimationResponse

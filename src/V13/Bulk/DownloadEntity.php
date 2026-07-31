@@ -30,10 +30,10 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Ad Group Negative Keyword records in the download data. */
         const AdGroupNegativeKeywords = 'AdGroupNegativeKeywords';
 
-        /** Include Campaign Age Criterion, Campaign Company Name Criterion, Campaign DayTime Criterion, Campaign DeviceOS Criterion, Campaign Gender Criterion, Campaign Industry Criterion, Campaign Job Function Criterion, Campaign Location Criterion, Campaign Location Intent Criterion, Campaign Negative Location Criterion, and Campaign Radius Criterion records in the download data. */
+        /** Include Campaign Age Criterion, Campaign Company Name Criterion, Campaign DayTime Criterion, Campaign DeviceOS Criterion, Campaign Gender Criterion, Campaign Industry Criterion, Campaign Job Function Criterion, Campaign Location Criterion, Campaign Location Intent Criterion, Campaign Negative Age Criterion, Campaign Negative Gender Criterion Campaign Negative Location Criterion, and Campaign Radius Criterion records in the download data. */
         const CampaignTargetCriterions = 'CampaignTargetCriterions';
 
-        /** Include Ad Group Age Criterion, Ad Group Company Name Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Industry Criterion, Ad Group Job Function Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Age Criterion, Ad Group Negative Company Name Criterion, Ad Group Negative Gender Criterion, Ad Group Negative Industry Criterion, Ad Group Negative Job Function Criterion, Ad Group Negative Location Criterion, Ad Group Placement Criterion, and Ad Group Radius Criterion records in the download data. */
+        /** Include Ad Group Age Criterion, Ad Group Company Name Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Industry Criterion, Ad Group Job Function Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Age Criterion, Ad Group Negative Company Name Criterion, Ad Group Negative Gender Criterion, Ad Group Negative Industry Criterion, Ad Group Negative Job Function Criterion, Ad Group Negative Location Criterion, Ad Group Placement Criterion, Ad Group Radius Criterion, and Ad Group Topic Criterion records in the download data. */
         const AdGroupTargetCriterions = 'AdGroupTargetCriterions';
 
         /** Include Campaign Negative Site records in the download data. */
@@ -492,7 +492,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Account Negative Keyword List records in the download data. */
         const AccountNegativeKeyword = 'AccountNegativeKeyword';
 
-        /** Include Conversion Goal records in the download data. */
+        /** Reserved. */
         const ConversionGoal = 'ConversionGoal';
 
         /** Include Event Goal records in the download data. */
@@ -588,19 +588,19 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Reserved. */
         const CampaignAccountPlacementInclusionListAssociation = 'CampaignAccountPlacementInclusionListAssociation';
 
-        /** Reserved. */
+        /** Include topic records, which you can use to create topic criterions. */
         const Topic = 'Topic';
 
-        /** Reserved. */
+        /** Include content placement records in the download data, which you can use to create placement criterions. */
         const ContentPlacement = 'ContentPlacement';
 
-        /** Reserved. */
+        /** Include BrandKit records in the download data. */
         const BrandKit = 'BrandKit';
 
-        /** Reserved. */
+        /** Include Custom Segment records in the download data. */
         const CustomSegment = 'CustomSegment';
 
-        /** Reserved. */
+        /** Include Ad Group Custom Segment Association records in the download that each represent the association relationship between an ad group and a custom segment. */
         const AdGroupCustomSegmentAssociations = 'AdGroupCustomSegmentAssociations';
 
         /** Reserved. */
@@ -611,6 +611,9 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const AccountContentNegativeKeyword = 'AccountContentNegativeKeyword';
+
+        /** Reserved. */
+        const AssetGroupNegativeKeywords = 'AssetGroupNegativeKeywords';
     }
 
 }

@@ -65,11 +65,20 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The return on ad spend (ROAS). */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
 
-        /** Reserved. */
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
 
-        /** Reserved. */
+        /** The cost per conversion. */
         const CostPerConversion = 'CostPerConversion';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

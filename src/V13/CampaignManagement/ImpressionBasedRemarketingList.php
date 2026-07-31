@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AdGroupId;
 
         /**
-         * Reserved.
+         * A list of unique system identifiers corresponding to the ad groups associated with the impression-based remarketing list.
          * @var integer[]
          */
         public $AdGroupIds;
@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CampaignId;
 
         /**
-         * Reserved.
+         * A list of unique system identifiers corresponding to the campaigns associated with the impression-based remarketing list.
          * @var integer[]
          */
         public $CampaignIds;

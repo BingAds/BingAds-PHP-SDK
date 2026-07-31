@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines an object for the audience breakdown categories.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/breakdowns?view=bingads-13 Breakdowns Data Object
      * 
      * @uses Breakdown
@@ -14,79 +14,79 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class Breakdowns
     {
         /**
-         * Reserved.
+         * The audience breakdown category is Age.
          * @var Breakdown
          */
         public $Age;
 
         /**
-         * Reserved.
+         * The audience breakdown category is Device.
          * @var Breakdown
          */
         public $Device;
 
         /**
-         * Reserved.
+         * The audience breakdown category is Gender.
          * @var Breakdown
          */
         public $Gender;
 
         /**
-         * Reserved.
+         * The audience breakdown category is InMarket.
          * @var Breakdown
          */
         public $InMarket;
 
         /**
-         * Reserved.
+         * The audience breakdown category is Industry.
          * @var Breakdown
          */
         public $Industry;
 
         /**
-         * Reserved.
+         * The audience breakdown category is JobFunction.
          * @var Breakdown
          */
         public $JobFunction;
 
         /**
-         * Reserved.
+         * The audience breakdown category is LocationCountry.
          * @var LocationBreakdown
          */
         public $LocationCountry;
 
         /**
-         * Reserved.
+         * The audience breakdown category is Location.
          * @var LocationBreakdown
          */
         public $Location;
 
         /**
-         * Reserved.
+         * The audience breakdown category is LocationSubGeography.
          * @var LocationBreakdown
          */
         public $LocationSubGeography;
 
         /**
-         * Reserved.
+         * The audience breakdown category is LocationMetroArea.
          * @var LocationBreakdown
          */
         public $LocationMetroArea;
 
         /**
-         * Reserved.
+         * The audience breakdown category is LocationCity.
          * @var LocationBreakdown
          */
         public $LocationCity;
 
         /**
-         * Reserved.
+         * The audience breakdown category is LocationPostalCode.
          * @var LocationBreakdown
          */
         public $LocationPostalCode;
 
         /**
-         * Reserved.
+         * The audience breakdown category is LocationCounty.
          * @var LocationBreakdown
          */
         public $LocationCounty;

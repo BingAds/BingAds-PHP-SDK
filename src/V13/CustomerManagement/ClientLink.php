@@ -22,13 +22,13 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $Type;
 
         /**
-         * The identifier of the client advertiser account or client customer to manage<br/><br/>The Type element determines whether the link is to a client advertiser account or a client customer.
+         * The identifier of the client advertiser account or client customer to manage.
          * @var integer
          */
         public $ClientEntityId;
 
         /**
-         * The number of the client advertiser account or client customer to manage<br/><br/>The Type element determines whether the link is to a client advertiser account or a client customer.
+         * The number of the client advertiser account or client customer to manage.
          * @var string
          */
         public $ClientEntityNumber;
@@ -142,7 +142,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $CustomerLinkPermission;
 
         /**
-         * Reserved.
+         * The number of the client advertiser account?s customer to manage.
          * @var string
          */
         public $ClientEntityCustomerNumber;

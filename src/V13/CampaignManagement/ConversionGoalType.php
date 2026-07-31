@@ -34,7 +34,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Refers to an InStoreTransactionGoal */
         const InStoreTransaction = 'InStoreTransaction';
 
-        /** Reserved. */
+        /** Refers to an AppDownloadGoal. */
         const AppDownload = 'AppDownload';
     }
 

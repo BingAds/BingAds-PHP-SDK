@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines the CampaignBidLandscape data object, which suggests bids or targets, and contains estimated performance statistics.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/campaignbidlandscape?view=bingads-13 CampaignBidLandscape Data Object
      * 
      * @uses CampaignBidLandscapeType
@@ -15,31 +15,31 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class CampaignBidLandscape
     {
         /**
-         * Reserved.
+         * The campaign identifier.
          * @var integer
          */
         public $CampaignId;
 
         /**
-         * Reserved.
+         * Indicates the campaign bid strategy and landscape type.
          * @var CampaignBidLandscapeType
          */
         public $CampaignBidLandscapeType;
 
         /**
-         * Reserved.
+         * The first date used to calculate the bid landscape.
          * @var DayMonthAndYear
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The most recent date used to calculate the bid landscape.
          * @var DayMonthAndYear
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * A list of CampaignBidLandscapePoint objects with the total estimated performance from StartDate to EndDate by the bid or target.
          * @var CampaignBidLandscapePoint[]
          */
         public $CampaignBidLandscapePoints;

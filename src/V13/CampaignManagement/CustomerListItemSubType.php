@@ -14,10 +14,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The user data type is email. */
         const Email = 'Email';
 
-        /** The user data type is CRM. */
+        /** Not currently supported. */
         const CRM = 'CRM';
 
-        /** Reserved. */
+        /** Not currently supported. */
         const Phone = 'Phone';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Gets the audience breakdown.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/getaudiencebreakdown?view=bingads-13 GetAudienceBreakdown Response Object
      * 
      * @uses DecimalRoundedResult
@@ -15,43 +15,43 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetAudienceBreakdownResponse
     {
         /**
-         * Reserved.
+         * Monthly estimated reach user count with rounded results.
          * @var DecimalRoundedResult
          */
         public $EstAudienceSize;
 
         /**
-         * Reserved.
+         * Monthly estimated impression with range result.
          * @var DecimalRoundedResult
          */
         public $EstImpression;
 
         /**
-         * Reserved.
+         * Indicates if the impression is too specific.
          * @var boolean
          */
         public $IsImpressionTooSpecific;
 
         /**
-         * Reserved.
+         * Indicates if the estimated audience size passes the privacy check.
          * @var boolean
          */
         public $IsPrivacyCheckPassed;
 
         /**
-         * Reserved.
+         * Suggested bid value under the current targeting.
          * @var float
          */
         public $SuggestedBid;
 
         /**
-         * Reserved.
+         * The currency of DailyBudget and Bid.
          * @var Currency
          */
         public $Currency;
 
         /**
-         * Reserved.
+         * The audience breakdown categories.
          * @var Breakdowns
          */
         public $Breakdowns;

@@ -18,6 +18,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CampaignAdGroupIds;
 
         /**
+         * Reserved.
+         * @var string[]
+         */
+        public $CampaignTypes;
+
+        /**
          * Authorizes a Google Ads user to import accounts to Microsoft Advertising.
          * @var string
          */

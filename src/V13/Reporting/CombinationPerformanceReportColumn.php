@@ -85,6 +85,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of conversions. */
         const Conversions = 'Conversions';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

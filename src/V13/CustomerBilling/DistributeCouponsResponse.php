@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Distribute coupons of the specified coupon class name to the specified accounts.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/distributecoupons?view=bingads-13 DistributeCoupons Response Object
      * 
      * @uses OperationError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class DistributeCouponsResponse
     {
         /**
-         * Reserved.
+         * An array of operation errors that contains the reasons that explain why the service operation failed when the error is not related to a specific item in the batch of items.
          * @var OperationError[]
          */
         public $OperationErrors;
 
         /**
-         * Reserved.
+         * An array of OperationError objects that correspond to any email addresses where the coupon could not be distributed.
          * @var OperationError[][]
          */
         public $PartialErrors;

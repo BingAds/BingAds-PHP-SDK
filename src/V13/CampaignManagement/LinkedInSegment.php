@@ -4,42 +4,43 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the LinkedInSegment data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/linkedinsegment?view=bingads-13 LinkedInSegment Data Object
      * 
      * @uses LinkedInSegmentStatus
      * @uses ProfileType
      * @used-by AddLinkedInSegmentsRequest
+     * @used-by GetLinkedInSegmentsResponse
      * @used-by UpdateLinkedInSegmentsRequest
      */
     class LinkedInSegment
     {
         /**
-         * Reserved.
+         * The LinkedIn segment ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The name of the LinkedIn segment.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The reach of the LinkedIn segment.
          * @var integer
          */
         public $Reach;
 
         /**
-         * Reserved.
+         * The status of hte LinkedIn segment.
          * @var LinkedInSegmentStatus
          */
         public $Status;
 
         /**
-         * Reserved.
+         * The type of the LinkedIn segment.
          * @var ProfileType
          */
         public $Type;

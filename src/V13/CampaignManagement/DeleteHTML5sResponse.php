@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Deletes array of HTML5 assets from a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/deletehtml5s?view=bingads-13 DeleteHTML5s Response Object
      * 
      * @uses BatchError
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteHTML5sResponse
     {
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that weren't successful.
          * @var BatchError[]
          */
         public $PartialErrors;

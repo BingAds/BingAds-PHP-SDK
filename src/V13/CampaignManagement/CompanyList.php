@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the CompanyList data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/companylist?view=bingads-13 CompanyList Data Object
      * 
      * @uses CompanyName

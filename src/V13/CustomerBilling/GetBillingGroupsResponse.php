@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Retrieves billing groups.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/getbillinggroups?view=bingads-13 GetBillingGroups Response Object
      * 
      * @uses BillingGroup

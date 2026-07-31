@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BidStrategyIds;
 
         /**
-         * Reserved.
+         * A nullable field used to retrieve campaign IDs for the bid strategy IDs in the request for the specified scope.
          * @var EntityScope
          */
         public $Scope;

@@ -31,10 +31,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The entity is an asset group. */
         const AssetGroup = 'AssetGroup';
 
-        /** Reserved. */
+        /** The entity is a text asset. */
         const TextAsset = 'TextAsset';
 
-        /** Reserved. */
+        /** The entity is an image asset. */
         const ImageAsset = 'ImageAsset';
     }
 

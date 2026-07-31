@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Defines the billing group data object.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/billinggroup?view=bingads-13 BillingGroup Data Object
      * 
      * @used-by GetBillingGroupsResponse

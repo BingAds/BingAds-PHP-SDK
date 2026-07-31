@@ -26,7 +26,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $PageInfo;
 
         /**
-         * Reserved.
+         * Return additional fields with the Experiment object.
          * @var ExperimentAdditionalField
          */
         public $ReturnAdditionalFields;

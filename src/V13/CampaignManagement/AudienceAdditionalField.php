@@ -20,10 +20,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the ImpressionBasedRemarketingList element be included when you call the GetAudiencesByIds service operation. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
 
-        /** Reserved. */
+        /** Request that the AdGroupIds and CampaignIds elements be included within each returned ImpressionBasedRemarketingList object. */
         const CampaignIdsAdGroupIds = 'CampaignIdsAdGroupIds';
 
-        /** Reserved. */
+        /** Request that the CustomSegment data object is returned. */
         const CustomSegment = 'CustomSegment';
     }
 

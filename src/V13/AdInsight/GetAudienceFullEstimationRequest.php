@@ -61,19 +61,19 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $Location;
 
         /**
-         * Reserved.
+         * The selection of placement targeting.
          * @var SelectionOflong
          */
         public $Placement;
 
         /**
-         * Reserved.
+         * The type of device.
          * @var SelectionOfDeviceEnum
          */
         public $Device;
 
         /**
-         * Reserved.
+         * The selection of topic targeting.
          * @var SelectionOflong
          */
         public $Topic;
@@ -121,39 +121,69 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $Currency;
 
         /**
-         * Reserved.
+         * The audience full estimation ad type.
          * @var integer
          */
         public $MultiAdTypes;
 
         /**
-         * Reserved.
+         * The start date of the date range that identifies the data that you want to use to determine the audience full estimation.
          * @var \DateTime
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The end date of the date range that identifies the data that you want to use to determine the audience full estimation.
          * @var \DateTime
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The total budget.
          * @var float
          */
         public $TotalBudget;
 
         /**
-         * Reserved.
+         * Include impressions in the audience breakdown.
          * @var boolean
          */
         public $IncludeImpressionsBreakdown;
 
         /**
-         * Reserved.
+         * Use predictive targeting if the value is true.
          * @var boolean
          */
         public $AutoTargeting;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $JobSeniority;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $Genre;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $Channel;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $ChannelPlacement;
+
+        /**
+         * Reserved.
+         * @var SelectionOflong
+         */
+        public $SubChannel;
     }
 }

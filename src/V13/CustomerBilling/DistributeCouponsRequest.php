@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Distribute coupons of the specified coupon class name to the specified accounts.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/distributecoupons?view=bingads-13 DistributeCoupons Request Object
      * 
      * @used-by BingAdsCustomerBillingService::DistributeCoupons
@@ -12,25 +12,25 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class DistributeCouponsRequest
     {
         /**
-         * Reserved.
+         * The account IDs.
          * @var integer[]
          */
         public $AccountIds;
 
         /**
-         * Reserved.
+         * The class name of the distributed coupons.
          * @var string
          */
         public $ClassName;
 
         /**
-         * Reserved.
+         * The feature ID attached to the coupon.
          * @var integer
          */
         public $FeatureId;
 
         /**
-         * Reserved.
+         * Whether or not a notification is sent.
          * @var boolean
          */
         public $SendNotification;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Given a list of existing campaigns, this operation returns for each a list of suggested bids and estimated performance statistics.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/getbidlandscapebycampaignids?view=bingads-13 GetBidLandscapeByCampaignIds Response Object
      * 
      * @uses CampaignBidLandscape
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class GetBidLandscapeByCampaignIdsResponse
     {
         /**
-         * Reserved.
+         * An array of CampaignBidLandscape objects.
          * @var CampaignBidLandscape[]
          */
         public $BidLandscape;

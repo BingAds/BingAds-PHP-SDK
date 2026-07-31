@@ -4,26 +4,26 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible custom segment editorial status values.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/customsegmenteditorialstatus?view=bingads-13 CustomSegmentEditorialStatus Value Set
      * 
      * @used-by CustomSegment
      */
     final class CustomSegmentEditorialStatus
     {
-        /** Reserved. */
+        /** The status is Unknown. */
         const Unknown = 'Unknown';
 
-        /** Reserved. */
+        /** The status is Rejected. */
         const Rejected = 'Rejected';
 
-        /** Reserved. */
+        /** The status is Pending. */
         const Pending = 'Pending';
 
-        /** Reserved. */
+        /** The status is PartialApproved. */
         const PartialApproved = 'PartialApproved';
 
-        /** Reserved. */
+        /** The status is Approved. */
         const Approved = 'Approved';
     }
 

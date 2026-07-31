@@ -39,7 +39,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The audience is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
 
-        /** Reserved. */
+        /** The audience is a custom segment. */
         const CustomSegment = 'CustomSegment';
     }
 

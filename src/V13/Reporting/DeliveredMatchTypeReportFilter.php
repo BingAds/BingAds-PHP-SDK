@@ -9,6 +9,7 @@ namespace Microsoft\BingAds\V13\Reporting;
      * 
      * @used-by KeywordPerformanceReportFilter
      * @used-by SearchQueryPerformanceReportFilter
+     * @used-by SearchTermLandingPageReportFilter
      * @used-by ShareOfVoiceReportFilter
      */
     final class DeliveredMatchTypeReportFilter
@@ -27,6 +28,9 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The report will contain ads that were delivered by using a close variant phrase match comparison. */
         const PhraseCloseVariant = 'PhraseCloseVariant';
+
+        /** Reserved. */
+        const AIOptimized = 'AIOptimized';
     }
 
 }

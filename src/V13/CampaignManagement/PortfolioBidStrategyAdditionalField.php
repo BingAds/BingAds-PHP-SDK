@@ -4,14 +4,14 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Additional fields for the portfolio bid strategy object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/portfoliobidstrategyadditionalfield?view=bingads-13 PortfolioBidStrategyAdditionalField Value Set
      * 
      * @used-by GetBidStrategiesByIdsRequest
      */
     final class PortfolioBidStrategyAdditionalField
     {
-        /** Reserved. */
+        /** Inlcude the MaxCpc element within each returned MaxConversionValueBiddingScheme object. */
         const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
 
         /** Reserved. */

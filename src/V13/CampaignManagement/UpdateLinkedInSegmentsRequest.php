@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates the specified LinkedIn segments.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatelinkedinsegments?view=bingads-13 UpdateLinkedInSegments Request Object
      * 
      * @uses LinkedInSegment
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class UpdateLinkedInSegmentsRequest
     {
         /**
-         * Reserved.
+         * An array of the LinkedIn segments to update.
          * @var LinkedInSegment[]
          */
         public $LinkedInSegments;

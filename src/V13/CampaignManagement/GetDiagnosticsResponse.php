@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the get diagnostics service operation.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getdiagnostics?view=bingads-13 GetDiagnostics Response Object
      * 
      * @uses DiagnosticsRequestStatus

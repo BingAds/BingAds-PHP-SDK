@@ -12,22 +12,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AssetGroupAdditionalField
     {
-        /** Include the AssetGroupSearchThemes field. */
+        /** Request that the AssetGroupSearchThemes element be included within each returned AssetGroup object. */
         const AssetGroupSearchThemes = 'AssetGroupSearchThemes';
 
-        /** Reserved. */
+        /** Request that the AssetGroupUrlTargets element be included within each returned AssetGroup object. */
         const AssetGroupUrlTargets = 'AssetGroupUrlTargets';
 
-        /** Reserved. */
+        /** Request that the TrackingUrlTemplate element be included within each returned AssetGroup object. */
         const TrackingUrlTemplate = 'TrackingUrlTemplate';
 
-        /** Reserved. */
+        /** Request that the FinalUrlSuffix element be included within each returned AssetGroup object. */
         const FinalUrlSuffix = 'FinalUrlSuffix';
 
-        /** Reserved. */
+        /** Request that the UrlCustomParameters element be included within each returned AssetGroup object. */
         const UrlCustomParameters = 'UrlCustomParameters';
 
-        /** Reserved. */
+        /** Request that the CroppingType element be included within each returned AssetGroup object. */
         const CroppingType = 'CroppingType';
     }
 

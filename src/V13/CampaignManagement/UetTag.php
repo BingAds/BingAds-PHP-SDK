@@ -36,7 +36,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Id;
 
         /**
-         * Reserved.
+         * The industry of the website associated with your UET tag.
          * @var UetTagIndustry
          */
         public $Industry;

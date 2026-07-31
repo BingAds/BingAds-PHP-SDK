@@ -101,8 +101,17 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** The time gap between when a user clicks on an ad and when they complete a desired action, such as making a purchase, signing up, or downloading an app. */
         const ConversionDelay = 'ConversionDelay';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

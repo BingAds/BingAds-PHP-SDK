@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the DiagnosticsSettings data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/diagnosticssettings?view=bingads-13 DiagnosticsSettings Data Object
      * 
      * @used-by GetDiagnosticsRequest
@@ -12,13 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DiagnosticsSettings
     {
         /**
-         * Reserved.
+         * The cache is enabled if True.
          * @var boolean
          */
         public $EnableCache;
 
         /**
-         * Reserved.
+         * The pilot is enabled if True.
+         * @var boolean
+         */
+        public $EnablePilot;
+
+        /**
+         * The last-checked time in UTC.
          * @var string
          */
         public $LastCheckTimeUTC;

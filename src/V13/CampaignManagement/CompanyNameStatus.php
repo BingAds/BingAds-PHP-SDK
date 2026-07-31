@@ -4,20 +4,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the possible company name status values.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/companynamestatus?view=bingads-13 CompanyNameStatus Value Set
      * 
      * @used-by CompanyName
      */
     final class CompanyNameStatus
     {
-        /** Reserved. */
+        /** The company name match isn't processed. */
         const NotProcessed = 'NotProcessed';
 
-        /** Reserved. */
+        /** There is a company name match. */
         const Matched = 'Matched';
 
-        /** Reserved. */
+        /** There is no company name match. */
         const NoMatch = 'NoMatch';
     }
 

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Defines the ungrouped account data object.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/ungroupedaccount?view=bingads-13 UngroupedAccount Data Object
      * 
      * @uses KeyValueEntityOflongstring

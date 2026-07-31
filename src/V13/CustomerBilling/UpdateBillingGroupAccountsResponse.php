@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
 {
     /**
-     * Reserved.
+     * Updates billing group accounts.
      * @link https:/learn.microsoft.com/advertising/customer-billing-service/updatebillinggroupaccounts?view=bingads-13 UpdateBillingGroupAccounts Response Object
      * 
      * @uses OperationError

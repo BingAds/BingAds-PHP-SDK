@@ -124,6 +124,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of ad views, divided by the number of impressions. */
         const ViewThroughConversionRate = 'ViewThroughConversionRate';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

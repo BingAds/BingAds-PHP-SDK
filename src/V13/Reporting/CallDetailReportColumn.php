@@ -55,6 +55,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The ad group status. */
         const AdGroupStatus = 'AdGroupStatus';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

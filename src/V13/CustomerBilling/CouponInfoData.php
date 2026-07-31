@@ -66,49 +66,49 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         public $UpfrontSpending;
 
         /**
-         * Reserved.
+         * The length of time in which the coupon may be used.
          * @var integer
          */
         public $ActiveDuration;
 
         /**
-         * Reserved.
+         * The amount that must be spent before the coupon is applied.
          * @var float
          */
         public $SpendToThreshold;
 
         /**
-         * Reserved.
+         * The coupon's start date.
          * @var \DateTime
          */
         public $StartDate;
 
         /**
-         * Reserved.
+         * The coupon's end date.
          * @var \DateTime
          */
         public $EndDate;
 
         /**
-         * Reserved.
+         * The balance after the coupon is applied.
          * @var float
          */
         public $Balance;
 
         /**
-         * Reserved.
+         * The currency code for the coupon.
          * @var string
          */
         public $CurrencyCode;
 
         /**
-         * Reserved.
+         * The feature ID attached to the coupon.
          * @var integer
          */
         public $FeatureId;
 
         /**
-         * Reserved.
+         * The type of coupon.
          * @var integer
          */
         public $CouponType;

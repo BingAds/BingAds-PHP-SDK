@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The country-specific Bing marketplace, such as Bing France or Bing India. */
         const Country = 'Country';
 
-        /** Reserved. */
+        /** The percentage of total spend allocated to a specific category in your campaign. */
         const ProportionOfSpend = 'ProportionOfSpend';
     }
 

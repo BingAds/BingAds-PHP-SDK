@@ -62,10 +62,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The country-specific Bing marketplace, such as Bing France or Bing India. */
         const Country = 'Country';
 
-        /** Reserved. */
+        /** The percentage of clicks your account(s) received compared to the total number of clicks by all advertisers for a specific L1 ? L3 slice. */
         const MarketplaceClickCoverage = 'MarketplaceClickCoverage';
 
-        /** Reserved. */
+        /** The percentage of total spend allocated to a specific category in your campaign. */
         const ProportionOfSpend = 'ProportionOfSpend';
     }
 

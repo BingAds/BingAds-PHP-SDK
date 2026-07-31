@@ -74,7 +74,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalMobileUrls;
 
         /**
-         * Reserved.
+         * The final URL suffix can include tracking parameters that will be appended to the end of your landing page URL.
          * @var string
          */
         public $FinalUrlSuffix;
@@ -146,13 +146,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Status;
 
         /**
-         * Reserved.
+         * The tracking template to use as a default for all URLs in your asset group.
          * @var string
          */
         public $TrackingUrlTemplate;
 
         /**
-         * Reserved.
+         * Your custom collection of key and value parameters for URL tracking.
          * @var CustomParameters
          */
         public $UrlCustomParameters;

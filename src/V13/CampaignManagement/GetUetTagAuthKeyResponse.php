@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Gets an authentication key for a UET (Universal Event Tracking) tag.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/getuettagauthkey?view=bingads-13 GetUetTagAuthKey Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetUetTagAuthKeyResponse
     {
         /**
-         * Reserved.
+         * The authentication key associated with the specified UET tag.
          * @var string
          */
         public $UetTagAuthKey;
 
         /**
-         * Reserved.
+         * An array of BatchError objects containing error details.
          * @var BatchError[]
          */
         public $PartialErrors;

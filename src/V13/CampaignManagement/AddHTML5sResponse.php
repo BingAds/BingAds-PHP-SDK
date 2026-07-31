@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds array of HTML5 assets to a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addhtml5s?view=bingads-13 AddHTML5s Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddHTML5sResponse
     {
         /**
-         * Reserved.
+         * The HTML5 asset IDs.
          * @var integer[]
          */
         public $HTML5AssetIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that weren't successful.
          * @var BatchError[]
          */
         public $PartialErrors;

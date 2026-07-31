@@ -94,6 +94,15 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of times a specific keyword or phrase is searched within a given timeframe. */
         const SearchVolume = 'SearchVolume';
+
+        /** Reserved. */
+        const MarketingObjective = 'MarketingObjective';
+
+        /** Reserved. */
+        const Channel = 'Channel';
+
+        /** Reserved. */
+        const SubChannel = 'SubChannel';
     }
 
 }

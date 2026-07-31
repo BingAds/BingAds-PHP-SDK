@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $TagIds;
 
         /**
-         * Reserved.
+         * The list of additional properties that you want included within each returned UetTag object.
          * @var UetTagAdditionalField
          */
         public $ReturnAdditionalFields;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the experiment arm data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/experimentarm?view=bingads-13 ExperimentArm Data Object
      * 
      * @used-by Experiment
@@ -12,25 +12,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ExperimentArm
     {
         /**
-         * Reserved.
+         * The campaign IDs.
          * @var integer[]
          */
         public $CampaignIds;
 
         /**
-         * Reserved.
+         * The experiment arm ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The experiment arm is a control arm.
          * @var boolean
          */
         public $IsControlArm;
 
         /**
-         * Reserved.
+         * The traffic split number.
          * @var integer
          */
         public $TrafficSplit;

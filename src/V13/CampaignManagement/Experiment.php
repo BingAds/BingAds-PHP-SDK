@@ -28,7 +28,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EndDate;
 
         /**
-         * Reserved.
+         * Defines an array of the experiment arm data object.
          * @var ExperimentArm[]
          */
         public $ExperimentArms;
@@ -40,13 +40,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ExperimentCampaignId;
 
         /**
+         * Reserved.
+         * @var string
+         */
+        public $ExperimentCampaignType;
+
+        /**
          * The status of the experiment.
          * @var string
          */
         public $ExperimentStatus;
 
         /**
-         * Reserved.
+         * The experiment sub type.
          * @var string
          */
         public $ExperimentSubType;
@@ -62,6 +68,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $MarketingObjective;
 
         /**
          * The name of the experiment.

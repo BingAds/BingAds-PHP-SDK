@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the EntityResult data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/entityresult?view=bingads-13 EntityResult Data Object
      * 
      * @uses CategoryResult
@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class EntityResult
     {
         /**
-         * Reserved.
+         * The entity categories.
          * @var CategoryResult[]
          */
         public $Categories;
 
         /**
-         * Reserved.
+         * The entity ID.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The entity sub type.
          * @var string
          */
         public $SubType;
 
         /**
-         * Reserved.
+         * The entity type.
          * @var string
          */
         public $Type;

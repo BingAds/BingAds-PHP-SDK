@@ -90,26 +90,44 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const EnableCopilot = 'EnableCopilot';
 
-        /** Reserved. */
+        /** Request that the NewTopicTargets element be included within each returned GoogleImportOption object. */
         const NewTopicTargets = 'NewTopicTargets';
 
-        /** Reserved. */
+        /** Request that the UpdateTopicTargets element be included within each returned GoogleImportOption object. */
         const UpdateTopicTargets = 'UpdateTopicTargets';
 
         /** Reserved. */
         const NewPortfolioBidStrategy = 'NewPortfolioBidStrategy';
 
-        /** Reserved. */
+        /** Request that the NewAIMaxSettings element be included within each returned GoogleImportOption object. */
         const NewAIMaxSettings = 'NewAIMaxSettings';
 
         /** Reserved. */
         const ImageAssetAutomationOptOut = 'ImageAssetAutomationOptOut';
 
-        /** Reserved. */
+        /** Request that the UpdateAIMaxSettings element be included within each returned GoogleImportOption object. */
         const UpdateAIMaxSettings = 'UpdateAIMaxSettings';
 
         /** Reserved. */
         const ImportNCAGoalWithSystemGeneratedAudience = 'ImportNCAGoalWithSystemGeneratedAudience';
+
+        /** Reserved. */
+        const UpdateAssetGroupsAsset = 'UpdateAssetGroupsAsset';
+
+        /** Reserved. */
+        const NewBrandListAssociations = 'NewBrandListAssociations';
+
+        /** Reserved. */
+        const UpdateBrandListAssociations = 'UpdateBrandListAssociations';
+
+        /** Reserved. */
+        const CampaignTypes = 'CampaignTypes';
+
+        /** Reserved. */
+        const NewSearchThemesForExistingAssetGroups = 'NewSearchThemesForExistingAssetGroups';
+
+        /** Reserved. */
+        const UpdateAssetGroups = 'UpdateAssetGroups';
     }
 
 }

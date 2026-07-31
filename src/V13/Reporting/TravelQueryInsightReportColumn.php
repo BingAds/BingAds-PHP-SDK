@@ -11,58 +11,58 @@ namespace Microsoft\BingAds\V13\Reporting;
      */
     final class TravelQueryInsightReportColumn
     {
-        /** The search query text. */
+        /** The search query entered by the user. */
         const SearchQuery = 'SearchQuery';
 
-        /** The name of the country. */
+        /** The country of interest. */
         const Country = 'Country';
 
-        /** The name of the region. */
+        /** The region of interest. */
         const Region = 'Region';
 
-        /** The name of the metroplitan area. */
+        /** The metro area of interest. */
         const MetroArea = 'MetroArea';
 
-        /** The name of the city. */
+        /** The city of interest. */
         const City = 'City';
 
-        /** The point of sale postal/ZIP code. */
+        /** The searcher's location at the postal code level. */
         const PostalCode = 'PostalCode';
 
-        /** The primary vertical category. */
+        /** The primary supply vertical. */
         const L1Vertical = 'L1Vertical';
 
-        /** The secondary vertical category. */
+        /** The secondary supply vertical. */
         const L2Vertical = 'L2Vertical';
 
-        /** The tertiary vertical category. */
+        /** The tertiary supply vertical. */
         const L3Vertical = 'L3Vertical';
 
-        /** The point of sale country. */
+        /** The searcher's location at the country level. */
         const POSCountry = 'POSCountry';
 
-        /** The point of sale region. */
+        /** The searcher's location at the region level. */
         const POSRegion = 'POSRegion';
 
-        /** The point of sale city. */
+        /** The searcher's location at the city level. */
         const POSCity = 'POSCity';
 
-        /** The number of impressions of ads displayed for a specific brand. */
+        /** Your brand's ad impressions. */
         const BrandImpressions = 'BrandImpressions';
 
-        /** The number of ad clicks originating from ads displayed for a specific brand. */
+        /** Your brand's ad clicks. */
         const BrandClicks = 'BrandClicks';
 
-        /** The total amount of spend on ad impressions for a specific brand. */
+        /** Your brand's ad spend. */
         const BrandSpend = 'BrandSpend';
 
-        /** Reserved. */
+        /** The number of Microsoft Advertising impressions for this query. */
         const MSAImpressions = 'MSAImpressions';
 
-        /** Reserved. */
+        /** The number of Microsoft Advertising clicks for this query. */
         const MSAClicks = 'MSAClicks';
 
-        /** Reserved. */
+        /** The Microsoft Advertising spend on this query. */
         const MSASpend = 'MSASpend';
     }
 

@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AudienceAdsBidAdjustment;
 
         /**
-         * Reserved.
+         * A nullable field that indicates whether the BidStrategyId associated with the campaign is defined at the customer level or the account level.
          * @var EntityScope
          */
         public $BidStrategyScope;
@@ -101,16 +101,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $IsDealCampaign;
 
         /**
-         * Reserved.
+         * Indicates whether a campaign is political.
          * @var boolean
          */
         public $IsPolitical;
-
-        /**
-         * Reserved.
-         * @var string
-         */
-        public $MarketingObjective;
 
         /**
          * The percent amount by which to adjust your bid for multimedia ads above or below the base ad group or keyword bid

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Additional fields for the keyword object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/keywordadditionalfield?view=bingads-13 KeywordAdditionalField Value Set
      * 
      * @used-by GetKeywordsByAdGroupIdRequest
@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class KeywordAdditionalField
     {
-        /** Reserved. */
+        /** Inlcude the MaxCpc element within each returned MaxConversionValueBiddingScheme object. */
         const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
     }
 

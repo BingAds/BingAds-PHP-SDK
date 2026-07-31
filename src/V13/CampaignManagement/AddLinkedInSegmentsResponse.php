@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Adds array of LinkedIn segments to a specified campaign.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/addlinkedinsegments?view=bingads-13 AddLinkedInSegments Response Object
      * 
      * @uses BatchError
@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddLinkedInSegmentsResponse
     {
         /**
-         * Reserved.
+         * The LinkedIn segment IDs.
          * @var integer[]
          */
         public $LinkedInSegmentIds;
 
         /**
-         * Reserved.
+         * An array of BatchError objects that contain details for any request items that weren't successful.
          * @var BatchError[]
          */
         public $PartialErrors;

@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
 
 {
     /**
-     * Reserved.
+     * Defines a data object that includes or excludes device types.
      * @link https:/learn.microsoft.com/advertising/ad-insight-service/selectionofdeviceenum?view=bingads-13 SelectionOfDeviceEnum Data Object
      * 
      * @uses DeviceEnum
@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\AdInsight;
     final class SelectionOfDeviceEnum
     {
         /**
-         * Reserved.
+         * Include the type of desvices present in the DeviceEnum.
          * @var DeviceEnum[]
          */
         public $Includes;
 
         /**
-         * Reserved.
+         * Exclude the type of devices present in the DeviceEnum.
          * @var DeviceEnum[]
          */
         public $Excludes;
