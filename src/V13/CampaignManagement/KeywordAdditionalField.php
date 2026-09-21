@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/keywordadditionalfield?view=bingads-13 KeywordAdditionalField Value Set
      * 
      * @used-by GetKeywordsByAdGroupIdRequest
+     * @used-by GetKeywordsByAssetGroupIdRequest
      * @used-by GetKeywordsByEditorialStatusRequest
      * @used-by GetKeywordsByIdsRequest
      */

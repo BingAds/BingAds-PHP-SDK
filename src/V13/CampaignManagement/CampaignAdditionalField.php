@@ -123,8 +123,14 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved. */
         const NetworkDistributionSetting = 'NetworkDistributionSetting';
 
+        /** Request that the unified campaign fields are included with each returned Campaign object. */
+        const UnifiedCampaignFields = 'UnifiedCampaignFields';
+
         /** Reserved. */
         const PageFeedInAISearchSettings = 'PageFeedInAISearchSettings';
+
+        /** Reserved. */
+        const BrandExclusionSetting = 'BrandExclusionSetting';
     }
 
 }

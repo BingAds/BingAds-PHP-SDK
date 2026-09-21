@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class DeleteLinkedInSegmentsResponse
     {
         /**
-         * Reserved.
+         * An array BatchError that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

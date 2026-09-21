@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AccountId;
 
         /**
-         * A list of  EntityIdToParentIdAssociation objects that each contain the unique system identifier of an entity such as ad or keyword, and the identifier of its parent.
+         * A list of  EntityIdToParentIdAssociation objects that each contain the unique system identifier of an entity such as Ad, Keyword, ImageAsset, or TextAsset, and the identifier of its parent.
          * @var EntityIdToParentIdAssociation[]
          */
         public $EntityIdToParentIdAssociations;

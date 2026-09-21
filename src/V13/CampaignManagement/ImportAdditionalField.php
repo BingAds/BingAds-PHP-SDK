@@ -128,6 +128,15 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const UpdateAssetGroups = 'UpdateAssetGroups';
+
+        /** Reserved. */
+        const UpdateSearchThemesForExistingAssetGroups = 'UpdateSearchThemesForExistingAssetGroups';
+
+        /** Reserved. */
+        const ImportNCASettings = 'ImportNCASettings';
+
+        /** Reserved. */
+        const UpdateNCASettings = 'UpdateNCASettings';
     }
 
 }

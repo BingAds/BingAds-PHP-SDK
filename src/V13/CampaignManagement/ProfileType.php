@@ -11,7 +11,6 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by LinkedInSegment
      * @used-by ProfileCriterion
      * @used-by ProfileInfo
-     * @used-by GetLinkedInSegmentsRequest
      * @used-by GetProfileDataFileUrlRequest
      */
     final class ProfileType

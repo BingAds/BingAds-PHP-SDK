@@ -80,14 +80,20 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The revenue optionally reported by the advertiser as a result of conversions. */
         const Revenue = 'Revenue';
 
-        /** Reserved. */
+        /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */
         const MarketingObjective = 'MarketingObjective';
 
-        /** Reserved. */
+        /** Specifies the channels where ads can run. */
         const Channel = 'Channel';
 
-        /** Reserved. */
+        /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
+
+        /** Reserved. */
+        const AssetGroupId = 'AssetGroupId';
+
+        /** Reserved. */
+        const AdId = 'AdId';
     }
 
 }

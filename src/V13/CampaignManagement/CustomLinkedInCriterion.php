@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CustomLinkedInCriterion extends Criterion
     {
         /**
-         * Reserved.
+         * The LinkedIn profile.
          * @var string
          */
         public $Profile;
 
         /**
-         * Reserved.
+         * The LinkedIn profile ID.
          * @var integer
          */
         public $ProfileId;
 
         /**
-         * Reserved.
+         * The LinkedIn profile type.
          * @var ProfileType
          */
         public $ProfileType;

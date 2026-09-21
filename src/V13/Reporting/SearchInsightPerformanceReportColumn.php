@@ -95,13 +95,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of times a specific keyword or phrase is searched within a given timeframe. */
         const SearchVolume = 'SearchVolume';
 
-        /** Reserved. */
+        /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */
         const MarketingObjective = 'MarketingObjective';
 
-        /** Reserved. */
+        /** Specifies the channels where ads can run. */
         const Channel = 'Channel';
 
-        /** Reserved. */
+        /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
     }
 

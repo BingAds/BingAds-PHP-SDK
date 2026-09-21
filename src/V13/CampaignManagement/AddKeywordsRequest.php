@@ -31,7 +31,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ReturnInheritedBidStrategyTypes;
 
         /**
-         * Reserved.
+         * The identifier of the asset group to add the keywords to.
          * @var integer
          */
         public $AssetGroupId;

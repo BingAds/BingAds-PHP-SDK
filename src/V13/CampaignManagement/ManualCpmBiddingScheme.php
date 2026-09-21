@@ -9,6 +9,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class ManualCpmBiddingScheme extends BiddingScheme
     {
+        /**
+         * The highest amount you're willing to pay per 1,000 impressions in a campaign.
+         * @var float
+         */
+        public $MaxCpm;
     }
 
 }

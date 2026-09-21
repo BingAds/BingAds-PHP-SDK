@@ -27,7 +27,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EntityType;
 
         /**
-         * Reserved.
+         * For brand list-to-campaign associations, indicates whether the associated brand list is applied as an exclusion list (true) or an inclusion list (false).
          * @var boolean
          */
         public $IsExclusion;

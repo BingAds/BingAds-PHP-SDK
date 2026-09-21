@@ -16,31 +16,31 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class SearchTermLandingPageReportRequest extends ReportRequest
     {
         /**
-         * Reserved.
+         * The type of aggregation to use to aggregate the report data.
          * @var ReportAggregation
          */
         public $Aggregation;
 
         /**
-         * Reserved.
+         * The list of attributes and performance statistics to include in the report.
          * @var SearchTermLandingPageReportColumn[]
          */
         public $Columns;
 
         /**
-         * Reserved.
+         * The filter information to use to filter the report data.
          * @var SearchTermLandingPageReportFilter
          */
         public $Filter;
 
         /**
-         * Reserved.
+         * The entities and their scope to include in the report.
          * @var AccountThroughCampaignReportScope
          */
         public $Scope;
 
         /**
-         * Reserved.
+         * The time frame to use to aggregate the report data.
          * @var ReportTime
          */
         public $Time;

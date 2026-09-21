@@ -26,6 +26,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AssetGroup
     {
         /**
+         * The asset context.
+         * @var string
+         */
+        public $AssetContext;
+
+        /**
          * A list of asset group search themes.
          * @var AssetGroupSearchTheme[]
          */

@@ -17,6 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @uses CustomParameters
      * @used-by AddKeywordsRequest
      * @used-by GetKeywordsByAdGroupIdResponse
+     * @used-by GetKeywordsByAssetGroupIdResponse
      * @used-by GetKeywordsByEditorialStatusResponse
      * @used-by GetKeywordsByIdsResponse
      * @used-by UpdateKeywordsRequest

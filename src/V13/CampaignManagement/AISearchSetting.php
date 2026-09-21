@@ -34,7 +34,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $FinalUrlExpansionOptOut;
 
         /**
-         * Reserved.
+         * The page feed IDs.
          * @var integer[]
          */
         public $PageFeedIds;

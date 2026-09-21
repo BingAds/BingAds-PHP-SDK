@@ -85,6 +85,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const JobSeniority = 'JobSeniority';
+
+        /** The campaign criterion is a custom LinkedIn criterion. */
+        const CustomLinkedIn = 'CustomLinkedIn';
+
+        /** Reserved. */
+        const JobTitle = 'JobTitle';
     }
 
 }

@@ -29,5 +29,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var KeywordAdditionalField
          */
         public $ReturnAdditionalFields;
+
+        /**
+         * The identifier of the adssetgroup whose keywords you want to get.
+         * @var integer
+         */
+        public $AssetGroupId;
     }
 }

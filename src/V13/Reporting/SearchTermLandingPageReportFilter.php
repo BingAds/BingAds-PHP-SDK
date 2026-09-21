@@ -15,25 +15,25 @@ namespace Microsoft\BingAds\V13\Reporting;
     final class SearchTermLandingPageReportFilter
     {
         /**
-         * Reserved.
+         * Includes rows in the report where the ad type matches one of the specified ad types.
          * @var AdTypeReportFilter
          */
         public $AdType;
 
         /**
-         * Reserved.
+         * Includes rows in the report where the delivered match type matches one of the specified match types.
          * @var DeliveredMatchTypeReportFilter
          */
         public $DeliveredMatchType;
 
         /**
-         * Reserved.
+         * Includes rows in the report where the language matches one of the specified languages.
          * @var LanguageReportFilter
          */
         public $Language;
 
         /**
-         * Reserved.
+         * Includes rows in the report where the search term matches one of the specified search query strings.
          * @var string[]
          */
         public $SearchQueries;

@@ -22,5 +22,11 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer[]
          */
         public $KeywordIds;
+
+        /**
+         * The asset group ID.
+         * @var integer
+         */
+        public $AssetGroupId;
     }
 }
