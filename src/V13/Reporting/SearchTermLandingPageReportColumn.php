@@ -11,107 +11,110 @@ namespace Microsoft\BingAds\V13\Reporting;
      */
     final class SearchTermLandingPageReportColumn
     {
-        /** Reserved. */
+        /** The account name. */
         const AccountName = 'AccountName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising-assigned identifier of an account. */
         const AccountId = 'AccountId';
 
-        /** Reserved. */
+        /** The campaign name. */
         const CampaignName = 'CampaignName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising-assigned identifier of a campaign. */
         const CampaignId = 'CampaignId';
 
-        /** Reserved. */
+        /** The ad group name. */
         const AdGroupName = 'AdGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising-assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** Reserved. */
+        /** The Microsoft Advertising-assigned identifier of an ad. */
         const AdId = 'AdId';
 
-        /** Reserved. */
+        /** The ad type. */
         const AdType = 'AdType';
 
-        /** Reserved. */
+        /** The campaign type, for example Search, DynamicSearchAds, or PerformanceMax. */
         const CampaignType = 'CampaignType';
 
-        /** Reserved. */
+        /** The display language of the search term. */
         const Language = 'Language';
 
-        /** Reserved. */
+        /** The search term (query) that matched and caused the ad to be delivered. */
         const SearchQuery = 'SearchQuery';
 
-        /** Reserved. */
+        /** The keyword text that matched the search term. */
         const Keyword = 'Keyword';
 
-        /** Reserved. */
+        /** The keyword bid match type. */
         const BidMatchType = 'BidMatchType';
 
-        /** Reserved. */
+        /** The match type used to deliver the ad, which can differ from the bid match type. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** Reserved. */
+        /** The headlines delivered for the impression, returned as a pipe-delimited string in the format `h1\ */
         const Headline = 'Headline';
 
-        /** Reserved. */
+        /** The landing page URL (Final URL) that the user was sent to for the impression. */
         const FinalUrl = 'FinalUrl';
 
-        /** Reserved. */
+        /** The source of the Final URL. */
         const FinalUrlSource = 'FinalUrlSource';
 
-        /** Reserved. */
+        /** The number of times the ad was displayed. */
         const Impressions = 'Impressions';
 
-        /** Reserved. */
+        /** The number of clicks. */
         const Clicks = 'Clicks';
 
-        /** Reserved. */
+        /** The click-through rate as a percentage, calculated as Clicks divided by Impressions. */
         const Ctr = 'Ctr';
 
-        /** Reserved. */
+        /** The average cost per click, calculated as Spend divided by Clicks. */
         const AverageCpc = 'AverageCpc';
 
-        /** Reserved. */
+        /** The cost per impression (CPM) and cost per click (CPC) summed for the time period. */
         const Spend = 'Spend';
 
-        /** Reserved. */
+        /** The number of conversions. */
         const Conversions = 'Conversions';
 
-        /** Reserved. */
+        /** The conversion rate as a percentage, calculated as Conversions divided by Clicks. */
         const ConversionRate = 'ConversionRate';
 
-        /** Reserved. */
+        /** The cost per conversion, calculated as Spend divided by Conversions. */
         const CostPerConversion = 'CostPerConversion';
 
-        /** Reserved. */
+        /** How often the ad was shown in the first (absolute top) position, as a percentage of total impressions. */
         const AbsoluteTopImpressionRatePercent = 'AbsoluteTopImpressionRatePercent';
 
-        /** Reserved. */
+        /** How often the ad was shown at the top of the search results (above the organic results), as a percentage of total impressions. */
         const TopImpressionRatePercent = 'TopImpressionRatePercent';
 
-        /** Reserved. */
+        /** The advertiser-reported revenue attributed to conversions. */
         const Revenue = 'Revenue';
 
-        /** Reserved. */
+        /** The return on ad spend (ROAS), calculated as Revenue divided by Spend. */
         const ReturnOnAdSpend = 'ReturnOnAdSpend';
 
-        /** Reserved. */
+        /** The time period of the report row. */
         const TimePeriod = 'TimePeriod';
 
-        /** Reserved. */
+        /** The number of qualified conversions. */
         const ConversionsQualified = 'ConversionsQualified';
 
-        /** Reserved. */
+        /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */
         const MarketingObjective = 'MarketingObjective';
 
-        /** Reserved. */
+        /** Specifies the channels where ads can run. */
         const Channel = 'Channel';
 
-        /** Reserved. */
+        /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
+
+        /** Reserved. */
+        const HeadlineSource = 'HeadlineSource';
     }
 
 }

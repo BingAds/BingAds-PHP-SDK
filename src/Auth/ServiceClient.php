@@ -3,6 +3,7 @@
 namespace Microsoft\BingAds\Auth;
 
 
+use Microsoft\BingAds\Manifest;
 use Microsoft\BingAds\V13\AdInsight\AdInsightServiceSettings as AdInsightServiceSettingsVersion13;
 use Microsoft\BingAds\V13\Bulk\BulkServiceSettings as BulkServiceSettingsVersion13;
 use Microsoft\BingAds\V13\CampaignManagement\CampaignManagementServiceSettings as CampaignManagementServiceSettingsVersion13;
@@ -244,7 +245,7 @@ class ServiceClient
 			'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
 			// Disable keep_alive to avoid 'Process open FD table is full'
 			'keep_alive' => FALSE, 
-			'user_agent' => 'BingAdsSDKPHP ' . '13.0.29 ' . PHP_VERSION, 
+			'user_agent' => 'BingAdsSDKPHP ' . '13.0.30 ' . PHP_VERSION, 
 			'cache_wsdl' => 'WSDL_CACHE_NONE',
 
 			/** 
@@ -262,6 +263,28 @@ class ServiceClient
 		);
 
 		$mergedOptions = array_merge($default_options, $this->options);
+
+		// Enforce the HTTP revision after merging caller options, without mutating their context.
+		$contextOptions = array();
+		$contextParams = array();
+		if (isset($mergedOptions['stream_context']))
+		{
+			$contextOptions = stream_context_get_options($mergedOptions['stream_context']);
+			$contextParams = stream_context_get_params($mergedOptions['stream_context']);
+			unset($contextParams['options']);
+		}
+		$httpHeaders = isset($contextOptions['http']['header']) ? $contextOptions['http']['header'] : '';
+		if (is_array($httpHeaders))
+		{
+			$httpHeaders = implode("\r\n", $httpHeaders);
+		}
+		$httpHeaders = preg_split('/\r?\n/', $httpHeaders, -1, PREG_SPLIT_NO_EMPTY);
+		$httpHeaders = array_filter($httpHeaders, function ($header) {
+			return !preg_match('/^\s*Api-Revision\s*:/i', $header);
+		});
+		$httpHeaders[] = 'Api-Revision: ' . Manifest::SDK_API_REVISION;
+		$contextOptions['http']['header'] = implode("\r\n", $httpHeaders) . "\r\n";
+		$mergedOptions['stream_context'] = stream_context_create($contextOptions, $contextParams);
 
 		$proxy = @new SOAPClient($this->wsdlUrl, $mergedOptions);
 

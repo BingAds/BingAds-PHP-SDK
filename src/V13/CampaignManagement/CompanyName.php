@@ -4,11 +4,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the CompanyName data object.
+     * Defines the company name data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/companyname?view=bingads-13 CompanyName Data Object
      * 
+     * @uses LinkedInCompanyData
      * @uses CompanyNameStatus
      * @used-by CompanyList
+     * @used-by GetCompanyListDetailsResponse
      */
     final class CompanyName
     {
@@ -17,6 +19,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var integer
          */
         public $Id;
+
+        /**
+         * Reserved.
+         * @var LinkedInCompanyData
+         */
+        public $LinkedInCompany;
 
         /**
          * The company name.

@@ -104,13 +104,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The time gap between when a user clicks on an ad and when they complete a desired action, such as making a purchase, signing up, or downloading an app. */
         const ConversionDelay = 'ConversionDelay';
 
-        /** Reserved. */
+        /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */
         const MarketingObjective = 'MarketingObjective';
 
-        /** Reserved. */
+        /** Specifies the channels where ads can run. */
         const Channel = 'Channel';
 
-        /** Reserved. */
+        /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
     }
 

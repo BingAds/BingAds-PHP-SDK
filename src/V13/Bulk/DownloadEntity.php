@@ -30,7 +30,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Ad Group Negative Keyword records in the download data. */
         const AdGroupNegativeKeywords = 'AdGroupNegativeKeywords';
 
-        /** Include Campaign Age Criterion, Campaign Company Name Criterion, Campaign DayTime Criterion, Campaign DeviceOS Criterion, Campaign Gender Criterion, Campaign Industry Criterion, Campaign Job Function Criterion, Campaign Location Criterion, Campaign Location Intent Criterion, Campaign Negative Age Criterion, Campaign Negative Gender Criterion Campaign Negative Location Criterion, and Campaign Radius Criterion records in the download data. */
+        /** Include Campaign Age Criterion, Campaign Company Name Criterion, Campaign DayTime Criterion, Campaign DeviceOS Criterion, Campaign Gender Criterion, Campaign Industry Criterion, Campaign Job Function Criterion, Campaign Location Criterion, Campaign Location Intent Criterion, Campaign Negative Age Criterion, Campaign Negative Device Criterion, Campaign Negative Gender Criterion, Campaign Negative Location Criterion, and Campaign Radius Criterion records in the download data. */
         const CampaignTargetCriterions = 'CampaignTargetCriterions';
 
         /** Include Ad Group Age Criterion, Ad Group Company Name Criterion, Ad Group DayTime Criterion, Ad Group DeviceOS Criterion, Ad Group Gender Criterion, Ad Group Industry Criterion, Ad Group Job Function Criterion, Ad Group Location Criterion, Ad Group Location Intent Criterion, Ad Group Negative Age Criterion, Ad Group Negative Company Name Criterion, Ad Group Negative Gender Criterion, Ad Group Negative Industry Criterion, Ad Group Negative Job Function Criterion, Ad Group Negative Location Criterion, Ad Group Placement Criterion, Ad Group Radius Criterion, and Ad Group Topic Criterion records in the download data. */
@@ -612,8 +612,20 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Reserved. */
         const AccountContentNegativeKeyword = 'AccountContentNegativeKeyword';
 
-        /** Reserved. */
+        /** Include Asset Group Negative Keyword records in the download data. */
         const AssetGroupNegativeKeywords = 'AssetGroupNegativeKeywords';
+
+        /** Include Company List records in the account download data. */
+        const CompanyList = 'CompanyList';
+
+        /** Include Company Item records in the account download data. */
+        const CompanyItem = 'CompanyItem';
+
+        /** Reserved. */
+        const AdGroupUrlTargets = 'AdGroupUrlTargets';
+
+        /** Reserved. */
+        const AdGroupAIPromptAssociations = 'AdGroupAIPromptAssociations';
     }
 
 }

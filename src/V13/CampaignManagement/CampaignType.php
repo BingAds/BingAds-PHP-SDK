@@ -36,6 +36,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The campaign is an App campaign. */
         const App = 'App';
+
+        /** The campaign is an objective-based campaign. */
+        const ObjectiveBased = 'ObjectiveBased';
     }
 
 }

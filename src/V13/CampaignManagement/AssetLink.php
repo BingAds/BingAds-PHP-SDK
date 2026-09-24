@@ -12,6 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * @used-by AdRecommendationImageSuggestion
      * @used-by AdRecommendationTextRefineResult
      * @used-by AssetGroup
+     * @used-by Campaign
      * @used-by ImageAdExtension
      * @used-by ResponsiveAd
      * @used-by ResponsiveSearchAd

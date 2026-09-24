@@ -50,13 +50,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Reserved. */
         const CustomLinkedInName = 'CustomLinkedInName';
 
-        /** Reserved. */
+        /** The LinkedIn segment name. */
         const LinkedInSegmentName = 'LinkedInSegmentName';
 
         /** Reserved. */
         const LinkedInSegmentId = 'LinkedInSegmentId';
 
-        /** Reserved. */
+        /** The LinkedIn segment type. */
         const LinkedInSegmentType = 'LinkedInSegmentType';
 
         /** The network where you want your ads to show. */
@@ -140,13 +140,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
-        /** Reserved. */
+        /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */
         const MarketingObjective = 'MarketingObjective';
 
-        /** Reserved. */
+        /** Specifies the channels where ads can run. */
         const Channel = 'Channel';
 
-        /** Reserved. */
+        /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
     }
 

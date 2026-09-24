@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Defines a report that provides detailed insights into individual clicks and ad performance.\
+     * Defines a report that provides detailed insights into individual clicks and ad performance.
      * @link https:/learn.microsoft.com/advertising/reporting-service/msclickidperformancereportcolumn?view=bingads-13 MSClickIdPerformanceReportColumn Value Set
      * 
      * @used-by MSClickIdPerformanceReportRequest

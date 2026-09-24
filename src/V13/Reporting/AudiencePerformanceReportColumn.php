@@ -35,10 +35,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The Microsoft Advertising assigned identifier of an ad group. */
         const AdGroupId = 'AdGroupId';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The asset group ID. */
         const AssetGroupId = 'AssetGroupId';
 
         /** The Microsoft Advertising assigned identifier of the audience, for example the remarketing list ID. */
@@ -194,13 +194,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Total watch time, in milliseconds, divided by the number of impressions. */
         const AverageWatchTimePerImpression = 'AverageWatchTimePerImpression';
 
-        /** Reserved. */
+        /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */
         const MarketingObjective = 'MarketingObjective';
 
-        /** Reserved. */
+        /** Specifies the channels where ads can run. */
         const Channel = 'Channel';
 
-        /** Reserved. */
+        /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
     }
 

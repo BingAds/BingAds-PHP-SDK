@@ -9,8 +9,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * 
      * @uses EntityScope
      * @uses BiddingScheme
+     * @uses AssetLink
      * @uses BudgetLimitType
      * @uses KeyValuePairOfstringstring
+     * @uses CampaignPrivacyStatus
      * @uses CampaignStatus
      * @uses CustomParameters
      * @uses CampaignType
@@ -41,10 +43,28 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $BiddingScheme;
 
         /**
+         * The brand color.
+         * @var AssetLink[]
+         */
+        public $BrandColor;
+
+        /**
+         * The brand logo.
+         * @var AssetLink[]
+         */
+        public $BrandLogo;
+
+        /**
          * The budget type determines how the budget is spent.
          * @var BudgetLimitType
          */
         public $BudgetType;
+
+        /**
+         * The business name.
+         * @var string
+         */
+        public $BusinessName;
 
         /**
          * The amount to spend daily on the campaign.
@@ -107,6 +127,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $IsPolitical;
 
         /**
+         * Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs.
+         * @var string
+         */
+        public $MarketingObjective;
+
+        /**
          * The percent amount by which to adjust your bid for multimedia ads above or below the base ad group or keyword bid
          * @var integer
          */
@@ -117,6 +143,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Name;
+
+        /**
+         * The campaign privacy status.
+         * @var CampaignPrivacyStatus
+         */
+        public $PrivacyStatus;
 
         /**
          * The date when you want your campaign to begin serving.

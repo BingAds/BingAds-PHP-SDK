@@ -43,6 +43,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CroppingType;
 
         /**
+         * The image asset is excluded.
+         * @var boolean
+         */
+        public $Excluded;
+
+        /**
          * Represents the aspect ratio for this image asset.
          * @var string
          */

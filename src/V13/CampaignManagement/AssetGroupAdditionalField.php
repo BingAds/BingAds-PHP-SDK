@@ -29,6 +29,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Request that the CroppingType element be included within each returned AssetGroup object. */
         const CroppingType = 'CroppingType';
+
+        /** Request that the unified campaign fields are included with each returned Campaign object. */
+        const UnifiedCampaignFields = 'UnifiedCampaignFields';
     }
 
 }

@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SetSharedEntityAssociationsRequest
     {
         /**
-         * The list of negative keyword list to campaign associations, or website exclusion list to ad account associations.
+         * The list of negative keyword list to campaign associations, website exclusion list to ad account associations, or brand exclusion or inclusion list to campaign associations.
          * @var SharedEntityAssociation[]
          */
         public $Associations;

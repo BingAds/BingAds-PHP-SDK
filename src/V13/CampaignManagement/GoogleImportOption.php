@@ -90,6 +90,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImportNCAGoalWithSystemGeneratedAudience;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $ImportNCASettings;
+
+        /**
          * Import AI Max settings that haven not previously been imported.
          * @var boolean
          */
@@ -312,7 +318,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewReviewAdExtensions;
 
         /**
-         * Reserved.
+         * This element is deprecated.
          * @var boolean
          */
         public $NewSearchThemesForExistingAssetGroups;
@@ -498,7 +504,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateAssetGroups;
 
         /**
-         * Reserved.
+         * This element is deprecated.
          * @var boolean
          */
         public $UpdateAssetGroupsAsset;
@@ -630,6 +636,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateLogoAdExtensions;
 
         /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateNCASettings;
+
+        /**
          * Import updates to existing negative keyword lists.
          * @var boolean
          */
@@ -670,6 +682,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var boolean
          */
         public $UpdateReviewAdExtensions;
+
+        /**
+         * Reserved.
+         * @var boolean
+         */
+        public $UpdateSearchThemesForExistingAssetGroups;
 
         /**
          * Import updates to existing sitelink extensions.
