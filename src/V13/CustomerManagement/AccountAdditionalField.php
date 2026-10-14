@@ -21,6 +21,9 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
 
         /** Request that the CouponClaimInfo element be included within each returned AdvertiserAccount object. */
         const CouponClaimInfo = 'CouponClaimInfo';
+
+        /** Reserved. */
+        const ParentCustomerNumber = 'ParentCustomerNumber';
     }
 
 }

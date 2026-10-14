@@ -115,6 +115,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The ad group criterion is a custom LinkedIn criterion. */
         const CustomLinkedIn = 'CustomLinkedIn';
+
+        /** Reserved. */
+        const AIPrompt = 'AIPrompt';
     }
 
 }

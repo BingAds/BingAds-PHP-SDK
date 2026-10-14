@@ -41,6 +41,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** The audience is a custom segment. */
         const CustomSegment = 'CustomSegment';
+
+        /** Reserved. */
+        const AIPrompt = 'AIPrompt';
     }
 
 }

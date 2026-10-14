@@ -7,10 +7,18 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the base object of media.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/media?view=bingads-13 Media Data Object
      * 
+     * @uses AdvertiserAILabel
      * @used-by AddMediaRequest
+     * @used-by UpdateMediaRequest
      */
     class Media
     {
+        /**
+         * Reserved.
+         * @var AdvertiserAILabel
+         */
+        public $AdvertiserAILabel;
+
         /**
          * The unique Microsoft Advertising identifier of the media.
          * @var integer

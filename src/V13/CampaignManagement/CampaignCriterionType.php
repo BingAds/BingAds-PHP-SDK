@@ -91,6 +91,9 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
         /** Reserved. */
         const JobTitle = 'JobTitle';
+
+        /** Reserved. */
+        const AIPrompt = 'AIPrompt';
     }
 
 }

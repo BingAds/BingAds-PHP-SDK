@@ -7,12 +7,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines a media meta data object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/mediametadata?view=bingads-13 MediaMetaData Data Object
      * 
+     * @uses AdvertiserAILabel
      * @uses MediaRepresentation
+     * @uses SystemAIDetectionSignal
      * @used-by GetMediaMetaDataByAccountIdResponse
      * @used-by GetMediaMetaDataByIdsResponse
      */
     final class MediaMetaData
     {
+        /**
+         * Reserved.
+         * @var AdvertiserAILabel
+         */
+        public $AdvertiserAILabel;
+
         /**
          * The system identifier of the media meta data.
          * @var integer
@@ -30,6 +38,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var MediaRepresentation[]
          */
         public $Representations;
+
+        /**
+         * Reserved.
+         * @var SystemAIDetectionSignal
+         */
+        public $SystemAIDetectionSignal;
 
         /**
          * The media text.

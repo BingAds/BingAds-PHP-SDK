@@ -19,6 +19,9 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
 
         /** Return CouponClaimInfo in the response. */
         const CouponClaimInfo = 'CouponClaimInfo';
+
+        /** Reserved. */
+        const ParentCustomerNumber = 'ParentCustomerNumber';
     }
 
 }

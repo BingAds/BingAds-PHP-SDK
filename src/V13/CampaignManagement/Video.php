@@ -7,6 +7,8 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      * Defines the Video Data Object.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/video?view=bingads-13 Video Data Object
      * 
+     * @uses AdvertiserAILabel
+     * @uses SystemAIDetectionSignal
      * @used-by AdRecommendationVideoSuggestion
      * @used-by AddVideosRequest
      * @used-by GetVideosByIdsResponse
@@ -14,6 +16,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class Video
     {
+        /**
+         * Reserved.
+         * @var AdvertiserAILabel
+         */
+        public $AdvertiserAILabel;
+
         /**
          * The video's aspect ratio.
          * @var string
@@ -67,6 +75,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
          * @var string
          */
         public $Status;
+
+        /**
+         * Reserved.
+         * @var SystemAIDetectionSignal
+         */
+        public $SystemAIDetectionSignal;
 
         /**
          * The thumbnail URL of the video asset.
