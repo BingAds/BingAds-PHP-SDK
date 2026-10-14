@@ -169,6 +169,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SubType;
 
         /**
+         * Reserved.
+         * @var AssetLink[]
+         */
+        public $TermExclusions;
+
+        /**
          * This column is deprecated.
          * @var string
          */

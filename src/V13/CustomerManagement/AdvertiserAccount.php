@@ -195,6 +195,12 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
          * @var string
          */
         public $AccountMode;
+
+        /**
+         * Reserved.
+         * @var string
+         */
+        public $ParentCustomerNumber;
     }
 
 }

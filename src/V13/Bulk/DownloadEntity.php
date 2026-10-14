@@ -626,6 +626,9 @@ namespace Microsoft\BingAds\V13\Bulk;
 
         /** Reserved. */
         const AdGroupAIPromptAssociations = 'AdGroupAIPromptAssociations';
+
+        /** Reserved. */
+        const AIPromptAudiences = 'AIPromptAudiences';
     }
 
 }
