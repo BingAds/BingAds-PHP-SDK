@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     class Media
     {
         /**
-         * Reserved.
+         * The advertiser's declaration about AI-generated content and visible watermarks in the image.
          * @var AdvertiserAILabel
          */
         public $AdvertiserAILabel;

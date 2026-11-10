@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddNewCustomerAcquisitionGoalsResponse
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifiers of the new customer acquisition goals that were added.
          * @var integer[]
          */
         public $NewCustomerAcquisitionGoalIds;
 
         /**
-         * Reserved.
+         * An array of batch errors that contains details for any request items that were not successful.
          * @var BatchError[]
          */
         public $PartialErrors;

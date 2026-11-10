@@ -4,22 +4,22 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Updates advertiser-settable properties of existing image media in an account's asset library.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/updatemedia?view=bingads-13 UpdateMedia Request Object
-     *
+     * 
      * @uses Media
      * @used-by BingAdsCampaignManagementService::UpdateMedia
      */
     final class UpdateMediaRequest
     {
         /**
-         * Reserved.
+         * The identifier of the account that owns the asset library.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * An array of existing image media to update.
          * @var Media[]
          */
         public $Media;

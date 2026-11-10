@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class GetUngroupedAccountsResponse
     {
         /**
-         * Reserved.
+         * The customer's accounts that are not assigned to a billing group.
          * @var UngroupedAccount[]
          */
         public $UngroupedAccounts;

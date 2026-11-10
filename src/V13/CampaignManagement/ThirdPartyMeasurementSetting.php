@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ThirdPartyMeasurementSetting extends Setting
     {
         /**
-         * Reserved.
+         * The key and value pairs that configure third-party measurement.
          * @var KeyValuePairOfstringstring[][]
          */
         public $Details;

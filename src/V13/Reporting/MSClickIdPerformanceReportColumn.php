@@ -68,7 +68,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Clicks are what you pay for. */
         const Clicks = 'Clicks';
 
-        /** The cost per click (CPC). */
+        /** The cost per click (CPC) field reflects the actual average cost per click, based on the amount you were charged. */
         const Cpc = 'Cpc';
 
         /** The number of conversions. */

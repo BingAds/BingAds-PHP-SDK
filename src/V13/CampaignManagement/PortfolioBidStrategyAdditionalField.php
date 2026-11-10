@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Inlcude the MaxCpc element within each returned MaxConversionValueBiddingScheme object. */
         const MaxConversionValueWithMaxCpc = 'MaxConversionValueWithMaxCpc';
 
-        /** Reserved. */
+        /** Request that the scope be included within each returned portfolio bid strategy. */
         const Scope = 'Scope';
 
-        /** Reserved. */
+        /** Request that the currency code be included within each returned portfolio bid strategy. */
         const CurrencyCode = 'CurrencyCode';
 
-        /** Reserved. */
+        /** Request that the reporting time zone be included within each returned portfolio bid strategy. */
         const ReportingTimeZone = 'ReportingTimeZone';
     }
 

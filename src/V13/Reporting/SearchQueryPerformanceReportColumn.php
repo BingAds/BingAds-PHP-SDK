@@ -185,13 +185,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of conversions. */
         const AllConversionsQualified = 'AllConversionsQualified';
 
-        /** Reserved. */
+        /** The asset group name. */
         const AssetGroupName = 'AssetGroupName';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The asset group status. */
         const AssetGroupStatus = 'AssetGroupStatus';
 
         /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */

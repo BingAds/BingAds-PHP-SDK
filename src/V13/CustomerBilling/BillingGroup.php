@@ -12,25 +12,25 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class BillingGroup
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the billing group.
          * @var integer
          */
         public $BillingGroupId;
 
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the customer that owns the billing group.
          * @var integer
          */
         public $CustomerId;
 
         /**
-         * Reserved.
+         * The billing group name.
          * @var string
          */
         public $Name;
 
         /**
-         * Reserved.
+         * The billing group description.
          * @var string
          */
         public $Description;

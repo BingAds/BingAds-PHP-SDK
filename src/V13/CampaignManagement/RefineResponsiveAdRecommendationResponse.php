@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class RefineResponsiveAdRecommendationResponse
     {
         /**
-         * Reserved.
+         * The text refinement results.
          * @var AdRecommendationTextRefineResult[]
          */
         public $TextRefineResults;
 
         /**
-         * Reserved.
+         * The media refinement results.
          * @var AdRecommendationMediaRefineResult[]
          */
         public $MediaRefineResults;

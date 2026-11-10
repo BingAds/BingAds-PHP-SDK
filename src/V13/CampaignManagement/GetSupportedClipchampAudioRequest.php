@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetSupportedClipchampAudioRequest
     {
         /**
-         * Reserved.
+         * The criteria to use to filter the supported audio tracks.
          * @var AudioFilter
          */
         public $AudioFilter;

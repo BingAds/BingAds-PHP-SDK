@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetHealthCheckRequest
     {
         /**
-         * Reserved.
+         * The entities for which to run health checks.
          * @var HealthCheckEntity[]
          */
         public $HealthCheckEntities;
 
         /**
-         * Reserved.
+         * The types of health checks to run.
          * @var string[]
          */
         public $HealthCheckTypes;

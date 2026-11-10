@@ -15,25 +15,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetDiagnosticsRequest
     {
         /**
-         * Reserved.
+         * The entities to diagnose.
          * @var DiagnosticsEntity[]
          */
         public $Entities;
 
         /**
-         * Reserved.
+         * The diagnostic checks to run.
          * @var DiagnosticsFilter[]
          */
         public $Checks;
 
         /**
-         * Reserved.
+         * The settings to use when running the diagnostics.
          * @var DiagnosticsSettings
          */
         public $Settings;
 
         /**
-         * Reserved.
+         * The name of the caller requesting the diagnostics.
          * @var string
          */
         public $CallerName;

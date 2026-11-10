@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetDiagnosticsResponse
     {
         /**
-         * Reserved.
+         * The status of the diagnostics request.
          * @var DiagnosticsRequestStatus
          */
         public $RequestStatus;
 
         /**
-         * Reserved.
+         * The entities to diagnose.
          * @var EntityResult[]
          */
         public $Entities;

@@ -14,7 +14,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationVideoSuggestion
     {
         /**
-         * Reserved.
+         * The suggested video.
          * @var Video
          */
         public $Video;

@@ -19,7 +19,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AudienceGroupIds;
 
         /**
-         * Reserved.
+         * The list of additional properties to include with each returned audience group.
          * @var AudienceGroupAdditionalField
          */
         public $ReturnAdditionalFields;

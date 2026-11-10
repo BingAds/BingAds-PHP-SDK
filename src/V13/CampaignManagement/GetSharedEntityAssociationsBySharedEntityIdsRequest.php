@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SharedEntityScope;
 
         /**
-         * Reserved.
+         * The list of additional properties to include with each returned shared entity association.
          * @var SharedEntityAssociationAdditionalField
          */
         public $ReturnAdditionalFields;

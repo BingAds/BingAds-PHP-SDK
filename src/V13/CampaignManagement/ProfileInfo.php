@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ProfileInfo
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the LinkedIn profile segment.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The LinkedIn profile type.
          * @var ProfileType
          */
         public $Type;

@@ -11,16 +11,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AppStore
     {
-        /** The app is distributed in the Google app store. */
+        /** The app is available in the Google app store. */
         const GoogleAppStore = 'GoogleAppStore';
 
-        /** The app is distributed in the Apple app store. */
+        /** The app is available in the Apple app store. */
         const AppleAppStore = 'AppleAppStore';
 
-        /** The app is distributed in the Microsoft app store. */
+        /** The app is available in the Microsoft app store. */
         const MicrosoftAppStore = 'MicrosoftAppStore';
 
-        /** Reserved. */
+        /** The app is available in the XBOX Store. */
         const XboxStore = 'XboxStore';
     }
 

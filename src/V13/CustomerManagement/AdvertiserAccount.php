@@ -197,7 +197,7 @@ namespace Microsoft\BingAds\V13\CustomerManagement;
         public $AccountMode;
 
         /**
-         * Reserved.
+         * The system-generated customer number used to identify the customer that owns the account.
          * @var string
          */
         public $ParentCustomerNumber;

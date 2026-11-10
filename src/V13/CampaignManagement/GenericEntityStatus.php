@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class GenericEntityStatus
     {
-        /** Reserved. */
+        /** The entity is active and eligible to serve. */
         const Active = 'Active';
 
-        /** Reserved. */
+        /** The entity is paused and is not eligible to serve. */
         const Paused = 'Paused';
 
-        /** Reserved. */
+        /** The entity failed editorial review. */
         const Disapproved = 'Disapproved';
 
-        /** Reserved. */
+        /** The entity is inactive. */
         const Inactive = 'Inactive';
 
-        /** Reserved. */
+        /** The entity is deleted. */
         const Deleted = 'Deleted';
     }
 

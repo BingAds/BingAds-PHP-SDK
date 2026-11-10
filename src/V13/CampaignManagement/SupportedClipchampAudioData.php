@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SupportedClipchampAudioData
     {
         /**
-         * Reserved.
+         * The supported audio tracks.
          * @var SupportedClipchampAudio[]
          */
         public $Audio;

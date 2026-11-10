@@ -51,7 +51,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SharedEntityType;
 
         /**
-         * Reserved.
+         * The status of the association between the shared entity and the target entity.
          * @var string
          */
         public $Status;

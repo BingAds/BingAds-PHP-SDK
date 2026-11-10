@@ -10,7 +10,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ManualCpcBiddingScheme extends BiddingScheme
     {
         /**
-         * Reserved.
+         * The manual cost-per-click bid amount.
          * @var double
          */
         public $ManualCpc;

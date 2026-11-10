@@ -16,7 +16,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class MediaMetaData
     {
         /**
-         * Reserved.
+         * The advertiser's declaration about AI-generated content and visible watermarks in the image, returned when retrieving media metadata.
          * @var AdvertiserAILabel
          */
         public $AdvertiserAILabel;
@@ -40,7 +40,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Representations;
 
         /**
-         * Reserved.
+         * Microsoft's detection of AI provenance for the image, returned when retrieving media metadata.
          * @var SystemAIDetectionSignal
          */
         public $SystemAIDetectionSignal;

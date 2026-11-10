@@ -51,10 +51,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The fundamental part of the URL (e.g., contoso.com). */
         const BaseDomain = 'BaseDomain';
 
-        /** Reserved. */
+        /** Request that the target setting for job seniority criteria be included within each returned AdGroup object. */
         const TargetSettingForJobSeniority = 'TargetSettingForJobSeniority';
 
-        /** Reserved. */
+        /** Request that the target setting for custom LinkedIn profile criteria be included within each returned AdGroup object. */
         const TargetSettingForCustomLinkedIn = 'TargetSettingForCustomLinkedIn';
     }
 

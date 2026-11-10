@@ -11,7 +11,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AudienceGroupAdditionalField
     {
-        /** Reserved. */
+        /** Request that the profile dimension be included within each returned audience group. */
         const ProfileDimension = 'ProfileDimension';
     }
 

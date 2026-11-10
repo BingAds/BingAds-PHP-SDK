@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckActionLinkMetadata
     {
         /**
-         * Reserved.
+         * The display name of the action link.
          * @var string
          */
         public $LinkName;
 
         /**
-         * Reserved.
+         * The template used to construct the action link.
          * @var string
          */
         public $LinkTemplate;
 
         /**
-         * Reserved.
+         * The type of action link.
          * @var string
          */
         public $LinkType;

@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckEntity
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the entity to check.
          * @var integer
          */
         public $HealthCheckEntityId;
 
         /**
-         * Reserved.
+         * The entity level at which to run the health check.
          * @var string
          */
         public $HealthCheckEntityLevel;

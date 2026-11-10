@@ -23,13 +23,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AssetGroup;
 
         /**
-         * Reserved.
+         * The text refinement operations to apply.
          * @var AdRecommendationTextRefineOperation[]
          */
         public $TextRefineOperations;
 
         /**
-         * Reserved.
+         * An array of images recommended to be included in the asset group.
          * @var AdRecommendationImageSuggestion[]
          */
         public $ImageSuggestions;
@@ -41,7 +41,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ImageRefineOperations;
 
         /**
-         * Reserved.
+         * The list of additional properties to include in the recommendation.
          * @var AdRecommendationAdditionalField
          */
         public $ReturnAdditionalFields;

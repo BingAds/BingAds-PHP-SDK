@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudioFilter
     {
         /**
-         * Reserved.
+         * The audio names to include in the results.
          * @var string[]
          */
         public $AudioNames;
 
         /**
-         * Reserved.
+         * The audio categories to include in the results.
          * @var string[]
          */
         public $Categories;

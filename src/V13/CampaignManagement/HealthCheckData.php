@@ -14,31 +14,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckData
     {
         /**
-         * Reserved.
+         * The version of the health check data format.
          * @var string
          */
         public $HealthCheckDataVersion;
 
         /**
-         * Reserved.
+         * The entity for which the health check was run.
          * @var HealthCheckEntity
          */
         public $HealthCheckEntity;
 
         /**
-         * Reserved.
+         * The health check result data in JSON format.
          * @var string
          */
         public $HealthCheckJsonData;
 
         /**
-         * Reserved.
+         * The name of the health check.
          * @var string
          */
         public $HealthCheckName;
 
         /**
-         * Reserved.
+         * The health check results for subordinate entities.
          * @var HealthCheckSubEntityData
          */
         public $HealthCheckSubEntityResults;

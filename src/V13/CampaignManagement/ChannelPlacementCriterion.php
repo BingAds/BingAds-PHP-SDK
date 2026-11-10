@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the channel placement criterion data object.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/channelplacementcriterion?view=bingads-13 ChannelPlacementCriterion Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/channelplacementcriterion?view=bingads-13 ChannelPlacementCriterion Data Object
      */
     final class ChannelPlacementCriterion extends Criterion
     {

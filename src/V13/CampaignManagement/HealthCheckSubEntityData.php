@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckSubEntityData
     {
         /**
-         * Reserved.
+         * The number of health issues found for the subordinate entities.
          * @var integer
          */
         public $SubEntityHealthIssueCount;
 
         /**
-         * Reserved.
+         * The Microsoft Advertising identifiers of the subordinate entities with health issues.
          * @var integer[]
          */
         public $SubEntityIds;
 
         /**
-         * Reserved.
+         * The entity level of the subordinate entities.
          * @var string
          */
         public $SubEntityLevel;

@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
         /** Return CouponClaimInfo in the response. */
         const CouponClaimInfo = 'CouponClaimInfo';
 
-        /** Reserved. */
+        /** Return ParentCustomerNumber, the system-generated customer number that identifies the customer that owns the account. */
         const ParentCustomerNumber = 'ParentCustomerNumber';
     }
 

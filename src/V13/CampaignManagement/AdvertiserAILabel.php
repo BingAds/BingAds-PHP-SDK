@@ -4,25 +4,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Reserved.
+     * Defines the advertiser's declaration about AI-generated content and visible watermarks in an asset.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/advertiserailabel?view=bingads-13 AdvertiserAILabel Value Set
-     *
+     * 
      * @used-by Media
      * @used-by MediaMetaData
      * @used-by Video
      */
     final class AdvertiserAILabel
     {
-        /** Reserved. */
+        /** The requested API revision does not expose this capability. */
         const NotSupportedForGivenRevision = 'NotSupportedForGivenRevision';
 
-        /** Reserved. */
+        /** The asset contains AI-generated content, and you request a visible AI watermark where supported. */
         const AIWithVisibleWatermark = 'AIWithVisibleWatermark';
 
-        /** Reserved. */
+        /** The asset contains AI-generated content; no visible watermark is requested. */
         const AIContent = 'AIContent';
 
-        /** Reserved. */
+        /** The advertiser declares that the asset does not contain AI-generated content. */
         const NoAIContent = 'NoAIContent';
     }
 

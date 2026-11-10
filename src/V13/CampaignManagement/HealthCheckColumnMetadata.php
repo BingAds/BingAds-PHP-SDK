@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckColumnMetadata
     {
         /**
-         * Reserved.
+         * The metadata for action links associated with the health check column.
          * @var HealthCheckActionLinkMetadata[]
          */
         public $HealthCheckActionLinksMetadata;
 
         /**
-         * Reserved.
+         * The key that identifies the health check column.
          * @var string
          */
         public $Key;
 
         /**
-         * Reserved.
+         * The display title of the health check column.
          * @var string
          */
         public $Title;
 
         /**
-         * Reserved.
+         * The data type of the health check column.
          * @var string
          */
         public $Type;

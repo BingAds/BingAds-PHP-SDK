@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Reserved for future use. */
         const IncomeRange = 'IncomeRange';
 
-        /** Reserved. */
+        /** The criterion type group includes job seniority criteria. */
         const JobSeniority = 'JobSeniority';
 
         /** The custom LinkedIn criterion type group. */

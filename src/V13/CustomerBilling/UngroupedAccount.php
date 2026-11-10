@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class UngroupedAccount
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the account.
          * @var integer
          */
         public $AccountId;
 
         /**
-         * Reserved.
+         * The system-generated account number that is used to identify the account in the Microsoft Advertising web application.
          * @var string
          */
         public $AccountNumber;
 
         /**
-         * Reserved.
+         * The account name.
          * @var string
          */
         public $AccountName;
 
         /**
-         * Reserved.
+         * The billing groups to which the account can be assigned.
          * @var KeyValueEntityOflongstring[]
          */
         public $PotentialBillingGroups;

@@ -63,17 +63,20 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The segments that advertisers can block. */
         const BlockedContentSegments = 'BlockedContentSegments';
 
-        /** Reserved. */
+        /** Opt out of AI enhancements for image and video assets. */
         const AssetAIEnhancementOptout = 'AssetAIEnhancementOptout';
 
         /** The Nielson terms and conditions are accepted. */
         const AcceptNielsenTermsAndConditions = 'AcceptNielsenTermsAndConditions';
 
-        /** Reserved. */
+        /** Opt out of warnings about missing images. */
         const ImageMissingWarningOptout = 'ImageMissingWarningOptout';
 
         /** For internal use only. */
         const OptOutFromSystemSourcedImagesInSWF = 'OptOutFromSystemSourcedImagesInSWF';
+
+        /** Reserved. */
+        const AIDetectedContentWatermarkPolicy = 'AIDetectedContentWatermarkPolicy';
     }
 
 }

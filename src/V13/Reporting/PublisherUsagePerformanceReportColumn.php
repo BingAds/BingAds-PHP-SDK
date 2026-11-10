@@ -224,22 +224,22 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Cost per in-app subscription. */
         const CPS = 'CPS';
 
-        /** Reserved. */
+        /** Clicks that exhibit a low likelihood of commercial intent. */
         const LowQualityClicks = 'LowQualityClicks';
 
-        /** Reserved. */
+        /** The low-quality clicks as a percentage. */
         const LowQualityClicksPercent = 'LowQualityClicksPercent';
 
-        /** Reserved. */
+        /** The number of impressions that result from low-quality keyword searches. */
         const LowQualityImpressions = 'LowQualityImpressions';
 
-        /** Reserved. */
+        /** The low-quality impressions as a percentage. */
         const LowQualityImpressionsPercent = 'LowQualityImpressionsPercent';
 
-        /** Reserved. */
+        /** Clicks that are filtered by general methods, such as deny lists and activity-based detection, and that exhibit a low likelihood of commercial intent. */
         const LowQualityGeneralClicks = 'LowQualityGeneralClicks';
 
-        /** Reserved. */
+        /** Invalid clicks that use sophisticated means to appear valid. */
         const LowQualitySophisticatedClicks = 'LowQualitySophisticatedClicks';
 
         /** Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs. */

@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $CampaignAdGroupIds;
 
         /**
-         * Reserved.
+         * The campaign types to include in the import.
          * @var string[]
          */
         public $CampaignTypes;

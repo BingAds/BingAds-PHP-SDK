@@ -91,7 +91,7 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $CampaignBiddingStrategy;
 
         /**
-         * Indicate the desired ad type for estimation response.
+         * Indicates the desired ad type for the estimation response.
          * @var integer
          */
         public $CampaignSubType;
@@ -157,31 +157,31 @@ namespace Microsoft\BingAds\V13\AdInsight;
         public $AutoTargeting;
 
         /**
-         * Reserved.
+         * The job seniority level of LinkedIn profile targeting.
          * @var SelectionOflong
          */
         public $JobSeniority;
 
         /**
-         * Reserved.
+         * The selection of genre targeting.
          * @var SelectionOflong
          */
         public $Genre;
 
         /**
-         * Reserved.
+         * The selection of channel targeting.
          * @var SelectionOflong
          */
         public $Channel;
 
         /**
-         * Reserved.
+         * The selection of channel placement targeting.
          * @var SelectionOflong
          */
         public $ChannelPlacement;
 
         /**
-         * Reserved.
+         * The selection of subchannel targeting.
          * @var SelectionOflong
          */
         public $SubChannel;

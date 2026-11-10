@@ -15,19 +15,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class NewCustomerAcquisitionGoal
     {
         /**
-         * Reserved.
+         * The additional conversion value assigned to a new customer.
          * @var float
          */
         public $AdditionalValue;
 
         /**
-         * Reserved.
+         * The audiences used to identify existing customers.
          * @var AudienceIdName[]
          */
         public $Audiences;
 
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the new customer acquisition goal.
          * @var integer
          */
         public $Id;

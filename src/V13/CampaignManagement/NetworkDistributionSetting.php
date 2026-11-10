@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class NetworkDistributionSetting extends Setting
     {
         /**
-         * Reserved.
+         * The networks where the campaign's ads can run.
          * @var Network
          */
         public $NetworkOption;

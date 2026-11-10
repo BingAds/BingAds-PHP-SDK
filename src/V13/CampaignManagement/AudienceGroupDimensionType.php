@@ -20,7 +20,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The audience dimension type for an audience group. */
         const Audience = 'Audience';
 
-        /** Reserved. */
+        /** The profile dimension type for an audience group. */
         const Profile = 'Profile';
     }
 

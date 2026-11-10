@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ProfileDimension extends AudienceGroupDimension
     {
         /**
-         * Reserved.
+         * The LinkedIn profiles included in the audience group dimension.
          * @var ProfileInfo[]
          */
         public $Profiles;

@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class SharedEntityAssociationAdditionalField
     {
-        /** Reserved. */
+        /** Request that brand list fields be included with each returned shared entity association. */
         const BrandListFields = 'BrandListFields';
     }
 

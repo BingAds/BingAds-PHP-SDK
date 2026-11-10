@@ -13,67 +13,67 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AssetGroupUrlTarget
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the asset group URL target.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The status of the asset group URL target.
          * @var GenericEntityStatus
          */
         public $Status;
 
         /**
-         * Reserved.
+         * The first condition used to select matching URLs.
          * @var string
          */
         public $TargetCondition1;
 
         /**
-         * Reserved.
+         * The second condition used to select matching URLs.
          * @var string
          */
         public $TargetCondition2;
 
         /**
-         * Reserved.
+         * The third condition used to select matching URLs.
          * @var string
          */
         public $TargetCondition3;
 
         /**
-         * Reserved.
+         * The operator to apply to the first target condition.
          * @var string
          */
         public $TargetConditionOperator1;
 
         /**
-         * Reserved.
+         * The operator to apply to the second target condition.
          * @var string
          */
         public $TargetConditionOperator2;
 
         /**
-         * Reserved.
+         * The operator to apply to the third target condition.
          * @var string
          */
         public $TargetConditionOperator3;
 
         /**
-         * Reserved.
+         * The value to compare against the first target condition.
          * @var string
          */
         public $TargetValue1;
 
         /**
-         * Reserved.
+         * The value to compare against the second target condition.
          * @var string
          */
         public $TargetValue2;
 
         /**
-         * Reserved.
+         * The value to compare against the third target condition.
          * @var string
          */
         public $TargetValue3;

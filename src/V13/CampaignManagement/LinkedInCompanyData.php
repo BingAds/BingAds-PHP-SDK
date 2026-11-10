@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * The LinkedIn company data object.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/linkedincompanydata?view=bingads-13 LinkedInCompanyData Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/linkedincompanydata?view=bingads-13 LinkedInCompanyData Data Object
      * 
      * @uses CompanySizeCategory
      * @used-by CompanyName

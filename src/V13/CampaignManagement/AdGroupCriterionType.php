@@ -110,13 +110,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The ad group criterion is a custom segment association. */
         const CustomSegment = 'CustomSegment';
 
-        /** Reserved. */
+        /** The ad group criterion is a job seniority criterion. */
         const JobSeniority = 'JobSeniority';
 
         /** The ad group criterion is a custom LinkedIn criterion. */
         const CustomLinkedIn = 'CustomLinkedIn';
 
-        /** Reserved. */
+        /** The ad group criterion is an AIPromptAudience association. */
         const AIPrompt = 'AIPrompt';
     }
 

@@ -21,7 +21,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Id;
 
         /**
-         * Reserved.
+         * The matched LinkedIn company data.
          * @var LinkedInCompanyData
          */
         public $LinkedInCompany;

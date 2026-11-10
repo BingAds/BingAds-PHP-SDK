@@ -68,7 +68,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The number of times a user completed at least 75% of the video (measured directly). */
         const VideoViewsAt75Percent = 'VideoViewsAt75Percent';
 
-        /** Reserved. */
+        /** The number of times a person watched the entire video to completion. */
         const CompletedVideoViews = 'CompletedVideoViews';
 
         /** Completed video views divided by total number of impressions. */
@@ -89,10 +89,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an asset group. */
         const AssetGroupId = 'AssetGroupId';
 
-        /** Reserved. */
+        /** The Microsoft Advertising assigned identifier of an ad. */
         const AdId = 'AdId';
     }
 

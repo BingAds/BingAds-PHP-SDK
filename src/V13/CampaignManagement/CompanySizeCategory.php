@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the company size category object.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/companysizecategory?view=bingads-13 CompanySizeCategory Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/companysizecategory?view=bingads-13 CompanySizeCategory Value Set
      * 
      * @used-by LinkedInCompanyData
      */
