@@ -13,25 +13,25 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetClipchampTemplatesRequest
     {
         /**
-         * Reserved.
+         * Determines whether to return mock template data.
          * @var boolean
          */
         public $Mock;
 
         /**
-         * Reserved.
+         * The maximum number of video templates to return.
          * @var integer
          */
         public $MaxAdsCount;
 
         /**
-         * Reserved.
+         * The criteria to use to filter the video templates.
          * @var VideoTemplateFilter
          */
         public $TemplateFilter;
 
         /**
-         * Reserved.
+         * The locale of the video templates to return.
          * @var string
          */
         public $Locale;

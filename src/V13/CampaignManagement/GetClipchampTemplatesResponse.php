@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetClipchampTemplatesResponse
     {
         /**
-         * Reserved.
+         * The video templates that match the request criteria.
          * @var ClipchampTemplateInfo[]
          */
         public $Templates;

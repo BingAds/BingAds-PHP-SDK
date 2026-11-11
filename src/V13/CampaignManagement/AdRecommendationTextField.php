@@ -12,16 +12,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
      */
     final class AdRecommendationTextField
     {
-        /** Reserved. */
+        /** The text field is a headline. */
         const Headline = 'Headline';
 
-        /** Reserved. */
+        /** The text field is a long headline. */
         const LongHeadline = 'LongHeadline';
 
-        /** Reserved. */
+        /** The text field is a description. */
         const Description = 'Description';
 
-        /** Reserved. */
+        /** The text field is a call to action. */
         const CallToAction = 'CallToAction';
     }
 

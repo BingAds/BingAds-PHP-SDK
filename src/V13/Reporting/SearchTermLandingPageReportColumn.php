@@ -35,7 +35,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The ad type. */
         const AdType = 'AdType';
 
-        /** The campaign type, for example Search, DynamicSearchAds, or PerformanceMax. */
+        /** The campaign type. */
         const CampaignType = 'CampaignType';
 
         /** The display language of the search term. */
@@ -53,13 +53,13 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The match type used to deliver the ad, which can differ from the bid match type. */
         const DeliveredMatchType = 'DeliveredMatchType';
 
-        /** The headlines delivered for the impression, returned as a pipe-delimited string in the format `h1\ */
+        /** The short, long, or auto-generated headlines delivered for the impression, returned as a pipe-delimited string such as h1\ */
         const Headline = 'Headline';
 
         /** The landing page URL (Final URL) that the user was sent to for the impression. */
         const FinalUrl = 'FinalUrl';
 
-        /** The source of the Final URL. */
+        /** Possible values are: Advertiser Provided (the advertiser-specified URL) and AI Expanded from URL (a URL selected through AI URL expansion). */
         const FinalUrlSource = 'FinalUrlSource';
 
         /** The number of times the ad was displayed. */
@@ -113,7 +113,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** Optionally refines ad delivery within the selected channels. */
         const SubChannel = 'SubChannel';
 
-        /** Reserved. */
+        /** Identifies the source of the short, long, or auto-generated headline assets used to generate the combined headline represented by the report row. */
         const HeadlineSource = 'HeadlineSource';
     }
 

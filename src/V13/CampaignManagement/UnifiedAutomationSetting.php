@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the unified automation setting data object.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/unifiedautomationsetting?view=bingads-13 UnifiedAutomationSetting Data Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/unifiedautomationsetting?view=bingads-13 UnifiedAutomationSetting Data Object
      */
     final class UnifiedAutomationSetting extends Setting
     {

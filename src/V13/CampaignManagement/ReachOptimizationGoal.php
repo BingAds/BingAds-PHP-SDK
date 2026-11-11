@@ -5,19 +5,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the reach optimization goal value set.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/reachoptimizationgoal?view=bingads-13 ReachOptimizationGoal Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/reachoptimizationgoal?view=bingads-13 ReachOptimizationGoal Value Set
      * 
      * @used-by ReachOptimizationGoalSetting
      */
     final class ReachOptimizationGoal
     {
-        /** Reserved. */
+        /** The reach optimization goal is not specified. */
         const Unspecified = 'Unspecified';
 
-        /** Reserved. */
+        /** Optimize the campaign to maximize impressions. */
         const MaxImpressions = 'MaxImpressions';
 
-        /** Reserved. */
+        /** Optimize the campaign to maximize unique reach. */
         const MaxUniqueReach = 'MaxUniqueReach';
     }
 

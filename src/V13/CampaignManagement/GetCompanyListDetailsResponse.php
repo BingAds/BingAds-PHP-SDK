@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Retreives company list details.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/getcompanylistdetails?view=bingads-13 GetCompanyListDetails Response Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getcompanylistdetails?view=bingads-13 GetCompanyListDetails Response Object
      * 
      * @uses CompanyName
      * @used-by BingAdsCampaignManagementService::GetCompanyListDetails

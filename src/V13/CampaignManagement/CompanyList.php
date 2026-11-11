@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CompanyList extends LinkedInSegment
     {
         /**
-         * Reserved.
+         * The companies included in the company list.
          * @var CompanyName[]
          */
         public $CompanyNames;
 
         /**
-         * Reserved.
+         * The number of companies that Microsoft Advertising matched.
          * @var integer
          */
         public $Matched;
 
         /**
-         * Reserved.
+         * The total number of companies in the company list.
          * @var integer
          */
         public $Total;

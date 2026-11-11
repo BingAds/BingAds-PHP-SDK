@@ -15,19 +15,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetHealthCheckResponse
     {
         /**
-         * Reserved.
+         * The metadata that describes the health check results.
          * @var HealthCheckMetadata[]
          */
         public $HealthCheckResultsMetadata;
 
         /**
-         * Reserved.
+         * The health check results.
          * @var HealthCheckData[]
          */
         public $HealthCheckResults;
 
         /**
-         * Reserved.
+         * The errors that occurred while running the health checks.
          * @var HealthCheckError[]
          */
         public $HealthCheckErrors;

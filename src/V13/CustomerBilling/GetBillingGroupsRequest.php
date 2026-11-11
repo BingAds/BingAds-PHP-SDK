@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class GetBillingGroupsRequest
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the customer whose billing groups you want to get.
          * @var integer
          */
         public $CustomerId;

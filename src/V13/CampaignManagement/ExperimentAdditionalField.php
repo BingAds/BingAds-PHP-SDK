@@ -17,10 +17,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the experiment arms field is used when requesting an Experiment object. */
         const ExperimentArms = 'ExperimentArms';
 
-        /** Reserved. */
+        /** Request that the experiment campaign type be included within each returned Experiment object. */
         const ExperimentCampaignType = 'ExperimentCampaignType';
 
-        /** Reserved. */
+        /** Request that the marketing objective be included within each returned Experiment object. */
         const MarketingObjective = 'MarketingObjective';
     }
 

@@ -16,19 +16,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AdRecommendationTextRefineOperation
     {
         /**
-         * Reserved.
+         * The type of text field to refine.
          * @var AdRecommendationTextField
          */
         public $TextField;
 
         /**
-         * Reserved.
+         * The zero-based index of the text field to refine.
          * @var integer
          */
         public $TextFieldIndex;
 
         /**
-         * Reserved.
+         * The tone to use when refining the text.
          * @var AdRecommendationTextTone
          */
         public $TextTone;

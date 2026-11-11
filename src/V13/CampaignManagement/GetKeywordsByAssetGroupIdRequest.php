@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Gets the keywords within an asset group.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/getkeywordsbyassetgroupid?view=bingads-13 GetKeywordsByAssetGroupId Request Object
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/getkeywordsbyassetgroupid?view=bingads-13 GetKeywordsByAssetGroupId Request Object
      * 
      * @uses KeywordAdditionalField
      * @used-by BingAdsCampaignManagementService::GetKeywordsByAssetGroupId

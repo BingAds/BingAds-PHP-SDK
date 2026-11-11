@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetSupportedClipchampAudioResponse
     {
         /**
-         * Reserved.
+         * The supported audio tracks that match the request criteria.
          * @var SupportedClipchampAudioData
          */
         public $Data;

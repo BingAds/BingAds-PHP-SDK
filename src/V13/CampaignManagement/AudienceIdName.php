@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AudienceIdName
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the audience.
          * @var integer
          */
         public $Id;
 
         /**
-         * Reserved.
+         * The audience name.
          * @var string
          */
         public $Name;

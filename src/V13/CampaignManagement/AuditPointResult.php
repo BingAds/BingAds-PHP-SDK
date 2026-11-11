@@ -12,31 +12,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AuditPointResult
     {
         /**
-         * Reserved.
+         * The audit point description.
          * @var string
          */
         public $Description;
 
         /**
-         * Reserved.
+         * Additional key and value details about the audit point.
          * @var ArrayOfKeyValueOfstringstring
          */
         public $Details;
 
         /**
-         * Reserved.
+         * The key that identifies the audit point.
          * @var string
          */
         public $Key;
 
         /**
-         * Reserved.
+         * The severity of the audit point result.
          * @var string
          */
         public $Severity;
 
         /**
-         * Reserved.
+         * The timestamp of the audit point result.
          * @var string
          */
         public $Timestamp;

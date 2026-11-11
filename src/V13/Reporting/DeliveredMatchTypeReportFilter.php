@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\Reporting;
 
 {
     /**
-     * Defines the delivered match type values that you can use to filter the report data.
+     * Defines the delivered match type values, including AI-optimized delivery, that you can use to filter the report data.
      * @link https:/learn.microsoft.com/advertising/reporting-service/deliveredmatchtypereportfilter?view=bingads-13 DeliveredMatchTypeReportFilter Value Set
      * 
      * @used-by KeywordPerformanceReportFilter
@@ -29,7 +29,7 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The report will contain ads that were delivered by using a close variant phrase match comparison. */
         const PhraseCloseVariant = 'PhraseCloseVariant';
 
-        /** Reserved. */
+        /** The search query was delivered through AI Max search term matching. */
         const AIOptimized = 'AIOptimized';
     }
 

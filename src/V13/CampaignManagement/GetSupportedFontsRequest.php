@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetSupportedFontsRequest
     {
         /**
-         * Reserved.
+         * The ad subtype for which to get supported fonts.
          * @var AdSubType
          */
         public $AdSubType;

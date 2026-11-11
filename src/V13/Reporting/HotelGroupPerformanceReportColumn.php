@@ -157,6 +157,12 @@ namespace Microsoft\BingAds\V13\Reporting;
 
         /** The number of impressions lost because there were insufficient bids. */
         const MissedImpressionsInsufficientBid = 'MissedImpressionsInsufficientBid';
+
+        /** Reserved. */
+        const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
+
+        /** Reserved. */
+        const TopImpressionSharePercent = 'TopImpressionSharePercent';
     }
 
 }

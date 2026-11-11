@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class AddNewCustomerAcquisitionGoalsRequest
     {
         /**
-         * Reserved.
+         * The new customer acquisition goals to add.
          * @var NewCustomerAcquisitionGoal[]
          */
         public $NewCustomerAcquisitionGoals;

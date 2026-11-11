@@ -5,7 +5,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 {
     /**
      * Defines the campaign privacy status value set.
-     * @link https://learn.microsoft.com/en-us/advertising/campaign-management-service/campaignprivacystatus?view=bingads-13 CampaignPrivacyStatus Value Set
+     * @link https:/learn.microsoft.com/advertising/campaign-management-service/campaignprivacystatus?view=bingads-13 CampaignPrivacyStatus Value Set
      * 
      * @used-by Campaign
      */

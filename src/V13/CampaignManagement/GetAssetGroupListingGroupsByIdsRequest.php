@@ -25,7 +25,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AssetGroupListingGroupIds;
 
         /**
-         * Reserved.
+         * The list of additional properties to include with each returned asset group listing group.
          * @var AssetGroupListingGroupAdditionalField
          */
         public $ReturnAdditionalFields;

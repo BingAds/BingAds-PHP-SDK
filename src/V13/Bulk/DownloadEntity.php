@@ -429,16 +429,16 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign Disclaimer Ad Extension records in the download that represents the association relationship between a campaign and a disclaimer ad extension. */
         const CampaignDisclaimerAdExtensions = 'CampaignDisclaimerAdExtensions';
 
-        /** Reserved. */
+        /** Include ad customizer attribute records in the download data. */
         const AdcustomizerAttribute = 'AdcustomizerAttribute';
 
-        /** Reserved. */
+        /** Include campaign ad customizer attribute records in the download data. */
         const CampaignAdcustomizerAttribute = 'CampaignAdcustomizerAttribute';
 
-        /** Reserved. */
+        /** Include ad group ad customizer attribute records in the download data. */
         const AdGroupAdcustomizerAttribute = 'AdGroupAdcustomizerAttribute';
 
-        /** Reserved. */
+        /** Include keyword ad customizer attribute records in the download data. */
         const KeywordAdcustomizerAttribute = 'KeywordAdcustomizerAttribute';
 
         /** Include Campaign level conversion goal records in the download data. */
@@ -474,13 +474,13 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Ad Group Logo Ad Extension records in the download that represents the association relationship between an ad group and a logo ad extension. */
         const AdGroupLogoAdExtensions = 'AdGroupLogoAdExtensions';
 
-        /** Reserved. */
+        /** Include lead form ad extension records in the download data. */
         const LeadFormAdExtensions = 'LeadFormAdExtensions';
 
-        /** Reserved. */
+        /** Include records that represent the association between an account and a lead form ad extension. */
         const AccountLeadFormAdExtensions = 'AccountLeadFormAdExtensions';
 
-        /** Reserved. */
+        /** Include records that represent the association between a campaign and a lead form ad extension. */
         const CampaignLeadFormAdExtensions = 'CampaignLeadFormAdExtensions';
 
         /** Include Account Negative Keyword List records in the download data. */
@@ -492,7 +492,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Account Negative Keyword List records in the download data. */
         const AccountNegativeKeyword = 'AccountNegativeKeyword';
 
-        /** Reserved. */
+        /** Include conversion goal records in the download data. */
         const ConversionGoal = 'ConversionGoal';
 
         /** Include Event Goal records in the download data. */
@@ -501,7 +501,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include App Install Goal records in the download data. */
         const AppInstallGoal = 'AppInstallGoal';
 
-        /** Reserved. */
+        /** Include multi-stage conversion goal records in the download data. */
         const MultiStageGoal = 'MultiStageGoal';
 
         /** Include Duration Goal records in the download data. */
@@ -519,7 +519,7 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Pages Viewed Per Visit Goal records in the download data. */
         const PagesViewedPerVisitGoal = 'PagesViewedPerVisitGoal';
 
-        /** Reserved. */
+        /** Include smart goal records in the download data. */
         const SmartGoal = 'SmartGoal';
 
         /** Include In Store Visit Goal records in the download data. */
@@ -534,16 +534,16 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include DataExclusions records in the download data. */
         const DataExclusions = 'DataExclusions';
 
-        /** Reserved. */
+        /** Include brand list records in the download data. */
         const BrandList = 'BrandList';
 
-        /** Reserved. */
+        /** Include brand item records in the download data. */
         const BrandItem = 'BrandItem';
 
-        /** Reserved. */
+        /** Include Campaign Brand List Association records that represent the association between a campaign and a brand list. */
         const CampaignBrandListAssociation = 'CampaignBrandListAssociation';
 
-        /** Reserved. */
+        /** Include asset group search theme records in the download data. */
         const AssetGroupSearchThemes = 'AssetGroupSearchThemes';
 
         /** Include Impression Based Remarketing List records in the download data. */
@@ -561,31 +561,31 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Campaign Negative Impression Based Remarketing List Association records in the download that each represent the association relationship between a campaign and an impression based remarketing list exclusion. */
         const CampaignNegativeImpressionBasedRemarketingListAssociations = 'CampaignNegativeImpressionBasedRemarketingListAssociations';
 
-        /** Reserved. */
+        /** Include asset group URL target records in the download data. */
         const AssetGroupUrlTargets = 'AssetGroupUrlTargets';
 
-        /** Reserved. */
+        /** Include new customer acquisition goal records in the download data. */
         const NewCustomerAcquisitionGoal = 'NewCustomerAcquisitionGoal';
 
         /** Include Conversion Value Rule records in the download data. */
         const ConversionValueRule = 'ConversionValueRule';
 
-        /** Reserved. */
+        /** Include account placement exclusion list records in the download data. */
         const AccountPlacementExclusionList = 'AccountPlacementExclusionList';
 
-        /** Reserved. */
+        /** Include account placement exclusion list item records in the download data. */
         const AccountPlacementExclusionListItem = 'AccountPlacementExclusionListItem';
 
-        /** Reserved. */
+        /** Include records that represent the association between a campaign and an account placement exclusion list. */
         const CampaignAccountPlacementExclusionListAssociation = 'CampaignAccountPlacementExclusionListAssociation';
 
-        /** Reserved. */
+        /** Include account placement inclusion list records in the download data. */
         const AccountPlacementInclusionList = 'AccountPlacementInclusionList';
 
-        /** Reserved. */
+        /** Include account placement inclusion list item records in the download data. */
         const AccountPlacementInclusionListItem = 'AccountPlacementInclusionListItem';
 
-        /** Reserved. */
+        /** Include records that represent the association between a campaign and an account placement inclusion list. */
         const CampaignAccountPlacementInclusionListAssociation = 'CampaignAccountPlacementInclusionListAssociation';
 
         /** Include topic records, which you can use to create topic criterions. */
@@ -603,13 +603,13 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Ad Group Custom Segment Association records in the download that each represent the association relationship between an ad group and a custom segment. */
         const AdGroupCustomSegmentAssociations = 'AdGroupCustomSegmentAssociations';
 
-        /** Reserved. */
+        /** Include account content negative keyword list records in the download data. */
         const AccountContentNegativeKeywordList = 'AccountContentNegativeKeywordList';
 
-        /** Reserved. */
+        /** Include records that represent the association between an account and an account content negative keyword list. */
         const AccountContentNegativeKeywordListAssociation = 'AccountContentNegativeKeywordListAssociation';
 
-        /** Reserved. */
+        /** Include account content negative keyword records in the download data. */
         const AccountContentNegativeKeyword = 'AccountContentNegativeKeyword';
 
         /** Include Asset Group Negative Keyword records in the download data. */
@@ -621,10 +621,10 @@ namespace Microsoft\BingAds\V13\Bulk;
         /** Include Company Item records in the account download data. */
         const CompanyItem = 'CompanyItem';
 
-        /** Reserved. */
+        /** Include Ad Group Url Target records for AI Max URL inclusions under eligible standard Search ad groups. */
         const AdGroupUrlTargets = 'AdGroupUrlTargets';
 
-        /** Reserved. */
+        /** Include records that represent the association between an ad group and an AI prompt. */
         const AdGroupAIPromptAssociations = 'AdGroupAIPromptAssociations';
 
         /** Reserved. */

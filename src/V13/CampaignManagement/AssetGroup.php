@@ -38,7 +38,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AssetGroupSearchThemes;
 
         /**
-         * Reserved.
+         * The URL targets associated with the asset group.
          * @var AssetGroupUrlTarget[]
          */
         public $AssetGroupUrlTargets;
@@ -164,7 +164,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UrlCustomParameters;
 
         /**
-         * Reserved.
+         * The video assets associated with the asset group.
          * @var AssetLink[]
          */
         public $Videos;

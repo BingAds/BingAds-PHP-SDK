@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class GetNewCustomerAcquisitionGoalsByAccountIdRequest
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the account whose new customer acquisition goals you want to get.
          * @var integer
          */
         public $AccountId;

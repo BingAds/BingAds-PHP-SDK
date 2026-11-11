@@ -56,7 +56,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $LandscapeLogos;
 
         /**
-         * The messaging restrictions to use with your brand kit.
+         * The messaging guidelines that generated ad copy for the campaign must follow.
          * @var string[]
          */
         public $MessagingRestrictions;
@@ -80,7 +80,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SquareLogos;
 
         /**
-         * The term exclusions to use with your brand kit.
+         * The terms to exclude from generated ad copy for the campaign.
          * @var string[]
          */
         public $TermExclusions;

@@ -12,19 +12,19 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class UpdateBillingGroupAccountsRequest
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the customer that owns the billing group.
          * @var integer
          */
         public $CustomerId;
 
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the billing group.
          * @var integer
          */
         public $BillingGroupId;
 
         /**
-         * Reserved.
+         * The Microsoft Advertising identifiers of the accounts to add to the billing group.
          * @var integer[]
          */
         public $AccountsToAdd;

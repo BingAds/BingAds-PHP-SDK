@@ -59,10 +59,10 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The content of the long headline asset in a combination record. */
         const CombinationLongHeadline = 'CombinationLongHeadline';
 
-        /** Reserved. */
+        /** The first description in the asset combination. */
         const Description1 = 'Description1';
 
-        /** Reserved. */
+        /** The second description in the asset combination. */
         const Description2 = 'Description2';
 
         /** The image URL of the image asset in a combination record. */

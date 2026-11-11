@@ -13,7 +13,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class GetBillingGroupsResponse
     {
         /**
-         * Reserved.
+         * The billing groups that belong to the customer.
          * @var BillingGroup[]
          */
         public $BillingGroups;

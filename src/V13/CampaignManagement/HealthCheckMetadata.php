@@ -13,49 +13,49 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class HealthCheckMetadata
     {
         /**
-         * Reserved.
+         * The category of the health check.
          * @var string
          */
         public $HealthCheckCategory;
 
         /**
-         * Reserved.
+         * The display name of the health check category.
          * @var string
          */
         public $HealthCheckCategoryDisplayName;
 
         /**
-         * Reserved.
+         * The metadata for columns in the health check result.
          * @var HealthCheckColumnMetadata[]
          */
         public $HealthCheckColumnsMetadata;
 
         /**
-         * Reserved.
+         * The health check description.
          * @var string
          */
         public $HealthCheckDescription;
 
         /**
-         * Reserved.
+         * The display name of the health check.
          * @var string
          */
         public $HealthCheckDisplayName;
 
         /**
-         * Reserved.
+         * The name that identifies the health check.
          * @var string
          */
         public $HealthCheckName;
 
         /**
-         * Reserved.
+         * The severity of the health check finding.
          * @var string
          */
         public $HealthCheckSeverity;
 
         /**
-         * Reserved.
+         * The subtype of the health check.
          * @var string
          */
         public $HealthCheckSubType;

@@ -12,67 +12,67 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class ClipchampTemplateInfo
     {
         /**
-         * Reserved.
+         * The aspect ratio of the video template.
          * @var string
          */
         public $AspectRatio;
 
         /**
-         * Reserved.
+         * The duration of the video template in seconds.
          * @var integer
          */
         public $Duration;
 
         /**
-         * Reserved.
+         * The number of image assets that the video template supports.
          * @var integer
          */
         public $NumberOfImages;
 
         /**
-         * Reserved.
+         * The number of logo assets that the video template supports.
          * @var integer
          */
         public $NumberOfLogos;
 
         /**
-         * Reserved.
+         * The number of text assets that the video template supports.
          * @var integer
          */
         public $NumberOfText;
 
         /**
-         * Reserved.
+         * The video template description.
          * @var string
          */
         public $TemplateDescription;
 
         /**
-         * Reserved.
+         * The identifier of the video template.
          * @var string
          */
         public $TemplateId;
 
         /**
-         * Reserved.
+         * The video template name.
          * @var string
          */
         public $TemplateName;
 
         /**
-         * Reserved.
+         * The URL of a preview of the video template.
          * @var string
          */
         public $TemplatePreviewUrl;
 
         /**
-         * Reserved.
+         * The URL of the video template thumbnail.
          * @var string
          */
         public $TemplateThumbnailUrl;
 
         /**
-         * Reserved.
+         * The themes associated with the video template.
          * @var string[]
          */
         public $Themes;

@@ -133,6 +133,12 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $MarketingObjective;
 
         /**
+         * Reserved.
+         * @var AssetLink[]
+         */
+        public $MessagingRestrictions;
+
+        /**
          * The percent amount by which to adjust your bid for multimedia ads above or below the base ad group or keyword bid
          * @var integer
          */
@@ -169,7 +175,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SubType;
 
         /**
-         * Reserved.
+         * The terms to exclude from generated ad copy for the campaign.
          * @var AssetLink[]
          */
         public $TermExclusions;

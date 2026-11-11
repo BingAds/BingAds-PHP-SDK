@@ -84,10 +84,10 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the NewCarouselAd element be included within each returned GoogleImportOption object. */
         const NewCarouselAd = 'NewCarouselAd';
 
-        /** Reserved. */
+        /** Request that the UpdateAssetAutomationCampaignSetting element be included within each returned GoogleImportOption object. */
         const UpdateAssetAutomationCampaignSetting = 'UpdateAssetAutomationCampaignSetting';
 
-        /** Reserved. */
+        /** Request that the EnableCopilot element be included within each returned GoogleImportOption object. */
         const EnableCopilot = 'EnableCopilot';
 
         /** Request that the NewTopicTargets element be included within each returned GoogleImportOption object. */
@@ -96,46 +96,46 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Request that the UpdateTopicTargets element be included within each returned GoogleImportOption object. */
         const UpdateTopicTargets = 'UpdateTopicTargets';
 
-        /** Reserved. */
+        /** Request that the NewPortfolioBidStrategy element be included within each returned GoogleImportOption object. */
         const NewPortfolioBidStrategy = 'NewPortfolioBidStrategy';
 
         /** Request that the NewAIMaxSettings element be included within each returned GoogleImportOption object. */
         const NewAIMaxSettings = 'NewAIMaxSettings';
 
-        /** Reserved. */
+        /** Request that the ImageAssetAutomationOptOut element be included within each returned GoogleImportOption object. */
         const ImageAssetAutomationOptOut = 'ImageAssetAutomationOptOut';
 
         /** Request that the UpdateAIMaxSettings element be included within each returned GoogleImportOption object. */
         const UpdateAIMaxSettings = 'UpdateAIMaxSettings';
 
-        /** Reserved. */
+        /** Request that the ImportNCAGoalWithSystemGeneratedAudience element be included within each returned GoogleImportOption object. */
         const ImportNCAGoalWithSystemGeneratedAudience = 'ImportNCAGoalWithSystemGeneratedAudience';
 
-        /** Reserved. */
+        /** Request that the UpdateAssetGroupsAsset element be included within each returned GoogleImportOption object. */
         const UpdateAssetGroupsAsset = 'UpdateAssetGroupsAsset';
 
-        /** Reserved. */
+        /** Request that the NewBrandListAssociations element be included within each returned GoogleImportOption object. */
         const NewBrandListAssociations = 'NewBrandListAssociations';
 
-        /** Reserved. */
+        /** Request that the UpdateBrandListAssociations element be included within each returned GoogleImportOption object. */
         const UpdateBrandListAssociations = 'UpdateBrandListAssociations';
 
-        /** Reserved. */
+        /** Request that the CampaignTypes element be included within each returned GoogleImportJob object. */
         const CampaignTypes = 'CampaignTypes';
 
-        /** Reserved. */
+        /** Request that the NewSearchThemesForExistingAssetGroups element be included within each returned GoogleImportOption object. */
         const NewSearchThemesForExistingAssetGroups = 'NewSearchThemesForExistingAssetGroups';
 
-        /** Reserved. */
+        /** Request that the UpdateAssetGroups element be included within each returned GoogleImportOption object. */
         const UpdateAssetGroups = 'UpdateAssetGroups';
 
-        /** Reserved. */
+        /** Request that the UpdateSearchThemesForExistingAssetGroups element be included within each returned GoogleImportOption object. */
         const UpdateSearchThemesForExistingAssetGroups = 'UpdateSearchThemesForExistingAssetGroups';
 
-        /** Reserved. */
+        /** Request that the ImportNCASettings element be included within each returned GoogleImportOption object. */
         const ImportNCASettings = 'ImportNCASettings';
 
-        /** Reserved. */
+        /** Request that the UpdateNCASettings element be included within each returned GoogleImportOption object. */
         const UpdateNCASettings = 'UpdateNCASettings';
     }
 

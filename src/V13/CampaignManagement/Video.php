@@ -17,7 +17,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class Video
     {
         /**
-         * Reserved.
+         * The advertiser's declaration about AI-generated content and visible watermarks in the video.
          * @var AdvertiserAILabel
          */
         public $AdvertiserAILabel;
@@ -77,7 +77,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Status;
 
         /**
-         * Reserved.
+         * Microsoft's detection of AI provenance for the video.
          * @var SystemAIDetectionSignal
          */
         public $SystemAIDetectionSignal;

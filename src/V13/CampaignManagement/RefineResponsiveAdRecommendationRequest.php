@@ -17,31 +17,31 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class RefineResponsiveAdRecommendationRequest
     {
         /**
-         * Reserved.
+         * The responsive ad whose assets you want to refine.
          * @var ResponsiveAd
          */
         public $ResponsiveAd;
 
         /**
-         * Reserved.
+         * The text refinement operations to apply.
          * @var AdRecommendationTextRefineOperation[]
          */
         public $TextRefineOperations;
 
         /**
-         * Reserved.
+         * The image refinement operations to apply.
          * @var AdRecommendationImageRefineOperation[]
          */
         public $ImageRefineOperations;
 
         /**
-         * Reserved.
+         * An array of images recommended to be included in the responsive ad.
          * @var AdRecommendationImageSuggestion[]
          */
         public $ImageSuggestions;
 
         /**
-         * Reserved.
+         * The list of additional properties to include in the recommendation.
          * @var AdRecommendationAdditionalField
          */
         public $ReturnAdditionalFields;

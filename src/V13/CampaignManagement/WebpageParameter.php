@@ -4,7 +4,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
 
 {
     /**
-     * Defines the conditions or criteria that determine whether you want to show dynamic search ads.
+     * Defines the conditions or criteria that determine whether you want to show Dynamic Search ads or apply an AI Max URL inclusion.
      * @link https:/learn.microsoft.com/advertising/campaign-management-service/webpageparameter?view=bingads-13 WebpageParameter Data Object
      * 
      * @uses WebpageCondition

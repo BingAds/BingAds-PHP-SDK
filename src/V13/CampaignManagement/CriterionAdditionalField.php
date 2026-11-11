@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** Defines the relationship between the field and the value. */
         const Operator = 'Operator';
 
-        /** Reserved. */
+        /** Request that placement criterion fields be included in the response. */
         const Placement = 'Placement';
     }
 

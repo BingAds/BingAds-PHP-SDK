@@ -83,16 +83,16 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         /** The campaign criterion is an impression-based remarketing list. */
         const ImpressionBasedRemarketingList = 'ImpressionBasedRemarketingList';
 
-        /** Reserved. */
+        /** The campaign criterion is a job seniority criterion. */
         const JobSeniority = 'JobSeniority';
 
         /** The campaign criterion is a custom LinkedIn criterion. */
         const CustomLinkedIn = 'CustomLinkedIn';
 
-        /** Reserved. */
+        /** The campaign criterion is a job title criterion. */
         const JobTitle = 'JobTitle';
 
-        /** Reserved. */
+        /** The audience is generated based on an AI prompt. */
         const AIPrompt = 'AIPrompt';
     }
 

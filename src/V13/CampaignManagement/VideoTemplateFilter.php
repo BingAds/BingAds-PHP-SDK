@@ -12,37 +12,37 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class VideoTemplateFilter
     {
         /**
-         * Reserved.
+         * The aspect ratios of the video templates to return.
          * @var string[]
          */
         public $AspectRatios;
 
         /**
-         * Reserved.
+         * The durations, in seconds, of the video templates to return.
          * @var integer[]
          */
         public $Durations;
 
         /**
-         * Reserved.
+         * The maximum number of media assets supported by the video templates to return.
          * @var integer
          */
         public $MaxMediaAssetCount;
 
         /**
-         * Reserved.
+         * The maximum number of text assets supported by the video templates to return.
          * @var integer
          */
         public $MaxTextAssetCount;
 
         /**
-         * Reserved.
+         * The identifiers of the video templates to return.
          * @var string[]
          */
         public $TemplateIds;
 
         /**
-         * Reserved.
+         * The themes of the video templates to return.
          * @var string[]
          */
         public $Themes;

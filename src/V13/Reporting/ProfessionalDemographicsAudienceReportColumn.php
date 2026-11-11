@@ -44,16 +44,16 @@ namespace Microsoft\BingAds\V13\Reporting;
         /** The name of the job function (according to LinkedIn) of the person who viewed the ad. */
         const JobFunctionName = 'JobFunctionName';
 
-        /** Reserved. */
+        /** The name of the job seniority level (according to LinkedIn) of the person who viewed the ad. */
         const JobSeniorityName = 'JobSeniorityName';
 
-        /** Reserved. */
+        /** The custom LinkedIn name. */
         const CustomLinkedInName = 'CustomLinkedInName';
 
         /** The LinkedIn segment name. */
         const LinkedInSegmentName = 'LinkedInSegmentName';
 
-        /** Reserved. */
+        /** The identifier of the LinkedIn profile segment. */
         const LinkedInSegmentId = 'LinkedInSegmentId';
 
         /** The LinkedIn segment type. */

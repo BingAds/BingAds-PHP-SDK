@@ -12,13 +12,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class SupportedFont
     {
         /**
-         * Reserved.
+         * The supported font family.
          * @var string
          */
         public $FontFamily;
 
         /**
-         * Reserved.
+         * The supported weights for the font family.
          * @var string[]
          */
         public $FontWeights;

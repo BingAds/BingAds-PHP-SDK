@@ -13,13 +13,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class CategoryResult
     {
         /**
-         * Reserved.
+         * The audit point results in the category.
          * @var AuditPointResult[]
          */
         public $AuditPoints;
 
         /**
-         * Reserved.
+         * The key that identifies the category.
          * @var string
          */
         public $Key;

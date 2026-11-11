@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $AccountUrlOptions;
 
         /**
-         * Reserved.
+         * Import ad schedules so that they use the searcher's time zone.
          * @var boolean
          */
         public $AdScheduleUseSearcherTimezone;
@@ -66,7 +66,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EnableAutoCurrencyConversion;
 
         /**
-         * Reserved.
+         * Enable Copilot features for the imported campaigns.
          * @var boolean
          */
         public $EnableCopilot;
@@ -78,19 +78,19 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $EnableParentLocationMapping;
 
         /**
-         * Reserved.
+         * Opt out of image asset automation for imported campaigns.
          * @var boolean
          */
         public $ImageAssetAutomationOptOut;
 
         /**
-         * Reserved.
+         * Import new customer acquisition goals that use a system-generated audience.
          * @var boolean
          */
         public $ImportNCAGoalWithSystemGeneratedAudience;
 
         /**
-         * Reserved.
+         * Import new customer acquisition settings.
          * @var boolean
          */
         public $ImportNCASettings;
@@ -150,7 +150,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewAudienceTargets;
 
         /**
-         * Reserved.
+         * Import brand list associations that have not previously been imported.
          * @var boolean
          */
         public $NewBrandListAssociations;
@@ -174,7 +174,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewCalloutAdExtensions;
 
         /**
-         * Reserved.
+         * Import carousel ads that have not previously been imported.
          * @var boolean
          */
         public $NewCarouselAd;
@@ -204,7 +204,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewEntities;
 
         /**
-         * Reserved.
+         * Import image ad extensions that have not previously been imported.
          * @var boolean
          */
         public $NewImageAdExtensions;
@@ -228,7 +228,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewLabels;
 
         /**
-         * Reserved.
+         * Import lead form ad extensions that have not previously been imported.
          * @var boolean
          */
         public $NewLeadFormAdExtensions;
@@ -288,7 +288,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewPausedCampaignsAndChildEntities;
 
         /**
-         * Reserved.
+         * Import portfolio bid strategies that have not previously been imported.
          * @var boolean
          */
         public $NewPortfolioBidStrategy;
@@ -348,7 +348,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $NewUrlOptions;
 
         /**
-         * Reserved.
+         * Pause an Audience campaign ad group if none of its audience criteria can be imported.
          * @var boolean
          */
         public $PauseAIMAdGroupIfAllAudienceCriterionNotImported;
@@ -384,7 +384,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $RaiseProductGroupBidsToMinimum;
 
         /**
-         * Reserved.
+         * Append the configured suffix to imported campaign names.
          * @var boolean
          */
         public $RenameCampaignNameWithSuffix;
@@ -408,7 +408,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $SearchAndReplaceForCustomParameters;
 
         /**
-         * Reserved.
+         * The search-and-replace settings to apply to imported final URL suffixes.
          * @var ImportSearchAndReplaceForStringProperty
          */
         public $SearchAndReplaceForFinalURLSuffix;
@@ -492,13 +492,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateAppAdExtensions;
 
         /**
-         * Reserved.
+         * Update asset automation settings in campaigns that were previously imported.
          * @var boolean
          */
         public $UpdateAssetAutomationCampaignSetting;
 
         /**
-         * Reserved.
+         * Update asset groups that were previously imported.
          * @var boolean
          */
         public $UpdateAssetGroups;
@@ -528,7 +528,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateBids;
 
         /**
-         * Reserved.
+         * Update brand list associations that were previously imported.
          * @var boolean
          */
         public $UpdateBrandListAssociations;
@@ -594,7 +594,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateEntities;
 
         /**
-         * Reserved.
+         * Update image ad extensions that were previously imported.
          * @var boolean
          */
         public $UpdateImageAdExtensions;
@@ -612,7 +612,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateLabels;
 
         /**
-         * Reserved.
+         * Update lead form ad extensions that were previously imported.
          * @var boolean
          */
         public $UpdateLeadFormAdExtensions;
@@ -636,7 +636,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateLogoAdExtensions;
 
         /**
-         * Reserved.
+         * Update new customer acquisition settings that were previously imported.
          * @var boolean
          */
         public $UpdateNCASettings;
@@ -684,7 +684,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $UpdateReviewAdExtensions;
 
         /**
-         * Reserved.
+         * Update search themes for asset groups that were previously imported.
          * @var boolean
          */
         public $UpdateSearchThemesForExistingAssetGroups;

@@ -14,13 +14,13 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
     final class RefineResponsiveSearchAdRecommendationRequest
     {
         /**
-         * Reserved.
+         * The responsive search ad whose text assets you want to refine.
          * @var ResponsiveSearchAd
          */
         public $ResponsiveSearchAd;
 
         /**
-         * Reserved.
+         * The text refinement operations to apply.
          * @var AdRecommendationTextRefineOperation[]
          */
         public $TextRefineOperations;

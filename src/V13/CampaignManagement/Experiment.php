@@ -40,7 +40,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $ExperimentCampaignId;
 
         /**
-         * Reserved.
+         * The campaign type used by the experiment.
          * @var string
          */
         public $ExperimentCampaignType;
@@ -70,7 +70,7 @@ namespace Microsoft\BingAds\V13\CampaignManagement;
         public $Id;
 
         /**
-         * Reserved.
+         * Specifies the campaign objective, such as brand awareness, website visits, sales, leads, or app installs.
          * @var string
          */
         public $MarketingObjective;

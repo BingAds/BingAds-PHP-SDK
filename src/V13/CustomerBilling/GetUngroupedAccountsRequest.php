@@ -12,7 +12,7 @@ namespace Microsoft\BingAds\V13\CustomerBilling;
     final class GetUngroupedAccountsRequest
     {
         /**
-         * Reserved.
+         * The Microsoft Advertising identifier of the customer whose ungrouped accounts you want to get.
          * @var integer
          */
         public $CustomerId;
